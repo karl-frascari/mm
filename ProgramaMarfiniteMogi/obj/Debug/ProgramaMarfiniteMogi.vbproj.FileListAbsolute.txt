@@ -1,0 +1,50 @@
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.exe.config
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.exe
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.pdb
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.xml
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.Form1.resources
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.Resources.resources
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.vbproj.GenerateResource.Cache
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.exe
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.xml
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.pdb
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.nivelAcessoTela.resources
+C:\Users\FERNANDO12\Desktop\marfinite mogi\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.vbproj.ResolveComReference.cache
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.exe.config
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.vbproj.ResolveComReference.cache
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.exe
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.xml
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.pdb
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.exe
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.pdb
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\bin\Debug\ProgramaMarfiniteMogi.xml
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.Form1.resources
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.Resources.resources
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.nivelAcessoTela.resources
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.vbproj.GenerateResource.Cache
+C:\Users\FERNANDO12\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.FormularioItemNfeEmitida.resources
+C:\Users\FERNANDO12\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.exe.config
+C:\Users\FERNANDO12\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.exe
+C:\Users\FERNANDO12\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.pdb
+C:\Users\FERNANDO12\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.xml
+C:\Users\Central\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.exe.config
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.vbproj.ResolveComReference.cache
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.exe
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.xml
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.pdb
+C:\Users\Central\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.exe
+C:\Users\Central\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.pdb
+C:\Users\Central\Desktop\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.xml
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.Form1.resources
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.FormularioItemNfeEmitida.resources
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.Resources.resources
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.nivelAcessoTela.resources
+C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Debug\ProgramaMarfiniteMogi.vbproj.GenerateResource.Cache
+C:\Projeto Programa Marfinite Mogi\xls ped Marf\arquivos vb net\ProgramaMarfiniteMogi.exe.config
+C:\Projeto Programa Marfinite Mogi\xls ped Marf\arquivos vb net\ProgramaMarfiniteMogi.exe
+C:\Projeto Programa Marfinite Mogi\xls ped Marf\arquivos vb net\ProgramaMarfiniteMogi.pdb
+C:\Projeto Programa Marfinite Mogi\xls ped Marf\arquivos vb net\ProgramaMarfiniteMogi.xml
+C:\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.exe.config
+C:\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.exe
+C:\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.pdb
+C:\Projeto Programa Marfinite Mogi\debug\ProgramaMarfiniteMogi.xml

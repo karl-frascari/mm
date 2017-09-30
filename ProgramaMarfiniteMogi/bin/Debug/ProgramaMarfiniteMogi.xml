@@ -1,0 +1,708 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+ProgramaMarfiniteMogi
+</name>
+</assembly>
+<members>
+<member name="T:ProgramaMarfiniteMogi.testeDataSet1.produtosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1.produtosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1.produtosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.produtosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.UpdateUpdatedRows(ProgramaMarfiniteMogi.testeDataSet1,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.UpdateInsertedRows(ProgramaMarfiniteMogi.testeDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.UpdateDeletedRows(ProgramaMarfiniteMogi.testeDataSet1,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.UpdateAll(ProgramaMarfiniteMogi.testeDataSet1)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet1TableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFERowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.autorizacaoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.balcaoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.cadastrodoNCMTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.capitalgirofornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.clienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.corProdTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.estadosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.exemploTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.fornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.GeradorNumeroPedidoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.indicesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemPedidosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.linhasprodTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NFE_EmitidasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.nfefornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.pedidoMarfiniteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoNFETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.produtosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.transportadorasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.vendedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.tab_municipiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemNfeEmitidaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProgramaMarfiniteMogi.DataSetFinal,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.UpdateInsertedRows(ProgramaMarfiniteMogi.DataSetFinal,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.UpdateDeletedRows(ProgramaMarfiniteMogi.DataSetFinal,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.UpdateAll(ProgramaMarfiniteMogi.DataSetFinal)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member><member name="P:ProgramaMarfiniteMogi.My.Resources.Resources.ResourceManager">
+	<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:ProgramaMarfiniteMogi.My.Resources.Resources.Culture">
+	<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.My.Resources.Resources">
+	<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.autorizacaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.capitalgirofornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.clienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.corProdDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.estadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.exemploDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.fornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.indicesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.linhasprodDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.nfefornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.produtosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.transportadorasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.vendedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.autorizacaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.capitalgirofornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.clienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.corProdRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.estadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.exemploRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.fornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.indicesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.linhasprodRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.nfefornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.produtosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.transportadorasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.vendedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.autorizacaoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.capitalgirofornecedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.clienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.corProdRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.estadosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.exemploRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.fornecedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.indicesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.linhasprodRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.nfefornecedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.produtosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.transportadorasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet.vendedorRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSet">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.autorizacaoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.capitalgirofornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.clienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.corProdTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.estadosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.exemploTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.fornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.indicesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.linhasprodTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.nfefornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.produtosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.transportadorasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.vendedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProgramaMarfiniteMogi.testeDataSet,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Update rows in top-down order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.UpdateInsertedRows(ProgramaMarfiniteMogi.testeDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Insert rows in top-down order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.UpdateDeletedRows(ProgramaMarfiniteMogi.testeDataSet,System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Delete rows in bottom-up order.
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.GetRealUpdatedRows(System.Data.DataRow[],System.Collections.Generic.List{System.Data.DataRow})">
+	<summary>
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+</summary>
+</member><member name="M:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.UpdateAll(ProgramaMarfiniteMogi.testeDataSet)">
+	<summary>
+Update all changes to the dataset.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.UpdateOrderOption">
+	<summary>
+Update Order Option
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager.SelfReferenceComparer">
+	<summary>
+Used to sort self-referenced table's rows
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.testeDataSetTableAdapters.TableAdapterManager">
+	<summary>
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+</summary>
+</member>
+</members>
+</doc>
