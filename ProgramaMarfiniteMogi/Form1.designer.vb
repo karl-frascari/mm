@@ -107,13 +107,9 @@ Partial Class Form1
         Me.TopToolStripPanel = New System.Windows.Forms.ToolStripPanel()
         Me.RightToolStripPanel = New System.Windows.Forms.ToolStripPanel()
         Me.LeftToolStripPanel = New System.Windows.Forms.ToolStripPanel()
-
         Me.ContentPanel = New System.Windows.Forms.ToolStripContentPanel()
-
         Me.ProdutosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-
         Me.DataSetFinal = New ProgramaMarfiniteMogi.DataSetFinal()
-
         Me.FornecedorBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CorProdBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LinhasprodBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -2071,7 +2067,6 @@ Partial Class Form1
         Me.Label218 = New System.Windows.Forms.Label()
         Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.Panel43 = New System.Windows.Forms.Panel()
-        Me.NomeContasFuncionariosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.NomeContasDataGridView = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn349 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn382 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -2153,6 +2148,7 @@ Partial Class Form1
         Me.Label266 = New System.Windows.Forms.Label()
         Me.Panel42 = New System.Windows.Forms.Panel()
         Me.Label265 = New System.Windows.Forms.Label()
+        Me.NomeContasFuncionariosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListaContasArquivoBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListaContasArquivoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.LinguasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -2586,7 +2582,6 @@ Partial Class Form1
         Me.GroupBox84.SuspendLayout
         Me.TabPage2.SuspendLayout
         Me.Panel43.SuspendLayout
-        CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NomeContasDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NomeContasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel22.SuspendLayout
@@ -2600,6 +2595,7 @@ Partial Class Form1
         CType(Me.NOmeContaExtrasBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NomeContaaluguelBancoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel42.SuspendLayout
+        CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ListaContasArquivoBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ListaContasArquivoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.LinguasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
@@ -20666,11 +20662,6 @@ Partial Class Form1
         Me.Panel43.Size = New System.Drawing.Size(1296, 342)
         Me.Panel43.TabIndex = 2
         '
-        'NomeContasFuncionariosBindingSource1
-        '
-        Me.NomeContasFuncionariosBindingSource1.DataMember = "NomeContasFuncionarios"
-        Me.NomeContasFuncionariosBindingSource1.DataSource = Me.DataSetFinal
-        '
         'NomeContasDataGridView
         '
         Me.NomeContasDataGridView.AllowUserToAddRows = false
@@ -21410,6 +21401,11 @@ Partial Class Form1
         Me.Label265.TabIndex = 0
         Me.Label265.Text = "Caixa de lançamento de despesas"
         '
+        'NomeContasFuncionariosBindingSource1
+        '
+        Me.NomeContasFuncionariosBindingSource1.DataMember = "NomeContasFuncionarios"
+        Me.NomeContasFuncionariosBindingSource1.DataSource = Me.DataSetFinal
+        '
         'ListaContasArquivoBindingSource2
         '
         Me.ListaContasArquivoBindingSource2.DataMember = "ListaContasArquivo"
@@ -22129,7 +22125,6 @@ Partial Class Form1
         Me.GroupBox84.PerformLayout
         Me.TabPage2.ResumeLayout(false)
         Me.Panel43.ResumeLayout(false)
-        CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.NomeContasDataGridView,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.NomeContasBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel22.ResumeLayout(false)
@@ -22147,6 +22142,7 @@ Partial Class Form1
         CType(Me.NomeContaaluguelBancoBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel42.ResumeLayout(false)
         Me.Panel42.PerformLayout
+        CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ListaContasArquivoBindingSource2,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ListaContasArquivoBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.LinguasBindingSource,System.ComponentModel.ISupportInitialize).EndInit
