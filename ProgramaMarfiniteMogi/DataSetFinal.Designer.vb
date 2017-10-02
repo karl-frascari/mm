@@ -15220,6 +15220,12 @@ Partial Public Class DataSetFinal
         
         Private columnTipoContaIMposto As Global.System.Data.DataColumn
         
+        Private columnCustoImpostoBalcao As Global.System.Data.DataColumn
+        
+        Private columnCustoImpostoVendas As Global.System.Data.DataColumn
+        
+        Private columnCustoImpostoBugigangas As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub New()
@@ -15280,6 +15286,30 @@ Partial Public Class DataSetFinal
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CustoImpostoBalcaoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustoImpostoBalcao
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CustoImpostoVendasColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustoImpostoVendas
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public ReadOnly Property CustoImpostoBugigangasColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnCustoImpostoBugigangas
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -15316,9 +15346,9 @@ Partial Public Class DataSetFinal
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
-        Public Overloads Function AddNomeContaImpostoRow(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Integer) As NomeContaImpostoRow
+        Public Overloads Function AddNomeContaImpostoRow(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Integer, ByVal CustoImpostoBalcao As Integer, ByVal CustoImpostoVendas As Integer, ByVal CustoImpostoBugigangas As Integer) As NomeContaImpostoRow
             Dim rowNomeContaImpostoRow As NomeContaImpostoRow = CType(Me.NewRow,NomeContaImpostoRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, NomeContaImpostos, TipoContaIMposto}
+            Dim columnValuesArray() As Object = New Object() {Nothing, NomeContaImpostos, TipoContaIMposto, CustoImpostoBalcao, CustoImpostoVendas, CustoImpostoBugigangas}
             rowNomeContaImpostoRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowNomeContaImpostoRow)
             Return rowNomeContaImpostoRow
@@ -15350,6 +15380,9 @@ Partial Public Class DataSetFinal
             Me.columnid_NomeContaImpostos = MyBase.Columns("id_NomeContaImpostos")
             Me.columnNomeContaImpostos = MyBase.Columns("NomeContaImpostos")
             Me.columnTipoContaIMposto = MyBase.Columns("TipoContaIMposto")
+            Me.columnCustoImpostoBalcao = MyBase.Columns("CustoImpostoBalcao")
+            Me.columnCustoImpostoVendas = MyBase.Columns("CustoImpostoVendas")
+            Me.columnCustoImpostoBugigangas = MyBase.Columns("CustoImpostoBugigangas")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15361,6 +15394,12 @@ Partial Public Class DataSetFinal
             MyBase.Columns.Add(Me.columnNomeContaImpostos)
             Me.columnTipoContaIMposto = New Global.System.Data.DataColumn("TipoContaIMposto", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnTipoContaIMposto)
+            Me.columnCustoImpostoBalcao = New Global.System.Data.DataColumn("CustoImpostoBalcao", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustoImpostoBalcao)
+            Me.columnCustoImpostoVendas = New Global.System.Data.DataColumn("CustoImpostoVendas", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustoImpostoVendas)
+            Me.columnCustoImpostoBugigangas = New Global.System.Data.DataColumn("CustoImpostoBugigangas", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnCustoImpostoBugigangas)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid_NomeContaImpostos}, true))
             Me.columnid_NomeContaImpostos.AutoIncrement = true
             Me.columnid_NomeContaImpostos.AutoIncrementSeed = -1
@@ -26812,6 +26851,52 @@ Partial Public Class DataSetFinal
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CustoImpostoBalcao() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableNomeContaImposto.CustoImpostoBalcaoColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustoImpostoBalcao' in table 'NomeContaImposto' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableNomeContaImposto.CustoImpostoBalcaoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CustoImpostoVendas() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableNomeContaImposto.CustoImpostoVendasColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustoImpostoVendas' in table 'NomeContaImposto' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableNomeContaImposto.CustoImpostoVendasColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Property CustoImpostoBugigangas() As Integer
+            Get
+                Try 
+                    Return CType(Me(Me.tableNomeContaImposto.CustoImpostoBugigangasColumn),Integer)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'CustoImpostoBugigangas' in table 'NomeContaImposto' is DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableNomeContaImposto.CustoImpostoBugigangasColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Function IsNomeContaImpostosNull() As Boolean
             Return Me.IsNull(Me.tableNomeContaImposto.NomeContaImpostosColumn)
         End Function
@@ -26832,6 +26917,42 @@ Partial Public Class DataSetFinal
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Public Sub SetTipoContaIMpostoNull()
             Me(Me.tableNomeContaImposto.TipoContaIMpostoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCustoImpostoBalcaoNull() As Boolean
+            Return Me.IsNull(Me.tableNomeContaImposto.CustoImpostoBalcaoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCustoImpostoBalcaoNull()
+            Me(Me.tableNomeContaImposto.CustoImpostoBalcaoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCustoImpostoVendasNull() As Boolean
+            Return Me.IsNull(Me.tableNomeContaImposto.CustoImpostoVendasColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCustoImpostoVendasNull()
+            Me(Me.tableNomeContaImposto.CustoImpostoVendasColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Function IsCustoImpostoBugigangasNull() As Boolean
+            Return Me.IsNull(Me.tableNomeContaImposto.CustoImpostoBugigangasColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
+        Public Sub SetCustoImpostoBugigangasNull()
+            Me(Me.tableNomeContaImposto.CustoImpostoBugigangasColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -52048,6 +52169,9 @@ Namespace DataSetFinalTableAdapters
             tableMapping.ColumnMappings.Add("id_NomeContaImpostos", "id_NomeContaImpostos")
             tableMapping.ColumnMappings.Add("NomeContaImpostos", "NomeContaImpostos")
             tableMapping.ColumnMappings.Add("TipoContaIMposto", "TipoContaIMposto")
+            tableMapping.ColumnMappings.Add("CustoImpostoBalcao", "CustoImpostoBalcao")
+            tableMapping.ColumnMappings.Add("CustoImpostoVendas", "CustoImpostoVendas")
+            tableMapping.ColumnMappings.Add("CustoImpostoBugigangas", "CustoImpostoBugigangas")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
@@ -52055,40 +52179,72 @@ Namespace DataSetFinalTableAdapters
                 "ContaImpostos) AND ((@IsNull_NomeContaImpostos = 1 AND [NomeContaImpostos] IS NU"& _ 
                 "LL) OR ([NomeContaImpostos] = @Original_NomeContaImpostos)) AND ((@IsNull_TipoCo"& _ 
                 "ntaIMposto = 1 AND [TipoContaIMposto] IS NULL) OR ([TipoContaIMposto] = @Origina"& _ 
-                "l_TipoContaIMposto)))"
+                "l_TipoContaIMposto)) AND ((@IsNull_CustoImpostoBalcao = 1 AND [CustoImpostoBalca"& _ 
+                "o] IS NULL) OR ([CustoImpostoBalcao] = @Original_CustoImpostoBalcao)) AND ((@IsN"& _ 
+                "ull_CustoImpostoBugigangas = 1 AND [CustoImpostoBugigangas] IS NULL) OR ([CustoI"& _ 
+                "mpostoBugigangas] = @Original_CustoImpostoBugigangas)) AND ((@IsNull_CustoImpost"& _ 
+                "oVendas = 1 AND [CustoImpostoVendas] IS NULL) OR ([CustoImpostoVendas] = @Origin"& _ 
+                "al_CustoImpostoVendas)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_NomeContaImpostos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_NomeContaImpostos", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NomeContaImpostos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeContaImpostos", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NomeContaImpostos", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeContaImpostos", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TipoContaIMposto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoContaIMposto", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TipoContaIMposto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoContaIMposto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustoImpostoBalcao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBalcao", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustoImpostoBalcao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBalcao", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustoImpostoBugigangas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBugigangas", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustoImpostoBugigangas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBugigangas", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustoImpostoVendas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoVendas", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustoImpostoVendas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoVendas", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [NomeContaImposto] ([NomeContaImpostos], [TipoContaIMposto]) VALUES ("& _ 
-                "@NomeContaImpostos, @TipoContaIMposto);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_NomeContaImpostos, NomeContaI"& _ 
-                "mpostos, TipoContaIMposto FROM NomeContaImposto WHERE (id_NomeContaImpostos = SC"& _ 
-                "OPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [NomeContaImposto] ([NomeContaImpostos], [TipoContaIMposto], [CustoIm"& _ 
+                "postoBalcao], [CustoImpostoBugigangas], [CustoImpostoVendas]) VALUES (@NomeConta"& _ 
+                "Impostos, @TipoContaIMposto, @CustoImpostoBalcao, @CustoImpostoBugigangas, @Cust"& _ 
+                "oImpostoVendas);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_NomeContaImpostos, NomeContaImpostos, TipoContaIMpos"& _ 
+                "to, CustoImpostoBalcao, CustoImpostoBugigangas, CustoImpostoVendas FROM NomeCont"& _ 
+                "aImposto WHERE (id_NomeContaImpostos = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NomeContaImpostos", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeContaImpostos", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TipoContaIMposto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoContaIMposto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustoImpostoBalcao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBalcao", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustoImpostoBugigangas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBugigangas", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustoImpostoVendas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoVendas", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
             Me._adapter.UpdateCommand.CommandText = "UPDATE [NomeContaImposto] SET [NomeContaImpostos] = @NomeContaImpostos, [TipoCont"& _ 
-                "aIMposto] = @TipoContaIMposto WHERE (([id_NomeContaImpostos] = @Original_id_Nome"& _ 
-                "ContaImpostos) AND ((@IsNull_NomeContaImpostos = 1 AND [NomeContaImpostos] IS NU"& _ 
-                "LL) OR ([NomeContaImpostos] = @Original_NomeContaImpostos)) AND ((@IsNull_TipoCo"& _ 
-                "ntaIMposto = 1 AND [TipoContaIMposto] IS NULL) OR ([TipoContaIMposto] = @Origina"& _ 
-                "l_TipoContaIMposto)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_NomeContaImpostos, NomeContaImpostos, TipoCont"& _ 
-                "aIMposto FROM NomeContaImposto WHERE (id_NomeContaImpostos = @id_NomeContaImpost"& _ 
-                "os)"
+                "aIMposto] = @TipoContaIMposto, [CustoImpostoBalcao] = @CustoImpostoBalcao, [Cust"& _ 
+                "oImpostoBugigangas] = @CustoImpostoBugigangas, [CustoImpostoVendas] = @CustoImpo"& _ 
+                "stoVendas WHERE (([id_NomeContaImpostos] = @Original_id_NomeContaImpostos) AND ("& _ 
+                "(@IsNull_NomeContaImpostos = 1 AND [NomeContaImpostos] IS NULL) OR ([NomeContaIm"& _ 
+                "postos] = @Original_NomeContaImpostos)) AND ((@IsNull_TipoContaIMposto = 1 AND ["& _ 
+                "TipoContaIMposto] IS NULL) OR ([TipoContaIMposto] = @Original_TipoContaIMposto))"& _ 
+                " AND ((@IsNull_CustoImpostoBalcao = 1 AND [CustoImpostoBalcao] IS NULL) OR ([Cus"& _ 
+                "toImpostoBalcao] = @Original_CustoImpostoBalcao)) AND ((@IsNull_CustoImpostoBugi"& _ 
+                "gangas = 1 AND [CustoImpostoBugigangas] IS NULL) OR ([CustoImpostoBugigangas] = "& _ 
+                "@Original_CustoImpostoBugigangas)) AND ((@IsNull_CustoImpostoVendas = 1 AND [Cus"& _ 
+                "toImpostoVendas] IS NULL) OR ([CustoImpostoVendas] = @Original_CustoImpostoVenda"& _ 
+                "s)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id_NomeContaImpostos, NomeContaImpostos, TipoContaIMposto, CustoIm"& _ 
+                "postoBalcao, CustoImpostoBugigangas, CustoImpostoVendas FROM NomeContaImposto WH"& _ 
+                "ERE (id_NomeContaImpostos = @id_NomeContaImpostos)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@NomeContaImpostos", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeContaImpostos", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@TipoContaIMposto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoContaIMposto", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustoImpostoBalcao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBalcao", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustoImpostoBugigangas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBugigangas", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustoImpostoVendas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoVendas", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_NomeContaImpostos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_NomeContaImpostos", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_NomeContaImpostos", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeContaImpostos", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_NomeContaImpostos", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "NomeContaImpostos", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_TipoContaIMposto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoContaIMposto", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_TipoContaIMposto", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "TipoContaIMposto", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustoImpostoBalcao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBalcao", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustoImpostoBalcao", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBalcao", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustoImpostoBugigangas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBugigangas", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustoImpostoBugigangas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoBugigangas", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_CustoImpostoVendas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoVendas", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_CustoImpostoVendas", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "CustoImpostoVendas", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_NomeContaImpostos", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id_NomeContaImpostos", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -52105,8 +52261,8 @@ Namespace DataSetFinalTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT id_NomeContaImpostos, NomeContaImpostos, TipoContaIMposto FROM NomeContaIm"& _ 
-                "posto"
+            Me._commandCollection(0).CommandText = "SELECT id_NomeContaImpostos, NomeContaImpostos, TipoContaIMposto, CustoImpostoBal"& _ 
+                "cao, CustoImpostoBugigangas, CustoImpostoVendas FROM NomeContaImposto"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -52166,7 +52322,7 @@ Namespace DataSetFinalTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
-        Public Overloads Overridable Function Delete(ByVal Original_id_NomeContaImpostos As Integer, ByVal Original_NomeContaImpostos As String, ByVal Original_TipoContaIMposto As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Delete(ByVal Original_id_NomeContaImpostos As Integer, ByVal Original_NomeContaImpostos As String, ByVal Original_TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoBalcao As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoBugigangas As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoVendas As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id_NomeContaImpostos,Integer)
             If (Original_NomeContaImpostos Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -52181,6 +52337,27 @@ Namespace DataSetFinalTableAdapters
             Else
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CustoImpostoBalcao.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_CustoImpostoBalcao.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CustoImpostoBugigangas.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_CustoImpostoBugigangas.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CustoImpostoVendas.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_CustoImpostoVendas.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -52201,7 +52378,7 @@ Namespace DataSetFinalTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
-        Public Overloads Overridable Function Insert(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Global.System.Nullable(Of Integer)) As Integer
+        Public Overloads Overridable Function Insert(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal CustoImpostoBalcao As Global.System.Nullable(Of Integer), ByVal CustoImpostoBugigangas As Global.System.Nullable(Of Integer), ByVal CustoImpostoVendas As Global.System.Nullable(Of Integer)) As Integer
             If (NomeContaImpostos Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -52211,6 +52388,21 @@ Namespace DataSetFinalTableAdapters
                 Me.Adapter.InsertCommand.Parameters(1).Value = CType(TipoContaIMposto.Value,Integer)
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            End If
+            If (CustoImpostoBalcao.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(CustoImpostoBalcao.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (CustoImpostoBugigangas.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(CustoImpostoBugigangas.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (CustoImpostoVendas.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(CustoImpostoVendas.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -52231,7 +52423,7 @@ Namespace DataSetFinalTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal Original_id_NomeContaImpostos As Integer, ByVal Original_NomeContaImpostos As String, ByVal Original_TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal id_NomeContaImpostos As Integer) As Integer
+        Public Overloads Overridable Function Update(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal CustoImpostoBalcao As Global.System.Nullable(Of Integer), ByVal CustoImpostoBugigangas As Global.System.Nullable(Of Integer), ByVal CustoImpostoVendas As Global.System.Nullable(Of Integer), ByVal Original_id_NomeContaImpostos As Integer, ByVal Original_NomeContaImpostos As String, ByVal Original_TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoBalcao As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoBugigangas As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoVendas As Global.System.Nullable(Of Integer), ByVal id_NomeContaImpostos As Integer) As Integer
             If (NomeContaImpostos Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -52242,22 +52434,58 @@ Namespace DataSetFinalTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(2).Value = CType(Original_id_NomeContaImpostos,Integer)
-            If (Original_NomeContaImpostos Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            If (CustoImpostoBalcao.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(CustoImpostoBalcao.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(Original_NomeContaImpostos,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            End If
+            If (CustoImpostoBugigangas.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(CustoImpostoBugigangas.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            End If
+            If (CustoImpostoVendas.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(CustoImpostoVendas.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(5).Value = CType(Original_id_NomeContaImpostos,Integer)
+            If (Original_NomeContaImpostos Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_NomeContaImpostos,String)
             End If
             If (Original_TipoContaIMposto.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_TipoContaIMposto.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_TipoContaIMposto.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(id_NomeContaImpostos,Integer)
+            If (Original_CustoImpostoBalcao.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_CustoImpostoBalcao.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CustoImpostoBugigangas.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_CustoImpostoBugigangas.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            End If
+            If (Original_CustoImpostoVendas.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_CustoImpostoVendas.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(16).Value = CType(id_NomeContaImpostos,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -52277,8 +52505,8 @@ Namespace DataSetFinalTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
-        Public Overloads Overridable Function Update(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal Original_id_NomeContaImpostos As Integer, ByVal Original_NomeContaImpostos As String, ByVal Original_TipoContaIMposto As Global.System.Nullable(Of Integer)) As Integer
-            Return Me.Update(NomeContaImpostos, TipoContaIMposto, Original_id_NomeContaImpostos, Original_NomeContaImpostos, Original_TipoContaIMposto, Original_id_NomeContaImpostos)
+        Public Overloads Overridable Function Update(ByVal NomeContaImpostos As String, ByVal TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal CustoImpostoBalcao As Global.System.Nullable(Of Integer), ByVal CustoImpostoBugigangas As Global.System.Nullable(Of Integer), ByVal CustoImpostoVendas As Global.System.Nullable(Of Integer), ByVal Original_id_NomeContaImpostos As Integer, ByVal Original_NomeContaImpostos As String, ByVal Original_TipoContaIMposto As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoBalcao As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoBugigangas As Global.System.Nullable(Of Integer), ByVal Original_CustoImpostoVendas As Global.System.Nullable(Of Integer)) As Integer
+            Return Me.Update(NomeContaImpostos, TipoContaIMposto, CustoImpostoBalcao, CustoImpostoBugigangas, CustoImpostoVendas, Original_id_NomeContaImpostos, Original_NomeContaImpostos, Original_TipoContaIMposto, Original_CustoImpostoBalcao, Original_CustoImpostoBugigangas, Original_CustoImpostoVendas, Original_id_NomeContaImpostos)
         End Function
     End Class
     

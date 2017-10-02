@@ -3886,10 +3886,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         For Each row As DataGridViewRow In NfefornecedorDataGridView.Rows
 
-
-
-
-
             total = total + (NfefornecedorDataGridView.Item(20, x).Value)
 
             x = x + 1
@@ -12903,7 +12899,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Button68.Enabled = False
         Button69.Enabled = True
         Button64.Enabled = False
-        Button65.Enabled = True
+        Button82.Enabled = True
         Button66.Enabled = True
         Button70.Enabled = True
         Button71.Enabled = False
@@ -12926,7 +12922,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button59_Click(sender As Object, e As EventArgs) Handles Button59.Click
 
         Button71.Enabled = True
-        Button65.Enabled = False
+        Button82.Enabled = False
         Button69.Enabled = False
         Button66.Enabled = False
         Button70.Enabled = False
@@ -13120,236 +13116,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub ComboBox23_MouseClick(sender As Object, e As MouseEventArgs) Handles ComboBox23.MouseClick
 
         IdentificacaoCombobox = 6
-
-    End Sub
-
-   
-
-    Private Sub Button65_Click(sender As Object, e As EventArgs) Handles Button65.Click
-
-
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        command = connection.CreateCommand()
-        Dim x As Integer
-
-        '' calculando o gasto com as despesas de funcionários
-        Dim ValorTotalFuncionarios As Double = 0
-        Dim salarios As Double = 0
-        Dim HorasExtras As Double = 0
-       
-        '  Dim v_SelectRow As Integer
-        '   v_SelectRow = Me.NomeContasDataGridView.CurrentRow.Index
-     
-        For x = 1 To 49
-            Dim sql As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103) and codigo_identificação = '" & x & "'"
-
-            Dim dataadapter As New SqlDataAdapter(sql, connection)
-            Dim ds As New DataSet()
-            Try
-                connection.Open()
-                dataadapter.Fill(ds, "NomeContas")
-                connection.Close()
-                NomeContasDataGridView.DataSource = ds.Tables(0)
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-
-            ' somando a tabela do custo dos funcionários total
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.NomeContasDataGridView.Rows
-                valor += Linha.Cells(3).Value
-            Next
-            ValorTotalFuncionarios += valor
-
-        Next
-        TextBox207.Text = ValorTotalFuncionarios.ToString("F2")
-
-        ' ------------------------------------------------------------------------
-        'Calcular valor aluguel
-        Dim ValorTotalAluguel As Double = 0
-        For x = 50 To 99
-
-            Dim sql As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103) and codigo_identificação = '" & x & "'"
-
-            Dim dataadapter As New SqlDataAdapter(sql, connection)
-            Dim ds As New DataSet()
-            Try
-                connection.Open()
-                dataadapter.Fill(ds, "NomeContas")
-                connection.Close()
-                NomeContasDataGridView.DataSource = ds.Tables(0)
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-
-            ' soma a coluna dos valores do aluguel
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.NomeContasDataGridView.Rows
-                valor += Linha.Cells(3).Value
-            Next
-
-            ValorTotalAluguel += valor
-
-        Next
-
-        TextBox205.Text = ValorTotalAluguel.ToString("F2")
-
-        '------------------------------------------------------------------------
-        ' ------------------------------------------------------------------------
-        ' Calcular valor transporte
-        Dim ValorTotalTransporte As Double = 0
-        For x = 100 To 149
-
-            Dim sql As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103) and codigo_identificação = '" & x & "'"
-
-            Dim dataadapter As New SqlDataAdapter(sql, connection)
-            Dim ds As New DataSet()
-            Try
-                connection.Open()
-                dataadapter.Fill(ds, "NomeContas")
-                connection.Close()
-                NomeContasDataGridView.DataSource = ds.Tables(0)
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-
-            ' soma a coluna dos valores do transporte
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.NomeContasDataGridView.Rows
-                valor += Linha.Cells(3).Value
-            Next
-
-            ValorTotalTransporte += valor
-
-        Next
-
-        TextBox206.Text = ValorTotalTransporte.ToString("F2")
-
-        '------------------------------------------------------------------------
-        ' ------------------------------------------------------------------------
-        ' Calcular valor extras
-        Dim ValorTotalExtras As Double = 0
-        For x = 150 To 199
-
-            Dim sql As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103) and codigo_identificação = '" & x & "'"
-
-            Dim dataadapter As New SqlDataAdapter(sql, connection)
-            Dim ds As New DataSet()
-            Try
-                connection.Open()
-                dataadapter.Fill(ds, "NomeContas")
-                connection.Close()
-                NomeContasDataGridView.DataSource = ds.Tables(0)
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-
-            ' soma a coluna dos valores do extras
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.NomeContasDataGridView.Rows
-                valor += Linha.Cells(3).Value
-            Next
-
-            ValorTotalExtras += valor
-
-        Next
-
-        TextBox208.Text = ValorTotalExtras.ToString("F2")
-
-        '------------------------------------------------------------------------
-        ' ------------------------------------------------------------------------
-        ' Calcular valor Impostos
-        Dim ValorTotalImpostos As Double = 0
-        For x = 200 To 249
-
-            Dim sql As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103) and codigo_identificação = '" & x & "'"
-
-            Dim dataadapter As New SqlDataAdapter(sql, connection)
-            Dim ds As New DataSet()
-            Try
-                connection.Open()
-                dataadapter.Fill(ds, "NomeContas")
-                connection.Close()
-                NomeContasDataGridView.DataSource = ds.Tables(0)
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-
-            ' soma a coluna dos valores do Impostos
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.NomeContasDataGridView.Rows
-                valor += Linha.Cells(3).Value
-            Next
-
-            ValorTotalImpostos += valor
-
-        Next
-
-        TextBox209.Text = ValorTotalImpostos.ToString("F2")
-
-        '------------------------------------------------------------------------
-        ' ------------------------------------------------------------------------
-        ' Calcular valor OutrosDados
-        Dim EntradaNotas As Double = 0
-        Dim FaturamentoMes As Double = 0
-        Dim BugigangasMil As Double = 0
-        Dim DescINSS As Double = 0
-        Dim DescVT As Double = 0
-        Dim LucroBrutoContabil As Double = 0
-
-        For x = 250 To 299
-
-            Dim sql As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103) and codigo_identificação = '" & x & "'"
-
-            Dim dataadapter As New SqlDataAdapter(sql, connection)
-            Dim ds As New DataSet()
-            Try
-                connection.Open()
-                dataadapter.Fill(ds, "NomeContas")
-                connection.Close()
-                NomeContasDataGridView.DataSource = ds.Tables(0)
-            Catch ex As Exception
-                MsgBox(ex.ToString)
-            End Try
-
-            ' soma a coluna dos valores do ValorTotalOutrosDados
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.NomeContasDataGridView.Rows
-                valor += Linha.Cells(3).Value
-            Next
-
-
-            ' Somando o vr por contas
-            Select Case x
-                Case 251
-                    LucroBrutoContabil += valor
-                Case 252
-                    EntradaNotas += valor
-                Case 253
-                    FaturamentoMes += valor
-                Case 254
-                    BugigangasMil += valor
-                Case 255
-                    DescINSS += valor
-                Case 256
-                    DescVT += valor
-            End Select
-
-        Next
-
-
-        TextBox184.Text = LucroBrutoContabil
-        TextBox205.Text = TextBox205.Text - DescINSS - DescVT
-        TextBox211.Text = ValorTotalImpostos + ValorTotalExtras + ValorTotalTransporte + ValorTotalAluguel + ValorTotalFuncionarios
-        TextBox214.Text = (TextBox184.Text - TextBox211.Text).ToString("F2")
-
-
-
-
-    End Sub
-
-    Private Sub Label277_Click(sender As Object, e As EventArgs) Handles Label277.Click
 
     End Sub
 
@@ -13558,7 +13324,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Button68.Enabled = False
         Button69.Enabled = True
         Button64.Enabled = False
-        Button65.Enabled = True
+        Button82.Enabled = True
         Button66.Enabled = True
         Button70.Enabled = True
         Button71.Enabled = False
@@ -14295,7 +14061,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' ------------------------------------------------------------------------------------------
             ' Calcular Despesas com Funcionários
             If identificacaoConta >= 0 And identificacaoConta < 50 Then
-               
+
                 command2 = connection.CreateCommand()
                 command2.CommandText = "SELECT * FROM NomeContasFuncionarios WHERE ContasFuncionarios = '" & NomeConta & "'"
 
@@ -14351,7 +14117,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' --------------------------------------------------
             ' Calcular despesas com Transporte
             If identificacaoConta >= 100 And identificacaoConta < 149 Then
-              
+
                 command2 = connection.CreateCommand()
                 command2.CommandText = "SELECT * FROM ContasTransportes WHERE Nome_ContaTransportes = '" & NomeConta & "'"
 
@@ -14408,31 +14174,80 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             '---------------------------------------------------
             ' --------------------------------------------------
             '' Calcular despesas Impostos
-            'If identificacaoConta >= 200 And identificacaoConta < 249 Then
-            '    contador += 1
-            '    MessageBox.Show(ValorDespesa)
-            '    command2 = connection.CreateCommand()
-            '    command2.CommandText = "SELECT * FROM NomeContaImposto WHERE NomeContaImpostos = '" & NomeConta & "'"
+            If identificacaoConta >= 200 And identificacaoConta < 249 Then
 
-            '    connection.Open()
-            '    Dim lrd2 As SqlDataReader = command2.ExecuteReader()
 
-            '    While lrd2.Read()
-            '        IndiceImpostosBalcao = lrd2("CustoImpostoBalcao")
-            '        IndiceImpostosVendas = lrd2("CustoImpostoVenda")
-            '        IndiceImpostosBugigangas = lrd2("CustoImpostoBugigangas")
-            '    End While
-            '    connection.Close()
+                command2 = connection.CreateCommand()
+                command2.CommandText = "SELECT * FROM NomeContaImposto WHERE NomeContaImpostos = '" & NomeConta & "'"
 
-            '    CustoImpostosBalcao += (IndiceImpostosBalcao / 100) * ValorDespesa
-            '    CustoImpostosVendas += (IndiceImpostosVendas / 100) * ValorDespesa
-            '    CustoImpostosBugigangas += (IndiceImpostosBugigangas / 100) * ValorDespesa
+                connection.Open()
+                Dim lrd2 As SqlDataReader = command2.ExecuteReader()
 
-            'End If
+                While lrd2.Read()
+                    IndiceImpostosBalcao = lrd2("CustoImpostoBalcao")
+                    IndiceImpostosVendas = lrd2("CustoImpostoVendas")
+                    IndiceImpostosBugigangas = lrd2("CustoImpostoBugigangas")
+                End While
+                connection.Close()
+
+                CustoImpostosBalcao += (IndiceImpostosBalcao / 100) * ValorDespesa
+                CustoImpostosVendas += (IndiceImpostosVendas / 100) * ValorDespesa
+                CustoImpostosBugigangas += (IndiceImpostosBugigangas / 100) * ValorDespesa
+
+            End If
+
+
+            valorTotalImpostos = CustoImpostosBalcao + CustoImpostosVendas + CustoImpostosBugigangas
+            TextBox209.Text = valorTotalImpostos
+
+            ' -----------------------------------------------------------------------
+            ' -------------------------------------------------------------------------
+            '' Calculos finais
+            If identificacaoConta >= 250 And identificacaoConta < 299 Then
+
+                Select Case NomeConta
+                    Case "Lucro Bruto Contábil"
+                        TextBox184.Text = ValorDespesa
+                    Case "Lucro Balcão"
+                        TextBox234.Text = ValorDespesa
+                    Case "Lucro Vendas"
+                        TextBox235.Text = ValorDespesa
+                    Case "Lucro Bugigangas"
+                        TextBox236.Text = ValorDespesa
+
+                End Select
+
+
+
+                'If NomeConta = "Lucro Bruto Contábil" Then
+                '    TextBox184.Text = ValorDespesa
+                'End If
+
+                'If NomeConta = "Lucro Balcão" Then
+                '    TextBox234.Text = ValorDespesa
+                'End If
+                'If NomeConta = "Lucro Vendas" Then
+                '    TextBox235.Text = ValorDespesa
+                'End If
+                'If NomeConta = "Lucro Bugigangas" Then
+                '    TextBox236.Text = ValorDespesa
+                'End If
+
+
+            End If
+
         Next
+        '------------------------------------------------------------------------
+        ' -----------------------------------------------------------------------
+        ' calculando o lucro de cada setor
+      
 
-        'valorTotalImpostos = CustoImpostosBalcao + CustoImpostosVendas + CustoImpostosBugigangas
-        'TextBox209.Text = valorTotalImpostos
+        ' Somando todas as despesas
+        TextBox211.Text = (ValorTotalFuncionarios + valorTotalAluguel + valorTotalTransporte + valorTotalExtras + valorTotalImpostos).ToString("F2")
+        TextBox231.Text = (CustoFuncionarioBalcao + CustoAluguelBalcao + CustoTransporteBalcao + CustoExtrasBalcao + CustoImpostosBalcao).ToString("F2")
+        TextBox232.Text = (CustoFuncionarioVendas + CustoAluguelVendas + CustoTransporteVendas + CustoExtrasVendas + CustoImpostosVendas).ToString("F2")
+        TextBox233.Text = (CustoFuncionarioBugigangas + CustoAluguelBugigangas + CustoTransporteBugigangas + CustoExtrasBugigangas + CustoImpostosBugigangas).ToString("F2")
+        TextBox214.Text = TextBox184.Text - TextBox211.Text
 
     End Sub
 
@@ -14460,7 +14275,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
     End Sub
-
+   
     
 End Class
 

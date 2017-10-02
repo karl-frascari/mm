@@ -2079,6 +2079,9 @@ Partial Class Form1
         Me.NomeContasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.TextBox236 = New System.Windows.Forms.TextBox()
+        Me.TextBox235 = New System.Windows.Forms.TextBox()
+        Me.TextBox234 = New System.Windows.Forms.TextBox()
         Me.Label302 = New System.Windows.Forms.Label()
         Me.TextBox233 = New System.Windows.Forms.TextBox()
         Me.TextBox232 = New System.Windows.Forms.TextBox()
@@ -2128,7 +2131,6 @@ Partial Class Form1
         Me.Label271 = New System.Windows.Forms.Label()
         Me.Label269 = New System.Windows.Forms.Label()
         Me.Button66 = New System.Windows.Forms.Button()
-        Me.Button65 = New System.Windows.Forms.Button()
         Me.TextBox212 = New System.Windows.Forms.TextBox()
         Me.Label282 = New System.Windows.Forms.Label()
         Me.DateTimePicker33 = New System.Windows.Forms.DateTimePicker()
@@ -2217,6 +2219,7 @@ Partial Class Form1
         Me.NomeContasFuncionariosTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContasFuncionariosTableAdapter()
         Me.NotasEntradaTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NotasEntradaTableAdapter()
         Me.GeradorNumeroPedidoTableAdapter1 = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.GeradorNumeroPedidoTableAdapter()
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -20760,6 +20763,9 @@ Partial Class Form1
         'Panel23
         '
         Me.Panel23.BackColor = System.Drawing.Color.Yellow
+        Me.Panel23.Controls.Add(Me.TextBox236)
+        Me.Panel23.Controls.Add(Me.TextBox235)
+        Me.Panel23.Controls.Add(Me.TextBox234)
         Me.Panel23.Controls.Add(Me.Label302)
         Me.Panel23.Controls.Add(Me.TextBox233)
         Me.Panel23.Controls.Add(Me.TextBox232)
@@ -20790,6 +20796,27 @@ Partial Class Form1
         Me.Panel23.Size = New System.Drawing.Size(1293, 315)
         Me.Panel23.TabIndex = 2
         '
+        'TextBox236
+        '
+        Me.TextBox236.Location = New System.Drawing.Point(1128, 110)
+        Me.TextBox236.Name = "TextBox236"
+        Me.TextBox236.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox236.TabIndex = 44
+        '
+        'TextBox235
+        '
+        Me.TextBox235.Location = New System.Drawing.Point(1128, 77)
+        Me.TextBox235.Name = "TextBox235"
+        Me.TextBox235.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox235.TabIndex = 43
+        '
+        'TextBox234
+        '
+        Me.TextBox234.Location = New System.Drawing.Point(1128, 46)
+        Me.TextBox234.Name = "TextBox234"
+        Me.TextBox234.Size = New System.Drawing.Size(78, 22)
+        Me.TextBox234.TabIndex = 42
+        '
         'Label302
         '
         Me.Label302.AutoSize = true
@@ -20801,23 +20828,23 @@ Partial Class Form1
         '
         'TextBox233
         '
-        Me.TextBox233.Location = New System.Drawing.Point(1186, 110)
+        Me.TextBox233.Location = New System.Drawing.Point(1220, 110)
         Me.TextBox233.Name = "TextBox233"
-        Me.TextBox233.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox233.Size = New System.Drawing.Size(66, 22)
         Me.TextBox233.TabIndex = 40
         '
         'TextBox232
         '
-        Me.TextBox232.Location = New System.Drawing.Point(1186, 77)
+        Me.TextBox232.Location = New System.Drawing.Point(1220, 77)
         Me.TextBox232.Name = "TextBox232"
-        Me.TextBox232.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox232.Size = New System.Drawing.Size(66, 22)
         Me.TextBox232.TabIndex = 39
         '
         'TextBox231
         '
-        Me.TextBox231.Location = New System.Drawing.Point(1186, 40)
+        Me.TextBox231.Location = New System.Drawing.Point(1220, 46)
         Me.TextBox231.Name = "TextBox231"
-        Me.TextBox231.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox231.Size = New System.Drawing.Size(66, 22)
         Me.TextBox231.TabIndex = 38
         '
         'Label301
@@ -20825,14 +20852,14 @@ Partial Class Form1
         Me.Label301.AutoSize = true
         Me.Label301.Location = New System.Drawing.Point(1072, 116)
         Me.Label301.Name = "Label301"
-        Me.Label301.Size = New System.Drawing.Size(98, 16)
+        Me.Label301.Size = New System.Drawing.Size(35, 16)
         Me.Label301.TabIndex = 37
-        Me.Label301.Text = "BugigangasMil"
+        Me.Label301.Text = "Bugi"
         '
         'Label300
         '
         Me.Label300.AutoSize = true
-        Me.Label300.Location = New System.Drawing.Point(1115, 80)
+        Me.Label300.Location = New System.Drawing.Point(1072, 83)
         Me.Label300.Name = "Label300"
         Me.Label300.Size = New System.Drawing.Size(55, 16)
         Me.Label300.TabIndex = 36
@@ -20841,7 +20868,7 @@ Partial Class Form1
         'Label299
         '
         Me.Label299.AutoSize = true
-        Me.Label299.Location = New System.Drawing.Point(1119, 46)
+        Me.Label299.Location = New System.Drawing.Point(1072, 49)
         Me.Label299.Name = "Label299"
         Me.Label299.Size = New System.Drawing.Size(51, 16)
         Me.Label299.TabIndex = 35
@@ -20984,7 +21011,6 @@ Partial Class Form1
         Me.Panel37.Controls.Add(Me.Button69)
         Me.Panel37.Controls.Add(Me.GroupBox37)
         Me.Panel37.Controls.Add(Me.Button66)
-        Me.Panel37.Controls.Add(Me.Button65)
         Me.Panel37.Controls.Add(Me.TextBox212)
         Me.Panel37.Controls.Add(Me.Label282)
         Me.Panel37.Controls.Add(Me.DateTimePicker33)
@@ -21011,18 +21037,18 @@ Partial Class Form1
         '
         'Button82
         '
-        Me.Button82.Location = New System.Drawing.Point(643, 148)
+        Me.Button82.Location = New System.Drawing.Point(688, 148)
         Me.Button82.Name = "Button82"
-        Me.Button82.Size = New System.Drawing.Size(64, 52)
+        Me.Button82.Size = New System.Drawing.Size(98, 52)
         Me.Button82.TabIndex = 47
-        Me.Button82.Text = "Button82"
-        Me.Button82.UseVisualStyleBackColor = true
+        Me.Button82.Text = "Resumo"
+        Me.Button82.UseVisualStyleBackColor = True
         '
         'Button70
         '
         Me.Button70.Location = New System.Drawing.Point(571, 148)
         Me.Button70.Name = "Button70"
-        Me.Button70.Size = New System.Drawing.Size(66, 52)
+        Me.Button70.Size = New System.Drawing.Size(98, 52)
         Me.Button70.TabIndex = 46
         Me.Button70.Text = "Chek list"
         Me.Button70.UseVisualStyleBackColor = true
@@ -21229,15 +21255,6 @@ Partial Class Form1
         Me.Button66.TabIndex = 41
         Me.Button66.Text = "Histórico"
         Me.Button66.UseVisualStyleBackColor = true
-        '
-        'Button65
-        '
-        Me.Button65.Location = New System.Drawing.Point(713, 144)
-        Me.Button65.Name = "Button65"
-        Me.Button65.Size = New System.Drawing.Size(73, 56)
-        Me.Button65.TabIndex = 8
-        Me.Button65.Text = "Resumo"
-        Me.Button65.UseVisualStyleBackColor = true
         '
         'TextBox212
         '
@@ -21717,6 +21734,11 @@ Partial Class Form1
         'GeradorNumeroPedidoTableAdapter1
         '
         Me.GeradorNumeroPedidoTableAdapter1.ClearBeforeFill = true
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'Form1
         '
@@ -24189,7 +24211,6 @@ End Sub
     Friend WithEvents TextBox212 As System.Windows.Forms.TextBox
     Friend WithEvents Label282 As System.Windows.Forms.Label
     Friend WithEvents ListaContasArquivoBindingSource1 As System.Windows.Forms.BindingSource
-    Friend WithEvents Button65 As System.Windows.Forms.Button
     Friend WithEvents TextBox213 As System.Windows.Forms.TextBox
     Friend WithEvents Button66 As System.Windows.Forms.Button
     Friend WithEvents Button68 As System.Windows.Forms.Button
@@ -24345,5 +24366,9 @@ End Sub
     Friend WithEvents Label299 As System.Windows.Forms.Label
     Friend WithEvents NomeContasFuncionariosBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents Button82 As System.Windows.Forms.Button
+    Friend WithEvents TextBox236 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox235 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox234 As System.Windows.Forms.TextBox
+    Friend WithEvents ContextMenuStrip1 As System.Windows.Forms.ContextMenuStrip
 
 End Class
