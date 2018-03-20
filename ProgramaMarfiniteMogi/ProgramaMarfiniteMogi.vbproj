@@ -44,7 +44,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\Projeto Programa Marfinite Mogi\release\</OutputPath>
+    <OutputPath>..\..\Projeto Programa Marfinite Mogi\release2Valido\</OutputPath>
     <DocumentationFile>ProgramaMarfiniteMogi.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
@@ -97,6 +97,11 @@
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
     <Compile Include="DataSetFinal.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFinal.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFinal2.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetFinal.xsd</DependentUpon>
@@ -158,8 +163,8 @@
     </None>
     <None Include="DataSetFinal.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetFinal.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>DataSetFinal2.Designer.vb</LastGenOutput>
     </None>
     <None Include="DataSetFinal.xss">
       <DependentUpon>DataSetFinal.xsd</DependentUpon>
@@ -249,6 +254,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
