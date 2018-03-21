@@ -117,6 +117,10 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetFinal.VendasMlb' table. You can move, or remove it, as needed.
+        Me.VendasMlbTableAdapter.Fill(Me.DataSetFinal.VendasMlb)
+        'TODO: This line of code loads data into the 'DataSetFinal.teste' table. You can move, or remove it, as needed.
+        Me.TesteTableAdapter.Fill(Me.DataSetFinal.teste)
         'TODO: This line of code loads data into the 'DataSetFinal.PedidoCompra' table. You can move, or remove it, as needed.
         Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
         'TODO: This line of code loads data into the 'DataSetFinal.NotasEntrada' table. You can move, or remove it, as needed.
