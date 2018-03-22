@@ -152,10 +152,6 @@ Partial Class Form1
         Me.txtXml = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.TextBox262 = New System.Windows.Forms.TextBox()
-        Me.TextBox261 = New System.Windows.Forms.TextBox()
-        Me.TextBox260 = New System.Windows.Forms.TextBox()
-        Me.TextBox259 = New System.Windows.Forms.TextBox()
         Me.Button93 = New System.Windows.Forms.Button()
         Me.CadastrodoNCMBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.tbpg_capitalGiro = New System.Windows.Forms.TabPage()
@@ -2294,6 +2290,7 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn233 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn234 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn235 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Button94 = New System.Windows.Forms.Button()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -3812,10 +3809,7 @@ Partial Class Form1
         '
         'Panel4
         '
-        Me.Panel4.Controls.Add(Me.TextBox262)
-        Me.Panel4.Controls.Add(Me.TextBox261)
-        Me.Panel4.Controls.Add(Me.TextBox260)
-        Me.Panel4.Controls.Add(Me.TextBox259)
+        Me.Panel4.Controls.Add(Me.Button94)
         Me.Panel4.Controls.Add(Me.Button93)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
@@ -3823,41 +3817,13 @@ Partial Class Form1
         Me.Panel4.Size = New System.Drawing.Size(1310, 249)
         Me.Panel4.TabIndex = 485
         '
-        'TextBox262
-        '
-        Me.TextBox262.Location = New System.Drawing.Point(698, 221)
-        Me.TextBox262.Name = "TextBox262"
-        Me.TextBox262.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox262.TabIndex = 4
-        '
-        'TextBox261
-        '
-        Me.TextBox261.Location = New System.Drawing.Point(698, 197)
-        Me.TextBox261.Name = "TextBox261"
-        Me.TextBox261.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox261.TabIndex = 3
-        '
-        'TextBox260
-        '
-        Me.TextBox260.Location = New System.Drawing.Point(698, 169)
-        Me.TextBox260.Name = "TextBox260"
-        Me.TextBox260.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox260.TabIndex = 2
-        '
-        'TextBox259
-        '
-        Me.TextBox259.Location = New System.Drawing.Point(698, 141)
-        Me.TextBox259.Name = "TextBox259"
-        Me.TextBox259.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox259.TabIndex = 1
-        '
         'Button93
         '
         Me.Button93.Location = New System.Drawing.Point(602, 140)
         Me.Button93.Name = "Button93"
-        Me.Button93.Size = New System.Drawing.Size(75, 23)
+        Me.Button93.Size = New System.Drawing.Size(232, 33)
         Me.Button93.TabIndex = 0
-        Me.Button93.Text = "Button93"
+        Me.Button93.Text = "Pegar Notas Mercado Livre"
         Me.Button93.UseVisualStyleBackColor = true
         '
         'CadastrodoNCMBindingSource
@@ -22502,9 +22468,9 @@ Partial Class Form1
         '
         'VendasMlbDataGridView
         '
-        Me.VendasMlbDataGridView.AllowUserToAddRows = False
-        Me.VendasMlbDataGridView.AllowUserToDeleteRows = False
-        Me.VendasMlbDataGridView.AutoGenerateColumns = False
+        Me.VendasMlbDataGridView.AllowUserToAddRows = false
+        Me.VendasMlbDataGridView.AllowUserToDeleteRows = false
+        Me.VendasMlbDataGridView.AutoGenerateColumns = false
         Me.VendasMlbDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.VendasMlbDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VendasMlbDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn220, Me.DataGridViewTextBoxColumn221, Me.DataGridViewTextBoxColumn222, Me.DataGridViewTextBoxColumn223, Me.DataGridViewTextBoxColumn224, Me.DataGridViewTextBoxColumn225, Me.DataGridViewTextBoxColumn226, Me.DataGridViewTextBoxColumn227, Me.DataGridViewTextBoxColumn228, Me.DataGridViewTextBoxColumn229, Me.DataGridViewTextBoxColumn230, Me.DataGridViewTextBoxColumn231, Me.DataGridViewTextBoxColumn232, Me.DataGridViewTextBoxColumn233, Me.DataGridViewTextBoxColumn234, Me.DataGridViewTextBoxColumn235})
@@ -22512,7 +22478,7 @@ Partial Class Form1
         Me.VendasMlbDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.VendasMlbDataGridView.Location = New System.Drawing.Point(3, 252)
         Me.VendasMlbDataGridView.Name = "VendasMlbDataGridView"
-        Me.VendasMlbDataGridView.ReadOnly = True
+        Me.VendasMlbDataGridView.ReadOnly = true
         Me.VendasMlbDataGridView.Size = New System.Drawing.Size(1310, 443)
         Me.VendasMlbDataGridView.TabIndex = 485
         '
@@ -22629,6 +22595,15 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn235.Name = "DataGridViewTextBoxColumn235"
         Me.DataGridViewTextBoxColumn235.Width = 168
         '
+        'Button94
+        '
+        Me.Button94.Location = New System.Drawing.Point(602, 179)
+        Me.Button94.Name = "Button94"
+        Me.Button94.Size = New System.Drawing.Size(232, 28)
+        Me.Button94.TabIndex = 1
+        Me.Button94.Text = "Lançar Notas Arquivo Balcão"
+        Me.Button94.UseVisualStyleBackColor = true
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -22661,7 +22636,6 @@ Partial Class Form1
         Me.Busca.PerformLayout
         Me.GroupBox96.ResumeLayout(false)
         Me.Panel4.ResumeLayout(false)
-        Me.Panel4.PerformLayout
         CType(Me.CadastrodoNCMBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.tbpg_capitalGiro.ResumeLayout(false)
         Me.TabControl2.ResumeLayout(false)
@@ -25334,10 +25308,6 @@ End Sub
     Friend WithEvents Label332 As System.Windows.Forms.Label
     Friend WithEvents Label331 As System.Windows.Forms.Label
     Friend WithEvents Button93 As System.Windows.Forms.Button
-    Friend WithEvents TextBox262 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox261 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox260 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox259 As System.Windows.Forms.TextBox
     Friend WithEvents TesteBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents TesteTableAdapter As ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter
     Friend WithEvents VendasMlbBindingSource As System.Windows.Forms.BindingSource
@@ -25359,5 +25329,6 @@ End Sub
     Friend WithEvents DataGridViewTextBoxColumn233 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn234 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn235 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button94 As System.Windows.Forms.Button
 
 End Class
