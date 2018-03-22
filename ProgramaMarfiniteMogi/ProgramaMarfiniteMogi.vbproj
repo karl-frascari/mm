@@ -96,15 +96,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationEvents.vb" />
-    <Compile Include="DataSetFinal.Designer.vb">
+    <Compile Include="DataSetFinal1.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetFinal.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="DataSetFinal2.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetFinal.xsd</DependentUpon>
+      <DependentUpon>DataSetFinal1.xsd</DependentUpon>
     </Compile>
     <Compile Include="Form1.designer.vb">
       <DependentUpon>Form1.vb</DependentUpon>
@@ -158,16 +153,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="DataSetFinal.xsc">
-      <DependentUpon>DataSetFinal.xsd</DependentUpon>
+    <None Include="DataSetFinal1.xsc">
+      <DependentUpon>DataSetFinal1.xsd</DependentUpon>
     </None>
-    <None Include="DataSetFinal.xsd">
+    <None Include="DataSetFinal1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <SubType>Designer</SubType>
-      <LastGenOutput>DataSetFinal2.Designer.vb</LastGenOutput>
     </None>
-    <None Include="DataSetFinal.xss">
-      <DependentUpon>DataSetFinal.xsd</DependentUpon>
+    <None Include="DataSetFinal1.xss">
+      <DependentUpon>DataSetFinal1.xsd</DependentUpon>
     </None>
     <None Include="My Project\app.manifest">
       <SubType>Designer</SubType>

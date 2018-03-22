@@ -6,7 +6,327 @@ ProgramaMarfiniteMogi
 </name>
 </assembly>
 <members>
-<member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRowChangeEvent">
+<member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ContasTransportesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EmailErroClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ibpt_NCMDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemOrcamentoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linguasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ListaContasArquivoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeConta_aluguel_BancoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NOmeContaExtrasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaImpostoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaOutraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasFuncionariosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NotasEntradaDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.orcamento2DataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoCompraDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFEDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.TabelaCFOPDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.testeDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ContasTransportesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EmailErroClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ibpt_NCMRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemOrcamentoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linguasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ListaContasArquivoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeConta_aluguel_BancoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NOmeContaExtrasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaImpostoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaOutraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasFuncionariosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NotasEntradaRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.orcamento2Row">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoCompraRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFERow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.TabelaCFOPRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.testeRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -23,6 +343,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ContasTransportesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -70,7 +394,15 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linguasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ListaContasArquivoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -82,7 +414,39 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeConta_aluguel_BancoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NOmeContaExtrasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaImpostoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaOutraRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasFuncionariosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NotasEntradaRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.orcamento2RowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoCompraRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -106,6 +470,10 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.testeRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasRowChangeEvent">
 	<summary>
 Row event argument class
@@ -114,49 +482,173 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linguasRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal">
 	<summary>
-Row event argument class
+Represents a strongly typed in-memory cache of data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ListaContasArquivoRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.autorizacaoTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ContasTransportesRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.balcaoTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeConta_aluguel_BancoRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.cadastrodoNCMTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NOmeContaExtrasRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.capitalgirofornecedorTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaImpostoRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.clienteTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaOutraRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ContasTransportesTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasFuncionariosRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.corProdTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NotasEntradaRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EmailErroClienteTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoCompraRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.estadosTableAdapter">
 	<summary>
-Row event argument class
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.exemploTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.fornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.GeradorNumeroPedidoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ibpt_NCMTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.indicesTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemNfeEmitidaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemOrcamentoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemPedidosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.linguasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.linhasprodTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ListaContasArquivoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NFE_EmitidasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.nfefornecedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeConta_aluguel_BancoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NOmeContaExtrasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContaImpostoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContaOutraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContasFuncionariosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NotasEntradaTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.orcamento2TableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.pedidoMarfiniteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoNFETableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.produtosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.tab_municipiosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TabelaCFOPTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.transportadorasTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.vendedorTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="M:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager.UpdateUpdatedRows(ProgramaMarfiniteMogi.DataSetFinal,System.Collections.Generic.List{System.Data.DataRow},System.Collections.Generic.List{System.Data.DataRow})">
 	<summary>
@@ -186,469 +678,9 @@ Update Order Option
 	<summary>
 Used to sort self-referenced table's rows
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal">
-	<summary>
-Represents a strongly typed in-memory cache of data.
-</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TableAdapterManager">
 	<summary>
 TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NotasEntradaTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContasFuncionariosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContaOutraTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContaImpostoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NOmeContaExtrasTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeConta_aluguel_BancoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ContasTransportesTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ListaContasArquivoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NomeContasTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.linguasTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.vendedorTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.transportadorasTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.TabelaCFOPTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.tab_municipiosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.produtosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoNFETableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.pedidoMarfiniteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.orcamento2TableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.nfefornecedorTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.NFE_EmitidasTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.linhasprodTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemPedidosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemOrcamentoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ItemNfeEmitidaTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.indicesTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ibpt_NCMTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.GeradorNumeroPedidoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.fornecedorTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.exemploTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.estadosTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EmailErroClienteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.corProdTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.clienteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.capitalgirofornecedorTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.cadastrodoNCMTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.balcaoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.autorizacaoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoCompraRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NotasEntradaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasFuncionariosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaOutraRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaImpostoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NOmeContaExtrasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeConta_aluguel_BancoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ContasTransportesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ListaContasArquivoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linguasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.TabelaCFOPRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFERow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.orcamento2Row">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemOrcamentoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ibpt_NCMRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EmailErroClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoCompraDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NotasEntradaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasFuncionariosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaOutraDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContaImpostoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NOmeContaExtrasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeConta_aluguel_BancoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ContasTransportesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ListaContasArquivoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NomeContasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linguasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.transportadorasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.TabelaCFOPDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.produtosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.PedidoNFEDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.pedidoMarfiniteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.orcamento2DataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.nfefornecedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.NFE_EmitidasDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.linhasprodDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemPedidosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemOrcamentoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ItemNfeEmitidaDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.indicesDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ibpt_NCMDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.GeradorNumeroPedidoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.fornecedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.exemploDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EmailErroClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.corProdDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.clienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.capitalgirofornecedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.cadastrodoNCMDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.balcaoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
 </summary>
 </member><member name="P:ProgramaMarfiniteMogi.My.Resources.Resources.ResourceManager">
 	<summary>

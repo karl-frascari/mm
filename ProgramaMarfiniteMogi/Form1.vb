@@ -3880,20 +3880,20 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
 
-        NfefornecedorBindingSource.Filter = String.Format("xNome_nomedoclientenfe LIKE '{0}%'", txt_buscaClienteNFE.Text)
+        'NfefornecedorBindingSource.Filter = String.Format("xNome_nomedoclientenfe LIKE '{0}%'", txt_buscaClienteNFE.Text)
 
-        TextBox2.Text = ""
-        Dim x As Integer = 0
-        Dim total As Double
+        'TextBox2.Text = ""
+        'Dim x As Integer = 0
+        'Dim total As Double
 
-        For Each row As DataGridViewRow In NfefornecedorDataGridView.Rows
+        'For Each row As DataGridViewRow In NfefornecedorDataGridView.Rows
 
-            total = total + (NfefornecedorDataGridView.Item(20, x).Value)
+        '    total = total + (NfefornecedorDataGridView.Item(20, x).Value)
 
-            x = x + 1
+        '    x = x + 1
 
-            TextBox2.Text = (total / 100)
-        Next
+        '    TextBox2.Text = (total / 100)
+        'Next
 
 
 
@@ -15003,33 +15003,107 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button93_Click(sender As Object, e As EventArgs) Handles Button93.Click
 
       
-        'REM passa dados para a planilha excell de pedidos   -------
-        'Dim xlApp1 As Excel.Application
-        'Dim xlWorkBook1 As Excel.Workbook
-        'Dim xlWorkSheet1 As Excel.Worksheet
+        REM passa dados para a planilha excell de pedidos   -------
+        Dim xlApp1 As Excel.Application
+        Dim xlWorkBook1 As Excel.Workbook
+        Dim xlWorkSheet1 As Excel.Worksheet
+        ' ------------------------------------
+        ' Variáveis que vão pegar os valores da tabela e passar para o arquivo
+        Dim NumeroPedido As String
+        Dim DataPedido As Date
+        Dim NomeContato As String
+        Dim CEP As String
+        Dim Municipio As String
+        Dim Estado As String
+        Dim Endereco As String
+        Dim NumeroRua As String
+        Dim Complemento As String
+        Dim Bairro As String
+        Dim Fone As String
+        Dim NomeProduto As String
+        Dim Quantidade As Double
+        Dim VrUnitario As Double
 
-        ''System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
+        ' --------------------------------------------------------------
 
-        'xlApp1 = New Excel.Application
-        '' xlWorkBook1 = xlApp1.Workbooks.Open("\\FERNANDO\Disco C\C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1020.xlsx")
-        'xlWorkBook1 = xlApp1.Workbooks.Open("C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1000.xls")
-        'xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
+        xlApp1 = New Excel.Application
+        ' xlWorkBook1 = xlApp1.Workbooks.Open("\\FERNANDO\Disco C\C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1020.xlsx")
+        xlWorkBook1 = xlApp1.Workbooks.Open("C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1000.xls")
+        xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
 
-        'TextBox259.Text = Trim(xlWorkBook1.Application.Cells(2, 2).Value)
-        'TextBox260.Text = Trim(xlWorkBook1.Application.Cells(2, 3).Value)
-        'TextBox261.Text = Trim(xlWorkBook1.Application.Cells(2, 6).Value)
-        'TextBox262.Text = Trim(xlWorkBook1.Application.Cells(2, 10).Value)
+        NumeroPedido = Trim(xlWorkBook1.Application.Cells(2, 2).Value)
+        DataPedido = Trim(xlWorkBook1.Application.Cells(2, 3).Value)
+        NomeContato = Trim(xlWorkBook1.Application.Cells(2, 6).Value)
+        CEP = Trim(xlWorkBook1.Application.Cells(2, 10).Value)
+
+        Municipio = Trim(xlWorkBook1.Application.Cells(2, 11).Value)
+        Estado = Trim(xlWorkBook1.Application.Cells(2, 12).Value)
+        Endereco = Trim(xlWorkBook1.Application.Cells(2, 13).Value)
+        NumeroRua = Trim(xlWorkBook1.Application.Cells(2, 14).Value)
+
+        Complemento = Trim(xlWorkBook1.Application.Cells(2, 15).Value)
+        Bairro = Trim(xlWorkBook1.Application.Cells(2, 16).Value)
+        Fone = Trim(xlWorkBook1.Application.Cells(2, 17).Value)
+        NomeProduto = Trim(xlWorkBook1.Application.Cells(2, 25).Value)
+        Quantidade = Trim(xlWorkBook1.Application.Cells(2, 26).Value)
+        VrUnitario = Trim(xlWorkBook1.Application.Cells(2, 27).Value)
+
+        xlWorkBook1.Close()
+
+        Dim connection5 As SqlConnection
+        connection5 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        Dim command5 As SqlCommand
+        command5 = connection5.CreateCommand()
+
+        command5 = connection5.CreateCommand()
+        command5.CommandText = "select * from ibpt_NCM where  codigo = '" & Classificfiscal_prodTextBox.Text & "'"
+
+        Dim connection As SqlConnection
+            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
 
 
+        command.CommandText = "INSERT INTO VendasMlb () Values (@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+
+        command.CommandType = CommandType.Text
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = NumeroPedido
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = DataPedido
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = NomeContato
+
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = CEP
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = Municipio
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = Estado
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = Endereco
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = NumeroRua
+
+        command.Parameters.Add("@", SqlDbType.Float).Value = Complemento
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = Bairro
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = Fone
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = NomeProduto
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = Quantidade
+        command.Parameters.Add("@", SqlDbType.VarChar, 50).Value = VrUnitario
+           
+
+            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+                MessageBox.Show("Sucesso!")
+                ''#Insert some code here, woo
+            Catch ex As Exception
+                MessageBox.Show("Algo ocorreu errado")
+                MessageBox.Show(ex.ToString())
+
+            Finally
+                connection.Close()
+            End Try
+        End If
 
 
-
-
-        'xlWorkBook1.Close()
-
-
-
-      
     End Sub
 End Class
 
