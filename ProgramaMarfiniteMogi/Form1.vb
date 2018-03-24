@@ -13900,60 +13900,60 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub BalcaoDataGridView5_DoubleClick_1(sender As Object, e As EventArgs) Handles BalcaoDataGridView5.DoubleClick
 
-        Dim v_SelectRow As Integer = 0
-        v_SelectRow = Me.BalcaoDataGridView5.CurrentRow.Index
+        'Dim v_SelectRow As Integer = 0
+        'v_SelectRow = Me.BalcaoDataGridView5.CurrentRow.Index
 
-        ' - tive que mudar a ordem do textbox abaixo porque ele so aceitava funcionar no começo....
-        TextBox128.Text = BalcaoDataGridView5.Item(14, v_SelectRow).Value.ToString()
-        TextBox223.Text = BalcaoDataGridView5.Item(6, v_SelectRow).Value.ToString()
+        '' - tive que mudar a ordem do textbox abaixo porque ele so aceitava funcionar no começo....
+        'TextBox128.Text = BalcaoDataGridView5.Item(14, v_SelectRow).Value.ToString()
+        'TextBox223.Text = BalcaoDataGridView5.Item(6, v_SelectRow).Value.ToString()
 
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & BalcaoDataGridView5.Item(14, v_SelectRow).Value.ToString() & "' and corprod_balcao = '" & BalcaoDataGridView5.Item(6, v_SelectRow).Value.ToString() & "'"
-        Dim dataadapter As New SqlDataAdapter(sql2, connection)
-        Dim ds As New DataSet()
-        Try
-            connection.Open()
-            dataadapter.Fill(ds, "balcao")
-            connection.Close()
-            BalcaoDataGridView5.DataSource = ds.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & BalcaoDataGridView5.Item(14, v_SelectRow).Value.ToString() & "' and corprod_balcao = '" & BalcaoDataGridView5.Item(6, v_SelectRow).Value.ToString() & "'"
+        'Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        'Dim ds As New DataSet()
+        'Try
+        '    connection.Open()
+        '    dataadapter.Fill(ds, "balcao")
+        '    connection.Close()
+        '    BalcaoDataGridView5.DataSource = ds.Tables(0)
+        'Catch ex As Exception
+        '    MsgBox(ex.ToString)
+        'End Try
 
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadeBalcao As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
-            quantidadeBalcao += Linha.Cells(7).Value
-        Next
+        '' -----------------------------------
+        ''somar quantidade da coluna da tabela balcão
+        'Dim quantidadeBalcao As Decimal = 0
+        'For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
+        '    quantidadeBalcao += Linha.Cells(7).Value
+        'Next
 
-        TextBox163.Text = quantidadeBalcao
-        TextBox127.Text = (quantidadeBalcao / 3).ToString("F2")
-        ' ----------------------------------------------------------------------------------
-        ' Pesquisando dados na tabela de pedidos
+        'TextBox163.Text = quantidadeBalcao
+        'TextBox127.Text = (quantidadeBalcao / 3).ToString("F2")
+        '' ----------------------------------------------------------------------------------
+        '' Pesquisando dados na tabela de pedidos
 
-        Dim sql3 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nome_item = '" & TextBox128.Text & "' and cor_item = '" & TextBox223.Text & "'"
-        Dim dataadapter3 As New SqlDataAdapter(sql3, connection)
-        Dim ds3 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter3.Fill(ds3, "ItemPedidos")
-            connection.Close()
-            ItemPedidosDataGridView5.DataSource = ds3.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
+        'Dim sql3 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nome_item = '" & TextBox128.Text & "' and cor_item = '" & TextBox223.Text & "'"
+        'Dim dataadapter3 As New SqlDataAdapter(sql3, connection)
+        'Dim ds3 As New DataSet()
+        'Try
+        '    connection.Open()
+        '    dataadapter3.Fill(ds3, "ItemPedidos")
+        '    connection.Close()
+        '    ItemPedidosDataGridView5.DataSource = ds3.Tables(0)
+        'Catch ex As Exception
+        '    MsgBox(ex.ToString)
+        'End Try
 
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadePedidos As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView5.Rows
-            quantidadePedidos += Linha.Cells(8).Value
-        Next
+        '' -----------------------------------
+        ''somar quantidade da coluna da tabela balcão
+        'Dim quantidadePedidos As Decimal = 0
+        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView5.Rows
+        '    quantidadePedidos += Linha.Cells(8).Value
+        'Next
 
-        TextBox226.Text = quantidadePedidos
-        TextBox227.Text = (quantidadePedidos / 3).ToString("F2")
+        'TextBox226.Text = quantidadePedidos
+        'TextBox227.Text = (quantidadePedidos / 3).ToString("F2")
 
     End Sub
 
@@ -13973,14 +13973,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        '-----------------------------------------------------------------------------------------
-        Dim ano100 As Integer = Today.Year
-        Dim mes100 As Integer = Today.Month
-        Dim dia100 As Integer = Today.Day
-        Dim primeiroDia100 As DateTime = New DateTime(ano100, mes100, dia100).AddDays(-90)
-        Dim ultimoDia100 As DateTime = New DateTime(ano100, mes100, dia100).AddDays(-1)
-        ' ------------------------------------------------------------------------------------------------------------------
-        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia100 & "' ,103)  and convert (datetime, '" & ultimoDia100 & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
+           ' ------------------------------------------------------------------------------------------------------------------
+        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
         Dim ds As New DataSet()
         Try
@@ -14006,7 +14000,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' ----------------------------------------------------------------------------------
         ' Pesquisando dados na tabela de pedidos
 
-        Dim sql3 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & primeiroDia100 & "' ,103)  and convert (datetime, '" & ultimoDia100 & "' ,103) and codprod_item = '" & TextBox228.Text & "'"
+        Dim sql3 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and codprod_item = '" & TextBox228.Text & "'"
         Dim dataadapter3 As New SqlDataAdapter(sql3, connection)
         Dim ds3 As New DataSet()
         Try
@@ -14028,311 +14022,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox226.Text = quantidadePedidos
         TextBox227.Text = ((quantidadePedidos / DiferencaData) * 30).ToString("F2")
         ' ------------------------------------------------------------------------------------
-        ' Pesquisando as médias semanais [ semana 1 ]
-
-        Dim ano As Integer = Today.Year
-        Dim mes As Integer = Today.Month
-        Dim dia As Integer = Today.Day
-        Dim primeiroDia As DateTime = New DateTime(ano, mes, dia).AddDays(-90)
-        Dim ultimoDia As DateTime = New DateTime(ano, mes, dia).AddDays(-60)
-       
-
-        Dim sql10 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia & "' ,103)  and convert (datetime, '" & ultimoDia & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
-        Dim dataadapter10 As New SqlDataAdapter(sql10, connection)
-        Dim ds10 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter10.Fill(ds10, "balcao")
-            connection.Close()
-            BalcaoDataGridView5.DataSource = ds10.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadeBalcao10 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
-            quantidadeBalcao10 += Linha.Cells(4).Value
-        Next
-
-        TextBox233.Text = quantidadeBalcao10
-        ' ------------------------------------------------------------------------------------
-        ' Pesquisando as médias semanais [ semana 2 ]
-
-        Dim ano20 As Integer = Today.Year
-        Dim mes20 As Integer = Today.Month
-        Dim dia20 As Integer = Today.Day
-        Dim primeiroDia20 As DateTime = New DateTime(ano, mes, dia).AddDays(-120)
-        Dim ultimoDia20 As DateTime = New DateTime(ano, mes, dia).AddDays(-90)
-
-
-        Dim sql20 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia20 & "' ,103)  and convert (datetime, '" & ultimoDia20 & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
-        Dim dataadapter20 As New SqlDataAdapter(sql20, connection)
-        Dim ds20 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter20.Fill(ds20, "balcao")
-            connection.Close()
-            BalcaoDataGridView5.DataSource = ds20.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadeBalcao20 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
-            quantidadeBalcao20 += Linha.Cells(4).Value
-        Next
-
-        TextBox234.Text = quantidadeBalcao20
-       
-        ' ------------------------------------------------------------------------------------
-        ' Pesquisando as médias semanais [ semana 3 ]
-
-        Dim ano30 As Integer = Today.Year
-        Dim mes30 As Integer = Today.Month
-        Dim dia30 As Integer = Today.Day
-        Dim primeiroDia30 As DateTime = New DateTime(ano, mes, dia).AddDays(-150)
-        Dim ultimoDia30 As DateTime = New DateTime(ano, mes, dia).AddDays(-120)
-
-
-        Dim sql30 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia30 & "' ,103)  and convert (datetime, '" & ultimoDia30 & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
-        Dim dataadapter30 As New SqlDataAdapter(sql30, connection)
-        Dim ds30 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter30.Fill(ds30, "balcao")
-            connection.Close()
-            BalcaoDataGridView5.DataSource = ds30.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadeBalcao30 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
-            quantidadeBalcao30 += Linha.Cells(4).Value
-        Next
-
-        TextBox235.Text = quantidadeBalcao30
-       
-
-        ' ------------------------------------------------------------------------------------
-        ' Pesquisando as médias semanais [ semana 4 ]
-
-        Dim ano40 As Integer = Today.Year
-        Dim mes40 As Integer = Today.Month
-        Dim dia40 As Integer = Today.Day
-        Dim primeiroDia40 As DateTime = New DateTime(ano, mes, dia).AddDays(-28)
-        Dim ultimoDia40 As DateTime = New DateTime(ano, mes, dia).AddDays(-22)
-
-
-        Dim sql40 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia40 & "' ,103)  and convert (datetime, '" & ultimoDia40 & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
-        Dim dataadapter40 As New SqlDataAdapter(sql40, connection)
-        Dim ds40 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter40.Fill(ds40, "balcao")
-            connection.Close()
-            BalcaoDataGridView5.DataSource = ds40.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadeBalcao40 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
-            quantidadeBalcao40 += Linha.Cells(4).Value
-        Next
-
-        TextBox236.Text = quantidadeBalcao40
-        ' ------------------------------------------------------
-        ' somando as quatro semanas
-
-        TextBox237.Text = (quantidadeBalcao40 + quantidadeBalcao30 + quantidadeBalcao20 + quantidadeBalcao10)
-
-        ' ------------------------------------------------------
-        ' Pesquisando mês anterior
-
-        Dim ano50 As Integer = Today.Year
-        Dim mes50 As Integer = Today.Month
-        Dim dia50 As Integer = Today.Day
-        Dim primeiroDia50 As DateTime = New DateTime(ano, mes, dia).AddDays(-60)
-        Dim ultimoDia50 As DateTime = New DateTime(ano, mes, dia).AddDays(-30)
-
-
-        Select Case mes50 - 1
-            Case 0
-                Label305.Text = "Dezembro"
-                Label306.Text = "Novembro"
-
-                Label301.Text = "Outubro"
-                Label302.Text = "Setembro"
-                Label303.Text = "Agosto"
-                Label304.Text = "Julho"
-
-
-            Case 1
-                Label305.Text = "Janeiro"
-                Label306.Text = "Dezembro"
-                Label301.Text = "Novembro"
-                Label302.Text = "Outubro"
-                Label303.Text = "Setembro"
-                Label304.Text = "Agosto"
-            Case 2
-                Label305.Text = "Fevereiro"
-                Label306.Text = "Janeiro"
-
-                Label301.Text = "Dezembro"
-                Label302.Text = "Novembro"
-                Label303.Text = "Outubro"
-                Label304.Text = "Setembro"
-            Case 3
-                Label305.Text = "Março"
-                Label306.Text = "Fevereiro"
-
-                Label301.Text = "Janeiro"
-                Label302.Text = "Dezembro"
-                Label303.Text = "Novembro"
-                Label304.Text = "Outubro"
-
-            Case 4
-                Label305.Text = "Abril"
-                Label306.Text = "Março"
-
-                Label301.Text = "Fevereiro"
-                Label302.Text = "Janeiro"
-                Label303.Text = "Dezembro"
-                Label304.Text = "Novembro"
-
-            Case 5
-                Label305.Text = "Maio"
-                Label306.Text = "Abril"
-
-                Label301.Text = "Março"
-                Label302.Text = "Fevereiro"
-                Label303.Text = "Janeiro"
-                Label304.Text = "Dezembro"
-
-            Case 6
-                Label305.Text = "Junho"
-                Label306.Text = "Maio"
-
-                Label301.Text = "Abril"
-                Label302.Text = "Março"
-                Label303.Text = "Fevereiro"
-                Label304.Text = "Janeiro"
-
-
-            Case 7
-                Label305.Text = "Julho"
-                Label306.Text = "Junho"
-
-                Label301.Text = "Maio"
-                Label302.Text = "Abril"
-                Label303.Text = "Março"
-                Label304.Text = "Fevereiro"
-
-            Case 8
-                Label305.Text = "Agosto"
-                Label306.Text = "Julho"
-
-                Label301.Text = "Junho"
-                Label302.Text = "Maio"
-                Label303.Text = "Abril"
-                Label304.Text = "Março"
-
-            Case 9
-                Label305.Text = "Setembro"
-                Label306.Text = "Agosto"
-
-                Label301.Text = "Julho"
-                Label302.Text = "Junho"
-                Label303.Text = "Maio"
-                Label304.Text = "Abril"
-
-            Case 10
-                Label305.Text = "Outubro"
-                Label306.Text = "Setembro"
-
-                Label301.Text = "Agosto"
-                Label302.Text = "Julho"
-                Label303.Text = "Junho"
-                Label304.Text = "Maio"
-
-            Case 11
-                Label305.Text = "Novembro"
-                Label306.Text = "Outubro"
-
-                Label301.Text = "Setembro"
-                Label302.Text = "Agosto"
-                Label303.Text = "Julho"
-                Label304.Text = "Junho"
-            Case 12
-                Label305.Text = "dezembro"
-                Label306.Text = "Novembro"
-
-                Label301.Text = "Outubro"
-                Label302.Text = "Setembro"
-                Label303.Text = "Agosto"
-                Label304.Text = "Julho"
-
-        End Select
-
-
-        Dim sql50 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia50 & "' ,103)  and convert (datetime, '" & ultimoDia50 & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
-        Dim dataadapter50 As New SqlDataAdapter(sql50, connection)
-        Dim ds50 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter50.Fill(ds50, "balcao")
-            connection.Close()
-            BalcaoDataGridView5.DataSource = ds50.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        ' -----------------------------------
-        'somar quantidade da coluna da tabela balcão
-        Dim quantidadeBalcao50 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
-            quantidadeBalcao50 += Linha.Cells(4).Value
-        Next
-
-        TextBox238.Text = quantidadeBalcao50
-        ' --------------------------------------------------------------
-        ' gravando na coluna de produtos CrescimentoVendas_prod se o produto está crescendo ou não
-        Dim command5 As SqlCommand
-        command5 = connection.CreateCommand()
-        command5.CommandType = CommandType.Text
-        command5.CommandText = "update produtos set CrescimentoVendas_prod=@CrescimentoVendas_prod  where cod_prod=@codprod and cor_prod = @cor_prod "
-        command5.Parameters.Add("@codprod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
-        command5.Parameters.Add("@cor_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(4, v_SelectRow).Value.ToString()
-
-        Dim ValorMes As Integer = TextBox237.Text
-        Dim ValorMesAnterior As Integer = TextBox238.Text
-
-
-        If ValorMesAnterior > ValorMes Then
-            command5.Parameters.Add("@CrescimentoVendas_prod", SqlDbType.VarChar, 50).Value = "Negativo"
-        Else
-            command5.Parameters.Add("@CrescimentoVendas_prod", SqlDbType.VarChar, 50).Value = "Positivo"
-        End If
-
-        Try
-            connection.Open()
-            command5.ExecuteNonQuery()
-            connection.Close()
-
-        Catch ex As Exception
-            MessageBox.Show("Algo ocorreu errado")
-            MessageBox.Show(ex.ToString())
-
-        End Try
+      
 
     End Sub
 
@@ -15116,118 +14806,148 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command As SqlCommand
-        command = connection.CreateCommand()
-        '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-        command.CommandText = "SELECT * FROM VendasMlb WHERE NomeProduto_VendasMlb = '" & VendasMlbDataGridView.Item(13, 0).Value & "'"
+        Dim xx As Integer
 
-        command.CommandType = CommandType.Text
-        ' -----------------------------------------------------------------
-        ' Pego o nome do produto no arquivo vendasmlb 
-        Dim ApelidoProdutoMlb As String = ""
-        Dim QuantidadeVendidaMlb As String = ""
+        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
 
-        connection.Open()
-        Dim lrd As SqlDataReader = command.ExecuteReader()
+            command = connection.CreateCommand()
 
-        While lrd.Read
-            ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
-            QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb").ToString
-        End While
+            '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
+            command.CommandText = "SELECT * FROM VendasMlb WHERE NomeProduto_VendasMlb = '" & VendasMlbDataGridView.Item(13, xx).Value & "'"
 
-        connection.Close()
+            command.CommandType = CommandType.Text
+            ' -----------------------------------------------------------------
+            ' Pego o nome do produto no arquivo vendasmlb 
+            Dim ApelidoProdutoMlb As String = ""
+            Dim QuantidadeVendidaMlb As String = ""
 
-        txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
-        ' -----------------------------------------------------------------------------
-        ' Procura o valor no produto
-        Dim command2 As SqlCommand
-        command2 = connection.CreateCommand()
-        '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-        command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "'"
-
-        command2.CommandType = CommandType.Text
-        ' -----------------------------------------------------------------
-        ' Pego o valor do produto no arquivo produtos 
-        Dim ValorProduto As Double = 0
-        Dim CodigoProduto As String = ""
-        Dim FornecedorProduto As String = ""
-        Dim LinhaProduto As String = ""
-        Dim CorProduto As String = ""
-        Dim PrecoAtacadoProduto As Double = 0
-        Dim NomeProduto As String = ""
-        Dim CustoProduto As Double = 0
-        Dim IPIProduto As Double = 0
-
-        connection.Open()
-        Dim lrd2 As SqlDataReader = command2.ExecuteReader()
-
-        While lrd2.Read
-
-            ValorProduto = lrd2("precoatacado_prod").ToString
-            CodigoProduto = lrd2("cod_prod").ToString
-            FornecedorProduto = lrd2("fornecedor_prod").ToString
-            LinhaProduto = lrd2("linha_prod").ToString
-            CorProduto = lrd2("cor_prod").ToString
-            PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
-            NomeProduto = lrd2("nome_prod").ToString
-            CustoProduto = lrd2("custo_prod").ToString
-            IPIProduto = lrd2("ipi_prod").ToString
-
-
-        End While
-
-        connection.Close()
-        TextBox259.Text = ValorProduto
-        ' ---------------------------------------------------------------------------------
-        ' Faz o lançamento em vendas balcão
-        Dim command5 As SqlCommand
-        command5 = connection.CreateCommand()
-        command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
-        command5.CommandType = CommandType.Text
-
-        command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
-        command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
-        command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
-        command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
-        command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
-        command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
-        command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
-        command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
-        ' --------------------------------------------------------------------------------------------------------
-        command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
-        command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
-
-
-        ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
-        Dim TLProdBalcao As Double = QuantidadeVendidaMlb * PrecoAtacadoProduto
-        Dim TLProdBalcao2 As String = TLProdBalcao.ToString("F2")
-        command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
-        command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
-        command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = Date.Now
-        command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
-        command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
-
-        ' calcula o custo dos produtos
-        Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
-        Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
-        command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
-        ' calcula o lucro da operação
-        Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
-        Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
-        command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.Float).Value = LucroBalcao2
-
-        Try
             connection.Open()
-            command5.ExecuteNonQuery()
+            Dim lrd As SqlDataReader = command.ExecuteReader()
+
+            While lrd.Read
+                ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
+                QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb").ToString
+            End While
+
             connection.Close()
 
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-        End Try
-        ' ------------------------------------------------
+            txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
+            ' -----------------------------------------------------------------------------
+            ' Procura o valor no produto
+            Dim command2 As SqlCommand
+            command2 = connection.CreateCommand()
+            '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
+            command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "'"
 
-       
+            If False Then
+                Exit Sub
+            End If
+
+            command2.CommandType = CommandType.Text
+            ' -----------------------------------------------------------------
+            ' Pego o valor do produto no arquivo produtos 
+            Dim ValorProduto As Double = 0
+            Dim CodigoProduto As String = ""
+            Dim FornecedorProduto As String = ""
+            Dim LinhaProduto As String = ""
+            Dim CorProduto As String = ""
+            Dim PrecoAtacadoProduto As Double = 0
+            Dim NomeProduto As String = ""
+            Dim CustoProduto As Double = 0
+            Dim IPIProduto As Double = 0
+
+            connection.Open()
+            Dim lrd2 As SqlDataReader = command2.ExecuteReader()
+
+            While lrd2.Read
+
+                ValorProduto = lrd2("precoatacado_prod").ToString
+                CodigoProduto = lrd2("cod_prod").ToString
+                FornecedorProduto = lrd2("fornecedor_prod").ToString
+                LinhaProduto = lrd2("linha_prod").ToString
+                CorProduto = lrd2("cor_prod").ToString
+                PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
+                NomeProduto = lrd2("nome_prod").ToString
+                CustoProduto = lrd2("custo_prod").ToString
+                IPIProduto = lrd2("ipi_prod").ToString
+
+
+            End While
+
+            Try
+                If ValorProduto = null Then
+                Else
+                    MessageBox.Show("apelido errado")
+                    connection.Close()
+                    Exit Sub
+                End If
+
+                'Try
+                '    If lrd2.Read() = True Then
+                '    Else
+                '        MessageBox.Show("apelido errado")
+                '        connection.Close()
+                '        Exit Sub
+                '    End If
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+            connection.Close()
+            TextBox259.Text = ValorProduto
+            ' ---------------------------------------------------------------------------------
+            ' Faz o lançamento em vendas balcão
+            Dim command5 As SqlCommand
+            command5 = connection.CreateCommand()
+            command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
+            command5.CommandType = CommandType.Text
+
+            command5.Parameters.Clear()
+            command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
+            command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
+            command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
+            command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
+            command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
+            command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
+            command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
+            command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
+            command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
+            command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
+
+            ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
+            Dim TLProdBalcao As Double = QuantidadeVendidaMlb * PrecoAtacadoProduto
+            Dim TLProdBalcao2 As String = TLProdBalcao.ToString("F2")
+            command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
+            command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
+            command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = Date.Now
+            command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
+            command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
+
+            ' calcula o custo dos produtos
+            Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
+            Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
+            command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
+            ' calcula o lucro da operação
+            Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
+            Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
+            command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.Float).Value = LucroBalcao2
+
+            Try
+                connection.Open()
+                command5.ExecuteNonQuery()
+                connection.Close()
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+            ' ------------------------------------------------
+        Next
+
+
 
     End Sub
+
+   
 End Class
 
 

@@ -156,6 +156,7 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn235 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VendasMlbBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Busca = New System.Windows.Forms.GroupBox()
+        Me.TextBox259 = New System.Windows.Forms.TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txt_ultimadataatualizacao = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -357,18 +358,7 @@ Partial Class Form1
         Me.TextBox217 = New System.Windows.Forms.TextBox()
         Me.TabPage17 = New System.Windows.Forms.TabPage()
         Me.Panel39 = New System.Windows.Forms.Panel()
-        Me.TextBox238 = New System.Windows.Forms.TextBox()
-        Me.TextBox237 = New System.Windows.Forms.TextBox()
-        Me.Label306 = New System.Windows.Forms.Label()
-        Me.Label305 = New System.Windows.Forms.Label()
         Me.Label304 = New System.Windows.Forms.Label()
-        Me.Label303 = New System.Windows.Forms.Label()
-        Me.Label302 = New System.Windows.Forms.Label()
-        Me.Label301 = New System.Windows.Forms.Label()
-        Me.TextBox236 = New System.Windows.Forms.TextBox()
-        Me.TextBox235 = New System.Windows.Forms.TextBox()
-        Me.TextBox234 = New System.Windows.Forms.TextBox()
-        Me.TextBox233 = New System.Windows.Forms.TextBox()
         Me.Button81 = New System.Windows.Forms.Button()
         Me.Button80 = New System.Windows.Forms.Button()
         Me.GroupBox94 = New System.Windows.Forms.GroupBox()
@@ -2291,7 +2281,6 @@ Partial Class Form1
         Me.PedidoCompraTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter()
         Me.TesteTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter()
         Me.VendasMlbTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter()
-        Me.TextBox259 = New System.Windows.Forms.TextBox()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -3808,6 +3797,13 @@ Partial Class Form1
         Me.Busca.TabIndex = 484
         Me.Busca.TabStop = false
         Me.Busca.Text = "Busca"
+        '
+        'TextBox259
+        '
+        Me.TextBox259.Location = New System.Drawing.Point(356, 78)
+        Me.TextBox259.Name = "TextBox259"
+        Me.TextBox259.Size = New System.Drawing.Size(159, 22)
+        Me.TextBox259.TabIndex = 483
         '
         'Label22
         '
@@ -5686,18 +5682,7 @@ Partial Class Form1
         '
         Me.Panel39.AutoScroll = true
         Me.Panel39.BackColor = System.Drawing.Color.Gold
-        Me.Panel39.Controls.Add(Me.TextBox238)
-        Me.Panel39.Controls.Add(Me.TextBox237)
-        Me.Panel39.Controls.Add(Me.Label306)
-        Me.Panel39.Controls.Add(Me.Label305)
         Me.Panel39.Controls.Add(Me.Label304)
-        Me.Panel39.Controls.Add(Me.Label303)
-        Me.Panel39.Controls.Add(Me.Label302)
-        Me.Panel39.Controls.Add(Me.Label301)
-        Me.Panel39.Controls.Add(Me.TextBox236)
-        Me.Panel39.Controls.Add(Me.TextBox235)
-        Me.Panel39.Controls.Add(Me.TextBox234)
-        Me.Panel39.Controls.Add(Me.TextBox233)
         Me.Panel39.Controls.Add(Me.Button81)
         Me.Panel39.Controls.Add(Me.Button80)
         Me.Panel39.Controls.Add(Me.GroupBox94)
@@ -5711,101 +5696,14 @@ Partial Class Form1
         Me.Panel39.Size = New System.Drawing.Size(1296, 657)
         Me.Panel39.TabIndex = 0
         '
-        'TextBox238
-        '
-        Me.TextBox238.Location = New System.Drawing.Point(1176, 34)
-        Me.TextBox238.Name = "TextBox238"
-        Me.TextBox238.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox238.TabIndex = 30
-        '
-        'TextBox237
-        '
-        Me.TextBox237.Location = New System.Drawing.Point(1176, 10)
-        Me.TextBox237.Name = "TextBox237"
-        Me.TextBox237.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox237.TabIndex = 29
-        '
-        'Label306
-        '
-        Me.Label306.AutoSize = true
-        Me.Label306.Location = New System.Drawing.Point(1087, 38)
-        Me.Label306.Name = "Label306"
-        Me.Label306.Size = New System.Drawing.Size(70, 16)
-        Me.Label306.TabIndex = 28
-        Me.Label306.Text = "mês antes"
-        '
-        'Label305
-        '
-        Me.Label305.AutoSize = true
-        Me.Label305.Location = New System.Drawing.Point(1087, 13)
-        Me.Label305.Name = "Label305"
-        Me.Label305.Size = New System.Drawing.Size(83, 16)
-        Me.Label305.TabIndex = 27
-        Me.Label305.Text = "total mês ant"
-        '
         'Label304
         '
         Me.Label304.AutoSize = true
-        Me.Label304.Location = New System.Drawing.Point(1087, 142)
+        Me.Label304.Location = New System.Drawing.Point(929, 155)
         Me.Label304.Name = "Label304"
         Me.Label304.Size = New System.Drawing.Size(67, 16)
         Me.Label304.TabIndex = 26
         Me.Label304.Text = "semana 4"
-        '
-        'Label303
-        '
-        Me.Label303.AutoSize = true
-        Me.Label303.Location = New System.Drawing.Point(1087, 117)
-        Me.Label303.Name = "Label303"
-        Me.Label303.Size = New System.Drawing.Size(67, 16)
-        Me.Label303.TabIndex = 25
-        Me.Label303.Text = "semana 3"
-        '
-        'Label302
-        '
-        Me.Label302.AutoSize = true
-        Me.Label302.Location = New System.Drawing.Point(1087, 93)
-        Me.Label302.Name = "Label302"
-        Me.Label302.Size = New System.Drawing.Size(67, 16)
-        Me.Label302.TabIndex = 24
-        Me.Label302.Text = "semana 2"
-        '
-        'Label301
-        '
-        Me.Label301.AutoSize = true
-        Me.Label301.Location = New System.Drawing.Point(1069, 69)
-        Me.Label301.Name = "Label301"
-        Me.Label301.Size = New System.Drawing.Size(88, 16)
-        Me.Label301.TabIndex = 23
-        Me.Label301.Text = "semana 1 ant"
-        '
-        'TextBox236
-        '
-        Me.TextBox236.Location = New System.Drawing.Point(1161, 142)
-        Me.TextBox236.Name = "TextBox236"
-        Me.TextBox236.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox236.TabIndex = 22
-        '
-        'TextBox235
-        '
-        Me.TextBox235.Location = New System.Drawing.Point(1161, 114)
-        Me.TextBox235.Name = "TextBox235"
-        Me.TextBox235.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox235.TabIndex = 21
-        '
-        'TextBox234
-        '
-        Me.TextBox234.Location = New System.Drawing.Point(1161, 89)
-        Me.TextBox234.Name = "TextBox234"
-        Me.TextBox234.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox234.TabIndex = 20
-        '
-        'TextBox233
-        '
-        Me.TextBox233.Location = New System.Drawing.Point(1161, 63)
-        Me.TextBox233.Name = "TextBox233"
-        Me.TextBox233.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox233.TabIndex = 19
         '
         'Button81
         '
@@ -8923,7 +8821,7 @@ Partial Class Form1
         '
         'Cbx_vizuProd
         '
-        Me.Cbx_vizuProd.FormattingEnabled = True
+        Me.Cbx_vizuProd.FormattingEnabled = true
         Me.Cbx_vizuProd.Items.AddRange(New Object() {"Todos", "Preços", "Estoque"})
         Me.Cbx_vizuProd.Location = New System.Drawing.Point(6, 23)
         Me.Cbx_vizuProd.Name = "Cbx_vizuProd"
@@ -22621,13 +22519,6 @@ Partial Class Form1
         '
         Me.VendasMlbTableAdapter.ClearBeforeFill = true
         '
-        'TextBox259
-        '
-        Me.TextBox259.Location = New System.Drawing.Point(356, 78)
-        Me.TextBox259.Name = "TextBox259"
-        Me.TextBox259.Size = New System.Drawing.Size(159, 22)
-        Me.TextBox259.TabIndex = 483
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -25093,18 +24984,7 @@ End Sub
     Friend WithEvents Button84 As System.Windows.Forms.Button
     Friend WithEvents TextBox232 As System.Windows.Forms.TextBox
     Friend WithEvents Label300 As System.Windows.Forms.Label
-    Friend WithEvents TextBox238 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox237 As System.Windows.Forms.TextBox
-    Friend WithEvents Label306 As System.Windows.Forms.Label
-    Friend WithEvents Label305 As System.Windows.Forms.Label
     Friend WithEvents Label304 As System.Windows.Forms.Label
-    Friend WithEvents Label303 As System.Windows.Forms.Label
-    Friend WithEvents Label302 As System.Windows.Forms.Label
-    Friend WithEvents Label301 As System.Windows.Forms.Label
-    Friend WithEvents TextBox236 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox235 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox234 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox233 As System.Windows.Forms.TextBox
     Friend WithEvents Label307 As System.Windows.Forms.Label
     Friend WithEvents TextBox239 As System.Windows.Forms.TextBox
     Friend WithEvents Label308 As System.Windows.Forms.Label
