@@ -13678,13 +13678,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button74_Click(sender As Object, e As EventArgs) Handles Button74.Click
 
-        Estoqueatual_prodTextBox.Enabled = True
-
-        Button74.Enabled = False
-        Button75.Enabled = True
-        Button77.Enabled = False
-        TextBox245.Enabled = True
-        Estoqueatual_prodTextBox.Focus()
 
 
     End Sub
@@ -13708,72 +13701,21 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button75_Click(sender As Object, e As EventArgs) Handles Button75.Click
 
-        TextBox245.Text = 0
-
-
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-
-        Dim command As SqlCommand
-        command = connection.CreateCommand()
-
-        command.CommandText = "update produtos set estoqueatual_prod=@estoqueatual_prod, EmbalagemFabrica_prod=@EmbalagemFabrica_prod   where cod_prod=@cod_prod "
-        command.CommandType = CommandType.Text
-        command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = Cod_prodTextBox.Text
-        command.Parameters.Add("@estoqueatual_prod", SqlDbType.Float).Value = Estoqueatual_prodTextBox.Text
-        command.Parameters.Add("@EmbalagemFabrica_prod", SqlDbType.Float).Value = TextBox245.Text
-
-
-        ' a seguir comandos para gravar os ítens coletados do formulário ------------------
-        Try
-            connection.Open()
-            command.ExecuteNonQuery()
-            connection.Close()
-
-        Catch ex As Exception
-            MessageBox.Show("Algo ocorreu errado")
-            MessageBox.Show(ex.ToString())
-
-        Finally
-            connection.Close()
-        End Try
-
-        Estoqueatual_prodTextBox.Enabled = False
-        Button74.Enabled = True
-        Button75.Enabled = False
-        Button77.Enabled = True
-        TextBox245.Enabled = False
+      
 
 
     End Sub
 
     Private Sub Button76_Click(sender As Object, e As EventArgs) Handles Button76.Click
 
-        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        Dim date1 As New Date()
-        date1 = Date.Now
-        Dim ci As CultureInfo = CultureInfo.InvariantCulture
-        Dim datacodigo2 = date1.ToString("dd.MM.yyyy.hh", ci)
-        datacodigo2 = datacodigo2.Replace(".", "")
-
-        If codigoEntrada = datacodigo2 Then
-            Button74.Enabled = True
-            Button77.Enabled = True
-            Button76.Enabled = False
-
-        Else
-            Exit Sub
-        End If
+       
 
 
     End Sub
 
     Private Sub Button77_Click(sender As Object, e As EventArgs) Handles Button77.Click
 
-        Estoqueatual_prodTextBox.Enabled = False
-        Button74.Enabled = False
-        Button77.Enabled = False
-        Button76.Enabled = True
+      
 
 
 

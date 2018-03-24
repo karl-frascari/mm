@@ -8047,7 +8047,8 @@ Partial Class Form1
         '
         'TextBox233
         '
-        Me.TextBox233.Enabled = false
+        Me.TextBox233.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodigoMlb_prod", True))
+        Me.TextBox233.Enabled = False
         Me.TextBox233.Location = New System.Drawing.Point(287, 187)
         Me.TextBox233.Name = "TextBox233"
         Me.TextBox233.Size = New System.Drawing.Size(132, 22)
