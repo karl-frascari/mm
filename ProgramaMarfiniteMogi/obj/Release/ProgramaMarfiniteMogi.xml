@@ -6,7 +6,11 @@ ProgramaMarfiniteMogi
 </name>
 </assembly>
 <members>
-<member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoDataTable">
+<member name="T:ProgramaMarfiniteMogi.DataSetFinal.ApelidoErradoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -158,13 +162,17 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbDataTable">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ApelidoErradoRow">
 	<summary>
-Represents the strongly named DataTable class.
+Represents strongly named DataRow class.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRow">
 	<summary>
@@ -318,13 +326,17 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRow">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ApelidoErradoRowChangeEvent">
 	<summary>
-Represents strongly named DataRow class.
+Row event argument class
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.autorizacaoRowChangeEvent">
 	<summary>
@@ -478,17 +490,21 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRowChangeEvent">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal">
 	<summary>
 Represents a strongly typed in-memory cache of data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ApelidoErradoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.autorizacaoTableAdapter">
 	<summary>
@@ -642,11 +658,11 @@ Represents the connection and commands used to retrieve and save data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.vendedorTableAdapter">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter">
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.vendedorTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

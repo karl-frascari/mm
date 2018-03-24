@@ -14875,12 +14875,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             End While
 
             Try
-                If ValorProduto = null Then
-                Else
-                    MessageBox.Show("apelido errado")
-                    connection.Close()
-                    Exit Sub
-                End If
+                'If ValorProduto = null Then
+                'Else
+                '    MessageBox.Show("apelido errado")
+                '    connection.Close()
+                '    Exit Sub
+                'End If
 
                 'Try
                 '    If lrd2.Read() = True Then
