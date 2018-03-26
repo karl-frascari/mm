@@ -1374,6 +1374,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Cod_prodTextBox.Enabled = True
         menu_confirmarprod.Visible = False
         DesistirOperaçãoToolStripMenuItem2.Visible = True
+
         Codbarras_prodTextBox.Clear()
 
         TabControl1.TabPages.Remove(tbpg_clientes)
@@ -1402,13 +1403,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Precoatacado_prodTextBox.Enabled = False
         Estoquemin_prodTextBox.Enabled = False
         Estaquemax_prodTextBox.Enabled = False
-        Estoqueatual_prodTextBox.Enabled = False
         Pedcolocados_prodTextBox.Enabled = False
         Pedencomendados_prodTextBox.Enabled = False
         Tempoentragafor_prodTextBox.Enabled = False
         Porcentagemfat_prodTextBox.Enabled = False
         Abc_prodComboBox.Enabled = False
         Situacao_prodComboBox.Enabled = False
+        TextBox234.Enabled = False
 
 
     End Sub
@@ -1505,7 +1506,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Custo_prodTextBox.Clear()
         Classificfiscal_prodTextBox.Clear()
         Tabelafiscal_prodTextBox.Clear()
-        Estoqueatual_prodTextBox.Clear()
         Peso_prodTextBox.Clear()
         Estaquemax_prodTextBox.Clear()
         Estoquemin_prodTextBox.Clear()
@@ -1516,8 +1516,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Porcentagemfat_prodTextBox.Clear()
         DescontoFabrica_prodTextBox.Clear()
         TextBox231.Clear()
-
-
+        TextBox233.Clear()
+        TextBox245.Clear()
+        TextBox234.Clear()
 
         'combobox
         Nome_linhaComboBox.Text = ""
@@ -1543,7 +1544,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Custo_prodTextBox.Enabled = True
         Classificfiscal_prodTextBox.Enabled = True
         Tabelafiscal_prodTextBox.Enabled = True
-        Estoqueatual_prodTextBox.Enabled = True
+
         Peso_prodTextBox.Enabled = True
         Estaquemax_prodTextBox.Enabled = True
         Estoquemin_prodTextBox.Enabled = True
@@ -1554,7 +1555,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Porcentagemfat_prodTextBox.Enabled = True
         DescontoFabrica_prodTextBox.Enabled = True
         TextBox231.Enabled = True
-
+        TextBox233.Enabled = True
+        TextBox245.Enabled = True
+        TextBox234.Enabled = True
 
         'combobox
         Nome_linhaComboBox.Enabled = True
@@ -1582,7 +1585,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Custo_prodTextBox.Enabled = False
         Classificfiscal_prodTextBox.Enabled = False
         Tabelafiscal_prodTextBox.Enabled = False
-        Estoqueatual_prodTextBox.Enabled = False
+
         Peso_prodTextBox.Enabled = False
         Estaquemax_prodTextBox.Enabled = False
         Estoquemin_prodTextBox.Enabled = False
@@ -1595,7 +1598,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         DescontoFabrica_prodTextBox.Enabled = False
         TextBox230.Enabled = False
         TextBox231.Enabled = False
-        TextBox231.Enabled = False
+        TextBox233.Enabled = False
+        TextBox245.Enabled = False
+        TextBox234.Enabled = False
 
         'combobox
         Nome_linhaComboBox.Enabled = False
@@ -1717,7 +1722,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@estoqueminprod", SqlDbType.Float).Value = estoquemin
             Dim estoquemax = Convert.ToDouble(Estaquemax_prodTextBox.Text)
             command.Parameters.Add("@estaquemaxprod", SqlDbType.Float).Value = estoquemax
-            Dim estoqueatual = Convert.ToDouble(Estoqueatual_prodTextBox.Text)
+            Dim estoqueatual = Convert.ToDouble(TextBox234.Text)
             command.Parameters.Add("@estoqueatualprod", SqlDbType.Float).Value = estoqueatual
             'Dim icmsprod = Convert.ToDouble(Icms_prodTextBox.Text)
             command.Parameters.Add("@icmsprod", SqlDbType.Float).Value = 0
@@ -1802,7 +1807,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Markup_prodTextBox.Text = "0,00"
         Estaquemax_prodTextBox.Text = "0"
         Estoquemin_prodTextBox.Text = "0"
-        Estoqueatual_prodTextBox.Text = "0"
         Pedcolocados_prodTextBox.Text = "0"
         Pedencomendados_prodTextBox.Text = "0"
         TextBox253.Text = "0,00"
@@ -1814,8 +1818,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Situacao_prodComboBox.Text = "NORMAL"
         Abc_prodComboBox.Text = "c"
         TextBox231.Text = "0,00"
-
-
+        TextBox233.Text = "0"
+        TextBox245.Text = "0"
+        TextBox234.Text = "0"
 
     End Sub
     ' no clicar limpa o campo se estiver incluindo no campo preço varejo do produto.....
@@ -13655,21 +13660,21 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-    Private Sub Estoqueatual_prodTextBox_Validating(sender As Object, e As ComponentModel.CancelEventArgs) Handles Estoqueatual_prodTextBox.Validating
-        Dim currency As Decimal
+    Private Sub Estoqueatual_prodTextBox_Validating(sender As Object, e As ComponentModel.CancelEventArgs)
+        'Dim currency As Decimal
 
-        If Not Decimal.TryParse(Me.Estoqueatual_prodTextBox.Text,
-                                    Globalization.NumberStyles.Currency, Nothing, currency) Then
+        'If Not Decimal.TryParse(Me.Estoqueatual_prodTextBox.Text,
+        '                            Globalization.NumberStyles.Currency, Nothing, currency) Then
 
 
-            With Me.Estoqueatual_prodTextBox.HideSelection = False
-                Estoqueatual_prodTextBox.SelectAll()
-                MessageBox.Show("Entre com um valor válido", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Estoqueatual_prodTextBox.HideSelection = True
-                Estoqueatual_prodTextBox.Clear()
-            End With
-            e.Cancel = True
-        End If
+        '    With Me.Estoqueatual_prodTextBox.HideSelection = False
+        '        Estoqueatual_prodTextBox.SelectAll()
+        '        MessageBox.Show("Entre com um valor válido", "Valor inválido", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '        Estoqueatual_prodTextBox.HideSelection = True
+        '        Estoqueatual_prodTextBox.Clear()
+        '    End With
+        '    e.Cancel = True
+        'End If
     End Sub
 
    
@@ -14833,20 +14838,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 command15.Parameters.Clear()
                 command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
                
-
-             
                 Try
                     connection.Open()
                     command15.ExecuteNonQuery()
                     connection.Close()
-
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString())
                 End Try
             End If
         Next
-
-
 
     End Sub
 
