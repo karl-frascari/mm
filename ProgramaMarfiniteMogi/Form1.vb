@@ -969,7 +969,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             While lrd.Read()
 
                 'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:cNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
                     MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
                     Exit Sub
                 End If
@@ -1022,10 +1022,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
                 'REM gravar campos IDE
                 'verificar se existe o nó numero da noda cNf[acredito ser o numero da nf]
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:cNF", ns) Is Nothing Then
-                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = " sem número"
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns) Is Nothing Then
+                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = " sem "
                 Else
-                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:cNF", ns).InnerText
+                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
                 End If
 
                 'verificar se existe o nó dataEmi
@@ -1039,7 +1039,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 'REM gravar dest
                 'verificar se existe o nó nome cliente
                 If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:xNome", ns) Is Nothing Then
-                    command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = "sem Nome"
+                    command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
                     command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:xNome", ns).InnerText
                 End If
@@ -1503,9 +1503,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
 
             If flag = "incluir" Then
-                command.CommandText = "INSERT INTO produtos (cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+                command.CommandText = "INSERT INTO produtos (EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
             Else
-                command.CommandText = "update produtos set cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
+                command.CommandText = "update produtos set EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
             End If
 
             'REM calculando o preço varejo e atacado antes de salvar
@@ -1539,10 +1539,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@precoatacadoprod", SqlDbType.Float).Value = precoatacado
             Dim markup = Convert.ToDouble(Markup_prodTextBox.Text)
             command.Parameters.Add("@markupprod", SqlDbType.Float).Value = markup
-            ' ------------------------------------------------------------------------------
             command.Parameters.Add("@MarkupNET_prod", SqlDbType.Float).Value = TextBox253.Text
-
-            ' ------------------------------------------------------------------------------
             Dim estoquemin = Convert.ToDouble(Estoquemin_prodTextBox.Text)
             command.Parameters.Add("@estoqueminprod", SqlDbType.Float).Value = estoquemin
             Dim estoquemax = Convert.ToDouble(Estaquemax_prodTextBox.Text)
@@ -1579,10 +1576,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@foto_prod", SqlDbType.VarChar, 50).Value = ""
             command.Parameters.Add("@Subtituicao_tributaria", SqlDbType.Float).Value = TextBox231.Text
             command.Parameters.Add("@EmbalagemFabrica_prod", SqlDbType.VarChar, 50).Value = TextBox245.Text
-            command.Parameters.Add("@CodigoMlb_prod", SqlDbType.Float).Value = TextBox233.Text
-
-
+            command.Parameters.Add("@CodigoMlb_prod", SqlDbType.VarChar, 50).Value = TextBox233.Text
             ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+
             Try
                 connection.Open()
                 command.ExecuteNonQuery()
@@ -14561,156 +14557,154 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button94_Click(sender As Object, e As EventArgs) Handles Button94.Click
 
-        'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        'Dim command As SqlCommand
-        'Dim xx As Integer
-
-
-        'For xx = 0 To VendasMlbDataGridView.RowCount() - 1
-
-        '    command = connection.CreateCommand()
-
-        '    '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-        '    command.CommandText = "SELECT * FROM VendasMlb WHERE NomeProduto_VendasMlb = '" & VendasMlbDataGridView.Item(13, xx).Value & "'"
-
-        '    command.CommandType = CommandType.Text
-        '    ' -----------------------------------------------------------------
-        '    ' Pego o nome do produto no arquivo vendasmlb 
-        '    Dim ApelidoProdutoMlb As String = ""
-        '    Dim QuantidadeVendidaMlb As Double = 0
-        '    Dim DataVendaMlb As Date
-
-        '    ' ------------------------------------------------
-        '    'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
-        '    connection.Open()
-        '    Dim lrd As SqlDataReader = command.ExecuteReader()
-
-        '    While lrd.Read
-
-        '        ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
-        '        QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
-        '        DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
-
-        '    End While
-        '    connection.Close()
-        '    txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
-        '    ' -----------------------------------------------------------------------------
-        '    ' Procura o valor no produto
-        '    Dim command2 As SqlCommand
-        '    command2 = connection.CreateCommand()
-        '    '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-        '    command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "'"
-        '    command2.CommandType = CommandType.Text
-        '    ' -------------------------------------------------------------------
-        '    ' Pego o valor do produto no arquivo produtos 
-        '    Dim ValorProduto As Double = 0
-        '    Dim CodigoProduto As String = ""
-        '    Dim FornecedorProduto As String = ""
-        '    Dim LinhaProduto As String = ""
-        '    Dim CorProduto As String = ""
-        '    Dim PrecoAtacadoProduto As Double = 0
-        '    Dim NomeProduto As String = ""
-        '    Dim CustoProduto As Double = 0
-        '    Dim IPIProduto As Double = 0
-        '    Dim CodigoMlb As String = ""
-
-        '    ' -----------------------------------------------------------------
-        '    connection.Open()
-        '    Dim lrd2 As SqlDataReader = command2.ExecuteReader()
-
-        '            While lrd2.Read
-
-        '                ValorProduto = lrd2("precoatacado_prod").ToString
-        '                CodigoProduto = lrd2("cod_prod").ToString
-        '                FornecedorProduto = lrd2("fornecedor_prod").ToString
-        '                LinhaProduto = lrd2("linha_prod").ToString
-        '                CorProduto = lrd2("cor_prod").ToString
-        '                PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
-        '                NomeProduto = lrd2("nome_prod").ToString
-        '                CustoProduto = lrd2("custo_prod").ToString
-        '                IPIProduto = lrd2("ipi_prod").ToString
-        '        CodigoMlb = lrd2("CodigoMlb_prod").ToString
-
-        '    End While
+        Dim command As SqlCommand
+        Dim xx As Integer
 
 
+        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
 
-        '    connection.Close()
-        '    If NomeProduto <> "" Then
+            command = connection.CreateCommand()
+
+            '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
+            command.CommandText = "SELECT * FROM VendasMlb WHERE NomeProduto_VendasMlb = '" & VendasMlbDataGridView.Item(12, xx).Value & "'"
+
+            command.CommandType = CommandType.Text
+            ' -----------------------------------------------------------------
+            ' Pego o nome do produto no arquivo vendasmlb 
+            Dim ApelidoProdutoMlb As String = ""
+            Dim QuantidadeVendidaMlb As Double = 0
+            Dim DataVendaMlb As Date
+            Dim CodigoMlb As String = ""
+            Dim NumeroNota As String = ""
+
+            ' ------------------------------------------------
+            'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
+            connection.Open()
+            Dim lrd As SqlDataReader = command.ExecuteReader()
+
+            While lrd.Read
+
+                ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
+                QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
+                DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
+                CodigoMlb = lrd("CodigoMlb_VendasMlb").ToString
+                NumeroNota = lrd("NUmeroPedido2_VendasMlb").ToString
+
+            End While
+            connection.Close()
+            txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
+            ' -----------------------------------------------------------------------------
+            ' Procura o valor no produto
+            ' Pego o valor do produto no arquivo produtos 
+            Dim ValorProduto As Double = 0
+            Dim CodigoProduto As String = ""
+            Dim FornecedorProduto As String = ""
+            Dim LinhaProduto As String = ""
+            Dim CorProduto As String = ""
+            Dim PrecoAtacadoProduto As Double = 0
+            Dim NomeProduto As String = ""
+            Dim CustoProduto As Double = 0
+            Dim IPIProduto As Double = 0
+            Dim command2 As SqlCommand
+            command2 = connection.CreateCommand()
+            '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
+            command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "' or cod_prodfor = '" & CodigoMlb & "'"
+            command2.CommandType = CommandType.Text
+            ' -------------------------------------------------------------------
+            ' -----------------------------------------------------------------
+            connection.Open()
+            Dim lrd2 As SqlDataReader = command2.ExecuteReader()
+
+            While lrd2.Read
+
+                ValorProduto = lrd2("precoatacado_prod").ToString
+                CodigoProduto = lrd2("cod_prod").ToString
+                FornecedorProduto = lrd2("fornecedor_prod").ToString
+                LinhaProduto = lrd2("linha_prod").ToString
+                CorProduto = lrd2("cor_prod").ToString
+                PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
+                NomeProduto = lrd2("nome_prod").ToString
+                CustoProduto = lrd2("custo_prod").ToString
+                IPIProduto = lrd2("ipi_prod").ToString
 
 
-        '        TextBox259.Text = ValorProduto
-        '        ' ---------------------------------------------------------------------------------
-        '        ' Faz o lançamento em vendas balcão
-        '        Dim command5 As SqlCommand
-        '        command5 = connection.CreateCommand()
-        '        command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
-        '        command5.CommandType = CommandType.Text
+            End While
 
-        '        command5.Parameters.Clear()
-        '        command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
-        '        command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
-        '        command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
-        '        command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
-        '        command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
-        '        command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
-        '        command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
-        '        command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
-        '        command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
-        '        command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
-        '        command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = CodigoMlb
+            connection.Close()
+            If NomeProduto <> "" Then
 
-        '        ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
-        '        Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
-        '        Dim PrecoAtacado As Double = PrecoAtacadoProduto
-        '        Dim TLProdBalcao = QuantidadeVendidas * PrecoAtacado
-        '        Dim TLProdBalcao2 As String = TLProdBalcao.ToString
-        '        command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
-        '        command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
-        '        command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = DataVendaMlb
-        '        command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
-        '        command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
+                ' ---------------------------------------------------------------------------------
+                ' Faz o lançamento em vendas balcão
+                Dim command5 As SqlCommand
+                command5 = connection.CreateCommand()
+                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,CodigoMlb_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @CodigoMlb_balcao)"
+                command5.CommandType = CommandType.Text
 
-        '        ' calcula o custo dos produtos
-        '        Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
-        '        Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
-        '        command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
-        '        ' calcula o lucro da operação
-        '        Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
-        '        Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
-        '        command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.VarChar, 50).Value = LucroBalcao2
+                command5.Parameters.Clear()
+                command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
+                command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
+                command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
+                command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
+                command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
+                command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
+                command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
+                command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
+                command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
+                command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
+                command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota
 
-        '        Try
-        '            connection.Open()
-        '            command5.ExecuteNonQuery()
-        '            connection.Close()
+                ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
+                Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
+                Dim PrecoAtacado As Double = PrecoAtacadoProduto
+                Dim TLProdBalcao = QuantidadeVendidas * PrecoAtacado
+                Dim TLProdBalcao2 As String = TLProdBalcao.ToString
+                command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
+                command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
+                command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = DataVendaMlb
+                command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
+                command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
 
-        '        Catch ex As Exception
-        '            MessageBox.Show(ex.ToString())
-        '        End Try
-        '        ' ------------------------------------------------
-        '    Else
-        '        Dim command15 As SqlCommand
-        '        command15 = connection.CreateCommand()
-        '        command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
-        '        command15.CommandType = CommandType.Text
+                ' calcula o custo dos produtos
+                Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
+                Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
+                command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
+                ' calcula o lucro da operação
+                Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
+                Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
+                command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.VarChar, 50).Value = LucroBalcao2
 
-        '        command15.Parameters.Clear()
-        '        command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
-        '        command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
+                Try
+                    connection.Open()
+                    command5.ExecuteNonQuery()
+                    connection.Close()
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                End Try
+                ' ------------------------------------------------
+            Else
+                Dim command15 As SqlCommand
+                command15 = connection.CreateCommand()
+                command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
+                command15.CommandType = CommandType.Text
+
+                command15.Parameters.Clear()
+                command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
+                command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
 
 
-        '        Try
-        '            connection.Open()
-        '            command15.ExecuteNonQuery()
-        '            connection.Close()
-        '        Catch ex As Exception
-        '            MessageBox.Show(ex.ToString())
-        '        End Try
-        '    End If
-        'Next
+                Try
+                    connection.Open()
+                    command15.ExecuteNonQuery()
+                    connection.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                End Try
+            End If
+        Next
 
     End Sub
 
