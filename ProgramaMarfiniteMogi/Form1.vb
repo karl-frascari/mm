@@ -963,13 +963,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
             con.Open()
             cmd.Connection = con
-            cmd.CommandText = "SELECT numeronota_nfe from nfefornecedor"
+            cmd.CommandText = "SELECT NUmeroPedido2_VendasMlb from VendasMlb"
             Dim lrd As SqlDataReader = cmd.ExecuteReader()
 
             While lrd.Read()
 
                 'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText = lrd("numeronota_nfe").ToString Then
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:cNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
                     MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
                     Exit Sub
                 End If
@@ -1014,296 +1014,124 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.Parameters.Clear()
-            command.CommandText = "INSERT INTO nfefornecedor (CPF_clientenfe,CNPJ_clientenfe,numeronota_nfe,natOp_naturezaoperacaonfe,dEmi_dataemissaonfe,CNPJ_emissornfe,xNome_razaoemissornfe,xFant_nomefantasiaemissornfe,xLgr_logradouroemissornfe,nro_numeroruaemissornfe,xCpl_complentoenderecoemissornfe,xBairro_bairroemissornfe,xMun_municipioemissornfe,UF_estadoemissornfe,CEP_emissornfe,fone_emissornfe,xNome_nomedoclientenfe,numerodoNCM_nfe,cProd_codigoprodfornfe,cEAN_codigobarraprodfornfe,xProd_nomeprodutonfe,CFOP_naturezadavendaprodnfe,qCom_quantidadeprodutonfe,vUnCom_vrtotalprodutoitemnfe,vprod_vrunitarioprodnfe,pICMS_aliquotaicmsitemprodnfe,vICMS_vrunitarioprodnfe,pIPI_aliquitaipiprodnfe,vIPI_vripiprodnfe,pPIS_aliquotaPISnfe,vPIS_vrPISnfe,pCOFINS_aliquotaCONFINSnfe,vCOFINS_vrCOFINSnfe,xNome_nometransportadoranfe,xEnder_enderecotransportadoranfe,xMun_municipiotransportadoranfe,UF_estadotransportadoranfe,nFat_numerofaturanfe,vLiq_vrfaturanfe,nDup1_numeroduplicatanfe,dVen1_datavencimentodupnfe,vDup1_vrdupnfe,nDup2_muneroduplicatanfe,dVen2_datavencimentodupnfe,vDup2_vrdupnfe,nDup3_numerodupnfe,dVen3_datavencimentodupnfe,vDup3_vrdupnfe,nDup4_numerodupnfe,dVen4_datavencimentodupnfe,vDup4_vrdupnfe,nDup5_numerodupnfe,dVen5_datavencimentodupnfe,vDup5_vrdupnfe) Values (@CPF_clientenfe,@CNPJ_clientenfe,@numeronota_nfe,@natOp_naturezaoperacaonfe,@dEmi_dataemissaonfe,@CNPJ_emissornfe,@xNome_razaoemissornfe,@xFant_nomefantasiaemissornfe,@xLgr_logradouroemissornfe,@nro_numeroruaemissornfe,@xCpl_complentoenderecoemissornfe,@xBairro_bairroemissornfe,@xMun_municipioemissornfe,@UF_estadoemissornfe,@CEP_emissornfe,@fone_emissornfe,@xNome_nomedoclientenfe,@numerodoNCM_nfe,@cProd_codigoprodfornfe,@cEAN_codigobarraprodfornfe,@xProd_nomeprodutonfe,@CFOP_naturezadavendaprodnfe,@qCom_quantidadeprodutonfe,@vUnCom_vrtotalprodutoitemnfe,@vprod_vrunitarioprodnfe,@pICMS_aliquotaicmsitemprodnfe,@vICMS_vrunitarioprodnfe,@pIPI_aliquitaipiprodnfe,@vIPI_vripiprodnfe,@pPIS_aliquotaPISnfe,@vPIS_vrPISnfe,@pCOFINS_aliquotaCONFINSnfe,@vCOFINS_vrCOFINSnfe,@xNome_nometransportadoranfe,@xEnder_enderecotransportadoranfe,@xMun_municipiotransportadoranfe,@UF_estadotransportadoranfe,@nFat_numerofaturanfe,@vLiq_vrfaturanfe,@nDup1_numeroduplicatanfe,@dVen1_datavencimentodupnfe,@vDup1_vrdupnfe,@nDup2_numeroduplicatanfe,@dVen2_datavencimentodupnfe,@vDup2_vrdupnfe,@nDup3_numeroduplicatanfe,@dVen3_datavencimentodupnfe,@vDup3_vrdupnfe,@nDup4_numeroduplicatanfe,@dVen4_datavencimentodupnfe,@vDup4_vrdupnfe,@nDup5_numeroduplicatanfe,@dVen5_datavencimentodupnfe,@vDup5_vrdupnfe)"
+            command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb,DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMlb,NumeroRua_VendasMlb,Complemento_VendasMlb,Bairro_VendasMlb,Fone_VendasMlb,NomeProduto_VendasMlb,QuantidadeVendida_VendasMlb,VrUnitario_VendasMlb,CodigoMlb_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMlb,@NumeroRua_VendasMlb,@Complemento_VendasMlb,@Bairro_VendasMlb,@Fone_VendasMlb,@NomeProduto_VendasMlb,@QuantidadeVendida_VendasMlb,@VrUnitario_VendasMlb,@CodigoMlb_VendasMlb)"
 
 
             Try
                 command.CommandType = CommandType.Text
 
                 'REM gravar campos IDE
-                'verificar se existe o nó numero da noda nNf
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns) Is Nothing Then
-                    command.Parameters.Add("@numeronota_nfe", SqlDbType.VarChar, 50).Value = " sem número"
+                'verificar se existe o nó numero da noda cNf[acredito ser o numero da nf]
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:cNF", ns) Is Nothing Then
+                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = " sem número"
                 Else
-                    command.Parameters.Add("@numeronota_nfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:cNF", ns).InnerText
                 End If
 
-                'verificar se existe o nó natOp
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:natOp", ns) Is Nothing Then
-                    command.Parameters.Add("@natOp_naturezaoperacaonfe", SqlDbType.VarChar, 50).Value = "sem natureza"
+                'verificar se existe o nó dataEmi
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dhEmi", ns) Is Nothing Then
+                    command.Parameters.Add("@DataPedido_VendasMlb", SqlDbType.VarChar, 50).Value = Date.Today
                 Else
-                    command.Parameters.Add("@natOp_naturezaoperacaonfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:natOp", ns).InnerText
-                End If
-
-                'verificar se existe o nó dEmi
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns) Is Nothing Then
-                    command.Parameters.Add("@dEmi_dataemissaonfe", SqlDbType.VarChar, 50).Value = Date.Today
-                Else
-                    command.Parameters.Add("@dEmi_dataemissaonfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns).InnerText
+                    command.Parameters.Add("@DataPedido_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dhEmi", ns).InnerText
                 End If
                 'REM ----------------------------------------------------------------------------
 
-                'REM gravar EMIT
-                'verificar se existe o nó cnpj
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:CNPJ", ns) Is Nothing Then
-                    command.Parameters.Add("@CNPJ_emissornfe", SqlDbType.VarChar, 50).Value = "sem CNPJ"
+                'REM gravar dest
+                'verificar se existe o nó nome cliente
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:xNome", ns) Is Nothing Then
+                    command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = "sem Nome"
                 Else
-                    command.Parameters.Add("@CNPJ_emissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:CNPJ", ns).InnerText
+                    command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:xNome", ns).InnerText
                 End If
 
-                'verificar se existe OCNPJ CLIENTE É CNPJ MESMO OU É RG
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:CNPJ", ns) Is Nothing Then
-                    command.Parameters.Add("@CNPJ_clientenfe", SqlDbType.VarChar, 50).Value = "sem CNPJ"
+                ''verificar se existe o CEP
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:CEP", ns) Is Nothing Then
+                    command.Parameters.Add("@CEP_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
 
                 Else
-                    command.Parameters.Add("@CNPJ_clientenfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:CNPJ", ns).InnerText
+                    command.Parameters.Add("@CEP_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:CEP", ns).InnerText
                 End If
 
-                'reM GRAVAR O CPF
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:CPF", ns) Is Nothing Then
-                    command.Parameters.Add("@CPF_clientenfe", SqlDbType.VarChar, 50).Value = "Sem CPF "
+                ''rem gravar municipio
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xMun", ns) Is Nothing Then
+                    command.Parameters.Add("@Municipio_VendasMlb", SqlDbType.VarChar, 50).Value = "Sem  "
 
                 Else
-                    command.Parameters.Add("@CPF_clientenfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:CPF", ns).InnerText
+                    command.Parameters.Add("@Municipio_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xMun", ns).InnerText
 
                 End If
 
-                'verifica se existe o nó da razaõ social
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:xNome", ns) Is Nothing Then
-                    command.Parameters.Add("@xNome_razaoemissornfe", SqlDbType.VarChar, 50).Value = "sem razão social"
+                ''verifica se existe o nó do Estado
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:UF", ns) Is Nothing Then
+                    command.Parameters.Add("@Estado_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@xNome_razaoemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:xNome", ns).InnerText
+                    command.Parameters.Add("@Estado_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:UF", ns).InnerText
                 End If
 
-                'verifica se existe o nó do nome fantasia
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:xFant", ns) Is Nothing Then
-                    command.Parameters.Add("@xFant_nomefantasiaemissornfe", SqlDbType.VarChar, 50).Value = "sem"
+                ''verifica se existe o nó o nome da rua
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xLgr", ns) Is Nothing Then
+                    command.Parameters.Add("@Endereco_VendasMlb", SqlDbType.VarChar, 50).Value = "sem"
                 Else
-                    command.Parameters.Add("@xFant_nomefantasiaemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:xFant", ns).InnerText
+                    command.Parameters.Add("@Endereco_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xLgr", ns).InnerText
                 End If
                 'Rem -------------------------------------------------------------------------
 
-                'Rem gravar enderEmit
-                'verifica se existe o nó do xLgr logradouro
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xLgr", ns) Is Nothing Then
+
+                'verifica se existe o numero da rua
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:nro", ns) Is Nothing Then
                     'REM gravar enderEmit
-                    command.Parameters.Add("@xLgr_logradouroemissornfe", SqlDbType.VarChar, 50).Value = "sem rua"
+                    command.Parameters.Add("@NumeroRua_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@xLgr_logradouroemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xLgr", ns).InnerText
+                    command.Parameters.Add("@NumeroRua_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:nro", ns).InnerText
                 End If
 
-                'verifica se existe o nó nro número da rua
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:nro", ns) Is Nothing Then
-                    command.Parameters.Add("@nro_numeroruaemissornfe", SqlDbType.VarChar, 50).Value = "sem numero"
+                ''verifica se existe o complemento de endereço
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xCpl", ns) Is Nothing Then
+                    command.Parameters.Add("@Complemento_VendasMlb", SqlDbType.VarChar, 50).Value = "sem numero"
                 Else
-                    command.Parameters.Add("@nro_numeroruaemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:nro", ns).InnerText
+                    command.Parameters.Add("@Complemento_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xCpl", ns).InnerText
                 End If
 
-                'verifica se existe o nó xCpl o complemento do endereço
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xCpl", ns) Is Nothing Then
-                    command.Parameters.Add("@xCpl_complentoenderecoemissornfe", SqlDbType.VarChar, 50).Value = "sem complemento"
+                ''verifica se existe o nó xCpl o complemento do endereço
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xBairro", ns) Is Nothing Then
+                    command.Parameters.Add("@Bairro_VendasMlb", SqlDbType.VarChar, 50).Value = "sem complemento"
                 Else
-                    command.Parameters.Add("@xCpl_complentoenderecoemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xCpl", ns).InnerText
+                    command.Parameters.Add("@Bairro_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:xBairro", ns).InnerText
                 End If
 
-                'verifica se existe o nó xBairro o nome do bairro
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xBairro", ns) Is Nothing Then
-                    command.Parameters.Add("@xBairro_bairroemissornfe", SqlDbType.VarChar, 50).Value = "sem bairro"
+                ''verifica se existe o nó xBairro o nome do bairro
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:fone", ns) Is Nothing Then
+                    command.Parameters.Add("@Fone_VendasMlb", SqlDbType.VarChar, 50).Value = "sem bairro"
                 Else
-                    command.Parameters.Add("@xBairro_bairroemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xBairro", ns).InnerText
+                    command.Parameters.Add("@Fone_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:enderDest/nfe:fone", ns).InnerText
                 End If
 
-                'verifica se existe o nó xMun o nome do município 
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xMun", ns) Is Nothing Then
-                    command.Parameters.Add("@xMun_municipioemissornfe", SqlDbType.VarChar, 50).Value = "sem município"
+                ' nome do produto
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:xProd", ns) Is Nothing Then
+                    command.Parameters.Add("@NomeProduto_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@xMun_municipioemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:xMun", ns).InnerText
+                    command.Parameters.Add("@NomeProduto_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:xProd", ns).InnerText
                 End If
 
-                'verifica se existe o nó do estado
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:UF", ns) Is Nothing Then
-                    command.Parameters.Add("@UF_estadoemissornfe", SqlDbType.VarChar, 50).Value = "sem estado"
+                ' quantidade vendida
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:qCom", ns) Is Nothing Then
+                    command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@UF_estadoemissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:UF", ns).InnerText
+                    command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:qCom", ns).InnerText
                 End If
 
-                'verifica se existe o nó do cep
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:CEP", ns) Is Nothing Then
-                    command.Parameters.Add("@CEP_emissornfe", SqlDbType.VarChar, 50).Value = "SEM CEP"
+                ' Valor Unitátio
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vUnCom", ns) Is Nothing Then
+                    command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@CEP_emissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:CEP", ns).InnerText
+                    command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vUnCom", ns).InnerText
                 End If
 
-                'verifica se existe o nó do fone
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:fone", ns) Is Nothing Then
-                    command.Parameters.Add("@fone_emissornfe", SqlDbType.VarChar, 50).Value = "sem fone"
+                ' codigo produto
+                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cProd", ns) Is Nothing Then
+                    command.Parameters.Add("@CodigoMlb_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@fone_emissornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:enderEmit/nfe:fone", ns).InnerText
-                End If
-                'REM -------------------------------------------------------------------------
-                'verifica se existe o nó do NOME DO CLIENTE
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:xNome", ns) Is Nothing Then
-                    command.Parameters.Add("@xNome_nomedoclientenfe", SqlDbType.VarChar, 50).Value = "sem nome"
-                Else
-                    command.Parameters.Add("@xNome_nomedoclientenfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:dest/nfe:xNome", ns).InnerText
-                End If
-                '----------------------------------------------------
-                'REM gravar prod
-                command.Parameters.Add("@numerodoNCM_nfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:NCM", ns).InnerText
-                command.Parameters.Add("@cProd_codigoprodfornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cProd", ns).InnerText
-
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cEAN", ns) Is Nothing Then
-                    command.Parameters.Add("@cEAN_codigobarraprodfornfe", SqlDbType.VarChar, 50).Value = "sem número"
-                Else
-                    command.Parameters.Add("@cEAN_codigobarraprodfornfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cEAN", ns).InnerText
-                End If
-
-
-
-                command.Parameters.Add("@xProd_nomeprodutonfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:xProd", ns).InnerText
-                command.Parameters.Add("@CFOP_naturezadavendaprodnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:CFOP", ns).InnerText
-                command.Parameters.Add("@qCom_quantidadeprodutonfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:qCom", ns).InnerText
-                command.Parameters.Add("@vUnCom_vrtotalprodutoitemnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vUnCom", ns).InnerText
-                command.Parameters.Add("@vprod_vrunitarioprodnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vProd", ns).InnerText
-
-                ' REM gravar o ICMS
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:ICMS/nfe:ICMS00/nfe:pICMS", ns) Is Nothing Or
-                            xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:ICMS/nfe:ICMS00/nfe:vICMS", ns) Is Nothing Then
-                    'Rem gravar imposto ICMS ICMS00
-                    command.Parameters.Add("@pICMS_aliquotaicmsitemprodnfe", SqlDbType.VarChar, 50).Value = "sem ICMS"
-                    command.Parameters.Add("@vICMS_vrunitarioprodnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    'Rem gravar imposto ICMS ICMS00
-                    command.Parameters.Add("@pICMS_aliquotaicmsitemprodnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:ICMS/nfe:ICMS00/nfe:pICMS", ns).InnerText
-                    command.Parameters.Add("@vICMS_vrunitarioprodnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:ICMS/nfe:ICMS00/nfe:vICMS", ns).InnerText
-                End If
-                'REM -------------------------------------------------------------------------------
-
-                ' REM gravar o IPI
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:IPI/nfe:IPITrib/nfe:pIPI", ns) Is Nothing Or
-                    xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:IPI/nfe:IPITrib/nfe:vIPI", ns) Is Nothing Then
-
-                    command.Parameters.Add("@pIPI_aliquitaipiprodnfe", SqlDbType.VarChar, 50).Value = 0
-                    command.Parameters.Add("@vIPI_vripiprodnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@pIPI_aliquitaipiprodnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:IPI/nfe:IPITrib/nfe:pIPI", ns).InnerText
-                    command.Parameters.Add("@vIPI_vripiprodnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:IPI/nfe:IPITrib/nfe:vIPI", ns).InnerText
-                End If
-                'REM ----------------------------------------------------------------
-
-                'REM gravar o PIS
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:PIS/nfe:PISAliq/nfe:pPIS", ns) Is Nothing Or
-                     xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:PIS/nfe:PISAliq/nfe:vPIS", ns) Is Nothing Then
-
-                    command.Parameters.Add("@pPIS_aliquotaPISnfe", SqlDbType.VarChar, 50).Value = 0
-                    command.Parameters.Add("@vPIS_vrPISnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@pPIS_aliquotaPISnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:PIS/nfe:PISAliq/nfe:pPIS", ns).InnerText
-                    command.Parameters.Add("@vPIS_vrPISnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:PIS/nfe:PISAliq/nfe:vPIS", ns).InnerText
-                End If
-                'REm --------------------------------------------------------
-
-                'REm aliquota de pis
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:COFINS/nfe:COFINSAliq/nfe:pCOFINS", ns) Is Nothing Or
-                    xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:COFINS/nfe:COFINSAliq/nfe:vCOFINS", ns) Is Nothing Then
-
-                    command.Parameters.Add("@pCOFINS_aliquotaCONFINSnfe", SqlDbType.VarChar, 50).Value = 0
-                    command.Parameters.Add("@vCOFINS_vrCOFINSnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@pCOFINS_aliquotaCONFINSnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:COFINS/nfe:COFINSAliq/nfe:pCOFINS", ns).InnerText
-                    command.Parameters.Add("@vCOFINS_vrCOFINSnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det/nfe:imposto/nfe:COFINS/nfe:COFINSAliq/nfe:vCOFINS", ns).InnerText
-                End If
-                'REm ------------------------------------------------------------------
-
-                'REM gravar TRANSP TRANSPORTADORA
-                'verificar se eexsite o nó xNome o nome da transportadora
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xNome", ns) Is Nothing Then
-                    command.Parameters.Add("@xNome_nometransportadoranfe", SqlDbType.VarChar, 50).Value = "Sem Transportadora "
-                Else
-                    command.Parameters.Add("@xNome_nometransportadoranfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xNome", ns).InnerText
-                End If
-
-                'verificar se exsiste o xEnder o endereço da transportadora
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xEnder", ns) Is Nothing Or
-                    xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xEnder", ns) Is Nothing Or
-                    xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xEnder", ns) Is Nothing Then
-
-                    command.Parameters.Add("@xEnder_enderecotransportadoranfe", SqlDbType.VarChar, 50).Value = "sem endereço"
-                    command.Parameters.Add("@xMun_municipiotransportadoranfe", SqlDbType.VarChar, 50).Value = "sem endereço"
-                    command.Parameters.Add("@UF_estadotransportadoranfe", SqlDbType.VarChar, 50).Value = "sem endereço"
-                Else
-                    command.Parameters.Add("@xEnder_enderecotransportadoranfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xEnder", ns).InnerText
-                    command.Parameters.Add("@xMun_municipiotransportadoranfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:xMun", ns).InnerText
-                    command.Parameters.Add("@UF_estadotransportadoranfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:transp/nfe:transporta/nfe:UF", ns).InnerText
-                End If
-                'Rem ---------------------------------------------------------
-
-                'REm gravar a fatura
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:fat/nfe:nFat", ns) Is Nothing Or
-                    xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:fat/nfe:vLiq", ns) Is Nothing Then
-
-                    command.Parameters.Add("@nFat_numerofaturanfe", SqlDbType.VarChar, 50).Value = "sem"
-                    command.Parameters.Add("@vLiq_vrfaturanfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@nFat_numerofaturanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:fat/nfe:nFat", ns).InnerText
-                    command.Parameters.Add("@vLiq_vrfaturanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:fat/nfe:vLiq", ns).InnerText
-                End If
-                'REM --------------------------------------------------------
-
-                'REm gravar as duplicatas
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup/nfe:nDup", ns) Is Nothing Then
-
-                    command.Parameters.Add("@nDup1_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = "sem"
-                    command.Parameters.Add("@dVen1_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns).InnerText
-                    command.Parameters.Add("@vDup1_vrdupnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@nDup1_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup/nfe:nDup", ns).InnerText
-                    command.Parameters.Add("@dVen1_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup/nfe:dVenc", ns).InnerText
-                    command.Parameters.Add("@vDup1_vrdupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup/nfe:vDup", ns).InnerText
-                End If
-
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[2]/nfe:nDup", ns) Is Nothing Then
-
-                    command.Parameters.Add("@nDup2_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = "sem"
-                    command.Parameters.Add("@dVen2_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns).InnerText
-                    command.Parameters.Add("@vDup2_vrdupnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@nDup2_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[2]/nfe:nDup", ns).InnerText
-                    command.Parameters.Add("@dVen2_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[2]/nfe:dVenc", ns).InnerText
-                    command.Parameters.Add("@vDup2_vrdupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[2]/nfe:vDup", ns).InnerText
-                End If
-
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[3]/nfe:nDup", ns) Is Nothing Then
-
-                    command.Parameters.Add("@nDup3_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = "sem"
-                    command.Parameters.Add("@dVen3_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns).InnerText
-                    command.Parameters.Add("@vDup3_vrdupnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@nDup3_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[3]/nfe:nDup", ns).InnerText
-                    command.Parameters.Add("@dVen3_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[3]/nfe:dVenc", ns).InnerText
-                    command.Parameters.Add("@vDup3_vrdupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[3]/nfe:vDup", ns).InnerText
-                End If
-
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[4]/nfe:nDup", ns) Is Nothing Then
-
-                    command.Parameters.Add("@nDup4_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = "sem"
-                    command.Parameters.Add("@dVen4_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns).InnerText
-                    command.Parameters.Add("@vDup4_vrdupnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@nDup4_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[4]/nfe:nDup", ns).InnerText
-                    command.Parameters.Add("@dVen4_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[4]/nfe:dVenc", ns).InnerText
-                    command.Parameters.Add("@vDup4_vrdupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[4]/nfe:vDup", ns).InnerText
-                End If
-
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[5]/nfe:nDup", ns) Is Nothing Then
-
-                    command.Parameters.Add("@nDup5_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = "sem"
-                    command.Parameters.Add("@dVen5_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:dEmi", ns).InnerText
-                    command.Parameters.Add("@vDup5_vrdupnfe", SqlDbType.VarChar, 50).Value = 0
-                Else
-                    command.Parameters.Add("@nDup5_numeroduplicatanfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[5]/nfe:nDup", ns).InnerText
-                    command.Parameters.Add("@dVen5_datavencimentodupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[5]/nfe:dVenc", ns).InnerText
-                    command.Parameters.Add("@vDup5_vrdupnfe", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:cobr/nfe:dup[5]/nfe:vDup", ns).InnerText
+                    command.Parameters.Add("@CodigoMlb_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cProd", ns).InnerText
                 End If
                 'Rem ---------- fim da leitura da nota xml
 
@@ -1320,19 +1148,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Try
                 connection.Open()
                 command.ExecuteNonQuery()
-
-                Me.NfefornecedorTableAdapter.Fill(Me.DataSetFinal.nfefornecedor)
-
                 connection.Close()
 
                 ''#Insert some code here, woo
             Catch ex As Exception
-                MessageBox.Show("Algo ocorreu errado")
                 MessageBox.Show(ex.ToString())
             Finally
                 connection.Close()
             End Try
         Next
+        Me.VendasMlbTableAdapter.Fill(Me.DataSetFinal.VendasMlb)
 
     End Sub
 
@@ -1409,7 +1234,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Porcentagemfat_prodTextBox.Enabled = False
         Abc_prodComboBox.Enabled = False
         Situacao_prodComboBox.Enabled = False
-        TextBox234.Enabled = False
+        '  TextBox234.Enabled = False
 
 
     End Sub
@@ -1753,6 +1578,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@DescontoFabrica_prod", SqlDbType.VarChar, 50).Value = DescontoFabrica_prodTextBox.Text
             command.Parameters.Add("@foto_prod", SqlDbType.VarChar, 50).Value = ""
             command.Parameters.Add("@Subtituicao_tributaria", SqlDbType.Float).Value = TextBox231.Text
+            command.Parameters.Add("@EmbalagemFabrica_prod", SqlDbType.VarChar, 50).Value = TextBox245.Text
+            command.Parameters.Add("@CodigoMlb_prod", SqlDbType.Float).Value = TextBox233.Text
 
 
             ' a seguir comandos para gravar os ítens coletados do formulário ------------------
@@ -1820,7 +1647,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox231.Text = "0,00"
         TextBox233.Text = "0"
         TextBox245.Text = "0"
-        TextBox234.Text = "0"
+        ' TextBox234.Text = "0"
 
     End Sub
     ' no clicar limpa o campo se estiver incluindo no campo preço varejo do produto.....
@@ -14602,99 +14429,131 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button93_Click(sender As Object, e As EventArgs) Handles Button93.Click
 
       
-        REM passa dados para a planilha excell de pedidos   -------
-        Dim xlApp1 As Excel.Application
-        Dim xlWorkBook1 As Excel.Workbook
-        Dim xlWorkSheet1 As Excel.Worksheet
-        ' ------------------------------------
-        ' Variáveis que vão pegar os valores da tabela e passar para o arquivo
-        Dim NumeroPedido As String
-        Dim DataPedido As Date
-        Dim NomeContato As String
-        Dim CEP As String
-        Dim Municipio As String
-        Dim Estado As String
-        Dim Endereco As String
-        Dim NumeroRua As String
-        Dim Complemento As String
-        Dim Bairro As String
-        Dim Fone As String
-        Dim NomeProduto As String
-        Dim Quantidade As Double
-        Dim VrUnitario As Double
-        Dim x As Integer
-        Dim xy As Integer = 1
+        'REM passa dados para a planilha excell de pedidos   -------
+        'Dim xlApp1 As Excel.Application
+        'Dim xlWorkBook1 As Excel.Workbook
+        'Dim xlWorkSheet1 As Excel.Worksheet
+        '' ------------------------------------
+        '' Variáveis que vão pegar os valores da tabela e passar para o arquivo
+        'Dim NumeroPedido As String
+        'Dim DataPedido As Date
+        'Dim NomeContato As String
+        'Dim CEP As String
+        'Dim Municipio As String
+        'Dim Estado As String
+        'Dim Endereco As String
+        'Dim NumeroRua As String
+        'Dim Complemento As String
+        'Dim Bairro As String
+        'Dim Fone As String
+        'Dim NomeProduto As String
+        'Dim Quantidade As Double
+        'Dim VrUnitario As Double
+        'Dim x As Integer
+        'Dim xy As Integer = 1
 
-        ' --------------------------------------------------------------
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        '' --------------------------------------------------------------
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        Dim command As SqlCommand
-        command = connection.CreateCommand()
-        command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb, DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMLb,NumeroRua_VendasMlb, Complemento_VendasMlb, Bairro_VendasMlb, Fone_VendasMlb, NomeProduto_VendasMlb, QuantidadeVendida_VendasMlb, VrUnitario_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMLb,@NumeroRua_VendasMlb, @Complemento_VendasMlb,@Bairro_VendasMlb, @Fone_VendasMlb, @NomeProduto_VendasMlb, @QuantidadeVendida_VendasMlb, @VrUnitario_VendasMlb)"
-        command.CommandType = CommandType.Text
 
-        ' ---------------------------------------------------------------------------------------
+        '' ---------------------------------------------------------------------------------------
 
-        xlApp1 = New Excel.Application
-        ' xlWorkBook1 = xlApp1.Workbooks.Open("\\FERNANDO\Disco C\C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1020.xlsx")
-        xlWorkBook1 = xlApp1.Workbooks.Open("C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\Cópia de pedidos_venda_501-1000.xls")
-        xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
+        'xlApp1 = New Excel.Application
+        '' xlWorkBook1 = xlApp1.Workbooks.Open("\\FERNANDO\Disco C\C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1020.xlsx")
+        'xlWorkBook1 = xlApp1.Workbooks.Open("C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\Cópia de pedidos_venda_501-1000.xls")
+        'xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
 
-        For x = 2 To 4 ' VendasMlbDataGridView.RowCount() - 1
-            'xy = xy + 1
+        'For x = 2 To 4 ' VendasMlbDataGridView.RowCount() - 1
 
-            NumeroPedido = Trim(xlWorkBook1.Application.Cells(x, 2).Value)
-            DataPedido = Trim(xlWorkBook1.Application.Cells(x, 3).Value)
-            NomeContato = Trim(xlWorkBook1.Application.Cells(x, 6).Value)
-            CEP = Trim(xlWorkBook1.Application.Cells(x, 10).Value)
+        '    NumeroPedido = Trim(xlWorkBook1.Application.Cells(x, 2).Value)
+        '    DataPedido = Trim(xlWorkBook1.Application.Cells(x, 3).Value)
+        '    NomeContato = Trim(xlWorkBook1.Application.Cells(x, 6).Value)
+        '    CEP = Trim(xlWorkBook1.Application.Cells(x, 10).Value)
 
-            Municipio = Trim(xlWorkBook1.Application.Cells(x, 11).Value)
-            Estado = Trim(xlWorkBook1.Application.Cells(x, 12).Value)
-            Endereco = Trim(xlWorkBook1.Application.Cells(x, 13).Value)
-            NumeroRua = Trim(xlWorkBook1.Application.Cells(x, 14).Value)
+        '    Municipio = Trim(xlWorkBook1.Application.Cells(x, 11).Value)
+        '    Estado = Trim(xlWorkBook1.Application.Cells(x, 12).Value)
+        '    Endereco = Trim(xlWorkBook1.Application.Cells(x, 13).Value)
+        '    NumeroRua = Trim(xlWorkBook1.Application.Cells(x, 14).Value)
 
-            Complemento = Trim(xlWorkBook1.Application.Cells(x, 15).Value)
-            Bairro = Trim(xlWorkBook1.Application.Cells(x, 16).Value)
-            Fone = Trim(xlWorkBook1.Application.Cells(x, 17).Value)
-            NomeProduto = Trim(xlWorkBook1.Application.Cells(x, 25).Value)
-            Quantidade = Trim(xlWorkBook1.Application.Cells(x, 26).Value)
-            VrUnitario = Trim(xlWorkBook1.Application.Cells(x, 27).Value)
+        '    Complemento = Trim(xlWorkBook1.Application.Cells(x, 15).Value)
+        '    Bairro = Trim(xlWorkBook1.Application.Cells(x, 16).Value)
+        '    Fone = Trim(xlWorkBook1.Application.Cells(x, 17).Value)
+        '    NomeProduto = Trim(xlWorkBook1.Application.Cells(x, 25).Value)
+        '    Quantidade = Trim(xlWorkBook1.Application.Cells(x, 26).Value)
+        '    VrUnitario = Trim(xlWorkBook1.Application.Cells(x, 27).Value)
+        '    '---------------------------------------------------------------------------------------------
+        '    'REM verifica se o produto já foi cadastrado mas só se for incluir
+        '    Dim con As New SqlConnection
+        '    Dim cmd As New SqlCommand
 
-            command.Parameters.Clear()
-            command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroPedido
-            command.Parameters.Add("@DataPedido_VendasMlb", SqlDbType.Date).Value = DataPedido
-            command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = NomeContato
+        '    cmd.Connection = con
+        '    cmd.CommandText = "SELECT NomeProduto_VendasMlb  from VendasMlb where NomeProduto_VendasMlb = '" & NomeProduto & "'"
 
-            command.Parameters.Add("@CEP_VendasMlb", SqlDbType.VarChar, 50).Value = CEP
-            command.Parameters.Add("@Municipio_VendasMlb", SqlDbType.VarChar, 50).Value = Municipio
-            command.Parameters.Add("@Estado_VendasMlb", SqlDbType.VarChar, 50).Value = Estado
-            command.Parameters.Add("@Endereco_VendasMLb", SqlDbType.VarChar, 50).Value = Endereco
-            command.Parameters.Add("@NumeroRua_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroRua
 
-            command.Parameters.Add("@Complemento_VendasMlb", SqlDbType.VarChar, 50).Value = Complemento
-            command.Parameters.Add("@Bairro_VendasMlb", SqlDbType.VarChar, 50).Value = Bairro
-            command.Parameters.Add("@Fone_VendasMlb", SqlDbType.VarChar, 50).Value = Fone
-            command.Parameters.Add("@NomeProduto_VendasMlb", SqlDbType.VarChar, 50).Value = NomeProduto
-            command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.Float).Value = Quantidade
-            command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.Float).Value = VrUnitario
 
-            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
-            Try
-                connection.Open()
-                command.ExecuteNonQuery()
-                connection.Close()
-            
-            Catch ex As Exception
-                MessageBox.Show("Algo ocorreu errado")
-                MessageBox.Show(ex.ToString())
 
-            Finally
-                connection.Close()
-            End Try
+        '    'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
+        '    connection.Open()
+        '    Dim lrd As SqlDataReader = cmd.ExecuteReader()
 
-        Next
-        xlWorkBook1.Close()
+
+
+        '    Try
+
+        '        If lrd.Read() = True Then
+
+        '            MessageBox.Show("O código do produto " & NomeProduto & " já foi cadastrado!!!!")
+        '            'con.Close()
+        '            '   Exit Sub
+        '            connection.Close()
+        '        Else
+
+        '            ' --------------------------------------------------------------------------------------------
+        '            Dim command As SqlCommand
+        '            command = connection.CreateCommand()
+        '            command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb, DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMLb,NumeroRua_VendasMlb, Complemento_VendasMlb, Bairro_VendasMlb, Fone_VendasMlb, NomeProduto_VendasMlb, QuantidadeVendida_VendasMlb, VrUnitario_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMLb,@NumeroRua_VendasMlb, @Complemento_VendasMlb,@Bairro_VendasMlb, @Fone_VendasMlb, @NomeProduto_VendasMlb, @QuantidadeVendida_VendasMlb, @VrUnitario_VendasMlb)"
+        '            command.CommandType = CommandType.Text
+
+        '            command.Parameters.Clear()
+        '            command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroPedido
+        '            command.Parameters.Add("@DataPedido_VendasMlb", SqlDbType.Date).Value = DataPedido
+        '            command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = NomeContato
+
+        '            command.Parameters.Add("@CEP_VendasMlb", SqlDbType.VarChar, 50).Value = CEP
+        '            command.Parameters.Add("@Municipio_VendasMlb", SqlDbType.VarChar, 50).Value = Municipio
+        '            command.Parameters.Add("@Estado_VendasMlb", SqlDbType.VarChar, 50).Value = Estado
+        '            command.Parameters.Add("@Endereco_VendasMLb", SqlDbType.VarChar, 50).Value = Endereco
+        '            command.Parameters.Add("@NumeroRua_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroRua
+
+        '            command.Parameters.Add("@Complemento_VendasMlb", SqlDbType.VarChar, 50).Value = Complemento
+        '            command.Parameters.Add("@Bairro_VendasMlb", SqlDbType.VarChar, 50).Value = Bairro
+        '            command.Parameters.Add("@Fone_VendasMlb", SqlDbType.VarChar, 50).Value = Fone
+        '            command.Parameters.Add("@NomeProduto_VendasMlb", SqlDbType.VarChar, 50).Value = NomeProduto
+        '            command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.Float).Value = Quantidade
+        '            command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.Float).Value = VrUnitario
+
+        '            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+        '            Try
+        '                connection.Open()
+        '                command.ExecuteNonQuery()
+        '                connection.Close()
+
+        '            Catch ex As Exception
+        '                MessageBox.Show("Algo ocorreu errado")
+        '                MessageBox.Show(ex.ToString())
+
+        '            Finally
+        '                connection.Close()
+        '            End Try
+
+        '        End If
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.ToString)
+        '    End Try
+
+        'Next
+        'xlWorkBook1.Close()
 
 
 
@@ -14702,151 +14561,156 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button94_Click(sender As Object, e As EventArgs) Handles Button94.Click
 
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        Dim command As SqlCommand
-        Dim xx As Integer
-
-
-        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
-
-            command = connection.CreateCommand()
-
-            '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-            command.CommandText = "SELECT * FROM VendasMlb WHERE NomeProduto_VendasMlb = '" & VendasMlbDataGridView.Item(13, xx).Value & "'"
-
-            command.CommandType = CommandType.Text
-            ' -----------------------------------------------------------------
-            ' Pego o nome do produto no arquivo vendasmlb 
-            Dim ApelidoProdutoMlb As String = ""
-            Dim QuantidadeVendidaMlb As Double = 0
-            Dim DataVendaMlb As Date
-
-            ' ------------------------------------------------
-            'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
-            connection.Open()
-            Dim lrd As SqlDataReader = command.ExecuteReader()
+        'Dim command As SqlCommand
+        'Dim xx As Integer
 
 
+        'For xx = 0 To VendasMlbDataGridView.RowCount() - 1
 
-            While lrd.Read
+        '    command = connection.CreateCommand()
 
-                ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
-                QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
-                DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
+        '    '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
+        '    command.CommandText = "SELECT * FROM VendasMlb WHERE NomeProduto_VendasMlb = '" & VendasMlbDataGridView.Item(13, xx).Value & "'"
 
-            End While
-            connection.Close()
-            txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
-            ' -----------------------------------------------------------------------------
-            ' Procura o valor no produto
-            Dim command2 As SqlCommand
-            command2 = connection.CreateCommand()
-            '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-            command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "'"
-            command2.CommandType = CommandType.Text
-            ' -------------------------------------------------------------------
-            ' Pego o valor do produto no arquivo produtos 
-            Dim ValorProduto As Double = 0
-            Dim CodigoProduto As String = ""
-            Dim FornecedorProduto As String = ""
-            Dim LinhaProduto As String = ""
-            Dim CorProduto As String = ""
-            Dim PrecoAtacadoProduto As Double = 0
-            Dim NomeProduto As String = ""
-            Dim CustoProduto As Double = 0
-            Dim IPIProduto As Double = 0
-            ' -----------------------------------------------------------------
-            connection.Open()
-            Dim lrd2 As SqlDataReader = command2.ExecuteReader()
-            
-                    While lrd2.Read
+        '    command.CommandType = CommandType.Text
+        '    ' -----------------------------------------------------------------
+        '    ' Pego o nome do produto no arquivo vendasmlb 
+        '    Dim ApelidoProdutoMlb As String = ""
+        '    Dim QuantidadeVendidaMlb As Double = 0
+        '    Dim DataVendaMlb As Date
 
-                        ValorProduto = lrd2("precoatacado_prod").ToString
-                        CodigoProduto = lrd2("cod_prod").ToString
-                        FornecedorProduto = lrd2("fornecedor_prod").ToString
-                        LinhaProduto = lrd2("linha_prod").ToString
-                        CorProduto = lrd2("cor_prod").ToString
-                        PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
-                        NomeProduto = lrd2("nome_prod").ToString
-                        CustoProduto = lrd2("custo_prod").ToString
-                        IPIProduto = lrd2("ipi_prod").ToString
+        '    ' ------------------------------------------------
+        '    'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
+        '    connection.Open()
+        '    Dim lrd As SqlDataReader = command.ExecuteReader()
 
-                    End While
+        '    While lrd.Read
 
-            
-            connection.Close()
-            If NomeProduto <> "" Then
+        '        ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
+        '        QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
+        '        DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
+
+        '    End While
+        '    connection.Close()
+        '    txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
+        '    ' -----------------------------------------------------------------------------
+        '    ' Procura o valor no produto
+        '    Dim command2 As SqlCommand
+        '    command2 = connection.CreateCommand()
+        '    '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
+        '    command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "'"
+        '    command2.CommandType = CommandType.Text
+        '    ' -------------------------------------------------------------------
+        '    ' Pego o valor do produto no arquivo produtos 
+        '    Dim ValorProduto As Double = 0
+        '    Dim CodigoProduto As String = ""
+        '    Dim FornecedorProduto As String = ""
+        '    Dim LinhaProduto As String = ""
+        '    Dim CorProduto As String = ""
+        '    Dim PrecoAtacadoProduto As Double = 0
+        '    Dim NomeProduto As String = ""
+        '    Dim CustoProduto As Double = 0
+        '    Dim IPIProduto As Double = 0
+        '    Dim CodigoMlb As String = ""
+
+        '    ' -----------------------------------------------------------------
+        '    connection.Open()
+        '    Dim lrd2 As SqlDataReader = command2.ExecuteReader()
+
+        '            While lrd2.Read
+
+        '                ValorProduto = lrd2("precoatacado_prod").ToString
+        '                CodigoProduto = lrd2("cod_prod").ToString
+        '                FornecedorProduto = lrd2("fornecedor_prod").ToString
+        '                LinhaProduto = lrd2("linha_prod").ToString
+        '                CorProduto = lrd2("cor_prod").ToString
+        '                PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
+        '                NomeProduto = lrd2("nome_prod").ToString
+        '                CustoProduto = lrd2("custo_prod").ToString
+        '                IPIProduto = lrd2("ipi_prod").ToString
+        '        CodigoMlb = lrd2("CodigoMlb_prod").ToString
+
+        '    End While
 
 
-                TextBox259.Text = ValorProduto
-                ' ---------------------------------------------------------------------------------
-                ' Faz o lançamento em vendas balcão
-                Dim command5 As SqlCommand
-                command5 = connection.CreateCommand()
-                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
-                command5.CommandType = CommandType.Text
 
-                command5.Parameters.Clear()
-                command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
-                command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
-                command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
-                command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
-                command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
-                command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
-                command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
-                command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
-                command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
-                command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
+        '    connection.Close()
+        '    If NomeProduto <> "" Then
 
-                ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
-                Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
-                Dim PrecoAtacado As Double = PrecoAtacadoProduto
-                Dim TLProdBalcao = QuantidadeVendidas * PrecoAtacado
-                Dim TLProdBalcao2 As String = TLProdBalcao.ToString
-                command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
-                command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
-                command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = DataVendaMlb
-                command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
-                command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
 
-                ' calcula o custo dos produtos
-                Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
-                Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
-                command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
-                ' calcula o lucro da operação
-                Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
-                Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
-                command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.VarChar, 50).Value = LucroBalcao2
+        '        TextBox259.Text = ValorProduto
+        '        ' ---------------------------------------------------------------------------------
+        '        ' Faz o lançamento em vendas balcão
+        '        Dim command5 As SqlCommand
+        '        command5 = connection.CreateCommand()
+        '        command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
+        '        command5.CommandType = CommandType.Text
 
-                Try
-                    connection.Open()
-                    command5.ExecuteNonQuery()
-                    connection.Close()
+        '        command5.Parameters.Clear()
+        '        command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
+        '        command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
+        '        command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
+        '        command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
+        '        command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
+        '        command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
+        '        command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
+        '        command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
+        '        command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
+        '        command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
+        '        command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = CodigoMlb
 
-                Catch ex As Exception
-                    MessageBox.Show(ex.ToString())
-                End Try
-                ' ------------------------------------------------
-            Else
-                Dim command15 As SqlCommand
-                command15 = connection.CreateCommand()
-                command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado) values (@Nome_ApelidoErrado)"
-                command15.CommandType = CommandType.Text
+        '        ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
+        '        Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
+        '        Dim PrecoAtacado As Double = PrecoAtacadoProduto
+        '        Dim TLProdBalcao = QuantidadeVendidas * PrecoAtacado
+        '        Dim TLProdBalcao2 As String = TLProdBalcao.ToString
+        '        command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
+        '        command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
+        '        command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = DataVendaMlb
+        '        command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
+        '        command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
 
-                command15.Parameters.Clear()
-                command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
-               
-                Try
-                    connection.Open()
-                    command15.ExecuteNonQuery()
-                    connection.Close()
-                Catch ex As Exception
-                    MessageBox.Show(ex.ToString())
-                End Try
-            End If
-        Next
+        '        ' calcula o custo dos produtos
+        '        Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
+        '        Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
+        '        command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
+        '        ' calcula o lucro da operação
+        '        Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
+        '        Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
+        '        command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.VarChar, 50).Value = LucroBalcao2
+
+        '        Try
+        '            connection.Open()
+        '            command5.ExecuteNonQuery()
+        '            connection.Close()
+
+        '        Catch ex As Exception
+        '            MessageBox.Show(ex.ToString())
+        '        End Try
+        '        ' ------------------------------------------------
+        '    Else
+        '        Dim command15 As SqlCommand
+        '        command15 = connection.CreateCommand()
+        '        command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
+        '        command15.CommandType = CommandType.Text
+
+        '        command15.Parameters.Clear()
+        '        command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
+        '        command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
+
+
+        '        Try
+        '            connection.Open()
+        '            command15.ExecuteNonQuery()
+        '            connection.Close()
+        '        Catch ex As Exception
+        '            MessageBox.Show(ex.ToString())
+        '        End Try
+        '    End If
+        'Next
 
     End Sub
 
