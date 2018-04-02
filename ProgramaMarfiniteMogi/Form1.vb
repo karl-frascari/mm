@@ -1344,6 +1344,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox233.Clear()
         TextBox245.Clear()
         TextBox234.Clear()
+        TextBox233.Clear()
 
         'combobox
         Nome_linhaComboBox.Text = ""
@@ -1383,6 +1384,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox233.Enabled = True
         TextBox245.Enabled = True
         TextBox234.Enabled = True
+        TextBox232.Enabled = True
 
         'combobox
         Nome_linhaComboBox.Enabled = True
@@ -1426,6 +1428,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox233.Enabled = False
         TextBox245.Enabled = False
         TextBox234.Enabled = False
+        TextBox232.Enabled = False
 
         'combobox
         Nome_linhaComboBox.Enabled = False
@@ -1503,9 +1506,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
 
             If flag = "incluir" Then
-                command.CommandText = "INSERT INTO produtos (EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+                command.CommandText = "INSERT INTO produtos (EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
             Else
-                command.CommandText = "update produtos set EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
+                command.CommandText = "update produtos set EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
             End If
 
             'REM calculando o preço varejo e atacado antes de salvar
@@ -1577,6 +1580,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@Subtituicao_tributaria", SqlDbType.Float).Value = TextBox231.Text
             command.Parameters.Add("@EmbalagemFabrica_prod", SqlDbType.VarChar, 50).Value = TextBox245.Text
             command.Parameters.Add("@CodigoMlb_prod", SqlDbType.VarChar, 50).Value = TextBox233.Text
+            command.Parameters.Add("@EstoquePrateleira_prod", SqlDbType.VarChar, 50).Value = TextBox232.Text
+
             ' a seguir comandos para gravar os ítens coletados do formulário ------------------
 
             Try
@@ -1643,8 +1648,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox231.Text = "0,00"
         TextBox233.Text = "0"
         TextBox245.Text = "0"
-        ' TextBox234.Text = "0"
-
+        TextBox234.Text = "0"
+        TextBox232.Text = "1"
     End Sub
     ' no clicar limpa o campo se estiver incluindo no campo preço varejo do produto.....
     Private Sub Precovarejo_prodTextBox_Click(sender As Object, e As EventArgs) Handles Precovarejo_prodTextBox.Click
@@ -3698,9 +3703,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub TextBox1_TextChanged_2(sender As Object, e As EventArgs) Handles txt_buscaClienteNFE.TextChanged
 
-
-
-
+        VendasMlbBindingSource.Filter = String.Format("NUmeroPedido2_VendasMlb LIKE '{0}%'", txt_buscaClienteNFE.Text)
 
     End Sub
 
@@ -14422,138 +14425,138 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ProdutosBindingSource.Filter = String.Format("cod_prod LIKE '{0}%'", TextBox255.Text)
     End Sub
 
-    Private Sub Button93_Click(sender As Object, e As EventArgs) Handles Button93.Click
-
-      
-        'REM passa dados para a planilha excell de pedidos   -------
-        'Dim xlApp1 As Excel.Application
-        'Dim xlWorkBook1 As Excel.Workbook
-        'Dim xlWorkSheet1 As Excel.Worksheet
-        '' ------------------------------------
-        '' Variáveis que vão pegar os valores da tabela e passar para o arquivo
-        'Dim NumeroPedido As String
-        'Dim DataPedido As Date
-        'Dim NomeContato As String
-        'Dim CEP As String
-        'Dim Municipio As String
-        'Dim Estado As String
-        'Dim Endereco As String
-        'Dim NumeroRua As String
-        'Dim Complemento As String
-        'Dim Bairro As String
-        'Dim Fone As String
-        'Dim NomeProduto As String
-        'Dim Quantidade As Double
-        'Dim VrUnitario As Double
-        'Dim x As Integer
-        'Dim xy As Integer = 1
-
-        '' --------------------------------------------------------------
-        'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+    ' Private Sub Button93_Click(sender As Object, e As EventArgs) Handles Button93.Click
 
 
-        '' ---------------------------------------------------------------------------------------
+    'REM passa dados para a planilha excell de pedidos   -------
+    'Dim xlApp1 As Excel.Application
+    'Dim xlWorkBook1 As Excel.Workbook
+    'Dim xlWorkSheet1 As Excel.Worksheet
+    '' ------------------------------------
+    '' Variáveis que vão pegar os valores da tabela e passar para o arquivo
+    'Dim NumeroPedido As String
+    'Dim DataPedido As Date
+    'Dim NomeContato As String
+    'Dim CEP As String
+    'Dim Municipio As String
+    'Dim Estado As String
+    'Dim Endereco As String
+    'Dim NumeroRua As String
+    'Dim Complemento As String
+    'Dim Bairro As String
+    'Dim Fone As String
+    'Dim NomeProduto As String
+    'Dim Quantidade As Double
+    'Dim VrUnitario As Double
+    'Dim x As Integer
+    'Dim xy As Integer = 1
 
-        'xlApp1 = New Excel.Application
-        '' xlWorkBook1 = xlApp1.Workbooks.Open("\\FERNANDO\Disco C\C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1020.xlsx")
-        'xlWorkBook1 = xlApp1.Workbooks.Open("C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\Cópia de pedidos_venda_501-1000.xls")
-        'xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
-
-        'For x = 2 To 4 ' VendasMlbDataGridView.RowCount() - 1
-
-        '    NumeroPedido = Trim(xlWorkBook1.Application.Cells(x, 2).Value)
-        '    DataPedido = Trim(xlWorkBook1.Application.Cells(x, 3).Value)
-        '    NomeContato = Trim(xlWorkBook1.Application.Cells(x, 6).Value)
-        '    CEP = Trim(xlWorkBook1.Application.Cells(x, 10).Value)
-
-        '    Municipio = Trim(xlWorkBook1.Application.Cells(x, 11).Value)
-        '    Estado = Trim(xlWorkBook1.Application.Cells(x, 12).Value)
-        '    Endereco = Trim(xlWorkBook1.Application.Cells(x, 13).Value)
-        '    NumeroRua = Trim(xlWorkBook1.Application.Cells(x, 14).Value)
-
-        '    Complemento = Trim(xlWorkBook1.Application.Cells(x, 15).Value)
-        '    Bairro = Trim(xlWorkBook1.Application.Cells(x, 16).Value)
-        '    Fone = Trim(xlWorkBook1.Application.Cells(x, 17).Value)
-        '    NomeProduto = Trim(xlWorkBook1.Application.Cells(x, 25).Value)
-        '    Quantidade = Trim(xlWorkBook1.Application.Cells(x, 26).Value)
-        '    VrUnitario = Trim(xlWorkBook1.Application.Cells(x, 27).Value)
-        '    '---------------------------------------------------------------------------------------------
-        '    'REM verifica se o produto já foi cadastrado mas só se for incluir
-        '    Dim con As New SqlConnection
-        '    Dim cmd As New SqlCommand
-
-        '    cmd.Connection = con
-        '    cmd.CommandText = "SELECT NomeProduto_VendasMlb  from VendasMlb where NomeProduto_VendasMlb = '" & NomeProduto & "'"
+    '' --------------------------------------------------------------
+    'Dim connection As SqlConnection
+    'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
+    '' ---------------------------------------------------------------------------------------
 
+    'xlApp1 = New Excel.Application
+    '' xlWorkBook1 = xlApp1.Workbooks.Open("\\FERNANDO\Disco C\C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\pedidos_venda_501-1020.xlsx")
+    'xlWorkBook1 = xlApp1.Workbooks.Open("C:\Users\Central\Desktop\Vendas bgugigangas\vendas março\Cópia de pedidos_venda_501-1000.xls")
+    'xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
 
-        '    'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
-        '    connection.Open()
-        '    Dim lrd As SqlDataReader = cmd.ExecuteReader()
+    'For x = 2 To 4 ' VendasMlbDataGridView.RowCount() - 1
+
+    '    NumeroPedido = Trim(xlWorkBook1.Application.Cells(x, 2).Value)
+    '    DataPedido = Trim(xlWorkBook1.Application.Cells(x, 3).Value)
+    '    NomeContato = Trim(xlWorkBook1.Application.Cells(x, 6).Value)
+    '    CEP = Trim(xlWorkBook1.Application.Cells(x, 10).Value)
+
+    '    Municipio = Trim(xlWorkBook1.Application.Cells(x, 11).Value)
+    '    Estado = Trim(xlWorkBook1.Application.Cells(x, 12).Value)
+    '    Endereco = Trim(xlWorkBook1.Application.Cells(x, 13).Value)
+    '    NumeroRua = Trim(xlWorkBook1.Application.Cells(x, 14).Value)
+
+    '    Complemento = Trim(xlWorkBook1.Application.Cells(x, 15).Value)
+    '    Bairro = Trim(xlWorkBook1.Application.Cells(x, 16).Value)
+    '    Fone = Trim(xlWorkBook1.Application.Cells(x, 17).Value)
+    '    NomeProduto = Trim(xlWorkBook1.Application.Cells(x, 25).Value)
+    '    Quantidade = Trim(xlWorkBook1.Application.Cells(x, 26).Value)
+    '    VrUnitario = Trim(xlWorkBook1.Application.Cells(x, 27).Value)
+    '    '---------------------------------------------------------------------------------------------
+    '    'REM verifica se o produto já foi cadastrado mas só se for incluir
+    '    Dim con As New SqlConnection
+    '    Dim cmd As New SqlCommand
+
+    '    cmd.Connection = con
+    '    cmd.CommandText = "SELECT NomeProduto_VendasMlb  from VendasMlb where NomeProduto_VendasMlb = '" & NomeProduto & "'"
 
 
 
-        '    Try
 
-        '        If lrd.Read() = True Then
-
-        '            MessageBox.Show("O código do produto " & NomeProduto & " já foi cadastrado!!!!")
-        '            'con.Close()
-        '            '   Exit Sub
-        '            connection.Close()
-        '        Else
-
-        '            ' --------------------------------------------------------------------------------------------
-        '            Dim command As SqlCommand
-        '            command = connection.CreateCommand()
-        '            command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb, DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMLb,NumeroRua_VendasMlb, Complemento_VendasMlb, Bairro_VendasMlb, Fone_VendasMlb, NomeProduto_VendasMlb, QuantidadeVendida_VendasMlb, VrUnitario_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMLb,@NumeroRua_VendasMlb, @Complemento_VendasMlb,@Bairro_VendasMlb, @Fone_VendasMlb, @NomeProduto_VendasMlb, @QuantidadeVendida_VendasMlb, @VrUnitario_VendasMlb)"
-        '            command.CommandType = CommandType.Text
-
-        '            command.Parameters.Clear()
-        '            command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroPedido
-        '            command.Parameters.Add("@DataPedido_VendasMlb", SqlDbType.Date).Value = DataPedido
-        '            command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = NomeContato
-
-        '            command.Parameters.Add("@CEP_VendasMlb", SqlDbType.VarChar, 50).Value = CEP
-        '            command.Parameters.Add("@Municipio_VendasMlb", SqlDbType.VarChar, 50).Value = Municipio
-        '            command.Parameters.Add("@Estado_VendasMlb", SqlDbType.VarChar, 50).Value = Estado
-        '            command.Parameters.Add("@Endereco_VendasMLb", SqlDbType.VarChar, 50).Value = Endereco
-        '            command.Parameters.Add("@NumeroRua_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroRua
-
-        '            command.Parameters.Add("@Complemento_VendasMlb", SqlDbType.VarChar, 50).Value = Complemento
-        '            command.Parameters.Add("@Bairro_VendasMlb", SqlDbType.VarChar, 50).Value = Bairro
-        '            command.Parameters.Add("@Fone_VendasMlb", SqlDbType.VarChar, 50).Value = Fone
-        '            command.Parameters.Add("@NomeProduto_VendasMlb", SqlDbType.VarChar, 50).Value = NomeProduto
-        '            command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.Float).Value = Quantidade
-        '            command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.Float).Value = VrUnitario
-
-        '            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
-        '            Try
-        '                connection.Open()
-        '                command.ExecuteNonQuery()
-        '                connection.Close()
-
-        '            Catch ex As Exception
-        '                MessageBox.Show("Algo ocorreu errado")
-        '                MessageBox.Show(ex.ToString())
-
-        '            Finally
-        '                connection.Close()
-        '            End Try
-
-        '        End If
-        '    Catch ex As Exception
-        '        MessageBox.Show(ex.ToString)
-        '    End Try
-
-        'Next
-        'xlWorkBook1.Close()
+    '    'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
+    '    connection.Open()
+    '    Dim lrd As SqlDataReader = cmd.ExecuteReader()
 
 
 
-    End Sub
+    '    Try
+
+    '        If lrd.Read() = True Then
+
+    '            MessageBox.Show("O código do produto " & NomeProduto & " já foi cadastrado!!!!")
+    '            'con.Close()
+    '            '   Exit Sub
+    '            connection.Close()
+    '        Else
+
+    '            ' --------------------------------------------------------------------------------------------
+    '            Dim command As SqlCommand
+    '            command = connection.CreateCommand()
+    '            command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb, DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMLb,NumeroRua_VendasMlb, Complemento_VendasMlb, Bairro_VendasMlb, Fone_VendasMlb, NomeProduto_VendasMlb, QuantidadeVendida_VendasMlb, VrUnitario_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMLb,@NumeroRua_VendasMlb, @Complemento_VendasMlb,@Bairro_VendasMlb, @Fone_VendasMlb, @NomeProduto_VendasMlb, @QuantidadeVendida_VendasMlb, @VrUnitario_VendasMlb)"
+    '            command.CommandType = CommandType.Text
+
+    '            command.Parameters.Clear()
+    '            command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroPedido
+    '            command.Parameters.Add("@DataPedido_VendasMlb", SqlDbType.Date).Value = DataPedido
+    '            command.Parameters.Add("@NomeContato_VendasMlb", SqlDbType.VarChar, 50).Value = NomeContato
+
+    '            command.Parameters.Add("@CEP_VendasMlb", SqlDbType.VarChar, 50).Value = CEP
+    '            command.Parameters.Add("@Municipio_VendasMlb", SqlDbType.VarChar, 50).Value = Municipio
+    '            command.Parameters.Add("@Estado_VendasMlb", SqlDbType.VarChar, 50).Value = Estado
+    '            command.Parameters.Add("@Endereco_VendasMLb", SqlDbType.VarChar, 50).Value = Endereco
+    '            command.Parameters.Add("@NumeroRua_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroRua
+
+    '            command.Parameters.Add("@Complemento_VendasMlb", SqlDbType.VarChar, 50).Value = Complemento
+    '            command.Parameters.Add("@Bairro_VendasMlb", SqlDbType.VarChar, 50).Value = Bairro
+    '            command.Parameters.Add("@Fone_VendasMlb", SqlDbType.VarChar, 50).Value = Fone
+    '            command.Parameters.Add("@NomeProduto_VendasMlb", SqlDbType.VarChar, 50).Value = NomeProduto
+    '            command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.Float).Value = Quantidade
+    '            command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.Float).Value = VrUnitario
+
+    '            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+    '            Try
+    '                connection.Open()
+    '                command.ExecuteNonQuery()
+    '                connection.Close()
+
+    '            Catch ex As Exception
+    '                MessageBox.Show("Algo ocorreu errado")
+    '                MessageBox.Show(ex.ToString())
+
+    '            Finally
+    '                connection.Close()
+    '            End Try
+
+    '        End If
+    '    Catch ex As Exception
+    '        MessageBox.Show(ex.ToString)
+    '    End Try
+
+    'Next
+    'xlWorkBook1.Close()
+
+
+
+    ' End Sub
 
     Private Sub Button94_Click(sender As Object, e As EventArgs) Handles Button94.Click
 
@@ -14595,7 +14598,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             End While
             connection.Close()
-            txt_ultimadataatualizacao.Text = ApelidoProdutoMlb
+
             ' -----------------------------------------------------------------------------
             ' Procura o valor no produto
             ' Pego o valor do produto no arquivo produtos 
@@ -14611,7 +14614,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim command2 As SqlCommand
             command2 = connection.CreateCommand()
             '  command.CommandText = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
-            command2.CommandText = "SELECT * from produtos WHERE Apelido_prod = '" & ApelidoProdutoMlb & "' or cod_prodfor = '" & CodigoMlb & "'"
+            command2.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
             command2.CommandType = CommandType.Text
             ' -------------------------------------------------------------------
             ' -----------------------------------------------------------------
@@ -14708,7 +14711,31 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
+
    
+    Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
+
+        VendasMlbBindingSource.Filter = String.Format("NomeContato_VendasMlb LIKE '{0}%'", TextBox2.Text)
+
+    End Sub
+
+    Private Sub TextBox235_TextChanged(sender As Object, e As EventArgs) Handles TextBox235.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("Apelido_prod LIKE '{0}%'", TextBox235.Text)
+
+    End Sub
+
+    Private Sub TextBox236_TextChanged(sender As Object, e As EventArgs) Handles TextBox236.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("CodigoMlb_prod LIKE '{0}%'", TextBox236.Text)
+
+    End Sub
+
+    Private Sub TextBox237_TextChanged(sender As Object, e As EventArgs) Handles TextBox237.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("CodigoMlb_prod LIKE '{0}%'", TextBox237.Text)
+
+    End Sub
 End Class
 
 
