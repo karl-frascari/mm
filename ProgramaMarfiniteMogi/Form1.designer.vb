@@ -569,6 +569,34 @@ Partial Class Form1
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbx_forprod = New System.Windows.Forms.GroupBox()
+        Me.GroupBox106 = New System.Windows.Forms.GroupBox()
+        Me.Button74 = New System.Windows.Forms.Button()
+        Me.Label345 = New System.Windows.Forms.Label()
+        Me.TextBox267 = New System.Windows.Forms.TextBox()
+        Me.TextBox266 = New System.Windows.Forms.TextBox()
+        Me.TextBox265 = New System.Windows.Forms.TextBox()
+        Me.TextBox264 = New System.Windows.Forms.TextBox()
+        Me.Label344 = New System.Windows.Forms.Label()
+        Me.Label343 = New System.Windows.Forms.Label()
+        Me.Label342 = New System.Windows.Forms.Label()
+        Me.Label341 = New System.Windows.Forms.Label()
+        Me.Label340 = New System.Windows.Forms.Label()
+        Me.Label339 = New System.Windows.Forms.Label()
+        Me.TextBox263 = New System.Windows.Forms.TextBox()
+        Me.TextBox262 = New System.Windows.Forms.TextBox()
+        Me.TextBox261 = New System.Windows.Forms.TextBox()
+        Me.Label338 = New System.Windows.Forms.Label()
+        Me.Label337 = New System.Windows.Forms.Label()
+        Me.Label336 = New System.Windows.Forms.Label()
+        Me.TextBox260 = New System.Windows.Forms.TextBox()
+        Me.TextBox259 = New System.Windows.Forms.TextBox()
+        Me.Label335 = New System.Windows.Forms.Label()
+        Me.TextBox238 = New System.Windows.Forms.TextBox()
+        Me.Label334 = New System.Windows.Forms.Label()
+        Me.Label306 = New System.Windows.Forms.Label()
+        Me.Label305 = New System.Windows.Forms.Label()
+        Me.Label303 = New System.Windows.Forms.Label()
+        Me.Label302 = New System.Windows.Forms.Label()
         Me.GroupBox92 = New System.Windows.Forms.GroupBox()
         Me.Situacao_prodComboBox = New System.Windows.Forms.ComboBox()
         Me.Abc_prodComboBox = New System.Windows.Forms.ComboBox()
@@ -578,6 +606,8 @@ Partial Class Form1
         Me.Pedcolocados_prodTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox90 = New System.Windows.Forms.GroupBox()
         Me.GroupBox91 = New System.Windows.Forms.GroupBox()
+        Me.ComboBox32 = New System.Windows.Forms.ComboBox()
+        Me.Label346 = New System.Windows.Forms.Label()
         Me.Label299 = New System.Windows.Forms.Label()
         Me.TextBox231 = New System.Windows.Forms.TextBox()
         Me.DescontoFabrica_prodTextBox = New System.Windows.Forms.TextBox()
@@ -670,6 +700,7 @@ Partial Class Form1
         Me.MarkupNET_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CodigoMlb_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
+        Me.TextBox268 = New System.Windows.Forms.TextBox()
         Me.Button87 = New System.Windows.Forms.Button()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label308 = New System.Windows.Forms.Label()
@@ -679,14 +710,12 @@ Partial Class Form1
         Me.Label13 = New System.Windows.Forms.Label()
         Me.txt_produranomeprod = New System.Windows.Forms.TextBox()
         Me.GroupBox12 = New System.Windows.Forms.GroupBox()
-        Me.TextBox252 = New System.Windows.Forms.TextBox()
-        Me.Label323 = New System.Windows.Forms.Label()
-        Me.Cbx_vizuProd = New System.Windows.Forms.ComboBox()
-        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
         Me.Label246 = New System.Windows.Forms.Label()
         Me.TextBox182 = New System.Windows.Forms.TextBox()
-        Me.txtIndice = New System.Windows.Forms.MaskedTextBox()
-        Me.btn_alterarprecoprod = New System.Windows.Forms.Button()
+        Me.TextBox237 = New System.Windows.Forms.TextBox()
+        Me.Label294 = New System.Windows.Forms.Label()
+        Me.TextBox252 = New System.Windows.Forms.TextBox()
+        Me.Label323 = New System.Windows.Forms.Label()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btn_filt_prod = New System.Windows.Forms.Button()
@@ -2280,8 +2309,7 @@ Partial Class Form1
         Me.PedidoCompraTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter()
         Me.TesteTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter()
         Me.VendasMlbTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter()
-        Me.Label294 = New System.Windows.Forms.Label()
-        Me.TextBox237 = New System.Windows.Forms.TextBox()
+        Me.Button75 = New System.Windows.Forms.Button()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -2457,6 +2485,7 @@ Partial Class Form1
         Me.TabPage4.SuspendLayout
         Me.Panel1.SuspendLayout
         Me.cbx_forprod.SuspendLayout
+        Me.GroupBox106.SuspendLayout
         Me.GroupBox92.SuspendLayout
         Me.GroupBox90.SuspendLayout
         Me.GroupBox91.SuspendLayout
@@ -2473,7 +2502,6 @@ Partial Class Form1
         Me.Panel5.SuspendLayout
         Me.GroupBox5.SuspendLayout
         Me.GroupBox12.SuspendLayout
-        Me.GroupBox11.SuspendLayout
         Me.GroupBox9.SuspendLayout
         CType(Me.LinhasprodBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.FornecedorBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
@@ -7645,6 +7673,7 @@ Partial Class Form1
         'cbx_forprod
         '
         Me.cbx_forprod.BackColor = System.Drawing.Color.White
+        Me.cbx_forprod.Controls.Add(Me.GroupBox106)
         Me.cbx_forprod.Controls.Add(Me.GroupBox92)
         Me.cbx_forprod.Controls.Add(Me.GroupBox90)
         Me.cbx_forprod.Controls.Add(Me.GroupBox89)
@@ -7656,6 +7685,280 @@ Partial Class Form1
         Me.cbx_forprod.Size = New System.Drawing.Size(1296, 534)
         Me.cbx_forprod.TabIndex = 11
         Me.cbx_forprod.TabStop = false
+        '
+        'GroupBox106
+        '
+        Me.GroupBox106.Controls.Add(Me.Button75)
+        Me.GroupBox106.Controls.Add(Me.Button74)
+        Me.GroupBox106.Controls.Add(Me.Label345)
+        Me.GroupBox106.Controls.Add(Me.TextBox267)
+        Me.GroupBox106.Controls.Add(Me.TextBox266)
+        Me.GroupBox106.Controls.Add(Me.TextBox265)
+        Me.GroupBox106.Controls.Add(Me.TextBox264)
+        Me.GroupBox106.Controls.Add(Me.Label344)
+        Me.GroupBox106.Controls.Add(Me.Label343)
+        Me.GroupBox106.Controls.Add(Me.Label342)
+        Me.GroupBox106.Controls.Add(Me.Label341)
+        Me.GroupBox106.Controls.Add(Me.Label340)
+        Me.GroupBox106.Controls.Add(Me.Label339)
+        Me.GroupBox106.Controls.Add(Me.TextBox263)
+        Me.GroupBox106.Controls.Add(Me.TextBox262)
+        Me.GroupBox106.Controls.Add(Me.TextBox261)
+        Me.GroupBox106.Controls.Add(Me.Label338)
+        Me.GroupBox106.Controls.Add(Me.Label337)
+        Me.GroupBox106.Controls.Add(Me.Label336)
+        Me.GroupBox106.Controls.Add(Me.TextBox260)
+        Me.GroupBox106.Controls.Add(Me.TextBox259)
+        Me.GroupBox106.Controls.Add(Me.Label335)
+        Me.GroupBox106.Controls.Add(Me.TextBox238)
+        Me.GroupBox106.Controls.Add(Me.Label334)
+        Me.GroupBox106.Controls.Add(Me.Label306)
+        Me.GroupBox106.Controls.Add(Me.Label305)
+        Me.GroupBox106.Controls.Add(Me.Label303)
+        Me.GroupBox106.Controls.Add(Me.Label302)
+        Me.GroupBox106.Location = New System.Drawing.Point(995, 21)
+        Me.GroupBox106.Name = "GroupBox106"
+        Me.GroupBox106.Size = New System.Drawing.Size(258, 481)
+        Me.GroupBox106.TabIndex = 49
+        Me.GroupBox106.TabStop = false
+        Me.GroupBox106.Text = "Composição produto"
+        '
+        'Button74
+        '
+        Me.Button74.Location = New System.Drawing.Point(6, 434)
+        Me.Button74.Name = "Button74"
+        Me.Button74.Size = New System.Drawing.Size(118, 41)
+        Me.Button74.TabIndex = 26
+        Me.Button74.Text = "Verificar Composição"
+        Me.Button74.UseVisualStyleBackColor = true
+        '
+        'Label345
+        '
+        Me.Label345.AutoSize = true
+        Me.Label345.Location = New System.Drawing.Point(29, 290)
+        Me.Label345.Name = "Label345"
+        Me.Label345.Size = New System.Drawing.Size(83, 13)
+        Me.Label345.TabIndex = 25
+        Me.Label345.Text = "Quantidade 4"
+        '
+        'TextBox267
+        '
+        Me.TextBox267.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp5_prod", true))
+        Me.TextBox267.Location = New System.Drawing.Point(132, 402)
+        Me.TextBox267.Name = "TextBox267"
+        Me.TextBox267.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox267.TabIndex = 24
+        '
+        'TextBox266
+        '
+        Me.TextBox266.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp5_prod", true))
+        Me.TextBox266.Location = New System.Drawing.Point(132, 374)
+        Me.TextBox266.Name = "TextBox266"
+        Me.TextBox266.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox266.TabIndex = 23
+        Me.TextBox266.Text = "0"
+        '
+        'TextBox265
+        '
+        Me.TextBox265.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp4_prod", True))
+        Me.TextBox265.Location = New System.Drawing.Point(132, 311)
+        Me.TextBox265.Name = "TextBox265"
+        Me.TextBox265.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox265.TabIndex = 22
+        '
+        'TextBox264
+        '
+        Me.TextBox264.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp4_prod", True))
+        Me.TextBox264.Location = New System.Drawing.Point(132, 282)
+        Me.TextBox264.Name = "TextBox264"
+        Me.TextBox264.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox264.TabIndex = 21
+        Me.TextBox264.Text = "0"
+        '
+        'Label344
+        '
+        Me.Label344.AutoSize = True
+        Me.Label344.Location = New System.Drawing.Point(32, 406)
+        Me.Label344.Name = "Label344"
+        Me.Label344.Size = New System.Drawing.Size(80, 13)
+        Me.Label344.TabIndex = 20
+        Me.Label344.Text = "Código For 5"
+        '
+        'Label343
+        '
+        Me.Label343.AutoSize = True
+        Me.Label343.Location = New System.Drawing.Point(29, 377)
+        Me.Label343.Name = "Label343"
+        Me.Label343.Size = New System.Drawing.Size(83, 13)
+        Me.Label343.TabIndex = 19
+        Me.Label343.Text = "Quantidade 5"
+        '
+        'Label342
+        '
+        Me.Label342.AutoSize = True
+        Me.Label342.Location = New System.Drawing.Point(32, 319)
+        Me.Label342.Name = "Label342"
+        Me.Label342.Size = New System.Drawing.Size(80, 13)
+        Me.Label342.TabIndex = 18
+        Me.Label342.Text = "Código For 4"
+        '
+        'Label341
+        '
+        Me.Label341.AutoSize = True
+        Me.Label341.Location = New System.Drawing.Point(23, 285)
+        Me.Label341.Name = "Label341"
+        Me.Label341.Size = New System.Drawing.Size(0, 13)
+        Me.Label341.TabIndex = 17
+        '
+        'Label340
+        '
+        Me.Label340.AutoSize = True
+        Me.Label340.Location = New System.Drawing.Point(32, 228)
+        Me.Label340.Name = "Label340"
+        Me.Label340.Size = New System.Drawing.Size(80, 13)
+        Me.Label340.TabIndex = 16
+        Me.Label340.Text = "Código For 3"
+        '
+        'Label339
+        '
+        Me.Label339.AutoSize = True
+        Me.Label339.Location = New System.Drawing.Point(29, 197)
+        Me.Label339.Name = "Label339"
+        Me.Label339.Size = New System.Drawing.Size(83, 13)
+        Me.Label339.TabIndex = 15
+        Me.Label339.Text = "Quantidade 3"
+        '
+        'TextBox263
+        '
+        Me.TextBox263.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp3_prod", True))
+        Me.TextBox263.Location = New System.Drawing.Point(132, 221)
+        Me.TextBox263.Name = "TextBox263"
+        Me.TextBox263.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox263.TabIndex = 14
+        '
+        'TextBox262
+        '
+        Me.TextBox262.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp3_prod", True))
+        Me.TextBox262.Location = New System.Drawing.Point(132, 194)
+        Me.TextBox262.Name = "TextBox262"
+        Me.TextBox262.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox262.TabIndex = 13
+        Me.TextBox262.Text = "0"
+        '
+        'TextBox261
+        '
+        Me.TextBox261.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp2_prod", True))
+        Me.TextBox261.Location = New System.Drawing.Point(132, 132)
+        Me.TextBox261.Name = "TextBox261"
+        Me.TextBox261.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox261.TabIndex = 12
+        '
+        'Label338
+        '
+        Me.Label338.AutoSize = True
+        Me.Label338.Location = New System.Drawing.Point(32, 135)
+        Me.Label338.Name = "Label338"
+        Me.Label338.Size = New System.Drawing.Size(80, 13)
+        Me.Label338.TabIndex = 11
+        Me.Label338.Text = "Código For 2"
+        '
+        'Label337
+        '
+        Me.Label337.AutoSize = True
+        Me.Label337.Location = New System.Drawing.Point(29, 109)
+        Me.Label337.Name = "Label337"
+        Me.Label337.Size = New System.Drawing.Size(83, 13)
+        Me.Label337.TabIndex = 10
+        Me.Label337.Text = "Quantidade 2"
+        '
+        'Label336
+        '
+        Me.Label336.AutoSize = True
+        Me.Label336.Location = New System.Drawing.Point(29, 66)
+        Me.Label336.Name = "Label336"
+        Me.Label336.Size = New System.Drawing.Size(80, 13)
+        Me.Label336.TabIndex = 9
+        Me.Label336.Text = "Código For 1"
+        '
+        'TextBox260
+        '
+        Me.TextBox260.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp1_prod", True))
+        Me.TextBox260.Location = New System.Drawing.Point(132, 63)
+        Me.TextBox260.Name = "TextBox260"
+        Me.TextBox260.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox260.TabIndex = 8
+        '
+        'TextBox259
+        '
+        Me.TextBox259.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp2_prod", True))
+        Me.TextBox259.Location = New System.Drawing.Point(132, 105)
+        Me.TextBox259.Name = "TextBox259"
+        Me.TextBox259.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox259.TabIndex = 7
+        Me.TextBox259.Text = "0"
+        '
+        'Label335
+        '
+        Me.Label335.AutoSize = True
+        Me.Label335.Location = New System.Drawing.Point(29, 39)
+        Me.Label335.Name = "Label335"
+        Me.Label335.Size = New System.Drawing.Size(83, 13)
+        Me.Label335.TabIndex = 6
+        Me.Label335.Text = "Quantidade 1"
+        '
+        'TextBox238
+        '
+        Me.TextBox238.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp1_prod", True))
+        Me.TextBox238.Location = New System.Drawing.Point(132, 36)
+        Me.TextBox238.Name = "TextBox238"
+        Me.TextBox238.Size = New System.Drawing.Size(110, 21)
+        Me.TextBox238.TabIndex = 5
+        Me.TextBox238.Text = "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        '
+        'Label334
+        '
+        Me.Label334.AutoSize = true
+        Me.Label334.Location = New System.Drawing.Point(78, 352)
+        Me.Label334.Name = "Label334"
+        Me.Label334.Size = New System.Drawing.Size(62, 13)
+        Me.Label334.TabIndex = 4
+        Me.Label334.Text = "Produto 5"
+        '
+        'Label306
+        '
+        Me.Label306.AutoSize = true
+        Me.Label306.Location = New System.Drawing.Point(78, 264)
+        Me.Label306.Name = "Label306"
+        Me.Label306.Size = New System.Drawing.Size(62, 13)
+        Me.Label306.TabIndex = 3
+        Me.Label306.Text = "Produto 4"
+        '
+        'Label305
+        '
+        Me.Label305.AutoSize = true
+        Me.Label305.Location = New System.Drawing.Point(78, 168)
+        Me.Label305.Name = "Label305"
+        Me.Label305.Size = New System.Drawing.Size(62, 13)
+        Me.Label305.TabIndex = 2
+        Me.Label305.Text = "Produto 3"
+        '
+        'Label303
+        '
+        Me.Label303.AutoSize = true
+        Me.Label303.Location = New System.Drawing.Point(78, 88)
+        Me.Label303.Name = "Label303"
+        Me.Label303.Size = New System.Drawing.Size(62, 13)
+        Me.Label303.TabIndex = 1
+        Me.Label303.Text = "Produto 2"
+        '
+        'Label302
+        '
+        Me.Label302.AutoSize = true
+        Me.Label302.Location = New System.Drawing.Point(78, 20)
+        Me.Label302.Name = "Label302"
+        Me.Label302.Size = New System.Drawing.Size(62, 13)
+        Me.Label302.TabIndex = 0
+        Me.Label302.Text = "Produto 1"
         '
         'GroupBox92
         '
@@ -7672,9 +7975,9 @@ Partial Class Form1
         Me.GroupBox92.Controls.Add(Pedcolocados_prodLabel)
         Me.GroupBox92.Controls.Add(Me.Pedcolocados_prodTextBox)
         Me.GroupBox92.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.GroupBox92.Location = New System.Drawing.Point(6, 495)
+        Me.GroupBox92.Location = New System.Drawing.Point(6, 508)
         Me.GroupBox92.Name = "GroupBox92"
-        Me.GroupBox92.Size = New System.Drawing.Size(983, 124)
+        Me.GroupBox92.Size = New System.Drawing.Size(983, 111)
         Me.GroupBox92.TabIndex = 47
         Me.GroupBox92.TabStop = false
         Me.GroupBox92.Text = "OUTROS DADOS"
@@ -7755,13 +8058,15 @@ Partial Class Form1
         Me.GroupBox90.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.GroupBox90.Location = New System.Drawing.Point(6, 272)
         Me.GroupBox90.Name = "GroupBox90"
-        Me.GroupBox90.Size = New System.Drawing.Size(983, 210)
+        Me.GroupBox90.Size = New System.Drawing.Size(983, 230)
         Me.GroupBox90.TabIndex = 46
         Me.GroupBox90.TabStop = false
         Me.GroupBox90.Text = "VALORES"
         '
         'GroupBox91
         '
+        Me.GroupBox91.Controls.Add(Me.ComboBox32)
+        Me.GroupBox91.Controls.Add(Me.Label346)
         Me.GroupBox91.Controls.Add(Me.Label299)
         Me.GroupBox91.Controls.Add(Me.TextBox231)
         Me.GroupBox91.Controls.Add(DescontoFabrica_prodLabel)
@@ -7777,10 +8082,30 @@ Partial Class Form1
         Me.GroupBox91.Controls.Add(Peso_prodLabel)
         Me.GroupBox91.Location = New System.Drawing.Point(642, 28)
         Me.GroupBox91.Name = "GroupBox91"
-        Me.GroupBox91.Size = New System.Drawing.Size(326, 170)
+        Me.GroupBox91.Size = New System.Drawing.Size(326, 182)
         Me.GroupBox91.TabIndex = 45
         Me.GroupBox91.TabStop = false
         Me.GroupBox91.Text = "Calcular Preços 2"
+        '
+        'ComboBox32
+        '
+        Me.ComboBox32.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "Bugiganga_prod", true))
+        Me.ComboBox32.FormattingEnabled = true
+        Me.ComboBox32.Items.AddRange(New Object() {"Não bugiganga", "bugiganga"})
+        Me.ComboBox32.Location = New System.Drawing.Point(189, 155)
+        Me.ComboBox32.Name = "ComboBox32"
+        Me.ComboBox32.Size = New System.Drawing.Size(121, 22)
+        Me.ComboBox32.TabIndex = 48
+        Me.ComboBox32.Text = "Não bugiganga"
+        '
+        'Label346
+        '
+        Me.Label346.AutoSize = true
+        Me.Label346.Location = New System.Drawing.Point(13, 154)
+        Me.Label346.Name = "Label346"
+        Me.Label346.Size = New System.Drawing.Size(120, 14)
+        Me.Label346.TabIndex = 47
+        Me.Label346.Text = "Mercado Livre Net"
         '
         'Label299
         '
@@ -7794,9 +8119,9 @@ Partial Class Form1
         'TextBox231
         '
         Me.TextBox231.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "Subtituicao_tributaria", true))
-        Me.TextBox231.Location = New System.Drawing.Point(188, 127)
+        Me.TextBox231.Location = New System.Drawing.Point(189, 127)
         Me.TextBox231.Name = "TextBox231"
-        Me.TextBox231.Size = New System.Drawing.Size(119, 22)
+        Me.TextBox231.Size = New System.Drawing.Size(118, 22)
         Me.TextBox231.TabIndex = 45
         '
         'DescontoFabrica_prodTextBox
@@ -7882,7 +8207,7 @@ Partial Class Form1
         Me.GroupBox13.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.GroupBox13.Location = New System.Drawing.Point(13, 28)
         Me.GroupBox13.Name = "GroupBox13"
-        Me.GroupBox13.Size = New System.Drawing.Size(623, 170)
+        Me.GroupBox13.Size = New System.Drawing.Size(623, 182)
         Me.GroupBox13.TabIndex = 33
         Me.GroupBox13.TabStop = false
         Me.GroupBox13.Text = "Calcular Preços"
@@ -8080,9 +8405,9 @@ Partial Class Form1
         Me.Label300.AutoSize = true
         Me.Label300.Location = New System.Drawing.Point(6, 144)
         Me.Label300.Name = "Label300"
-        Me.Label300.Size = New System.Drawing.Size(147, 14)
+        Me.Label300.Size = New System.Drawing.Size(124, 14)
         Me.Label300.TabIndex = 51
-        Me.Label300.Text = "Fator multiplicador qtd"
+        Me.Label300.Text = "Estoque Prateleira"
         '
         'Label293
         '
@@ -8629,10 +8954,10 @@ Partial Class Form1
         'Panel5
         '
         Me.Panel5.BackColor = System.Drawing.Color.Gold
+        Me.Panel5.Controls.Add(Me.TextBox268)
         Me.Panel5.Controls.Add(Me.Button87)
         Me.Panel5.Controls.Add(Me.GroupBox5)
         Me.Panel5.Controls.Add(Me.GroupBox12)
-        Me.Panel5.Controls.Add(Me.GroupBox11)
         Me.Panel5.Controls.Add(Me.GroupBox9)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(3, 3)
@@ -8640,9 +8965,17 @@ Partial Class Form1
         Me.Panel5.Size = New System.Drawing.Size(1296, 172)
         Me.Panel5.TabIndex = 1
         '
+        'TextBox268
+        '
+        Me.TextBox268.Enabled = false
+        Me.TextBox268.Location = New System.Drawing.Point(695, 128)
+        Me.TextBox268.Name = "TextBox268"
+        Me.TextBox268.Size = New System.Drawing.Size(10, 21)
+        Me.TextBox268.TabIndex = 11
+        '
         'Button87
         '
-        Me.Button87.Location = New System.Drawing.Point(924, 17)
+        Me.Button87.Location = New System.Drawing.Point(709, 107)
         Me.Button87.Name = "Button87"
         Me.Button87.Size = New System.Drawing.Size(93, 48)
         Me.Button87.TabIndex = 10
@@ -8718,11 +9051,12 @@ Partial Class Form1
         'GroupBox12
         '
         Me.GroupBox12.BackColor = System.Drawing.Color.Gold
+        Me.GroupBox12.Controls.Add(Me.Label246)
+        Me.GroupBox12.Controls.Add(Me.TextBox182)
         Me.GroupBox12.Controls.Add(Me.TextBox237)
         Me.GroupBox12.Controls.Add(Me.Label294)
         Me.GroupBox12.Controls.Add(Me.TextBox252)
         Me.GroupBox12.Controls.Add(Me.Label323)
-        Me.GroupBox12.Controls.Add(Me.Cbx_vizuProd)
         Me.GroupBox12.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.GroupBox12.ForeColor = System.Drawing.SystemColors.WindowText
         Me.GroupBox12.Location = New System.Drawing.Point(489, 8)
@@ -8730,11 +9064,43 @@ Partial Class Form1
         Me.GroupBox12.Size = New System.Drawing.Size(200, 147)
         Me.GroupBox12.TabIndex = 8
         Me.GroupBox12.TabStop = false
-        Me.GroupBox12.Text = "Visualizar Por"
+        Me.GroupBox12.Text = "Buscar por"
+        '
+        'Label246
+        '
+        Me.Label246.AutoSize = true
+        Me.Label246.Location = New System.Drawing.Point(6, 19)
+        Me.Label246.Name = "Label246"
+        Me.Label246.Size = New System.Drawing.Size(177, 14)
+        Me.Label246.TabIndex = 7
+        Me.Label246.Text = "Digite o Código do produto"
+        '
+        'TextBox182
+        '
+        Me.TextBox182.Location = New System.Drawing.Point(7, 35)
+        Me.TextBox182.Name = "TextBox182"
+        Me.TextBox182.Size = New System.Drawing.Size(187, 22)
+        Me.TextBox182.TabIndex = 6
+        '
+        'TextBox237
+        '
+        Me.TextBox237.Location = New System.Drawing.Point(9, 77)
+        Me.TextBox237.Name = "TextBox237"
+        Me.TextBox237.Size = New System.Drawing.Size(185, 22)
+        Me.TextBox237.TabIndex = 4
+        '
+        'Label294
+        '
+        Me.Label294.AutoSize = true
+        Me.Label294.Location = New System.Drawing.Point(6, 60)
+        Me.Label294.Name = "Label294"
+        Me.Label294.Size = New System.Drawing.Size(194, 14)
+        Me.Label294.TabIndex = 3
+        Me.Label294.Text = "Digite o Código Mercado Livre"
         '
         'TextBox252
         '
-        Me.TextBox252.Location = New System.Drawing.Point(9, 115)
+        Me.TextBox252.Location = New System.Drawing.Point(9, 119)
         Me.TextBox252.Name = "TextBox252"
         Me.TextBox252.Size = New System.Drawing.Size(185, 22)
         Me.TextBox252.TabIndex = 2
@@ -8742,72 +9108,11 @@ Partial Class Form1
         'Label323
         '
         Me.Label323.AutoSize = true
-        Me.Label323.Location = New System.Drawing.Point(6, 98)
+        Me.Label323.Location = New System.Drawing.Point(6, 102)
         Me.Label323.Name = "Label323"
         Me.Label323.Size = New System.Drawing.Size(114, 14)
         Me.Label323.TabIndex = 1
         Me.Label323.Text = "Digite o APELIDO"
-        '
-        'Cbx_vizuProd
-        '
-        Me.Cbx_vizuProd.FormattingEnabled = true
-        Me.Cbx_vizuProd.Items.AddRange(New Object() {"Todos", "Preços", "Estoque"})
-        Me.Cbx_vizuProd.Location = New System.Drawing.Point(6, 23)
-        Me.Cbx_vizuProd.Name = "Cbx_vizuProd"
-        Me.Cbx_vizuProd.Size = New System.Drawing.Size(188, 22)
-        Me.Cbx_vizuProd.TabIndex = 0
-        '
-        'GroupBox11
-        '
-        Me.GroupBox11.BackColor = System.Drawing.Color.Gold
-        Me.GroupBox11.Controls.Add(Me.Label246)
-        Me.GroupBox11.Controls.Add(Me.TextBox182)
-        Me.GroupBox11.Controls.Add(Me.txtIndice)
-        Me.GroupBox11.Controls.Add(Me.btn_alterarprecoprod)
-        Me.GroupBox11.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.GroupBox11.ForeColor = System.Drawing.SystemColors.WindowText
-        Me.GroupBox11.Location = New System.Drawing.Point(695, 8)
-        Me.GroupBox11.Name = "GroupBox11"
-        Me.GroupBox11.Size = New System.Drawing.Size(212, 147)
-        Me.GroupBox11.TabIndex = 7
-        Me.GroupBox11.TabStop = false
-        Me.GroupBox11.Text = "Aplicar correção no valor"
-        '
-        'Label246
-        '
-        Me.Label246.AutoSize = true
-        Me.Label246.Location = New System.Drawing.Point(7, 86)
-        Me.Label246.Name = "Label246"
-        Me.Label246.Size = New System.Drawing.Size(74, 14)
-        Me.Label246.TabIndex = 7
-        Me.Label246.Text = "Vr ipi temp"
-        '
-        'TextBox182
-        '
-        Me.TextBox182.Location = New System.Drawing.Point(103, 80)
-        Me.TextBox182.Name = "TextBox182"
-        Me.TextBox182.Size = New System.Drawing.Size(100, 22)
-        Me.TextBox182.TabIndex = 6
-        '
-        'txtIndice
-        '
-        Me.txtIndice.Location = New System.Drawing.Point(10, 41)
-        Me.txtIndice.Mask = "0.0000"
-        Me.txtIndice.Name = "txtIndice"
-        Me.txtIndice.Size = New System.Drawing.Size(193, 22)
-        Me.txtIndice.TabIndex = 5
-        '
-        'btn_alterarprecoprod
-        '
-        Me.btn_alterarprecoprod.BackColor = System.Drawing.SystemColors.ButtonFace
-        Me.btn_alterarprecoprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 12!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
-        Me.btn_alterarprecoprod.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.btn_alterarprecoprod.Location = New System.Drawing.Point(10, 108)
-        Me.btn_alterarprecoprod.Name = "btn_alterarprecoprod"
-        Me.btn_alterarprecoprod.Size = New System.Drawing.Size(193, 33)
-        Me.btn_alterarprecoprod.TabIndex = 4
-        Me.btn_alterarprecoprod.Text = "Alterar Custos"
-        Me.btn_alterarprecoprod.UseVisualStyleBackColor = false
         '
         'GroupBox9
         '
@@ -22498,21 +22803,14 @@ Partial Class Form1
         '
         Me.VendasMlbTableAdapter.ClearBeforeFill = true
         '
-        'Label294
+        'Button75
         '
-        Me.Label294.AutoSize = true
-        Me.Label294.Location = New System.Drawing.Point(6, 49)
-        Me.Label294.Name = "Label294"
-        Me.Label294.Size = New System.Drawing.Size(194, 14)
-        Me.Label294.TabIndex = 3
-        Me.Label294.Text = "Digite o Código Mercado Livre"
-        '
-        'TextBox237
-        '
-        Me.TextBox237.Location = New System.Drawing.Point(9, 73)
-        Me.TextBox237.Name = "TextBox237"
-        Me.TextBox237.Size = New System.Drawing.Size(185, 22)
-        Me.TextBox237.TabIndex = 4
+        Me.Button75.Location = New System.Drawing.Point(132, 433)
+        Me.Button75.Name = "Button75"
+        Me.Button75.Size = New System.Drawing.Size(110, 42)
+        Me.Button75.TabIndex = 27
+        Me.Button75.Text = "Finalizar"
+        Me.Button75.UseVisualStyleBackColor = true
         '
         'Form1
         '
@@ -22660,6 +22958,8 @@ Partial Class Form1
         Me.Panel1.PerformLayout
         Me.cbx_forprod.ResumeLayout(false)
         Me.cbx_forprod.PerformLayout
+        Me.GroupBox106.ResumeLayout(false)
+        Me.GroupBox106.PerformLayout
         Me.GroupBox92.ResumeLayout(false)
         Me.GroupBox92.PerformLayout
         Me.GroupBox90.ResumeLayout(false)
@@ -22681,12 +22981,11 @@ Partial Class Form1
         Me.TabPage_gridProd.ResumeLayout(false)
         CType(Me.ProdutosDataGridView,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel5.ResumeLayout(false)
+        Me.Panel5.PerformLayout
         Me.GroupBox5.ResumeLayout(false)
         Me.GroupBox5.PerformLayout
         Me.GroupBox12.ResumeLayout(false)
         Me.GroupBox12.PerformLayout
-        Me.GroupBox11.ResumeLayout(false)
-        Me.GroupBox11.PerformLayout
         Me.GroupBox9.ResumeLayout(false)
         Me.GroupBox9.PerformLayout
         CType(Me.LinhasprodBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
@@ -23217,10 +23516,6 @@ End Sub
     Friend WithEvents Label13 As System.Windows.Forms.Label
     Friend WithEvents txt_produranomeprod As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox12 As System.Windows.Forms.GroupBox
-    Friend WithEvents Cbx_vizuProd As System.Windows.Forms.ComboBox
-    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
-    Friend WithEvents txtIndice As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents btn_alterarprecoprod As System.Windows.Forms.Button
     Friend WithEvents GroupBox9 As System.Windows.Forms.GroupBox
     Friend WithEvents Button3 As System.Windows.Forms.Button
     Friend WithEvents btn_filt_prod As System.Windows.Forms.Button
@@ -24664,7 +24959,6 @@ End Sub
     Friend WithEvents TextBox7 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox6 As System.Windows.Forms.TextBox
     Friend WithEvents Button5 As System.Windows.Forms.Button
-    Friend WithEvents Label246 As System.Windows.Forms.Label
     Friend WithEvents TextBox182 As System.Windows.Forms.TextBox
     Friend WithEvents EmailEnvio_orc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Vendedor_orc As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -25231,5 +25525,38 @@ End Sub
     Friend WithEvents DataGridViewTextBoxColumn236 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TextBox237 As System.Windows.Forms.TextBox
     Friend WithEvents Label294 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox106 As System.Windows.Forms.GroupBox
+    Friend WithEvents Label334 As System.Windows.Forms.Label
+    Friend WithEvents Label306 As System.Windows.Forms.Label
+    Friend WithEvents Label305 As System.Windows.Forms.Label
+    Friend WithEvents Label303 As System.Windows.Forms.Label
+    Friend WithEvents Label302 As System.Windows.Forms.Label
+    Friend WithEvents TextBox267 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox266 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox265 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox264 As System.Windows.Forms.TextBox
+    Friend WithEvents Label344 As System.Windows.Forms.Label
+    Friend WithEvents Label343 As System.Windows.Forms.Label
+    Friend WithEvents Label342 As System.Windows.Forms.Label
+    Friend WithEvents Label341 As System.Windows.Forms.Label
+    Friend WithEvents Label340 As System.Windows.Forms.Label
+    Friend WithEvents Label339 As System.Windows.Forms.Label
+    Friend WithEvents TextBox263 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox262 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox261 As System.Windows.Forms.TextBox
+    Friend WithEvents Label338 As System.Windows.Forms.Label
+    Friend WithEvents Label337 As System.Windows.Forms.Label
+    Friend WithEvents Label336 As System.Windows.Forms.Label
+    Friend WithEvents TextBox260 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox259 As System.Windows.Forms.TextBox
+    Friend WithEvents Label335 As System.Windows.Forms.Label
+    Friend WithEvents TextBox238 As System.Windows.Forms.TextBox
+    Friend WithEvents Label345 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox32 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label346 As System.Windows.Forms.Label
+    Friend WithEvents Button74 As System.Windows.Forms.Button
+    Friend WithEvents Label246 As System.Windows.Forms.Label
+    Friend WithEvents TextBox268 As System.Windows.Forms.TextBox
+    Friend WithEvents Button75 As System.Windows.Forms.Button
 
 End Class

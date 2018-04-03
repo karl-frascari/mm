@@ -25,11 +25,12 @@ Public Class Form1
 
     Dim nomeArquivoXML As String
     Dim arquivo As New OpenFileDialog
+    Dim FlagProdPesquisa As String = "0"
 
     Dim i As Integer
     Dim flag As String
     Dim flag1 As String
-
+    Dim FlagProdutos As String
     Dim connection As SqlConnection
     Dim command As SqlCommand
     Dim connection2 As SqlConnection
@@ -1199,6 +1200,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Cod_prodTextBox.Enabled = True
         menu_confirmarprod.Visible = False
         DesistirOperaçãoToolStripMenuItem2.Visible = True
+        FlagProdPesquisa = "1"
 
         Codbarras_prodTextBox.Clear()
 
@@ -1297,20 +1299,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
     Private Sub DesistirOperaçãoToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles DesistirOperaçãoToolStripMenuItem2.Click
         restaurar_tab(TabControl1.SelectedTab.ToString)
-
-
-
+        FlagProdPesquisa = "0"
         flag = ""
         DesistirOperaçãoToolStripMenuItem2.Visible = False
         menu_confirmarprod.Visible = False
         habilitarbotoesconfirmarprod()
         travarCamposprod()
         Cod_prodTextBox.Text = ""
-        'restaura a visibilidade dos Form do tabcontrol1
-
-
-        '  tabcontrol produtos
-
+        Button74.Enabled = True
+        Button75.Enabled = True
 
         Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
 
@@ -1385,6 +1382,17 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox245.Enabled = True
         TextBox234.Enabled = True
         TextBox232.Enabled = True
+        TextBox238.Enabled = True
+        TextBox259.Enabled = True
+        TextBox260.Enabled = True
+        TextBox261.Enabled = True
+        TextBox262.Enabled = True
+        TextBox263.Enabled = True
+        TextBox264.Enabled = True
+        TextBox265.Enabled = True
+        TextBox266.Enabled = True
+        TextBox267.Enabled = True
+        ComboBox32.Enabled = True
 
         'combobox
         Nome_linhaComboBox.Enabled = True
@@ -1429,6 +1437,20 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox245.Enabled = False
         TextBox234.Enabled = False
         TextBox232.Enabled = False
+        ' -----------------------------
+        TextBox238.Enabled = False
+        TextBox259.Enabled = False
+        TextBox260.Enabled = False
+        TextBox261.Enabled = False
+        TextBox262.Enabled = False
+        TextBox263.Enabled = False
+        TextBox264.Enabled = False
+        TextBox265.Enabled = False
+        TextBox266.Enabled = False
+        TextBox267.Enabled = False
+        ComboBox32.Enabled = False
+
+
 
         'combobox
         Nome_linhaComboBox.Enabled = False
@@ -1446,7 +1468,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub menu_confirmarprod_Click(sender As Object, e As EventArgs) Handles menu_confirmarprod.Click
 
         Cod_prodforTextBox.Focus()
-
+        FlagProdPesquisa = "0"
 
         ' REM verifica se todos os campos importantes foram preenchidos e se o custo foi calculado antes de gravar
         If Markup_prodTextBox.Text = "0,00" Or
@@ -1506,9 +1528,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
 
             If flag = "incluir" Then
-                command.CommandText = "INSERT INTO produtos (EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+                command.CommandText = "INSERT INTO produtos (Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
             Else
-                command.CommandText = "update produtos set EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
+                command.CommandText = "update produtos set Bugiganga_prod=@Bugiganga_prod,CodComp1_prod=@CodComp1_prod,QtdeComp1_prod=@QtdeComp1_prod,CodComp2_prod=@CodComp2_prod,QtdeComp2_prod=@QtdeComp2_prod,CodComp3_prod=@CodComp3_prod,QtdeComp3_prod=@QtdeComp3_prod,CodComp4_prod=@CodComp4_prod,QtdeComp4_prod=@QtdeComp4_prod,CodComp5_prod=@CodComp5_prod,QtdeComp5_prod=@QtdeComp5_prod,EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
             End If
 
             'REM calculando o preço varejo e atacado antes de salvar
@@ -1570,6 +1592,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             If Porcentagemfat_prodTextBox.Text = "" Then
                 Porcentagemfat_prodTextBox.Text = 0
             End If
+
+
+
             Dim porcentagemfatprod = Convert.ToDouble(Porcentagemfat_prodTextBox.Text)
             command.Parameters.Add("@porcentagemfatprod", SqlDbType.Float).Value = porcentagemfatprod
             command.Parameters.Add("@classiffiscalprod", SqlDbType.VarChar, 50).Value = Classificfiscal_prodTextBox.Text
@@ -1581,6 +1606,38 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@EmbalagemFabrica_prod", SqlDbType.VarChar, 50).Value = TextBox245.Text
             command.Parameters.Add("@CodigoMlb_prod", SqlDbType.VarChar, 50).Value = TextBox233.Text
             command.Parameters.Add("@EstoquePrateleira_prod", SqlDbType.VarChar, 50).Value = TextBox232.Text
+            ' -------------------------------------------------------------------------------------------------
+            command.Parameters.Add("@CodComp1_prod", SqlDbType.VarChar, 50).Value = TextBox260.Text
+
+            If TextBox238.Text = "" Then
+                TextBox238.Text = 0
+            End If
+            command.Parameters.Add("@QtdeComp1_prod", SqlDbType.Float).Value = TextBox238.Text
+            command.Parameters.Add("@CodComp2_prod", SqlDbType.VarChar, 50).Value = TextBox261.Text
+
+            If TextBox259.Text = "" Then
+                TextBox259.Text = 0
+            End If
+            command.Parameters.Add("@QtdeComp2_prod", SqlDbType.Float).Value = TextBox259.Text
+            command.Parameters.Add("@CodComp3_prod", SqlDbType.VarChar, 50).Value = TextBox263.Text
+
+            If TextBox262.Text = "" Then
+                TextBox262.Text = 0
+            End If
+            command.Parameters.Add("@QtdeComp3_prod", SqlDbType.Float).Value = TextBox262.Text
+            command.Parameters.Add("@CodComp4_prod", SqlDbType.VarChar, 50).Value = TextBox265.Text
+
+            If TextBox264.Text = "" Then
+                TextBox264.Text = 0
+            End If
+            command.Parameters.Add("@QtdeComp4_prod", SqlDbType.Float).Value = TextBox264.Text
+            command.Parameters.Add("@CodComp5_prod", SqlDbType.VarChar, 50).Value = TextBox267.Text
+
+            If TextBox266.Text = "" Then
+                TextBox266.Text = 0
+            End If
+            command.Parameters.Add("@QtdeComp5_prod", SqlDbType.Float).Value = TextBox266.Text
+            command.Parameters.Add("@Bugiganga_prod", SqlDbType.VarChar, 50).Value = ComboBox32.Text
 
             ' a seguir comandos para gravar os ítens coletados do formulário ------------------
 
@@ -1610,6 +1667,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         habilitarbotoesconfirmarprod()
         btn_calcPrecos.Enabled = False
         DesistirOperaçãoToolStripMenuItem2.Visible = False
+        Button74.Enabled = True
+        Button75.Enabled = True
         'restabelece o tabcontrol1
         TabControl1.TabPages.Add(tbpg_clientes)
         TabControl1.TabPages.Add(tbpg_pedFornecedor)
@@ -1650,6 +1709,21 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox245.Text = "0"
         TextBox234.Text = "0"
         TextBox232.Text = "1"
+
+        ' quantidade composição produto
+        TextBox238.Text = "0"
+        TextBox259.Text = "0"
+        TextBox262.Text = "0"
+        TextBox264.Text = "0"
+        TextBox266.Text = "0"
+
+        ' código composição produto
+        TextBox260.Text = "0"
+        TextBox261.Text = "0"
+        TextBox263.Text = "0"
+        TextBox265.Text = "0"
+        TextBox267.Text = "0"
+
     End Sub
     ' no clicar limpa o campo se estiver incluindo no campo preço varejo do produto.....
     Private Sub Precovarejo_prodTextBox_Click(sender As Object, e As EventArgs) Handles Precovarejo_prodTextBox.Click
@@ -1707,7 +1781,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Cod_prodTextBox.Enabled = False
         desabilitatextbox()
         btn_calcPrecos.Enabled = True
+        Button74.Enabled = False
+        Button75.Enabled = False
+        FlagProdPesquisa = "1"
+        '--------------------------------
         'remove o tab control
+
         TabControl1.TabPages.Remove(tbpg_clientes)
         TabControl1.TabPages.Remove(tbpg_pedFornecedor)
         TabControl1.TabPages.Remove(tbpg_transportadoras)
@@ -1804,117 +1883,117 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     'pesquisa do código da linha na tabela de produtos
 
 
-    Private Sub btn_alterarprecoprod_Click(sender As Object, e As EventArgs) Handles btn_alterarprecoprod.Click
+    '  Private Sub btn_alterarprecoprod_Click(sender As Object, e As EventArgs) Handles btn_alterarprecoprod.Click
 
-        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> fernando Then
-            MessageBox.Show("Código inválido")
-            TabControl1.SelectedIndex = 0
-            Exit Sub
-        End If
+        'Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        'If codigoEntrada <> fernando Then
+        '    MessageBox.Show("Código inválido")
+        '    TabControl1.SelectedIndex = 0
+        '    Exit Sub
+        'End If
 
-        If nivel = 1 Then
+        'If nivel = 1 Then
 
-            Dim indicealterarprecoProd As Decimal
-
-
-            If cmbox_forprod.Text <> "" And cmbox_linhaprod.Text <> "" Then
-
-                Dim connection As SqlConnection
-                connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-                Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
-
-              
-               
-
-                If txtIndice.Text <> " ," Then
-                    indicealterarprecoProd = txtIndice.Text
-                Else
-                    MessageBox.Show("Por favor, preencha o valor do índice")
-                    txtIndice.Focus()
-                    Exit Sub
-                End If
-
-                If indicealterarprecoProd > 0.8 And indicealterarprecoProd < 1.2 Then
+        '    Dim indicealterarprecoProd As Decimal
 
 
-                    Dim reply As DialogResult = MessageBox.Show("Confirmar a alteração do Fornecedor " & cmbox_forprod.Text & " e da Linha " & cmbox_linhaprod.Text & " em " & indicealterarprecoProd & "?", "Atenção!!!", _
-          MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+        '    If cmbox_forprod.Text <> "" And cmbox_linhaprod.Text <> "" Then
 
-                    If reply = DialogResult.Yes Then
-
-
-                        ' calculando o custo
-                        Dim command As SqlCommand
-                        command = connection.CreateCommand()
-                        command.CommandText = "update produtos set custo_prod = ROUND(custo_prod * @prevalor, 2)  where fornecedor_prod = '" & cmbox_forprod.Text & "' and linha_prod = '" & cmbox_linhaprod.Text & "'"
-                        command.CommandType = CommandType.Text
-                        command.Parameters.Add("@prevalor", SqlDbType.Float).Value = indicealterarprecoProd
-
-                        ' calculando preço atacado
-                        Dim command2 As SqlCommand
-                        command2 = connection.CreateCommand()
-                        command2.CommandText = "update produtos set precoatacado_prod = ROUND(((custo_prod) * ( 1 + (ipi_prod/100))) / (1 - (markup_prod/100)), 2)  where fornecedor_prod = '" & cmbox_forprod.Text & "' and linha_prod = '" & cmbox_linhaprod.Text & "'"
-                        command2.CommandType = CommandType.Text
-                        command2.Parameters.Add("@prevalor2", SqlDbType.Float).Value = indicealterarprecoProd
-
-                        ' calculando preço varejo
-                        Dim command3 As SqlCommand
-                        command3 = connection.CreateCommand()
-                        command3.CommandText = "update produtos set precovarejo_prod =  ROUND(((custo_prod) * ( 1 + (ipi_prod/100))) / (1 - (markup_prod/100)), 2)  where fornecedor_prod = '" & cmbox_forprod.Text & "' and linha_prod = '" & cmbox_linhaprod.Text & "'"
-                        command3.CommandType = CommandType.Text
-                        command3.Parameters.Add("@prevalor3", SqlDbType.Float).Value = indicealterarprecoProd
-
-
-                        Try
-                            connection.Open()
-                            command.ExecuteNonQuery()
-                            command2.ExecuteNonQuery()
-                            command3.ExecuteNonQuery()
-
-                            connection.Close()
-
-                            Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
-                            ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", cmbox_linhaprod.Text, cmbox_forprod.Text)
-                            MessageBox.Show("Alterado com sucesso!")
-                            txtIndice.Text = " ,"
-
-                        Catch ex As Exception
-                            MessageBox.Show("Algo ocorreu errado")
-                            MessageBox.Show(ex.ToString())
-
-
-                        Finally
-                            connection.Close()
-                        End Try
-
-
-                    End If
-                Else
-
-                    MessageBox.Show("O índice deve estar entre  0, 8 e 1,2", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                    txtIndice.Clear()
-
-
-
-                End If
-
-
-            End If
-
-
-        End If
-
-        If nivel > 1 Then
-
-            MessageBox.Show("Você não está autorizado")
-
-        End If
+        '        Dim connection As SqlConnection
+        '        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        '        Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
 
 
 
-    End Sub
+        '        If txtIndice.Text <> " ," Then
+        '            indicealterarprecoProd = txtIndice.Text
+        '        Else
+        '            MessageBox.Show("Por favor, preencha o valor do índice")
+        '            txtIndice.Focus()
+        '            Exit Sub
+        '        End If
+
+        '        If indicealterarprecoProd > 0.8 And indicealterarprecoProd < 1.2 Then
+
+
+        '            Dim reply As DialogResult = MessageBox.Show("Confirmar a alteração do Fornecedor " & cmbox_forprod.Text & " e da Linha " & cmbox_linhaprod.Text & " em " & indicealterarprecoProd & "?", "Atenção!!!", _
+        '  MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+        '            If reply = DialogResult.Yes Then
+
+
+        '                ' calculando o custo
+        '                Dim command As SqlCommand
+        '                command = connection.CreateCommand()
+        '                command.CommandText = "update produtos set custo_prod = ROUND(custo_prod * @prevalor, 2)  where fornecedor_prod = '" & cmbox_forprod.Text & "' and linha_prod = '" & cmbox_linhaprod.Text & "'"
+        '                command.CommandType = CommandType.Text
+        '                command.Parameters.Add("@prevalor", SqlDbType.Float).Value = indicealterarprecoProd
+
+        '                ' calculando preço atacado
+        '                Dim command2 As SqlCommand
+        '                command2 = connection.CreateCommand()
+        '                command2.CommandText = "update produtos set precoatacado_prod = ROUND(((custo_prod) * ( 1 + (ipi_prod/100))) / (1 - (markup_prod/100)), 2)  where fornecedor_prod = '" & cmbox_forprod.Text & "' and linha_prod = '" & cmbox_linhaprod.Text & "'"
+        '                command2.CommandType = CommandType.Text
+        '                command2.Parameters.Add("@prevalor2", SqlDbType.Float).Value = indicealterarprecoProd
+
+        '                ' calculando preço varejo
+        '                Dim command3 As SqlCommand
+        '                command3 = connection.CreateCommand()
+        '                command3.CommandText = "update produtos set precovarejo_prod =  ROUND(((custo_prod) * ( 1 + (ipi_prod/100))) / (1 - (markup_prod/100)), 2)  where fornecedor_prod = '" & cmbox_forprod.Text & "' and linha_prod = '" & cmbox_linhaprod.Text & "'"
+        '                command3.CommandType = CommandType.Text
+        '                command3.Parameters.Add("@prevalor3", SqlDbType.Float).Value = indicealterarprecoProd
+
+
+        '                Try
+        '                    connection.Open()
+        '                    command.ExecuteNonQuery()
+        '                    command2.ExecuteNonQuery()
+        '                    command3.ExecuteNonQuery()
+
+        '                    connection.Close()
+
+        '                    Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
+        '                    ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", cmbox_linhaprod.Text, cmbox_forprod.Text)
+        '                    MessageBox.Show("Alterado com sucesso!")
+        '                    txtIndice.Text = " ,"
+
+        '                Catch ex As Exception
+        '                    MessageBox.Show("Algo ocorreu errado")
+        '                    MessageBox.Show(ex.ToString())
+
+
+        '                Finally
+        '                    connection.Close()
+        '                End Try
+
+
+        '            End If
+        '        Else
+
+        '            MessageBox.Show("O índice deve estar entre  0, 8 e 1,2", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '            txtIndice.Clear()
+
+
+
+        '        End If
+
+
+        '    End If
+
+
+        'End If
+
+        'If nivel > 1 Then
+
+        '    MessageBox.Show("Você não está autorizado")
+
+        'End If
+
+
+
+
+        ' End Sub
 
     'REM CADASTRA OS FORNECDORES A PARTIR DO ARQUIVO RETIRADO DAS NOTAS XML DE ENTRADA (DOS FORNECEDORES) VIA BOTÃO NO PROGRAMA DE CADASTROS
     Private Sub bnt_cadProdnfe_Click(sender As Object, e As EventArgs) Handles bnt_cadProdnfe.Click
@@ -2128,102 +2207,102 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
     'mostra as colunas selecionadas no combobox da tabela produtos
-    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbx_vizuProd.SelectedIndexChanged
+    'Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbx_vizuProd.SelectedIndexChanged
 
-        If Cbx_vizuProd.Text = "Todos" Then
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = True
-            ' Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn62").Visible = True
-            'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn63").Visible = True
-            'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn64").Visible = True
+    '    If Cbx_vizuProd.Text = "Todos" Then
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = True
+    '        ' Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn62").Visible = True
+    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn63").Visible = True
+    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn64").Visible = True
 
-        End If
+    '    End If
 
-        If Cbx_vizuProd.Text = "Preços" Then
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = False
-            'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn62").Visible = True
-            'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn63").Visible = True
-            'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn64").Visible = True
+    '    If Cbx_vizuProd.Text = "Preços" Then
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = False
+    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn62").Visible = True
+    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn63").Visible = True
+    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn64").Visible = True
 
-        End If
+    '    End If
 
-        If Cbx_vizuProd.Text = "Estoque" Then
+    '    If Cbx_vizuProd.Text = "Estoque" Then
 
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = True
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = False
-            Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = False
-          
-        End If
-    End Sub
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = True
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = False
+    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = False
+
+    '    End If
+    'End Sub
 
 
     Private Sub btn_calcPrecos_Click(sender As Object, e As EventArgs) Handles btn_calcPrecos.Click
@@ -4785,8 +4864,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub ProdutosDataGridView_DoubleClick_2(sender As Object, e As EventArgs) Handles ProdutosDataGridView.DoubleClick
 
-        tabpage_produtos.SelectedIndex = 0
-        travarCamposprod()
+       
+        If FlagProdutos = "1" Then
+            ProdutosBindingSource.Filter = String.Format("cod_prod LIKE '{0}%'", TextBox268.Text)
+            tabpage_produtos.SelectedIndex = 0
+            FlagProdutos = ""
+            travarCamposprod()
+        Else
+            tabpage_produtos.SelectedIndex = 0
+            travarCamposprod()
+        End If
 
     End Sub
 
@@ -14734,6 +14821,86 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub TextBox237_TextChanged(sender As Object, e As EventArgs) Handles TextBox237.TextChanged
 
         ProdutosBindingSource.Filter = String.Format("CodigoMlb_prod LIKE '{0}%'", TextBox237.Text)
+
+    End Sub
+
+   
+    Private Sub TextBox260_DoubleClick(sender As Object, e As EventArgs) Handles TextBox260.DoubleClick
+
+        If FlagProdPesquisa = "0" Then
+            FlagProdutos = "1"
+            TextBox268.Text = Cod_prodTextBox.Text
+            TextBox240.Text = TextBox260.Text
+            tabpage_produtos.SelectedIndex = 1
+        End If
+
+
+    End Sub
+
+    Private Sub Button74_Click_1(sender As Object, e As EventArgs) Handles Button74.Click
+
+        TextBox260.Enabled = True
+        TextBox261.Enabled = True
+        TextBox263.Enabled = True
+        TextBox265.Enabled = True
+        TextBox267.Enabled = True
+
+      
+    End Sub
+
+    Private Sub TextBox182_TextChanged(sender As Object, e As EventArgs) Handles TextBox182.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("cod_prod LIKE '{0}%'", TextBox182.Text)
+
+    End Sub
+
+    
+    Private Sub Button75_Click(sender As Object, e As EventArgs) Handles Button75.Click
+
+        TextBox260.Enabled = False
+        TextBox261.Enabled = False
+        TextBox263.Enabled = False
+        TextBox265.Enabled = False
+        TextBox267.Enabled = False
+
+    End Sub
+
+    Private Sub TextBox261_DoubleClick(sender As Object, e As EventArgs) Handles TextBox261.DoubleClick
+        If FlagProdPesquisa = "0" Then
+            FlagProdutos = "1"
+            TextBox268.Text = Cod_prodTextBox.Text
+            TextBox240.Text = TextBox260.Text
+            tabpage_produtos.SelectedIndex = 1
+        End If
+
+    End Sub
+
+    Private Sub TextBox263_DoubleClick(sender As Object, e As EventArgs) Handles TextBox263.DoubleClick
+        If FlagProdPesquisa = "0" Then
+            FlagProdutos = "1"
+            TextBox268.Text = Cod_prodTextBox.Text
+            TextBox240.Text = TextBox260.Text
+            tabpage_produtos.SelectedIndex = 1
+        End If
+    End Sub
+
+    Private Sub TextBox265_DoubleClick(sender As Object, e As EventArgs) Handles TextBox265.DoubleClick
+        If FlagProdPesquisa = "0" Then
+            FlagProdutos = "1"
+            TextBox268.Text = Cod_prodTextBox.Text
+            TextBox240.Text = TextBox260.Text
+            tabpage_produtos.SelectedIndex = 1
+        End If
+
+    End Sub
+
+    Private Sub TextBox267_DoubleClick(sender As Object, e As EventArgs) Handles TextBox267.DoubleClick
+        If FlagProdPesquisa = "0" Then
+            FlagProdutos = "1"
+            TextBox268.Text = Cod_prodTextBox.Text
+            TextBox240.Text = TextBox260.Text
+            tabpage_produtos.SelectedIndex = 1
+        End If
 
     End Sub
 End Class
