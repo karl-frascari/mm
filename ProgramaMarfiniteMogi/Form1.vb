@@ -14704,7 +14704,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command2.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
             command2.CommandType = CommandType.Text
             ' -------------------------------------------------------------------
-            ' -----------------------------------------------------------------
             connection.Open()
             Dim lrd2 As SqlDataReader = command2.ExecuteReader()
 
@@ -14720,11 +14719,72 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 CustoProduto = lrd2("custo_prod").ToString
                 IPIProduto = lrd2("ipi_prod").ToString
 
-
             End While
-
             connection.Close()
+            ' -----------------------------------------------------
+            Dim CodComp1 As String = ""
+            Dim CodComp2 As String = ""
+            Dim CodComp3 As String = ""
+            Dim CodComp4 As String = ""
+            Dim CodComp5 As String = ""
+            Dim QtdeComp1 As Double = 0
+            Dim QtdeComp2 As Double = 0
+            Dim QtdeComp3 As Double = 0
+            Dim QtdeComp4 As Double = 0
+            Dim QtdeComp5 As Double = 0
+
+
+            connection.Open()
+            Dim lrd3 As SqlDataReader = command2.ExecuteReader()
+            If LinhaProduto = "produto combo/kit" Then
+
+                While lrd3.Read
+
+                    CodComp1 = lrd2("CodComp1_prod").ToString
+                    QtdeComp1 = lrd2("QtdeComp1_prod").ToString
+                    CodComp2 = lrd2("CodComp2_prod").ToString
+                    QtdeComp2 = lrd2("QtdeComp2_prod").ToString
+                    CodComp3 = lrd2("CodComp3_prod").ToString
+                    QtdeComp3 = lrd2("QtdeComp3_prod").ToString
+                    CodComp4 = lrd2("CodComp4_prod").ToString
+                    QtdeComp4 = lrd2("QtdeComp4_prod").ToString
+                    CodComp5 = lrd2("CodComp5_prod").ToString
+                    QtdeComp5 = lrd2("QtdeComp5_prod").ToString
+
+                End While
+            End If
+            connection.Close()
+
             If NomeProduto <> "" Then
+                ' ---------------------------------------------------------------------------------
+
+                'REM verifica se o produto já foi cadastrado no arquivo balcão
+                'Dim con As New SqlConnection
+                Dim cmd As New SqlCommand
+
+                'con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+                cmd.Connection = connection
+                cmd.CommandText = "SELECT CodigoMlb_balcao  from balcao where CodigoMlb_balcao = " & "'" & NumeroNota & "'"
+
+                connection.Open()
+
+
+                'REM verifica se cdigo prod existe no arquivo balcão, para não gravar duas vezes
+                Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
+
+                Try
+                    If lrd5.Read() = True Then
+
+                        MessageBox.Show("O código do produto " & NomeProduto & " já foi cadastrado!!!!")
+                        connection.Close()
+                        GoTo Proxima
+
+                    End If
+
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                End Try
+                connection.Close()
 
                 ' ---------------------------------------------------------------------------------
                 ' Faz o lançamento em vendas balcão
@@ -14794,6 +14854,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     MessageBox.Show(ex.ToString())
                 End Try
             End If
+Proxima:
+
         Next
 
     End Sub

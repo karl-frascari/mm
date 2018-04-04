@@ -570,6 +570,7 @@ Partial Class Form1
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbx_forprod = New System.Windows.Forms.GroupBox()
         Me.GroupBox106 = New System.Windows.Forms.GroupBox()
+        Me.Button75 = New System.Windows.Forms.Button()
         Me.Button74 = New System.Windows.Forms.Button()
         Me.Label345 = New System.Windows.Forms.Label()
         Me.TextBox267 = New System.Windows.Forms.TextBox()
@@ -2309,7 +2310,7 @@ Partial Class Form1
         Me.PedidoCompraTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter()
         Me.TesteTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter()
         Me.VendasMlbTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter()
-        Me.Button75 = New System.Windows.Forms.Button()
+        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -7673,6 +7674,7 @@ Partial Class Form1
         'cbx_forprod
         '
         Me.cbx_forprod.BackColor = System.Drawing.Color.White
+        Me.cbx_forprod.Controls.Add(Me.VScrollBar1)
         Me.cbx_forprod.Controls.Add(Me.GroupBox106)
         Me.cbx_forprod.Controls.Add(Me.GroupBox92)
         Me.cbx_forprod.Controls.Add(Me.GroupBox90)
@@ -7723,6 +7725,15 @@ Partial Class Form1
         Me.GroupBox106.TabStop = false
         Me.GroupBox106.Text = "Composição produto"
         '
+        'Button75
+        '
+        Me.Button75.Location = New System.Drawing.Point(132, 433)
+        Me.Button75.Name = "Button75"
+        Me.Button75.Size = New System.Drawing.Size(110, 42)
+        Me.Button75.TabIndex = 27
+        Me.Button75.Text = "Finalizar"
+        Me.Button75.UseVisualStyleBackColor = true
+        '
         'Button74
         '
         Me.Button74.Location = New System.Drawing.Point(6, 434)
@@ -7760,7 +7771,7 @@ Partial Class Form1
         '
         'TextBox265
         '
-        Me.TextBox265.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp4_prod", True))
+        Me.TextBox265.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp4_prod", true))
         Me.TextBox265.Location = New System.Drawing.Point(132, 311)
         Me.TextBox265.Name = "TextBox265"
         Me.TextBox265.Size = New System.Drawing.Size(110, 21)
@@ -7768,7 +7779,7 @@ Partial Class Form1
         '
         'TextBox264
         '
-        Me.TextBox264.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp4_prod", True))
+        Me.TextBox264.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp4_prod", true))
         Me.TextBox264.Location = New System.Drawing.Point(132, 282)
         Me.TextBox264.Name = "TextBox264"
         Me.TextBox264.Size = New System.Drawing.Size(110, 21)
@@ -7777,7 +7788,7 @@ Partial Class Form1
         '
         'Label344
         '
-        Me.Label344.AutoSize = True
+        Me.Label344.AutoSize = true
         Me.Label344.Location = New System.Drawing.Point(32, 406)
         Me.Label344.Name = "Label344"
         Me.Label344.Size = New System.Drawing.Size(80, 13)
@@ -7786,7 +7797,7 @@ Partial Class Form1
         '
         'Label343
         '
-        Me.Label343.AutoSize = True
+        Me.Label343.AutoSize = true
         Me.Label343.Location = New System.Drawing.Point(29, 377)
         Me.Label343.Name = "Label343"
         Me.Label343.Size = New System.Drawing.Size(83, 13)
@@ -7795,7 +7806,7 @@ Partial Class Form1
         '
         'Label342
         '
-        Me.Label342.AutoSize = True
+        Me.Label342.AutoSize = true
         Me.Label342.Location = New System.Drawing.Point(32, 319)
         Me.Label342.Name = "Label342"
         Me.Label342.Size = New System.Drawing.Size(80, 13)
@@ -7804,7 +7815,7 @@ Partial Class Form1
         '
         'Label341
         '
-        Me.Label341.AutoSize = True
+        Me.Label341.AutoSize = true
         Me.Label341.Location = New System.Drawing.Point(23, 285)
         Me.Label341.Name = "Label341"
         Me.Label341.Size = New System.Drawing.Size(0, 13)
@@ -7812,7 +7823,7 @@ Partial Class Form1
         '
         'Label340
         '
-        Me.Label340.AutoSize = True
+        Me.Label340.AutoSize = true
         Me.Label340.Location = New System.Drawing.Point(32, 228)
         Me.Label340.Name = "Label340"
         Me.Label340.Size = New System.Drawing.Size(80, 13)
@@ -7821,7 +7832,7 @@ Partial Class Form1
         '
         'Label339
         '
-        Me.Label339.AutoSize = True
+        Me.Label339.AutoSize = true
         Me.Label339.Location = New System.Drawing.Point(29, 197)
         Me.Label339.Name = "Label339"
         Me.Label339.Size = New System.Drawing.Size(83, 13)
@@ -7830,7 +7841,7 @@ Partial Class Form1
         '
         'TextBox263
         '
-        Me.TextBox263.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp3_prod", True))
+        Me.TextBox263.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp3_prod", true))
         Me.TextBox263.Location = New System.Drawing.Point(132, 221)
         Me.TextBox263.Name = "TextBox263"
         Me.TextBox263.Size = New System.Drawing.Size(110, 21)
@@ -7838,7 +7849,7 @@ Partial Class Form1
         '
         'TextBox262
         '
-        Me.TextBox262.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp3_prod", True))
+        Me.TextBox262.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp3_prod", true))
         Me.TextBox262.Location = New System.Drawing.Point(132, 194)
         Me.TextBox262.Name = "TextBox262"
         Me.TextBox262.Size = New System.Drawing.Size(110, 21)
@@ -7847,7 +7858,7 @@ Partial Class Form1
         '
         'TextBox261
         '
-        Me.TextBox261.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp2_prod", True))
+        Me.TextBox261.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp2_prod", true))
         Me.TextBox261.Location = New System.Drawing.Point(132, 132)
         Me.TextBox261.Name = "TextBox261"
         Me.TextBox261.Size = New System.Drawing.Size(110, 21)
@@ -7855,7 +7866,7 @@ Partial Class Form1
         '
         'Label338
         '
-        Me.Label338.AutoSize = True
+        Me.Label338.AutoSize = true
         Me.Label338.Location = New System.Drawing.Point(32, 135)
         Me.Label338.Name = "Label338"
         Me.Label338.Size = New System.Drawing.Size(80, 13)
@@ -7864,7 +7875,7 @@ Partial Class Form1
         '
         'Label337
         '
-        Me.Label337.AutoSize = True
+        Me.Label337.AutoSize = true
         Me.Label337.Location = New System.Drawing.Point(29, 109)
         Me.Label337.Name = "Label337"
         Me.Label337.Size = New System.Drawing.Size(83, 13)
@@ -7873,7 +7884,7 @@ Partial Class Form1
         '
         'Label336
         '
-        Me.Label336.AutoSize = True
+        Me.Label336.AutoSize = true
         Me.Label336.Location = New System.Drawing.Point(29, 66)
         Me.Label336.Name = "Label336"
         Me.Label336.Size = New System.Drawing.Size(80, 13)
@@ -7882,7 +7893,7 @@ Partial Class Form1
         '
         'TextBox260
         '
-        Me.TextBox260.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp1_prod", True))
+        Me.TextBox260.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "CodComp1_prod", true))
         Me.TextBox260.Location = New System.Drawing.Point(132, 63)
         Me.TextBox260.Name = "TextBox260"
         Me.TextBox260.Size = New System.Drawing.Size(110, 21)
@@ -7890,7 +7901,7 @@ Partial Class Form1
         '
         'TextBox259
         '
-        Me.TextBox259.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp2_prod", True))
+        Me.TextBox259.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp2_prod", true))
         Me.TextBox259.Location = New System.Drawing.Point(132, 105)
         Me.TextBox259.Name = "TextBox259"
         Me.TextBox259.Size = New System.Drawing.Size(110, 21)
@@ -7899,7 +7910,7 @@ Partial Class Form1
         '
         'Label335
         '
-        Me.Label335.AutoSize = True
+        Me.Label335.AutoSize = true
         Me.Label335.Location = New System.Drawing.Point(29, 39)
         Me.Label335.Name = "Label335"
         Me.Label335.Size = New System.Drawing.Size(83, 13)
@@ -7908,12 +7919,12 @@ Partial Class Form1
         '
         'TextBox238
         '
-        Me.TextBox238.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp1_prod", True))
+        Me.TextBox238.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "QtdeComp1_prod", true))
         Me.TextBox238.Location = New System.Drawing.Point(132, 36)
         Me.TextBox238.Name = "TextBox238"
         Me.TextBox238.Size = New System.Drawing.Size(110, 21)
         Me.TextBox238.TabIndex = 5
-        Me.TextBox238.Text = "0" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
+        Me.TextBox238.Text = "0"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)
         '
         'Label334
         '
@@ -22803,14 +22814,13 @@ Partial Class Form1
         '
         Me.VendasMlbTableAdapter.ClearBeforeFill = true
         '
-        'Button75
+        'VScrollBar1
         '
-        Me.Button75.Location = New System.Drawing.Point(132, 433)
-        Me.Button75.Name = "Button75"
-        Me.Button75.Size = New System.Drawing.Size(110, 42)
-        Me.Button75.TabIndex = 27
-        Me.Button75.Text = "Finalizar"
-        Me.Button75.UseVisualStyleBackColor = true
+        Me.VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.VScrollBar1.Location = New System.Drawing.Point(1276, 41)
+        Me.VScrollBar1.Name = "VScrollBar1"
+        Me.VScrollBar1.Size = New System.Drawing.Size(17, 490)
+        Me.VScrollBar1.TabIndex = 50
         '
         'Form1
         '
@@ -25558,5 +25568,6 @@ End Sub
     Friend WithEvents Label246 As System.Windows.Forms.Label
     Friend WithEvents TextBox268 As System.Windows.Forms.TextBox
     Friend WithEvents Button75 As System.Windows.Forms.Button
+    Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
 
 End Class
