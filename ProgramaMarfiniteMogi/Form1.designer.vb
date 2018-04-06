@@ -569,6 +569,7 @@ Partial Class Form1
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbx_forprod = New System.Windows.Forms.GroupBox()
+        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.GroupBox106 = New System.Windows.Forms.GroupBox()
         Me.Button75 = New System.Windows.Forms.Button()
         Me.Button74 = New System.Windows.Forms.Button()
@@ -2310,7 +2311,7 @@ Partial Class Form1
         Me.PedidoCompraTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter()
         Me.TesteTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter()
         Me.VendasMlbTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter()
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
+        Me.Button76 = New System.Windows.Forms.Button()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -3675,10 +3676,10 @@ Partial Class Form1
         Me.VendasMlbDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn220, Me.DataGridViewTextBoxColumn222, Me.DataGridViewTextBoxColumn223, Me.DataGridViewTextBoxColumn224, Me.DataGridViewTextBoxColumn225, Me.DataGridViewTextBoxColumn226, Me.DataGridViewTextBoxColumn227, Me.DataGridViewTextBoxColumn228, Me.DataGridViewTextBoxColumn229, Me.DataGridViewTextBoxColumn230, Me.DataGridViewTextBoxColumn231, Me.DataGridViewTextBoxColumn232, Me.DataGridViewTextBoxColumn233, Me.DataGridViewTextBoxColumn234, Me.DataGridViewTextBoxColumn235, Me.CodigoMlb_VendasMlb})
         Me.VendasMlbDataGridView.DataSource = Me.VendasMlbBindingSource
         Me.VendasMlbDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.VendasMlbDataGridView.Location = New System.Drawing.Point(3, 252)
+        Me.VendasMlbDataGridView.Location = New System.Drawing.Point(3, 269)
         Me.VendasMlbDataGridView.Name = "VendasMlbDataGridView"
         Me.VendasMlbDataGridView.ReadOnly = true
-        Me.VendasMlbDataGridView.Size = New System.Drawing.Size(1310, 443)
+        Me.VendasMlbDataGridView.Size = New System.Drawing.Size(1310, 426)
         Me.VendasMlbDataGridView.TabIndex = 485
         '
         'DataGridViewTextBoxColumn220
@@ -3816,6 +3817,7 @@ Partial Class Form1
         '
         'Busca
         '
+        Me.Busca.Controls.Add(Me.Button76)
         Me.Busca.Controls.Add(Me.Label7)
         Me.Busca.Controls.Add(Me.Label22)
         Me.Busca.Controls.Add(Me.txt_buscaClienteNFE)
@@ -3971,11 +3973,12 @@ Partial Class Form1
         '
         'Panel4
         '
+        Me.Panel4.AutoScroll = true
         Me.Panel4.Controls.Add(Me.Button94)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1310, 249)
+        Me.Panel4.Size = New System.Drawing.Size(1310, 266)
         Me.Panel4.TabIndex = 485
         '
         'Button94
@@ -7687,6 +7690,14 @@ Partial Class Form1
         Me.cbx_forprod.Size = New System.Drawing.Size(1296, 534)
         Me.cbx_forprod.TabIndex = 11
         Me.cbx_forprod.TabStop = false
+        '
+        'VScrollBar1
+        '
+        Me.VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.VScrollBar1.Location = New System.Drawing.Point(1276, 41)
+        Me.VScrollBar1.Name = "VScrollBar1"
+        Me.VScrollBar1.Size = New System.Drawing.Size(17, 490)
+        Me.VScrollBar1.TabIndex = 50
         '
         'GroupBox106
         '
@@ -22814,13 +22825,14 @@ Partial Class Form1
         '
         Me.VendasMlbTableAdapter.ClearBeforeFill = true
         '
-        'VScrollBar1
+        'Button76
         '
-        Me.VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.VScrollBar1.Location = New System.Drawing.Point(1276, 41)
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(17, 490)
-        Me.VScrollBar1.TabIndex = 50
+        Me.Button76.Location = New System.Drawing.Point(349, 21)
+        Me.Button76.Name = "Button76"
+        Me.Button76.Size = New System.Drawing.Size(121, 40)
+        Me.Button76.TabIndex = 2
+        Me.Button76.Text = "Botão teste vendas mlb"
+        Me.Button76.UseVisualStyleBackColor = true
         '
         'Form1
         '
@@ -25569,5 +25581,6 @@ End Sub
     Friend WithEvents TextBox268 As System.Windows.Forms.TextBox
     Friend WithEvents Button75 As System.Windows.Forms.Button
     Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
+    Friend WithEvents Button76 As System.Windows.Forms.Button
 
 End Class
