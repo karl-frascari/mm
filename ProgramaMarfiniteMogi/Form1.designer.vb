@@ -156,6 +156,7 @@ Partial Class Form1
         Me.CodigoMlb_VendasMlb = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VendasMlbBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Busca = New System.Windows.Forms.GroupBox()
+        Me.Button76 = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.txt_buscaClienteNFE = New System.Windows.Forms.TextBox()
@@ -2311,7 +2312,6 @@ Partial Class Form1
         Me.PedidoCompraTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.PedidoCompraTableAdapter()
         Me.TesteTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.testeTableAdapter()
         Me.VendasMlbTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter()
-        Me.Button76 = New System.Windows.Forms.Button()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -3828,6 +3828,15 @@ Partial Class Form1
         Me.Busca.TabIndex = 484
         Me.Busca.TabStop = false
         Me.Busca.Text = "Busca"
+        '
+        'Button76
+        '
+        Me.Button76.Location = New System.Drawing.Point(349, 21)
+        Me.Button76.Name = "Button76"
+        Me.Button76.Size = New System.Drawing.Size(121, 40)
+        Me.Button76.TabIndex = 2
+        Me.Button76.Text = "Botão teste vendas mlb"
+        Me.Button76.UseVisualStyleBackColor = true
         '
         'Label7
         '
@@ -22824,15 +22833,6 @@ Partial Class Form1
         'VendasMlbTableAdapter
         '
         Me.VendasMlbTableAdapter.ClearBeforeFill = true
-        '
-        'Button76
-        '
-        Me.Button76.Location = New System.Drawing.Point(349, 21)
-        Me.Button76.Name = "Button76"
-        Me.Button76.Size = New System.Drawing.Size(121, 40)
-        Me.Button76.TabIndex = 2
-        Me.Button76.Text = "Botão teste vendas mlb"
-        Me.Button76.UseVisualStyleBackColor = true
         '
         'Form1
         '

@@ -913,8 +913,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim UltimaLetra As String = ""
         Dim Letra As String = ""
 
-        'NumeroNota(0) = "A"
-        'NumeroNota(1) = "B"
+       
 
         For xx = 0 To VendasMlbDataGridView.RowCount() - 1
 
@@ -934,8 +933,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' Pega a última letra
             UltimaLetra = NumeroNota(xx).IndexOf("A")
 
-
-
             ' acrescenta uma letra atrás do codigo vendas mlb para mudar o código e não permitir que ele seja relançado
             If CodigoAnterior = NumeroNota(xx) Then
                 NumeroNota(xx) = NumeroNota(xx) + "A"
@@ -943,7 +940,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
             If CodigoAnterior = (NumeroNota(xx) + "A") Then
-
                 NumeroNota(xx) = NumeroNota(xx) + "B"
             End If
 
@@ -976,6 +972,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Next
 
+        Me.VendasMlbTableAdapter.Fill(Me.DataSetFinal.VendasMlb)
 
     End Sub
     'REM chama a funçao para carregar as notas XML
@@ -1047,7 +1044,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
                 'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
                 If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
-                    MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
+                    '  MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
                     Exit Sub
                 End If
 
@@ -1234,7 +1231,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 connection.Close()
             End Try
         Next
-        Me.VendasMlbTableAdapter.Fill(Me.DataSetFinal.VendasMlb)
+
 
     End Sub
 
@@ -15117,6 +15114,10 @@ Proxima:
 
         'Next
        
+    End Sub
+
+    Private Sub btn_trans_Click(sender As Object, e As EventArgs) Handles btn_trans.Click
+
     End Sub
 End Class
 
