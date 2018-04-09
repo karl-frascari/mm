@@ -285,7 +285,6 @@ Public Class Form1
 
 
             ' Acertando dados na tela de Despesas na aba Relatório
-
             'pegando o primeiro dia do mês
             Dim ano As Integer = Today.Year
             Dim mes As Integer = Today.Month
@@ -895,82 +894,20 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub xml_procuraNfe_Click(sender As Object, e As EventArgs) Handles xml_procuraNfe.Click
 
+        Dim senha As String
+        senha = InputBox("Coloque a senha")
+        If senha <> "123" Then
+            Exit Sub
+        End If
+     
         If txtXml.Text = "" Then
             MessageBox.Show("Por favor, selecione uma pasta")
         Else
-            'REM chama a sub
+            REM chama a sub
             cad_nfeExistente()
+
         End If
-        ' -----------------------------------------------------------
-        ' marca as notas repetidas com a letra a b c para não cadastrar duas vezes
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        Dim command As SqlCommand
-        Dim xx As Integer
-        Dim CodigoAnterior As String = ""
-        Dim NumeroNota(3000) As String
-        Dim UltimaLetra As String = ""
-        Dim Letra As String = ""
-
-       
-
-        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
-
-            command = connection.CreateCommand()
-            command.CommandText = "SELECT * FROM VendasMlb WHERE Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
-            command.CommandType = CommandType.Text
-            ' ------------------------------------------------
-
-            connection.Open()
-            Dim lrd As SqlDataReader = command.ExecuteReader()
-            While lrd.Read
-
-                NumeroNota(xx) = lrd("NUmeroPedido2_VendasMlb").ToString
-
-            End While
-            connection.Close()
-            ' Pega a última letra
-            UltimaLetra = NumeroNota(xx).IndexOf("A")
-
-            ' acrescenta uma letra atrás do codigo vendas mlb para mudar o código e não permitir que ele seja relançado
-            If CodigoAnterior = NumeroNota(xx) Then
-                NumeroNota(xx) = NumeroNota(xx) + "A"
-            End If
-
-
-            If CodigoAnterior = (NumeroNota(xx) + "A") Then
-                NumeroNota(xx) = NumeroNota(xx) + "B"
-            End If
-
-            If CodigoAnterior = (NumeroNota(xx) + "B") Then
-                NumeroNota(xx) = NumeroNota(xx) + "C"
-            End If
-
-            Dim command2 As SqlCommand
-            command2 = connection.CreateCommand()
-            command2.CommandText = "update VendasMlb set NUmeroPedido2_VendasMlb = @NUmeroPedido2_VendasMlb  where  Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
-            command2.CommandType = CommandType.Text
-            command2.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroNota(xx)
-
-            Try
-
-                connection.Open()
-                command2.ExecuteNonQuery()
-                connection.Close()
-
-            Catch ex As Exception
-
-                MessageBox.Show(ex.ToString())
-
-            End Try
-
-
-            ' End If
-
-            CodigoAnterior = NumeroNota(xx)
-
-        Next
 
         Me.VendasMlbTableAdapter.Fill(Me.DataSetFinal.VendasMlb)
 
@@ -1231,6 +1168,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 connection.Close()
             End Try
         Next
+
 
 
     End Sub
@@ -2068,34 +2006,120 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' End Sub
 
-    'REM CADASTRA OS FORNECDORES A PARTIR DO ARQUIVO RETIRADO DAS NOTAS XML DE ENTRADA (DOS FORNECEDORES) VIA BOTÃO NO PROGRAMA DE CADASTROS
+
     Private Sub bnt_cadProdnfe_Click(sender As Object, e As EventArgs) Handles bnt_cadProdnfe.Click
 
+        'Dim senha As String
+        'senha = InputBox("Coloque a senha")
+        'If senha <> "123" Then
+        '    Exit Sub
+        'End If
+
+        ' -----------------------------------------------------------
+        ' marca as notas repetidas com a letra a b c para não cadastrar duas vezes
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim command As SqlCommand
-        command = connection.CreateCommand()
-        command.CommandText = "INSERT fornecedor (xNome_for,CNPJ_for,xLgr_for,nro_for,xCpl_for,xBairro_for,xMun_for,UF_for,CEP_for,fone_for) SELECT DISTINCT xNome_razaoemissornfe,CNPJ_emissornfe,xLgr_logradouroemissornfe,nro_numeroruaemissornfe,xCpl_complentoenderecoemissornfe,xBairro_bairroemissornfe,xMun_municipioemissornfe,UF_estadoemissornfe,CEP_emissornfe,fone_emissornfe  FROM nfefornecedor  WHERE NOT EXISTS (SELECT * FROM fornecedor WHERE nfefornecedor.CNPJ_emissornfe = fornecedor.CNPJ_for)"
-        command.CommandType = CommandType.Text
+
+        Dim xx As Integer
+        Dim CodigoAnterior As String = ""
+        Dim NumeroNota(3000) As String
 
 
-        Try
+
+        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
+
+            command = connection.CreateCommand()
+            command.CommandText = "SELECT * FROM VendasMlb WHERE Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
+            command.CommandType = CommandType.Text
+            ' ------------------------------------------------
+
             connection.Open()
-            command.ExecuteNonQuery()
+            Dim lrd As SqlDataReader = command.ExecuteReader()
+            While lrd.Read
+
+                NumeroNota(xx) = lrd("NUmeroPedido2_VendasMlb").ToString
+
+            End While
             connection.Close()
-            'REM refresh no datagrid
-            Me.FornecedorTableAdapter.Fill(Me.DataSetFinal.fornecedor)
+           
 
-            MessageBox.Show("Cadastrado com sucesso!")
-            ''#Insert some code here, woo
-        Catch ex As Exception
-            MessageBox.Show("Algo ocorreu errado")
-            MessageBox.Show(ex.ToString())
+            ' acrescenta uma letra atrás do codigo vendas mlb para mudar o código e não permitir que ele seja relançado
+            If CodigoAnterior = NumeroNota(xx) Then
+                NumeroNota(xx) = NumeroNota(xx) + "A"
+            End If
 
 
-        Finally
-            connection.Close()
-        End Try
+            If CodigoAnterior = (NumeroNota(xx) + "A") Then
+                NumeroNota(xx) = NumeroNota(xx) + "B"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "B") Then
+                NumeroNota(xx) = NumeroNota(xx) + "C"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "C") Then
+                NumeroNota(xx) = NumeroNota(xx) + "D"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "D") Then
+                NumeroNota(xx) = NumeroNota(xx) + "E"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "E") Then
+                NumeroNota(xx) = NumeroNota(xx) + "F"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "F") Then
+                NumeroNota(xx) = NumeroNota(xx) + "G"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "G") Then
+                NumeroNota(xx) = NumeroNota(xx) + "H"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "H") Then
+                NumeroNota(xx) = NumeroNota(xx) + "I"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "I") Then
+                NumeroNota(xx) = NumeroNota(xx) + "J"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "J") Then
+                NumeroNota(xx) = NumeroNota(xx) + "K"
+            End If
+
+            If CodigoAnterior = (NumeroNota(xx) + "K") Then
+                NumeroNota(xx) = NumeroNota(xx) + "L"
+            End If
+
+            Dim command2 As SqlCommand
+            command2 = connection.CreateCommand()
+            command2.CommandText = "update VendasMlb set NUmeroPedido2_VendasMlb = @NUmeroPedido2_VendasMlb  where  Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
+            command2.CommandType = CommandType.Text
+            command2.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroNota(xx)
+
+            Try
+
+                connection.Open()
+                command2.ExecuteNonQuery()
+                connection.Close()
+
+            Catch ex As Exception
+
+                MessageBox.Show(ex.ToString())
+
+            End Try
+
+
+            ' End If
+
+            CodigoAnterior = NumeroNota(xx)
+
+        Next
+
+        Me.VendasMlbTableAdapter.Fill(Me.DataSetFinal.VendasMlb)
 
     End Sub
     'REM CADASTRA OS DADOS PARA CALCULAR O CAPITAL DE GIRO DOS FORNECEDORES no arquivo capitalgirofornecdor
@@ -8325,35 +8349,34 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim qtdPedMarf As Integer
         Dim NumeroNota As String = ""
 
-        If RadioButton8.Enabled = True Then
+        If RadioButton8.Checked = True Then
             Try
                 NumeroNota = InputBox("Digite o Número da Nota")
                 'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
                 Dim cmd As New SqlCommand
-                cmd.Connection = connection
+                cmd.Connection = connection5
                 cmd.CommandText = "SELECT *  from balcao where NumeroNotaMlb_balcao = '" & NumeroNota & "'"
                 ' ---------------------------------------------------------------
-                connection.Open()
+                connection5.Open()
                 'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
                 Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
 
                 Try
                     If lrd5.Read() = True Then
-                        MessageBox.Show("Esta nota fisca número " & NumeroNota & " já foi cadastrada!!!!")
+                        MessageBox.Show("Esta nota fiscal número " & NumeroNota & " já foi cadastrada!!!!")
                         Exit Sub
                     End If
 
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString)
                 End Try
-
-                connection.Close()
-
-
+                connection5.Close()
             Catch ex As Exception
+                MessageBox.Show(ex.ToString)
                 Exit Sub
             End Try
         End If
+        ' -------------------------------------------------------------------------------
         Try
             qtdPedMarf = InputBox("Escolha a quantidade", "Escolha a quantidade")
         Catch ex As Exception
@@ -8364,7 +8387,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim command5 As SqlCommand
         command5 = connection5.CreateCommand()
-        command5.CommandText = "insert into balcao (NumeroNotaMlb_balcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@NumeroNotaMlb_balcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
+        command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,NumeroNotaMlb_balcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@NumeroNotaMlb_balcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao)"
         command5.CommandType = CommandType.Text
 
         command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = TextBox1.Text
@@ -8374,10 +8397,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(5, v_SelectRow).Value
         command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(7, v_SelectRow).Value
         command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Int).Value = qtdPedMarf
-        If RadioButton8.Enabled = True Then
-            command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.Int).Value = NumeroNota
+        If RadioButton8.Checked = True Then
+            command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota
         Else
-            command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.Int).Value = 0
+            command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = "0"
         End If
 
 
@@ -8411,7 +8434,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
         Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
         command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.Float).Value = LucroBalcao2
-
+        command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A vista"
+        command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Cartão"
 
 
         Try
@@ -8422,7 +8446,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Catch ex As Exception
             MessageBox.Show(ex.ToString())
         End Try
-        ' ------------------------------------------------
+
         ' ----------------------------
         ' lendo o valor da tabela de produtos
         Dim command As SqlCommand
@@ -9409,7 +9433,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     command.ExecuteNonQuery()
                     connection.Close()
                 Catch ex As Exception
-                    MessageBox.Show("Algo ocorreu errado")
+
                     MessageBox.Show(ex.ToString())
 
                 Finally
@@ -9555,23 +9579,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
 
-    Private Sub BalcaoDataGridView1_Click(sender As Object, e As EventArgs) Handles BalcaoDataGridView1.Click
-
-        Dim v_SelectRow As Integer
-        v_SelectRow = Me.BalcaoDataGridView1.CurrentRow.Index
-        Try
-
-       
-        TextBox32.Text = BalcaoDataGridView1.Item(1, v_SelectRow).Value
-        TextBox33.Text = BalcaoDataGridView1.Item(14, v_SelectRow).Value
-        TextBox34.Text = BalcaoDataGridView1.Item(12, v_SelectRow).Value
-        TextBox3.Text = BalcaoDataGridView1.Item(11, v_SelectRow).Value
-        Catch ex As Exception
-            Exit Sub
-
-        End Try
-
-    End Sub
+   
 
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
         If TextBox32.Text = "" Then
@@ -14481,10 +14489,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim date1 As New Date()
         date1 = Date.Now
         Dim ci As CultureInfo = CultureInfo.InvariantCulture
-        '    Dim datacodigo2 = date1.ToString("dd.MM.yyyy.hh.mm", ci)
         Dim datacodigo2 = date1.ToString("dd.MM.yyyy.hh", ci)
         datacodigo2 = datacodigo2.Replace(".", "")
-
+        ' --------------------------------
+        ' Código de acesso
+        If codigoEntrada <> datacodigo2 Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+       
         RadioButton8.Checked = True
 
     End Sub
@@ -14752,225 +14765,225 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     ' End Sub
 
-    Private Sub Button94_Click(sender As Object, e As EventArgs) Handles Button94.Click
+    'Private Sub Button94_Click(sender As Object, e As EventArgs) Handles Button94.Click
 
-        '        Dim connection As SqlConnection
-        '        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+    '        Dim connection As SqlConnection
+    '        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        '        Dim command As SqlCommand
-        '        Dim xx As Integer
-        '        Dim NomeContato2 As String = ""
-        '        Dim CodigoAnterior As String = ""
-
-
+    '        Dim command As SqlCommand
+    '        Dim xx As Integer
+    '        Dim NomeContato2 As String = ""
+    '        Dim CodigoAnterior As String = ""
 
 
 
-        '        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
-
-        '            command = connection.CreateCommand()
-        '            command.CommandText = "SELECT * FROM VendasMlb WHERE NUmeroPedido2_VendasMlb = '" & VendasMlbDataGridView.Item(1, xx).Value & "'and CodigoMlb_VendasMlb = '" & VendasMlbDataGridView.Item(15, xx).Value & "'"
-        '            command.CommandType = CommandType.Text
 
 
-        '            ' -----------------------------------------------------------------
-        '            ' Pego o nome do produto no arquivo vendasmlb 
-        '            Dim ApelidoProdutoMlb As String = ""
-        '            Dim QuantidadeVendidaMlb As Double = 0
-        '            Dim DataVendaMlb As Date
-        '            Dim CodigoMlb As String = ""
-        '            Dim NumeroNota As String = ""
-        '            Dim NomeContato As String = ""
-        '            ' ------------------------------------------------
+    '        For xx = 0 To VendasMlbDataGridView.RowCount() - 1
 
-        '            connection.Open()
-        '            Dim lrd As SqlDataReader = command.ExecuteReader()
-        '            While lrd.Read
-
-        '                ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
-        '                QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
-        '                DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
-        '                CodigoMlb = lrd("CodigoMlb_VendasMlb").ToString
-        '                NumeroNota = lrd("NUmeroPedido2_VendasMlb").ToString
-        '                NomeContato = lrd("NomeContato_VendasMlb").ToString
-
-        '            End While
-        '            connection.Close()
-
-        '            ' -----------------------------------------------------------------------------
-        '            ' Procura o valor no produto
-        '            ' Pego o valor do produto no arquivo produtos 
-        '            Dim ValorProduto As Double = 0
-        '            Dim CodigoProduto As String = ""
-        '            Dim FornecedorProduto As String = ""
-        '            Dim LinhaProduto As String = ""
-        '            Dim CorProduto As String = ""
-        '            Dim PrecoAtacadoProduto As Double = 0
-        '            Dim NomeProduto As String = ""
-        '            Dim CustoProduto As Double = 0
-        '            Dim IPIProduto As Double = 0
-        '            Dim command2 As SqlCommand
-        '            command2 = connection.CreateCommand()
-        '            command2.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
-        '            command2.CommandType = CommandType.Text
-        '            ' -------------------------------------------------------------------
-        '            connection.Open()
-        '            Dim lrd2 As SqlDataReader = command2.ExecuteReader()
-
-        '            While lrd2.Read
-
-        '                ValorProduto = lrd2("precoatacado_prod").ToString
-        '                CodigoProduto = lrd2("cod_prod").ToString
-        '                FornecedorProduto = lrd2("fornecedor_prod").ToString
-        '                LinhaProduto = lrd2("linha_prod").ToString
-        '                CorProduto = lrd2("cor_prod").ToString
-        '                PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
-        '                NomeProduto = lrd2("nome_prod").ToString
-        '                CustoProduto = lrd2("custo_prod").ToString
-        '                IPIProduto = lrd2("ipi_prod").ToString
-
-        '            End While
-        '            connection.Close()
-        '            ' -----------------------------------------------------
-        '            Dim CodComp1 As String = ""
-        '            Dim CodComp2 As String = ""
-        '            Dim CodComp3 As String = ""
-        '            Dim CodComp4 As String = ""
-        '            Dim CodComp5 As String = ""
-        '            Dim QtdeComp1 As Double = 0
-        '            Dim QtdeComp2 As Double = 0
-        '            Dim QtdeComp3 As Double = 0
-        '            Dim QtdeComp4 As Double = 0
-        '            Dim QtdeComp5 As Double = 0
-        '            '--------------------------------
+    '            command = connection.CreateCommand()
+    '            command.CommandText = "SELECT * FROM VendasMlb WHERE NUmeroPedido2_VendasMlb = '" & VendasMlbDataGridView.Item(1, xx).Value & "'and CodigoMlb_VendasMlb = '" & VendasMlbDataGridView.Item(15, xx).Value & "'"
+    '            command.CommandType = CommandType.Text
 
 
-        '            connection.Open()
-        '            Dim lrd3 As SqlDataReader = command2.ExecuteReader()
-        '            If LinhaProduto = "produto combo/kit" Then
+    '            ' -----------------------------------------------------------------
+    '            ' Pego o nome do produto no arquivo vendasmlb 
+    '            Dim ApelidoProdutoMlb As String = ""
+    '            Dim QuantidadeVendidaMlb As Double = 0
+    '            Dim DataVendaMlb As Date
+    '            Dim CodigoMlb As String = ""
+    '            Dim NumeroNota As String = ""
+    '            Dim NomeContato As String = ""
+    '            ' ------------------------------------------------
 
-        '                While lrd3.Read
+    '            connection.Open()
+    '            Dim lrd As SqlDataReader = command.ExecuteReader()
+    '            While lrd.Read
 
-        '                    CodComp1 = lrd3("CodComp1_prod").ToString
-        '                    QtdeComp1 = lrd3("QtdeComp1_prod").ToString
-        '                    CodComp2 = lrd3("CodComp2_prod").ToString
-        '                    QtdeComp2 = lrd3("QtdeComp2_prod").ToString
-        '                    CodComp3 = lrd3("CodComp3_prod").ToString
-        '                    QtdeComp3 = lrd3("QtdeComp3_prod").ToString
-        '                    CodComp4 = lrd3("CodComp4_prod").ToString
-        '                    QtdeComp4 = lrd3("QtdeComp4_prod").ToString
-        '                    CodComp5 = lrd3("CodComp5_prod").ToString
-        '                    QtdeComp5 = lrd3("QtdeComp5_prod").ToString
+    '                ApelidoProdutoMlb = lrd("NomeProduto_VendasMlb").ToString
+    '                QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
+    '                DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
+    '                CodigoMlb = lrd("CodigoMlb_VendasMlb").ToString
+    '                NumeroNota = lrd("NUmeroPedido2_VendasMlb").ToString
+    '                NomeContato = lrd("NomeContato_VendasMlb").ToString
 
-        '                End While
-        '            End If
-        '            connection.Close()
+    '            End While
+    '            connection.Close()
 
-        '            If NomeProduto <> "" Then
+    '            ' -----------------------------------------------------------------------------
+    '            ' Procura o valor no produto
+    '            ' Pego o valor do produto no arquivo produtos 
+    '            Dim ValorProduto As Double = 0
+    '            Dim CodigoProduto As String = ""
+    '            Dim FornecedorProduto As String = ""
+    '            Dim LinhaProduto As String = ""
+    '            Dim CorProduto As String = ""
+    '            Dim PrecoAtacadoProduto As Double = 0
+    '            Dim NomeProduto As String = ""
+    '            Dim CustoProduto As Double = 0
+    '            Dim IPIProduto As Double = 0
+    '            Dim command2 As SqlCommand
+    '            command2 = connection.CreateCommand()
+    '            command2.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
+    '            command2.CommandType = CommandType.Text
+    '            ' -------------------------------------------------------------------
+    '            connection.Open()
+    '            Dim lrd2 As SqlDataReader = command2.ExecuteReader()
 
-        '                'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
-        '                Dim cmd As New SqlCommand
-        '                cmd.Connection = connection
-        '                cmd.CommandText = "SELECT CodigoMlb_balcao  from balcao where CodigoMlb_balcao = '" & NumeroNota & "'"
-        '                ' ---------------------------------------------------------------
-        '                connection.Open()
-        '                'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
-        '                Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
+    '            While lrd2.Read
 
-        '                Try
-        '                    If lrd5.Read() = True Then
-        '                        ' MessageBox.Show("O código do produto " & NomeProduto & " já foi cadastrado!!!!")
-        '                        connection.Close()
-        '                        GoTo Proxima
+    '                ValorProduto = lrd2("precoatacado_prod").ToString
+    '                CodigoProduto = lrd2("cod_prod").ToString
+    '                FornecedorProduto = lrd2("fornecedor_prod").ToString
+    '                LinhaProduto = lrd2("linha_prod").ToString
+    '                CorProduto = lrd2("cor_prod").ToString
+    '                PrecoAtacadoProduto = lrd2("precoatacado_prod").ToString
+    '                NomeProduto = lrd2("nome_prod").ToString
+    '                CustoProduto = lrd2("custo_prod").ToString
+    '                IPIProduto = lrd2("ipi_prod").ToString
 
-        '                    End If
-
-        '                Catch ex As Exception
-        '                    MessageBox.Show(ex.ToString)
-        '                End Try
-
-        '                connection.Close()
-
-        '                ' -----------------------------------------------------------------------------
-        '                ' Faz o lançamento em vendas balcão
-        '                Dim command5 As SqlCommand
-        '                command5 = connection.CreateCommand()
-        '                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,CodigoMlb_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @CodigoMlb_balcao)"
-        '                command5.CommandType = CommandType.Text
-
-        '                command5.Parameters.Clear()
-        '                command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
-        '                command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
-        '                command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
-        '                command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
-        '                command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
-        '                command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
-        '                command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
-        '                command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
-        '                command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
-        '                command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
-        '                command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota
-
-        '                ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
-        '                Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
-        '                Dim PrecoAtacado As Double = PrecoAtacadoProduto
-        '                Dim TLProdBalcao = QuantidadeVendidas * PrecoAtacado
-        '                Dim TLProdBalcao2 As String = TLProdBalcao.ToString
-        '                command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
-        '                command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
-        '                command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = DataVendaMlb
-        '                command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
-        '                command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
-
-        '                ' calcula o custo dos produtos
-        '                Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
-        '                Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
-        '                command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
-        '                ' calcula o lucro da operação
-        '                Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
-        '                Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
-        '                command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.VarChar, 50).Value = LucroBalcao2
-
-        '                Try
-        '                    connection.Open()
-        '                    command5.ExecuteNonQuery()
-        '                    connection.Close()
-
-        '                Catch ex As Exception
-        '                    MessageBox.Show(ex.ToString())
-        '                End Try
-        '                ' ------------------------------------------------
-        '            Else
-        '                Dim command15 As SqlCommand
-        '                command15 = connection.CreateCommand()
-        '                command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
-        '                command15.CommandType = CommandType.Text
-
-        '                command15.Parameters.Clear()
-        '                command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
-        '                command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
+    '            End While
+    '            connection.Close()
+    '            ' -----------------------------------------------------
+    '            Dim CodComp1 As String = ""
+    '            Dim CodComp2 As String = ""
+    '            Dim CodComp3 As String = ""
+    '            Dim CodComp4 As String = ""
+    '            Dim CodComp5 As String = ""
+    '            Dim QtdeComp1 As Double = 0
+    '            Dim QtdeComp2 As Double = 0
+    '            Dim QtdeComp3 As Double = 0
+    '            Dim QtdeComp4 As Double = 0
+    '            Dim QtdeComp5 As Double = 0
+    '            '--------------------------------
 
 
-        '                Try
-        '                    connection.Open()
-        '                    command15.ExecuteNonQuery()
-        '                    connection.Close()
-        '                Catch ex As Exception
-        '                    MessageBox.Show(ex.ToString())
-        '                End Try
-        '            End If
-        'Proxima:
+    '            connection.Open()
+    '            Dim lrd3 As SqlDataReader = command2.ExecuteReader()
+    '            If LinhaProduto = "produto combo/kit" Then
 
-        '            NomeContato2 = NomeContato
-        '            CodigoAnterior = NumeroNota
+    '                While lrd3.Read
+
+    '                    CodComp1 = lrd3("CodComp1_prod").ToString
+    '                    QtdeComp1 = lrd3("QtdeComp1_prod").ToString
+    '                    CodComp2 = lrd3("CodComp2_prod").ToString
+    '                    QtdeComp2 = lrd3("QtdeComp2_prod").ToString
+    '                    CodComp3 = lrd3("CodComp3_prod").ToString
+    '                    QtdeComp3 = lrd3("QtdeComp3_prod").ToString
+    '                    CodComp4 = lrd3("CodComp4_prod").ToString
+    '                    QtdeComp4 = lrd3("QtdeComp4_prod").ToString
+    '                    CodComp5 = lrd3("CodComp5_prod").ToString
+    '                    QtdeComp5 = lrd3("QtdeComp5_prod").ToString
+
+    '                End While
+    '            End If
+    '            connection.Close()
+
+    '            If NomeProduto <> "" Then
+
+    '                'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
+    '                Dim cmd As New SqlCommand
+    '                cmd.Connection = connection
+    '                cmd.CommandText = "SELECT CodigoMlb_balcao  from balcao where CodigoMlb_balcao = '" & NumeroNota & "'"
+    '                ' ---------------------------------------------------------------
+    '                connection.Open()
+    '                'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
+    '                Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
+
+    '                Try
+    '                    If lrd5.Read() = True Then
+    '                        ' MessageBox.Show("O código do produto " & NomeProduto & " já foi cadastrado!!!!")
+    '                        connection.Close()
+    '                        GoTo Proxima
+
+    '                    End If
+
+    '                Catch ex As Exception
+    '                    MessageBox.Show(ex.ToString)
+    '                End Try
+
+    '                connection.Close()
+
+    '                ' -----------------------------------------------------------------------------
+    '                ' Faz o lançamento em vendas balcão
+    '                Dim command5 As SqlCommand
+    '                command5 = connection.CreateCommand()
+    '                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,CodigoMlb_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @CodigoMlb_balcao)"
+    '                command5.CommandType = CommandType.Text
+
+    '                command5.Parameters.Clear()
+    '                command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
+    '                command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
+    '                command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
+    '                command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
+    '                command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
+    '                command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
+    '                command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Float).Value = QuantidadeVendidaMlb
+    '                command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
+    '                command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
+    '                command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
+    '                command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota
+
+    '                ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
+    '                Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
+    '                Dim PrecoAtacado As Double = PrecoAtacadoProduto
+    '                Dim TLProdBalcao = QuantidadeVendidas * PrecoAtacado
+    '                Dim TLProdBalcao2 As String = TLProdBalcao.ToString
+    '                command5.Parameters.Add("@totalprod_balcao", SqlDbType.Float).Value = TLProdBalcao2
+    '                command5.Parameters.Add("@totalpedido_prodbalcao", SqlDbType.Float).Value = TLProdBalcao2
+    '                command5.Parameters.Add("@datavenda_prodbalcao", SqlDbType.Date).Value = DataVendaMlb
+    '                command5.Parameters.Add("@nomeProd_balcao", SqlDbType.VarChar, 50).Value = NomeProduto
+    '                command5.Parameters.Add("@desconto_balcao", SqlDbType.Float).Value = "0"
+
+    '                ' calcula o custo dos produtos
+    '                Dim Tlpedido_prodbalcao As Double = ((CustoProduto) * (1 + (IPIProduto) / 100)) * QuantidadeVendidaMlb
+    '                Dim Tlpedido_prodbalcao2 As String = Tlpedido_prodbalcao.ToString("F2")
+    '                command5.Parameters.Add("@Custo_balcao", SqlDbType.Float).Value = Tlpedido_prodbalcao2
+    '                ' calcula o lucro da operação
+    '                Dim LucroBalcao As Double = (1 - (Tlpedido_prodbalcao / TLProdBalcao2)) * 100
+    '                Dim LucroBalcao2 As String = LucroBalcao.ToString("F2")
+    '                command5.Parameters.Add("@vendaOrcamento_balcao", SqlDbType.VarChar, 50).Value = LucroBalcao2
+
+    '                Try
+    '                    connection.Open()
+    '                    command5.ExecuteNonQuery()
+    '                    connection.Close()
+
+    '                Catch ex As Exception
+    '                    MessageBox.Show(ex.ToString())
+    '                End Try
+    '                ' ------------------------------------------------
+    '            Else
+    '                Dim command15 As SqlCommand
+    '                command15 = connection.CreateCommand()
+    '                command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
+    '                command15.CommandType = CommandType.Text
+
+    '                command15.Parameters.Clear()
+    '                command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
+    '                command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
 
 
-        '        Next
+    '                Try
+    '                    connection.Open()
+    '                    command15.ExecuteNonQuery()
+    '                    connection.Close()
+    '                Catch ex As Exception
+    '                    MessageBox.Show(ex.ToString())
+    '                End Try
+    '            End If
+    'Proxima:
 
-    End Sub
+    '            NomeContato2 = NomeContato
+    '            CodigoAnterior = NumeroNota
 
 
-   
+    '        Next
+
+    ' End Sub
+
+
+
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
 
         VendasMlbBindingSource.Filter = String.Format("NomeContato_VendasMlb LIKE '{0}%'", TextBox2.Text)
@@ -14995,7 +15008,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-   
+
     Private Sub TextBox260_DoubleClick(sender As Object, e As EventArgs) Handles TextBox260.DoubleClick
 
         If FlagProdPesquisa = "0" Then
@@ -15016,7 +15029,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox265.Enabled = True
         TextBox267.Enabled = True
 
-      
+
     End Sub
 
     Private Sub TextBox182_TextChanged(sender As Object, e As EventArgs) Handles TextBox182.TextChanged
@@ -15025,7 +15038,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-    
+
     Private Sub Button75_Click(sender As Object, e As EventArgs) Handles Button75.Click
 
         TextBox260.Enabled = False
@@ -15075,84 +15088,90 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-    Private Sub Button76_Click(sender As Object, e As EventArgs) Handles Button76.Click
+    ' Private Sub Button76_Click(sender As Object, e As EventArgs) Handles Button76.Click
 
-        'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+    'Dim connection As SqlConnection
+    'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        'Dim command As SqlCommand
-        'Dim xx As Integer
-        'Dim CodigoAnterior As String = ""
-        'Dim NumeroNota(3000) As String
-        'Dim UltimaLetra As String = ""
-        'Dim Letra As String = ""
+    'Dim command As SqlCommand
+    'Dim xx As Integer
+    'Dim CodigoAnterior As String = ""
+    'Dim NumeroNota(3000) As String
+    'Dim UltimaLetra As String = ""
+    'Dim Letra As String = ""
 
-        ''NumeroNota(0) = "A"
-        ''NumeroNota(1) = "B"
+    ''NumeroNota(0) = "A"
+    ''NumeroNota(1) = "B"
 
-        'For xx = 0 To VendasMlbDataGridView.RowCount() - 1
+    'For xx = 0 To VendasMlbDataGridView.RowCount() - 1
 
-        '    command = connection.CreateCommand()
-        '    command.CommandText = "SELECT * FROM VendasMlb WHERE Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
-        '    command.CommandType = CommandType.Text
-        '    ' ------------------------------------------------
+    '    command = connection.CreateCommand()
+    '    command.CommandText = "SELECT * FROM VendasMlb WHERE Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
+    '    command.CommandType = CommandType.Text
+    '    ' ------------------------------------------------
 
-        '    connection.Open()
-        '    Dim lrd As SqlDataReader = command.ExecuteReader()
-        '    While lrd.Read
+    '    connection.Open()
+    '    Dim lrd As SqlDataReader = command.ExecuteReader()
+    '    While lrd.Read
 
-        '        NumeroNota(xx) = lrd("NUmeroPedido2_VendasMlb").ToString
+    '        NumeroNota(xx) = lrd("NUmeroPedido2_VendasMlb").ToString
 
-        '    End While
-        '    connection.Close()
-        '    ' Pega a última letra
-        '    UltimaLetra = NumeroNota(xx).IndexOf("A")
-
-
-
-        '    ' acrescenta uma letra atrás do codigo vendas mlb para mudar o código e não permitir que ele seja relançado
-        '    If CodigoAnterior = NumeroNota(xx) Then
-        '        NumeroNota(xx) = NumeroNota(xx) + "A"
-        '    End If
+    '    End While
+    '    connection.Close()
+    '    ' Pega a última letra
+    '    UltimaLetra = NumeroNota(xx).IndexOf("A")
 
 
-        '    If CodigoAnterior = (NumeroNota(xx) + "A") Then
 
-        '        NumeroNota(xx) = NumeroNota(xx) + "B"
-        '    End If
-
-        '    If CodigoAnterior = (NumeroNota(xx) + "B") Then
-        '        NumeroNota(xx) = NumeroNota(xx) + "C"
-        '    End If
-
-        '    Dim command2 As SqlCommand
-        '    command2 = connection.CreateCommand()
-        '    command2.CommandText = "update VendasMlb set NUmeroPedido2_VendasMlb = @NUmeroPedido2_VendasMlb  where  Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
-        '    command2.CommandType = CommandType.Text
-        '    command2.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroNota(xx)
-
-        '    Try
-
-        '        connection.Open()
-        '        command2.ExecuteNonQuery()
-        '        connection.Close()
-
-        '    Catch ex As Exception
-
-        '        MessageBox.Show(ex.ToString())
-
-        '    End Try
+    '    ' acrescenta uma letra atrás do codigo vendas mlb para mudar o código e não permitir que ele seja relançado
+    '    If CodigoAnterior = NumeroNota(xx) Then
+    '        NumeroNota(xx) = NumeroNota(xx) + "A"
+    '    End If
 
 
-        '    ' End If
+    '    If CodigoAnterior = (NumeroNota(xx) + "A") Then
 
-        '    CodigoAnterior = NumeroNota(xx)
+    '        NumeroNota(xx) = NumeroNota(xx) + "B"
+    '    End If
 
-        'Next
-       
-    End Sub
+    '    If CodigoAnterior = (NumeroNota(xx) + "B") Then
+    '        NumeroNota(xx) = NumeroNota(xx) + "C"
+    '    End If
+
+    '    Dim command2 As SqlCommand
+    '    command2 = connection.CreateCommand()
+    '    command2.CommandText = "update VendasMlb set NUmeroPedido2_VendasMlb = @NUmeroPedido2_VendasMlb  where  Id_VendasMlb = '" & VendasMlbDataGridView.Item(0, xx).Value & "'"
+    '    command2.CommandType = CommandType.Text
+    '    command2.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroNota(xx)
+
+    '    Try
+
+    '        connection.Open()
+    '        command2.ExecuteNonQuery()
+    '        connection.Close()
+
+    '    Catch ex As Exception
+
+    '        MessageBox.Show(ex.ToString())
+
+    '    End Try
+
+
+    '    ' End If
+
+    '    CodigoAnterior = NumeroNota(xx)
+
+    'Next
+
+    ' End Sub
 
     Private Sub btn_trans_Click(sender As Object, e As EventArgs) Handles btn_trans.Click
+
+        Dim senha As String
+        senha = InputBox("Coloque a senha")
+        If senha <> "123" Then
+            Exit Sub
+        End If
 
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
@@ -15191,7 +15210,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 QuantidadeVendidaMlb = lrd("QuantidadeVendida_VendasMlb")
                 DataVendaMlb = lrd("DataPedido_VendasMlb").ToString
                 CodigoMlb = lrd("CodigoMlb_VendasMlb").ToString
-                NumeroNota = lrd("NUmeroPedido2_VendasMlb").ToString
+                'NumeroNota = lrd("NUmeroPedido2_VendasMlb").ToString
                 NomeContato = lrd("NomeContato_VendasMlb").ToString
 
             End While
@@ -15295,7 +15314,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 ' Faz o lançamento em vendas balcão
                 Dim command5 As SqlCommand
                 command5 = connection.CreateCommand()
-                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,CodigoMlb_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @CodigoMlb_balcao)"
+                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,NumeroNotaMlb_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @NumeroNotaMlb_balcao)"
                 command5.CommandType = CommandType.Text
 
                 command5.Parameters.Clear()
@@ -15309,7 +15328,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
                 command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
                 command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
-                command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota
+                command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
 
                 ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
                 Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
@@ -15367,6 +15386,75 @@ Proxima:
 
         Next
 
+    End Sub
+
+    Private Sub BalcaoDataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles BalcaoDataGridView1.DoubleClick
+
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.BalcaoDataGridView1.CurrentRow.Index
+
+        Try
+
+            TextBox32.Text = BalcaoDataGridView1.Item(1, v_SelectRow).Value
+            TextBox33.Text = BalcaoDataGridView1.Item(14, v_SelectRow).Value
+            TextBox34.Text = BalcaoDataGridView1.Item(12, v_SelectRow).Value
+            TextBox3.Text = BalcaoDataGridView1.Item(11, v_SelectRow).Value
+            ' -------------------------------------------------------------
+            'preenche as células para futura deleção do registro
+            TextBox269.Text = BalcaoDataGridView1.Item(0, v_SelectRow).Value
+            TextBox270.Text = BalcaoDataGridView1.Item(4, v_SelectRow).Value
+            TextBox271.Text = BalcaoDataGridView1.Item(15, v_SelectRow).Value
+
+
+
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
+            Exit Sub
+
+        End Try
+    End Sub
+
+    Private Sub TextBox272_TextChanged(sender As Object, e As EventArgs) Handles TextBox272.TextChanged
+
+        BalcaoBindingSource.Filter = String.Format("NumeroNotaMlb_balcao LIKE '{0}%'", TextBox272.Text)
+
+    End Sub
+
+    Private Sub Button77_Click(sender As Object, e As EventArgs) Handles Button77.Click
+
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        Try
+            Dim v_SelectRow As Integer
+            v_SelectRow = Me.BalcaoDataGridView.CurrentRow.Index
+
+            Dim result = MessageBox.Show("Confirmar a Deleção?", "Atenção!!!", MessageBoxButtons.YesNo)
+            If result = DialogResult.No Then
+
+            ElseIf result = DialogResult.Yes Then
+
+                Dim command As SqlCommand
+                command = connection.CreateCommand()
+                command.CommandText = "delete from balcao where  NumeroNotaMlb_balcao = @NumeroNotaMlb_balcao"
+                command.CommandType = CommandType.Text
+                command.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = BalcaoDataGridView1.Item(15, v_SelectRow).Value
+
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            End If
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.ToString())
+
+        Finally
+            connection.Close()
+        End Try
+
+        Me.BalcaoTableAdapter.Fill(Me.DataSetFinal.balcao)
     End Sub
 End Class
 
