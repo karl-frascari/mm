@@ -1464,6 +1464,7 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn316 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn317 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn318 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NumeroNotaMlb_balcao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel41 = New System.Windows.Forms.Panel()
         Me.Button84 = New System.Windows.Forms.Button()
         Me.TextBox221 = New System.Windows.Forms.TextBox()
@@ -1573,7 +1574,15 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn475 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.totalpedido_prodbalcao = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn476 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn237 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel30 = New System.Windows.Forms.Panel()
+        Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.Label347 = New System.Windows.Forms.Label()
+        Me.TextBox272 = New System.Windows.Forms.TextBox()
+        Me.TextBox271 = New System.Windows.Forms.TextBox()
+        Me.TextBox270 = New System.Windows.Forms.TextBox()
+        Me.TextBox269 = New System.Windows.Forms.TextBox()
+        Me.Button77 = New System.Windows.Forms.Button()
         Me.GroupBox85 = New System.Windows.Forms.GroupBox()
         Me.Label226 = New System.Windows.Forms.Label()
         Me.TextBox144 = New System.Windows.Forms.TextBox()
@@ -2613,6 +2622,7 @@ Partial Class Form1
         Me.tbpg_VendasBalcao.SuspendLayout
         CType(Me.BalcaoDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel30.SuspendLayout
+        Me.GroupBox11.SuspendLayout
         Me.GroupBox85.SuspendLayout
         Me.GroupBox56.SuspendLayout
         Me.TabPage6.SuspendLayout
@@ -3920,6 +3930,7 @@ Partial Class Form1
         Me.bnt_cadProdnfe.BackColor = System.Drawing.Color.Transparent
         Me.bnt_cadProdnfe.BackgroundImage = CType(resources.GetObject("bnt_cadProdnfe.BackgroundImage"),System.Drawing.Image)
         Me.bnt_cadProdnfe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.bnt_cadProdnfe.Enabled = false
         Me.bnt_cadProdnfe.FlatAppearance.BorderSize = 0
         Me.bnt_cadProdnfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.bnt_cadProdnfe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -3936,6 +3947,7 @@ Partial Class Form1
         Me.btn_data.BackColor = System.Drawing.Color.Transparent
         Me.btn_data.BackgroundImage = CType(resources.GetObject("btn_data.BackgroundImage"),System.Drawing.Image)
         Me.btn_data.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.btn_data.Enabled = false
         Me.btn_data.FlatAppearance.BorderSize = 0
         Me.btn_data.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_data.ForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -3958,7 +3970,7 @@ Partial Class Form1
         Me.btn_trans.Name = "btn_trans"
         Me.btn_trans.Size = New System.Drawing.Size(223, 32)
         Me.btn_trans.TabIndex = 477
-        Me.btn_trans.Text = "Cadastrar transportadoras"
+        Me.btn_trans.Text = "Lançar Notas Aqruivo Balcão"
         Me.btn_trans.UseVisualStyleBackColor = false
         '
         'txtXml
@@ -15578,7 +15590,7 @@ Partial Class Form1
         Me.BalcaoDataGridView.AutoGenerateColumns = false
         Me.BalcaoDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BalcaoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BalcaoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn656, Me.DataGridViewTextBoxColumn319, Me.DataGridViewTextBoxColumn320, Me.DataGridViewTextBoxColumn321, Me.DataGridViewTextBoxColumn322, Me.DataGridViewTextBoxColumn323, Me.DataGridViewTextBoxColumn324, Me.DataGridViewTextBoxColumn326, Me.DataGridViewTextBoxColumn325, Me.DataGridViewTextBoxColumn327, Me.DataGridViewTextBoxColumn650, Me.DataGridViewTextBoxColumn657, Me.DataGridViewTextBoxColumn658, Me.DataGridViewTextBoxColumn660, Me.DataGridViewTextBoxColumn315, Me.DataGridViewTextBoxColumn316, Me.DataGridViewTextBoxColumn317, Me.DataGridViewTextBoxColumn318})
+        Me.BalcaoDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn656, Me.DataGridViewTextBoxColumn319, Me.DataGridViewTextBoxColumn320, Me.DataGridViewTextBoxColumn321, Me.DataGridViewTextBoxColumn322, Me.DataGridViewTextBoxColumn323, Me.DataGridViewTextBoxColumn324, Me.DataGridViewTextBoxColumn326, Me.DataGridViewTextBoxColumn325, Me.DataGridViewTextBoxColumn327, Me.DataGridViewTextBoxColumn650, Me.DataGridViewTextBoxColumn657, Me.DataGridViewTextBoxColumn658, Me.DataGridViewTextBoxColumn660, Me.DataGridViewTextBoxColumn315, Me.DataGridViewTextBoxColumn316, Me.DataGridViewTextBoxColumn317, Me.DataGridViewTextBoxColumn318, Me.NumeroNotaMlb_balcao})
         Me.BalcaoDataGridView.DataSource = Me.BalcaoBindingSource
         Me.BalcaoDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BalcaoDataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter
@@ -15713,6 +15725,13 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn318.HeaderText = "codprod_balcao"
         Me.DataGridViewTextBoxColumn318.Name = "DataGridViewTextBoxColumn318"
         Me.DataGridViewTextBoxColumn318.ReadOnly = true
+        '
+        'NumeroNotaMlb_balcao
+        '
+        Me.NumeroNotaMlb_balcao.DataPropertyName = "NumeroNotaMlb_balcao"
+        Me.NumeroNotaMlb_balcao.HeaderText = "NumeroNotaMlb_balcao"
+        Me.NumeroNotaMlb_balcao.Name = "NumeroNotaMlb_balcao"
+        Me.NumeroNotaMlb_balcao.ReadOnly = true
         '
         'Panel41
         '
@@ -16592,13 +16611,13 @@ Partial Class Form1
         Me.BalcaoDataGridView1.AutoGenerateColumns = false
         Me.BalcaoDataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BalcaoDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.BalcaoDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn461, Me.DataGridViewTextBoxColumn448, Me.DataGridViewTextBoxColumn451, Me.DataGridViewTextBoxColumn452, Me.DataGridViewTextBoxColumn453, Me.DataGridViewTextBoxColumn454, Me.DataGridViewTextBoxColumn455, Me.DataGridViewTextBoxColumn456, Me.DataGridViewTextBoxColumn459, Me.DataGridViewTextBoxColumn460, Me.DataGridViewTextBoxColumn444, Me.DataGridViewTextBoxColumn445, Me.DataGridViewTextBoxColumn475, Me.totalpedido_prodbalcao, Me.DataGridViewTextBoxColumn476})
+        Me.BalcaoDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn461, Me.DataGridViewTextBoxColumn448, Me.DataGridViewTextBoxColumn451, Me.DataGridViewTextBoxColumn452, Me.DataGridViewTextBoxColumn453, Me.DataGridViewTextBoxColumn454, Me.DataGridViewTextBoxColumn455, Me.DataGridViewTextBoxColumn456, Me.DataGridViewTextBoxColumn459, Me.DataGridViewTextBoxColumn460, Me.DataGridViewTextBoxColumn444, Me.DataGridViewTextBoxColumn445, Me.DataGridViewTextBoxColumn475, Me.totalpedido_prodbalcao, Me.DataGridViewTextBoxColumn476, Me.DataGridViewTextBoxColumn237})
         Me.BalcaoDataGridView1.DataSource = Me.BalcaoBindingSource
         Me.BalcaoDataGridView1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.BalcaoDataGridView1.Location = New System.Drawing.Point(3, 138)
+        Me.BalcaoDataGridView1.Location = New System.Drawing.Point(3, 193)
         Me.BalcaoDataGridView1.Name = "BalcaoDataGridView1"
         Me.BalcaoDataGridView1.ReadOnly = true
-        Me.BalcaoDataGridView1.Size = New System.Drawing.Size(1296, 522)
+        Me.BalcaoDataGridView1.Size = New System.Drawing.Size(1296, 467)
         Me.BalcaoDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn461
@@ -16706,9 +16725,17 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn476.Name = "DataGridViewTextBoxColumn476"
         Me.DataGridViewTextBoxColumn476.ReadOnly = true
         '
+        'DataGridViewTextBoxColumn237
+        '
+        Me.DataGridViewTextBoxColumn237.DataPropertyName = "NumeroNotaMlb_balcao"
+        Me.DataGridViewTextBoxColumn237.HeaderText = "NumeroNotaMlb_balcao"
+        Me.DataGridViewTextBoxColumn237.Name = "DataGridViewTextBoxColumn237"
+        Me.DataGridViewTextBoxColumn237.ReadOnly = true
+        '
         'Panel30
         '
         Me.Panel30.BackColor = System.Drawing.Color.Gold
+        Me.Panel30.Controls.Add(Me.GroupBox11)
         Me.Panel30.Controls.Add(Me.GroupBox85)
         Me.Panel30.Controls.Add(Me.Button33)
         Me.Panel30.Controls.Add(Me.Label115)
@@ -16722,8 +16749,71 @@ Partial Class Form1
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel30.Location = New System.Drawing.Point(3, 3)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1296, 135)
+        Me.Panel30.Size = New System.Drawing.Size(1296, 190)
         Me.Panel30.TabIndex = 0
+        '
+        'GroupBox11
+        '
+        Me.GroupBox11.Controls.Add(Me.Label347)
+        Me.GroupBox11.Controls.Add(Me.TextBox272)
+        Me.GroupBox11.Controls.Add(Me.TextBox271)
+        Me.GroupBox11.Controls.Add(Me.TextBox270)
+        Me.GroupBox11.Controls.Add(Me.TextBox269)
+        Me.GroupBox11.Controls.Add(Me.Button77)
+        Me.GroupBox11.Location = New System.Drawing.Point(986, 17)
+        Me.GroupBox11.Name = "GroupBox11"
+        Me.GroupBox11.Size = New System.Drawing.Size(200, 167)
+        Me.GroupBox11.TabIndex = 11
+        Me.GroupBox11.TabStop = false
+        '
+        'Label347
+        '
+        Me.Label347.AutoSize = true
+        Me.Label347.Location = New System.Drawing.Point(6, 25)
+        Me.Label347.Name = "Label347"
+        Me.Label347.Size = New System.Drawing.Size(88, 16)
+        Me.Label347.TabIndex = 5
+        Me.Label347.Text = "Numero nota "
+        '
+        'TextBox272
+        '
+        Me.TextBox272.Location = New System.Drawing.Point(94, 20)
+        Me.TextBox272.Name = "TextBox272"
+        Me.TextBox272.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox272.TabIndex = 4
+        '
+        'TextBox271
+        '
+        Me.TextBox271.Enabled = false
+        Me.TextBox271.Location = New System.Drawing.Point(9, 139)
+        Me.TextBox271.Name = "TextBox271"
+        Me.TextBox271.Size = New System.Drawing.Size(185, 22)
+        Me.TextBox271.TabIndex = 3
+        '
+        'TextBox270
+        '
+        Me.TextBox270.Enabled = false
+        Me.TextBox270.Location = New System.Drawing.Point(9, 111)
+        Me.TextBox270.Name = "TextBox270"
+        Me.TextBox270.Size = New System.Drawing.Size(185, 22)
+        Me.TextBox270.TabIndex = 2
+        '
+        'TextBox269
+        '
+        Me.TextBox269.Enabled = false
+        Me.TextBox269.Location = New System.Drawing.Point(9, 80)
+        Me.TextBox269.Name = "TextBox269"
+        Me.TextBox269.Size = New System.Drawing.Size(185, 22)
+        Me.TextBox269.TabIndex = 1
+        '
+        'Button77
+        '
+        Me.Button77.Location = New System.Drawing.Point(6, 48)
+        Me.Button77.Name = "Button77"
+        Me.Button77.Size = New System.Drawing.Size(185, 23)
+        Me.Button77.TabIndex = 0
+        Me.Button77.Text = "deletar nota"
+        Me.Button77.UseVisualStyleBackColor = true
         '
         'GroupBox85
         '
@@ -23158,6 +23248,8 @@ Partial Class Form1
         CType(Me.BalcaoDataGridView1,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel30.ResumeLayout(false)
         Me.Panel30.PerformLayout
+        Me.GroupBox11.ResumeLayout(false)
+        Me.GroupBox11.PerformLayout
         Me.GroupBox85.ResumeLayout(false)
         Me.GroupBox85.PerformLayout
         Me.GroupBox56.ResumeLayout(false)
@@ -24098,21 +24190,6 @@ End Sub
     Friend WithEvents TextBox32 As System.Windows.Forms.TextBox
     Friend WithEvents Label115 As System.Windows.Forms.Label
     Friend WithEvents TextBox34 As System.Windows.Forms.TextBox
-    Friend WithEvents DataGridViewTextBoxColumn461 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn448 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn451 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn452 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn453 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn454 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn455 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn456 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn459 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn460 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn444 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn445 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn475 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents totalpedido_prodbalcao As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn476 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Button33 As System.Windows.Forms.Button
     Friend WithEvents Label27 As System.Windows.Forms.Label
     Friend WithEvents TextBox35 As System.Windows.Forms.TextBox
@@ -24755,24 +24832,6 @@ End Sub
     Friend WithEvents GroupBox46 As System.Windows.Forms.GroupBox
     Friend WithEvents Label56 As System.Windows.Forms.Label
     Friend WithEvents Código As System.Windows.Forms.Label
-    Friend WithEvents DataGridViewTextBoxColumn656 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn319 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn320 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn321 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn322 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn323 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn324 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn326 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn325 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn327 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn650 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn657 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn658 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn660 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn315 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn316 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn317 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn318 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents GroupBox87 As System.Windows.Forms.GroupBox
     Friend WithEvents btn_addProd As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker13 As System.Windows.Forms.DateTimePicker
@@ -25582,5 +25641,47 @@ End Sub
     Friend WithEvents Button75 As System.Windows.Forms.Button
     Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
     Friend WithEvents Button76 As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn656 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn319 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn320 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn321 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn322 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn323 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn324 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn326 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn325 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn327 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn650 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn657 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn658 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn660 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn315 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn316 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn317 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn318 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NumeroNotaMlb_balcao As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox11 As System.Windows.Forms.GroupBox
+    Friend WithEvents DataGridViewTextBoxColumn461 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn448 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn451 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn452 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn453 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn454 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn455 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn456 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn459 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn460 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn444 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn445 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn475 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents totalpedido_prodbalcao As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn476 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn237 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label347 As System.Windows.Forms.Label
+    Friend WithEvents TextBox272 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox271 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox270 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox269 As System.Windows.Forms.TextBox
+    Friend WithEvents Button77 As System.Windows.Forms.Button
 
 End Class
