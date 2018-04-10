@@ -1016,6 +1016,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         'REM faz um loop de gravação e grava os outros dados repetidamente só variando os produtos
         'REM ele conta quantos produtos tem na nota e joga em a
+        '************************************************************
+        Dim CodigoAnterior As String = ""
+        Dim NumeroNota(3000) As String
+        '***********************************************************
         For a As Integer = 1 To ctd_prod
 
             'criar comando inserção na tabela nfeforncedor
@@ -1026,7 +1030,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
             command.Parameters.Clear()
             command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb,DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMlb,NumeroRua_VendasMlb,Complemento_VendasMlb,Bairro_VendasMlb,Fone_VendasMlb,NomeProduto_VendasMlb,QuantidadeVendida_VendasMlb,VrUnitario_VendasMlb,CodigoMlb_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMlb,@NumeroRua_VendasMlb,@Complemento_VendasMlb,@Bairro_VendasMlb,@Fone_VendasMlb,@NomeProduto_VendasMlb,@QuantidadeVendida_VendasMlb,@VrUnitario_VendasMlb,@CodigoMlb_VendasMlb)"
-
+            ' ---------------------------------------------------
+            Dim NumeroNotaFinal As String = ""
 
             Try
                 command.CommandType = CommandType.Text
@@ -1036,7 +1041,56 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns) Is Nothing Then
                     command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = " sem "
                 Else
-                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                    NumeroNota(a) = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                    If CodigoAnterior = NumeroNota(a) Then
+                        NumeroNota(a) = NumeroNota(a) + "A"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "A") Then
+                        NumeroNota(a) = NumeroNota(a) + "B"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "B") Then
+                        NumeroNota(a) = NumeroNota(a) + "C"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "C") Then
+                        NumeroNota(a) = NumeroNota(a) + "D"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "D") Then
+                        NumeroNota(a) = NumeroNota(a) + "E"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "E") Then
+                        NumeroNota(a) = NumeroNota(a) + "F"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "F") Then
+                        NumeroNota(a) = NumeroNota(a) + "G"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "G") Then
+                        NumeroNota(a) = NumeroNota(a) + "H"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "H") Then
+                        NumeroNota(a) = NumeroNota(a) + "I"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "I") Then
+                        NumeroNota(a) = NumeroNota(a) + "J"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "J") Then
+                        NumeroNota(a) = NumeroNota(a) + "K"
+                    End If
+
+                    If CodigoAnterior = (NumeroNota(a) + "K") Then
+                        NumeroNota(a) = NumeroNota(a) + "L"
+                    End If
+
+                    'command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroNota(a)
+
                 End If
 
                 'verificar se existe o nó dataEmi
@@ -1167,6 +1221,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Finally
                 connection.Close()
             End Try
+            CodigoAnterior = NumeroNota(a)
         Next
 
 
@@ -2240,39 +2295,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
     Private Sub btn_relfor_Click(sender As Object, e As EventArgs) Handles btn_relfor.Click
+        ' *****************************************************************************************************
+        ' curiosidades
         'faz uma busca no arquivo de kapital de giro, de acordo com a data estipulada no combobox da tabela kgiro
-        'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        'Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
-        'Dim sql As String = "select * from capitalgirofornecedor cp where cp.dataemit_klgiro  > GetDate() -" & cbx_diasforn.Text
+         'Dim sql As String = "select * from capitalgirofornecedor cp where cp.dataemit_klgiro  > GetDate() -" & cbx_diasforn.Text
         'Dim sql2 As String = "select SUM(cp.tlvrXgiro_klgiro)/SUM(cp.valor_klgiro) as resultado  from capitalgirofornecedor cp where cp.dataemit_klgiro  > GetDate() - " & cbx_diasforn.Text
-        'Dim cmd As New SqlCommand(sql2, connection)
-        'Dim dr As SqlDataReader
-        'Dim dataadapter As New SqlDataAdapter(sql, connection)
-        'Dim ds As New DataSet()
-        'connection.Open()
-        'dataadapter.Fill(ds, "capitalgirofornecedor")
-        'dr = cmd.ExecuteReader()
-        'txt_relfor.Clear()
-
-        'While dr.Read()
-        '    Try
-        '        txt_relfor.Text = Math.Round(dr.Item("resultado"))
-
-        '    Catch ex As Exception
-        '        MessageBox.Show("Algo ocorreu errado")
-        '        MessageBox.Show(ex.ToString())
-        '    End Try
-        'End While
-
-        'connection.Close()
-
-        'Dim dv As DataView
-        'dv = New DataView(ds.Tables(0))
-        '' datagrid_capitalforn.DataSource = dv
         ' **********************************************************************************************
-        ' **********************************************************************************************
-
+       
+        btn_relfor.Enabled = False
+        Button85.Enabled = False
+        Button86.Enabled = True
 
 
     End Sub
@@ -14480,7 +14512,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
     Private Sub Button87_Click(sender As Object, e As EventArgs) Handles Button87.Click
-        ProdutosBindingSource.Filter = String.Format("Bugiganga_prod LIKE '{0}'", "bugiganga")
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox33.Text, ComboBox34.Text, "bugiganga")
     End Sub
 
     Private Sub Button88_Click(sender As Object, e As EventArgs) Handles Button88.Click
@@ -15362,12 +15394,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Else
                 Dim command15 As SqlCommand
                 command15 = connection.CreateCommand()
-                command15.CommandText = "insert into ApelidoErrado (Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
+                command15.CommandText = "insert into ApelidoErrado (NumeroNota_ApelidoErrado,Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@NumeroNota_ApelidoErrado,@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
                 command15.CommandType = CommandType.Text
 
                 command15.Parameters.Clear()
                 command15.Parameters.Add("@Nome_ApelidoErrado", SqlDbType.VarChar, 50).Value = ApelidoProdutoMlb
                 command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
+                command15.Parameters.Add("@NumeroNota_ApelidoErrado", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
 
 
                 Try
@@ -15455,6 +15488,133 @@ Proxima:
         End Try
 
         Me.BalcaoTableAdapter.Fill(Me.DataSetFinal.balcao)
+    End Sub
+
+    Private Sub PedidoCompraDataGridView_DoubleClick(sender As Object, e As EventArgs) Handles PedidoCompraDataGridView.DoubleClick
+       
+
+
+    End Sub
+
+    Private Sub Button86_Click(sender As Object, e As EventArgs) Handles Button86.Click
+
+        btn_relfor.Enabled = True
+        Button85.Enabled = True
+        Button86.Enabled = False
+
+        TextBox46.Clear()
+        TextBox47.Clear()
+        TextBox48.Clear()
+        TextBox49.Clear()
+        DateTimePicker37.Text = Today
+
+
+    End Sub
+
+    Private Sub Button85_Click(sender As Object, e As EventArgs) Handles Button85.Click
+
+        ' apaga registro
+        Dim reply As DialogResult = MessageBox.Show("Confirmar a exclusão?", "Atenção!!!", _
+           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+        If reply = DialogResult.Yes Then
+            ' --------------------------------------
+            ' apagar os dados da tabela
+            Dim v_SelectRow As Integer
+            v_SelectRow = Me.PedidoCompraDataGridView.CurrentRow.Index
+
+            command = connection.CreateCommand()
+            command.CommandText = "delete from PedidoCompra where  Id_PedidoCompra = @Id_PedidoCompra"
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@Id_PedidoCompra", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(0, v_SelectRow).Value
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+                Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
+                PedidoCompraBindingSource.MoveFirst()
+                MessageBox.Show("Apagado com sucesso!")
+
+            Catch ex As Exception
+                MessageBox.Show("Algo ocorreu errado")
+                MessageBox.Show(ex.ToString())
+
+
+            Finally
+                connection.Close()
+            End Try
+        Else
+            'Process No
+        End If
+
+        Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
+         TextBox46.Clear()
+        TextBox47.Clear()
+        TextBox48.Clear()
+        TextBox49.Clear()
+        DateTimePicker37.Text = Today
+
+    End Sub
+
+    Private Sub ProdutosDataGridView6_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView6.DoubleClick
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        Dim command As SqlCommand
+
+
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.dataGridPediMarf.CurrentRow.Index
+
+        '        TextBox210.Text = ProdutosDataGridView6.Item(1, v_SelectRow).Value
+        '    TextBox215.Text = ProdutosDataGridView6.Item(5, v_SelectRow).Value
+
+        ' -----------------------------------
+        ' Pegar a quantidade de entrada
+        Dim QuantidadeEntradaPedido As Integer = 0
+
+        Try
+            QuantidadeEntradaPedido = InputBox("Digite a quantidade comprada")
+
+        Catch ex As Exception
+            Exit Sub
+        End Try
+
+        TextBox248.Text = QuantidadeEntradaPedido
+        ' --------------------------------------
+        ' Gravar od dados da tabela
+        command = connection.CreateCommand()
+        command.CommandText = "INSERT INTO PedidoCompra (Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
+        command.CommandType = CommandType.Text
+
+        command.Parameters.Add("@Fornecedor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(4, v_SelectRow).Value
+        command.Parameters.Add("@Codigo_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(1, v_SelectRow).Value
+        command.Parameters.Add("@Linha_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(5, v_SelectRow).Value
+        command.Parameters.Add("@Cor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(7, v_SelectRow).Value
+        command.Parameters.Add("@CodProdFor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(2, v_SelectRow).Value
+        command.Parameters.Add("@NomeProd_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(6, v_SelectRow).Value
+        command.Parameters.Add("@Quantidade_PedidoCompra", SqlDbType.Float).Value = QuantidadeEntradaPedido
+        command.Parameters.Add("@Data_PedidoCompra", SqlDbType.Date).Value = DateTimePicker38.Text
+        command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
+
+        ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+        Try
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+            MessageBox.Show("Sucesso!")
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.ToString())
+
+        Finally
+            connection.Close()
+        End Try
+
+        TabControl2.SelectedIndex = 0
+        Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
     End Sub
 End Class
 
