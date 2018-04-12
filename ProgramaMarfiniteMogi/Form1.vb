@@ -16,8 +16,7 @@ Imports System.Net.Mail
 Imports System.Text.RegularExpressions
 Imports System
 Imports System.Math
-Imports System.String
-Imports System.Int32
+
 
 
 Public Class Form1
@@ -442,7 +441,6 @@ Public Class Form1
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Cadastrar Pasta NFe}" Then
 
-            VendasMlbBindingSource.Filter = String.Format("NomeContato_VendasMlb LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
             ' buscar a data
             DateTimePicker39.Text = Date.Now
             DateTimePicker40.Text = Date.Now
@@ -473,14 +471,14 @@ Public Class Form1
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Pedido Compra}" Then
 
-            PedidoCompraBindingSource.Filter = String.Format("Fornecedor_PedidoCompra LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            'PedidoCompraBindingSource.Filter = String.Format("Fornecedor_PedidoCompra LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
             Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
             If codigoEntrada <> fernando Then
                 MessageBox.Show("Código inválido")
                 TabControl1.SelectedIndex = 0
                 Exit Sub
             End If
-
+            TabControl2.TabPages.Remove(Tab_fornecedor)
         End If
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Back Up}" Then
@@ -1001,7 +999,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'REM ele conta quantos produtos tem na nota e joga em a
         '************************************************************
         Dim CodigoAnterior As String = ""
-        Dim NumeroNota(3000) As String
+        Dim NumeroNota(10000) As String
         '***********************************************************
         For a As Integer = 1 To ctd_prod
 
@@ -1012,9 +1010,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.Parameters.Clear()
-            command.CommandText = "INSERT INTO VendasMlb (NUmeroPedido2_VendasMlb,DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMlb,NumeroRua_VendasMlb,Complemento_VendasMlb,Bairro_VendasMlb,Fone_VendasMlb,NomeProduto_VendasMlb,QuantidadeVendida_VendasMlb,VrUnitario_VendasMlb,CodigoMlb_VendasMlb) Values (@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMlb,@NumeroRua_VendasMlb,@Complemento_VendasMlb,@Bairro_VendasMlb,@Fone_VendasMlb,@NomeProduto_VendasMlb,@QuantidadeVendida_VendasMlb,@VrUnitario_VendasMlb,@CodigoMlb_VendasMlb)"
+            command.CommandText = "INSERT INTO VendasMlb (VrTotal_vendasMlb,NUmeroPedido2_VendasMlb,DataPedido_VendasMlb,NomeContato_VendasMlb,CEP_VendasMlb,Municipio_VendasMlb,Estado_VendasMlb,Endereco_VendasMlb,NumeroRua_VendasMlb,Complemento_VendasMlb,Bairro_VendasMlb,Fone_VendasMlb,NomeProduto_VendasMlb,QuantidadeVendida_VendasMlb,VrUnitario_VendasMlb,CodigoMlb_VendasMlb) Values (@VrTotal_vendasMlb,@NUmeroPedido2_VendasMlb,@DataPedido_VendasMlb,@NomeContato_VendasMlb,@CEP_VendasMlb,@Municipio_VendasMlb,@Estado_VendasMlb,@Endereco_VendasMlb,@NumeroRua_VendasMlb,@Complemento_VendasMlb,@Bairro_VendasMlb,@Fone_VendasMlb,@NomeProduto_VendasMlb,@QuantidadeVendida_VendasMlb,@VrUnitario_VendasMlb,@CodigoMlb_VendasMlb)"
             ' ---------------------------------------------------
             Dim NumeroNotaFinal As String = ""
+            Dim Quantidade As Double = 0
+            Dim Preco As Double = 0
+            Dim TotalValor As Double = 0
 
             Try
                 command.CommandType = CommandType.Text
@@ -1165,14 +1166,18 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:qCom", ns) Is Nothing Then
                     command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:qCom", ns).InnerText
+                    Quantidade = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:qCom", ns).InnerText
+                    command.Parameters.Add("@QuantidadeVendida_VendasMlb", SqlDbType.VarChar, 50).Value = Quantidade
+
                 End If
 
                 ' Valor Unitátio
                 If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vUnCom", ns) Is Nothing Then
                     command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.VarChar, 50).Value = "sem "
                 Else
-                    command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vUnCom", ns).InnerText
+                    Preco = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:vUnCom", ns).InnerText
+                    command.Parameters.Add("@VrUnitario_VendasMlb", SqlDbType.VarChar, 50).Value = Preco
+
                 End If
 
                 ' codigo produto
@@ -1182,6 +1187,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     command.Parameters.Add("@CodigoMlb_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cProd", ns).InnerText
                 End If
                 'Rem ---------- fim da leitura da nota xml
+                TotalValor = Quantidade * (Preco / 100)
+                command.Parameters.Add("@VrTotal_vendasMlb", SqlDbType.Float).Value = TotalValor
 
 
             Catch ex As Exception
@@ -2284,16 +2291,52 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
          'Dim sql As String = "select * from capitalgirofornecedor cp where cp.dataemit_klgiro  > GetDate() -" & cbx_diasforn.Text
         'Dim sql2 As String = "select SUM(cp.tlvrXgiro_klgiro)/SUM(cp.valor_klgiro) as resultado  from capitalgirofornecedor cp where cp.dataemit_klgiro  > GetDate() - " & cbx_diasforn.Text
         ' **********************************************************************************************
-       
+
+        ' pegar o último número gravado com datagrid
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
+
+        Dim UltimoID As String = ""
+        Dim command15 As SqlCommand
+        command15 = connection.CreateCommand()
+        command15.CommandText = "select id_PedidoCompra  from PedidoCompra  where id_PedidoCompra = (select max(id_PedidoCompra) from PedidoCompra) "
+        Try
+            connection.Open()
+
+            Dim lrd15 As SqlDataReader = command15.ExecuteReader()
+            While lrd15.Read
+
+                If lrd15("id_PedidoCompra") Is DBNull.Value Then
+                    UltimoID = "0"
+                Else
+                    UltimoID = lrd15("id_PedidoCompra")
+                End If
+
+            End While
+
+            connection.Close()
+        Catch ex As Exception
+
+            MessageBox.Show(ex.ToString)
+
+        End Try
+
+        TextBox222.Text = UltimoID
+
+        ' ---------------------------------------------- 
         btn_relfor.Enabled = False
         Button85.Enabled = False
         Button86.Enabled = True
-
+        Button96.Enabled = False
+        TabControl2.TabPages.Add(Tab_fornecedor)
+        TabControl2.SelectedIndex = 1
 
     End Sub
 
     Private Sub TabControl2_Selected(sender As Object, e As TabControlEventArgs) Handles TabControl2.Selected
-        'cbx_diasforn.Enabled = True
+
 
     End Sub
     'REm pega todos os varlores da tabela produtos
@@ -3709,7 +3752,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             'VOlta para a tela de pedidos e atualiza a tabela ....
             TabControlpedidos_nfe.SelectedIndex = 0
-
             Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
             ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", Id_pedidosTextBox.Text)
 
@@ -15375,8 +15417,8 @@ Proxima:
         Me.BalcaoTableAdapter.Fill(Me.DataSetFinal.balcao)
     End Sub
 
-    Private Sub PedidoCompraDataGridView_DoubleClick(sender As Object, e As EventArgs) Handles PedidoCompraDataGridView.DoubleClick
-       
+    Private Sub PedidoCompraDataGridView_DoubleClick(sender As Object, e As EventArgs)
+
 
 
     End Sub
@@ -15392,7 +15434,7 @@ Proxima:
         TextBox48.Clear()
         TextBox49.Clear()
         DateTimePicker37.Text = Today
-
+        TabControl2.TabPages.Remove(Tab_fornecedor)
 
     End Sub
 
@@ -15474,7 +15516,7 @@ Proxima:
         command.CommandType = CommandType.Text
 
         command.Parameters.Add("@Fornecedor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(4, v_SelectRow).Value
-        command.Parameters.Add("@Codigo_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(1, v_SelectRow).Value
+        command.Parameters.Add("@Codigo_PedidoCompra", SqlDbType.VarChar, 50).Value = TextBox222.Text
         command.Parameters.Add("@Linha_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(5, v_SelectRow).Value
         command.Parameters.Add("@Cor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(7, v_SelectRow).Value
         command.Parameters.Add("@CodProdFor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(2, v_SelectRow).Value
@@ -15488,21 +15530,17 @@ Proxima:
             connection.Open()
             command.ExecuteNonQuery()
             connection.Close()
-            MessageBox.Show("Sucesso!")
-
+            'VOlta para a tela de pedidos e atualiza a tabela ....
+            TabControl2.SelectedIndex = 0
+            Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
+            
         Catch ex As Exception
 
             MessageBox.Show(ex.ToString())
 
-        Finally
-            connection.Close()
         End Try
-
-        TabControl2.SelectedIndex = 0
-        Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
-        PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompra LIKE '{0}'", TextBox222.Text)
-
     End Sub
+
 
     Private Sub TextBox277_TextChanged(sender As Object, e As EventArgs) Handles TextBox277.TextChanged
         ProdutosBindingSource.Filter = String.Format("nome_prod LIKE '{0}%'", TextBox277.Text)
@@ -15544,8 +15582,8 @@ Proxima:
     End Sub
 
     Private Sub Button97_Click(sender As Object, e As EventArgs) Handles Button97.Click
-      
-          Dim connection As SqlConnection
+
+        Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker39.Text & "' ,103)  and convert (datetime, '" & DateTimePicker40.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -15561,10 +15599,22 @@ Proxima:
         ' soma a coluna dos valores e o põe no campo certo
         Dim valor As Decimal = 0
         For Each Linha As DataGridViewRow In Me.VendasMlbDataGridView.Rows
-            valor += Linha.Cells(14).Value
+            valor += Linha.Cells(16).Value
         Next
         TextBox283.Text = valor.ToString("F2")
-       
+
+
+
+    End Sub
+
+    Private Sub Button98_Click(sender As Object, e As EventArgs) Handles Button98.Click
+
+
+        PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompra LIKE '{0}'", TextBox222.Text)
+
+    End Sub
+
+    Private Sub TextBox284_TextChanged(sender As Object, e As EventArgs) Handles TextBox284.TextChanged
 
 
     End Sub
