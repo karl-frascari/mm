@@ -37,7 +37,7 @@
     <Shape ID="DesignTable:NomeContasFuncionarios" ZOrder="13" X="8382" Y="70" Height="191" Width="293" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="140" />
     <Shape ID="DesignTable:NotasEntrada" ZOrder="12" X="8745" Y="70" Height="267" Width="223" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
     <Shape ID="DesignTable:orcamento2" ZOrder="11" X="9038" Y="70" Height="305" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:PedidoCompra" ZOrder="10" X="9322" Y="70" Height="267" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
+    <Shape ID="DesignTable:PedidoCompra" ZOrder="10" X="9322" Y="70" Height="286" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
     <Shape ID="DesignTable:pedidoMarfinite" ZOrder="9" X="9623" Y="70" Height="305" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:PedidoNFE" ZOrder="8" X="9932" Y="70" Height="305" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:produtos" ZOrder="7" X="10210" Y="70" Height="305" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />

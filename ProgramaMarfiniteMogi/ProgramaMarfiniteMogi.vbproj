@@ -158,7 +158,6 @@
     </None>
     <None Include="DataSetFinal1.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetFinal1.Designer.vb</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="DataSetFinal1.xss">

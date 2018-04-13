@@ -2329,7 +2329,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         btn_relfor.Enabled = False
         Button85.Enabled = False
         Button86.Enabled = True
-        Button96.Enabled = False
+        TextBox284.Enabled = False
         TabControl2.TabPages.Add(Tab_fornecedor)
         TabControl2.SelectedIndex = 1
 
@@ -15428,17 +15428,28 @@ Proxima:
         btn_relfor.Enabled = True
         Button85.Enabled = True
         Button86.Enabled = False
+        TextBox284.Enabled = True
 
-        TextBox46.Clear()
-        TextBox47.Clear()
-        TextBox48.Clear()
-        TextBox49.Clear()
+        TextBox222.Clear()
+        TextBox246.Clear()
+        TextBox247.Clear()
+        TextBox248.Clear()
+
+
         DateTimePicker37.Text = Today
         TabControl2.TabPages.Remove(Tab_fornecedor)
 
     End Sub
 
     Private Sub Button85_Click(sender As Object, e As EventArgs) Handles Button85.Click
+
+        If TextBox246.Text = "" Then
+            MessageBox.Show("Escolha um pedido")
+            Exit Sub
+        End If
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' apaga registro
         Dim reply As DialogResult = MessageBox.Show("Confirmar a exclusão?", "Atenção!!!", _
@@ -15460,11 +15471,10 @@ Proxima:
                 command.ExecuteNonQuery()
                 connection.Close()
                 Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
-                PedidoCompraBindingSource.MoveFirst()
                 MessageBox.Show("Apagado com sucesso!")
 
             Catch ex As Exception
-                MessageBox.Show("Algo ocorreu errado")
+
                 MessageBox.Show(ex.ToString())
 
 
@@ -15494,9 +15504,6 @@ Proxima:
         Dim v_SelectRow As Integer
         v_SelectRow = Me.ProdutosDataGridView6.CurrentRow.Index
 
-        '        TextBox210.Text = ProdutosDataGridView6.Item(1, v_SelectRow).Value
-        '    TextBox215.Text = ProdutosDataGridView6.Item(5, v_SelectRow).Value
-
         ' -----------------------------------
         ' Pegar a quantidade de entrada
         Dim QuantidadeEntradaPedido As Integer = 0
@@ -15508,22 +15515,22 @@ Proxima:
             Exit Sub
         End Try
 
-        TextBox248.Text = QuantidadeEntradaPedido
         ' --------------------------------------
         ' Gravar od dados da tabela
         command = connection.CreateCommand()
-        command.CommandText = "INSERT INTO PedidoCompra (Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
+        command.CommandText = "INSERT INTO PedidoCompra (Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
         command.CommandType = CommandType.Text
 
         command.Parameters.Add("@Fornecedor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(4, v_SelectRow).Value
-        command.Parameters.Add("@Codigo_PedidoCompra", SqlDbType.VarChar, 50).Value = TextBox222.Text
+        command.Parameters.Add("@Codigo_PedidoCompra", SqlDbType.Int).Value = TextBox222.Text
         command.Parameters.Add("@Linha_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(5, v_SelectRow).Value
         command.Parameters.Add("@Cor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(7, v_SelectRow).Value
         command.Parameters.Add("@CodProdFor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(2, v_SelectRow).Value
         command.Parameters.Add("@NomeProd_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(6, v_SelectRow).Value
         command.Parameters.Add("@Quantidade_PedidoCompra", SqlDbType.Float).Value = QuantidadeEntradaPedido
-        command.Parameters.Add("@Data_PedidoCompra", SqlDbType.Date).Value = DateTimePicker38.Text
+        command.Parameters.Add("@Data_PedidoCompra", SqlDbType.Date).Value = DateTimePicker37.Text
         command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
+        command.Parameters.Add("@Codigo_PedidoCompraString", SqlDbType.VarChar, 50).Value = TextBox222.Text
 
         ' a seguir comandos para gravar os ítens coletados do formulário ------------------
         Try
@@ -15533,7 +15540,8 @@ Proxima:
             'VOlta para a tela de pedidos e atualiza a tabela ....
             TabControl2.SelectedIndex = 0
             Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
-            
+            PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}'", TextBox222.Text)
+
         Catch ex As Exception
 
             MessageBox.Show(ex.ToString())
@@ -15607,15 +15615,29 @@ Proxima:
 
     End Sub
 
-    Private Sub Button98_Click(sender As Object, e As EventArgs) Handles Button98.Click
-
-
-        PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompra LIKE '{0}'", TextBox222.Text)
-
+    Private Sub ComboBox13_TextChanged_1(sender As Object, e As EventArgs) Handles ComboBox13.TextChanged
+        NotasEntradaBindingSource.Filter = String.Format("FornecedorEntrada LIKE '{0}'", ComboBox13.Text)
     End Sub
 
     Private Sub TextBox284_TextChanged(sender As Object, e As EventArgs) Handles TextBox284.TextChanged
 
+        PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}%'", TextBox284.Text)
+
+    End Sub
+
+   
+    Private Sub PedidoCompraDataGridView_DoubleClick_1(sender As Object, e As EventArgs) Handles PedidoCompraDataGridView.DoubleClick
+
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.PedidoCompraDataGridView.CurrentRow.Index
+
+        TextBox246.Text = PedidoCompraDataGridView.Item(2, v_SelectRow).Value
+        TextBox247.Text = PedidoCompraDataGridView.Item(6, v_SelectRow).Value
+        TextBox248.Text = PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+
+    End Sub
+
+    Private Sub Label317_Click(sender As Object, e As EventArgs) Handles Label317.Click
 
     End Sub
 End Class
