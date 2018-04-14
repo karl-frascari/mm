@@ -479,6 +479,8 @@ Public Class Form1
                 Exit Sub
             End If
             TabControl2.TabPages.Remove(Tab_fornecedor)
+            RadioButton13.Checked = True
+
         End If
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Back Up}" Then
@@ -7485,223 +7487,57 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-        PrintPreviewDialog4.ShowDialog()
+        '   PrintPreviewDialog4.ShowDialog()
 
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
 
-        Dim NUmeroDuplicatas As String
 
-        If txt_vrduplicata1.Text <> "" Then
-            NUmeroDuplicatas = 1
-        End If
-        If txt_vrduplicata2.Text <> "" Then
-            NUmeroDuplicatas = 2
-        End If
-        If txt_vrduplicata3.Text <> "" Then
-            NUmeroDuplicatas = 3
-        End If
-        If txt_vrduplicata4.Text <> "" Then
-            NUmeroDuplicatas = 4
-        End If
-        If txt_vrduplicata5.Text <> "" Then
-            NUmeroDuplicatas = 5
-        End If
 
-        If txt_vrduplicata1.Text <> "" Then
-            ' PRIMEIRA DUPLICATA
-            ' primeira linha
-            e.Graphics.DrawString("MARFINITE MOGI", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 5)
-            e.Graphics.DrawString("Nota gerada :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 125, 5)
-            e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 5)
 
-            'segunda linha
-            e.Graphics.DrawString("Nota Fiscal  :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 25)
-            e.Graphics.DrawString(txt_nNfe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 25)
-            e.Graphics.DrawString("Valor Duplicata", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 25)
+        ' Pedido compra
+        ' primeira linha
+        e.Graphics.DrawString("MOGI PLÁSTICOS", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 350, 5)
+        e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 10)
+        e.Graphics.DrawString("**************************************************************************************************************************************************************************", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 30)
+        e.Graphics.DrawString("**************************************************************************************************************************************************************************", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 50)
 
-            e.Graphics.DrawString("(1-" + NUmeroDuplicatas + ")", New Font("arial", 10, FontStyle.Bold), Brushes.Black, 180, 25)
-            e.Graphics.DrawString(txt_vrduplicata1.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 225, 25)
-            e.Graphics.DrawString("Vencimento :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 45)
-            e.Graphics.DrawString(date_duplicata1.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 100, 45)
-            ' terceira linha
-            e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 65)
-            e.Graphics.DrawString(txt_coPEdNFe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 65)
-            e.Graphics.DrawString("Telefone :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 140, 65)
-            e.Graphics.DrawString(D_Telefone.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 200, 65)
+        'segunda linha
+        e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 70)
+        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 70)
+        e.Graphics.DrawString("fornecedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 70)
+        e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 475, 70)
 
-            'quarta linha
-            e.Graphics.DrawString("Cliente :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 85)
-            e.Graphics.DrawString(D_Nome.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 55, 85)
-            '    ler o nome do vendedor
+        ' terceira linha
+        e.Graphics.DrawString("Email :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 90)
+        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 90)
+        e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 90)
+        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 475, 90)
+        e.Graphics.DrawString("**************************************************************************************************************************************************************************", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 110)
+         ' cabecalho
+        e.Graphics.DrawString("Código Produto", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 130)
+        e.Graphics.DrawString("Nome do Produto", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 150, 130)
+        e.Graphics.DrawString("Cor  ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 400, 130)
+        e.Graphics.DrawString("Quantidade  ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 600, 130)
 
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 100)
-            e.Graphics.DrawString(Vendedor_nfeemitidasTextBox.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 100)
+        ' ----------------------------------------------------------------------------------------------------------
 
-            e.Graphics.DrawString("Vr TL dup :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 100)
-            e.Graphics.DrawString(TextBox5.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 100)
+        Try
+            For x = 0 To 30
 
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 105)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 110)
-            e.Graphics.DrawString("DESPERDÍCIO-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 115)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 220)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 225)
 
-        End If
-        If txt_vrduplicata2.Text <> "" Then
-            ' SEGUNDA DUPLICATA
-            ' primeira linha
-            e.Graphics.DrawString("MARFINITE MOGI", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 245)
-            e.Graphics.DrawString("Nota gerada :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 125, 245)
-            e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 245)
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 150 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 150 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 150 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 150 + (x * 20))
 
-            'segunda linha
-            e.Graphics.DrawString("Nota Fiscal  :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 265)
-            e.Graphics.DrawString(txt_nNfe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 265)
-            e.Graphics.DrawString("Valor Duplicata", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 265)
-            e.Graphics.DrawString("(2-" + NUmeroDuplicatas + ")", New Font("arial", 10, FontStyle.Bold), Brushes.Black, 180, 265)
-            e.Graphics.DrawString(txt_vrduplicata2.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 225, 265)
-            e.Graphics.DrawString("Vencimento :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 285)
-            e.Graphics.DrawString(date_duplicata2.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 100, 285)
-            ' terceira linha
-            e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 305)
-            e.Graphics.DrawString(txt_coPEdNFe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 305)
-            e.Graphics.DrawString("Telefone :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 140, 305)
-            e.Graphics.DrawString(D_Telefone.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 200, 305)
+            Next
+        Catch ex As Exception
+            Exit Sub
+        End Try
 
-            'quarta linha
-            e.Graphics.DrawString("Cliente :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 325)
-            e.Graphics.DrawString(D_Nome.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 55, 325)
-            '    ler o nome do vendedor
 
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 245)
-            e.Graphics.DrawString(Vendedor_nfeemitidasTextBox.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 345)
 
-            e.Graphics.DrawString("Vr TL dup :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 345)
-            e.Graphics.DrawString(TextBox5.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 345)
-
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 350)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 355)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 360)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 465)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 470)
-        End If
-        If txt_vrduplicata3.Text <> "" Then
-            ' TERCEIRA DUPLICATA
-            ' primeira linha
-            e.Graphics.DrawString("MARFINITE MOGI", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 490)
-            e.Graphics.DrawString("Nota gerada :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 125, 490)
-            e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 490)
-
-            'segunda linha
-            e.Graphics.DrawString("Nota Fiscal  :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 510)
-            e.Graphics.DrawString(txt_nNfe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 510)
-            e.Graphics.DrawString("Valor Duplicata", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 510)
-            e.Graphics.DrawString("(3-" + NUmeroDuplicatas + ")", New Font("arial", 10, FontStyle.Bold), Brushes.Black, 180, 510)
-            e.Graphics.DrawString(txt_vrduplicata3.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 225, 510)
-            e.Graphics.DrawString("Vencimento :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 530)
-            e.Graphics.DrawString(date_duplicata3.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 100, 530)
-            ' terceira linha
-            e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 550)
-            e.Graphics.DrawString(txt_coPEdNFe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 550)
-            e.Graphics.DrawString("Telefone :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 140, 550)
-            e.Graphics.DrawString(D_Telefone.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 200, 550)
-
-            'quarta linha
-            e.Graphics.DrawString("Cliente :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 570)
-            e.Graphics.DrawString(D_Nome.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 55, 570)
-            '    ler o nome do vendedor
-
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 590)
-            e.Graphics.DrawString(Vendedor_nfeemitidasTextBox.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 590)
-
-            e.Graphics.DrawString("Vr TL dup :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 590)
-            e.Graphics.DrawString(TextBox5.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 590)
-
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 595)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 600)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 605)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 710)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 715)
-        End If
-        If txt_vrduplicata4.Text <> "" Then
-            ' QUARTA DUPLICATA
-            ' primeira linha
-            e.Graphics.DrawString("MARFINITE MOGI", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 735)
-            e.Graphics.DrawString("Nota gerada :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 125, 735)
-            e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 735)
-
-            'segunda linha
-            e.Graphics.DrawString("Nota Fiscal  :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 755)
-            e.Graphics.DrawString(txt_nNfe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 755)
-            e.Graphics.DrawString("Valor Duplicata", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 755)
-            e.Graphics.DrawString("(4-" + NUmeroDuplicatas + ")", New Font("arial", 10, FontStyle.Bold), Brushes.Black, 180, 755)
-            e.Graphics.DrawString(txt_vrduplicata4.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 225, 755)
-            e.Graphics.DrawString("Vencimento :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 775)
-            e.Graphics.DrawString(date_duplicata4.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 100, 775)
-            ' terceira linha
-            e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 795)
-            e.Graphics.DrawString(txt_coPEdNFe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 795)
-            e.Graphics.DrawString("Telefone :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 140, 795)
-            e.Graphics.DrawString(D_Telefone.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 200, 795)
-
-            'quarta linha
-            e.Graphics.DrawString("Cliente :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 815)
-            e.Graphics.DrawString(D_Nome.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 55, 815)
-            '    ler o nome do vendedor
-
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 835)
-            e.Graphics.DrawString(Vendedor_nfeemitidasTextBox.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 835)
-
-            e.Graphics.DrawString("Vr TL dup :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 835)
-            e.Graphics.DrawString(TextBox5.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 835)
-
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 840)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 845)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 850)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1055)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1060)
-        End If
-
-        If txt_vrduplicata5.Text <> "" Then
-            ' QUINTA DUPLICATA
-            ' primeira linha
-            e.Graphics.DrawString("MARFINITE MOGI", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 1080)
-            e.Graphics.DrawString("Nota gerada :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 125, 1080)
-            e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 1080)
-
-            'segunda linha
-            e.Graphics.DrawString("Nota Fiscal  :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 1060)
-            e.Graphics.DrawString(txt_nNfe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 1060)
-            e.Graphics.DrawString("Valor Duplicata", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 1060)
-            e.Graphics.DrawString("(5-" + NUmeroDuplicatas + ")", New Font("arial", 10, FontStyle.Bold), Brushes.Black, 180, 1060)
-            e.Graphics.DrawString(txt_vrduplicata5.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 225, 1060)
-            e.Graphics.DrawString("Vencimento :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 1080)
-            e.Graphics.DrawString(date_duplicata5.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 100, 1080)
-            ' terceira linha
-            e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 1100)
-            e.Graphics.DrawString(txt_coPEdNFe.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 1100)
-            e.Graphics.DrawString("Telefone :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 140, 1100)
-            e.Graphics.DrawString(D_Telefone.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 200, 1100)
-
-            'quarta linha
-            e.Graphics.DrawString("Cliente :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 1120)
-            e.Graphics.DrawString(D_Nome.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 55, 1120)
-            '    ler o nome do vendedor
-
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 680)
-            e.Graphics.DrawString(Vendedor_nfeemitidasTextBox.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 1140)
-
-            e.Graphics.DrawString("Vr TL dup :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 1140)
-            e.Graphics.DrawString(TextBox5.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 225, 1140)
-
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1145)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1150)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1155)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1160)
-            e.Graphics.DrawString("-------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 10, 1165)
-
-        End If
 
     End Sub
 
@@ -9236,22 +9072,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Me.BalcaoTableAdapter.Fill(Me.DataSetFinal.balcao)
      
-        ' ----------------------------------------------------------------------------
-        'Try
-
-        '    PrintPreviewDialog2.Document = PrintDocument1
-        '    DirectCast(PrintPreviewDialog2, Form).WindowState = FormWindowState.Maximized
-        '    PrintDialog2.Document = PrintDocument1
-        '    PrintDialog2.PrinterSettings.PrinterName = "\\servidor\EPSON9FB5D0 (L355 Series)"
-        '    ' PrintDialog2.PrinterSettings.PrinterName = "\\EPSON9FB5D0 (L355 Series)"
-
-        '    CType(PrintPreviewDialog2.Controls(1), ToolStrip).Items.Add(PDB)
-        'Catch ex As Exception
-        '    MessageBox.Show(ex.ToString())
-        'End Try
-
-
-        ' ---------------------------------------------------------------------------------
 
         'PrintPreviewDialog3.ShowDialog()
         PrintDialog1.Document = PrintDocument10
@@ -9330,10 +9150,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
     Private Sub PrintPreviewDialog4_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog4.Load
+
         PrintPreviewDialog4.Document = PrintDocument2
         DirectCast(PrintPreviewDialog4, Form).WindowState = FormWindowState.Maximized
         PrintDialog1.Document = PrintDocument2
-        PrintDialog1.PrinterSettings.PrinterName = "\\SERVIDOR\MP-4200 TH"
+        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
         CType(PrintPreviewDialog4.Controls(1), ToolStrip).Items.Add(PDB)
 
     End Sub
@@ -15443,8 +15264,8 @@ Proxima:
 
     Private Sub Button85_Click(sender As Object, e As EventArgs) Handles Button85.Click
 
-        If TextBox246.Text = "" Then
-            MessageBox.Show("Escolha um pedido")
+        If TextBox246.Text = "" Or RadioButton11.Checked = False Then
+            MessageBox.Show("Escolha um pedido ou marque o botão")
             Exit Sub
         End If
 
@@ -15491,6 +15312,9 @@ Proxima:
         TextBox48.Clear()
         TextBox49.Clear()
         DateTimePicker37.Text = Today
+        RadioButton13.Checked = True
+
+
 
     End Sub
 
@@ -15498,13 +15322,42 @@ Proxima:
 
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        Dim command As SqlCommand
-
-
+        ' -------------------------------------------------------------------------------------------
         Dim v_SelectRow As Integer
         v_SelectRow = Me.ProdutosDataGridView6.CurrentRow.Index
+        ' ------------------------------------------------------------------------------------------------------------------
+        Dim ano As Integer = Today.Year
+        Dim mes As Integer = Today.Month
+        Dim primeiroDia As DateTime = New DateTime(ano, mes, 1).AddDays(-91)
+        Dim ultimoDia As DateTime = New DateTime(ano, mes, 1).AddDays(-1)
+        Dim NomeProduto As String = ProdutosDataGridView6.Item(6, v_SelectRow).Value
+        Dim CorProduto As String = ProdutosDataGridView6.Item(7, v_SelectRow).Value
 
+        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia & "' ,103)  and convert (datetime, '" & ultimoDia & "' ,103) and nomeProd_balcao = '" & NomeProduto & "' and corprod_balcao = '" & CorProduto & "'"
+        Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        Dim ds As New DataSet()
+        Try
+            connection.Open()
+            dataadapter.Fill(ds, "balcao")
+            connection.Close()
+            BalcaoDataGridView8.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
         ' -----------------------------------
+        'somar quantidade da coluna da tabela balcão
+        Dim quantidadeBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView8.Rows
+            quantidadeBalcao += Linha.Cells(7).Value
+        Next
+        TextBox273.Text = ((quantidadeBalcao / 90) * 30).ToString("F2")
+        ' ----------------------------------------------------------------------------------
+        ' ****************************************************************************************
+        TextBox274.Text = ProdutosDataGridView6.Item(11, v_SelectRow).Value
+        TextBox275.Text = ProdutosDataGridView6.Item(13, v_SelectRow).Value
+        TextBox276.Text = ProdutosDataGridView6.Item(17, v_SelectRow).Value
+
+        ' ****************************************************************************************
         ' Pegar a quantidade de entrada
         Dim QuantidadeEntradaPedido As Integer = 0
 
@@ -15517,6 +15370,7 @@ Proxima:
 
         ' --------------------------------------
         ' Gravar od dados da tabela
+        Dim command As SqlCommand
         command = connection.CreateCommand()
         command.CommandText = "INSERT INTO PedidoCompra (Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
         command.CommandType = CommandType.Text
@@ -15627,6 +15481,10 @@ Proxima:
 
    
     Private Sub PedidoCompraDataGridView_DoubleClick_1(sender As Object, e As EventArgs) Handles PedidoCompraDataGridView.DoubleClick
+        ' só passará para os textbox se for para apagar
+        If RadioButton11.Checked = False Then
+            Exit Sub
+        End If
 
         Dim v_SelectRow As Integer
         v_SelectRow = Me.PedidoCompraDataGridView.CurrentRow.Index
@@ -15639,6 +15497,10 @@ Proxima:
 
     Private Sub Label317_Click(sender As Object, e As EventArgs) Handles Label317.Click
 
+    End Sub
+
+    Private Sub Button76_Click(sender As Object, e As EventArgs) Handles Button76.Click
+        PrintPreviewDialog4.ShowDialog()
     End Sub
 End Class
 
