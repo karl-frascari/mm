@@ -7492,7 +7492,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 70)
         e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 70)
         e.Graphics.DrawString("fornecedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 70)
-        e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 475, 70)
+        e.Graphics.DrawString(PedidoCompraDataGridView.Item(1, 1).Value, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 475, 70)
 
         ' terceira linha
         e.Graphics.DrawString("Email :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 90)
