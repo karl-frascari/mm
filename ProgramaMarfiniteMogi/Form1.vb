@@ -471,7 +471,7 @@ Public Class Form1
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Pedido Compra}" Then
 
-            'PedidoCompraBindingSource.Filter = String.Format("Fornecedor_PedidoCompra LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            PedidoCompraBindingSource.Filter = String.Empty
             Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
             If codigoEntrada <> fernando Then
                 MessageBox.Show("Código inválido")
@@ -15500,6 +15500,11 @@ Proxima:
     End Sub
 
     Private Sub Button76_Click(sender As Object, e As EventArgs) Handles Button76.Click
+        If TextBox284.Text = "" Then
+            MessageBox.Show("Preencha o campo de -Pesquisar Numero Pedido-")
+            Exit Sub
+        End If
+
         PrintPreviewDialog4.ShowDialog()
     End Sub
 End Class
