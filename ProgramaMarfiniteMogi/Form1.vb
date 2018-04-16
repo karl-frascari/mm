@@ -268,7 +268,7 @@ Public Class Form1
             Button12.Enabled = False
             Button11.Enabled = False
             tbcotrl_pdv.TabPages.Remove(tbpg_produtosPDV)
-            BalcaoBindingSource.Filter = String.Format("nomevendedor_balcao LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            BalcaoBindingSource.Filter = String.Format("nomevendedor_balcao LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
 
         End If
 
@@ -337,7 +337,7 @@ Public Class Form1
 
             End If
 
-            ItemNfeEmitidaBindingSource.Filter = String.Format("NomeProd_ItemNfeemitida LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            ItemNfeEmitidaBindingSource.Filter = String.Format("NomeProd_ItemNfeemitida LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
 
             date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
             date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
@@ -416,7 +416,7 @@ Public Class Form1
         End If
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Pedidos}" Then
-            ItemPedidosBindingSource.Filter = String.Format("codprod_item LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            ItemPedidosBindingSource.Filter = String.Format("codprod_item LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
             ConfirmarPedidoToolStripMenuItem.Enabled = False
             btn_conifmardadospedNFE.Enabled = False
             btn_deletaritempedidosnfe.Enabled = False
@@ -455,7 +455,7 @@ Public Class Form1
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Notas de Entrada}" Then
 
-            NotasEntradaBindingSource.Filter = String.Format("FornecedorEntrada LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            NotasEntradaBindingSource.Filter = String.Format("FornecedorEntrada LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
             TextBox27.Enabled = False
             Button67.Enabled = False
 
@@ -471,8 +471,7 @@ Public Class Form1
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Pedido Compra}" Then
 
-            PedidoCompraBindingSource.Filter = String.Empty
-            Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+             Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
             If codigoEntrada <> fernando Then
                 MessageBox.Show("Código inválido")
                 TabControl1.SelectedIndex = 0
@@ -480,6 +479,7 @@ Public Class Form1
             End If
             TabControl2.TabPages.Remove(Tab_fornecedor)
             RadioButton13.Checked = True
+            Button86.Enabled = False
 
         End If
 
@@ -2300,7 +2300,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
 
-        Dim UltimoID As String = ""
+        Dim UltimoID As String = "0"
         Dim command15 As SqlCommand
         command15 = connection.CreateCommand()
         command15.CommandText = "select id_PedidoCompra  from PedidoCompra  where id_PedidoCompra = (select max(id_PedidoCompra) from PedidoCompra) "
@@ -2351,13 +2351,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     'REM pega todos os valores selecionados nos combobox da tabela produtos fornecedor e linha
     Private Sub btn_filt_prod_click(sender As Object, e As EventArgs) Handles btn_filt_prod.Click
 
-        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", cmbox_linhaprod.Text, cmbox_forprod.Text)
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", cmbox_linhaprod.Text, cmbox_forprod.Text)
 
     End Sub
     'Pega todos od fornecedores da tabela produto
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}'", cmbox_forprod.Text)
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", cmbox_forprod.Text)
 
     End Sub
     'mostra as colunas selecionadas no combobox da tabela produtos
@@ -3467,18 +3467,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
-
-
-        'If TabControl1.SelectedTab.ToString = "Pedidos Fornecedor" Then
-
-        '    PedidoMarfiniteBindingSource.Filter = String.Format("numero_pedmarf LIKE '{0}' ", "51awd51a6w5d1a6w5d165_----daw65d1a6w")
-        '    BTN_FECHARPEDMARF.Enabled = False
-        '    DeletarItemToolStripMenuItem.Enabled = False
-
-        'End If
-
-
-
     End Sub
 
     Private Sub DeletaItemToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DeletarItemToolStripMenuItem.Click
@@ -3755,7 +3743,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             'VOlta para a tela de pedidos e atualiza a tabela ....
             TabControlpedidos_nfe.SelectedIndex = 0
             Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
-            ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", Id_pedidosTextBox.Text)
+            ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", Id_pedidosTextBox.Text)
 
         Catch ex As Exception
 
@@ -3844,7 +3832,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Button52.Enabled = False
         Button58.Enabled = False
 
-        ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", "jhgkjhbjugiug8gtljhgb...")
+        ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", "jhgkjhbjugiug8gtljhgb...")
 
     End Sub
     'trava campos do form pedidos NFE
@@ -4016,10 +4004,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End Try
 
         Me.PedidoNFETableAdapter.Fill(Me.DataSetFinal.PedidoNFE)
-        PedidoNFEBindingSource.Filter = String.Format("horariocadastro_ped LIKE '{0}'", txt_horario_pedido.Text)
+        PedidoNFEBindingSource.Filter = String.Format("horariocadastro_ped LIKE '{0}%'", txt_horario_pedido.Text)
         ' verifica se a é alterar ou insertar
 
-        ItemPedidosBindingSource.Filter = String.Format("horariocadastro_item LIKE '{0}'", txt_horario_pedido.Text)
+        ItemPedidosBindingSource.Filter = String.Format("horariocadastro_item LIKE '{0}%'", txt_horario_pedido.Text)
 
 
         TabControlpedidos_nfe.SelectedIndex = 0
@@ -4371,13 +4359,14 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-
+    ' **********************************************************************************************************************
     '   EXEMPLO DE COMO MOSTRAR OUTRA TELA
 
     'FormularioItemNfeEmitida.Show()
     'FormularioItemNfeEmitida.txt_NomeCliNovoForm.Text = D_Nome.Text
     'FormularioItemNfeEmitida.Txt_numeroCliNovoForm.Text = txt_coPEdNFe.Text
     'FormularioItemNfeEmitida.ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", Me.txt_coPEdNFe.Text)
+    ' *****************************************************************************************************************************
 
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
@@ -4745,7 +4734,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-
+    ' gerar arquivo txt
     Private Sub GerarArquivoTXTToolStripMenuItem_Click(sender As Object, e As EventArgs)
 
 
@@ -5166,7 +5155,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         TabControlpedidos_nfe.SelectedIndex = 0
         Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
-        ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", Id_pedidosTextBox.Text)
+        ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", Id_pedidosTextBox.Text)
         ' soma a coluna dos valores e o põe no campo certo
         Dim valor As Decimal = 0
         For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView.Rows
@@ -5304,13 +5293,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}'", ComboBox1.Text)
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox1.Text)
 
     End Sub
 
     Private Sub cbx_buscalinhaPedNFE_TextChanged(sender As Object, e As EventArgs) Handles cbx_buscalinhaPedNFE.TextChanged
 
-        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", cbx_buscalinhaPedNFE.Text, ComboBox1.Text)
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", cbx_buscalinhaPedNFE.Text, ComboBox1.Text)
 
 
     End Sub
@@ -5599,7 +5588,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         v_SelectRow = Me.PedidoNFEDataGridView.CurrentRow.Index
         TabControlpedidos_nfe.SelectedIndex = 0
         Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
-        ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", Id_pedidosTextBox.Text)
+        ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", Id_pedidosTextBox.Text)
 
     End Sub
     Function EmailAddressCheck(ByVal emailAddress As String) As Boolean
@@ -6138,7 +6127,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim v_SelectRow As Integer
         v_SelectRow = Me.PedidoNFEDataGridView1.CurrentRow.Index
         If (PedidoNFEDataGridView1.Item(0, v_SelectRow).Value) IsNot DBNull.Value Then
-            ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}'", (PedidoNFEDataGridView1.Item(0, v_SelectRow).Value))
+            ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", (PedidoNFEDataGridView1.Item(0, v_SelectRow).Value))
 
             TextBox20.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
             TextBox21.Text = PedidoNFEDataGridView1.Item(11, v_SelectRow).Value
@@ -6518,7 +6507,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             TabControl_NFE.SelectedIndex = 0
             ' filtra pelo horário em que foi cadastrado
-            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}'", HorarioNotaEmitida4)
+            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HorarioNotaEmitida4)
             ' soma  o valor d nota
             Dim valor2 As Decimal = 0
             For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
@@ -6756,7 +6745,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim v_SelectRow As Integer
         v_SelectRow = Me.NFE_EmitidasDataGridView.CurrentRow.Index
         If (NFE_EmitidasDataGridView.Item(0, v_SelectRow).Value) IsNot DBNull.Value Then
-            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}'", (NFE_EmitidasDataGridView.Item(30, v_SelectRow).Value))
+            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", (NFE_EmitidasDataGridView.Item(30, v_SelectRow).Value))
 
             'TextBox20.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
             'TextBox21.Text = PedidoNFEDataGridView1.Item(11, v_SelectRow).Value
@@ -7007,8 +6996,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub TabControl_NFE_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl_NFE.SelectedIndexChanged
         If TabControl_NFE.SelectedIndex = 1 Then
-            PedidoNFEBindingSource.Filter = String.Format("razaosocialcliente_ped LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
-            ItemPedidosBindingSource.Filter = String.Format("nome_item LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+            PedidoNFEBindingSource.Filter = String.Format("razaosocialcliente_ped LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
+            ItemPedidosBindingSource.Filter = String.Format("nome_item LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
 
              ' pegando os dados das datas
             Dim ano As Integer = Today.Year
@@ -7392,7 +7381,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             End If
 
             TabControl_NFE.SelectedIndex = 0
-            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}'", HoraEmitida_nfeemitidaTextBox.Text)
+        ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HoraEmitida_nfeemitidaTextBox.Text)
 
     End Sub
 
@@ -7492,9 +7481,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
 
-
-
-
         ' Pedido compra
         ' primeira linha
         e.Graphics.DrawString("MOGI PLÁSTICOS", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 350, 5)
@@ -7525,7 +7511,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Try
             For x = 0 To 30
 
-
                 e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 150 + (x * 20))
                 e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 150 + (x * 20))
                 e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 150 + (x * 20))
@@ -7535,9 +7520,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Catch ex As Exception
             Exit Sub
         End Try
-
-
-
 
     End Sub
 
@@ -7828,14 +7810,14 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub ComboBox7_TextChanged(sender As Object, e As EventArgs) Handles ComboBox7.TextChanged
 
         Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}'", ComboBox7.Text)
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox7.Text)
 
     End Sub
 
     Private Sub ComboBox8_TextChanged(sender As Object, e As EventArgs) Handles ComboBox8.TextChanged
 
         Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
-        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", ComboBox8.Text, ComboBox7.Text)
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox8.Text, ComboBox7.Text)
 
     End Sub
 
@@ -8128,7 +8110,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         RadioButton10.Checked = True
         RadioButton8.Checked = False
 
-        BalcaoBindingSource.Filter = String.Format("nomevendedor_balcao LIKE '{0}'", "oairgoafg000....çojdasfghaoirgy")
+        BalcaoBindingSource.Filter = String.Format("nomevendedor_balcao LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
 
         'estabelecer um horário que vai funcionar como índice
         Dim HorarioNotaEmitida3 As String
@@ -8197,13 +8179,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub ComboBox9_TextChanged(sender As Object, e As EventArgs) Handles ComboBox9.TextChanged
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}'", ComboBox9.Text)
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox9.Text)
 
     End Sub
 
     Private Sub ComboBox10_TextChanged(sender As Object, e As EventArgs) Handles ComboBox10.TextChanged
 
-        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", ComboBox10.Text, ComboBox9.Text)
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox10.Text, ComboBox9.Text)
 
     End Sub
 
@@ -8370,7 +8352,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'Volta para a tela de pedidos e atualiza a tabela ....
         tbcotrl_pdv.SelectedIndex = 0
         BalcaoTableAdapter.Fill(DataSetFinal.balcao)
-        BalcaoBindingSource.Filter = String.Format("id2_balcao LIKE '{0}'", TextBox1.Text)
+        BalcaoBindingSource.Filter = String.Format("id2_balcao LIKE '{0}%'", TextBox1.Text)
 
         Dim valor As Decimal = 0
         For Each Linha As DataGridViewRow In Me.BalcaoDataGridView.Rows
@@ -13448,12 +13430,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button60_Click(sender As Object, e As EventArgs) Handles Button60.Click
 
-        ProdutosBindingSource1.Filter = String.Format("fornecedor_prod LIKE '{0}'", ComboBox14.Text)
+        ProdutosBindingSource1.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox14.Text)
 
     End Sub
 
     Private Sub Button73_Click(sender As Object, e As EventArgs) Handles Button73.Click
-        ProdutosBindingSource1.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", ComboBox24.Text, ComboBox14.Text)
+        ProdutosBindingSource1.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox24.Text, ComboBox14.Text)
     End Sub
 
     Private Sub TextBox216_TextChanged(sender As Object, e As EventArgs) Handles TextBox216.TextChanged
@@ -13602,7 +13584,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button79_Click(sender As Object, e As EventArgs) Handles Button79.Click
 
-        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}' and fornecedor_prod LIKE '{1}'", ComboBox18.Text, ComboBox17.Text)
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox18.Text, ComboBox17.Text)
 
     End Sub
 
@@ -14087,7 +14069,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         btn_addProd.Enabled = False
 
-        BalcaoBindingSource.Filter = String.Format("id2_balcao LIKE '{0}'", "kouighiugiug")
+        BalcaoBindingSource.Filter = String.Format("id2_balcao LIKE '{0}%'", "kouighiugiug")
 
 
     End Sub
@@ -14290,7 +14272,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button89_Click(sender As Object, e As EventArgs)
 
-        ProdutosBindingSource.Filter = String.Format("Bugiganga_prod LIKE '{0}'", "bugiganga")
+        ProdutosBindingSource.Filter = String.Format("Bugiganga_prod LIKE '{0}%'", "bugiganga")
 
     End Sub
 
@@ -14302,7 +14284,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button89_Click_1(sender As Object, e As EventArgs) Handles Button89.Click
 
-         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox27.Text, ComboBox28.Text, "bugiganga")
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox27.Text, ComboBox28.Text, "bugiganga")
         Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
 
     End Sub
@@ -15251,7 +15233,7 @@ Proxima:
         Button86.Enabled = False
         TextBox284.Enabled = True
 
-        TextBox222.Clear()
+        ' TextBox222.Clear()
         TextBox246.Clear()
         TextBox247.Clear()
         TextBox248.Clear()
@@ -15264,8 +15246,9 @@ Proxima:
 
     Private Sub Button85_Click(sender As Object, e As EventArgs) Handles Button85.Click
 
-        If TextBox246.Text = "" Or RadioButton11.Checked = False Then
-            MessageBox.Show("Escolha um pedido ou marque o botão")
+        If TextBox246.Text = "" Then
+            MessageBox.Show("Escolha um produto com duplo clique e marque o RadioButton Deletar")
+            RadioButton13.Checked = True
             Exit Sub
         End If
 
@@ -15307,10 +15290,9 @@ Proxima:
         End If
 
         Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
-         TextBox46.Clear()
-        TextBox47.Clear()
-        TextBox48.Clear()
-        TextBox49.Clear()
+        TextBox246.Clear()
+        TextBox247.Clear()
+        TextBox248.Clear()
         DateTimePicker37.Text = Today
         RadioButton13.Checked = True
 
@@ -15359,7 +15341,7 @@ Proxima:
 
         ' ****************************************************************************************
         ' Pegar a quantidade de entrada
-        Dim QuantidadeEntradaPedido As Integer = 0
+        Dim QuantidadeEntradaPedido As Double = 0
 
         Try
             QuantidadeEntradaPedido = InputBox("Digite a quantidade comprada")
@@ -15372,7 +15354,7 @@ Proxima:
         ' Gravar od dados da tabela
         Dim command As SqlCommand
         command = connection.CreateCommand()
-        command.CommandText = "INSERT INTO PedidoCompra (Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
+        command.CommandText = "INSERT INTO PedidoCompra (CodigoProduto_PeidoCompra,Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@CodigoProduto_PeidoCompra,@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
         command.CommandType = CommandType.Text
 
         command.Parameters.Add("@Fornecedor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(4, v_SelectRow).Value
@@ -15385,6 +15367,8 @@ Proxima:
         command.Parameters.Add("@Data_PedidoCompra", SqlDbType.Date).Value = DateTimePicker37.Text
         command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
         command.Parameters.Add("@Codigo_PedidoCompraString", SqlDbType.VarChar, 50).Value = TextBox222.Text
+        command.Parameters.Add("@CodigoProduto_PeidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(1, v_SelectRow).Value
+
 
         ' a seguir comandos para gravar os ítens coletados do formulário ------------------
         Try
@@ -15394,7 +15378,7 @@ Proxima:
             'VOlta para a tela de pedidos e atualiza a tabela ....
             TabControl2.SelectedIndex = 0
             Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
-            PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}'", TextBox222.Text)
+            PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}%'", TextBox222.Text)
 
         Catch ex As Exception
 
@@ -15434,12 +15418,12 @@ Proxima:
     End Sub
 
     Private Sub Button93_Click(sender As Object, e As EventArgs) Handles Button93.Click
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}'", ComboBox35.Text)
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox35.Text)
 
     End Sub
 
     Private Sub Button95_Click(sender As Object, e As EventArgs) Handles Button95.Click
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox35.Text, ComboBox36.Text, "bugiganga")
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox35.Text, ComboBox36.Text, "bugiganga")
 
     End Sub
 
@@ -15470,7 +15454,7 @@ Proxima:
     End Sub
 
     Private Sub ComboBox13_TextChanged_1(sender As Object, e As EventArgs) Handles ComboBox13.TextChanged
-        NotasEntradaBindingSource.Filter = String.Format("FornecedorEntrada LIKE '{0}'", ComboBox13.Text)
+        NotasEntradaBindingSource.Filter = String.Format("FornecedorEntrada LIKE '{0}%'", ComboBox13.Text)
     End Sub
 
     Private Sub TextBox284_TextChanged(sender As Object, e As EventArgs) Handles TextBox284.TextChanged
@@ -15481,17 +15465,103 @@ Proxima:
 
    
     Private Sub PedidoCompraDataGridView_DoubleClick_1(sender As Object, e As EventArgs) Handles PedidoCompraDataGridView.DoubleClick
-        ' só passará para os textbox se for para apagar
-        If RadioButton11.Checked = False Then
-            Exit Sub
-        End If
 
         Dim v_SelectRow As Integer
         v_SelectRow = Me.PedidoCompraDataGridView.CurrentRow.Index
 
-        TextBox246.Text = PedidoCompraDataGridView.Item(2, v_SelectRow).Value
-        TextBox247.Text = PedidoCompraDataGridView.Item(6, v_SelectRow).Value
-        TextBox248.Text = PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+        ' só passará para os textbox se for para apagar
+        If RadioButton11.Checked = True Then
+            TextBox246.Text = PedidoCompraDataGridView.Item(2, v_SelectRow).Value
+            TextBox247.Text = PedidoCompraDataGridView.Item(6, v_SelectRow).Value
+            TextBox248.Text = PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+        End If
+
+        ' -------------------------------------------------------------------------------------------
+        '--------------------------------------------------------------------------------------------
+        ' muda de Não Entregue para entregue e vice-versa.
+        If RadioButton12.Checked = True Then
+
+            Dim connection As SqlConnection
+            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.CommandText = "update PedidoCompra set EntregueSimNao_PedidoCompra =@EntregueSimNao_PedidoCompra  where id_PedidoCompra  = @id_PedidoCompra"
+            command.CommandType = CommandType.Text
+
+            command.Parameters.Add("@id_PedidoCompra", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(0, v_SelectRow).Value
+
+            If PedidoCompraDataGridView.Item(9, v_SelectRow).Value = "Não Entregue" Then
+                command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Entregue"
+            Else
+                command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
+              End If
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+            ' -----------------------------------------------------------------------------
+            ' -----------------------------------------------------------------------------
+            ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
+            command = connection.CreateCommand()
+            command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(11, v_SelectRow).Value & "'"
+            connection.Open()
+            Dim lrd As SqlDataReader = command.ExecuteReader()
+
+            Dim EstoqueAtual As Integer = 0
+            Dim PedidosColocadosAtual As Integer = 0
+
+            While lrd.Read()
+                EstoqueAtual = lrd("estoqueatual_prod")
+                PedidosColocadosAtual = lrd("pedcolocados_prod")
+            End While
+            connection.Close()
+            TextBox246.Text = EstoqueAtual
+            ' -------------------------------------------------------------------------------------------------------
+            ' Calculando o estoque de produtos
+            Dim SomandoEstoqueAtual As Integer = 0
+            Dim SubtraindoEstoqueAtual As Integer = 0
+            ' ATENÇÃO: COMO É ENTRADA DE MATEIRIAS VIA PEDIDO, O SINAL DE SOMA É O OPOSTO AO DOS PEDIDOS
+            SomandoEstoqueAtual = EstoqueAtual + PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+            SubtraindoEstoqueAtual = EstoqueAtual - PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+            ' Calculando o estoque de pedidos
+            Dim SomandoPedidosAtual As Integer = 0
+            Dim SubtraindoPedidosAtual As Integer = 0
+            SomandoPedidosAtual = PedidosColocadosAtual + PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+            SubtraindoPedidosAtual = PedidosColocadosAtual - PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+
+            command = connection.CreateCommand()
+            command.CommandText = "update produtos set  pedcolocados_prod=@pedcolocados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
+            command.CommandType = CommandType.Text
+
+            command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+
+            If PedidoCompraDataGridView.Item(9, v_SelectRow).Value = "Não Entregue" Then
+                command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SomandoEstoqueAtual
+                command.Parameters.Add("@pedcolocados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
+
+            Else
+                command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
+                command.Parameters.Add("@pedcolocados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
+
+            End If
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+
+            Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
+        End If
+
+        RadioButton13.Checked = True
 
     End Sub
 
