@@ -777,7 +777,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     'chama a subrotina de impressão
     Private Sub btnimprimir_cliente_Click(sender As Object, e As EventArgs)
-        'PrintDocument1.Print()
+
     End Sub
     
     Private Sub pes_fisica_Click(sender As Object, e As EventArgs) Handles pes_fisica.Click
@@ -2331,9 +2331,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         btn_relfor.Enabled = False
         Button85.Enabled = False
         Button86.Enabled = True
+        Button76.Enabled = False
+        Button96.Enabled = False
         TextBox284.Enabled = False
+        TextBox284.Clear()
         TabControl2.TabPages.Add(Tab_fornecedor)
         TabControl2.SelectedIndex = 1
+        ComboBox26.Enabled = False
+        RadioButton11.Enabled = False
+        RadioButton12.Enabled = False
 
     End Sub
 
@@ -7476,45 +7482,65 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
     Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-        '   PrintPreviewDialog4.ShowDialog()
+
 
     End Sub
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
 
+       
         ' Pedido compra
         ' primeira linha
-        e.Graphics.DrawString("MOGI PLÁSTICOS", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 350, 5)
-        e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 10)
-        e.Graphics.DrawString("**************************************************************************************************************************************************************************", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 30)
-        e.Graphics.DrawString("**************************************************************************************************************************************************************************", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 50)
+        e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 10)
+        e.Graphics.DrawString("PEDIDO DE COMPRA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 300, 5)
+        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
 
         'segunda linha
-        e.Graphics.DrawString("Pedido Número :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 70)
-        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 100, 70)
-        e.Graphics.DrawString("fornecedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 70)
-        e.Graphics.DrawString(PedidoCompraDataGridView.Item(1, 1).Value, New Font("arial", 8, FontStyle.Bold), Brushes.Black, 475, 70)
-
+        e.Graphics.DrawString("Silvia Paula Duarte Frascari ME", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
         ' terceira linha
-        e.Graphics.DrawString("Email :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 90)
-        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 75, 90)
-        e.Graphics.DrawString("Vendedor :", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 90)
-        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 475, 90)
-        e.Graphics.DrawString("**************************************************************************************************************************************************************************", New Font("arial", 8, FontStyle.Regular), Brushes.Black, 10, 110)
-         ' cabecalho
-        e.Graphics.DrawString("Código Produto", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 130)
-        e.Graphics.DrawString("Nome do Produto", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 150, 130)
-        e.Graphics.DrawString("Cor  ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 400, 130)
-        e.Graphics.DrawString("Quantidade  ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 600, 130)
+        e.Graphics.DrawString("Av Henrique Eroles, 1459, Box 04 Ipiranga, Mogi das Cruzes - SP -  Cep: 08730-590", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 75)
+        ' quarta linha
+        e.Graphics.DrawString("CNPJ - 18.623.408/0001-85                                       IE - 454.382.243.117 ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
+        ' quinta linha
+        e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
+        'sexta linha
+        e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
 
-        ' ----------------------------------------------------------------------------------------------------------
+
+        e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 150, 175)
+        ' sétima linha
+        e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
+        e.Graphics.DrawString(TextBox285.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
+        e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
+        e.Graphics.DrawString(TextBox249.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
+        e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
+
+
+        e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
+        '  linhazz:00
+        e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
+        '  linha
+        e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
+        ' linha
+        e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
+        ' linha
+        e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
+        e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
+
+
+        ' cabecalho
+        e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
+        e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 400)
+        e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 400)
+        e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 400)
+    
 
         Try
             For x = 0 To 30
 
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 150 + (x * 20))
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 150, 150 + (x * 20))
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 400, 150 + (x * 20))
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 150 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 425 + (x * 20))
 
             Next
         Catch ex As Exception
@@ -15232,15 +15258,17 @@ Proxima:
         Button85.Enabled = True
         Button86.Enabled = False
         TextBox284.Enabled = True
-
-        ' TextBox222.Clear()
+        TextBox284.Clear()
+        ComboBox26.Enabled = True
         TextBox246.Clear()
         TextBox247.Clear()
         TextBox248.Clear()
-
-
+        Button76.Enabled = True
+        Button96.Enabled = True
         DateTimePicker37.Text = Today
         TabControl2.TabPages.Remove(Tab_fornecedor)
+        RadioButton11.Enabled = True
+        RadioButton12.Enabled = True
 
     End Sub
 
@@ -15337,7 +15365,14 @@ Proxima:
         ' ****************************************************************************************
         TextBox274.Text = ProdutosDataGridView6.Item(11, v_SelectRow).Value
         TextBox275.Text = ProdutosDataGridView6.Item(13, v_SelectRow).Value
-        TextBox276.Text = ProdutosDataGridView6.Item(17, v_SelectRow).Value
+        TextBox276.Text = ProdutosDataGridView6.Item(18, v_SelectRow).Value
+        If ProdutosDataGridView6.Item(31, v_SelectRow).Value Is DBNull.Value Then
+            TextBox286.Text = 0
+        Else
+            TextBox286.Text = ProdutosDataGridView6.Item(31, v_SelectRow).Value
+        End If
+
+
 
         ' ****************************************************************************************
         ' Pegar a quantidade de entrada
@@ -15460,6 +15495,17 @@ Proxima:
     Private Sub TextBox284_TextChanged(sender As Object, e As EventArgs) Handles TextBox284.TextChanged
 
         PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}%'", TextBox284.Text)
+        Try
+            If PedidoCompraDataGridView.Item(1, 0).Value Is DBNull.Value Then
+                ComboBox26.Text = 0
+            Else
+                Me.PedidoCompraBindingSource.MoveFirst()
+                ComboBox26.Text = PedidoCompraDataGridView.Item(1, 0).Value
+            End If
+        Catch ex As Exception
+            Exit Sub
+        End Try
+       
 
     End Sub
 
@@ -15517,7 +15563,7 @@ Proxima:
 
             While lrd.Read()
                 EstoqueAtual = lrd("estoqueatual_prod")
-                PedidosColocadosAtual = lrd("pedcolocados_prod")
+                PedidosColocadosAtual = lrd("pedencomendados_prod")
             End While
             connection.Close()
             TextBox246.Text = EstoqueAtual
@@ -15528,25 +15574,25 @@ Proxima:
             ' ATENÇÃO: COMO É ENTRADA DE MATEIRIAS VIA PEDIDO, O SINAL DE SOMA É O OPOSTO AO DOS PEDIDOS
             SomandoEstoqueAtual = EstoqueAtual + PedidoCompraDataGridView.Item(7, v_SelectRow).Value
             SubtraindoEstoqueAtual = EstoqueAtual - PedidoCompraDataGridView.Item(7, v_SelectRow).Value
-            ' Calculando o estoque de pedidos
+            ' Calculando o estoque de pedidos encomendados
             Dim SomandoPedidosAtual As Integer = 0
             Dim SubtraindoPedidosAtual As Integer = 0
             SomandoPedidosAtual = PedidosColocadosAtual + PedidoCompraDataGridView.Item(7, v_SelectRow).Value
             SubtraindoPedidosAtual = PedidosColocadosAtual - PedidoCompraDataGridView.Item(7, v_SelectRow).Value
 
             command = connection.CreateCommand()
-            command.CommandText = "update produtos set  pedcolocados_prod=@pedcolocados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
+            command.CommandText = "update produtos set  pedencomendados_prod=@pedencomendados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
             command.CommandType = CommandType.Text
 
             command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(11, v_SelectRow).Value
 
             If PedidoCompraDataGridView.Item(9, v_SelectRow).Value = "Não Entregue" Then
                 command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SomandoEstoqueAtual
-                command.Parameters.Add("@pedcolocados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
+                command.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
 
             Else
                 command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
-                command.Parameters.Add("@pedcolocados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
+                command.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
 
             End If
 
@@ -15576,6 +15622,38 @@ Proxima:
         End If
 
         PrintPreviewDialog4.ShowDialog()
+    End Sub
+
+    Private Sub ComboBox26_TextChanged(sender As Object, e As EventArgs) Handles ComboBox26.TextChanged
+
+        ' lendo o arquivo de fornecedores para pegar o nome do vendedor e o email
+        Dim NomeVendedorForncedor As String = ""
+        Dim EmailForncedor As String = ""
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
+
+        command = connection.CreateCommand()
+        command.CommandText = "select * from fornecedor where xNome_for = '" & ComboBox26.Text & "'"
+        connection.Open()
+
+        Dim lrd As SqlDataReader = command.ExecuteReader()
+        While lrd.Read
+            If lrd("Email_fonecedor") Is DBNull.Value Then
+            Else
+                NomeVendedorForncedor = lrd("Email_fonecedor").ToString()
+            End If
+
+            If lrd("NomeVendedor_fornecedor") Is DBNull.Value Then
+            Else
+                EmailForncedor = lrd("NomeVendedor_fornecedor").ToString()
+            End If
+
+        End While
+        connection.Close()
+        TextBox249.Text = NomeVendedorForncedor
+        TextBox285.Text = EmailForncedor
     End Sub
 End Class
 
