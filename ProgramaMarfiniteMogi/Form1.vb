@@ -368,7 +368,6 @@ Public Class Form1
             Button10.Enabled = False
             Button18.Enabled = False
             Button19.Enabled = False
-            Button15.Enabled = True
             ComboBox12.Enabled = False
             Button38.Enabled = False
 
@@ -471,7 +470,8 @@ Public Class Form1
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Pedido Compra}" Then
 
-             Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+            PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
+            Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
             If codigoEntrada <> fernando Then
                 MessageBox.Show("Código inválido")
                 TabControl1.SelectedIndex = 0
@@ -480,6 +480,7 @@ Public Class Form1
             TabControl2.TabPages.Remove(Tab_fornecedor)
             RadioButton13.Checked = True
             Button86.Enabled = False
+            RadioButton14.Checked = True
 
         End If
 
@@ -2332,7 +2333,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Button85.Enabled = False
         Button86.Enabled = True
         Button76.Enabled = False
-        Button96.Enabled = False
+
         TextBox284.Enabled = False
         TextBox284.Clear()
         TabControl2.TabPages.Add(Tab_fornecedor)
@@ -2340,6 +2341,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ComboBox26.Enabled = False
         RadioButton11.Enabled = False
         RadioButton12.Enabled = False
+        Button15.Enabled = False
+        Button98.Enabled = False
 
     End Sub
 
@@ -2369,97 +2372,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     'mostra as colunas selecionadas no combobox da tabela produtos
     'Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cbx_vizuProd.SelectedIndexChanged
 
-    '    If Cbx_vizuProd.Text = "Todos" Then
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = True
-    '        ' Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn62").Visible = True
-    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn63").Visible = True
-    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn64").Visible = True
-
-    '    End If
-
-    '    If Cbx_vizuProd.Text = "Preços" Then
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = False
-    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn62").Visible = True
-    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn63").Visible = True
-    '        'Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn64").Visible = True
-
-    '    End If
+    '  
 
     '    If Cbx_vizuProd.Text = "Estoque" Then
 
     '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn35").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn36").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn37").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn38").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn39").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn42").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn43").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn44").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn45").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn46").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn47").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn48").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn49").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn50").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn51").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn52").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn53").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn54").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn55").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn56").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn57").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn58").Visible = True
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn59").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn60").Visible = False
-    '        Me.ProdutosDataGridView.Columns("DataGridViewTextBoxColumn61").Visible = False
+    '       
 
     '    End If
     'End Sub
@@ -4245,7 +4163,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         dt = dt.AddDays(-60)
         DateTimePicker2.Text = dt
         DateTimePicker3.Text = Date.Now
-        Button15.Enabled = False
         cbx_CFOP.Text = ""
         cbx_VolNfeEmitidas.Text = ""
         ComboBox12.Text = ""
@@ -4383,11 +4300,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Exit Sub
         End If
 
-        Directory.CreateDirectory("C:\Users\FERNANDO12\Desktop\Projeto Programa Marfinite Mogi\NFE\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\")
+        Directory.CreateDirectory("C:\Users\FERNANDO12\Desktop\Notas Fiscais\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\")
         'Directory.CreateDirectory("\\FERNANDO\Projeto Programa Marfinite Mogi\Xls Orcamento pedidos\pedidos enviados\" & Format(Date.Now, "yyyy-MM-dd") & "\" & Vendedor_pedComboBox.Text & "\")
 
 
-        Dim Arquivo As New System.IO.StreamWriter("C:\Users\FERNANDO12\Desktop\Projeto Programa Marfinite Mogi\NFE\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\" & D_Nome.Text & "_" & Format(Date.Now, "yyyy-MM-dd") & "_" & txt_nNfe.Text & "_" & txt_coPEdNFe.Text & ".txt")
+        Dim Arquivo As New System.IO.StreamWriter("C:\Users\FERNANDO12\Desktop\Notas Fiscais\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\" & D_Nome.Text & "_" & Format(Date.Now, "yyyy-MM-dd") & "_" & txt_nNfe.Text & "_" & txt_coPEdNFe.Text & ".txt")
         '
         'Variávei que acumulam os totais
         Dim TlVrNota As Double
@@ -6978,7 +6895,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         cbx_VolNfeEmitidas.Enabled = False
 
         Me.NFE_EmitidasTableAdapter.Fill(Me.DataSetFinal.NFE_Emitidas)
-        Button15.Enabled = True
         btn_buscarPedidoNFE.Enabled = True
         'coloca A VISIBILIDADE DA PAGE DESEJADA
         TabControl1.TabPages.Insert(0, tbpg_produtos)
@@ -7431,7 +7347,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         D_Municipio.Enabled = True
         txt_obsNFE.Enabled = True
         cbx_VolNfeEmitidas.Enabled = True
-        Button15.Enabled = False
         txt_obs2.Enabled = True
         Button38.Enabled = True
 
@@ -7481,71 +7396,129 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Peso_nfeemitidaTextBox.Text = valor3
     End Sub
 
-    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
-
-
-    End Sub
+    
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
 
-       
-        ' Pedido compra
-        ' primeira linha
-        e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 10)
-        e.Graphics.DrawString("PEDIDO DE COMPRA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 300, 5)
-        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
+        If RadioButton14.Checked = True Then
+            ' Pedido compra
+            ' primeira linha
+            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 10)
+            e.Graphics.DrawString("PEDIDO DE COMPRA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 300, 5)
+            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
 
-        'segunda linha
-        e.Graphics.DrawString("Silvia Paula Duarte Frascari ME", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
-        ' terceira linha
-        e.Graphics.DrawString("Av Henrique Eroles, 1459, Box 04 Ipiranga, Mogi das Cruzes - SP -  Cep: 08730-590", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 75)
-        ' quarta linha
-        e.Graphics.DrawString("CNPJ - 18.623.408/0001-85                                       IE - 454.382.243.117 ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
-        ' quinta linha
-        e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
-        'sexta linha
-        e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
-
-
-        e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 150, 175)
-        ' sétima linha
-        e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
-        e.Graphics.DrawString(TextBox285.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
-        e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
-        e.Graphics.DrawString(TextBox249.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
-        e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
+            'segunda linha
+            e.Graphics.DrawString("Silvia Paula Duarte Frascari ME", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
+            ' terceira linha
+            e.Graphics.DrawString("Av Henrique Eroles, 1459, Box 04 Ipiranga, Mogi das Cruzes - SP -  Cep: 08730-590", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 75)
+            ' quarta linha
+            e.Graphics.DrawString("CNPJ - 18.623.408/0001-85                                       IE - 454.382.243.117 ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
+            ' quinta linha
+            e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
+            'sexta linha
+            e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
 
 
-        e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
-        '  linhazz:00
-        e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
-        '  linha
-        e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
-        ' linha
-        e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
-        ' linha
-        e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
-        e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
+            e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 150, 175)
+            ' sétima linha
+            e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
+            e.Graphics.DrawString(TextBox285.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
+            e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
+            e.Graphics.DrawString(TextBox249.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
+            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
 
 
-        ' cabecalho
-        e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
-        e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 400)
-        e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 400)
-        e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 400)
-    
+            e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
+            '  linhazz:00
+            e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
+            '  linha
+            e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
+            ' linha
+            e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
+            ' linha
+            e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
+            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
 
-        Try
-            For x = 0 To 30
 
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 425 + (x * 20))
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 425 + (x * 20))
-                e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 425 + (x * 20))
+            ' cabecalho
+            e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
+            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 400)
+            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 400)
+            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 400)
 
-            Next
-        Catch ex As Exception
-            Exit Sub
-        End Try
+
+            Try
+                For x = 0 To 30
+
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 425 + (x * 20))
+
+                Next
+            Catch ex As Exception
+                Exit Sub
+            End Try
+            ' ********************************************************************************************************
+        Else
+            ' Pedido compra
+            ' primeira linha
+            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 10)
+            e.Graphics.DrawString("PEDIDO DE COMPRA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 300, 5)
+            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
+
+            'segunda linha
+            e.Graphics.DrawString("Fernando Frascari EPP", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
+            ' terceira linha
+            e.Graphics.DrawString("Av Henrique Peres, 1880 - Mogi das Cruzes - SP -  Cep: 08735-400", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 75)
+            ' quarta linha
+            e.Graphics.DrawString("CNPJ - 72.844.228/0001-79                                    IE -454.131.384.115  ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
+            ' quinta linha
+            e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
+            'sexta linha
+            e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
+
+
+            e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 150, 175)
+            ' sétima linha
+            e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
+            e.Graphics.DrawString(TextBox285.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
+            e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
+            e.Graphics.DrawString(TextBox249.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
+            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
+
+
+            e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
+            '  linhazz:00
+            e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
+            '  linha
+            e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
+            ' linha
+            e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
+            ' linha
+            e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
+            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
+
+
+            ' cabecalho
+            e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
+            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 400)
+            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 400)
+            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 400)
+
+
+            Try
+                For x = 0 To 30
+
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 425 + (x * 20))
+
+                Next
+            Catch ex As Exception
+                Exit Sub
+            End Try
+        End If
 
     End Sub
 
@@ -13438,7 +13411,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
 
-    Private Sub NotasEntradaDataGridView_DoubleClick_1(sender As Object, e As EventArgs) Handles NotasEntradaDataGridView.DoubleClick
+    Private Sub NotasEntradaDataGridView_DoubleClick_1(sender As Object, e As EventArgs)
         Dim v_SelectRow As Integer
         v_SelectRow = Me.NotasEntradaDataGridView.CurrentRow.Index
 
@@ -14153,8 +14126,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim dia50 As Integer = Today.Day
             Dim primeiroDia50 As DateTime = New DateTime(ano50, mes50, dia50).AddDays(-61)
             Dim ultimoDia50 As DateTime = New DateTime(ano50, mes50, dia50).AddDays(-31)
-
-
 
             Dim sql50 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia50 & "' ,103)  and convert (datetime, '" & ultimoDia50 & "' ,103) and codprod_balcao = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "'"
             Dim dataadapter50 As New SqlDataAdapter(sql50, connection)
@@ -15264,11 +15235,14 @@ Proxima:
         TextBox247.Clear()
         TextBox248.Clear()
         Button76.Enabled = True
-        Button96.Enabled = True
+
         DateTimePicker37.Text = Today
         TabControl2.TabPages.Remove(Tab_fornecedor)
         RadioButton11.Enabled = True
         RadioButton12.Enabled = True
+        Button15.Enabled = True
+        TextBox222.Clear()
+        Button98.Enabled = True
 
     End Sub
 
@@ -15389,7 +15363,7 @@ Proxima:
         ' Gravar od dados da tabela
         Dim command As SqlCommand
         command = connection.CreateCommand()
-        command.CommandText = "INSERT INTO PedidoCompra (CodigoProduto_PeidoCompra,Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@CodigoProduto_PeidoCompra,@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
+        command.CommandText = "INSERT INTO PedidoCompra (PrecoUnitario_PedidoCompra,Totalitem_PedidoCompra,CodigoProduto_PeidoCompra,Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@PrecoUnitario_PedidoCompra,@Totalitem_PedidoCompra,@CodigoProduto_PeidoCompra,@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
         command.CommandType = CommandType.Text
 
         command.Parameters.Add("@Fornecedor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(4, v_SelectRow).Value
@@ -15403,6 +15377,11 @@ Proxima:
         command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
         command.Parameters.Add("@Codigo_PedidoCompraString", SqlDbType.VarChar, 50).Value = TextBox222.Text
         command.Parameters.Add("@CodigoProduto_PeidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(1, v_SelectRow).Value
+        command.Parameters.Add("@PrecoUnitario_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(16, v_SelectRow).Value
+        Dim Precounitario As Double = ProdutosDataGridView6.Item(16, v_SelectRow).Value
+        Dim TLItem As Double = 0
+        TLItem = (Precounitario * QuantidadeEntradaPedido) * 1.1
+        command.Parameters.Add("@Totalitem_PedidoCompra", SqlDbType.VarChar, 50).Value = TLItem.ToString("F2")
 
 
         ' a seguir comandos para gravar os ítens coletados do formulário ------------------
@@ -15654,6 +15633,158 @@ Proxima:
         connection.Close()
         TextBox249.Text = NomeVendedorForncedor
         TextBox285.Text = EmailForncedor
+    End Sub
+
+    Private Sub Button98_Click(sender As Object, e As EventArgs) Handles Button98.Click
+
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+
+            Exit Sub
+        End If
+
+        If TextBox284.Text = "" Then
+            MessageBox.Show("escolher um número de pedido")
+            Exit Sub
+        Else
+
+            Dim connection As SqlConnection
+            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Codigo_PedidoCompra =  '" & TextBox284.Text & "'"
+
+            Dim dataadapter As New SqlDataAdapter(sql2, connection)
+            Dim ds As New DataSet()
+            Try
+                connection.Open()
+                dataadapter.Fill(ds, "PedidoCompra")
+                connection.Close()
+                PedidoCompraDataGridView.DataSource = ds.Tables(0)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+            ' soma a coluna dos valores e o põe no campo certo
+            Dim valor As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.PedidoCompraDataGridView.Rows
+                valor += Linha.Cells(13).Value
+            Next
+            MessageBox.Show(valor)
+        End If
+    End Sub
+
+    Private Sub Button15_Click(sender As Object, e As EventArgs) Handles Button15.Click
+
+        Dim PegaNumeroPedido As String = InputBox("Dê o número do pedido")
+
+
+        'REM verifica se o produto já foi cadastrado mas só se for incluir
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+
+        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        cmd.Connection = con
+        cmd.CommandText = "SELECT *  from PedidoCompra where Codigo_PedidoCompra = '" & PegaNumeroPedido & "'"
+
+        con.Open()
+
+
+        'REM verifica se cdigo prod existe banco do produto na nota para não gravar duas vezes
+        Dim lrd As SqlDataReader = cmd.ExecuteReader()
+
+        Try
+            If lrd.Read() = False Then
+
+                MessageBox.Show("O código do Pdido de conpra " & PegaNumeroPedido & " não foi cadastrado!!!!")
+                con.Close()
+                Exit Sub
+
+            Else
+
+
+                ' Ações de abertura para poder modificar o pedido
+                TextBox222.Text = PegaNumeroPedido
+                btn_relfor.Enabled = False
+                Button85.Enabled = False
+                Button86.Enabled = True
+                Button76.Enabled = False
+
+                TextBox284.Enabled = False
+                TextBox284.Clear()
+                TabControl2.TabPages.Add(Tab_fornecedor)
+                TabControl2.SelectedIndex = 1
+                ComboBox26.Enabled = False
+                RadioButton11.Enabled = False
+                RadioButton12.Enabled = False
+                Button15.Enabled = False
+                Button98.Enabled = False
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+        con.Close()
+
+    End Sub
+
+    Private Sub Button96_Click(sender As Object, e As EventArgs) Handles Button96.Click
+
+
+
+        ' calcula os pedidos em aberto que falta entregar
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        Dim v_SelectRow As Integer = 0
+        For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
+
+            Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and CodigoProduto_PeidoCompra = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "' and EntregueSimNao_PedidoCompra = 'Não Entregue' "
+            Dim dataadapter As New SqlDataAdapter(sql2, connection)
+            Dim ds As New DataSet()
+
+            Try
+                connection.Open()
+                dataadapter.Fill(ds, "PedidoCompra")
+                connection.Close()
+                PedidoCompraDataGridView1.DataSource = ds.Tables(0)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+
+            ' -----------------------------------
+            'somar quantidade da coluna da tabela balcão
+            Dim quantidadePedidos As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.PedidoCompraDataGridView1.Rows
+                quantidadePedidos += Linha.Cells(7).Value
+            Next
+            TextBox127.Text = quantidadePedidos.ToString("F2")
+
+            ' ----------------------------------------------------------------------------------
+            ' Passando Textbox para integer
+            Dim QtdePedidosColocados As Integer = 0
+            QtdePedidosColocados = TextBox127.Text
+
+            ' gravando o consumo medio no arquivo de produtos
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.CommandText = "update produtos set pedencomendados_prod=@pedencomendados_prod where cod_prod=@cod_prod "
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
+            command.Parameters.Add("@pedencomendados_prod", SqlDbType.Int).Value = QtdePedidosColocados
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show("Algo ocorreu errado")
+                MessageBox.Show(ex.ToString())
+
+            Finally
+                connection.Close()
+            End Try
+
+        Next
+
     End Sub
 End Class
 
