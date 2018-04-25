@@ -14961,74 +14961,71 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 connection.Close()
                 ' ******************************************************************************
                 ' ******************************************************************************
-                ' dando baixa nos estoque com produtos composto por vários ítens
-                Dim EstoqueAtualItem As Double = 0
-                Dim SubtraindoEstoqueItem As Integer = 0
+                If NomeProduto <> "" Then
 
-                For a = 1 To 5
-                    If CodComp(a) <> "" Then
+                    'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
+                    Dim cmd As New SqlCommand
+                    cmd.Connection = connection
+                    cmd.CommandText = "SELECT NumeroNotaMlb_balcao  from balcao where NumeroNotaMlb_balcao = '" & NumeroNota & "'"
+                    ' ---------------------------------------------------------------
+                    connection.Open()
+                    'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
+                    Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
 
-                        Dim command15 As SqlCommand
-                        command15 = connection.CreateCommand()
-                        command15.CommandText = "SELECT estoqueatual_prod from produtos WHERE  cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
-                        command15.CommandType = CommandType.Text
-
-                        connection.Open()
-                        Dim lrd15 As SqlDataReader = command15.ExecuteReader()
-                        While lrd15.Read
-                            EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
-                        End While
-                        connection.Close()
-                        '--------------------------------------------------------------------------------
-
-                        SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
-                        Dim command20 As SqlCommand
-                        command20 = connection.CreateCommand()
-                        command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @CodComp1_prod"
-                        command20.CommandType = CommandType.Text
-                        command20.Parameters.Add("@CodComp1_prod", SqlDbType.VarChar, 50).Value = CodComp(a)
-                        command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
-
-                        Try
-                            connection.Open()
-                            command20.ExecuteNonQuery()
+                    Try
+                        If lrd5.Read() = True Then
+                            'MessageBox.Show("já")
                             connection.Close()
-                        Catch ex As Exception
-                            MessageBox.Show(ex.ToString())
-                        End Try
-                    End If
+                            GoTo Proxima
+                        End If
+                    Catch ex As Exception
+                        MessageBox.Show(ex.ToString)
+                    End Try
 
-                Next
+                    connection.Close()
 
-                '********************************************************************************
-                '********************************************************************************
-            End If
-            connection.Close()
+                    ' *****************************************************************************
+                    ' dando baixa nos estoque com produtos composto por vários ítens
+                    Dim EstoqueAtualItem As Double = 0
+                    Dim SubtraindoEstoqueItem As Integer = 0
 
-            If NomeProduto <> "" Then
+                    For a = 1 To 5
+                        If CodComp(a) <> "" Then
 
-                'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
-                Dim cmd As New SqlCommand
-                cmd.Connection = connection
-                cmd.CommandText = "SELECT NumeroNotaMlb_balcao  from balcao where NumeroNotaMlb_balcao = '" & NumeroNota & "'"
-                ' ---------------------------------------------------------------
-                connection.Open()
-                'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
-                Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
+                            Dim command15 As SqlCommand
+                            command15 = connection.CreateCommand()
+                            command15.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
+                            command15.CommandType = CommandType.Text
 
-                Try
-                    If lrd5.Read() = True Then
-                        'MessageBox.Show("já")
-                        connection.Close()
-                        GoTo Proxima
-                    End If
-                Catch ex As Exception
-                    MessageBox.Show(ex.ToString)
-                End Try
+                            connection.Open()
+                            Dim lrd15 As SqlDataReader = command15.ExecuteReader()
+                            While lrd15.Read
+                                EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
+                            End While
+                            connection.Close()
+                            '--------------------------------------------------------------------------------
 
+                            SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
+                            Dim command20 As SqlCommand
+                            command20 = connection.CreateCommand()
+                            command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @CodComp1_prod"
+                            command20.CommandType = CommandType.Text
+                            command20.Parameters.Add("@CodComp1_prod", SqlDbType.VarChar, 50).Value = CodComp(a)
+                            command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
+
+                            Try
+                                connection.Open()
+                                command20.ExecuteNonQuery()
+                                connection.Close()
+                            Catch ex As Exception
+                                MessageBox.Show(ex.ToString())
+                            End Try
+                        End If
+                    Next
+                End If
                 connection.Close()
-
-                ' -----------------------------------------------------------------------------
+                '********************************************************************************
+                '********************************************************************************
                 ' Faz o lançamento em vendas balcão
                 Dim command5 As SqlCommand
                 command5 = connection.CreateCommand()
