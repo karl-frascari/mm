@@ -209,11 +209,11 @@ Partial Class Form1
         Me.Button86 = New System.Windows.Forms.Button()
         Me.GroupBox108 = New System.Windows.Forms.GroupBox()
         Me.TextBox248 = New System.Windows.Forms.TextBox()
-        Me.Label317 = New System.Windows.Forms.Label()
-        Me.TextBox246 = New System.Windows.Forms.TextBox()
         Me.Label319 = New System.Windows.Forms.Label()
-        Me.Label318 = New System.Windows.Forms.Label()
+        Me.Label317 = New System.Windows.Forms.Label()
         Me.TextBox247 = New System.Windows.Forms.TextBox()
+        Me.TextBox246 = New System.Windows.Forms.TextBox()
+        Me.Label318 = New System.Windows.Forms.Label()
         Me.Button85 = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
         Me.TextBox285 = New System.Windows.Forms.TextBox()
@@ -383,10 +383,21 @@ Partial Class Form1
         Me.tbpg_pedFornecedor = New System.Windows.Forms.TabPage()
         Me.TabControlPedMarf = New System.Windows.Forms.TabControl()
         Me.TabPage5 = New System.Windows.Forms.TabPage()
+        Me.NotasEntradaDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn72 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn73 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn74 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn75 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn76 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn77 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn78 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn79 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn80 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NotasEntradaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.GroupBox86 = New System.Windows.Forms.GroupBox()
         Me.TextBox218 = New System.Windows.Forms.TextBox()
         Me.Button78 = New System.Windows.Forms.Button()
-        Me.NotasEntradaBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel11 = New System.Windows.Forms.Panel()
         Me.Label106 = New System.Windows.Forms.Label()
         Me.TextBox64 = New System.Windows.Forms.TextBox()
@@ -455,6 +466,7 @@ Partial Class Form1
         Me.TextBox217 = New System.Windows.Forms.TextBox()
         Me.TabPage17 = New System.Windows.Forms.TabPage()
         Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.Button96 = New System.Windows.Forms.Button()
         Me.Button81 = New System.Windows.Forms.Button()
         Me.Button80 = New System.Windows.Forms.Button()
         Me.GroupBox94 = New System.Windows.Forms.GroupBox()
@@ -469,6 +481,21 @@ Partial Class Form1
         Me.Label288 = New System.Windows.Forms.Label()
         Me.Label86 = New System.Windows.Forms.Label()
         Me.Panel44 = New System.Windows.Forms.Panel()
+        Me.PedidoCompraDataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn818 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn819 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn820 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn821 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn822 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn823 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn824 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn825 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn826 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn827 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn828 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn829 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn830 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn831 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemPedidosDataGridView9 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn368 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn384 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -766,40 +793,6 @@ Partial Class Form1
         Me.DesistirOperaçãoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage_gridProd = New System.Windows.Forms.TabPage()
         Me.ProdutosDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CrescimentoVendas_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codbarras_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn60 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn61 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ConsumoMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstoquePrateleira_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmbalagemFabrica_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apelido_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Bugiganga_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarkupNET_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoMlb_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox107 = New System.Windows.Forms.GroupBox()
         Me.Label349 = New System.Windows.Forms.Label()
@@ -2350,6 +2343,12 @@ Partial Class Form1
         Me.Label266 = New System.Windows.Forms.Label()
         Me.Panel42 = New System.Windows.Forms.Panel()
         Me.Label265 = New System.Windows.Forms.Label()
+        Me.TabPage7 = New System.Windows.Forms.TabPage()
+        Me.TabControl3 = New System.Windows.Forms.TabControl()
+        Me.TabPage8 = New System.Windows.Forms.TabPage()
+        Me.TabPage12 = New System.Windows.Forms.TabPage()
+        Me.TabPage13 = New System.Windows.Forms.TabPage()
+        Me.TabPage14 = New System.Windows.Forms.TabPage()
         Me.TesteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.NomeContasFuncionariosBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ListaContasArquivoBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
@@ -2428,33 +2427,50 @@ Partial Class Form1
         Me.PrintDialog6 = New System.Windows.Forms.PrintDialog()
         Me.PrintPreviewDialog6 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument14 = New System.Drawing.Printing.PrintDocument()
-        Me.Button96 = New System.Windows.Forms.Button()
-        Me.PedidoCompraDataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn818 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn819 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn820 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn821 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn822 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn823 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn824 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn825 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn826 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn827 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn828 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn829 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn830 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn831 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NotasEntradaDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn65 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn72 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn73 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn74 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn75 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn76 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn77 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn78 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn79 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn80 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CrescimentoVendas_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codbarras_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn60 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn61 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConsumoMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstoquePrateleira_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmbalagemFabrica_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apelido_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Bugiganga_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarkupNET_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoMlb_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp1_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp1_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp2_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp2_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp3_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp3_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp4_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp4_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp5_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp5_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -2587,8 +2603,9 @@ Partial Class Form1
         Me.tbpg_pedFornecedor.SuspendLayout
         Me.TabControlPedMarf.SuspendLayout
         Me.TabPage5.SuspendLayout
-        Me.GroupBox86.SuspendLayout
+        CType(Me.NotasEntradaDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NotasEntradaBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.GroupBox86.SuspendLayout
         Me.Panel11.SuspendLayout
         Me.GroupBox16.SuspendLayout
         Me.MenuStrip4.SuspendLayout
@@ -2602,6 +2619,7 @@ Partial Class Form1
         Me.Panel39.SuspendLayout
         Me.GroupBox94.SuspendLayout
         Me.Panel44.SuspendLayout
+        CType(Me.PedidoCompraDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ItemPedidosDataGridView9,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ItemPedidosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ProdutosDataGridView3,System.ComponentModel.ISupportInitialize).BeginInit
@@ -2856,6 +2874,8 @@ Partial Class Form1
         CType(Me.NOmeContaExtrasBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NomeContaaluguelBancoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         Me.Panel42.SuspendLayout
+        Me.TabPage7.SuspendLayout
+        Me.TabControl3.SuspendLayout
         CType(Me.TesteBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ListaContasArquivoBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
@@ -2878,8 +2898,6 @@ Partial Class Form1
         CType(Me.BalcaoBindingSource3,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.NOmeContaExtrasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
         CType(Me.ListaContasArquivoBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PedidoCompraDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NotasEntradaDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
         Me.SuspendLayout
         '
         'Razaosocial_transLabel
@@ -3818,7 +3836,7 @@ Partial Class Form1
         Me.tab_nfe.Location = New System.Drawing.Point(4, 54)
         Me.tab_nfe.Name = "tab_nfe"
         Me.tab_nfe.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_nfe.Size = New System.Drawing.Size(1316, 698)
+        Me.tab_nfe.Size = New System.Drawing.Size(1276, 691)
         Me.tab_nfe.TabIndex = 6
         Me.tab_nfe.Text = "Cadastrar Pasta NFe"
         '
@@ -3834,7 +3852,7 @@ Partial Class Form1
         Me.VendasMlbDataGridView.Location = New System.Drawing.Point(3, 269)
         Me.VendasMlbDataGridView.Name = "VendasMlbDataGridView"
         Me.VendasMlbDataGridView.ReadOnly = true
-        Me.VendasMlbDataGridView.Size = New System.Drawing.Size(1310, 426)
+        Me.VendasMlbDataGridView.Size = New System.Drawing.Size(1270, 419)
         Me.VendasMlbDataGridView.TabIndex = 485
         '
         'DataGridViewTextBoxColumn220
@@ -4125,7 +4143,7 @@ Partial Class Form1
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(3, 3)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(1310, 266)
+        Me.Panel4.Size = New System.Drawing.Size(1270, 266)
         Me.Panel4.TabIndex = 485
         '
         'GroupBox109
@@ -4185,7 +4203,7 @@ Partial Class Form1
         Me.tbpg_capitalGiro.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_capitalGiro.Name = "tbpg_capitalGiro"
         Me.tbpg_capitalGiro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_capitalGiro.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_capitalGiro.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_capitalGiro.TabIndex = 4
         Me.tbpg_capitalGiro.Text = "Pedido Compra"
         '
@@ -4197,7 +4215,7 @@ Partial Class Form1
         Me.TabControl2.Location = New System.Drawing.Point(3, 3)
         Me.TabControl2.Name = "TabControl2"
         Me.TabControl2.SelectedIndex = 0
-        Me.TabControl2.Size = New System.Drawing.Size(1310, 692)
+        Me.TabControl2.Size = New System.Drawing.Size(1270, 685)
         Me.TabControl2.TabIndex = 0
         '
         'tab_Kgiro
@@ -4206,7 +4224,7 @@ Partial Class Form1
         Me.tab_Kgiro.Location = New System.Drawing.Point(4, 25)
         Me.tab_Kgiro.Name = "tab_Kgiro"
         Me.tab_Kgiro.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_Kgiro.Size = New System.Drawing.Size(1302, 663)
+        Me.tab_Kgiro.Size = New System.Drawing.Size(1262, 656)
         Me.tab_Kgiro.TabIndex = 0
         Me.tab_Kgiro.Text = "Entrada Pedidos"
         Me.tab_Kgiro.UseVisualStyleBackColor = true
@@ -4228,7 +4246,7 @@ Partial Class Form1
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel6.Location = New System.Drawing.Point(3, 3)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel6.Size = New System.Drawing.Size(1256, 650)
         Me.Panel6.TabIndex = 0
         '
         'Button15
@@ -4346,10 +4364,10 @@ Partial Class Form1
         Me.PedidoCompraDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn222, Me.DataGridViewTextBoxColumn772, Me.DataGridViewTextBoxColumn773, Me.DataGridViewTextBoxColumn774, Me.DataGridViewTextBoxColumn778, Me.DataGridViewTextBoxColumn779, Me.DataGridViewTextBoxColumn780, Me.DataGridViewTextBoxColumn781, Me.DataGridViewTextBoxColumn782, Me.DataGridViewTextBoxColumn783, Me.Codigo_PedidoCompraString, Me.CodigoProduto_PeidoCompra, Me.PrecoUnitario_PedidoCompra, Me.Totalitem_PedidoCompra})
         Me.PedidoCompraDataGridView.DataSource = Me.PedidoCompraBindingSource
         Me.PedidoCompraDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PedidoCompraDataGridView.Location = New System.Drawing.Point(0, 240)
+        Me.PedidoCompraDataGridView.Location = New System.Drawing.Point(0, 233)
         Me.PedidoCompraDataGridView.Name = "PedidoCompraDataGridView"
         Me.PedidoCompraDataGridView.ReadOnly = true
-        Me.PedidoCompraDataGridView.Size = New System.Drawing.Size(1296, 417)
+        Me.PedidoCompraDataGridView.Size = New System.Drawing.Size(1256, 417)
         Me.PedidoCompraDataGridView.TabIndex = 15
         '
         'DataGridViewTextBoxColumn222
@@ -4502,23 +4520,6 @@ Partial Class Form1
         Me.TextBox248.Size = New System.Drawing.Size(163, 22)
         Me.TextBox248.TabIndex = 8
         '
-        'Label317
-        '
-        Me.Label317.AutoSize = true
-        Me.Label317.Location = New System.Drawing.Point(6, 18)
-        Me.Label317.Name = "Label317"
-        Me.Label317.Size = New System.Drawing.Size(99, 16)
-        Me.Label317.TabIndex = 10
-        Me.Label317.Text = "Código Pedido"
-        '
-        'TextBox246
-        '
-        Me.TextBox246.Enabled = false
-        Me.TextBox246.Location = New System.Drawing.Point(111, 18)
-        Me.TextBox246.Name = "TextBox246"
-        Me.TextBox246.Size = New System.Drawing.Size(163, 22)
-        Me.TextBox246.TabIndex = 6
-        '
         'Label319
         '
         Me.Label319.AutoSize = true
@@ -4528,14 +4529,14 @@ Partial Class Form1
         Me.Label319.TabIndex = 12
         Me.Label319.Text = "Quantidade"
         '
-        'Label318
+        'Label317
         '
-        Me.Label318.AutoSize = true
-        Me.Label318.Location = New System.Drawing.Point(10, 53)
-        Me.Label318.Name = "Label318"
-        Me.Label318.Size = New System.Drawing.Size(95, 16)
-        Me.Label318.TabIndex = 11
-        Me.Label318.Text = "Nome Produto"
+        Me.Label317.AutoSize = true
+        Me.Label317.Location = New System.Drawing.Point(6, 18)
+        Me.Label317.Name = "Label317"
+        Me.Label317.Size = New System.Drawing.Size(99, 16)
+        Me.Label317.TabIndex = 10
+        Me.Label317.Text = "Código Pedido"
         '
         'TextBox247
         '
@@ -4544,6 +4545,23 @@ Partial Class Form1
         Me.TextBox247.Name = "TextBox247"
         Me.TextBox247.Size = New System.Drawing.Size(163, 22)
         Me.TextBox247.TabIndex = 7
+        '
+        'TextBox246
+        '
+        Me.TextBox246.Enabled = false
+        Me.TextBox246.Location = New System.Drawing.Point(111, 18)
+        Me.TextBox246.Name = "TextBox246"
+        Me.TextBox246.Size = New System.Drawing.Size(163, 22)
+        Me.TextBox246.TabIndex = 6
+        '
+        'Label318
+        '
+        Me.Label318.AutoSize = true
+        Me.Label318.Location = New System.Drawing.Point(10, 53)
+        Me.Label318.Name = "Label318"
+        Me.Label318.Size = New System.Drawing.Size(95, 16)
+        Me.Label318.TabIndex = 11
+        Me.Label318.Text = "Nome Produto"
         '
         'Button85
         '
@@ -4681,7 +4699,7 @@ Partial Class Form1
         Me.Tab_fornecedor.Location = New System.Drawing.Point(4, 25)
         Me.Tab_fornecedor.Name = "Tab_fornecedor"
         Me.Tab_fornecedor.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab_fornecedor.Size = New System.Drawing.Size(1302, 663)
+        Me.Tab_fornecedor.Size = New System.Drawing.Size(1262, 656)
         Me.Tab_fornecedor.TabIndex = 1
         Me.Tab_fornecedor.Text = "Produtos"
         Me.Tab_fornecedor.UseVisualStyleBackColor = true
@@ -4695,10 +4713,10 @@ Partial Class Form1
         Me.BalcaoDataGridView8.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn798, Me.DataGridViewTextBoxColumn799, Me.DataGridViewTextBoxColumn800, Me.DataGridViewTextBoxColumn801, Me.DataGridViewTextBoxColumn802, Me.DataGridViewTextBoxColumn803, Me.DataGridViewTextBoxColumn804, Me.DataGridViewTextBoxColumn805, Me.DataGridViewTextBoxColumn806, Me.DataGridViewTextBoxColumn807, Me.DataGridViewTextBoxColumn808, Me.DataGridViewTextBoxColumn809, Me.DataGridViewTextBoxColumn810, Me.DataGridViewTextBoxColumn811, Me.DataGridViewTextBoxColumn812, Me.DataGridViewTextBoxColumn813, Me.DataGridViewTextBoxColumn814, Me.DataGridViewTextBoxColumn815, Me.DataGridViewTextBoxColumn816, Me.DataGridViewTextBoxColumn817})
         Me.BalcaoDataGridView8.DataSource = Me.BalcaoBindingSource
         Me.BalcaoDataGridView8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BalcaoDataGridView8.Location = New System.Drawing.Point(993, 215)
+        Me.BalcaoDataGridView8.Location = New System.Drawing.Point(953, 215)
         Me.BalcaoDataGridView8.Name = "BalcaoDataGridView8"
         Me.BalcaoDataGridView8.ReadOnly = true
-        Me.BalcaoDataGridView8.Size = New System.Drawing.Size(306, 445)
+        Me.BalcaoDataGridView8.Size = New System.Drawing.Size(306, 438)
         Me.BalcaoDataGridView8.TabIndex = 2
         '
         'DataGridViewTextBoxColumn798
@@ -4858,7 +4876,7 @@ Partial Class Form1
         Me.ProdutosDataGridView6.Location = New System.Drawing.Point(3, 215)
         Me.ProdutosDataGridView6.Name = "ProdutosDataGridView6"
         Me.ProdutosDataGridView6.ReadOnly = true
-        Me.ProdutosDataGridView6.Size = New System.Drawing.Size(979, 445)
+        Me.ProdutosDataGridView6.Size = New System.Drawing.Size(1002, 438)
         Me.ProdutosDataGridView6.TabIndex = 1
         '
         'DataGridViewTextBoxColumn238
@@ -5192,7 +5210,7 @@ Partial Class Form1
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel9.Location = New System.Drawing.Point(3, 3)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(1296, 212)
+        Me.Panel9.Size = New System.Drawing.Size(1256, 212)
         Me.Panel9.TabIndex = 0
         '
         'GroupBox112
@@ -5507,7 +5525,7 @@ Partial Class Form1
         Me.tbpg_transportadoras.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_transportadoras.Name = "tbpg_transportadoras"
         Me.tbpg_transportadoras.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_transportadoras.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_transportadoras.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_transportadoras.TabIndex = 3
         Me.tbpg_transportadoras.Text = "Transportadoras"
         '
@@ -5519,7 +5537,7 @@ Partial Class Form1
         Me.tabpage_trans.Location = New System.Drawing.Point(3, 3)
         Me.tabpage_trans.Name = "tabpage_trans"
         Me.tabpage_trans.SelectedIndex = 0
-        Me.tabpage_trans.Size = New System.Drawing.Size(1310, 692)
+        Me.tabpage_trans.Size = New System.Drawing.Size(1270, 685)
         Me.tabpage_trans.TabIndex = 0
         '
         'tab_fortrans
@@ -5528,7 +5546,7 @@ Partial Class Form1
         Me.tab_fortrans.Location = New System.Drawing.Point(4, 25)
         Me.tab_fortrans.Name = "tab_fortrans"
         Me.tab_fortrans.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_fortrans.Size = New System.Drawing.Size(1302, 663)
+        Me.tab_fortrans.Size = New System.Drawing.Size(1262, 656)
         Me.tab_fortrans.TabIndex = 0
         Me.tab_fortrans.Text = "Formulário"
         Me.tab_fortrans.UseVisualStyleBackColor = true
@@ -5559,7 +5577,7 @@ Partial Class Form1
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(3, 3)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel7.Size = New System.Drawing.Size(1256, 650)
         Me.Panel7.TabIndex = 0
         '
         'btn_verificaCnpj
@@ -5720,7 +5738,7 @@ Partial Class Form1
         Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IncluirToolStripMenuItem, Me.AlterarToolStripMenuItem, Me.ApagarToolStripMenuItem, Me.ConsultarToolStripMenuItem, Me.mnu_confirmartrans, Me.DesistirOperaçãoToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip2.Name = "MenuStrip2"
-        Me.MenuStrip2.Size = New System.Drawing.Size(1296, 125)
+        Me.MenuStrip2.Size = New System.Drawing.Size(1256, 125)
         Me.MenuStrip2.TabIndex = 26
         Me.MenuStrip2.Text = "MenuStrip2"
         '
@@ -5791,7 +5809,7 @@ Partial Class Form1
         Me.tab_tabelatrans.Location = New System.Drawing.Point(4, 25)
         Me.tab_tabelatrans.Name = "tab_tabelatrans"
         Me.tab_tabelatrans.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_tabelatrans.Size = New System.Drawing.Size(1302, 663)
+        Me.tab_tabelatrans.Size = New System.Drawing.Size(1262, 656)
         Me.tab_tabelatrans.TabIndex = 1
         Me.tab_tabelatrans.Text = "Tabela"
         Me.tab_tabelatrans.UseVisualStyleBackColor = true
@@ -5809,7 +5827,7 @@ Partial Class Form1
         Me.DataGridTransportadoras.Location = New System.Drawing.Point(3, 103)
         Me.DataGridTransportadoras.Name = "DataGridTransportadoras"
         Me.DataGridTransportadoras.ReadOnly = true
-        Me.DataGridTransportadoras.Size = New System.Drawing.Size(1296, 557)
+        Me.DataGridTransportadoras.Size = New System.Drawing.Size(1256, 550)
         Me.DataGridTransportadoras.TabIndex = 1
         '
         'IdtransDataGridViewTextBoxColumn
@@ -5915,7 +5933,7 @@ Partial Class Form1
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel8.Location = New System.Drawing.Point(3, 3)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(1296, 100)
+        Me.Panel8.Size = New System.Drawing.Size(1256, 100)
         Me.Panel8.TabIndex = 0
         '
         'msk_cnpjBuscaTrans
@@ -5988,7 +6006,7 @@ Partial Class Form1
         Me.tbpg_pedFornecedor.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_pedFornecedor.Name = "tbpg_pedFornecedor"
         Me.tbpg_pedFornecedor.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_pedFornecedor.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_pedFornecedor.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_pedFornecedor.TabIndex = 2
         Me.tbpg_pedFornecedor.Text = "Notas de Entrada"
         '
@@ -6002,7 +6020,7 @@ Partial Class Form1
         Me.TabControlPedMarf.Location = New System.Drawing.Point(3, 3)
         Me.TabControlPedMarf.Name = "TabControlPedMarf"
         Me.TabControlPedMarf.SelectedIndex = 0
-        Me.TabControlPedMarf.Size = New System.Drawing.Size(1310, 692)
+        Me.TabControlPedMarf.Size = New System.Drawing.Size(1270, 685)
         Me.TabControlPedMarf.TabIndex = 0
         '
         'TabPage5
@@ -6014,10 +6032,100 @@ Partial Class Form1
         Me.TabPage5.Location = New System.Drawing.Point(4, 25)
         Me.TabPage5.Name = "TabPage5"
         Me.TabPage5.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage5.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage5.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage5.TabIndex = 0
         Me.TabPage5.Text = "Pedidos Marfinite"
         Me.TabPage5.UseVisualStyleBackColor = true
+        '
+        'NotasEntradaDataGridView
+        '
+        Me.NotasEntradaDataGridView.AllowUserToAddRows = false
+        Me.NotasEntradaDataGridView.AllowUserToDeleteRows = false
+        Me.NotasEntradaDataGridView.AutoGenerateColumns = false
+        Me.NotasEntradaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.NotasEntradaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn65, Me.DataGridViewTextBoxColumn72, Me.DataGridViewTextBoxColumn73, Me.DataGridViewTextBoxColumn74, Me.DataGridViewTextBoxColumn75, Me.DataGridViewTextBoxColumn76, Me.DataGridViewTextBoxColumn77, Me.DataGridViewTextBoxColumn78, Me.DataGridViewTextBoxColumn79, Me.DataGridViewTextBoxColumn80})
+        Me.NotasEntradaDataGridView.DataSource = Me.NotasEntradaBindingSource
+        Me.NotasEntradaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.NotasEntradaDataGridView.Location = New System.Drawing.Point(3, 293)
+        Me.NotasEntradaDataGridView.Name = "NotasEntradaDataGridView"
+        Me.NotasEntradaDataGridView.ReadOnly = true
+        Me.NotasEntradaDataGridView.Size = New System.Drawing.Size(1256, 360)
+        Me.NotasEntradaDataGridView.TabIndex = 6
+        '
+        'DataGridViewTextBoxColumn65
+        '
+        Me.DataGridViewTextBoxColumn65.DataPropertyName = "Id_EntradaNota"
+        Me.DataGridViewTextBoxColumn65.HeaderText = "Id_EntradaNota"
+        Me.DataGridViewTextBoxColumn65.Name = "DataGridViewTextBoxColumn65"
+        Me.DataGridViewTextBoxColumn65.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn72
+        '
+        Me.DataGridViewTextBoxColumn72.DataPropertyName = "FornecedorEntrada"
+        Me.DataGridViewTextBoxColumn72.HeaderText = "FornecedorEntrada"
+        Me.DataGridViewTextBoxColumn72.Name = "DataGridViewTextBoxColumn72"
+        Me.DataGridViewTextBoxColumn72.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn73
+        '
+        Me.DataGridViewTextBoxColumn73.DataPropertyName = "NumeroNotaEntrada"
+        Me.DataGridViewTextBoxColumn73.HeaderText = "NumeroNotaEntrada"
+        Me.DataGridViewTextBoxColumn73.Name = "DataGridViewTextBoxColumn73"
+        Me.DataGridViewTextBoxColumn73.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn74
+        '
+        Me.DataGridViewTextBoxColumn74.DataPropertyName = "LinhaProdutoEntrada"
+        Me.DataGridViewTextBoxColumn74.HeaderText = "LinhaProdutoEntrada"
+        Me.DataGridViewTextBoxColumn74.Name = "DataGridViewTextBoxColumn74"
+        Me.DataGridViewTextBoxColumn74.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn75
+        '
+        Me.DataGridViewTextBoxColumn75.DataPropertyName = "CorProdutoEntrada"
+        Me.DataGridViewTextBoxColumn75.HeaderText = "CorProdutoEntrada"
+        Me.DataGridViewTextBoxColumn75.Name = "DataGridViewTextBoxColumn75"
+        Me.DataGridViewTextBoxColumn75.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn76
+        '
+        Me.DataGridViewTextBoxColumn76.DataPropertyName = "QuantidadeNotaEntrada"
+        Me.DataGridViewTextBoxColumn76.HeaderText = "QuantidadeNotaEntrada"
+        Me.DataGridViewTextBoxColumn76.Name = "DataGridViewTextBoxColumn76"
+        Me.DataGridViewTextBoxColumn76.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn77
+        '
+        Me.DataGridViewTextBoxColumn77.DataPropertyName = "PrecoNotaEntrada"
+        Me.DataGridViewTextBoxColumn77.HeaderText = "PrecoNotaEntrada"
+        Me.DataGridViewTextBoxColumn77.Name = "DataGridViewTextBoxColumn77"
+        Me.DataGridViewTextBoxColumn77.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn78
+        '
+        Me.DataGridViewTextBoxColumn78.DataPropertyName = "DataNotaEntrada"
+        Me.DataGridViewTextBoxColumn78.HeaderText = "DataNotaEntrada"
+        Me.DataGridViewTextBoxColumn78.Name = "DataGridViewTextBoxColumn78"
+        Me.DataGridViewTextBoxColumn78.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn79
+        '
+        Me.DataGridViewTextBoxColumn79.DataPropertyName = "CodProdEntrada"
+        Me.DataGridViewTextBoxColumn79.HeaderText = "CodProdEntrada"
+        Me.DataGridViewTextBoxColumn79.Name = "DataGridViewTextBoxColumn79"
+        Me.DataGridViewTextBoxColumn79.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn80
+        '
+        Me.DataGridViewTextBoxColumn80.DataPropertyName = "NomeProdEntrada"
+        Me.DataGridViewTextBoxColumn80.HeaderText = "NomeProdEntrada"
+        Me.DataGridViewTextBoxColumn80.Name = "DataGridViewTextBoxColumn80"
+        Me.DataGridViewTextBoxColumn80.ReadOnly = true
+        '
+        'NotasEntradaBindingSource
+        '
+        Me.NotasEntradaBindingSource.DataMember = "NotasEntrada"
+        Me.NotasEntradaBindingSource.DataSource = Me.DataSetFinal
         '
         'GroupBox86
         '
@@ -6033,6 +6141,7 @@ Partial Class Form1
         '
         'TextBox218
         '
+        Me.TextBox218.Enabled = false
         Me.TextBox218.Location = New System.Drawing.Point(26, 30)
         Me.TextBox218.Name = "TextBox218"
         Me.TextBox218.Size = New System.Drawing.Size(138, 22)
@@ -6040,17 +6149,13 @@ Partial Class Form1
         '
         'Button78
         '
+        Me.Button78.Enabled = false
         Me.Button78.Location = New System.Drawing.Point(26, 58)
         Me.Button78.Name = "Button78"
         Me.Button78.Size = New System.Drawing.Size(138, 23)
         Me.Button78.TabIndex = 5
         Me.Button78.Text = "Numero Nota Fiscal"
         Me.Button78.UseVisualStyleBackColor = true
-        '
-        'NotasEntradaBindingSource
-        '
-        Me.NotasEntradaBindingSource.DataMember = "NotasEntrada"
-        Me.NotasEntradaBindingSource.DataSource = Me.DataSetFinal
         '
         'Panel11
         '
@@ -6067,7 +6172,7 @@ Partial Class Form1
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel11.Location = New System.Drawing.Point(3, 128)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(1296, 165)
+        Me.Panel11.Size = New System.Drawing.Size(1256, 165)
         Me.Panel11.TabIndex = 0
         '
         'Label106
@@ -6130,6 +6235,7 @@ Partial Class Form1
         '
         'TextBox27
         '
+        Me.TextBox27.Enabled = false
         Me.TextBox27.Location = New System.Drawing.Point(124, 28)
         Me.TextBox27.Name = "TextBox27"
         Me.TextBox27.Size = New System.Drawing.Size(121, 22)
@@ -6137,6 +6243,7 @@ Partial Class Form1
         '
         'Button67
         '
+        Me.Button67.Enabled = false
         Me.Button67.Location = New System.Drawing.Point(335, 31)
         Me.Button67.Name = "Button67"
         Me.Button67.Size = New System.Drawing.Size(124, 59)
@@ -6148,6 +6255,7 @@ Partial Class Form1
         '
         Me.ComboBox13.DataSource = Me.FornecedorBindingSource
         Me.ComboBox13.DisplayMember = "xNome_for"
+        Me.ComboBox13.Enabled = false
         Me.ComboBox13.FormattingEnabled = true
         Me.ComboBox13.Location = New System.Drawing.Point(124, 105)
         Me.ComboBox13.Name = "ComboBox13"
@@ -6212,12 +6320,13 @@ Partial Class Form1
         Me.MenuStrip4.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CriarPedidoToolStripMenuItem, Me.DeletarItemToolStripMenuItem})
         Me.MenuStrip4.Location = New System.Drawing.Point(3, 3)
         Me.MenuStrip4.Name = "MenuStrip4"
-        Me.MenuStrip4.Size = New System.Drawing.Size(1296, 125)
+        Me.MenuStrip4.Size = New System.Drawing.Size(1256, 125)
         Me.MenuStrip4.TabIndex = 1
         Me.MenuStrip4.Text = "MenuStrip4"
         '
         'CriarPedidoToolStripMenuItem
         '
+        Me.CriarPedidoToolStripMenuItem.Enabled = false
         Me.CriarPedidoToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.add
         Me.CriarPedidoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CriarPedidoToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
@@ -6228,6 +6337,7 @@ Partial Class Form1
         '
         'DeletarItemToolStripMenuItem
         '
+        Me.DeletarItemToolStripMenuItem.Enabled = false
         Me.DeletarItemToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
         Me.DeletarItemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DeletarItemToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
@@ -6243,7 +6353,7 @@ Partial Class Form1
         Me.TabPage10.Location = New System.Drawing.Point(4, 25)
         Me.TabPage10.Name = "TabPage10"
         Me.TabPage10.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage10.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage10.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage10.TabIndex = 1
         Me.TabPage10.Text = "Produtos"
         Me.TabPage10.UseVisualStyleBackColor = true
@@ -6261,7 +6371,7 @@ Partial Class Form1
         Me.dataGridPediMarf.Location = New System.Drawing.Point(3, 129)
         Me.dataGridPediMarf.Name = "dataGridPediMarf"
         Me.dataGridPediMarf.ReadOnly = true
-        Me.dataGridPediMarf.Size = New System.Drawing.Size(1296, 531)
+        Me.dataGridPediMarf.Size = New System.Drawing.Size(1256, 524)
         Me.dataGridPediMarf.TabIndex = 1
         '
         'DataGridViewTextBoxColumn82
@@ -6489,7 +6599,7 @@ Partial Class Form1
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel12.Location = New System.Drawing.Point(3, 3)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(1296, 126)
+        Me.Panel12.Size = New System.Drawing.Size(1256, 126)
         Me.Panel12.TabIndex = 0
         '
         'GroupBox75
@@ -6658,7 +6768,7 @@ Partial Class Form1
         Me.TabPage17.Location = New System.Drawing.Point(4, 25)
         Me.TabPage17.Name = "TabPage17"
         Me.TabPage17.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage17.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage17.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage17.TabIndex = 2
         Me.TabPage17.Text = "Estatística de vendas"
         Me.TabPage17.UseVisualStyleBackColor = true
@@ -6678,8 +6788,18 @@ Partial Class Form1
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel39.Location = New System.Drawing.Point(3, 3)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel39.Size = New System.Drawing.Size(1256, 650)
         Me.Panel39.TabIndex = 0
+        '
+        'Button96
+        '
+        Me.Button96.Enabled = false
+        Me.Button96.Location = New System.Drawing.Point(907, 93)
+        Me.Button96.Name = "Button96"
+        Me.Button96.Size = New System.Drawing.Size(155, 23)
+        Me.Button96.TabIndex = 19
+        Me.Button96.Text = "Pedidos Fornecedor"
+        Me.Button96.UseVisualStyleBackColor = true
         '
         'Button81
         '
@@ -6813,8 +6933,120 @@ Partial Class Form1
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel44.Location = New System.Drawing.Point(0, 177)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(1279, 531)
+        Me.Panel44.Size = New System.Drawing.Size(1239, 531)
         Me.Panel44.TabIndex = 15
+        '
+        'PedidoCompraDataGridView1
+        '
+        Me.PedidoCompraDataGridView1.AllowUserToAddRows = false
+        Me.PedidoCompraDataGridView1.AllowUserToDeleteRows = false
+        Me.PedidoCompraDataGridView1.AutoGenerateColumns = false
+        Me.PedidoCompraDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.PedidoCompraDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn818, Me.DataGridViewTextBoxColumn819, Me.DataGridViewTextBoxColumn820, Me.DataGridViewTextBoxColumn821, Me.DataGridViewTextBoxColumn822, Me.DataGridViewTextBoxColumn823, Me.DataGridViewTextBoxColumn824, Me.DataGridViewTextBoxColumn825, Me.DataGridViewTextBoxColumn826, Me.DataGridViewTextBoxColumn827, Me.DataGridViewTextBoxColumn828, Me.DataGridViewTextBoxColumn829, Me.DataGridViewTextBoxColumn830, Me.DataGridViewTextBoxColumn831})
+        Me.PedidoCompraDataGridView1.DataSource = Me.PedidoCompraBindingSource
+        Me.PedidoCompraDataGridView1.Location = New System.Drawing.Point(755, 3)
+        Me.PedidoCompraDataGridView1.Name = "PedidoCompraDataGridView1"
+        Me.PedidoCompraDataGridView1.ReadOnly = true
+        Me.PedidoCompraDataGridView1.Size = New System.Drawing.Size(171, 244)
+        Me.PedidoCompraDataGridView1.TabIndex = 4
+        '
+        'DataGridViewTextBoxColumn818
+        '
+        Me.DataGridViewTextBoxColumn818.DataPropertyName = "Id_PedidoCompra"
+        Me.DataGridViewTextBoxColumn818.HeaderText = "Id_PedidoCompra"
+        Me.DataGridViewTextBoxColumn818.Name = "DataGridViewTextBoxColumn818"
+        Me.DataGridViewTextBoxColumn818.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn819
+        '
+        Me.DataGridViewTextBoxColumn819.DataPropertyName = "Fornecedor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn819.HeaderText = "Fornecedor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn819.Name = "DataGridViewTextBoxColumn819"
+        Me.DataGridViewTextBoxColumn819.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn820
+        '
+        Me.DataGridViewTextBoxColumn820.DataPropertyName = "Codigo_PedidoCompra"
+        Me.DataGridViewTextBoxColumn820.HeaderText = "Codigo_PedidoCompra"
+        Me.DataGridViewTextBoxColumn820.Name = "DataGridViewTextBoxColumn820"
+        Me.DataGridViewTextBoxColumn820.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn821
+        '
+        Me.DataGridViewTextBoxColumn821.DataPropertyName = "Linha_PedidoCompra"
+        Me.DataGridViewTextBoxColumn821.HeaderText = "Linha_PedidoCompra"
+        Me.DataGridViewTextBoxColumn821.Name = "DataGridViewTextBoxColumn821"
+        Me.DataGridViewTextBoxColumn821.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn822
+        '
+        Me.DataGridViewTextBoxColumn822.DataPropertyName = "Cor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn822.HeaderText = "Cor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn822.Name = "DataGridViewTextBoxColumn822"
+        Me.DataGridViewTextBoxColumn822.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn823
+        '
+        Me.DataGridViewTextBoxColumn823.DataPropertyName = "CodProdFor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn823.HeaderText = "CodProdFor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn823.Name = "DataGridViewTextBoxColumn823"
+        Me.DataGridViewTextBoxColumn823.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn824
+        '
+        Me.DataGridViewTextBoxColumn824.DataPropertyName = "NomeProd_PedidoCompra"
+        Me.DataGridViewTextBoxColumn824.HeaderText = "NomeProd_PedidoCompra"
+        Me.DataGridViewTextBoxColumn824.Name = "DataGridViewTextBoxColumn824"
+        Me.DataGridViewTextBoxColumn824.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn825
+        '
+        Me.DataGridViewTextBoxColumn825.DataPropertyName = "Quantidade_PedidoCompra"
+        Me.DataGridViewTextBoxColumn825.HeaderText = "Quantidade_PedidoCompra"
+        Me.DataGridViewTextBoxColumn825.Name = "DataGridViewTextBoxColumn825"
+        Me.DataGridViewTextBoxColumn825.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn826
+        '
+        Me.DataGridViewTextBoxColumn826.DataPropertyName = "Data_PedidoCompra"
+        Me.DataGridViewTextBoxColumn826.HeaderText = "Data_PedidoCompra"
+        Me.DataGridViewTextBoxColumn826.Name = "DataGridViewTextBoxColumn826"
+        Me.DataGridViewTextBoxColumn826.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn827
+        '
+        Me.DataGridViewTextBoxColumn827.DataPropertyName = "EntregueSimNao_PedidoCompra"
+        Me.DataGridViewTextBoxColumn827.HeaderText = "EntregueSimNao_PedidoCompra"
+        Me.DataGridViewTextBoxColumn827.Name = "DataGridViewTextBoxColumn827"
+        Me.DataGridViewTextBoxColumn827.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn828
+        '
+        Me.DataGridViewTextBoxColumn828.DataPropertyName = "Codigo_PedidoCompraString"
+        Me.DataGridViewTextBoxColumn828.HeaderText = "Codigo_PedidoCompraString"
+        Me.DataGridViewTextBoxColumn828.Name = "DataGridViewTextBoxColumn828"
+        Me.DataGridViewTextBoxColumn828.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn829
+        '
+        Me.DataGridViewTextBoxColumn829.DataPropertyName = "CodigoProduto_PeidoCompra"
+        Me.DataGridViewTextBoxColumn829.HeaderText = "CodigoProduto_PeidoCompra"
+        Me.DataGridViewTextBoxColumn829.Name = "DataGridViewTextBoxColumn829"
+        Me.DataGridViewTextBoxColumn829.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn830
+        '
+        Me.DataGridViewTextBoxColumn830.DataPropertyName = "PrecoUnitario_PedidoCompra"
+        Me.DataGridViewTextBoxColumn830.HeaderText = "PrecoUnitario_PedidoCompra"
+        Me.DataGridViewTextBoxColumn830.Name = "DataGridViewTextBoxColumn830"
+        Me.DataGridViewTextBoxColumn830.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn831
+        '
+        Me.DataGridViewTextBoxColumn831.DataPropertyName = "Totalitem_PedidoCompra"
+        Me.DataGridViewTextBoxColumn831.HeaderText = "Totalitem_PedidoCompra"
+        Me.DataGridViewTextBoxColumn831.Name = "DataGridViewTextBoxColumn831"
+        Me.DataGridViewTextBoxColumn831.ReadOnly = true
         '
         'ItemPedidosDataGridView9
         '
@@ -6825,10 +7057,10 @@ Partial Class Form1
         Me.ItemPedidosDataGridView9.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn368, Me.DataGridViewTextBoxColumn384, Me.DataGridViewTextBoxColumn389, Me.DataGridViewTextBoxColumn390, Me.DataGridViewTextBoxColumn391, Me.DataGridViewTextBoxColumn392, Me.DataGridViewTextBoxColumn393, Me.DataGridViewTextBoxColumn395, Me.DataGridViewTextBoxColumn396, Me.DataGridViewTextBoxColumn397, Me.DataGridViewTextBoxColumn398, Me.DataGridViewTextBoxColumn399, Me.DataGridViewTextBoxColumn400, Me.DataGridViewTextBoxColumn401, Me.DataGridViewTextBoxColumn402, Me.DataGridViewTextBoxColumn403, Me.DataGridViewTextBoxColumn404, Me.DataGridViewTextBoxColumn405, Me.DataGridViewTextBoxColumn406, Me.DataGridViewTextBoxColumn407, Me.DataGridViewTextBoxColumn613, Me.DataGridViewTextBoxColumn614, Me.DataGridViewTextBoxColumn615, Me.DataGridViewTextBoxColumn616, Me.DataGridViewTextBoxColumn621, Me.DataGridViewTextBoxColumn639, Me.DataGridViewTextBoxColumn640})
         Me.ItemPedidosDataGridView9.DataSource = Me.ItemPedidosBindingSource
         Me.ItemPedidosDataGridView9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ItemPedidosDataGridView9.Location = New System.Drawing.Point(932, 0)
+        Me.ItemPedidosDataGridView9.Location = New System.Drawing.Point(926, 0)
         Me.ItemPedidosDataGridView9.Name = "ItemPedidosDataGridView9"
         Me.ItemPedidosDataGridView9.ReadOnly = true
-        Me.ItemPedidosDataGridView9.Size = New System.Drawing.Size(347, 531)
+        Me.ItemPedidosDataGridView9.Size = New System.Drawing.Size(347, 514)
         Me.ItemPedidosDataGridView9.TabIndex = 3
         '
         'DataGridViewTextBoxColumn368
@@ -7037,7 +7269,7 @@ Partial Class Form1
         Me.ProdutosDataGridView3.Location = New System.Drawing.Point(0, 0)
         Me.ProdutosDataGridView3.Name = "ProdutosDataGridView3"
         Me.ProdutosDataGridView3.ReadOnly = true
-        Me.ProdutosDataGridView3.Size = New System.Drawing.Size(603, 531)
+        Me.ProdutosDataGridView3.Size = New System.Drawing.Size(603, 514)
         Me.ProdutosDataGridView3.TabIndex = 2
         '
         'DataGridViewTextBoxColumn367
@@ -7447,7 +7679,7 @@ Partial Class Form1
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage3.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage3.TabIndex = 3
         Me.TabPage3.Text = "Relatórios"
         Me.TabPage3.UseVisualStyleBackColor = true
@@ -7461,7 +7693,7 @@ Partial Class Form1
         Me.Panel45.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel45.Location = New System.Drawing.Point(3, 3)
         Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel45.Size = New System.Drawing.Size(1256, 650)
         Me.Panel45.TabIndex = 0
         '
         'ProdutosDataGridView5
@@ -7477,7 +7709,7 @@ Partial Class Form1
         Me.ProdutosDataGridView5.Location = New System.Drawing.Point(0, 198)
         Me.ProdutosDataGridView5.Name = "ProdutosDataGridView5"
         Me.ProdutosDataGridView5.ReadOnly = true
-        Me.ProdutosDataGridView5.Size = New System.Drawing.Size(1296, 459)
+        Me.ProdutosDataGridView5.Size = New System.Drawing.Size(1256, 452)
         Me.ProdutosDataGridView5.TabIndex = 1
         '
         'DataGridViewTextBoxColumn641
@@ -7576,7 +7808,7 @@ Partial Class Form1
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel46.Location = New System.Drawing.Point(0, 0)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(1296, 198)
+        Me.Panel46.Size = New System.Drawing.Size(1256, 198)
         Me.Panel46.TabIndex = 0
         '
         'GroupBox105
@@ -7680,9 +7912,9 @@ Partial Class Form1
         '
         'Button90
         '
-        Me.Button90.Location = New System.Drawing.Point(277, 18)
+        Me.Button90.Location = New System.Drawing.Point(295, 18)
         Me.Button90.Name = "Button90"
-        Me.Button90.Size = New System.Drawing.Size(189, 53)
+        Me.Button90.Size = New System.Drawing.Size(171, 53)
         Me.Button90.TabIndex = 6
         Me.Button90.Text = "Estoque Mínimo Fornececedor"
         Me.Button90.UseVisualStyleBackColor = true
@@ -7692,7 +7924,7 @@ Partial Class Form1
         Me.ComboBox31.DataSource = Me.LinhasprodBindingSource
         Me.ComboBox31.DisplayMember = "nome_linha"
         Me.ComboBox31.FormattingEnabled = true
-        Me.ComboBox31.Location = New System.Drawing.Point(87, 95)
+        Me.ComboBox31.Location = New System.Drawing.Point(97, 97)
         Me.ComboBox31.Name = "ComboBox31"
         Me.ComboBox31.Size = New System.Drawing.Size(161, 24)
         Me.ComboBox31.TabIndex = 5
@@ -7727,9 +7959,9 @@ Partial Class Form1
         '
         'Button83
         '
-        Me.Button83.Location = New System.Drawing.Point(277, 95)
+        Me.Button83.Location = New System.Drawing.Point(295, 82)
         Me.Button83.Name = "Button83"
-        Me.Button83.Size = New System.Drawing.Size(189, 65)
+        Me.Button83.Size = New System.Drawing.Size(171, 65)
         Me.Button83.TabIndex = 1
         Me.Button83.Text = "Estoque minimo Fornecedor e linha"
         Me.Button83.UseVisualStyleBackColor = true
@@ -7752,7 +7984,7 @@ Partial Class Form1
         Me.tbpg_clientes.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_clientes.Name = "tbpg_clientes"
         Me.tbpg_clientes.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_clientes.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_clientes.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_clientes.TabIndex = 1
         Me.tbpg_clientes.Text = "Clientes"
         '
@@ -7765,7 +7997,7 @@ Partial Class Form1
         Me.tab_form_clientes.Location = New System.Drawing.Point(3, 3)
         Me.tab_form_clientes.Name = "tab_form_clientes"
         Me.tab_form_clientes.SelectedIndex = 0
-        Me.tab_form_clientes.Size = New System.Drawing.Size(1310, 692)
+        Me.tab_form_clientes.Size = New System.Drawing.Size(1270, 685)
         Me.tab_form_clientes.TabIndex = 0
         '
         'frmpage_clientes
@@ -7774,7 +8006,7 @@ Partial Class Form1
         Me.frmpage_clientes.Location = New System.Drawing.Point(4, 25)
         Me.frmpage_clientes.Name = "frmpage_clientes"
         Me.frmpage_clientes.Padding = New System.Windows.Forms.Padding(3)
-        Me.frmpage_clientes.Size = New System.Drawing.Size(1302, 663)
+        Me.frmpage_clientes.Size = New System.Drawing.Size(1262, 656)
         Me.frmpage_clientes.TabIndex = 0
         Me.frmpage_clientes.Text = "Formulário"
         Me.frmpage_clientes.UseVisualStyleBackColor = true
@@ -7788,7 +8020,7 @@ Partial Class Form1
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel2.Location = New System.Drawing.Point(3, 3)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel2.Size = New System.Drawing.Size(1256, 650)
         Me.Panel2.TabIndex = 0
         '
         'MenuStrip3
@@ -8339,7 +8571,7 @@ Partial Class Form1
         Me.tab_grid_clientes.Location = New System.Drawing.Point(4, 25)
         Me.tab_grid_clientes.Name = "tab_grid_clientes"
         Me.tab_grid_clientes.Padding = New System.Windows.Forms.Padding(3)
-        Me.tab_grid_clientes.Size = New System.Drawing.Size(1302, 663)
+        Me.tab_grid_clientes.Size = New System.Drawing.Size(1262, 656)
         Me.tab_grid_clientes.TabIndex = 1
         Me.tab_grid_clientes.Text = "Tabela"
         Me.tab_grid_clientes.UseVisualStyleBackColor = true
@@ -8357,7 +8589,7 @@ Partial Class Form1
         Me.ClienteDataGridView5.Location = New System.Drawing.Point(3, 103)
         Me.ClienteDataGridView5.Name = "ClienteDataGridView5"
         Me.ClienteDataGridView5.ReadOnly = true
-        Me.ClienteDataGridView5.Size = New System.Drawing.Size(1296, 557)
+        Me.ClienteDataGridView5.Size = New System.Drawing.Size(1256, 550)
         Me.ClienteDataGridView5.TabIndex = 1
         '
         'DataGridViewTextBoxColumn1
@@ -8539,7 +8771,7 @@ Partial Class Form1
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel10.Location = New System.Drawing.Point(3, 3)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(1296, 100)
+        Me.Panel10.Size = New System.Drawing.Size(1256, 100)
         Me.Panel10.TabIndex = 0
         '
         'Button34
@@ -8597,7 +8829,7 @@ Partial Class Form1
         Me.tbpg_produtos.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_produtos.Name = "tbpg_produtos"
         Me.tbpg_produtos.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_produtos.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_produtos.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_produtos.TabIndex = 0
         Me.tbpg_produtos.Text = "Produtos"
         Me.tbpg_produtos.UseVisualStyleBackColor = true
@@ -8612,7 +8844,7 @@ Partial Class Form1
         Me.tabpage_produtos.Location = New System.Drawing.Point(3, 3)
         Me.tabpage_produtos.Name = "tabpage_produtos"
         Me.tabpage_produtos.SelectedIndex = 0
-        Me.tabpage_produtos.Size = New System.Drawing.Size(1310, 692)
+        Me.tabpage_produtos.Size = New System.Drawing.Size(1270, 685)
         Me.tabpage_produtos.TabIndex = 0
         '
         'TabPage4
@@ -8621,7 +8853,7 @@ Partial Class Form1
         Me.TabPage4.Location = New System.Drawing.Point(4, 22)
         Me.TabPage4.Name = "TabPage4"
         Me.TabPage4.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage4.Size = New System.Drawing.Size(1302, 666)
+        Me.TabPage4.Size = New System.Drawing.Size(1262, 659)
         Me.TabPage4.TabIndex = 0
         Me.TabPage4.Text = "Formulário de Edição"
         Me.TabPage4.UseVisualStyleBackColor = true
@@ -8636,7 +8868,7 @@ Partial Class Form1
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(3, 3)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1296, 660)
+        Me.Panel1.Size = New System.Drawing.Size(1256, 653)
         Me.Panel1.TabIndex = 0
         '
         'cbx_forprod
@@ -8652,7 +8884,7 @@ Partial Class Form1
         Me.cbx_forprod.Dock = System.Windows.Forms.DockStyle.Fill
         Me.cbx_forprod.Location = New System.Drawing.Point(0, 126)
         Me.cbx_forprod.Name = "cbx_forprod"
-        Me.cbx_forprod.Size = New System.Drawing.Size(1296, 534)
+        Me.cbx_forprod.Size = New System.Drawing.Size(1256, 527)
         Me.cbx_forprod.TabIndex = 11
         Me.cbx_forprod.TabStop = false
         '
@@ -8661,9 +8893,9 @@ Partial Class Form1
         Me.VScrollBar1.ContextMenuStrip = Me.ContextMenuStrip1
         Me.VScrollBar1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.VScrollBar1.Location = New System.Drawing.Point(1276, 41)
+        Me.VScrollBar1.Location = New System.Drawing.Point(1236, 41)
         Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(17, 490)
+        Me.VScrollBar1.Size = New System.Drawing.Size(17, 483)
         Me.VScrollBar1.TabIndex = 50
         Me.VScrollBar1.Value = 50
         '
@@ -9597,7 +9829,7 @@ Partial Class Form1
         '
         Me.MenuStrip6.Location = New System.Drawing.Point(3, 17)
         Me.MenuStrip6.Name = "MenuStrip6"
-        Me.MenuStrip6.Size = New System.Drawing.Size(1290, 24)
+        Me.MenuStrip6.Size = New System.Drawing.Size(1250, 24)
         Me.MenuStrip6.TabIndex = 48
         Me.MenuStrip6.Text = "MenuStrip6"
         '
@@ -9609,7 +9841,7 @@ Partial Class Form1
         Me.MenuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(1296, 126)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1256, 126)
         Me.MenuStrip1.TabIndex = 12
         Me.MenuStrip1.Text = "MenuStrip1"
         '
@@ -9687,7 +9919,7 @@ Partial Class Form1
         Me.TabPage_gridProd.Location = New System.Drawing.Point(4, 22)
         Me.TabPage_gridProd.Name = "TabPage_gridProd"
         Me.TabPage_gridProd.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_gridProd.Size = New System.Drawing.Size(1302, 666)
+        Me.TabPage_gridProd.Size = New System.Drawing.Size(1262, 659)
         Me.TabPage_gridProd.TabIndex = 1
         Me.TabPage_gridProd.Text = "Consultar Produtos"
         Me.TabPage_gridProd.UseVisualStyleBackColor = true
@@ -9699,252 +9931,14 @@ Partial Class Form1
         Me.ProdutosDataGridView.AutoGenerateColumns = false
         Me.ProdutosDataGridView.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ProdutosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProdutosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn35, Me.CrescimentoVendas_prod, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.codbarras_prod, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50, Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53, Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56, Me.DataGridViewTextBoxColumn57, Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn59, Me.DataGridViewTextBoxColumn60, Me.DataGridViewTextBoxColumn61, Me.ConsumoMedio_prod, Me.EstoquePrateleira_prod, Me.EmbalagemFabrica_prod, Me.Apelido_prod, Me.Bugiganga_prod, Me.MarkupNET_prod, Me.CodigoMlb_prod})
+        Me.ProdutosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn35, Me.CrescimentoVendas_prod, Me.DataGridViewTextBoxColumn36, Me.DataGridViewTextBoxColumn37, Me.codbarras_prod, Me.DataGridViewTextBoxColumn38, Me.DataGridViewTextBoxColumn39, Me.DataGridViewTextBoxColumn42, Me.DataGridViewTextBoxColumn43, Me.DataGridViewTextBoxColumn44, Me.DataGridViewTextBoxColumn45, Me.DataGridViewTextBoxColumn46, Me.DataGridViewTextBoxColumn47, Me.DataGridViewTextBoxColumn48, Me.DataGridViewTextBoxColumn49, Me.DataGridViewTextBoxColumn50, Me.DataGridViewTextBoxColumn51, Me.DataGridViewTextBoxColumn52, Me.DataGridViewTextBoxColumn53, Me.DataGridViewTextBoxColumn54, Me.DataGridViewTextBoxColumn55, Me.DataGridViewTextBoxColumn56, Me.DataGridViewTextBoxColumn57, Me.DataGridViewTextBoxColumn58, Me.DataGridViewTextBoxColumn59, Me.DataGridViewTextBoxColumn60, Me.DataGridViewTextBoxColumn61, Me.ConsumoMedio_prod, Me.EstoquePrateleira_prod, Me.EmbalagemFabrica_prod, Me.Apelido_prod, Me.Bugiganga_prod, Me.MarkupNET_prod, Me.CodigoMlb_prod, Me.CodComp1_prod, Me.QtdeComp1_prod, Me.CodComp2_prod, Me.QtdeComp2_prod, Me.CodComp3_prod, Me.QtdeComp3_prod, Me.CodComp4_prod, Me.QtdeComp4_prod, Me.CodComp5_prod, Me.QtdeComp5_prod})
         Me.ProdutosDataGridView.DataSource = Me.ProdutosBindingSource
         Me.ProdutosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProdutosDataGridView.Location = New System.Drawing.Point(3, 175)
         Me.ProdutosDataGridView.Name = "ProdutosDataGridView"
         Me.ProdutosDataGridView.ReadOnly = true
-        Me.ProdutosDataGridView.Size = New System.Drawing.Size(1296, 488)
+        Me.ProdutosDataGridView.Size = New System.Drawing.Size(1256, 481)
         Me.ProdutosDataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn35
-        '
-        Me.DataGridViewTextBoxColumn35.DataPropertyName = "id_codprod"
-        Me.DataGridViewTextBoxColumn35.HeaderText = "id_codprod"
-        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
-        Me.DataGridViewTextBoxColumn35.ReadOnly = true
-        '
-        'CrescimentoVendas_prod
-        '
-        Me.CrescimentoVendas_prod.DataPropertyName = "CrescimentoVendas_prod"
-        Me.CrescimentoVendas_prod.HeaderText = "CrescimentoVendas_prod"
-        Me.CrescimentoVendas_prod.Name = "CrescimentoVendas_prod"
-        Me.CrescimentoVendas_prod.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn36
-        '
-        Me.DataGridViewTextBoxColumn36.DataPropertyName = "cod_prod"
-        Me.DataGridViewTextBoxColumn36.HeaderText = "cod_prod"
-        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
-        Me.DataGridViewTextBoxColumn36.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn37
-        '
-        Me.DataGridViewTextBoxColumn37.DataPropertyName = "cod_prodfor"
-        Me.DataGridViewTextBoxColumn37.HeaderText = "cod_prodfor"
-        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
-        Me.DataGridViewTextBoxColumn37.ReadOnly = true
-        '
-        'codbarras_prod
-        '
-        Me.codbarras_prod.DataPropertyName = "codbarras_prod"
-        Me.codbarras_prod.HeaderText = "codbarras_prod"
-        Me.codbarras_prod.Name = "codbarras_prod"
-        Me.codbarras_prod.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn38
-        '
-        Me.DataGridViewTextBoxColumn38.DataPropertyName = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn38.HeaderText = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
-        Me.DataGridViewTextBoxColumn38.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn39
-        '
-        Me.DataGridViewTextBoxColumn39.DataPropertyName = "linha_prod"
-        Me.DataGridViewTextBoxColumn39.HeaderText = "linha_prod"
-        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
-        Me.DataGridViewTextBoxColumn39.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn42
-        '
-        Me.DataGridViewTextBoxColumn42.DataPropertyName = "nome_prod"
-        Me.DataGridViewTextBoxColumn42.HeaderText = "nome_prod"
-        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
-        Me.DataGridViewTextBoxColumn42.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn43
-        '
-        Me.DataGridViewTextBoxColumn43.DataPropertyName = "cor_prod"
-        Me.DataGridViewTextBoxColumn43.HeaderText = "cor_prod"
-        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
-        Me.DataGridViewTextBoxColumn43.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn44
-        '
-        Me.DataGridViewTextBoxColumn44.DataPropertyName = "precovarejo_prod"
-        Me.DataGridViewTextBoxColumn44.HeaderText = "precovarejo_prod"
-        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
-        Me.DataGridViewTextBoxColumn44.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn45
-        '
-        Me.DataGridViewTextBoxColumn45.DataPropertyName = "precoatacado_prod"
-        Me.DataGridViewTextBoxColumn45.HeaderText = "precoatacado_prod"
-        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
-        Me.DataGridViewTextBoxColumn45.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn46
-        '
-        Me.DataGridViewTextBoxColumn46.DataPropertyName = "markup_prod"
-        Me.DataGridViewTextBoxColumn46.HeaderText = "markup_prod"
-        Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
-        Me.DataGridViewTextBoxColumn46.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn47
-        '
-        Me.DataGridViewTextBoxColumn47.DataPropertyName = "estoquemin_prod"
-        Me.DataGridViewTextBoxColumn47.HeaderText = "estoquemin_prod"
-        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
-        Me.DataGridViewTextBoxColumn47.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn48
-        '
-        Me.DataGridViewTextBoxColumn48.DataPropertyName = "estaquemax_prod"
-        Me.DataGridViewTextBoxColumn48.HeaderText = "estaquemax_prod"
-        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
-        Me.DataGridViewTextBoxColumn48.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn49
-        '
-        Me.DataGridViewTextBoxColumn49.DataPropertyName = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn49.HeaderText = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
-        Me.DataGridViewTextBoxColumn49.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn50
-        '
-        Me.DataGridViewTextBoxColumn50.DataPropertyName = "icms_prod"
-        Me.DataGridViewTextBoxColumn50.HeaderText = "icms_prod"
-        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
-        Me.DataGridViewTextBoxColumn50.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn51
-        '
-        Me.DataGridViewTextBoxColumn51.DataPropertyName = "ipi_prod"
-        Me.DataGridViewTextBoxColumn51.HeaderText = "ipi_prod"
-        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
-        Me.DataGridViewTextBoxColumn51.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn52
-        '
-        Me.DataGridViewTextBoxColumn52.DataPropertyName = "peso_prod"
-        Me.DataGridViewTextBoxColumn52.HeaderText = "peso_prod"
-        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
-        Me.DataGridViewTextBoxColumn52.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn53
-        '
-        Me.DataGridViewTextBoxColumn53.DataPropertyName = "custo_prod"
-        Me.DataGridViewTextBoxColumn53.HeaderText = "custo_prod"
-        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
-        Me.DataGridViewTextBoxColumn53.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn54
-        '
-        Me.DataGridViewTextBoxColumn54.DataPropertyName = "pedcolocados_prod"
-        Me.DataGridViewTextBoxColumn54.HeaderText = "pedcolocados_prod"
-        Me.DataGridViewTextBoxColumn54.Name = "DataGridViewTextBoxColumn54"
-        Me.DataGridViewTextBoxColumn54.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn55
-        '
-        Me.DataGridViewTextBoxColumn55.DataPropertyName = "pedencomendados_prod"
-        Me.DataGridViewTextBoxColumn55.HeaderText = "pedencomendados_prod"
-        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
-        Me.DataGridViewTextBoxColumn55.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn56
-        '
-        Me.DataGridViewTextBoxColumn56.DataPropertyName = "abc_prod"
-        Me.DataGridViewTextBoxColumn56.HeaderText = "abc_prod"
-        Me.DataGridViewTextBoxColumn56.Name = "DataGridViewTextBoxColumn56"
-        Me.DataGridViewTextBoxColumn56.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn57
-        '
-        Me.DataGridViewTextBoxColumn57.DataPropertyName = "tempoentragafor_prod"
-        Me.DataGridViewTextBoxColumn57.HeaderText = "tempoentragafor_prod"
-        Me.DataGridViewTextBoxColumn57.Name = "DataGridViewTextBoxColumn57"
-        Me.DataGridViewTextBoxColumn57.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn58
-        '
-        Me.DataGridViewTextBoxColumn58.DataPropertyName = "porcentagemfat_prod"
-        Me.DataGridViewTextBoxColumn58.HeaderText = "porcentagemfat_prod"
-        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
-        Me.DataGridViewTextBoxColumn58.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn59
-        '
-        Me.DataGridViewTextBoxColumn59.DataPropertyName = "classificfiscal_prod"
-        Me.DataGridViewTextBoxColumn59.HeaderText = "classificfiscal_prod"
-        Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
-        Me.DataGridViewTextBoxColumn59.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn60
-        '
-        Me.DataGridViewTextBoxColumn60.DataPropertyName = "tabelafiscal_prod"
-        Me.DataGridViewTextBoxColumn60.HeaderText = "tabelafiscal_prod"
-        Me.DataGridViewTextBoxColumn60.Name = "DataGridViewTextBoxColumn60"
-        Me.DataGridViewTextBoxColumn60.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn61
-        '
-        Me.DataGridViewTextBoxColumn61.DataPropertyName = "situacao_prod"
-        Me.DataGridViewTextBoxColumn61.HeaderText = "situacao_prod"
-        Me.DataGridViewTextBoxColumn61.Name = "DataGridViewTextBoxColumn61"
-        Me.DataGridViewTextBoxColumn61.ReadOnly = true
-        '
-        'ConsumoMedio_prod
-        '
-        Me.ConsumoMedio_prod.DataPropertyName = "ConsumoMedio_prod"
-        Me.ConsumoMedio_prod.HeaderText = "ConsumoMedio_prod"
-        Me.ConsumoMedio_prod.Name = "ConsumoMedio_prod"
-        Me.ConsumoMedio_prod.ReadOnly = true
-        '
-        'EstoquePrateleira_prod
-        '
-        Me.EstoquePrateleira_prod.DataPropertyName = "EstoquePrateleira_prod"
-        Me.EstoquePrateleira_prod.HeaderText = "EstoquePrateleira_prod"
-        Me.EstoquePrateleira_prod.Name = "EstoquePrateleira_prod"
-        Me.EstoquePrateleira_prod.ReadOnly = true
-        '
-        'EmbalagemFabrica_prod
-        '
-        Me.EmbalagemFabrica_prod.DataPropertyName = "EmbalagemFabrica_prod"
-        Me.EmbalagemFabrica_prod.HeaderText = "EmbalagemFabrica_prod"
-        Me.EmbalagemFabrica_prod.Name = "EmbalagemFabrica_prod"
-        Me.EmbalagemFabrica_prod.ReadOnly = true
-        '
-        'Apelido_prod
-        '
-        Me.Apelido_prod.DataPropertyName = "Apelido_prod"
-        Me.Apelido_prod.HeaderText = "Apelido_prod"
-        Me.Apelido_prod.Name = "Apelido_prod"
-        Me.Apelido_prod.ReadOnly = true
-        '
-        'Bugiganga_prod
-        '
-        Me.Bugiganga_prod.DataPropertyName = "Bugiganga_prod"
-        Me.Bugiganga_prod.HeaderText = "Bugiganga_prod"
-        Me.Bugiganga_prod.Name = "Bugiganga_prod"
-        Me.Bugiganga_prod.ReadOnly = true
-        '
-        'MarkupNET_prod
-        '
-        Me.MarkupNET_prod.DataPropertyName = "MarkupNET_prod"
-        Me.MarkupNET_prod.HeaderText = "MarkupNET_prod"
-        Me.MarkupNET_prod.Name = "MarkupNET_prod"
-        Me.MarkupNET_prod.ReadOnly = true
-        '
-        'CodigoMlb_prod
-        '
-        Me.CodigoMlb_prod.DataPropertyName = "CodigoMlb_prod"
-        Me.CodigoMlb_prod.HeaderText = "CodigoMlb_prod"
-        Me.CodigoMlb_prod.Name = "CodigoMlb_prod"
-        Me.CodigoMlb_prod.ReadOnly = true
         '
         'Panel5
         '
@@ -9957,7 +9951,7 @@ Partial Class Form1
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel5.Location = New System.Drawing.Point(3, 3)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1296, 172)
+        Me.Panel5.Size = New System.Drawing.Size(1256, 172)
         Me.Panel5.TabIndex = 1
         '
         'GroupBox107
@@ -10274,7 +10268,7 @@ Partial Class Form1
         Me.tbpg_listapreco.Location = New System.Drawing.Point(4, 22)
         Me.tbpg_listapreco.Name = "tbpg_listapreco"
         Me.tbpg_listapreco.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_listapreco.Size = New System.Drawing.Size(1302, 666)
+        Me.tbpg_listapreco.Size = New System.Drawing.Size(1262, 659)
         Me.tbpg_listapreco.TabIndex = 2
         Me.tbpg_listapreco.Text = "Lista de preço"
         Me.tbpg_listapreco.UseVisualStyleBackColor = true
@@ -10292,7 +10286,7 @@ Partial Class Form1
         Me.ProdutosDataGridView4.Location = New System.Drawing.Point(3, 128)
         Me.ProdutosDataGridView4.Name = "ProdutosDataGridView4"
         Me.ProdutosDataGridView4.ReadOnly = true
-        Me.ProdutosDataGridView4.Size = New System.Drawing.Size(1296, 535)
+        Me.ProdutosDataGridView4.Size = New System.Drawing.Size(1256, 528)
         Me.ProdutosDataGridView4.TabIndex = 1
         '
         'DataGridViewTextBoxColumn417
@@ -10502,7 +10496,7 @@ Partial Class Form1
         Me.Panel28.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel28.Location = New System.Drawing.Point(3, 3)
         Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(1296, 125)
+        Me.Panel28.Size = New System.Drawing.Size(1256, 125)
         Me.Panel28.TabIndex = 0
         '
         'GroupBox104
@@ -10517,7 +10511,7 @@ Partial Class Form1
         Me.GroupBox104.Size = New System.Drawing.Size(286, 100)
         Me.GroupBox104.TabIndex = 6
         Me.GroupBox104.TabStop = false
-        Me.GroupBox104.Text = "GroupBox104"
+        Me.GroupBox104.Text = "Busca exculsiva Da Bugigangasmil"
         '
         'Button92
         '
@@ -10689,6 +10683,7 @@ Partial Class Form1
         Me.TabControl1.Controls.Add(Me.tbpg_bkup)
         Me.TabControl1.Controls.Add(Me.tbpg_orcamento)
         Me.TabControl1.Controls.Add(Me.tbg_relatorios)
+        Me.TabControl1.Controls.Add(Me.TabPage7)
         Me.TabControl1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.749999!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
@@ -10700,7 +10695,7 @@ Partial Class Form1
         Me.TabControl1.Padding = New System.Drawing.Point(4, 3)
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.ShowToolTips = true
-        Me.TabControl1.Size = New System.Drawing.Size(1324, 756)
+        Me.TabControl1.Size = New System.Drawing.Size(1284, 749)
         Me.TabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight
         Me.TabControl1.TabIndex = 0
         '
@@ -10711,7 +10706,7 @@ Partial Class Form1
         Me.pedidos.Location = New System.Drawing.Point(4, 54)
         Me.pedidos.Name = "pedidos"
         Me.pedidos.Padding = New System.Windows.Forms.Padding(3)
-        Me.pedidos.Size = New System.Drawing.Size(1316, 698)
+        Me.pedidos.Size = New System.Drawing.Size(1276, 691)
         Me.pedidos.TabIndex = 7
         Me.pedidos.Text = "Pedidos"
         '
@@ -10727,7 +10722,7 @@ Partial Class Form1
         Me.TabControlpedidos_nfe.Location = New System.Drawing.Point(3, 3)
         Me.TabControlpedidos_nfe.Name = "TabControlpedidos_nfe"
         Me.TabControlpedidos_nfe.SelectedIndex = 0
-        Me.TabControlpedidos_nfe.Size = New System.Drawing.Size(1310, 692)
+        Me.TabControlpedidos_nfe.Size = New System.Drawing.Size(1270, 685)
         Me.TabControlpedidos_nfe.TabIndex = 0
         '
         'tabpagePedidos_nfe
@@ -10736,7 +10731,7 @@ Partial Class Form1
         Me.tabpagePedidos_nfe.Location = New System.Drawing.Point(4, 25)
         Me.tabpagePedidos_nfe.Name = "tabpagePedidos_nfe"
         Me.tabpagePedidos_nfe.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpagePedidos_nfe.Size = New System.Drawing.Size(1302, 663)
+        Me.tabpagePedidos_nfe.Size = New System.Drawing.Size(1262, 656)
         Me.tabpagePedidos_nfe.TabIndex = 0
         Me.tabpagePedidos_nfe.Text = "Pedidos NFE"
         Me.tabpagePedidos_nfe.UseVisualStyleBackColor = true
@@ -10763,7 +10758,7 @@ Partial Class Form1
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel19.Location = New System.Drawing.Point(3, 3)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel19.Size = New System.Drawing.Size(1256, 650)
         Me.Panel19.TabIndex = 0
         '
         'DateTimePicker34
@@ -10897,10 +10892,10 @@ Partial Class Form1
         Me.ItemPedidosDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ped_orc_item, Me.DataGridViewTextBoxColumn203, Me.DataGridViewTextBoxColumn204, Me.DataGridViewTextBoxColumn205, Me.DataGridViewTextBoxColumn206, Me.DataGridViewTextBoxColumn207, Me.DataGridViewTextBoxColumn208, Me.DataGridViewTextBoxColumn210, Me.DataGridViewTextBoxColumn217, Me.DataGridViewTextBoxColumn202, Me.DataGridViewTextBoxColumn201, Me.peso_item, Me.codprod_item, Me.codpedido_item, Me.custototal_item, Me.DataGridViewTextBoxColumn544, Me.entregue_item, Me.dataentrega_item, Me.codproduto_item, Me.PrecoTabela_item, Me.totalPedido_item, Me.AtacadoVarejo_item})
         Me.ItemPedidosDataGridView.DataSource = Me.ItemPedidosBindingSource
         Me.ItemPedidosDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ItemPedidosDataGridView.Location = New System.Drawing.Point(0, 460)
+        Me.ItemPedidosDataGridView.Location = New System.Drawing.Point(0, 453)
         Me.ItemPedidosDataGridView.Name = "ItemPedidosDataGridView"
         Me.ItemPedidosDataGridView.ReadOnly = true
-        Me.ItemPedidosDataGridView.Size = New System.Drawing.Size(1296, 197)
+        Me.ItemPedidosDataGridView.Size = New System.Drawing.Size(1256, 197)
         Me.ItemPedidosDataGridView.TabIndex = 7
         '
         'ped_orc_item
@@ -11454,7 +11449,7 @@ Partial Class Form1
         Me.MenuStrip5.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarPedidoToolStripMenuItem, Me.ConfirmarPedidoToolStripMenuItem, Me.DeletarPedidoToolStripMenuItem, Me.DesistirOperaçãoToolStripMenuItem3, Me.HabilitarEnvioToolStripMenuItemPedido})
         Me.MenuStrip5.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip5.Name = "MenuStrip5"
-        Me.MenuStrip5.Size = New System.Drawing.Size(1296, 24)
+        Me.MenuStrip5.Size = New System.Drawing.Size(1256, 24)
         Me.MenuStrip5.TabIndex = 0
         Me.MenuStrip5.Text = "MenuStrip5"
         '
@@ -11496,7 +11491,7 @@ Partial Class Form1
         Me.TabPageConsultaPedidos.Location = New System.Drawing.Point(4, 25)
         Me.TabPageConsultaPedidos.Name = "TabPageConsultaPedidos"
         Me.TabPageConsultaPedidos.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageConsultaPedidos.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPageConsultaPedidos.Size = New System.Drawing.Size(1262, 656)
         Me.TabPageConsultaPedidos.TabIndex = 4
         Me.TabPageConsultaPedidos.Text = "Consulta de Pedidos"
         Me.TabPageConsultaPedidos.UseVisualStyleBackColor = true
@@ -11510,10 +11505,10 @@ Partial Class Form1
         Me.ItemPedidosDataGridView8.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn713, Me.DataGridViewTextBoxColumn714, Me.DataGridViewTextBoxColumn715, Me.DataGridViewTextBoxColumn716, Me.DataGridViewTextBoxColumn717, Me.DataGridViewTextBoxColumn718, Me.DataGridViewTextBoxColumn719, Me.DataGridViewTextBoxColumn720, Me.DataGridViewTextBoxColumn721, Me.DataGridViewTextBoxColumn722, Me.DataGridViewTextBoxColumn723, Me.DataGridViewTextBoxColumn724, Me.DataGridViewTextBoxColumn725, Me.DataGridViewTextBoxColumn726, Me.DataGridViewTextBoxColumn727, Me.DataGridViewTextBoxColumn728, Me.DataGridViewTextBoxColumn729, Me.DataGridViewTextBoxColumn730, Me.DataGridViewTextBoxColumn731, Me.DataGridViewTextBoxColumn732, Me.DataGridViewTextBoxColumn733, Me.DataGridViewTextBoxColumn734, Me.DataGridViewTextBoxColumn735, Me.DataGridViewTextBoxColumn736, Me.DataGridViewTextBoxColumn737, Me.DataGridViewTextBoxColumn738, Me.DataGridViewTextBoxColumn739})
         Me.ItemPedidosDataGridView8.DataSource = Me.ItemPedidosBindingSource
         Me.ItemPedidosDataGridView8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ItemPedidosDataGridView8.Location = New System.Drawing.Point(674, 190)
+        Me.ItemPedidosDataGridView8.Location = New System.Drawing.Point(634, 190)
         Me.ItemPedidosDataGridView8.Name = "ItemPedidosDataGridView8"
         Me.ItemPedidosDataGridView8.ReadOnly = true
-        Me.ItemPedidosDataGridView8.Size = New System.Drawing.Size(625, 470)
+        Me.ItemPedidosDataGridView8.Size = New System.Drawing.Size(625, 463)
         Me.ItemPedidosDataGridView8.TabIndex = 2
         '
         'DataGridViewTextBoxColumn713
@@ -11718,7 +11713,7 @@ Partial Class Form1
         Me.PedidoNFEDataGridView.Location = New System.Drawing.Point(3, 190)
         Me.PedidoNFEDataGridView.Name = "PedidoNFEDataGridView"
         Me.PedidoNFEDataGridView.ReadOnly = true
-        Me.PedidoNFEDataGridView.Size = New System.Drawing.Size(636, 470)
+        Me.PedidoNFEDataGridView.Size = New System.Drawing.Size(636, 463)
         Me.PedidoNFEDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn66
@@ -11877,7 +11872,7 @@ Partial Class Form1
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel15.Location = New System.Drawing.Point(3, 3)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(1296, 187)
+        Me.Panel15.Size = New System.Drawing.Size(1256, 187)
         Me.Panel15.TabIndex = 0
         '
         'Label252
@@ -12139,7 +12134,7 @@ Partial Class Form1
         Me.tabpageProdutos_nfe.Location = New System.Drawing.Point(4, 25)
         Me.tabpageProdutos_nfe.Name = "tabpageProdutos_nfe"
         Me.tabpageProdutos_nfe.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpageProdutos_nfe.Size = New System.Drawing.Size(1302, 663)
+        Me.tabpageProdutos_nfe.Size = New System.Drawing.Size(1262, 656)
         Me.tabpageProdutos_nfe.TabIndex = 1
         Me.tabpageProdutos_nfe.Text = "Produtos"
         Me.tabpageProdutos_nfe.UseVisualStyleBackColor = true
@@ -12157,7 +12152,7 @@ Partial Class Form1
         Me.ProdutosDataGridView1.Location = New System.Drawing.Point(3, 119)
         Me.ProdutosDataGridView1.Name = "ProdutosDataGridView1"
         Me.ProdutosDataGridView1.ReadOnly = true
-        Me.ProdutosDataGridView1.Size = New System.Drawing.Size(1296, 541)
+        Me.ProdutosDataGridView1.Size = New System.Drawing.Size(1256, 534)
         Me.ProdutosDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn137
@@ -12343,7 +12338,7 @@ Partial Class Form1
         Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel16.Location = New System.Drawing.Point(3, 3)
         Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1296, 116)
+        Me.Panel16.Size = New System.Drawing.Size(1256, 116)
         Me.Panel16.TabIndex = 0
         '
         'GroupBox34
@@ -12469,7 +12464,7 @@ Partial Class Form1
         Me.TabPageClientes_nfe.Location = New System.Drawing.Point(4, 25)
         Me.TabPageClientes_nfe.Name = "TabPageClientes_nfe"
         Me.TabPageClientes_nfe.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageClientes_nfe.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPageClientes_nfe.Size = New System.Drawing.Size(1262, 656)
         Me.TabPageClientes_nfe.TabIndex = 2
         Me.TabPageClientes_nfe.Text = "Clientes"
         Me.TabPageClientes_nfe.UseVisualStyleBackColor = true
@@ -12487,7 +12482,7 @@ Partial Class Form1
         Me.ClienteDataGridView1.Location = New System.Drawing.Point(3, 162)
         Me.ClienteDataGridView1.Name = "ClienteDataGridView1"
         Me.ClienteDataGridView1.ReadOnly = true
-        Me.ClienteDataGridView1.Size = New System.Drawing.Size(1296, 498)
+        Me.ClienteDataGridView1.Size = New System.Drawing.Size(1256, 491)
         Me.ClienteDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn165
@@ -12659,7 +12654,7 @@ Partial Class Form1
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel17.Location = New System.Drawing.Point(3, 3)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(1296, 159)
+        Me.Panel17.Size = New System.Drawing.Size(1256, 159)
         Me.Panel17.TabIndex = 0
         '
         'Button8
@@ -12723,7 +12718,7 @@ Partial Class Form1
         Me.TabPageTransportadora_nfe.Location = New System.Drawing.Point(4, 25)
         Me.TabPageTransportadora_nfe.Name = "TabPageTransportadora_nfe"
         Me.TabPageTransportadora_nfe.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPageTransportadora_nfe.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPageTransportadora_nfe.Size = New System.Drawing.Size(1262, 656)
         Me.TabPageTransportadora_nfe.TabIndex = 3
         Me.TabPageTransportadora_nfe.Text = "Transportadoras"
         Me.TabPageTransportadora_nfe.UseVisualStyleBackColor = true
@@ -12741,7 +12736,7 @@ Partial Class Form1
         Me.TransportadorasDataGridView.Location = New System.Drawing.Point(3, 160)
         Me.TransportadorasDataGridView.Name = "TransportadorasDataGridView"
         Me.TransportadorasDataGridView.ReadOnly = true
-        Me.TransportadorasDataGridView.Size = New System.Drawing.Size(1296, 500)
+        Me.TransportadorasDataGridView.Size = New System.Drawing.Size(1256, 493)
         Me.TransportadorasDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn188
@@ -12843,7 +12838,7 @@ Partial Class Form1
         Me.Panel18.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel18.Location = New System.Drawing.Point(3, 3)
         Me.Panel18.Name = "Panel18"
-        Me.Panel18.Size = New System.Drawing.Size(1296, 157)
+        Me.Panel18.Size = New System.Drawing.Size(1256, 157)
         Me.Panel18.TabIndex = 0
         '
         'Button9
@@ -12909,7 +12904,7 @@ Partial Class Form1
         Me.TabPage9.Location = New System.Drawing.Point(4, 25)
         Me.TabPage9.Name = "TabPage9"
         Me.TabPage9.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage9.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage9.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage9.TabIndex = 5
         Me.TabPage9.Text = "Comissão Vendas"
         Me.TabPage9.UseVisualStyleBackColor = true
@@ -12923,10 +12918,10 @@ Partial Class Form1
         Me.ItemPedidosDataGridView7.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn686, Me.DataGridViewTextBoxColumn687, Me.DataGridViewTextBoxColumn688, Me.DataGridViewTextBoxColumn689, Me.DataGridViewTextBoxColumn690, Me.DataGridViewTextBoxColumn691, Me.DataGridViewTextBoxColumn692, Me.DataGridViewTextBoxColumn693, Me.DataGridViewTextBoxColumn694, Me.DataGridViewTextBoxColumn695, Me.DataGridViewTextBoxColumn696, Me.DataGridViewTextBoxColumn697, Me.DataGridViewTextBoxColumn698, Me.DataGridViewTextBoxColumn699, Me.DataGridViewTextBoxColumn700, Me.DataGridViewTextBoxColumn701, Me.DataGridViewTextBoxColumn702, Me.DataGridViewTextBoxColumn703, Me.DataGridViewTextBoxColumn704, Me.DataGridViewTextBoxColumn705, Me.DataGridViewTextBoxColumn706, Me.DataGridViewTextBoxColumn707, Me.DataGridViewTextBoxColumn708, Me.DataGridViewTextBoxColumn709, Me.DataGridViewTextBoxColumn710, Me.DataGridViewTextBoxColumn711, Me.DataGridViewTextBoxColumn712})
         Me.ItemPedidosDataGridView7.DataSource = Me.ItemPedidosBindingSource
         Me.ItemPedidosDataGridView7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ItemPedidosDataGridView7.Location = New System.Drawing.Point(818, 410)
+        Me.ItemPedidosDataGridView7.Location = New System.Drawing.Point(778, 410)
         Me.ItemPedidosDataGridView7.Name = "ItemPedidosDataGridView7"
         Me.ItemPedidosDataGridView7.ReadOnly = true
-        Me.ItemPedidosDataGridView7.Size = New System.Drawing.Size(481, 250)
+        Me.ItemPedidosDataGridView7.Size = New System.Drawing.Size(481, 243)
         Me.ItemPedidosDataGridView7.TabIndex = 2
         '
         'DataGridViewTextBoxColumn686
@@ -13131,7 +13126,7 @@ Partial Class Form1
         Me.PedidoNFEDataGridView2.Location = New System.Drawing.Point(3, 410)
         Me.PedidoNFEDataGridView2.Name = "PedidoNFEDataGridView2"
         Me.PedidoNFEDataGridView2.ReadOnly = true
-        Me.PedidoNFEDataGridView2.Size = New System.Drawing.Size(517, 250)
+        Me.PedidoNFEDataGridView2.Size = New System.Drawing.Size(517, 243)
         Me.PedidoNFEDataGridView2.TabIndex = 1
         '
         'DataGridViewTextBoxColumn563
@@ -13328,7 +13323,7 @@ Partial Class Form1
         Me.Panel35.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel35.Location = New System.Drawing.Point(3, 3)
         Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(1296, 407)
+        Me.Panel35.Size = New System.Drawing.Size(1256, 407)
         Me.Panel35.TabIndex = 0
         '
         'Label264
@@ -13830,7 +13825,7 @@ Partial Class Form1
         Me.tabpage_NFE_e.Location = New System.Drawing.Point(4, 54)
         Me.tabpage_NFE_e.Name = "tabpage_NFE_e"
         Me.tabpage_NFE_e.Padding = New System.Windows.Forms.Padding(3)
-        Me.tabpage_NFE_e.Size = New System.Drawing.Size(1316, 698)
+        Me.tabpage_NFE_e.Size = New System.Drawing.Size(1276, 691)
         Me.tabpage_NFE_e.TabIndex = 8
         Me.tabpage_NFE_e.Text = "Nota Fiscal"
         '
@@ -13845,7 +13840,7 @@ Partial Class Form1
         Me.TabControl_NFE.Location = New System.Drawing.Point(3, 3)
         Me.TabControl_NFE.Name = "TabControl_NFE"
         Me.TabControl_NFE.SelectedIndex = 0
-        Me.TabControl_NFE.Size = New System.Drawing.Size(1310, 692)
+        Me.TabControl_NFE.Size = New System.Drawing.Size(1270, 685)
         Me.TabControl_NFE.TabIndex = 0
         '
         'TabPage_NFE
@@ -13877,7 +13872,7 @@ Partial Class Form1
         Me.TabPage_NFE.Location = New System.Drawing.Point(4, 25)
         Me.TabPage_NFE.Name = "TabPage_NFE"
         Me.TabPage_NFE.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_NFE.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage_NFE.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage_NFE.TabIndex = 0
         Me.TabPage_NFE.Text = "NFE"
         '
@@ -13974,7 +13969,7 @@ Partial Class Form1
         Me.ItemPedidosDataGridView1.Location = New System.Drawing.Point(3, 508)
         Me.ItemPedidosDataGridView1.Name = "ItemPedidosDataGridView1"
         Me.ItemPedidosDataGridView1.ReadOnly = true
-        Me.ItemPedidosDataGridView1.Size = New System.Drawing.Size(1279, 183)
+        Me.ItemPedidosDataGridView1.Size = New System.Drawing.Size(1239, 183)
         Me.ItemPedidosDataGridView1.TabIndex = 75
         '
         'IdItemNfeEmitidaDataGridViewTextBoxColumn
@@ -15202,7 +15197,7 @@ Partial Class Form1
         Me.TabPage_PedidosNFE.Location = New System.Drawing.Point(4, 25)
         Me.TabPage_PedidosNFE.Name = "TabPage_PedidosNFE"
         Me.TabPage_PedidosNFE.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_PedidosNFE.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage_PedidosNFE.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage_PedidosNFE.TabIndex = 1
         Me.TabPage_PedidosNFE.Text = "Pedidos"
         Me.TabPage_PedidosNFE.UseVisualStyleBackColor = true
@@ -15219,10 +15214,10 @@ Partial Class Form1
         Me.ItemPedidosDataGridView2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn379, Me.DataGridViewTextBoxColumn358, Me.DataGridViewTextBoxColumn312, Me.DataGridViewTextBoxColumn356, Me.DataGridViewTextBoxColumn359, Me.DataGridViewTextBoxColumn361, Me.qtdeNfe_item, Me.DataGridViewTextBoxColumn370, Me.DataGridViewTextBoxColumn362, Me.DataGridViewTextBoxColumn363, Me.DataGridViewTextBoxColumn364, Me.DataGridViewTextBoxColumn371, Me.DataGridViewTextBoxColumn372, Me.DataGridViewTextBoxColumn373, Me.DataGridViewTextBoxColumn357, Me.DataGridViewTextBoxColumn376, Me.DataGridViewTextBoxColumn377, Me.DataGridViewTextBoxColumn378, Me.DataGridViewTextBoxColumn380, Me.DataGridViewTextBoxColumn360, Me.DataGridViewTextBoxColumn304, Me.DataGridViewTextBoxColumn375, Me.DataGridViewTextBoxColumn374, Me.DataGridViewTextBoxColumn305})
         Me.ItemPedidosDataGridView2.DataSource = Me.ItemPedidosBindingSource
         Me.ItemPedidosDataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ItemPedidosDataGridView2.Location = New System.Drawing.Point(3, 477)
+        Me.ItemPedidosDataGridView2.Location = New System.Drawing.Point(3, 470)
         Me.ItemPedidosDataGridView2.Name = "ItemPedidosDataGridView2"
         Me.ItemPedidosDataGridView2.ReadOnly = true
-        Me.ItemPedidosDataGridView2.Size = New System.Drawing.Size(1296, 183)
+        Me.ItemPedidosDataGridView2.Size = New System.Drawing.Size(1256, 183)
         Me.ItemPedidosDataGridView2.TabIndex = 3
         '
         'DataGridViewTextBoxColumn379
@@ -15425,7 +15420,7 @@ Partial Class Form1
         Me.Panel26.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel26.Location = New System.Drawing.Point(3, 422)
         Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(1296, 238)
+        Me.Panel26.Size = New System.Drawing.Size(1256, 231)
         Me.Panel26.TabIndex = 2
         '
         'Label48
@@ -15453,7 +15448,7 @@ Partial Class Form1
         Me.PedidoNFEDataGridView1.Location = New System.Drawing.Point(3, 115)
         Me.PedidoNFEDataGridView1.Name = "PedidoNFEDataGridView1"
         Me.PedidoNFEDataGridView1.ReadOnly = true
-        Me.PedidoNFEDataGridView1.Size = New System.Drawing.Size(1296, 307)
+        Me.PedidoNFEDataGridView1.Size = New System.Drawing.Size(1256, 307)
         Me.PedidoNFEDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn110
@@ -15586,7 +15581,7 @@ Partial Class Form1
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel20.Location = New System.Drawing.Point(3, 3)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1296, 112)
+        Me.Panel20.Size = New System.Drawing.Size(1256, 112)
         Me.Panel20.TabIndex = 0
         '
         'GroupBox49
@@ -15780,7 +15775,7 @@ Partial Class Form1
         Me.TbPg_consultaNFe.Location = New System.Drawing.Point(4, 25)
         Me.TbPg_consultaNFe.Name = "TbPg_consultaNFe"
         Me.TbPg_consultaNFe.Padding = New System.Windows.Forms.Padding(3)
-        Me.TbPg_consultaNFe.Size = New System.Drawing.Size(1302, 663)
+        Me.TbPg_consultaNFe.Size = New System.Drawing.Size(1262, 656)
         Me.TbPg_consultaNFe.TabIndex = 2
         Me.TbPg_consultaNFe.Text = "Consulta NFE"
         Me.TbPg_consultaNFe.UseVisualStyleBackColor = true
@@ -15797,10 +15792,10 @@ Partial Class Form1
         Me.ItemNfeEmitidaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn381, Me.DataGridViewTextBoxColumn408, Me.DataGridViewTextBoxColumn409, Me.DataGridViewTextBoxColumn410, Me.DataGridViewTextBoxColumn411, Me.DataGridViewTextBoxColumn412, Me.DataGridViewTextBoxColumn413, Me.DataGridViewTextBoxColumn414})
         Me.ItemNfeEmitidaDataGridView.DataSource = Me.ItemNfeEmitidaBindingSource
         Me.ItemNfeEmitidaDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.ItemNfeEmitidaDataGridView.Location = New System.Drawing.Point(3, 440)
+        Me.ItemNfeEmitidaDataGridView.Location = New System.Drawing.Point(3, 433)
         Me.ItemNfeEmitidaDataGridView.Name = "ItemNfeEmitidaDataGridView"
         Me.ItemNfeEmitidaDataGridView.ReadOnly = true
-        Me.ItemNfeEmitidaDataGridView.Size = New System.Drawing.Size(1296, 220)
+        Me.ItemNfeEmitidaDataGridView.Size = New System.Drawing.Size(1256, 220)
         Me.ItemNfeEmitidaDataGridView.TabIndex = 3
         '
         'DataGridViewTextBoxColumn381
@@ -15873,7 +15868,7 @@ Partial Class Form1
         Me.Panel27.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel27.Location = New System.Drawing.Point(3, 371)
         Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(1296, 289)
+        Me.Panel27.Size = New System.Drawing.Size(1256, 282)
         Me.Panel27.TabIndex = 2
         '
         'NFE_EmitidasDataGridView
@@ -15891,7 +15886,7 @@ Partial Class Form1
         Me.NFE_EmitidasDataGridView.Location = New System.Drawing.Point(3, 103)
         Me.NFE_EmitidasDataGridView.Name = "NFE_EmitidasDataGridView"
         Me.NFE_EmitidasDataGridView.ReadOnly = true
-        Me.NFE_EmitidasDataGridView.Size = New System.Drawing.Size(1296, 268)
+        Me.NFE_EmitidasDataGridView.Size = New System.Drawing.Size(1256, 268)
         Me.NFE_EmitidasDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn306
@@ -16252,7 +16247,7 @@ Partial Class Form1
         Me.Panel21.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel21.Location = New System.Drawing.Point(3, 3)
         Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(1296, 100)
+        Me.Panel21.Size = New System.Drawing.Size(1256, 100)
         Me.Panel21.TabIndex = 0
         '
         'GroupBox76
@@ -16361,7 +16356,7 @@ Partial Class Form1
         Me.tbpg_transNfe.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_transNfe.Name = "tbpg_transNfe"
         Me.tbpg_transNfe.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_transNfe.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_transNfe.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_transNfe.TabIndex = 3
         Me.tbpg_transNfe.Text = "Transportadoras"
         Me.tbpg_transNfe.UseVisualStyleBackColor = true
@@ -16381,7 +16376,7 @@ Partial Class Form1
         Me.TransportadorasDataGridView1.Location = New System.Drawing.Point(3, 139)
         Me.TransportadorasDataGridView1.Name = "TransportadorasDataGridView1"
         Me.TransportadorasDataGridView1.ReadOnly = true
-        Me.TransportadorasDataGridView1.Size = New System.Drawing.Size(1296, 521)
+        Me.TransportadorasDataGridView1.Size = New System.Drawing.Size(1256, 514)
         Me.TransportadorasDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn134
@@ -16495,7 +16490,7 @@ Partial Class Form1
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel3.Location = New System.Drawing.Point(3, 3)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1296, 136)
+        Me.Panel3.Size = New System.Drawing.Size(1256, 136)
         Me.Panel3.TabIndex = 0
         '
         'GroupBox50
@@ -16549,7 +16544,7 @@ Partial Class Form1
         Me.TabPage_NFE2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage_NFE2.Name = "TabPage_NFE2"
         Me.TabPage_NFE2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage_NFE2.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage_NFE2.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage_NFE2.TabIndex = 4
         Me.TabPage_NFE2.Text = "NFE 2"
         Me.TabPage_NFE2.UseVisualStyleBackColor = true
@@ -16560,7 +16555,7 @@ Partial Class Form1
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel47.Location = New System.Drawing.Point(3, 3)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(1296, 657)
+        Me.Panel47.Size = New System.Drawing.Size(1256, 650)
         Me.Panel47.TabIndex = 0
         '
         'Tabpg_cupomfiscal
@@ -16570,7 +16565,7 @@ Partial Class Form1
         Me.Tabpg_cupomfiscal.Location = New System.Drawing.Point(4, 54)
         Me.Tabpg_cupomfiscal.Name = "Tabpg_cupomfiscal"
         Me.Tabpg_cupomfiscal.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tabpg_cupomfiscal.Size = New System.Drawing.Size(1316, 698)
+        Me.Tabpg_cupomfiscal.Size = New System.Drawing.Size(1276, 691)
         Me.Tabpg_cupomfiscal.TabIndex = 9
         Me.Tabpg_cupomfiscal.Text = "Vendas Balcão"
         '
@@ -16584,7 +16579,7 @@ Partial Class Form1
         Me.tbcotrl_pdv.Location = New System.Drawing.Point(3, 3)
         Me.tbcotrl_pdv.Name = "tbcotrl_pdv"
         Me.tbcotrl_pdv.SelectedIndex = 0
-        Me.tbcotrl_pdv.Size = New System.Drawing.Size(1310, 692)
+        Me.tbcotrl_pdv.Size = New System.Drawing.Size(1270, 685)
         Me.tbcotrl_pdv.TabIndex = 0
         '
         'tbpg_vendabalcao
@@ -16595,7 +16590,7 @@ Partial Class Form1
         Me.tbpg_vendabalcao.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_vendabalcao.Name = "tbpg_vendabalcao"
         Me.tbpg_vendabalcao.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_vendabalcao.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_vendabalcao.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_vendabalcao.TabIndex = 0
         Me.tbpg_vendabalcao.Text = "Venda Balcão"
         Me.tbpg_vendabalcao.UseVisualStyleBackColor = true
@@ -16614,7 +16609,7 @@ Partial Class Form1
         Me.BalcaoDataGridView.Location = New System.Drawing.Point(269, 3)
         Me.BalcaoDataGridView.Name = "BalcaoDataGridView"
         Me.BalcaoDataGridView.ReadOnly = true
-        Me.BalcaoDataGridView.Size = New System.Drawing.Size(1030, 657)
+        Me.BalcaoDataGridView.Size = New System.Drawing.Size(990, 650)
         Me.BalcaoDataGridView.TabIndex = 2
         '
         'DataGridViewTextBoxColumn656
@@ -16766,7 +16761,7 @@ Partial Class Form1
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel41.Location = New System.Drawing.Point(3, 3)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(266, 657)
+        Me.Panel41.Size = New System.Drawing.Size(266, 650)
         Me.Panel41.TabIndex = 2
         '
         'Button84
@@ -17068,7 +17063,7 @@ Partial Class Form1
         Me.tbpg_produtosPDV.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_produtosPDV.Name = "tbpg_produtosPDV"
         Me.tbpg_produtosPDV.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_produtosPDV.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_produtosPDV.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_produtosPDV.TabIndex = 1
         Me.tbpg_produtosPDV.Text = "Produtos"
         Me.tbpg_produtosPDV.UseVisualStyleBackColor = true
@@ -17086,7 +17081,7 @@ Partial Class Form1
         Me.ProdutosDataGridView2.Location = New System.Drawing.Point(3, 206)
         Me.ProdutosDataGridView2.Name = "ProdutosDataGridView2"
         Me.ProdutosDataGridView2.ReadOnly = true
-        Me.ProdutosDataGridView2.Size = New System.Drawing.Size(1296, 454)
+        Me.ProdutosDataGridView2.Size = New System.Drawing.Size(1256, 447)
         Me.ProdutosDataGridView2.TabIndex = 1
         '
         'DataGridViewTextBoxColumn328
@@ -17302,7 +17297,7 @@ Partial Class Form1
         Me.Panel24.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel24.Location = New System.Drawing.Point(3, 3)
         Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(1296, 203)
+        Me.Panel24.Size = New System.Drawing.Size(1256, 203)
         Me.Panel24.TabIndex = 0
         '
         'GroupBox103
@@ -17616,7 +17611,7 @@ Partial Class Form1
         Me.tbpg_VendasBalcao.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_VendasBalcao.Name = "tbpg_VendasBalcao"
         Me.tbpg_VendasBalcao.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_VendasBalcao.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_VendasBalcao.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_VendasBalcao.TabIndex = 2
         Me.tbpg_VendasBalcao.Text = "Histórico Vendas Balcão"
         Me.tbpg_VendasBalcao.UseVisualStyleBackColor = true
@@ -17634,7 +17629,7 @@ Partial Class Form1
         Me.BalcaoDataGridView1.Location = New System.Drawing.Point(3, 193)
         Me.BalcaoDataGridView1.Name = "BalcaoDataGridView1"
         Me.BalcaoDataGridView1.ReadOnly = true
-        Me.BalcaoDataGridView1.Size = New System.Drawing.Size(1296, 467)
+        Me.BalcaoDataGridView1.Size = New System.Drawing.Size(1256, 460)
         Me.BalcaoDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn461
@@ -17766,7 +17761,7 @@ Partial Class Form1
         Me.Panel30.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel30.Location = New System.Drawing.Point(3, 3)
         Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(1296, 190)
+        Me.Panel30.Size = New System.Drawing.Size(1256, 190)
         Me.Panel30.TabIndex = 0
         '
         'GroupBox11
@@ -17992,7 +17987,7 @@ Partial Class Form1
         Me.TabPage6.Location = New System.Drawing.Point(4, 25)
         Me.TabPage6.Name = "TabPage6"
         Me.TabPage6.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage6.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage6.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage6.TabIndex = 3
         Me.TabPage6.Text = "Comissão Balcão"
         Me.TabPage6.UseVisualStyleBackColor = true
@@ -18009,7 +18004,7 @@ Partial Class Form1
         Me.BalcaoDataGridView3.Location = New System.Drawing.Point(3, 210)
         Me.BalcaoDataGridView3.Name = "BalcaoDataGridView3"
         Me.BalcaoDataGridView3.ReadOnly = true
-        Me.BalcaoDataGridView3.Size = New System.Drawing.Size(1296, 450)
+        Me.BalcaoDataGridView3.Size = New System.Drawing.Size(1256, 443)
         Me.BalcaoDataGridView3.TabIndex = 1
         '
         'DataGridViewTextBoxColumn545
@@ -18146,7 +18141,7 @@ Partial Class Form1
         Me.Panel34.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel34.Location = New System.Drawing.Point(3, 3)
         Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(1296, 207)
+        Me.Panel34.Size = New System.Drawing.Size(1256, 207)
         Me.Panel34.TabIndex = 0
         '
         'GroupBox100
@@ -18465,7 +18460,7 @@ Partial Class Form1
         Me.tbpg_bkup.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_bkup.Name = "tbpg_bkup"
         Me.tbpg_bkup.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_bkup.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_bkup.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_bkup.TabIndex = 10
         Me.tbpg_bkup.Text = "Back Up"
         '
@@ -18485,7 +18480,7 @@ Partial Class Form1
         Me.Panel25.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel25.Location = New System.Drawing.Point(3, 3)
         Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(1310, 692)
+        Me.Panel25.Size = New System.Drawing.Size(1270, 685)
         Me.Panel25.TabIndex = 0
         '
         'Button65
@@ -18584,7 +18579,7 @@ Partial Class Form1
         Me.tbpg_orcamento.Location = New System.Drawing.Point(4, 54)
         Me.tbpg_orcamento.Name = "tbpg_orcamento"
         Me.tbpg_orcamento.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_orcamento.Size = New System.Drawing.Size(1316, 698)
+        Me.tbpg_orcamento.Size = New System.Drawing.Size(1276, 691)
         Me.tbpg_orcamento.TabIndex = 11
         Me.tbpg_orcamento.Text = "Mala direta"
         '
@@ -18597,7 +18592,7 @@ Partial Class Form1
         Me.EmailErroCliente.Location = New System.Drawing.Point(3, 3)
         Me.EmailErroCliente.Name = "EmailErroCliente"
         Me.EmailErroCliente.SelectedIndex = 0
-        Me.EmailErroCliente.Size = New System.Drawing.Size(1310, 716)
+        Me.EmailErroCliente.Size = New System.Drawing.Size(1270, 716)
         Me.EmailErroCliente.TabIndex = 0
         '
         'tbpg_FazerOrcamento
@@ -18609,7 +18604,7 @@ Partial Class Form1
         Me.tbpg_FazerOrcamento.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_FazerOrcamento.Name = "tbpg_FazerOrcamento"
         Me.tbpg_FazerOrcamento.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_FazerOrcamento.Size = New System.Drawing.Size(1302, 687)
+        Me.tbpg_FazerOrcamento.Size = New System.Drawing.Size(1262, 687)
         Me.tbpg_FazerOrcamento.TabIndex = 0
         Me.tbpg_FazerOrcamento.Text = "Cadastro Orçamento"
         '
@@ -18629,7 +18624,7 @@ Partial Class Form1
         Me.GroupBox44.Dock = System.Windows.Forms.DockStyle.Fill
         Me.GroupBox44.Location = New System.Drawing.Point(3, 27)
         Me.GroupBox44.Name = "GroupBox44"
-        Me.GroupBox44.Size = New System.Drawing.Size(1296, 657)
+        Me.GroupBox44.Size = New System.Drawing.Size(1256, 657)
         Me.GroupBox44.TabIndex = 15
         Me.GroupBox44.TabStop = false
         Me.GroupBox44.Text = "Dados Cadastrais"
@@ -18720,7 +18715,7 @@ Partial Class Form1
         Me.MenuStrip7.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GerarToolStripMenuItem, Me.ApagarToolStripMenuItem2})
         Me.MenuStrip7.Location = New System.Drawing.Point(3, 3)
         Me.MenuStrip7.Name = "MenuStrip7"
-        Me.MenuStrip7.Size = New System.Drawing.Size(1296, 24)
+        Me.MenuStrip7.Size = New System.Drawing.Size(1256, 24)
         Me.MenuStrip7.TabIndex = 0
         Me.MenuStrip7.Text = "MenuStrip7"
         '
@@ -18744,7 +18739,7 @@ Partial Class Form1
         Me.tbpg_orcConsulta.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_orcConsulta.Name = "tbpg_orcConsulta"
         Me.tbpg_orcConsulta.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_orcConsulta.Size = New System.Drawing.Size(1302, 687)
+        Me.tbpg_orcConsulta.Size = New System.Drawing.Size(1262, 687)
         Me.tbpg_orcConsulta.TabIndex = 1
         Me.tbpg_orcConsulta.Text = "Consulta Orçamentos"
         Me.tbpg_orcConsulta.UseVisualStyleBackColor = true
@@ -18759,7 +18754,7 @@ Partial Class Form1
         Me.ClienteDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn339, Me.DataGridViewTextBoxColumn340, Me.telefone_cliente, Me.DataGridViewTextBoxColumn383, Me.nfantasia_cliente})
         Me.ClienteDataGridView.DataSource = Me.ClienteBindingSource
         Me.ClienteDataGridView.Dock = System.Windows.Forms.DockStyle.Right
-        Me.ClienteDataGridView.Location = New System.Drawing.Point(703, 143)
+        Me.ClienteDataGridView.Location = New System.Drawing.Point(663, 143)
         Me.ClienteDataGridView.Name = "ClienteDataGridView"
         Me.ClienteDataGridView.ReadOnly = true
         Me.ClienteDataGridView.Size = New System.Drawing.Size(596, 541)
@@ -18873,7 +18868,7 @@ Partial Class Form1
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Location = New System.Drawing.Point(3, 3)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(1296, 140)
+        Me.Panel13.Size = New System.Drawing.Size(1256, 140)
         Me.Panel13.TabIndex = 0
         '
         'GroupBox8
@@ -18957,7 +18952,7 @@ Partial Class Form1
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(1302, 687)
+        Me.TabPage1.Size = New System.Drawing.Size(1262, 687)
         Me.TabPage1.TabIndex = 2
         Me.TabPage1.Text = "Emails de clientes errados"
         Me.TabPage1.UseVisualStyleBackColor = true
@@ -18975,7 +18970,7 @@ Partial Class Form1
         Me.EmailErroClienteDataGridView.Location = New System.Drawing.Point(3, 143)
         Me.EmailErroClienteDataGridView.Name = "EmailErroClienteDataGridView"
         Me.EmailErroClienteDataGridView.ReadOnly = true
-        Me.EmailErroClienteDataGridView.Size = New System.Drawing.Size(1296, 541)
+        Me.EmailErroClienteDataGridView.Size = New System.Drawing.Size(1256, 541)
         Me.EmailErroClienteDataGridView.TabIndex = 1
         '
         'DataGridViewTextBoxColumn341
@@ -19029,7 +19024,7 @@ Partial Class Form1
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel14.Location = New System.Drawing.Point(3, 3)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(1296, 140)
+        Me.Panel14.Size = New System.Drawing.Size(1256, 140)
         Me.Panel14.TabIndex = 0
         '
         'tbg_relatorios
@@ -19039,7 +19034,7 @@ Partial Class Form1
         Me.tbg_relatorios.Location = New System.Drawing.Point(4, 54)
         Me.tbg_relatorios.Name = "tbg_relatorios"
         Me.tbg_relatorios.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbg_relatorios.Size = New System.Drawing.Size(1316, 698)
+        Me.tbg_relatorios.Size = New System.Drawing.Size(1276, 691)
         Me.tbg_relatorios.TabIndex = 12
         Me.tbg_relatorios.Text = "Relatórios"
         '
@@ -19057,7 +19052,7 @@ Partial Class Form1
         Me.TabControl4.Location = New System.Drawing.Point(3, 3)
         Me.TabControl4.Name = "TabControl4"
         Me.TabControl4.SelectedIndex = 0
-        Me.TabControl4.Size = New System.Drawing.Size(1310, 692)
+        Me.TabControl4.Size = New System.Drawing.Size(1270, 685)
         Me.TabControl4.TabIndex = 0
         '
         'tbpg_OrcRel
@@ -19067,7 +19062,7 @@ Partial Class Form1
         Me.tbpg_OrcRel.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_OrcRel.Name = "tbpg_OrcRel"
         Me.tbpg_OrcRel.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_OrcRel.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_OrcRel.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_OrcRel.TabIndex = 0
         Me.tbpg_OrcRel.Text = "Orçamento"
         Me.tbpg_OrcRel.UseVisualStyleBackColor = true
@@ -19193,7 +19188,7 @@ Partial Class Form1
         Me.Panel29.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel29.Location = New System.Drawing.Point(3, 3)
         Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(1296, 131)
+        Me.Panel29.Size = New System.Drawing.Size(1256, 131)
         Me.Panel29.TabIndex = 0
         '
         'Label49
@@ -19272,7 +19267,7 @@ Partial Class Form1
         Me.tbpg_pedRel.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_pedRel.Name = "tbpg_pedRel"
         Me.tbpg_pedRel.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_pedRel.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_pedRel.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_pedRel.TabIndex = 1
         Me.tbpg_pedRel.Text = "Pedidos"
         Me.tbpg_pedRel.UseVisualStyleBackColor = true
@@ -19286,10 +19281,10 @@ Partial Class Form1
         Me.PedidoNFEDataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn662, Me.DataGridViewTextBoxColumn663, Me.DataGridViewTextBoxColumn665, Me.DataGridViewTextBoxColumn667, Me.DataGridViewTextBoxColumn668, Me.DataGridViewTextBoxColumn669, Me.DataGridViewTextBoxColumn670, Me.DataGridViewTextBoxColumn671, Me.DataGridViewTextBoxColumn672, Me.DataGridViewTextBoxColumn673, Me.DataGridViewTextBoxColumn674, Me.DataGridViewTextBoxColumn675, Me.DataGridViewTextBoxColumn676, Me.DataGridViewTextBoxColumn677, Me.DataGridViewTextBoxColumn678, Me.DataGridViewTextBoxColumn679, Me.DataGridViewTextBoxColumn680, Me.DataGridViewTextBoxColumn681, Me.DataGridViewTextBoxColumn682, Me.DataGridViewTextBoxColumn683, Me.DataGridViewTextBoxColumn684, Me.DataGridViewTextBoxColumn685})
         Me.PedidoNFEDataGridView3.DataSource = Me.PedidoNFEBindingSource
         Me.PedidoNFEDataGridView3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.PedidoNFEDataGridView3.Location = New System.Drawing.Point(789, 266)
+        Me.PedidoNFEDataGridView3.Location = New System.Drawing.Point(749, 266)
         Me.PedidoNFEDataGridView3.Name = "PedidoNFEDataGridView3"
         Me.PedidoNFEDataGridView3.ReadOnly = true
-        Me.PedidoNFEDataGridView3.Size = New System.Drawing.Size(510, 394)
+        Me.PedidoNFEDataGridView3.Size = New System.Drawing.Size(510, 387)
         Me.PedidoNFEDataGridView3.TabIndex = 2
         '
         'DataGridViewTextBoxColumn662
@@ -19459,7 +19454,7 @@ Partial Class Form1
         Me.ItemPedidosDataGridView3.Location = New System.Drawing.Point(3, 266)
         Me.ItemPedidosDataGridView3.Name = "ItemPedidosDataGridView3"
         Me.ItemPedidosDataGridView3.ReadOnly = true
-        Me.ItemPedidosDataGridView3.Size = New System.Drawing.Size(749, 394)
+        Me.ItemPedidosDataGridView3.Size = New System.Drawing.Size(749, 387)
         Me.ItemPedidosDataGridView3.TabIndex = 1
         '
         'DataGridViewTextBoxColumn477
@@ -19640,7 +19635,7 @@ Partial Class Form1
         Me.Panel31.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel31.Location = New System.Drawing.Point(3, 3)
         Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(1296, 263)
+        Me.Panel31.Size = New System.Drawing.Size(1256, 263)
         Me.Panel31.TabIndex = 0
         '
         'GroupBox98
@@ -19960,7 +19955,7 @@ Partial Class Form1
         Me.Tbpg_balcaoRel.Location = New System.Drawing.Point(4, 25)
         Me.Tbpg_balcaoRel.Name = "Tbpg_balcaoRel"
         Me.Tbpg_balcaoRel.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tbpg_balcaoRel.Size = New System.Drawing.Size(1302, 663)
+        Me.Tbpg_balcaoRel.Size = New System.Drawing.Size(1262, 656)
         Me.Tbpg_balcaoRel.TabIndex = 2
         Me.Tbpg_balcaoRel.Text = "Balcão"
         Me.Tbpg_balcaoRel.UseVisualStyleBackColor = true
@@ -19978,7 +19973,7 @@ Partial Class Form1
         Me.BalcaoDataGridView2.Location = New System.Drawing.Point(3, 172)
         Me.BalcaoDataGridView2.Name = "BalcaoDataGridView2"
         Me.BalcaoDataGridView2.ReadOnly = true
-        Me.BalcaoDataGridView2.Size = New System.Drawing.Size(1296, 488)
+        Me.BalcaoDataGridView2.Size = New System.Drawing.Size(1256, 481)
         Me.BalcaoDataGridView2.TabIndex = 1
         '
         'DataGridViewTextBoxColumn497
@@ -20122,7 +20117,7 @@ Partial Class Form1
         Me.Panel32.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel32.Location = New System.Drawing.Point(3, 3)
         Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(1296, 169)
+        Me.Panel32.Size = New System.Drawing.Size(1256, 169)
         Me.Panel32.TabIndex = 0
         '
         'Label260
@@ -20377,7 +20372,7 @@ Partial Class Form1
         Me.tbpg_vendasLinhas.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_vendasLinhas.Name = "tbpg_vendasLinhas"
         Me.tbpg_vendasLinhas.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_vendasLinhas.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_vendasLinhas.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_vendasLinhas.TabIndex = 3
         Me.tbpg_vendasLinhas.Text = "Vendas linhas"
         Me.tbpg_vendasLinhas.UseVisualStyleBackColor = true
@@ -20395,7 +20390,7 @@ Partial Class Form1
         Me.ItemPedidosDataGridView4.Location = New System.Drawing.Point(3, 471)
         Me.ItemPedidosDataGridView4.Name = "ItemPedidosDataGridView4"
         Me.ItemPedidosDataGridView4.ReadOnly = true
-        Me.ItemPedidosDataGridView4.Size = New System.Drawing.Size(1296, 189)
+        Me.ItemPedidosDataGridView4.Size = New System.Drawing.Size(1256, 182)
         Me.ItemPedidosDataGridView4.TabIndex = 1
         '
         'DataGridViewTextBoxColumn519
@@ -20578,7 +20573,7 @@ Partial Class Form1
         Me.Panel33.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel33.Location = New System.Drawing.Point(3, 3)
         Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(1296, 468)
+        Me.Panel33.Size = New System.Drawing.Size(1256, 468)
         Me.Panel33.TabIndex = 0
         '
         'Label143
@@ -21131,7 +21126,7 @@ Partial Class Form1
         Me.TabPage11.Location = New System.Drawing.Point(4, 25)
         Me.TabPage11.Name = "TabPage11"
         Me.TabPage11.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage11.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage11.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage11.TabIndex = 4
         Me.TabPage11.Text = "Compras Marfinite"
         Me.TabPage11.UseVisualStyleBackColor = true
@@ -21149,7 +21144,7 @@ Partial Class Form1
         Me.PedidoMarfiniteDataGridView1.Location = New System.Drawing.Point(3, 545)
         Me.PedidoMarfiniteDataGridView1.Name = "PedidoMarfiniteDataGridView1"
         Me.PedidoMarfiniteDataGridView1.ReadOnly = true
-        Me.PedidoMarfiniteDataGridView1.Size = New System.Drawing.Size(1296, 115)
+        Me.PedidoMarfiniteDataGridView1.Size = New System.Drawing.Size(1256, 108)
         Me.PedidoMarfiniteDataGridView1.TabIndex = 1
         '
         'DataGridViewTextBoxColumn584
@@ -21236,7 +21231,7 @@ Partial Class Form1
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel36.Location = New System.Drawing.Point(3, 3)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(1296, 542)
+        Me.Panel36.Size = New System.Drawing.Size(1256, 542)
         Me.Panel36.TabIndex = 0
         '
         'GroupBox70
@@ -21564,7 +21559,7 @@ Partial Class Form1
         Me.tbpg_VendaBalcaoRelatorio.Location = New System.Drawing.Point(4, 25)
         Me.tbpg_VendaBalcaoRelatorio.Name = "tbpg_VendaBalcaoRelatorio"
         Me.tbpg_VendaBalcaoRelatorio.Padding = New System.Windows.Forms.Padding(3)
-        Me.tbpg_VendaBalcaoRelatorio.Size = New System.Drawing.Size(1302, 663)
+        Me.tbpg_VendaBalcaoRelatorio.Size = New System.Drawing.Size(1262, 656)
         Me.tbpg_VendaBalcaoRelatorio.TabIndex = 5
         Me.tbpg_VendaBalcaoRelatorio.Text = "Vendas Balcão"
         Me.tbpg_VendaBalcaoRelatorio.UseVisualStyleBackColor = true
@@ -21582,7 +21577,7 @@ Partial Class Form1
         Me.BalcaoDataGridView4.Location = New System.Drawing.Point(3, 506)
         Me.BalcaoDataGridView4.Name = "BalcaoDataGridView4"
         Me.BalcaoDataGridView4.ReadOnly = true
-        Me.BalcaoDataGridView4.Size = New System.Drawing.Size(1296, 154)
+        Me.BalcaoDataGridView4.Size = New System.Drawing.Size(1256, 147)
         Me.BalcaoDataGridView4.TabIndex = 1
         '
         'DataGridViewTextBoxColumn595
@@ -21719,7 +21714,7 @@ Partial Class Form1
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel38.Location = New System.Drawing.Point(3, 3)
         Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(1296, 503)
+        Me.Panel38.Size = New System.Drawing.Size(1256, 503)
         Me.Panel38.TabIndex = 0
         '
         'TextBox120
@@ -22193,7 +22188,7 @@ Partial Class Form1
         Me.TabPage18.Location = New System.Drawing.Point(4, 25)
         Me.TabPage18.Name = "TabPage18"
         Me.TabPage18.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage18.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage18.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage18.TabIndex = 6
         Me.TabPage18.Text = "Vendas Geral"
         Me.TabPage18.UseVisualStyleBackColor = true
@@ -22211,7 +22206,7 @@ Partial Class Form1
         Me.ItemPedidosDataGridView6.Location = New System.Drawing.Point(3, 431)
         Me.ItemPedidosDataGridView6.Name = "ItemPedidosDataGridView6"
         Me.ItemPedidosDataGridView6.ReadOnly = true
-        Me.ItemPedidosDataGridView6.Size = New System.Drawing.Size(535, 229)
+        Me.ItemPedidosDataGridView6.Size = New System.Drawing.Size(535, 222)
         Me.ItemPedidosDataGridView6.TabIndex = 2
         '
         'DataGridViewTextBoxColumn643
@@ -22336,10 +22331,10 @@ Partial Class Form1
         Me.BalcaoDataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn620, Me.DataGridViewTextBoxColumn622, Me.DataGridViewTextBoxColumn623, Me.DataGridViewTextBoxColumn624, Me.DataGridViewTextBoxColumn625, Me.DataGridViewTextBoxColumn626, Me.DataGridViewTextBoxColumn627, Me.DataGridViewTextBoxColumn628, Me.DataGridViewTextBoxColumn629, Me.DataGridViewTextBoxColumn630, Me.DataGridViewTextBoxColumn631, Me.DataGridViewTextBoxColumn632, Me.DataGridViewTextBoxColumn633, Me.DataGridViewTextBoxColumn634, Me.DataGridViewTextBoxColumn635, Me.DataGridViewTextBoxColumn636, Me.DataGridViewTextBoxColumn637, Me.DataGridViewTextBoxColumn638})
         Me.BalcaoDataGridView6.DataSource = Me.BalcaoBindingSource
         Me.BalcaoDataGridView6.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BalcaoDataGridView6.Location = New System.Drawing.Point(745, 431)
+        Me.BalcaoDataGridView6.Location = New System.Drawing.Point(705, 431)
         Me.BalcaoDataGridView6.Name = "BalcaoDataGridView6"
         Me.BalcaoDataGridView6.ReadOnly = true
-        Me.BalcaoDataGridView6.Size = New System.Drawing.Size(554, 229)
+        Me.BalcaoDataGridView6.Size = New System.Drawing.Size(554, 222)
         Me.BalcaoDataGridView6.TabIndex = 1
         '
         'DataGridViewTextBoxColumn620
@@ -22477,7 +22472,7 @@ Partial Class Form1
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel40.Location = New System.Drawing.Point(3, 3)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(1296, 428)
+        Me.Panel40.Size = New System.Drawing.Size(1256, 428)
         Me.Panel40.TabIndex = 0
         '
         'GroupBox41
@@ -22922,7 +22917,7 @@ Partial Class Form1
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
         Me.TabPage2.Name = "TabPage2"
         Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(1302, 663)
+        Me.TabPage2.Size = New System.Drawing.Size(1262, 656)
         Me.TabPage2.TabIndex = 7
         Me.TabPage2.Text = "Despesas"
         Me.TabPage2.UseVisualStyleBackColor = true
@@ -22934,7 +22929,7 @@ Partial Class Form1
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel43.Location = New System.Drawing.Point(3, 318)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(1296, 342)
+        Me.Panel43.Size = New System.Drawing.Size(1256, 335)
         Me.Panel43.TabIndex = 2
         '
         'NomeContasDataGridView
@@ -22950,7 +22945,7 @@ Partial Class Form1
         Me.NomeContasDataGridView.Location = New System.Drawing.Point(0, 0)
         Me.NomeContasDataGridView.Name = "NomeContasDataGridView"
         Me.NomeContasDataGridView.ReadOnly = true
-        Me.NomeContasDataGridView.Size = New System.Drawing.Size(808, 342)
+        Me.NomeContasDataGridView.Size = New System.Drawing.Size(808, 335)
         Me.NomeContasDataGridView.TabIndex = 0
         '
         'DataGridViewTextBoxColumn349
@@ -23029,7 +23024,7 @@ Partial Class Form1
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel22.Location = New System.Drawing.Point(3, 3)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(1296, 315)
+        Me.Panel22.Size = New System.Drawing.Size(1256, 315)
         Me.Panel22.TabIndex = 0
         '
         'Panel23
@@ -23053,7 +23048,7 @@ Partial Class Form1
         Me.Panel23.Controls.Add(Me.Label275)
         Me.Panel23.Controls.Add(Me.Panel37)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel23.Location = New System.Drawing.Point(3, 0)
+        Me.Panel23.Location = New System.Drawing.Point(-37, 0)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(1293, 315)
         Me.Panel23.TabIndex = 2
@@ -23602,6 +23597,70 @@ Partial Class Form1
         Me.Label265.TabIndex = 0
         Me.Label265.Text = "Caixa de lançamento de despesas"
         '
+        'TabPage7
+        '
+        Me.TabPage7.Controls.Add(Me.TabControl3)
+        Me.TabPage7.Location = New System.Drawing.Point(4, 54)
+        Me.TabPage7.Name = "TabPage7"
+        Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage7.Size = New System.Drawing.Size(1276, 691)
+        Me.TabPage7.TabIndex = 13
+        Me.TabPage7.Text = "NFE "
+        Me.TabPage7.UseVisualStyleBackColor = true
+        '
+        'TabControl3
+        '
+        Me.TabControl3.Controls.Add(Me.TabPage8)
+        Me.TabControl3.Controls.Add(Me.TabPage12)
+        Me.TabControl3.Controls.Add(Me.TabPage13)
+        Me.TabControl3.Controls.Add(Me.TabPage14)
+        Me.TabControl3.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TabControl3.Location = New System.Drawing.Point(3, 3)
+        Me.TabControl3.Name = "TabControl3"
+        Me.TabControl3.SelectedIndex = 0
+        Me.TabControl3.Size = New System.Drawing.Size(1270, 685)
+        Me.TabControl3.TabIndex = 0
+        '
+        'TabPage8
+        '
+        Me.TabPage8.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage8.Name = "TabPage8"
+        Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage8.Size = New System.Drawing.Size(1262, 656)
+        Me.TabPage8.TabIndex = 0
+        Me.TabPage8.Text = "TabPage8"
+        Me.TabPage8.UseVisualStyleBackColor = true
+        '
+        'TabPage12
+        '
+        Me.TabPage12.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage12.Name = "TabPage12"
+        Me.TabPage12.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage12.Size = New System.Drawing.Size(1262, 656)
+        Me.TabPage12.TabIndex = 1
+        Me.TabPage12.Text = "TabPage12"
+        Me.TabPage12.UseVisualStyleBackColor = true
+        '
+        'TabPage13
+        '
+        Me.TabPage13.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage13.Name = "TabPage13"
+        Me.TabPage13.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage13.Size = New System.Drawing.Size(1262, 656)
+        Me.TabPage13.TabIndex = 2
+        Me.TabPage13.Text = "TabPage13"
+        Me.TabPage13.UseVisualStyleBackColor = true
+        '
+        'TabPage14
+        '
+        Me.TabPage14.Location = New System.Drawing.Point(4, 25)
+        Me.TabPage14.Name = "TabPage14"
+        Me.TabPage14.Padding = New System.Windows.Forms.Padding(3)
+        Me.TabPage14.Size = New System.Drawing.Size(1262, 656)
+        Me.TabPage14.TabIndex = 3
+        Me.TabPage14.Text = "TabPage14"
+        Me.TabPage14.UseVisualStyleBackColor = true
+        '
         'TesteBindingSource
         '
         Me.TesteBindingSource.DataMember = "teste"
@@ -23848,9 +23907,9 @@ Partial Class Form1
         Me.panelInicio.AutoSize = true
         Me.panelInicio.BackColor = System.Drawing.Color.Gold
         Me.panelInicio.Dock = System.Windows.Forms.DockStyle.Right
-        Me.panelInicio.Location = New System.Drawing.Point(1324, 0)
+        Me.panelInicio.Location = New System.Drawing.Point(1284, 0)
         Me.panelInicio.Name = "panelInicio"
-        Me.panelInicio.Size = New System.Drawing.Size(0, 756)
+        Me.panelInicio.Size = New System.Drawing.Size(0, 749)
         Me.panelInicio.TabIndex = 1
         '
         'ItemOrcamentoTableAdapter1
@@ -23958,219 +24017,320 @@ Partial Class Form1
         Me.PrintPreviewDialog6.Name = "PrintPreviewDialog6"
         Me.PrintPreviewDialog6.Visible = false
         '
-        'Button96
+        'DataGridViewTextBoxColumn35
         '
-        Me.Button96.Enabled = false
-        Me.Button96.Location = New System.Drawing.Point(907, 93)
-        Me.Button96.Name = "Button96"
-        Me.Button96.Size = New System.Drawing.Size(155, 23)
-        Me.Button96.TabIndex = 19
-        Me.Button96.Text = "Pedidos Fornecedor"
-        Me.Button96.UseVisualStyleBackColor = true
+        Me.DataGridViewTextBoxColumn35.DataPropertyName = "id_codprod"
+        Me.DataGridViewTextBoxColumn35.HeaderText = "id_codprod"
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        Me.DataGridViewTextBoxColumn35.ReadOnly = true
         '
-        'PedidoCompraDataGridView1
+        'CrescimentoVendas_prod
         '
-        Me.PedidoCompraDataGridView1.AllowUserToAddRows = false
-        Me.PedidoCompraDataGridView1.AllowUserToDeleteRows = false
-        Me.PedidoCompraDataGridView1.AutoGenerateColumns = false
-        Me.PedidoCompraDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PedidoCompraDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn818, Me.DataGridViewTextBoxColumn819, Me.DataGridViewTextBoxColumn820, Me.DataGridViewTextBoxColumn821, Me.DataGridViewTextBoxColumn822, Me.DataGridViewTextBoxColumn823, Me.DataGridViewTextBoxColumn824, Me.DataGridViewTextBoxColumn825, Me.DataGridViewTextBoxColumn826, Me.DataGridViewTextBoxColumn827, Me.DataGridViewTextBoxColumn828, Me.DataGridViewTextBoxColumn829, Me.DataGridViewTextBoxColumn830, Me.DataGridViewTextBoxColumn831})
-        Me.PedidoCompraDataGridView1.DataSource = Me.PedidoCompraBindingSource
-        Me.PedidoCompraDataGridView1.Location = New System.Drawing.Point(755, 3)
-        Me.PedidoCompraDataGridView1.Name = "PedidoCompraDataGridView1"
-        Me.PedidoCompraDataGridView1.ReadOnly = true
-        Me.PedidoCompraDataGridView1.Size = New System.Drawing.Size(171, 244)
-        Me.PedidoCompraDataGridView1.TabIndex = 4
+        Me.CrescimentoVendas_prod.DataPropertyName = "CrescimentoVendas_prod"
+        Me.CrescimentoVendas_prod.HeaderText = "CrescimentoVendas_prod"
+        Me.CrescimentoVendas_prod.Name = "CrescimentoVendas_prod"
+        Me.CrescimentoVendas_prod.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn818
+        'DataGridViewTextBoxColumn36
         '
-        Me.DataGridViewTextBoxColumn818.DataPropertyName = "Id_PedidoCompra"
-        Me.DataGridViewTextBoxColumn818.HeaderText = "Id_PedidoCompra"
-        Me.DataGridViewTextBoxColumn818.Name = "DataGridViewTextBoxColumn818"
-        Me.DataGridViewTextBoxColumn818.ReadOnly = true
+        Me.DataGridViewTextBoxColumn36.DataPropertyName = "cod_prod"
+        Me.DataGridViewTextBoxColumn36.HeaderText = "cod_prod"
+        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
+        Me.DataGridViewTextBoxColumn36.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn819
+        'DataGridViewTextBoxColumn37
         '
-        Me.DataGridViewTextBoxColumn819.DataPropertyName = "Fornecedor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn819.HeaderText = "Fornecedor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn819.Name = "DataGridViewTextBoxColumn819"
-        Me.DataGridViewTextBoxColumn819.ReadOnly = true
+        Me.DataGridViewTextBoxColumn37.DataPropertyName = "cod_prodfor"
+        Me.DataGridViewTextBoxColumn37.HeaderText = "cod_prodfor"
+        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
+        Me.DataGridViewTextBoxColumn37.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn820
+        'codbarras_prod
         '
-        Me.DataGridViewTextBoxColumn820.DataPropertyName = "Codigo_PedidoCompra"
-        Me.DataGridViewTextBoxColumn820.HeaderText = "Codigo_PedidoCompra"
-        Me.DataGridViewTextBoxColumn820.Name = "DataGridViewTextBoxColumn820"
-        Me.DataGridViewTextBoxColumn820.ReadOnly = true
+        Me.codbarras_prod.DataPropertyName = "codbarras_prod"
+        Me.codbarras_prod.HeaderText = "codbarras_prod"
+        Me.codbarras_prod.Name = "codbarras_prod"
+        Me.codbarras_prod.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn821
+        'DataGridViewTextBoxColumn38
         '
-        Me.DataGridViewTextBoxColumn821.DataPropertyName = "Linha_PedidoCompra"
-        Me.DataGridViewTextBoxColumn821.HeaderText = "Linha_PedidoCompra"
-        Me.DataGridViewTextBoxColumn821.Name = "DataGridViewTextBoxColumn821"
-        Me.DataGridViewTextBoxColumn821.ReadOnly = true
+        Me.DataGridViewTextBoxColumn38.DataPropertyName = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn38.HeaderText = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
+        Me.DataGridViewTextBoxColumn38.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn822
+        'DataGridViewTextBoxColumn39
         '
-        Me.DataGridViewTextBoxColumn822.DataPropertyName = "Cor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn822.HeaderText = "Cor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn822.Name = "DataGridViewTextBoxColumn822"
-        Me.DataGridViewTextBoxColumn822.ReadOnly = true
+        Me.DataGridViewTextBoxColumn39.DataPropertyName = "linha_prod"
+        Me.DataGridViewTextBoxColumn39.HeaderText = "linha_prod"
+        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
+        Me.DataGridViewTextBoxColumn39.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn823
+        'DataGridViewTextBoxColumn42
         '
-        Me.DataGridViewTextBoxColumn823.DataPropertyName = "CodProdFor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn823.HeaderText = "CodProdFor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn823.Name = "DataGridViewTextBoxColumn823"
-        Me.DataGridViewTextBoxColumn823.ReadOnly = true
+        Me.DataGridViewTextBoxColumn42.DataPropertyName = "nome_prod"
+        Me.DataGridViewTextBoxColumn42.HeaderText = "nome_prod"
+        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
+        Me.DataGridViewTextBoxColumn42.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn824
+        'DataGridViewTextBoxColumn43
         '
-        Me.DataGridViewTextBoxColumn824.DataPropertyName = "NomeProd_PedidoCompra"
-        Me.DataGridViewTextBoxColumn824.HeaderText = "NomeProd_PedidoCompra"
-        Me.DataGridViewTextBoxColumn824.Name = "DataGridViewTextBoxColumn824"
-        Me.DataGridViewTextBoxColumn824.ReadOnly = true
+        Me.DataGridViewTextBoxColumn43.DataPropertyName = "cor_prod"
+        Me.DataGridViewTextBoxColumn43.HeaderText = "cor_prod"
+        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn825
+        'DataGridViewTextBoxColumn44
         '
-        Me.DataGridViewTextBoxColumn825.DataPropertyName = "Quantidade_PedidoCompra"
-        Me.DataGridViewTextBoxColumn825.HeaderText = "Quantidade_PedidoCompra"
-        Me.DataGridViewTextBoxColumn825.Name = "DataGridViewTextBoxColumn825"
-        Me.DataGridViewTextBoxColumn825.ReadOnly = true
+        Me.DataGridViewTextBoxColumn44.DataPropertyName = "precovarejo_prod"
+        Me.DataGridViewTextBoxColumn44.HeaderText = "precovarejo_prod"
+        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
+        Me.DataGridViewTextBoxColumn44.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn826
+        'DataGridViewTextBoxColumn45
         '
-        Me.DataGridViewTextBoxColumn826.DataPropertyName = "Data_PedidoCompra"
-        Me.DataGridViewTextBoxColumn826.HeaderText = "Data_PedidoCompra"
-        Me.DataGridViewTextBoxColumn826.Name = "DataGridViewTextBoxColumn826"
-        Me.DataGridViewTextBoxColumn826.ReadOnly = true
+        Me.DataGridViewTextBoxColumn45.DataPropertyName = "precoatacado_prod"
+        Me.DataGridViewTextBoxColumn45.HeaderText = "precoatacado_prod"
+        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
+        Me.DataGridViewTextBoxColumn45.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn827
+        'DataGridViewTextBoxColumn46
         '
-        Me.DataGridViewTextBoxColumn827.DataPropertyName = "EntregueSimNao_PedidoCompra"
-        Me.DataGridViewTextBoxColumn827.HeaderText = "EntregueSimNao_PedidoCompra"
-        Me.DataGridViewTextBoxColumn827.Name = "DataGridViewTextBoxColumn827"
-        Me.DataGridViewTextBoxColumn827.ReadOnly = true
+        Me.DataGridViewTextBoxColumn46.DataPropertyName = "markup_prod"
+        Me.DataGridViewTextBoxColumn46.HeaderText = "markup_prod"
+        Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
+        Me.DataGridViewTextBoxColumn46.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn828
+        'DataGridViewTextBoxColumn47
         '
-        Me.DataGridViewTextBoxColumn828.DataPropertyName = "Codigo_PedidoCompraString"
-        Me.DataGridViewTextBoxColumn828.HeaderText = "Codigo_PedidoCompraString"
-        Me.DataGridViewTextBoxColumn828.Name = "DataGridViewTextBoxColumn828"
-        Me.DataGridViewTextBoxColumn828.ReadOnly = true
+        Me.DataGridViewTextBoxColumn47.DataPropertyName = "estoquemin_prod"
+        Me.DataGridViewTextBoxColumn47.HeaderText = "estoquemin_prod"
+        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        Me.DataGridViewTextBoxColumn47.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn829
+        'DataGridViewTextBoxColumn48
         '
-        Me.DataGridViewTextBoxColumn829.DataPropertyName = "CodigoProduto_PeidoCompra"
-        Me.DataGridViewTextBoxColumn829.HeaderText = "CodigoProduto_PeidoCompra"
-        Me.DataGridViewTextBoxColumn829.Name = "DataGridViewTextBoxColumn829"
-        Me.DataGridViewTextBoxColumn829.ReadOnly = true
+        Me.DataGridViewTextBoxColumn48.DataPropertyName = "estaquemax_prod"
+        Me.DataGridViewTextBoxColumn48.HeaderText = "estaquemax_prod"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn830
+        'DataGridViewTextBoxColumn49
         '
-        Me.DataGridViewTextBoxColumn830.DataPropertyName = "PrecoUnitario_PedidoCompra"
-        Me.DataGridViewTextBoxColumn830.HeaderText = "PrecoUnitario_PedidoCompra"
-        Me.DataGridViewTextBoxColumn830.Name = "DataGridViewTextBoxColumn830"
-        Me.DataGridViewTextBoxColumn830.ReadOnly = true
+        Me.DataGridViewTextBoxColumn49.DataPropertyName = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn49.HeaderText = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn831
+        'DataGridViewTextBoxColumn50
         '
-        Me.DataGridViewTextBoxColumn831.DataPropertyName = "Totalitem_PedidoCompra"
-        Me.DataGridViewTextBoxColumn831.HeaderText = "Totalitem_PedidoCompra"
-        Me.DataGridViewTextBoxColumn831.Name = "DataGridViewTextBoxColumn831"
-        Me.DataGridViewTextBoxColumn831.ReadOnly = true
+        Me.DataGridViewTextBoxColumn50.DataPropertyName = "icms_prod"
+        Me.DataGridViewTextBoxColumn50.HeaderText = "icms_prod"
+        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
+        Me.DataGridViewTextBoxColumn50.ReadOnly = true
         '
-        'NotasEntradaDataGridView
+        'DataGridViewTextBoxColumn51
         '
-        Me.NotasEntradaDataGridView.AllowUserToAddRows = false
-        Me.NotasEntradaDataGridView.AllowUserToDeleteRows = false
-        Me.NotasEntradaDataGridView.AutoGenerateColumns = false
-        Me.NotasEntradaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.NotasEntradaDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn65, Me.DataGridViewTextBoxColumn72, Me.DataGridViewTextBoxColumn73, Me.DataGridViewTextBoxColumn74, Me.DataGridViewTextBoxColumn75, Me.DataGridViewTextBoxColumn76, Me.DataGridViewTextBoxColumn77, Me.DataGridViewTextBoxColumn78, Me.DataGridViewTextBoxColumn79, Me.DataGridViewTextBoxColumn80})
-        Me.NotasEntradaDataGridView.DataSource = Me.NotasEntradaBindingSource
-        Me.NotasEntradaDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.NotasEntradaDataGridView.Location = New System.Drawing.Point(3, 293)
-        Me.NotasEntradaDataGridView.Name = "NotasEntradaDataGridView"
-        Me.NotasEntradaDataGridView.ReadOnly = true
-        Me.NotasEntradaDataGridView.Size = New System.Drawing.Size(1296, 367)
-        Me.NotasEntradaDataGridView.TabIndex = 6
+        Me.DataGridViewTextBoxColumn51.DataPropertyName = "ipi_prod"
+        Me.DataGridViewTextBoxColumn51.HeaderText = "ipi_prod"
+        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
+        Me.DataGridViewTextBoxColumn51.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn65
+        'DataGridViewTextBoxColumn52
         '
-        Me.DataGridViewTextBoxColumn65.DataPropertyName = "Id_EntradaNota"
-        Me.DataGridViewTextBoxColumn65.HeaderText = "Id_EntradaNota"
-        Me.DataGridViewTextBoxColumn65.Name = "DataGridViewTextBoxColumn65"
-        Me.DataGridViewTextBoxColumn65.ReadOnly = true
+        Me.DataGridViewTextBoxColumn52.DataPropertyName = "peso_prod"
+        Me.DataGridViewTextBoxColumn52.HeaderText = "peso_prod"
+        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
+        Me.DataGridViewTextBoxColumn52.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn72
+        'DataGridViewTextBoxColumn53
         '
-        Me.DataGridViewTextBoxColumn72.DataPropertyName = "FornecedorEntrada"
-        Me.DataGridViewTextBoxColumn72.HeaderText = "FornecedorEntrada"
-        Me.DataGridViewTextBoxColumn72.Name = "DataGridViewTextBoxColumn72"
-        Me.DataGridViewTextBoxColumn72.ReadOnly = true
+        Me.DataGridViewTextBoxColumn53.DataPropertyName = "custo_prod"
+        Me.DataGridViewTextBoxColumn53.HeaderText = "custo_prod"
+        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
+        Me.DataGridViewTextBoxColumn53.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn73
+        'DataGridViewTextBoxColumn54
         '
-        Me.DataGridViewTextBoxColumn73.DataPropertyName = "NumeroNotaEntrada"
-        Me.DataGridViewTextBoxColumn73.HeaderText = "NumeroNotaEntrada"
-        Me.DataGridViewTextBoxColumn73.Name = "DataGridViewTextBoxColumn73"
-        Me.DataGridViewTextBoxColumn73.ReadOnly = true
+        Me.DataGridViewTextBoxColumn54.DataPropertyName = "pedcolocados_prod"
+        Me.DataGridViewTextBoxColumn54.HeaderText = "pedcolocados_prod"
+        Me.DataGridViewTextBoxColumn54.Name = "DataGridViewTextBoxColumn54"
+        Me.DataGridViewTextBoxColumn54.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn74
+        'DataGridViewTextBoxColumn55
         '
-        Me.DataGridViewTextBoxColumn74.DataPropertyName = "LinhaProdutoEntrada"
-        Me.DataGridViewTextBoxColumn74.HeaderText = "LinhaProdutoEntrada"
-        Me.DataGridViewTextBoxColumn74.Name = "DataGridViewTextBoxColumn74"
-        Me.DataGridViewTextBoxColumn74.ReadOnly = true
+        Me.DataGridViewTextBoxColumn55.DataPropertyName = "pedencomendados_prod"
+        Me.DataGridViewTextBoxColumn55.HeaderText = "pedencomendados_prod"
+        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
+        Me.DataGridViewTextBoxColumn55.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn75
+        'DataGridViewTextBoxColumn56
         '
-        Me.DataGridViewTextBoxColumn75.DataPropertyName = "CorProdutoEntrada"
-        Me.DataGridViewTextBoxColumn75.HeaderText = "CorProdutoEntrada"
-        Me.DataGridViewTextBoxColumn75.Name = "DataGridViewTextBoxColumn75"
-        Me.DataGridViewTextBoxColumn75.ReadOnly = true
+        Me.DataGridViewTextBoxColumn56.DataPropertyName = "abc_prod"
+        Me.DataGridViewTextBoxColumn56.HeaderText = "abc_prod"
+        Me.DataGridViewTextBoxColumn56.Name = "DataGridViewTextBoxColumn56"
+        Me.DataGridViewTextBoxColumn56.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn76
+        'DataGridViewTextBoxColumn57
         '
-        Me.DataGridViewTextBoxColumn76.DataPropertyName = "QuantidadeNotaEntrada"
-        Me.DataGridViewTextBoxColumn76.HeaderText = "QuantidadeNotaEntrada"
-        Me.DataGridViewTextBoxColumn76.Name = "DataGridViewTextBoxColumn76"
-        Me.DataGridViewTextBoxColumn76.ReadOnly = true
+        Me.DataGridViewTextBoxColumn57.DataPropertyName = "tempoentragafor_prod"
+        Me.DataGridViewTextBoxColumn57.HeaderText = "tempoentragafor_prod"
+        Me.DataGridViewTextBoxColumn57.Name = "DataGridViewTextBoxColumn57"
+        Me.DataGridViewTextBoxColumn57.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn77
+        'DataGridViewTextBoxColumn58
         '
-        Me.DataGridViewTextBoxColumn77.DataPropertyName = "PrecoNotaEntrada"
-        Me.DataGridViewTextBoxColumn77.HeaderText = "PrecoNotaEntrada"
-        Me.DataGridViewTextBoxColumn77.Name = "DataGridViewTextBoxColumn77"
-        Me.DataGridViewTextBoxColumn77.ReadOnly = true
+        Me.DataGridViewTextBoxColumn58.DataPropertyName = "porcentagemfat_prod"
+        Me.DataGridViewTextBoxColumn58.HeaderText = "porcentagemfat_prod"
+        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
+        Me.DataGridViewTextBoxColumn58.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn78
+        'DataGridViewTextBoxColumn59
         '
-        Me.DataGridViewTextBoxColumn78.DataPropertyName = "DataNotaEntrada"
-        Me.DataGridViewTextBoxColumn78.HeaderText = "DataNotaEntrada"
-        Me.DataGridViewTextBoxColumn78.Name = "DataGridViewTextBoxColumn78"
-        Me.DataGridViewTextBoxColumn78.ReadOnly = true
+        Me.DataGridViewTextBoxColumn59.DataPropertyName = "classificfiscal_prod"
+        Me.DataGridViewTextBoxColumn59.HeaderText = "classificfiscal_prod"
+        Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
+        Me.DataGridViewTextBoxColumn59.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn79
+        'DataGridViewTextBoxColumn60
         '
-        Me.DataGridViewTextBoxColumn79.DataPropertyName = "CodProdEntrada"
-        Me.DataGridViewTextBoxColumn79.HeaderText = "CodProdEntrada"
-        Me.DataGridViewTextBoxColumn79.Name = "DataGridViewTextBoxColumn79"
-        Me.DataGridViewTextBoxColumn79.ReadOnly = true
+        Me.DataGridViewTextBoxColumn60.DataPropertyName = "tabelafiscal_prod"
+        Me.DataGridViewTextBoxColumn60.HeaderText = "tabelafiscal_prod"
+        Me.DataGridViewTextBoxColumn60.Name = "DataGridViewTextBoxColumn60"
+        Me.DataGridViewTextBoxColumn60.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn80
+        'DataGridViewTextBoxColumn61
         '
-        Me.DataGridViewTextBoxColumn80.DataPropertyName = "NomeProdEntrada"
-        Me.DataGridViewTextBoxColumn80.HeaderText = "NomeProdEntrada"
-        Me.DataGridViewTextBoxColumn80.Name = "DataGridViewTextBoxColumn80"
-        Me.DataGridViewTextBoxColumn80.ReadOnly = true
+        Me.DataGridViewTextBoxColumn61.DataPropertyName = "situacao_prod"
+        Me.DataGridViewTextBoxColumn61.HeaderText = "situacao_prod"
+        Me.DataGridViewTextBoxColumn61.Name = "DataGridViewTextBoxColumn61"
+        Me.DataGridViewTextBoxColumn61.ReadOnly = true
+        '
+        'ConsumoMedio_prod
+        '
+        Me.ConsumoMedio_prod.DataPropertyName = "ConsumoMedio_prod"
+        Me.ConsumoMedio_prod.HeaderText = "ConsumoMedio_prod"
+        Me.ConsumoMedio_prod.Name = "ConsumoMedio_prod"
+        Me.ConsumoMedio_prod.ReadOnly = true
+        '
+        'EstoquePrateleira_prod
+        '
+        Me.EstoquePrateleira_prod.DataPropertyName = "EstoquePrateleira_prod"
+        Me.EstoquePrateleira_prod.HeaderText = "EstoquePrateleira_prod"
+        Me.EstoquePrateleira_prod.Name = "EstoquePrateleira_prod"
+        Me.EstoquePrateleira_prod.ReadOnly = true
+        '
+        'EmbalagemFabrica_prod
+        '
+        Me.EmbalagemFabrica_prod.DataPropertyName = "EmbalagemFabrica_prod"
+        Me.EmbalagemFabrica_prod.HeaderText = "EmbalagemFabrica_prod"
+        Me.EmbalagemFabrica_prod.Name = "EmbalagemFabrica_prod"
+        Me.EmbalagemFabrica_prod.ReadOnly = true
+        '
+        'Apelido_prod
+        '
+        Me.Apelido_prod.DataPropertyName = "Apelido_prod"
+        Me.Apelido_prod.HeaderText = "Apelido_prod"
+        Me.Apelido_prod.Name = "Apelido_prod"
+        Me.Apelido_prod.ReadOnly = true
+        '
+        'Bugiganga_prod
+        '
+        Me.Bugiganga_prod.DataPropertyName = "Bugiganga_prod"
+        Me.Bugiganga_prod.HeaderText = "Bugiganga_prod"
+        Me.Bugiganga_prod.Name = "Bugiganga_prod"
+        Me.Bugiganga_prod.ReadOnly = true
+        '
+        'MarkupNET_prod
+        '
+        Me.MarkupNET_prod.DataPropertyName = "MarkupNET_prod"
+        Me.MarkupNET_prod.HeaderText = "MarkupNET_prod"
+        Me.MarkupNET_prod.Name = "MarkupNET_prod"
+        Me.MarkupNET_prod.ReadOnly = true
+        '
+        'CodigoMlb_prod
+        '
+        Me.CodigoMlb_prod.DataPropertyName = "CodigoMlb_prod"
+        Me.CodigoMlb_prod.HeaderText = "CodigoMlb_prod"
+        Me.CodigoMlb_prod.Name = "CodigoMlb_prod"
+        Me.CodigoMlb_prod.ReadOnly = true
+        '
+        'CodComp1_prod
+        '
+        Me.CodComp1_prod.DataPropertyName = "CodComp1_prod"
+        Me.CodComp1_prod.HeaderText = "CodComp1_prod"
+        Me.CodComp1_prod.Name = "CodComp1_prod"
+        Me.CodComp1_prod.ReadOnly = true
+        '
+        'QtdeComp1_prod
+        '
+        Me.QtdeComp1_prod.DataPropertyName = "QtdeComp1_prod"
+        Me.QtdeComp1_prod.HeaderText = "QtdeComp1_prod"
+        Me.QtdeComp1_prod.Name = "QtdeComp1_prod"
+        Me.QtdeComp1_prod.ReadOnly = true
+        '
+        'CodComp2_prod
+        '
+        Me.CodComp2_prod.DataPropertyName = "CodComp2_prod"
+        Me.CodComp2_prod.HeaderText = "CodComp2_prod"
+        Me.CodComp2_prod.Name = "CodComp2_prod"
+        Me.CodComp2_prod.ReadOnly = true
+        '
+        'QtdeComp2_prod
+        '
+        Me.QtdeComp2_prod.DataPropertyName = "QtdeComp2_prod"
+        Me.QtdeComp2_prod.HeaderText = "QtdeComp2_prod"
+        Me.QtdeComp2_prod.Name = "QtdeComp2_prod"
+        Me.QtdeComp2_prod.ReadOnly = true
+        '
+        'CodComp3_prod
+        '
+        Me.CodComp3_prod.DataPropertyName = "CodComp3_prod"
+        Me.CodComp3_prod.HeaderText = "CodComp3_prod"
+        Me.CodComp3_prod.Name = "CodComp3_prod"
+        Me.CodComp3_prod.ReadOnly = true
+        '
+        'QtdeComp3_prod
+        '
+        Me.QtdeComp3_prod.DataPropertyName = "QtdeComp3_prod"
+        Me.QtdeComp3_prod.HeaderText = "QtdeComp3_prod"
+        Me.QtdeComp3_prod.Name = "QtdeComp3_prod"
+        Me.QtdeComp3_prod.ReadOnly = true
+        '
+        'CodComp4_prod
+        '
+        Me.CodComp4_prod.DataPropertyName = "CodComp4_prod"
+        Me.CodComp4_prod.HeaderText = "CodComp4_prod"
+        Me.CodComp4_prod.Name = "CodComp4_prod"
+        Me.CodComp4_prod.ReadOnly = true
+        '
+        'QtdeComp4_prod
+        '
+        Me.QtdeComp4_prod.DataPropertyName = "QtdeComp4_prod"
+        Me.QtdeComp4_prod.HeaderText = "QtdeComp4_prod"
+        Me.QtdeComp4_prod.Name = "QtdeComp4_prod"
+        Me.QtdeComp4_prod.ReadOnly = true
+        '
+        'CodComp5_prod
+        '
+        Me.CodComp5_prod.DataPropertyName = "CodComp5_prod"
+        Me.CodComp5_prod.HeaderText = "CodComp5_prod"
+        Me.CodComp5_prod.Name = "CodComp5_prod"
+        Me.CodComp5_prod.ReadOnly = true
+        '
+        'QtdeComp5_prod
+        '
+        Me.QtdeComp5_prod.DataPropertyName = "QtdeComp5_prod"
+        Me.QtdeComp5_prod.HeaderText = "QtdeComp5_prod"
+        Me.QtdeComp5_prod.Name = "QtdeComp5_prod"
+        Me.QtdeComp5_prod.ReadOnly = true
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(1324, 756)
+        Me.ClientSize = New System.Drawing.Size(1284, 749)
         Me.Controls.Add(Me.panelInicio)
         Me.Controls.Add(Me.TabControl1)
         Me.MainMenuStrip = Me.MenuStrip1
@@ -24247,9 +24407,10 @@ Partial Class Form1
         Me.TabControlPedMarf.ResumeLayout(false)
         Me.TabPage5.ResumeLayout(false)
         Me.TabPage5.PerformLayout
+        CType(Me.NotasEntradaDataGridView,System.ComponentModel.ISupportInitialize).EndInit
+        CType(Me.NotasEntradaBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.GroupBox86.ResumeLayout(false)
         Me.GroupBox86.PerformLayout
-        CType(Me.NotasEntradaBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel11.ResumeLayout(false)
         Me.Panel11.PerformLayout
         Me.GroupBox16.ResumeLayout(false)
@@ -24271,6 +24432,7 @@ Partial Class Form1
         Me.GroupBox94.ResumeLayout(false)
         Me.GroupBox94.PerformLayout
         Me.Panel44.ResumeLayout(false)
+        CType(Me.PedidoCompraDataGridView1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ItemPedidosDataGridView9,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ItemPedidosBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ProdutosDataGridView3,System.ComponentModel.ISupportInitialize).EndInit
@@ -24631,6 +24793,8 @@ Partial Class Form1
         CType(Me.NomeContaaluguelBancoBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         Me.Panel42.ResumeLayout(false)
         Me.Panel42.PerformLayout
+        Me.TabPage7.ResumeLayout(false)
+        Me.TabControl3.ResumeLayout(false)
         CType(Me.TesteBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ListaContasArquivoBindingSource2,System.ComponentModel.ISupportInitialize).EndInit
@@ -24653,8 +24817,6 @@ Partial Class Form1
         CType(Me.BalcaoBindingSource3,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.NOmeContaExtrasBindingSource,System.ComponentModel.ISupportInitialize).EndInit
         CType(Me.ListaContasArquivoBindingSource1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.PedidoCompraDataGridView1,System.ComponentModel.ISupportInitialize).EndInit
-        CType(Me.NotasEntradaDataGridView,System.ComponentModel.ISupportInitialize).EndInit
         Me.ResumeLayout(false)
         Me.PerformLayout
 
@@ -26738,40 +26900,6 @@ End Sub
     Friend WithEvents TextBox233 As System.Windows.Forms.TextBox
     Friend WithEvents Label301 As System.Windows.Forms.Label
     Friend WithEvents TextBox234 As System.Windows.Forms.TextBox
-    Friend WithEvents DataGridViewTextBoxColumn35 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CrescimentoVendas_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn36 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn37 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents codbarras_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn38 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn39 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn42 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn43 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn44 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn45 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn46 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn47 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn48 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn49 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn50 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn51 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn52 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn53 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn54 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn55 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn56 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn57 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn58 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn59 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn60 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn61 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents ConsumoMedio_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EstoquePrateleira_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EmbalagemFabrica_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Apelido_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Bugiganga_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents MarkupNET_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoMlb_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents TextBox236 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox235 As System.Windows.Forms.TextBox
@@ -27076,5 +27204,55 @@ End Sub
     Friend WithEvents DataGridViewTextBoxColumn78 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn79 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn80 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
+    Friend WithEvents TabControl3 As System.Windows.Forms.TabControl
+    Friend WithEvents TabPage8 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage12 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage13 As System.Windows.Forms.TabPage
+    Friend WithEvents TabPage14 As System.Windows.Forms.TabPage
+    Friend WithEvents DataGridViewTextBoxColumn35 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CrescimentoVendas_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn36 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn37 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents codbarras_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn38 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn39 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn42 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn43 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn44 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn45 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn46 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn47 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn48 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn49 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn50 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn51 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn52 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn53 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn54 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn55 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn56 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn57 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn58 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn59 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn60 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn61 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ConsumoMedio_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EstoquePrateleira_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EmbalagemFabrica_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Apelido_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Bugiganga_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents MarkupNET_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodigoMlb_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodComp1_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QtdeComp1_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodComp2_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QtdeComp2_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodComp3_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QtdeComp3_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodComp4_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QtdeComp4_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodComp5_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QtdeComp5_prod As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
