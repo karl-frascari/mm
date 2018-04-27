@@ -481,6 +481,7 @@ Public Class Form1
             RadioButton13.Checked = True
             Button86.Enabled = False
             RadioButton14.Checked = True
+            ComboBox26.Enabled = True
 
         End If
 
@@ -2342,6 +2343,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         RadioButton12.Enabled = False
         Button15.Enabled = False
         Button98.Enabled = False
+        ComboBox26.Enabled = False
 
     End Sub
 
@@ -7401,9 +7403,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If RadioButton14.Checked = True Then
             ' Pedido compra
             ' primeira linha
-            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 10)
-            e.Graphics.DrawString("PEDIDO DE COMPRA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 300, 5)
-            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
+            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
+            e.Graphics.DrawString("PEDIDO DE COMPRA        N.  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
+            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 450, 5)
+            e.Graphics.DrawString(TextBox287.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 550, 5)
 
             'segunda linha
             e.Graphics.DrawString("Silvia Paula Duarte Frascari ME", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
@@ -7414,10 +7417,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' quinta linha
             e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
             'sexta linha
-            e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
+            e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                     Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
 
 
-            e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 150, 175)
             ' sétima linha
             e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
             e.Graphics.DrawString(TextBox285.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
@@ -7440,18 +7442,18 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             ' cabecalho
             e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
-            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 400)
-            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 400)
-            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 400)
+            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 400)
+            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 400)
+            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 700, 400)
 
 
             Try
                 For x = 0 To 30
 
                     e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
 
                 Next
             Catch ex As Exception
@@ -7461,9 +7463,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Else
             ' Pedido compra
             ' primeira linha
-            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 10)
-            e.Graphics.DrawString("PEDIDO DE COMPRA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 300, 5)
-            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
+            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
+            e.Graphics.DrawString("PEDIDO DE COMPRA        N.  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
+            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 450, 5)
+            e.Graphics.DrawString(TextBox287.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 550, 5)
+
 
             'segunda linha
             e.Graphics.DrawString("Fernando Frascari EPP", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
@@ -7477,8 +7481,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
 
 
-            e.Graphics.DrawString(ComboBox26.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 150, 175)
-            ' sétima linha
+              ' sétima linha
             e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
             e.Graphics.DrawString(TextBox285.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
             e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
@@ -7500,18 +7503,18 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             ' cabecalho
             e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
-            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 400)
-            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 400)
-            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 400)
+            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 400)
+            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 400)
+            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 700, 400)
 
 
             Try
                 For x = 0 To 30
 
                     e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 150, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 400, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
 
                 Next
             Catch ex As Exception
@@ -7797,7 +7800,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             connection.Open()
             dataadapter.Fill(ds, "PedidoNFE")
             connection.Close()
-            ' PedidoNFEDataGridView1.DataSource = ds.Tables(0)
+            PedidoNFEDataGridView1.DataSource = ds.Tables(0)
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -8758,7 +8761,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             connection.Open()
             dataadapter.Fill(ds, "itemOrcamento")
             connection.Close()
-            'ItemOrcamentoDataGridView1.DataSource = ds.Tables(0)
+            ItemOrcamentoDataGridView1.DataSource = ds.Tables(0)
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -9464,7 +9467,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             connection.Open()
             dataadapter.Fill(ds, "ItemPedidos")
             connection.Close()
-            'ItemPedidosDataGridView3.DataSource = ds.Tables(0)
+            ItemPedidosDataGridView3.DataSource = ds.Tables(0)
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
@@ -14811,7 +14814,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If FlagProdPesquisa = "0" Then
             FlagProdutos = "1"
             TextBox268.Text = Cod_prodTextBox.Text
-            TextBox240.Text = TextBox260.Text
+            TextBox240.Text = TextBox261.Text
             tabpage_produtos.SelectedIndex = 1
         End If
 
@@ -14821,7 +14824,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If FlagProdPesquisa = "0" Then
             FlagProdutos = "1"
             TextBox268.Text = Cod_prodTextBox.Text
-            TextBox240.Text = TextBox260.Text
+            TextBox240.Text = TextBox263.Text
             tabpage_produtos.SelectedIndex = 1
         End If
     End Sub
@@ -14830,7 +14833,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If FlagProdPesquisa = "0" Then
             FlagProdutos = "1"
             TextBox268.Text = Cod_prodTextBox.Text
-            TextBox240.Text = TextBox260.Text
+            TextBox240.Text = TextBox265.Text
             tabpage_produtos.SelectedIndex = 1
         End If
 
@@ -14840,7 +14843,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If FlagProdPesquisa = "0" Then
             FlagProdutos = "1"
             TextBox268.Text = Cod_prodTextBox.Text
-            TextBox240.Text = TextBox260.Text
+            TextBox240.Text = TextBox267.Text
             tabpage_produtos.SelectedIndex = 1
         End If
 
@@ -14893,6 +14896,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 NomeContato = lrd("NomeContato_VendasMlb").ToString
                 NumeroNota = lrd("NUmeroPedido2_VendasMlb").ToString
 
+
             End While
             connection.Close()
 
@@ -14900,7 +14904,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' Procura o valor no produto
             ' Pego o valor do produto no arquivo produtos 
             Dim ValorProduto As Double = 0
-            Dim CodigoProduto As String = ""
+            Dim CodigoProdutoFor As String = ""
             Dim FornecedorProduto As String = ""
             Dim CorProduto As String = ""
             Dim PrecoAtacadoProduto As Double = 0
@@ -14912,7 +14916,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             Dim command2 As SqlCommand
             command2 = connection.CreateCommand()
-            command2.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
+            command2.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & "'or CodigoMlb_prod = '" & CodigoMlb & "'"
             command2.CommandType = CommandType.Text
             ' -------------------------------------------------------------------
             connection.Open()
@@ -14921,7 +14925,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             While lrd2.Read
 
                 ValorProduto = lrd2("precoatacado_prod").ToString
-                CodigoProduto = lrd2("cod_prod").ToString
+                CodigoProdutoFor = lrd2("cod_prodfor").ToString
                 FornecedorProduto = lrd2("fornecedor_prod").ToString
                 LinhaProduto = lrd2("linha_prod").ToString
                 CorProduto = lrd2("cor_prod").ToString
@@ -14937,13 +14941,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim CodComp(5) As String
             Dim QtdeComp(5) As Double
            
-            '--------------------------------
-
 
             connection.Open()
-            Dim lrd3 As SqlDataReader = command2.ExecuteReader()
             If LinhaProduto = "produto combo/kit" Then
 
+                Dim lrd3 As SqlDataReader = command2.ExecuteReader()
                 While lrd3.Read
 
                     CodComp(1) = lrd3("CodComp1_prod").ToString
@@ -14958,84 +14960,43 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     QtdeComp(5) = lrd3("QtdeComp5_prod").ToString
 
                 End While
+
+            End If
+            connection.Close()
+            ' ******************************************************************************
+            ' ******************************************************************************
+            If NomeProduto <> "" Then
+
+                'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
+                Dim cmd As New SqlCommand
+                cmd.Connection = connection
+                cmd.CommandText = "SELECT NumeroNotaMlb_balcao  from balcao where NumeroNotaMlb_balcao = '" & NumeroNota & "'"
+                connection.Open()
+                'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
+                Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
+
+                Try
+                    If lrd5.Read() = True Then
+                        'MessageBox.Show("já")
+                        connection.Close()
+                        GoTo Proxima
+                    End If
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString)
+                End Try
                 connection.Close()
-                ' ******************************************************************************
-                ' ******************************************************************************
-                If NomeProduto <> "" Then
 
-                    'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
-                    Dim cmd As New SqlCommand
-                    cmd.Connection = connection
-                    cmd.CommandText = "SELECT NumeroNotaMlb_balcao  from balcao where NumeroNotaMlb_balcao = '" & NumeroNota & "'"
-                    ' ---------------------------------------------------------------
-                    connection.Open()
-                    'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
-                    Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
-
-                    Try
-                        If lrd5.Read() = True Then
-                            'MessageBox.Show("já")
-                            connection.Close()
-                            GoTo Proxima
-                        End If
-                    Catch ex As Exception
-                        MessageBox.Show(ex.ToString)
-                    End Try
-
-                    connection.Close()
-
-                    ' *****************************************************************************
-                    ' dando baixa nos estoque com produtos composto por vários ítens
-                    Dim EstoqueAtualItem As Double = 0
-                    Dim SubtraindoEstoqueItem As Integer = 0
-
-                    For a = 1 To 5
-                        If CodComp(a) <> "" Then
-
-                            Dim command15 As SqlCommand
-                            command15 = connection.CreateCommand()
-                            command15.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
-                            command15.CommandType = CommandType.Text
-
-                            connection.Open()
-                            Dim lrd15 As SqlDataReader = command15.ExecuteReader()
-                            While lrd15.Read
-                                EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
-                            End While
-                            connection.Close()
-                            '--------------------------------------------------------------------------------
-
-                            SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
-                            Dim command20 As SqlCommand
-                            command20 = connection.CreateCommand()
-                            command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @CodComp1_prod"
-                            command20.CommandType = CommandType.Text
-                            command20.Parameters.Add("@CodComp1_prod", SqlDbType.VarChar, 50).Value = CodComp(a)
-                            command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
-
-                            Try
-                                connection.Open()
-                                command20.ExecuteNonQuery()
-                                connection.Close()
-                            Catch ex As Exception
-                                MessageBox.Show(ex.ToString())
-                            End Try
-                        End If
-                    Next
-                End If
-                connection.Close()
-                '********************************************************************************
                 '********************************************************************************
                 ' Faz o lançamento em vendas balcão
                 Dim command5 As SqlCommand
                 command5 = connection.CreateCommand()
-                command5.CommandText = "insert into balcao (Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,NumeroNotaMlb_balcao) values (@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @NumeroNotaMlb_balcao)"
+                command5.CommandText = "insert into balcao (CodigoMlb_balcao,Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,NumeroNotaMlb_balcao) values (@CodigoMlb_balcao,@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @NumeroNotaMlb_balcao)"
                 command5.CommandType = CommandType.Text
 
                 command5.Parameters.Clear()
                 command5.Parameters.Add("@id2_balcao", SqlDbType.VarChar, 50).Value = "1000"
                 command5.Parameters.Add("@nomevendedor_balcao", SqlDbType.VarChar, 50).Value = "Bee"
-                command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProduto
+                command5.Parameters.Add("@codprod_balcao", SqlDbType.VarChar, 50).Value = CodigoProdutoFor
                 command5.Parameters.Add("@forprod_balcao", SqlDbType.VarChar, 50).Value = FornecedorProduto
                 command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = LinhaProduto
                 command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = CorProduto
@@ -15044,6 +15005,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
                 command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
                 command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
+                command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = CodigoMlb
 
                 ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
                 Dim QuantidadeVendidas As Double = QuantidadeVendidaMlb
@@ -15072,9 +15034,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString())
+                    connection.Close()
                 End Try
-                ' ------------------------------------------------
+
             Else
+
                 Dim command15 As SqlCommand
                 command15 = connection.CreateCommand()
                 command15.CommandText = "insert into ApelidoErrado (NumeroNota_ApelidoErrado,Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@NumeroNota_ApelidoErrado,@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
@@ -15085,19 +15049,68 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 command15.Parameters.Add("@CodigoMlb_ApelidoErrado", SqlDbType.VarChar, 50).Value = CodigoMlb
                 command15.Parameters.Add("@NumeroNota_ApelidoErrado", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
 
-
                 Try
                     connection.Open()
                     command15.ExecuteNonQuery()
                     connection.Close()
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString())
+                    connection.Close()
                 End Try
             End If
 
+            connection.Close()
+
+            ' *****************************************************************************
+            ' *****************************************************************************
+            ' dando baixa nos estoque com produtos composto por vários ítens
+
+            Dim EstoqueAtualItem As Double
+            Dim SubtraindoEstoqueItem As Integer
+            Dim nome As String
+
+            Dim command25 As SqlCommand
+            If LinhaProduto = "produto combo/kit" Then
+
+                For a = 1 To 5
+
+                    If CodComp(a) <> "" Then
+
+                        command25 = connection.CreateCommand()
+                        command25.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
+                        command25.CommandType = CommandType.Text
+
+                        connection.Open()
+                        Dim lrd15 As SqlDataReader = command25.ExecuteReader()
+                        While lrd15.Read
+                            EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
+                            nome = lrd15("nome_prod").ToString
+                        End While
+                        connection.Close()
+  
+                        SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
+                        Dim command20 As SqlCommand
+                        command20 = connection.CreateCommand()
+                        command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @cod_prodfor"
+                        command20.CommandType = CommandType.Text
+                        command20.Parameters.Add("@cod_prodfor", SqlDbType.VarChar, 50).Value = CodComp(a)
+                        command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
+
+                        Try
+                            connection.Open()
+                            command20.ExecuteNonQuery()
+                            connection.Close()
+                        Catch ex As Exception
+                            MessageBox.Show(ex.ToString())
+                        End Try
+                    End If
+                Next
+            End If
+
+            connection.Close()
+            '********************************************************************************
             ' ******************************************************************************
-            ' ******************************************************************************
-            ' Calculando o estoque 
+            ' Dando baixa no estoque para produtos com um ítem 
             Dim SubtraindoEstoqueAtual As Integer = 0
             If LinhaProduto <> "produto combo/kit" Then
 
@@ -15114,6 +15127,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     connection.Close()
                 Catch ex As Exception
                     MessageBox.Show(ex.ToString())
+                    connection.Close()
                 End Try
             End If
 Proxima:
@@ -15219,6 +15233,7 @@ Proxima:
         Button15.Enabled = True
         TextBox222.Clear()
         Button98.Enabled = True
+        ComboBox26.Enabled = True
 
     End Sub
 
@@ -15374,7 +15389,7 @@ Proxima:
 
         End Try
 
-        ComboBox26.Text = ProdutosDataGridView6.Item(4, v_SelectRow).Value
+        TextBox287.Text = ProdutosDataGridView6.Item(4, v_SelectRow).Value
     End Sub
 
 
@@ -15452,10 +15467,10 @@ Proxima:
         PedidoCompraBindingSource.Filter = String.Format("Codigo_PedidoCompraString LIKE '{0}%'", TextBox284.Text)
         Try
             If PedidoCompraDataGridView.Item(1, 0).Value Is DBNull.Value Then
-                ComboBox26.Text = 0
+                TextBox287.Text = 0
             Else
                 Me.PedidoCompraBindingSource.MoveFirst()
-                ComboBox26.Text = PedidoCompraDataGridView.Item(1, 0).Value
+                TextBox287.Text = PedidoCompraDataGridView.Item(1, 0).Value
             End If
         Catch ex As Exception
             Exit Sub
@@ -15638,6 +15653,7 @@ proxima2:
     End Sub
 
     Private Sub Button76_Click(sender As Object, e As EventArgs) Handles Button76.Click
+
         If TextBox284.Text = "" Then
             MessageBox.Show("Preencha o campo de -Pesquisar Numero Pedido-")
             Exit Sub
@@ -15645,42 +15661,9 @@ proxima2:
 
         PrintPreviewDialog4.ShowDialog()
     End Sub
-
-    Private Sub ComboBox26_TextChanged(sender As Object, e As EventArgs) Handles ComboBox26.TextChanged
-
-        ' lendo o arquivo de fornecedores para pegar o nome do vendedor e o email
-        Dim NomeVendedorForncedor As String = ""
-        Dim EmailForncedor As String = ""
-
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
-
-        command = connection.CreateCommand()
-        command.CommandText = "select * from fornecedor where xNome_for = '" & ComboBox26.Text & "'"
-        connection.Open()
-
-        Dim lrd As SqlDataReader = command.ExecuteReader()
-        While lrd.Read
-            If lrd("Email_fonecedor") Is DBNull.Value Then
-            Else
-                NomeVendedorForncedor = lrd("Email_fonecedor").ToString()
-            End If
-
-            If lrd("NomeVendedor_fornecedor") Is DBNull.Value Then
-            Else
-                EmailForncedor = lrd("NomeVendedor_fornecedor").ToString()
-            End If
-
-        End While
-        connection.Close()
-        TextBox249.Text = NomeVendedorForncedor
-        TextBox285.Text = EmailForncedor
-    End Sub
-
     Private Sub Button98_Click(sender As Object, e As EventArgs) Handles Button98.Click
 
-       
+
 
         If TextBox284.Text = "" Then
             MessageBox.Show("escolher um número de pedido")
@@ -15753,6 +15736,7 @@ proxima2:
                 RadioButton12.Enabled = False
                 Button15.Enabled = False
                 Button98.Enabled = False
+                ComboBox26.Enabled = False
 
             End If
         Catch ex As Exception
@@ -15781,7 +15765,7 @@ proxima2:
                 connection.Open()
                 dataadapter.Fill(ds, "PedidoCompra")
                 connection.Close()
-                ' PedidoCompraDataGridView1.DataSource = ds.Tables(0)
+                PedidoCompraDataGridView1.DataSource = ds.Tables(0)
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
@@ -15821,6 +15805,40 @@ proxima2:
 
         Next
 
+    End Sub
+
+   
+
+    Private Sub TextBox287_TextChanged(sender As Object, e As EventArgs) Handles TextBox287.TextChanged
+
+        ' lendo o arquivo de fornecedores para pegar o nome do vendedor e o email
+        Dim NomeVendedorForncedor As String = ""
+        Dim EmailForncedor As String = ""
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
+
+        command = connection.CreateCommand()
+        command.CommandText = "select * from fornecedor where xNome_for = '" & TextBox287.Text & "'"
+        connection.Open()
+
+        Dim lrd As SqlDataReader = command.ExecuteReader()
+        While lrd.Read
+            If lrd("Email_fonecedor") Is DBNull.Value Then
+            Else
+                NomeVendedorForncedor = lrd("Email_fonecedor").ToString()
+            End If
+
+            If lrd("NomeVendedor_fornecedor") Is DBNull.Value Then
+            Else
+                EmailForncedor = lrd("NomeVendedor_fornecedor").ToString()
+            End If
+
+        End While
+        connection.Close()
+        TextBox249.Text = NomeVendedorForncedor
+        TextBox285.Text = EmailForncedor
     End Sub
 End Class
 

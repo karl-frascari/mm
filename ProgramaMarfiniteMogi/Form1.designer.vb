@@ -180,6 +180,10 @@ Partial Class Form1
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.tab_Kgiro = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.GroupBox114 = New System.Windows.Forms.GroupBox()
+        Me.TextBox287 = New System.Windows.Forms.TextBox()
+        Me.TextBox285 = New System.Windows.Forms.TextBox()
+        Me.TextBox249 = New System.Windows.Forms.TextBox()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.GroupBox115 = New System.Windows.Forms.GroupBox()
         Me.RadioButton15 = New System.Windows.Forms.RadioButton()
@@ -216,10 +220,10 @@ Partial Class Form1
         Me.Label318 = New System.Windows.Forms.Label()
         Me.Button85 = New System.Windows.Forms.Button()
         Me.GroupBox10 = New System.Windows.Forms.GroupBox()
-        Me.TextBox285 = New System.Windows.Forms.TextBox()
-        Me.TextBox249 = New System.Windows.Forms.TextBox()
-        Me.Label320 = New System.Windows.Forms.Label()
+        Me.Label304 = New System.Windows.Forms.Label()
+        Me.DateTimePicker38 = New System.Windows.Forms.DateTimePicker()
         Me.ComboBox26 = New System.Windows.Forms.ComboBox()
+        Me.Label320 = New System.Windows.Forms.Label()
         Me.TextBox284 = New System.Windows.Forms.TextBox()
         Me.Label316 = New System.Windows.Forms.Label()
         Me.Label315 = New System.Windows.Forms.Label()
@@ -690,12 +694,11 @@ Partial Class Form1
         Me.Label2 = New System.Windows.Forms.Label()
         Me.txt_buscaclientenome = New System.Windows.Forms.TextBox()
         Me.tbpg_produtos = New System.Windows.Forms.TabPage()
+        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
         Me.tabpage_produtos = New System.Windows.Forms.TabControl()
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.cbx_forprod = New System.Windows.Forms.GroupBox()
-        Me.VScrollBar1 = New System.Windows.Forms.VScrollBar()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.GroupBox106 = New System.Windows.Forms.GroupBox()
         Me.Button75 = New System.Windows.Forms.Button()
         Me.Button74 = New System.Windows.Forms.Button()
@@ -793,6 +796,50 @@ Partial Class Form1
         Me.DesistirOperaçãoToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.TabPage_gridProd = New System.Windows.Forms.TabPage()
         Me.ProdutosDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CrescimentoVendas_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.codbarras_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn60 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn61 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConsumoMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstoquePrateleira_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmbalagemFabrica_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Apelido_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Bugiganga_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.MarkupNET_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodigoMlb_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp1_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp1_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp2_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp2_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp3_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp3_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp4_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp4_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CodComp5_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.QtdeComp5_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.GroupBox107 = New System.Windows.Forms.GroupBox()
         Me.Label349 = New System.Windows.Forms.Label()
@@ -873,6 +920,7 @@ Partial Class Form1
         Me.LinhasprodBindingSource5 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ComboBox7 = New System.Windows.Forms.ComboBox()
         Me.FornecedorBindingSource5 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ProdutosBindingSource2 = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.pedidos = New System.Windows.Forms.TabPage()
@@ -2427,50 +2475,6 @@ Partial Class Form1
         Me.PrintDialog6 = New System.Windows.Forms.PrintDialog()
         Me.PrintPreviewDialog6 = New System.Windows.Forms.PrintPreviewDialog()
         Me.PrintDocument14 = New System.Drawing.Printing.PrintDocument()
-        Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CrescimentoVendas_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn36 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn37 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.codbarras_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn38 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn39 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn42 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn43 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn44 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn45 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn46 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn47 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn48 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn49 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn50 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn51 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn52 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn53 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn54 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn55 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn56 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn57 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn58 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn59 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn60 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn61 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ConsumoMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstoquePrateleira_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmbalagemFabrica_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Apelido_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Bugiganga_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.MarkupNET_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodigoMlb_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodComp1_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QtdeComp1_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodComp2_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QtdeComp2_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodComp3_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QtdeComp3_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodComp4_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QtdeComp4_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CodComp5_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QtdeComp5_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -2575,6 +2579,7 @@ Partial Class Form1
         Me.TabControl2.SuspendLayout
         Me.tab_Kgiro.SuspendLayout
         Me.Panel6.SuspendLayout
+        Me.GroupBox114.SuspendLayout
         Me.GroupBox115.SuspendLayout
         Me.GroupBox113.SuspendLayout
         CType(Me.PedidoCompraDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
@@ -4027,7 +4032,7 @@ Partial Class Form1
         'btn_seleciona_pasta_nota
         '
         Me.btn_seleciona_pasta_nota.BackColor = System.Drawing.Color.Transparent
-        Me.btn_seleciona_pasta_nota.BackgroundImage = Global.ProgramaMarfiniteMogi.My.Resources.Resources.btn12
+        Me.btn_seleciona_pasta_nota.BackgroundImage = CType(resources.GetObject("btn_seleciona_pasta_nota.BackgroundImage"),System.Drawing.Image)
         Me.btn_seleciona_pasta_nota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_seleciona_pasta_nota.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen
         Me.btn_seleciona_pasta_nota.FlatAppearance.BorderSize = 0
@@ -4232,6 +4237,7 @@ Partial Class Form1
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Gold
+        Me.Panel6.Controls.Add(Me.GroupBox114)
         Me.Panel6.Controls.Add(Me.Button15)
         Me.Panel6.Controls.Add(Me.GroupBox115)
         Me.Panel6.Controls.Add(Me.Button98)
@@ -4249,9 +4255,45 @@ Partial Class Form1
         Me.Panel6.Size = New System.Drawing.Size(1256, 650)
         Me.Panel6.TabIndex = 0
         '
+        'GroupBox114
+        '
+        Me.GroupBox114.Controls.Add(Me.TextBox287)
+        Me.GroupBox114.Controls.Add(Me.TextBox285)
+        Me.GroupBox114.Controls.Add(Me.TextBox249)
+        Me.GroupBox114.Location = New System.Drawing.Point(346, 188)
+        Me.GroupBox114.Name = "GroupBox114"
+        Me.GroupBox114.Size = New System.Drawing.Size(508, 66)
+        Me.GroupBox114.TabIndex = 23
+        Me.GroupBox114.TabStop = false
+        Me.GroupBox114.Text = "Fornecedor"
+        '
+        'TextBox287
+        '
+        Me.TextBox287.Enabled = false
+        Me.TextBox287.Location = New System.Drawing.Point(6, 21)
+        Me.TextBox287.Name = "TextBox287"
+        Me.TextBox287.Size = New System.Drawing.Size(164, 22)
+        Me.TextBox287.TabIndex = 2
+        '
+        'TextBox285
+        '
+        Me.TextBox285.Enabled = false
+        Me.TextBox285.Location = New System.Drawing.Point(357, 21)
+        Me.TextBox285.Name = "TextBox285"
+        Me.TextBox285.Size = New System.Drawing.Size(145, 22)
+        Me.TextBox285.TabIndex = 1
+        '
+        'TextBox249
+        '
+        Me.TextBox249.Enabled = false
+        Me.TextBox249.Location = New System.Drawing.Point(188, 21)
+        Me.TextBox249.Name = "TextBox249"
+        Me.TextBox249.Size = New System.Drawing.Size(131, 22)
+        Me.TextBox249.TabIndex = 0
+        '
         'Button15
         '
-        Me.Button15.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.edit
+        Me.Button15.Image = CType(resources.GetObject("Button15.Image"),System.Drawing.Image)
         Me.Button15.Location = New System.Drawing.Point(751, 14)
         Me.Button15.Name = "Button15"
         Me.Button15.Size = New System.Drawing.Size(103, 130)
@@ -4364,10 +4406,10 @@ Partial Class Form1
         Me.PedidoCompraDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn222, Me.DataGridViewTextBoxColumn772, Me.DataGridViewTextBoxColumn773, Me.DataGridViewTextBoxColumn774, Me.DataGridViewTextBoxColumn778, Me.DataGridViewTextBoxColumn779, Me.DataGridViewTextBoxColumn780, Me.DataGridViewTextBoxColumn781, Me.DataGridViewTextBoxColumn782, Me.DataGridViewTextBoxColumn783, Me.Codigo_PedidoCompraString, Me.CodigoProduto_PeidoCompra, Me.PrecoUnitario_PedidoCompra, Me.Totalitem_PedidoCompra})
         Me.PedidoCompraDataGridView.DataSource = Me.PedidoCompraBindingSource
         Me.PedidoCompraDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.PedidoCompraDataGridView.Location = New System.Drawing.Point(0, 233)
+        Me.PedidoCompraDataGridView.Location = New System.Drawing.Point(0, 284)
         Me.PedidoCompraDataGridView.Name = "PedidoCompraDataGridView"
         Me.PedidoCompraDataGridView.ReadOnly = true
-        Me.PedidoCompraDataGridView.Size = New System.Drawing.Size(1256, 417)
+        Me.PedidoCompraDataGridView.Size = New System.Drawing.Size(1256, 366)
         Me.PedidoCompraDataGridView.TabIndex = 15
         '
         'DataGridViewTextBoxColumn222
@@ -4489,7 +4531,7 @@ Partial Class Form1
         '
         'Button86
         '
-        Me.Button86.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.yes
+        Me.Button86.Image = CType(resources.GetObject("Button86.Image"),System.Drawing.Image)
         Me.Button86.Location = New System.Drawing.Point(621, 14)
         Me.Button86.Name = "Button86"
         Me.Button86.Size = New System.Drawing.Size(124, 130)
@@ -4565,7 +4607,7 @@ Partial Class Form1
         '
         'Button85
         '
-        Me.Button85.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete1
+        Me.Button85.Image = CType(resources.GetObject("Button85.Image"),System.Drawing.Image)
         Me.Button85.Location = New System.Drawing.Point(484, 10)
         Me.Button85.Name = "Button85"
         Me.Button85.Size = New System.Drawing.Size(131, 134)
@@ -4576,10 +4618,10 @@ Partial Class Form1
         '
         'GroupBox10
         '
-        Me.GroupBox10.Controls.Add(Me.TextBox285)
-        Me.GroupBox10.Controls.Add(Me.TextBox249)
-        Me.GroupBox10.Controls.Add(Me.Label320)
+        Me.GroupBox10.Controls.Add(Me.Label304)
+        Me.GroupBox10.Controls.Add(Me.DateTimePicker38)
         Me.GroupBox10.Controls.Add(Me.ComboBox26)
+        Me.GroupBox10.Controls.Add(Me.Label320)
         Me.GroupBox10.Controls.Add(Me.TextBox284)
         Me.GroupBox10.Controls.Add(Me.Label316)
         Me.GroupBox10.Controls.Add(Me.Label315)
@@ -4593,41 +4635,41 @@ Partial Class Form1
         Me.GroupBox10.TabStop = false
         Me.GroupBox10.Text = "Pedidos forncedor"
         '
-        'TextBox285
+        'Label304
         '
-        Me.TextBox285.Enabled = false
-        Me.TextBox285.Location = New System.Drawing.Point(168, 175)
-        Me.TextBox285.Name = "TextBox285"
-        Me.TextBox285.Size = New System.Drawing.Size(145, 22)
-        Me.TextBox285.TabIndex = 1
+        Me.Label304.AutoSize = true
+        Me.Label304.Location = New System.Drawing.Point(26, 187)
+        Me.Label304.Name = "Label304"
+        Me.Label304.Size = New System.Drawing.Size(138, 16)
+        Me.Label304.TabIndex = 9
+        Me.Label304.Text = "Fornecedor Pesquisa"
         '
-        'TextBox249
+        'DateTimePicker38
         '
-        Me.TextBox249.Enabled = false
-        Me.TextBox249.Location = New System.Drawing.Point(18, 175)
-        Me.TextBox249.Name = "TextBox249"
-        Me.TextBox249.Size = New System.Drawing.Size(131, 22)
-        Me.TextBox249.TabIndex = 0
-        '
-        'Label320
-        '
-        Me.Label320.AutoSize = true
-        Me.Label320.Location = New System.Drawing.Point(32, 142)
-        Me.Label320.Name = "Label320"
-        Me.Label320.Size = New System.Drawing.Size(136, 16)
-        Me.Label320.TabIndex = 7
-        Me.Label320.Text = "Escolha o fornecedor"
+        Me.DateTimePicker38.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker38.Location = New System.Drawing.Point(175, 143)
+        Me.DateTimePicker38.Name = "DateTimePicker38"
+        Me.DateTimePicker38.Size = New System.Drawing.Size(138, 22)
+        Me.DateTimePicker38.TabIndex = 8
         '
         'ComboBox26
         '
         Me.ComboBox26.DataSource = Me.FornecedorBindingSource
         Me.ComboBox26.DisplayMember = "xNome_for"
-        Me.ComboBox26.Enabled = false
         Me.ComboBox26.FormattingEnabled = true
-        Me.ComboBox26.Location = New System.Drawing.Point(174, 139)
+        Me.ComboBox26.Location = New System.Drawing.Point(174, 179)
         Me.ComboBox26.Name = "ComboBox26"
         Me.ComboBox26.Size = New System.Drawing.Size(139, 24)
         Me.ComboBox26.TabIndex = 6
+        '
+        'Label320
+        '
+        Me.Label320.AutoSize = true
+        Me.Label320.Location = New System.Drawing.Point(6, 148)
+        Me.Label320.Name = "Label320"
+        Me.Label320.Size = New System.Drawing.Size(158, 16)
+        Me.Label320.TabIndex = 7
+        Me.Label320.Text = "Escolha a data Pesquisa"
         '
         'TextBox284
         '
@@ -4682,7 +4724,7 @@ Partial Class Form1
         '
         'btn_relfor
         '
-        Me.btn_relfor.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.add1
+        Me.btn_relfor.Image = CType(resources.GetObject("btn_relfor.Image"),System.Drawing.Image)
         Me.btn_relfor.Location = New System.Drawing.Point(346, 10)
         Me.btn_relfor.Name = "btn_relfor"
         Me.btn_relfor.Size = New System.Drawing.Size(122, 134)
@@ -5744,7 +5786,7 @@ Partial Class Form1
         '
         'IncluirToolStripMenuItem
         '
-        Me.IncluirToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.add
+        Me.IncluirToolStripMenuItem.Image = CType(resources.GetObject("IncluirToolStripMenuItem.Image"),System.Drawing.Image)
         Me.IncluirToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.IncluirToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.IncluirToolStripMenuItem.Name = "IncluirToolStripMenuItem"
@@ -5754,7 +5796,7 @@ Partial Class Form1
         '
         'AlterarToolStripMenuItem
         '
-        Me.AlterarToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.edit
+        Me.AlterarToolStripMenuItem.Image = CType(resources.GetObject("AlterarToolStripMenuItem.Image"),System.Drawing.Image)
         Me.AlterarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.AlterarToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.AlterarToolStripMenuItem.Name = "AlterarToolStripMenuItem"
@@ -5764,7 +5806,7 @@ Partial Class Form1
         '
         'ApagarToolStripMenuItem
         '
-        Me.ApagarToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.ApagarToolStripMenuItem.Image = CType(resources.GetObject("ApagarToolStripMenuItem.Image"),System.Drawing.Image)
         Me.ApagarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ApagarToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.ApagarToolStripMenuItem.Name = "ApagarToolStripMenuItem"
@@ -5774,7 +5816,7 @@ Partial Class Form1
         '
         'ConsultarToolStripMenuItem
         '
-        Me.ConsultarToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.search
+        Me.ConsultarToolStripMenuItem.Image = CType(resources.GetObject("ConsultarToolStripMenuItem.Image"),System.Drawing.Image)
         Me.ConsultarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConsultarToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.ConsultarToolStripMenuItem.Name = "ConsultarToolStripMenuItem"
@@ -5784,7 +5826,7 @@ Partial Class Form1
         '
         'mnu_confirmartrans
         '
-        Me.mnu_confirmartrans.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.yes
+        Me.mnu_confirmartrans.Image = CType(resources.GetObject("mnu_confirmartrans.Image"),System.Drawing.Image)
         Me.mnu_confirmartrans.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.mnu_confirmartrans.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.mnu_confirmartrans.Name = "mnu_confirmartrans"
@@ -5794,7 +5836,7 @@ Partial Class Form1
         '
         'DesistirOperaçãoToolStripMenuItem
         '
-        Me.DesistirOperaçãoToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.DesistirOperaçãoToolStripMenuItem.Image = CType(resources.GetObject("DesistirOperaçãoToolStripMenuItem.Image"),System.Drawing.Image)
         Me.DesistirOperaçãoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DesistirOperaçãoToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.DesistirOperaçãoToolStripMenuItem.Name = "DesistirOperaçãoToolStripMenuItem"
@@ -6327,7 +6369,7 @@ Partial Class Form1
         'CriarPedidoToolStripMenuItem
         '
         Me.CriarPedidoToolStripMenuItem.Enabled = false
-        Me.CriarPedidoToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.add
+        Me.CriarPedidoToolStripMenuItem.Image = CType(resources.GetObject("CriarPedidoToolStripMenuItem.Image"),System.Drawing.Image)
         Me.CriarPedidoToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.CriarPedidoToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.CriarPedidoToolStripMenuItem.Name = "CriarPedidoToolStripMenuItem"
@@ -6338,7 +6380,7 @@ Partial Class Form1
         'DeletarItemToolStripMenuItem
         '
         Me.DeletarItemToolStripMenuItem.Enabled = false
-        Me.DeletarItemToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.DeletarItemToolStripMenuItem.Image = CType(resources.GetObject("DeletarItemToolStripMenuItem.Image"),System.Drawing.Image)
         Me.DeletarItemToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DeletarItemToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.DeletarItemToolStripMenuItem.Name = "DeletarItemToolStripMenuItem"
@@ -8036,7 +8078,7 @@ Partial Class Form1
         '
         'IncluirToolStripMenuItem1
         '
-        Me.IncluirToolStripMenuItem1.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.add
+        Me.IncluirToolStripMenuItem1.Image = CType(resources.GetObject("IncluirToolStripMenuItem1.Image"),System.Drawing.Image)
         Me.IncluirToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.IncluirToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.IncluirToolStripMenuItem1.Name = "IncluirToolStripMenuItem1"
@@ -8046,7 +8088,7 @@ Partial Class Form1
         '
         'AlterarToolStripMenuItem1
         '
-        Me.AlterarToolStripMenuItem1.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.edit
+        Me.AlterarToolStripMenuItem1.Image = CType(resources.GetObject("AlterarToolStripMenuItem1.Image"),System.Drawing.Image)
         Me.AlterarToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.AlterarToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.AlterarToolStripMenuItem1.Name = "AlterarToolStripMenuItem1"
@@ -8056,7 +8098,7 @@ Partial Class Form1
         '
         'ApagarToolStripMenuItem1
         '
-        Me.ApagarToolStripMenuItem1.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.ApagarToolStripMenuItem1.Image = CType(resources.GetObject("ApagarToolStripMenuItem1.Image"),System.Drawing.Image)
         Me.ApagarToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ApagarToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.ApagarToolStripMenuItem1.Name = "ApagarToolStripMenuItem1"
@@ -8066,7 +8108,7 @@ Partial Class Form1
         '
         'ConsultarToolStripMenuItem1
         '
-        Me.ConsultarToolStripMenuItem1.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.search
+        Me.ConsultarToolStripMenuItem1.Image = CType(resources.GetObject("ConsultarToolStripMenuItem1.Image"),System.Drawing.Image)
         Me.ConsultarToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConsultarToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.ConsultarToolStripMenuItem1.Name = "ConsultarToolStripMenuItem1"
@@ -8076,7 +8118,7 @@ Partial Class Form1
         '
         'ConfirmarToolStripMenuItem
         '
-        Me.ConfirmarToolStripMenuItem.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.yes
+        Me.ConfirmarToolStripMenuItem.Image = CType(resources.GetObject("ConfirmarToolStripMenuItem.Image"),System.Drawing.Image)
         Me.ConfirmarToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.ConfirmarToolStripMenuItem.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.ConfirmarToolStripMenuItem.Name = "ConfirmarToolStripMenuItem"
@@ -8086,7 +8128,7 @@ Partial Class Form1
         '
         'DesistirOperaçãoToolStripMenuItem1
         '
-        Me.DesistirOperaçãoToolStripMenuItem1.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.DesistirOperaçãoToolStripMenuItem1.Image = CType(resources.GetObject("DesistirOperaçãoToolStripMenuItem1.Image"),System.Drawing.Image)
         Me.DesistirOperaçãoToolStripMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DesistirOperaçãoToolStripMenuItem1.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.DesistirOperaçãoToolStripMenuItem1.Name = "DesistirOperaçãoToolStripMenuItem1"
@@ -8823,6 +8865,7 @@ Partial Class Form1
         'tbpg_produtos
         '
         Me.tbpg_produtos.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.tbpg_produtos.Controls.Add(Me.VScrollBar1)
         Me.tbpg_produtos.Controls.Add(Me.tabpage_produtos)
         Me.tbpg_produtos.Font = New System.Drawing.Font("Verdana", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
         Me.tbpg_produtos.ForeColor = System.Drawing.SystemColors.WindowFrame
@@ -8833,6 +8876,14 @@ Partial Class Form1
         Me.tbpg_produtos.TabIndex = 0
         Me.tbpg_produtos.Text = "Produtos"
         Me.tbpg_produtos.UseVisualStyleBackColor = true
+        '
+        'VScrollBar1
+        '
+        Me.VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.VScrollBar1.Location = New System.Drawing.Point(1256, 3)
+        Me.VScrollBar1.Name = "VScrollBar1"
+        Me.VScrollBar1.Size = New System.Drawing.Size(17, 685)
+        Me.VScrollBar1.TabIndex = 1
         '
         'tabpage_produtos
         '
@@ -8874,7 +8925,6 @@ Partial Class Form1
         'cbx_forprod
         '
         Me.cbx_forprod.BackColor = System.Drawing.Color.White
-        Me.cbx_forprod.Controls.Add(Me.VScrollBar1)
         Me.cbx_forprod.Controls.Add(Me.GroupBox106)
         Me.cbx_forprod.Controls.Add(Me.GroupBox92)
         Me.cbx_forprod.Controls.Add(Me.GroupBox90)
@@ -8887,22 +8937,6 @@ Partial Class Form1
         Me.cbx_forprod.Size = New System.Drawing.Size(1256, 527)
         Me.cbx_forprod.TabIndex = 11
         Me.cbx_forprod.TabStop = false
-        '
-        'VScrollBar1
-        '
-        Me.VScrollBar1.ContextMenuStrip = Me.ContextMenuStrip1
-        Me.VScrollBar1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.VScrollBar1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.VScrollBar1.Location = New System.Drawing.Point(1236, 41)
-        Me.VScrollBar1.Name = "VScrollBar1"
-        Me.VScrollBar1.Size = New System.Drawing.Size(17, 483)
-        Me.VScrollBar1.TabIndex = 50
-        Me.VScrollBar1.Value = 50
-        '
-        'ContextMenuStrip1
-        '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'GroupBox106
         '
@@ -9849,7 +9883,7 @@ Partial Class Form1
         '
         Me.menu_incluirprod.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.menu_incluirprod.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.menu_incluirprod.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.add
+        Me.menu_incluirprod.Image = CType(resources.GetObject("menu_incluirprod.Image"),System.Drawing.Image)
         Me.menu_incluirprod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_incluirprod.ImageTransparentColor = System.Drawing.Color.Gold
         Me.menu_incluirprod.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
@@ -9862,7 +9896,7 @@ Partial Class Form1
         '
         'menu_alterarprod
         '
-        Me.menu_alterarprod.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.edit
+        Me.menu_alterarprod.Image = CType(resources.GetObject("menu_alterarprod.Image"),System.Drawing.Image)
         Me.menu_alterarprod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_alterarprod.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.menu_alterarprod.Name = "menu_alterarprod"
@@ -9873,7 +9907,7 @@ Partial Class Form1
         '
         'menu_apagarprod
         '
-        Me.menu_apagarprod.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.menu_apagarprod.Image = CType(resources.GetObject("menu_apagarprod.Image"),System.Drawing.Image)
         Me.menu_apagarprod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_apagarprod.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.menu_apagarprod.Name = "menu_apagarprod"
@@ -9883,7 +9917,7 @@ Partial Class Form1
         '
         'menu_consultarprod
         '
-        Me.menu_consultarprod.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.search
+        Me.menu_consultarprod.Image = CType(resources.GetObject("menu_consultarprod.Image"),System.Drawing.Image)
         Me.menu_consultarprod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_consultarprod.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.menu_consultarprod.Name = "menu_consultarprod"
@@ -9893,7 +9927,7 @@ Partial Class Form1
         '
         'menu_confirmarprod
         '
-        Me.menu_confirmarprod.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.yes
+        Me.menu_confirmarprod.Image = CType(resources.GetObject("menu_confirmarprod.Image"),System.Drawing.Image)
         Me.menu_confirmarprod.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.menu_confirmarprod.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.menu_confirmarprod.Name = "menu_confirmarprod"
@@ -9903,7 +9937,7 @@ Partial Class Form1
         '
         'DesistirOperaçãoToolStripMenuItem2
         '
-        Me.DesistirOperaçãoToolStripMenuItem2.Image = Global.ProgramaMarfiniteMogi.My.Resources.Resources.delete
+        Me.DesistirOperaçãoToolStripMenuItem2.Image = CType(resources.GetObject("DesistirOperaçãoToolStripMenuItem2.Image"),System.Drawing.Image)
         Me.DesistirOperaçãoToolStripMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None
         Me.DesistirOperaçãoToolStripMenuItem2.Margin = New System.Windows.Forms.Padding(15, 0, 15, 0)
         Me.DesistirOperaçãoToolStripMenuItem2.Name = "DesistirOperaçãoToolStripMenuItem2"
@@ -9939,6 +9973,314 @@ Partial Class Form1
         Me.ProdutosDataGridView.ReadOnly = true
         Me.ProdutosDataGridView.Size = New System.Drawing.Size(1256, 481)
         Me.ProdutosDataGridView.TabIndex = 1
+        '
+        'DataGridViewTextBoxColumn35
+        '
+        Me.DataGridViewTextBoxColumn35.DataPropertyName = "id_codprod"
+        Me.DataGridViewTextBoxColumn35.HeaderText = "id_codprod"
+        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
+        Me.DataGridViewTextBoxColumn35.ReadOnly = true
+        '
+        'CrescimentoVendas_prod
+        '
+        Me.CrescimentoVendas_prod.DataPropertyName = "CrescimentoVendas_prod"
+        Me.CrescimentoVendas_prod.HeaderText = "CrescimentoVendas_prod"
+        Me.CrescimentoVendas_prod.Name = "CrescimentoVendas_prod"
+        Me.CrescimentoVendas_prod.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn36
+        '
+        Me.DataGridViewTextBoxColumn36.DataPropertyName = "cod_prod"
+        Me.DataGridViewTextBoxColumn36.HeaderText = "cod_prod"
+        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
+        Me.DataGridViewTextBoxColumn36.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn37
+        '
+        Me.DataGridViewTextBoxColumn37.DataPropertyName = "cod_prodfor"
+        Me.DataGridViewTextBoxColumn37.HeaderText = "cod_prodfor"
+        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
+        Me.DataGridViewTextBoxColumn37.ReadOnly = true
+        '
+        'codbarras_prod
+        '
+        Me.codbarras_prod.DataPropertyName = "codbarras_prod"
+        Me.codbarras_prod.HeaderText = "codbarras_prod"
+        Me.codbarras_prod.Name = "codbarras_prod"
+        Me.codbarras_prod.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn38
+        '
+        Me.DataGridViewTextBoxColumn38.DataPropertyName = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn38.HeaderText = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
+        Me.DataGridViewTextBoxColumn38.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn39
+        '
+        Me.DataGridViewTextBoxColumn39.DataPropertyName = "linha_prod"
+        Me.DataGridViewTextBoxColumn39.HeaderText = "linha_prod"
+        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
+        Me.DataGridViewTextBoxColumn39.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn42
+        '
+        Me.DataGridViewTextBoxColumn42.DataPropertyName = "nome_prod"
+        Me.DataGridViewTextBoxColumn42.HeaderText = "nome_prod"
+        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
+        Me.DataGridViewTextBoxColumn42.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn43
+        '
+        Me.DataGridViewTextBoxColumn43.DataPropertyName = "cor_prod"
+        Me.DataGridViewTextBoxColumn43.HeaderText = "cor_prod"
+        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
+        Me.DataGridViewTextBoxColumn43.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn44
+        '
+        Me.DataGridViewTextBoxColumn44.DataPropertyName = "precovarejo_prod"
+        Me.DataGridViewTextBoxColumn44.HeaderText = "precovarejo_prod"
+        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
+        Me.DataGridViewTextBoxColumn44.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn45
+        '
+        Me.DataGridViewTextBoxColumn45.DataPropertyName = "precoatacado_prod"
+        Me.DataGridViewTextBoxColumn45.HeaderText = "precoatacado_prod"
+        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
+        Me.DataGridViewTextBoxColumn45.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn46
+        '
+        Me.DataGridViewTextBoxColumn46.DataPropertyName = "markup_prod"
+        Me.DataGridViewTextBoxColumn46.HeaderText = "markup_prod"
+        Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
+        Me.DataGridViewTextBoxColumn46.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn47
+        '
+        Me.DataGridViewTextBoxColumn47.DataPropertyName = "estoquemin_prod"
+        Me.DataGridViewTextBoxColumn47.HeaderText = "estoquemin_prod"
+        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
+        Me.DataGridViewTextBoxColumn47.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn48
+        '
+        Me.DataGridViewTextBoxColumn48.DataPropertyName = "estaquemax_prod"
+        Me.DataGridViewTextBoxColumn48.HeaderText = "estaquemax_prod"
+        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
+        Me.DataGridViewTextBoxColumn48.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn49
+        '
+        Me.DataGridViewTextBoxColumn49.DataPropertyName = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn49.HeaderText = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
+        Me.DataGridViewTextBoxColumn49.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn50
+        '
+        Me.DataGridViewTextBoxColumn50.DataPropertyName = "icms_prod"
+        Me.DataGridViewTextBoxColumn50.HeaderText = "icms_prod"
+        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
+        Me.DataGridViewTextBoxColumn50.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn51
+        '
+        Me.DataGridViewTextBoxColumn51.DataPropertyName = "ipi_prod"
+        Me.DataGridViewTextBoxColumn51.HeaderText = "ipi_prod"
+        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
+        Me.DataGridViewTextBoxColumn51.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn52
+        '
+        Me.DataGridViewTextBoxColumn52.DataPropertyName = "peso_prod"
+        Me.DataGridViewTextBoxColumn52.HeaderText = "peso_prod"
+        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
+        Me.DataGridViewTextBoxColumn52.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn53
+        '
+        Me.DataGridViewTextBoxColumn53.DataPropertyName = "custo_prod"
+        Me.DataGridViewTextBoxColumn53.HeaderText = "custo_prod"
+        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
+        Me.DataGridViewTextBoxColumn53.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn54
+        '
+        Me.DataGridViewTextBoxColumn54.DataPropertyName = "pedcolocados_prod"
+        Me.DataGridViewTextBoxColumn54.HeaderText = "pedcolocados_prod"
+        Me.DataGridViewTextBoxColumn54.Name = "DataGridViewTextBoxColumn54"
+        Me.DataGridViewTextBoxColumn54.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn55
+        '
+        Me.DataGridViewTextBoxColumn55.DataPropertyName = "pedencomendados_prod"
+        Me.DataGridViewTextBoxColumn55.HeaderText = "pedencomendados_prod"
+        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
+        Me.DataGridViewTextBoxColumn55.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn56
+        '
+        Me.DataGridViewTextBoxColumn56.DataPropertyName = "abc_prod"
+        Me.DataGridViewTextBoxColumn56.HeaderText = "abc_prod"
+        Me.DataGridViewTextBoxColumn56.Name = "DataGridViewTextBoxColumn56"
+        Me.DataGridViewTextBoxColumn56.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn57
+        '
+        Me.DataGridViewTextBoxColumn57.DataPropertyName = "tempoentragafor_prod"
+        Me.DataGridViewTextBoxColumn57.HeaderText = "tempoentragafor_prod"
+        Me.DataGridViewTextBoxColumn57.Name = "DataGridViewTextBoxColumn57"
+        Me.DataGridViewTextBoxColumn57.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn58
+        '
+        Me.DataGridViewTextBoxColumn58.DataPropertyName = "porcentagemfat_prod"
+        Me.DataGridViewTextBoxColumn58.HeaderText = "porcentagemfat_prod"
+        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
+        Me.DataGridViewTextBoxColumn58.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn59
+        '
+        Me.DataGridViewTextBoxColumn59.DataPropertyName = "classificfiscal_prod"
+        Me.DataGridViewTextBoxColumn59.HeaderText = "classificfiscal_prod"
+        Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
+        Me.DataGridViewTextBoxColumn59.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn60
+        '
+        Me.DataGridViewTextBoxColumn60.DataPropertyName = "tabelafiscal_prod"
+        Me.DataGridViewTextBoxColumn60.HeaderText = "tabelafiscal_prod"
+        Me.DataGridViewTextBoxColumn60.Name = "DataGridViewTextBoxColumn60"
+        Me.DataGridViewTextBoxColumn60.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn61
+        '
+        Me.DataGridViewTextBoxColumn61.DataPropertyName = "situacao_prod"
+        Me.DataGridViewTextBoxColumn61.HeaderText = "situacao_prod"
+        Me.DataGridViewTextBoxColumn61.Name = "DataGridViewTextBoxColumn61"
+        Me.DataGridViewTextBoxColumn61.ReadOnly = true
+        '
+        'ConsumoMedio_prod
+        '
+        Me.ConsumoMedio_prod.DataPropertyName = "ConsumoMedio_prod"
+        Me.ConsumoMedio_prod.HeaderText = "ConsumoMedio_prod"
+        Me.ConsumoMedio_prod.Name = "ConsumoMedio_prod"
+        Me.ConsumoMedio_prod.ReadOnly = true
+        '
+        'EstoquePrateleira_prod
+        '
+        Me.EstoquePrateleira_prod.DataPropertyName = "EstoquePrateleira_prod"
+        Me.EstoquePrateleira_prod.HeaderText = "EstoquePrateleira_prod"
+        Me.EstoquePrateleira_prod.Name = "EstoquePrateleira_prod"
+        Me.EstoquePrateleira_prod.ReadOnly = true
+        '
+        'EmbalagemFabrica_prod
+        '
+        Me.EmbalagemFabrica_prod.DataPropertyName = "EmbalagemFabrica_prod"
+        Me.EmbalagemFabrica_prod.HeaderText = "EmbalagemFabrica_prod"
+        Me.EmbalagemFabrica_prod.Name = "EmbalagemFabrica_prod"
+        Me.EmbalagemFabrica_prod.ReadOnly = true
+        '
+        'Apelido_prod
+        '
+        Me.Apelido_prod.DataPropertyName = "Apelido_prod"
+        Me.Apelido_prod.HeaderText = "Apelido_prod"
+        Me.Apelido_prod.Name = "Apelido_prod"
+        Me.Apelido_prod.ReadOnly = true
+        '
+        'Bugiganga_prod
+        '
+        Me.Bugiganga_prod.DataPropertyName = "Bugiganga_prod"
+        Me.Bugiganga_prod.HeaderText = "Bugiganga_prod"
+        Me.Bugiganga_prod.Name = "Bugiganga_prod"
+        Me.Bugiganga_prod.ReadOnly = true
+        '
+        'MarkupNET_prod
+        '
+        Me.MarkupNET_prod.DataPropertyName = "MarkupNET_prod"
+        Me.MarkupNET_prod.HeaderText = "MarkupNET_prod"
+        Me.MarkupNET_prod.Name = "MarkupNET_prod"
+        Me.MarkupNET_prod.ReadOnly = true
+        '
+        'CodigoMlb_prod
+        '
+        Me.CodigoMlb_prod.DataPropertyName = "CodigoMlb_prod"
+        Me.CodigoMlb_prod.HeaderText = "CodigoMlb_prod"
+        Me.CodigoMlb_prod.Name = "CodigoMlb_prod"
+        Me.CodigoMlb_prod.ReadOnly = true
+        '
+        'CodComp1_prod
+        '
+        Me.CodComp1_prod.DataPropertyName = "CodComp1_prod"
+        Me.CodComp1_prod.HeaderText = "CodComp1_prod"
+        Me.CodComp1_prod.Name = "CodComp1_prod"
+        Me.CodComp1_prod.ReadOnly = true
+        '
+        'QtdeComp1_prod
+        '
+        Me.QtdeComp1_prod.DataPropertyName = "QtdeComp1_prod"
+        Me.QtdeComp1_prod.HeaderText = "QtdeComp1_prod"
+        Me.QtdeComp1_prod.Name = "QtdeComp1_prod"
+        Me.QtdeComp1_prod.ReadOnly = true
+        '
+        'CodComp2_prod
+        '
+        Me.CodComp2_prod.DataPropertyName = "CodComp2_prod"
+        Me.CodComp2_prod.HeaderText = "CodComp2_prod"
+        Me.CodComp2_prod.Name = "CodComp2_prod"
+        Me.CodComp2_prod.ReadOnly = true
+        '
+        'QtdeComp2_prod
+        '
+        Me.QtdeComp2_prod.DataPropertyName = "QtdeComp2_prod"
+        Me.QtdeComp2_prod.HeaderText = "QtdeComp2_prod"
+        Me.QtdeComp2_prod.Name = "QtdeComp2_prod"
+        Me.QtdeComp2_prod.ReadOnly = true
+        '
+        'CodComp3_prod
+        '
+        Me.CodComp3_prod.DataPropertyName = "CodComp3_prod"
+        Me.CodComp3_prod.HeaderText = "CodComp3_prod"
+        Me.CodComp3_prod.Name = "CodComp3_prod"
+        Me.CodComp3_prod.ReadOnly = true
+        '
+        'QtdeComp3_prod
+        '
+        Me.QtdeComp3_prod.DataPropertyName = "QtdeComp3_prod"
+        Me.QtdeComp3_prod.HeaderText = "QtdeComp3_prod"
+        Me.QtdeComp3_prod.Name = "QtdeComp3_prod"
+        Me.QtdeComp3_prod.ReadOnly = true
+        '
+        'CodComp4_prod
+        '
+        Me.CodComp4_prod.DataPropertyName = "CodComp4_prod"
+        Me.CodComp4_prod.HeaderText = "CodComp4_prod"
+        Me.CodComp4_prod.Name = "CodComp4_prod"
+        Me.CodComp4_prod.ReadOnly = true
+        '
+        'QtdeComp4_prod
+        '
+        Me.QtdeComp4_prod.DataPropertyName = "QtdeComp4_prod"
+        Me.QtdeComp4_prod.HeaderText = "QtdeComp4_prod"
+        Me.QtdeComp4_prod.Name = "QtdeComp4_prod"
+        Me.QtdeComp4_prod.ReadOnly = true
+        '
+        'CodComp5_prod
+        '
+        Me.CodComp5_prod.DataPropertyName = "CodComp5_prod"
+        Me.CodComp5_prod.HeaderText = "CodComp5_prod"
+        Me.CodComp5_prod.Name = "CodComp5_prod"
+        Me.CodComp5_prod.ReadOnly = true
+        '
+        'QtdeComp5_prod
+        '
+        Me.QtdeComp5_prod.DataPropertyName = "QtdeComp5_prod"
+        Me.QtdeComp5_prod.HeaderText = "QtdeComp5_prod"
+        Me.QtdeComp5_prod.Name = "QtdeComp5_prod"
+        Me.QtdeComp5_prod.ReadOnly = true
         '
         'Panel5
         '
@@ -10661,6 +11003,11 @@ Partial Class Form1
         '
         Me.FornecedorBindingSource5.DataMember = "fornecedor"
         Me.FornecedorBindingSource5.DataSource = Me.DataSetFinalBindingSource
+        '
+        'ContextMenuStrip1
+        '
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(61, 4)
         '
         'ProdutosBindingSource2
         '
@@ -16814,7 +17161,7 @@ Partial Class Form1
         '
         'Button32
         '
-        Me.Button32.BackgroundImage = Global.ProgramaMarfiniteMogi.My.Resources.Resources.btn12
+        Me.Button32.BackgroundImage = CType(resources.GetObject("Button32.BackgroundImage"),System.Drawing.Image)
         Me.Button32.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button32.FlatAppearance.BorderSize = 0
         Me.Button32.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -16897,7 +17244,7 @@ Partial Class Form1
         '
         'Button12
         '
-        Me.Button12.BackgroundImage = Global.ProgramaMarfiniteMogi.My.Resources.Resources.btn12
+        Me.Button12.BackgroundImage = CType(resources.GetObject("Button12.BackgroundImage"),System.Drawing.Image)
         Me.Button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Button12.FlatAppearance.BorderSize = 0
         Me.Button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -16912,7 +17259,7 @@ Partial Class Form1
         '
         'btn_iniciarVenda
         '
-        Me.btn_iniciarVenda.BackgroundImage = Global.ProgramaMarfiniteMogi.My.Resources.Resources.btn12
+        Me.btn_iniciarVenda.BackgroundImage = CType(resources.GetObject("btn_iniciarVenda.BackgroundImage"),System.Drawing.Image)
         Me.btn_iniciarVenda.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_iniciarVenda.FlatAppearance.BorderSize = 0
         Me.btn_iniciarVenda.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -24017,314 +24364,6 @@ Partial Class Form1
         Me.PrintPreviewDialog6.Name = "PrintPreviewDialog6"
         Me.PrintPreviewDialog6.Visible = false
         '
-        'DataGridViewTextBoxColumn35
-        '
-        Me.DataGridViewTextBoxColumn35.DataPropertyName = "id_codprod"
-        Me.DataGridViewTextBoxColumn35.HeaderText = "id_codprod"
-        Me.DataGridViewTextBoxColumn35.Name = "DataGridViewTextBoxColumn35"
-        Me.DataGridViewTextBoxColumn35.ReadOnly = true
-        '
-        'CrescimentoVendas_prod
-        '
-        Me.CrescimentoVendas_prod.DataPropertyName = "CrescimentoVendas_prod"
-        Me.CrescimentoVendas_prod.HeaderText = "CrescimentoVendas_prod"
-        Me.CrescimentoVendas_prod.Name = "CrescimentoVendas_prod"
-        Me.CrescimentoVendas_prod.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn36
-        '
-        Me.DataGridViewTextBoxColumn36.DataPropertyName = "cod_prod"
-        Me.DataGridViewTextBoxColumn36.HeaderText = "cod_prod"
-        Me.DataGridViewTextBoxColumn36.Name = "DataGridViewTextBoxColumn36"
-        Me.DataGridViewTextBoxColumn36.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn37
-        '
-        Me.DataGridViewTextBoxColumn37.DataPropertyName = "cod_prodfor"
-        Me.DataGridViewTextBoxColumn37.HeaderText = "cod_prodfor"
-        Me.DataGridViewTextBoxColumn37.Name = "DataGridViewTextBoxColumn37"
-        Me.DataGridViewTextBoxColumn37.ReadOnly = true
-        '
-        'codbarras_prod
-        '
-        Me.codbarras_prod.DataPropertyName = "codbarras_prod"
-        Me.codbarras_prod.HeaderText = "codbarras_prod"
-        Me.codbarras_prod.Name = "codbarras_prod"
-        Me.codbarras_prod.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn38
-        '
-        Me.DataGridViewTextBoxColumn38.DataPropertyName = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn38.HeaderText = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn38.Name = "DataGridViewTextBoxColumn38"
-        Me.DataGridViewTextBoxColumn38.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn39
-        '
-        Me.DataGridViewTextBoxColumn39.DataPropertyName = "linha_prod"
-        Me.DataGridViewTextBoxColumn39.HeaderText = "linha_prod"
-        Me.DataGridViewTextBoxColumn39.Name = "DataGridViewTextBoxColumn39"
-        Me.DataGridViewTextBoxColumn39.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn42
-        '
-        Me.DataGridViewTextBoxColumn42.DataPropertyName = "nome_prod"
-        Me.DataGridViewTextBoxColumn42.HeaderText = "nome_prod"
-        Me.DataGridViewTextBoxColumn42.Name = "DataGridViewTextBoxColumn42"
-        Me.DataGridViewTextBoxColumn42.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn43
-        '
-        Me.DataGridViewTextBoxColumn43.DataPropertyName = "cor_prod"
-        Me.DataGridViewTextBoxColumn43.HeaderText = "cor_prod"
-        Me.DataGridViewTextBoxColumn43.Name = "DataGridViewTextBoxColumn43"
-        Me.DataGridViewTextBoxColumn43.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn44
-        '
-        Me.DataGridViewTextBoxColumn44.DataPropertyName = "precovarejo_prod"
-        Me.DataGridViewTextBoxColumn44.HeaderText = "precovarejo_prod"
-        Me.DataGridViewTextBoxColumn44.Name = "DataGridViewTextBoxColumn44"
-        Me.DataGridViewTextBoxColumn44.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn45
-        '
-        Me.DataGridViewTextBoxColumn45.DataPropertyName = "precoatacado_prod"
-        Me.DataGridViewTextBoxColumn45.HeaderText = "precoatacado_prod"
-        Me.DataGridViewTextBoxColumn45.Name = "DataGridViewTextBoxColumn45"
-        Me.DataGridViewTextBoxColumn45.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn46
-        '
-        Me.DataGridViewTextBoxColumn46.DataPropertyName = "markup_prod"
-        Me.DataGridViewTextBoxColumn46.HeaderText = "markup_prod"
-        Me.DataGridViewTextBoxColumn46.Name = "DataGridViewTextBoxColumn46"
-        Me.DataGridViewTextBoxColumn46.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn47
-        '
-        Me.DataGridViewTextBoxColumn47.DataPropertyName = "estoquemin_prod"
-        Me.DataGridViewTextBoxColumn47.HeaderText = "estoquemin_prod"
-        Me.DataGridViewTextBoxColumn47.Name = "DataGridViewTextBoxColumn47"
-        Me.DataGridViewTextBoxColumn47.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn48
-        '
-        Me.DataGridViewTextBoxColumn48.DataPropertyName = "estaquemax_prod"
-        Me.DataGridViewTextBoxColumn48.HeaderText = "estaquemax_prod"
-        Me.DataGridViewTextBoxColumn48.Name = "DataGridViewTextBoxColumn48"
-        Me.DataGridViewTextBoxColumn48.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn49
-        '
-        Me.DataGridViewTextBoxColumn49.DataPropertyName = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn49.HeaderText = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn49.Name = "DataGridViewTextBoxColumn49"
-        Me.DataGridViewTextBoxColumn49.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn50
-        '
-        Me.DataGridViewTextBoxColumn50.DataPropertyName = "icms_prod"
-        Me.DataGridViewTextBoxColumn50.HeaderText = "icms_prod"
-        Me.DataGridViewTextBoxColumn50.Name = "DataGridViewTextBoxColumn50"
-        Me.DataGridViewTextBoxColumn50.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn51
-        '
-        Me.DataGridViewTextBoxColumn51.DataPropertyName = "ipi_prod"
-        Me.DataGridViewTextBoxColumn51.HeaderText = "ipi_prod"
-        Me.DataGridViewTextBoxColumn51.Name = "DataGridViewTextBoxColumn51"
-        Me.DataGridViewTextBoxColumn51.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn52
-        '
-        Me.DataGridViewTextBoxColumn52.DataPropertyName = "peso_prod"
-        Me.DataGridViewTextBoxColumn52.HeaderText = "peso_prod"
-        Me.DataGridViewTextBoxColumn52.Name = "DataGridViewTextBoxColumn52"
-        Me.DataGridViewTextBoxColumn52.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn53
-        '
-        Me.DataGridViewTextBoxColumn53.DataPropertyName = "custo_prod"
-        Me.DataGridViewTextBoxColumn53.HeaderText = "custo_prod"
-        Me.DataGridViewTextBoxColumn53.Name = "DataGridViewTextBoxColumn53"
-        Me.DataGridViewTextBoxColumn53.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn54
-        '
-        Me.DataGridViewTextBoxColumn54.DataPropertyName = "pedcolocados_prod"
-        Me.DataGridViewTextBoxColumn54.HeaderText = "pedcolocados_prod"
-        Me.DataGridViewTextBoxColumn54.Name = "DataGridViewTextBoxColumn54"
-        Me.DataGridViewTextBoxColumn54.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn55
-        '
-        Me.DataGridViewTextBoxColumn55.DataPropertyName = "pedencomendados_prod"
-        Me.DataGridViewTextBoxColumn55.HeaderText = "pedencomendados_prod"
-        Me.DataGridViewTextBoxColumn55.Name = "DataGridViewTextBoxColumn55"
-        Me.DataGridViewTextBoxColumn55.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn56
-        '
-        Me.DataGridViewTextBoxColumn56.DataPropertyName = "abc_prod"
-        Me.DataGridViewTextBoxColumn56.HeaderText = "abc_prod"
-        Me.DataGridViewTextBoxColumn56.Name = "DataGridViewTextBoxColumn56"
-        Me.DataGridViewTextBoxColumn56.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn57
-        '
-        Me.DataGridViewTextBoxColumn57.DataPropertyName = "tempoentragafor_prod"
-        Me.DataGridViewTextBoxColumn57.HeaderText = "tempoentragafor_prod"
-        Me.DataGridViewTextBoxColumn57.Name = "DataGridViewTextBoxColumn57"
-        Me.DataGridViewTextBoxColumn57.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn58
-        '
-        Me.DataGridViewTextBoxColumn58.DataPropertyName = "porcentagemfat_prod"
-        Me.DataGridViewTextBoxColumn58.HeaderText = "porcentagemfat_prod"
-        Me.DataGridViewTextBoxColumn58.Name = "DataGridViewTextBoxColumn58"
-        Me.DataGridViewTextBoxColumn58.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn59
-        '
-        Me.DataGridViewTextBoxColumn59.DataPropertyName = "classificfiscal_prod"
-        Me.DataGridViewTextBoxColumn59.HeaderText = "classificfiscal_prod"
-        Me.DataGridViewTextBoxColumn59.Name = "DataGridViewTextBoxColumn59"
-        Me.DataGridViewTextBoxColumn59.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn60
-        '
-        Me.DataGridViewTextBoxColumn60.DataPropertyName = "tabelafiscal_prod"
-        Me.DataGridViewTextBoxColumn60.HeaderText = "tabelafiscal_prod"
-        Me.DataGridViewTextBoxColumn60.Name = "DataGridViewTextBoxColumn60"
-        Me.DataGridViewTextBoxColumn60.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn61
-        '
-        Me.DataGridViewTextBoxColumn61.DataPropertyName = "situacao_prod"
-        Me.DataGridViewTextBoxColumn61.HeaderText = "situacao_prod"
-        Me.DataGridViewTextBoxColumn61.Name = "DataGridViewTextBoxColumn61"
-        Me.DataGridViewTextBoxColumn61.ReadOnly = true
-        '
-        'ConsumoMedio_prod
-        '
-        Me.ConsumoMedio_prod.DataPropertyName = "ConsumoMedio_prod"
-        Me.ConsumoMedio_prod.HeaderText = "ConsumoMedio_prod"
-        Me.ConsumoMedio_prod.Name = "ConsumoMedio_prod"
-        Me.ConsumoMedio_prod.ReadOnly = true
-        '
-        'EstoquePrateleira_prod
-        '
-        Me.EstoquePrateleira_prod.DataPropertyName = "EstoquePrateleira_prod"
-        Me.EstoquePrateleira_prod.HeaderText = "EstoquePrateleira_prod"
-        Me.EstoquePrateleira_prod.Name = "EstoquePrateleira_prod"
-        Me.EstoquePrateleira_prod.ReadOnly = true
-        '
-        'EmbalagemFabrica_prod
-        '
-        Me.EmbalagemFabrica_prod.DataPropertyName = "EmbalagemFabrica_prod"
-        Me.EmbalagemFabrica_prod.HeaderText = "EmbalagemFabrica_prod"
-        Me.EmbalagemFabrica_prod.Name = "EmbalagemFabrica_prod"
-        Me.EmbalagemFabrica_prod.ReadOnly = true
-        '
-        'Apelido_prod
-        '
-        Me.Apelido_prod.DataPropertyName = "Apelido_prod"
-        Me.Apelido_prod.HeaderText = "Apelido_prod"
-        Me.Apelido_prod.Name = "Apelido_prod"
-        Me.Apelido_prod.ReadOnly = true
-        '
-        'Bugiganga_prod
-        '
-        Me.Bugiganga_prod.DataPropertyName = "Bugiganga_prod"
-        Me.Bugiganga_prod.HeaderText = "Bugiganga_prod"
-        Me.Bugiganga_prod.Name = "Bugiganga_prod"
-        Me.Bugiganga_prod.ReadOnly = true
-        '
-        'MarkupNET_prod
-        '
-        Me.MarkupNET_prod.DataPropertyName = "MarkupNET_prod"
-        Me.MarkupNET_prod.HeaderText = "MarkupNET_prod"
-        Me.MarkupNET_prod.Name = "MarkupNET_prod"
-        Me.MarkupNET_prod.ReadOnly = true
-        '
-        'CodigoMlb_prod
-        '
-        Me.CodigoMlb_prod.DataPropertyName = "CodigoMlb_prod"
-        Me.CodigoMlb_prod.HeaderText = "CodigoMlb_prod"
-        Me.CodigoMlb_prod.Name = "CodigoMlb_prod"
-        Me.CodigoMlb_prod.ReadOnly = true
-        '
-        'CodComp1_prod
-        '
-        Me.CodComp1_prod.DataPropertyName = "CodComp1_prod"
-        Me.CodComp1_prod.HeaderText = "CodComp1_prod"
-        Me.CodComp1_prod.Name = "CodComp1_prod"
-        Me.CodComp1_prod.ReadOnly = true
-        '
-        'QtdeComp1_prod
-        '
-        Me.QtdeComp1_prod.DataPropertyName = "QtdeComp1_prod"
-        Me.QtdeComp1_prod.HeaderText = "QtdeComp1_prod"
-        Me.QtdeComp1_prod.Name = "QtdeComp1_prod"
-        Me.QtdeComp1_prod.ReadOnly = true
-        '
-        'CodComp2_prod
-        '
-        Me.CodComp2_prod.DataPropertyName = "CodComp2_prod"
-        Me.CodComp2_prod.HeaderText = "CodComp2_prod"
-        Me.CodComp2_prod.Name = "CodComp2_prod"
-        Me.CodComp2_prod.ReadOnly = true
-        '
-        'QtdeComp2_prod
-        '
-        Me.QtdeComp2_prod.DataPropertyName = "QtdeComp2_prod"
-        Me.QtdeComp2_prod.HeaderText = "QtdeComp2_prod"
-        Me.QtdeComp2_prod.Name = "QtdeComp2_prod"
-        Me.QtdeComp2_prod.ReadOnly = true
-        '
-        'CodComp3_prod
-        '
-        Me.CodComp3_prod.DataPropertyName = "CodComp3_prod"
-        Me.CodComp3_prod.HeaderText = "CodComp3_prod"
-        Me.CodComp3_prod.Name = "CodComp3_prod"
-        Me.CodComp3_prod.ReadOnly = true
-        '
-        'QtdeComp3_prod
-        '
-        Me.QtdeComp3_prod.DataPropertyName = "QtdeComp3_prod"
-        Me.QtdeComp3_prod.HeaderText = "QtdeComp3_prod"
-        Me.QtdeComp3_prod.Name = "QtdeComp3_prod"
-        Me.QtdeComp3_prod.ReadOnly = true
-        '
-        'CodComp4_prod
-        '
-        Me.CodComp4_prod.DataPropertyName = "CodComp4_prod"
-        Me.CodComp4_prod.HeaderText = "CodComp4_prod"
-        Me.CodComp4_prod.Name = "CodComp4_prod"
-        Me.CodComp4_prod.ReadOnly = true
-        '
-        'QtdeComp4_prod
-        '
-        Me.QtdeComp4_prod.DataPropertyName = "QtdeComp4_prod"
-        Me.QtdeComp4_prod.HeaderText = "QtdeComp4_prod"
-        Me.QtdeComp4_prod.Name = "QtdeComp4_prod"
-        Me.QtdeComp4_prod.ReadOnly = true
-        '
-        'CodComp5_prod
-        '
-        Me.CodComp5_prod.DataPropertyName = "CodComp5_prod"
-        Me.CodComp5_prod.HeaderText = "CodComp5_prod"
-        Me.CodComp5_prod.Name = "CodComp5_prod"
-        Me.CodComp5_prod.ReadOnly = true
-        '
-        'QtdeComp5_prod
-        '
-        Me.QtdeComp5_prod.DataPropertyName = "QtdeComp5_prod"
-        Me.QtdeComp5_prod.HeaderText = "QtdeComp5_prod"
-        Me.QtdeComp5_prod.Name = "QtdeComp5_prod"
-        Me.QtdeComp5_prod.ReadOnly = true
-        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -24366,6 +24405,8 @@ Partial Class Form1
         Me.TabControl2.ResumeLayout(false)
         Me.tab_Kgiro.ResumeLayout(false)
         Me.Panel6.ResumeLayout(false)
+        Me.GroupBox114.ResumeLayout(false)
+        Me.GroupBox114.PerformLayout
         Me.GroupBox115.ResumeLayout(false)
         Me.GroupBox115.PerformLayout
         Me.GroupBox113.ResumeLayout(false)
@@ -26969,7 +27010,6 @@ End Sub
     Friend WithEvents Label246 As System.Windows.Forms.Label
     Friend WithEvents TextBox268 As System.Windows.Forms.TextBox
     Friend WithEvents Button75 As System.Windows.Forms.Button
-    Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
     Friend WithEvents DataGridViewTextBoxColumn656 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn319 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn320 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -27254,5 +27294,10 @@ End Sub
     Friend WithEvents QtdeComp4_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CodComp5_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents QtdeComp5_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents VScrollBar1 As System.Windows.Forms.VScrollBar
+    Friend WithEvents GroupBox114 As System.Windows.Forms.GroupBox
+    Friend WithEvents DateTimePicker38 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents TextBox287 As System.Windows.Forms.TextBox
+    Friend WithEvents Label304 As System.Windows.Forms.Label
 
 End Class
