@@ -65,7 +65,6 @@ C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release
 C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Resources.resources
 C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.nivelAcessoTela.resources
 C:\Users\Central\Desktop\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbproj.GenerateResource.Cache
-C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.exe.config
 C:\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbproj.ResolveComReference.cache
 C:\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.exe
 C:\ProgramaMarfiniteMogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.xml
@@ -89,9 +88,6 @@ D:\Backup Programa\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbpro
 D:\Backup Programa\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.exe
 D:\Backup Programa\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.xml
 D:\Backup Programa\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.pdb
-C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.exe
-C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.pdb
-C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.xml
 C:\Projeto Programa Marfinite Mogi\release2\ProgramaMarfiniteMogi.exe.config
 C:\Projeto Programa Marfinite Mogi\release2\ProgramaMarfiniteMogi.exe
 C:\Projeto Programa Marfinite Mogi\release2\ProgramaMarfiniteMogi.pdb
@@ -107,17 +103,20 @@ C:\Projeto Programa Marfinite Mogi\release2\ProgramaMarfiniteMogi.xml
 \\FERNANDO\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.exe
 \\FERNANDO\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.xml
 \\FERNANDO\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.pdb
+C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.exe.config
+C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.exe
+C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.pdb
+C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.xml
+C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.exe.config
+C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.exe
+C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.pdb
+C:\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.xml
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbproj.ResolveComReference.cache
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Form1.resources
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.FormularioItemNfeEmitida.resources
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Resources.resources
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.nivelAcessoTela.resources
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbproj.GenerateResource.Cache
-C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbprojResolveAssemblyReference.cache
-C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.exe.config
-C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.exe
-C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.pdb
-C:\Projeto Programa Marfinite Mogi\release2Valido\ProgramaMarfiniteMogi.xml
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.exe
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.xml
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.pdb
