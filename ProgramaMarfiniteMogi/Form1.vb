@@ -16003,6 +16003,12 @@ proxima2:
     End Sub
 
    
+    Private Sub Button99_Click(sender As Object, e As EventArgs) Handles Button99.Click
+
+        PedidoCompraBindingSource.Filter = String.Format("Fornecedor_PedidoCompra LIKE '{0}%'", ComboBox26.Text)
+
+
+    End Sub
 End Class
 
 
