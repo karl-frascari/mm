@@ -323,88 +323,9 @@ Public Class Form1
             End If
 
         End If
-        If TabControl1.SelectedTab.ToString = "TabPage: {NFE}" Then
-            Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-            If codigoEntrada <> fernando Then
-                MessageBox.Show("Código inválido")
-                TabControl1.SelectedIndex = 0
-                Exit Sub
-
-
-            End If
-
-            If TabControl1.SelectedTab.ToString = "TabPage: {Nota Fiscal}" Then
-               
-            End If
-
-            ItemNfeEmitidaBindingSource.Filter = String.Format("NomeProd_ItemNfeemitida LIKE '{0}%'", "oairgoafg000....çojdasfghaoirgy")
-
-            date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-            date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-            date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-            date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-            date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
-            DateTimePicker20.Text = Date.Now
-
-            'desabilitando os campos das duplicatas
-            date_duplicata1.Enabled = False
-            txt_vrduplicata1.Enabled = False
-            date_duplicata2.Enabled = False
-            txt_vrduplicata2.Enabled = False
-            date_duplicata3.Enabled = False
-            txt_vrduplicata3.Enabled = False
-            date_duplicata4.Enabled = False
-            txt_vrduplicata4.Enabled = False
-            date_duplicata5.Enabled = False
-            txt_vrduplicata5.Enabled = False
-            ' rem inabilitar chk duplicatas
-            rdb_vezesduplicata1.Enabled = False
-            rdb_vezesduplicata2.Enabled = False
-            rdb_vezesduplicata3.Enabled = False
-            rdb_vezesduplicata4.Enabled = False
-            rdb_vezesduplicata5.Enabled = False
-            ' inabilitar botões
-            Button21.Enabled = False
-            Button10.Enabled = False
-            Button18.Enabled = False
-            Button19.Enabled = False
-            ComboBox12.Enabled = False
-            Button38.Enabled = False
-
-            travarcamposformpedidosNFE()
-            ConfirmarPedidoToolStripMenuItem.Enabled = False
-            btn_conifmardadospedNFE.Enabled = False
-            ConfirmarPedidoToolStripMenuItem.Enabled = False
-            ' oculta a tabela de pedidos
-            TabControl_NFE.TabPages.Remove(TabPage_PedidosNFE)
-            TabControl_NFE.TabPages.Remove(tbpg_transNfe)
-
-            ' acerta os botões
-            Button20.BackColor = Color.Gray
-            Button20.Enabled = False
-            Button4.BackColor = Color.Red
-            Button4.Enabled = False
-            'dá os da empresa marfinitemogi
-            TextBox16.Text = "FERNANDO FRASCARI EPP"
-            TextBox14.Text = "MARFINITE MOGI"
-            MaskedTextBox5.Text = "08735400"
-            TextBox11.Text = "VILA BERNADOTTI"
-            TextBox13.Text = "AV HENRIQUE PERES 1880"""
-            MaskedTextBox8.Text = "1147226115"
-            MaskedTextBox7.Text = "72844228000179"
-            MaskedTextBox6.Text = "454131384115"
-            ComboBox4.Text = "SP"
-            ComboBox5.Text = "MOGI DAS CRUZES"
-            TextBox15.Text = "3530607"
-
-
-        End If
-
-
 
         If TabControl1.SelectedTab.ToString = "TabPage: {Mala direta}" Then
 
-            'limparformOrcamento()
             TextBox6.Enabled = False
             TextBox7.Enabled = False
             TextBox174.Enabled = False
@@ -571,6 +492,13 @@ Public Class Form1
 
         End If
 
+        If TabControl1.SelectedTab.ToString = "TabPage: {NFE}" Then
+
+            MessageBox.Show("")
+            TabControl5.TabPages.Remove(TabPage14)
+            TabControl5.TabPages.Remove(TabPage20)
+
+        End If
     End Sub
 
 
@@ -4752,177 +4680,177 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub rdb_vezesduplicata2_Click(sender As Object, e As EventArgs) Handles rdb_vezesduplicata2.Click
 
-        Dim vrduplicata1 As Double = (TextBox5.Text / 2)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 2)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 2)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
-        '-----------------------------
-        date_duplicata3.Enabled = False
-        txt_vrduplicata3.Enabled = False
-        txt_vrduplicata3.Text = ""
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 2)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        ''-----------------------------
+        'date_duplicata3.Enabled = False
+        'txt_vrduplicata3.Enabled = False
+        'txt_vrduplicata3.Text = ""
 
-        '--------------------------------
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        txt_vrduplicata4.Text = ""
+        ''--------------------------------
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'txt_vrduplicata4.Text = ""
 
-        ' ------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        '' ------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
 
     End Sub
 
     Private Sub rdb_vezesduplicata3_Click(sender As Object, e As EventArgs) Handles rdb_vezesduplicata3.Click
 
-        Dim vrduplicata1 As Double = (TextBox5.Text / 3)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 3)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 3)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 3)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
 
-        '----------------------------------
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
+        ''----------------------------------
+        'date_duplicata3.Enabled = True
+        'txt_vrduplicata3.Enabled = True
 
-        Dim vrduplicata3 As Double = (TextBox5.Text / 3)
-        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+        'Dim vrduplicata3 As Double = (TextBox5.Text / 3)
+        'txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
 
-        '----------------------------------
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        txt_vrduplicata4.Text = ""
+        ''----------------------------------
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'txt_vrduplicata4.Text = ""
 
-        ' -----------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        '' -----------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
 
     End Sub
 
     Private Sub rdb_vezesduplicata4_Click(sender As Object, e As EventArgs) Handles rdb_vezesduplicata4.Click
 
-        Dim vrduplicata1 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-      
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-         '----------------------------------
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
 
-        Dim vrduplicata3 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+        ' '----------------------------------
+        'date_duplicata3.Enabled = True
+        'txt_vrduplicata3.Enabled = True
 
-        '----------------------------------
-        date_duplicata4.Enabled = True
-        txt_vrduplicata4.Enabled = True
+        'Dim vrduplicata3 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
 
-        Dim vrduplicata4 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+        ''----------------------------------
+        'date_duplicata4.Enabled = True
+        'txt_vrduplicata4.Enabled = True
 
-         '----------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        'Dim vrduplicata4 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+
+        ' '----------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
     End Sub
 
     Private Sub rdb_vezesduplicata5_Click(sender As Object, e As EventArgs) Handles rdb_vezesduplicata5.Click
-        Dim vrduplicata1 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
 
-        '----------------------------------
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
+        ''----------------------------------
+        'date_duplicata3.Enabled = True
+        'txt_vrduplicata3.Enabled = True
 
-        Dim vrduplicata3 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+        'Dim vrduplicata3 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
 
-          '----------------------------------
-        date_duplicata4.Enabled = True
-        txt_vrduplicata4.Enabled = True
+        '  '----------------------------------
+        'date_duplicata4.Enabled = True
+        'txt_vrduplicata4.Enabled = True
 
-        Dim vrduplicata4 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+        'Dim vrduplicata4 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
 
-        '----------------------------------
-        date_duplicata5.Enabled = True
-        txt_vrduplicata5.Enabled = True
+        ''----------------------------------
+        'date_duplicata5.Enabled = True
+        'txt_vrduplicata5.Enabled = True
 
-        Dim vrduplicata5 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata5.Text = vrduplicata5.ToString("F2")
+        'Dim vrduplicata5 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata5.Text = vrduplicata5.ToString("F2")
 
-         ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        ' ' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
 
     End Sub
 
     Private Sub rdb_vezesduplicata1_Click(sender As Object, e As EventArgs) Handles rdb_vezesduplicata1.Click
 
-        Dim vrduplicata1 As Double = TextBox5.Text
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
-        '----------------------------------
-        date_duplicata2.Enabled = False
-        txt_vrduplicata2.Enabled = False
-        txt_vrduplicata2.Text = ""
-        '----------------------------------
-        date_duplicata3.Enabled = False
-        txt_vrduplicata3.Enabled = False
-        txt_vrduplicata3.Text = ""
-        '----------------------------------
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        txt_vrduplicata4.Text = ""
-        '----------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        'Dim vrduplicata1 As Double = TextBox5.Text
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        ''----------------------------------
+        'date_duplicata2.Enabled = False
+        'txt_vrduplicata2.Enabled = False
+        'txt_vrduplicata2.Text = ""
+        ''----------------------------------
+        'date_duplicata3.Enabled = False
+        'txt_vrduplicata3.Enabled = False
+        'txt_vrduplicata3.Text = ""
+        ''----------------------------------
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'txt_vrduplicata4.Text = ""
+        ''----------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
 
     End Sub
 
@@ -7006,39 +6934,39 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
 
-        TextBox16.Text = "FERNANDO FRASCARI EPP"
-        TextBox14.Text = "MARFINITE MOGI"
-        MaskedTextBox5.Text = "08735400"
-        TextBox11.Text = "VILA BERNADOTTI"
-        TextBox13.Text = "AV HENRIQUE PERES 1880"""
-        MaskedTextBox8.Text = "1147226115"
-        MaskedTextBox7.Text = "72844228000179"
-        MaskedTextBox6.Text = "454131384115"
-        ComboBox4.Text = "SP"
-        ComboBox5.Text = "MOGI DAS CRUZES"
-        Button4.Enabled = True
-        Button20.Enabled = False
-        Button20.BackColor = Color.Gray
-        Button4.BackColor = Color.Red
+        'TextBox16.Text = "FERNANDO FRASCARI EPP"
+        'TextBox14.Text = "MARFINITE MOGI"
+        'MaskedTextBox5.Text = "08735400"
+        'TextBox11.Text = "VILA BERNADOTTI"
+        'TextBox13.Text = "AV HENRIQUE PERES 1880"""
+        'MaskedTextBox8.Text = "1147226115"
+        'MaskedTextBox7.Text = "72844228000179"
+        'MaskedTextBox6.Text = "454131384115"
+        'ComboBox4.Text = "SP"
+        'ComboBox5.Text = "MOGI DAS CRUZES"
+        'Button4.Enabled = True
+        'Button20.Enabled = False
+        'Button20.BackColor = Color.Gray
+        'Button4.BackColor = Color.Red
 
 
     End Sub
 
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
-        TextBox16.Text = "SILVIA PAULA DUARTE FRASCARI - ME"
-        TextBox14.Text = ""
-        MaskedTextBox5.Text = "08737165"
-        TextBox11.Text = "ALTO IPIRANGA"
-        TextBox13.Text = "AV HENRIQUE EROLES 1459"
-        MaskedTextBox8.Text = "1147261880"
-        MaskedTextBox7.Text = "18623408000185"
-        MaskedTextBox6.Text = "454382243117"
-        ComboBox4.Text = "SP"
-        ComboBox5.Text = "MOGI DAS CRUZES"
-        Button4.Enabled = False
-        Button20.Enabled = True
-        Button20.BackColor = Color.Red
-        Button4.BackColor = Color.Gray
+        'TextBox16.Text = "SILVIA PAULA DUARTE FRASCARI - ME"
+        'TextBox14.Text = ""
+        'MaskedTextBox5.Text = "08737165"
+        'TextBox11.Text = "ALTO IPIRANGA"
+        'TextBox13.Text = "AV HENRIQUE EROLES 1459"
+        'MaskedTextBox8.Text = "1147261880"
+        'MaskedTextBox7.Text = "18623408000185"
+        'MaskedTextBox6.Text = "454382243117"
+        'ComboBox4.Text = "SP"
+        'ComboBox5.Text = "MOGI DAS CRUZES"
+        'Button4.Enabled = False
+        'Button20.Enabled = True
+        'Button20.BackColor = Color.Red
+        'Button4.BackColor = Color.Gray
     End Sub
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
@@ -8634,37 +8562,37 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub localizandoCFOP()
 
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
-        command = connection.CreateCommand()
-        command.CommandText = "select * from TabelaCFOP where  codigo_cfop = '" & cbx_CFOP.Text & "'"
+        'command = connection.CreateCommand()
+        'command.CommandText = "select * from TabelaCFOP where  codigo_cfop = '" & cbx_CFOP.Text & "'"
 
-        connection.Open()
+        'connection.Open()
 
-        Dim lrd As SqlDataReader = command.ExecuteReader()
+        'Dim lrd As SqlDataReader = command.ExecuteReader()
 
-        While lrd.Read()
+        'While lrd.Read()
 
 
-            If lrd("descricao_cfop") Is DBNull.Value Then
-                MessageBox.Show("esse CFOP não existe")
-                cbx_CFOP.Text = ""
-                Exit Sub
-            Else
-                TextBox30.Text = lrd("descricao_cfop")
-            End If
+        '    If lrd("descricao_cfop") Is DBNull.Value Then
+        '        MessageBox.Show("esse CFOP não existe")
+        '        cbx_CFOP.Text = ""
+        '        Exit Sub
+        '    Else
+        '        TextBox30.Text = lrd("descricao_cfop")
+        '    End If
 
-            If lrd("operacao") Is DBNull.Value Then
-                MessageBox.Show("esse CFOP não existe")
-                cbx_CFOP.Text = ""
-            Else
-                TextBox31.Text = lrd("operacao")
-            End If
+        '    If lrd("operacao") Is DBNull.Value Then
+        '        MessageBox.Show("esse CFOP não existe")
+        '        cbx_CFOP.Text = ""
+        '    Else
+        '        TextBox31.Text = lrd("operacao")
+        '    End If
 
-        End While
-        connection.Close()
+        'End While
+        'connection.Close()
 
     End Sub
 
@@ -10303,73 +10231,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
    
     Private Sub Button38_Click(sender As Object, e As EventArgs) Handles Button38.Click
-        Dim result = MessageBox.Show("Confirmar a Deleção?", "Atenção!!!", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-
-        ElseIf result = DialogResult.Yes Then
-
-            Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-            ' -------------------------------------
-            '  Dim quantidade As String = InputBox("Digite a quantidade ", "QUANTIDADE", ((ItemPedidosDataGridView2.Item(5, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(7, v_SelectRow).Value)))
-
-
-
-
-            Dim v_SelectRow As Integer
-            Try
-                v_SelectRow = Me.ItemPedidosDataGridView1.CurrentRow.Index
-            Catch ex As Exception
-                Exit Sub
-            End Try
-
-            'rem GRAVAR DADOS
-            Dim command6 As SqlCommand
-            command6 = connection.CreateCommand()
-            command6.CommandText = "update ItemPedidos set  quantidadeparcialentregue_item = @quantidadeparcialentregue_item  where id_item = @id_cod"
-            command6.CommandType = CommandType.Text
-            command6.Parameters.Add("@id_cod", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView1.Item(13, v_SelectRow).Value
-            command6.Parameters.Add("@quantidadeparcialentregue_item", SqlDbType.Int).Value = ItemPedidosDataGridView1.Item(12, v_SelectRow).Value - ItemPedidosDataGridView1.Item(3, v_SelectRow).Value
-
-            Try
-                connection.Open()
-                command6.ExecuteNonQuery()
-                connection.Close()
-
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString())
-
-            End Try
-
-            ' ------------------------------------------------------------
-
-            Dim command As SqlCommand
-            command = connection.CreateCommand()
-            command.CommandText = "delete from ItemNfeEmitida where NomeProd_ItemNfeemitida = @nome and id_ItemNfeEmitida = @id_cod"
-            command.CommandType = CommandType.Text
-            command.Parameters.Add("@nome", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView1.Item(2, v_SelectRow).Value
-            command.Parameters.Add("@id_cod", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView1.Item(0, v_SelectRow).Value
-
-            Try
-
-
-                connection.Open()
-                command.ExecuteNonQuery()
-                connection.Close()
-
-            Catch ex As Exception
-
-                MessageBox.Show("Impossível apagar campos nulo")
-
-            End Try
-
-
-            Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
-            Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
-
-
-        End If
-
+        
       
     End Sub
     Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
@@ -15960,6 +15822,11 @@ proxima2:
 
     Private Sub GerarNotaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GerarNotaToolStripMenuItem.Click
 
+        If RadioButton16.Checked = False And RadioButton17.Checked = False Then
+            MessageBox.Show("Escolha um emissor")
+            Exit Sub
+        End If
+
         ' remove a tab consulta e acrescenta a tab TabPage_PedidosNFE
         'RETIRA A VISIBILIDADE DA PAGE DESEJADA
         TabControl1.TabPages.Remove(tbpg_produtos)
@@ -15968,37 +15835,14 @@ proxima2:
         TabControl1.TabPages.Remove(tbpg_transportadoras)
         TabControl1.TabPages.Remove(tbpg_capitalGiro)
         TabControl1.TabPages.Remove(tab_nfe)
-        'TabControl1.TabPages.Remove(tabpage_NFE_e)
+        TabControl1.TabPages.Remove(tabpage_NFE_e)
         TabControl1.TabPages.Remove(Tabpg_cupomfiscal)
         TabControl1.TabPages.Remove(tbpg_bkup)
         TabControl1.TabPages.Remove(pedidos)
         TabControl1.TabPages.Remove(tbpg_orcamento)
         TabControl1.TabPages.Remove(tbg_relatorios)
 
-        ' remove tbpg de outro tabcontrol
-        TabControl_NFE.TabPages.Insert(1, TabPage_PedidosNFE)
-        TabControl_NFE.TabPages.Remove(TbPg_consultaNFe)
-
-        btn_confimraNfeEmitida.Enabled = True
-        btn_buscarPedidoNFE.Enabled = False
-        TabControl_NFE.SelectedIndex = 1
-        Dim dt As Date = Now
-        dt = dt.AddDays(-60)
-        DateTimePicker2.Text = dt
-        DateTimePicker3.Text = Date.Now
-        cbx_CFOP.Text = ""
-        cbx_VolNfeEmitidas.Text = ""
-        ComboBox12.Text = ""
-        TextBox30.Clear()
-        TextBox31.Clear()
-
-        ' zerar campos
-        txt_vrduplicata1.Text = ""
-        txt_vrduplicata2.Text = ""
-        txt_vrduplicata3.Text = ""
-        txt_vrduplicata4.Text = ""
-        txt_vrduplicata5.Text = ""
-        rdb_vezesduplicata1.Enabled = True
+        
 
     End Sub
 
@@ -16006,6 +15850,320 @@ proxima2:
     Private Sub Button99_Click(sender As Object, e As EventArgs) Handles Button99.Click
 
         PedidoCompraBindingSource.Filter = String.Format("Fornecedor_PedidoCompra LIKE '{0}%'", ComboBox26.Text)
+
+
+    End Sub
+
+    Private Sub Button100_Click(sender As Object, e As EventArgs) Handles Button100.Click
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+
+        command = connection.CreateCommand()
+        command.CommandText = "select * from TabelaCFOP where  codigo_cfop = '" & ComboBox37.Text & "'"
+
+        connection.Open()
+
+        Dim lrd As SqlDataReader = command.ExecuteReader()
+
+        While lrd.Read()
+
+
+            If lrd("descricao_cfop") Is DBNull.Value Then
+                MessageBox.Show("esse CFOP não existe")
+                ComboBox37.Text = ""
+                Exit Sub
+            Else
+                TextBox291.Text = lrd("descricao_cfop")
+            End If
+
+            If lrd("operacao") Is DBNull.Value Then
+                MessageBox.Show("esse CFOP não existe")
+                cbx_CFOP.Text = ""
+            Else
+                TextBox292.Text = lrd("operacao")
+            End If
+
+        End While
+        connection.Close()
+    End Sub
+
+    Private Sub RadioButton16_Click(sender As Object, e As EventArgs) Handles RadioButton16.Click
+        Dim RazãoSocialEmitente As String = "FERNANDO FRASCARI EPP"
+        Dim NomeFantasiaEmitente As String = "MARFINITE MOGI"
+        Dim CEPEmitente As String = "08735400"
+        Dim BairroEmitente As String = "VILA BERNADOTTI"
+        Dim RuaEmitente As String = "AV HENRIQUE PERES 1880"
+        Dim TelEmitente As String = "1147226115"
+        Dim CNPJEmitente As String = "72844228000179"
+        Dim InsEstEmitente As String = "454131384115"
+        Dim EstadoEmitente As String = "SP"
+        Dim CidadeEmitente As String = "MOGI DAS CRUZES"
+        TextBox288.Text = RazãoSocialEmitente
+        TabControl5.TabPages.Remove(TabPage20)
+        TabControl5.TabPages.Remove(TabPage14)
+        TabControl5.TabPages.Add(TabPage20)
+
+    End Sub
+
+    Private Sub RadioButton17_Click(sender As Object, e As EventArgs) Handles RadioButton17.Click
+
+        Dim RazãoSocialEmitente As String = "SILVIA PAULA DUARTE FRASCARI - ME"
+        Dim NomeFantasiaEmitente As String = ""
+        Dim CEPEmitente As String = "08737165"
+        Dim BairroEmitente As String = "ALTO IPIRANGA"
+        Dim RuaEmitente As String = "AV HENRIQUE EROLES 1459"
+        Dim TelEmitente As String = "1147261880"
+        Dim CNPJEmitente As String = "18623408000185"
+        Dim InsEstEmitente As String = "454382243117"
+        Dim EstadoEmitente As String = "SP"
+        Dim CidadeEmitente As String = "MOGI DAS CRUZES"
+        TextBox288.Text = RazãoSocialEmitente
+        TabControl5.TabPages.Remove(TabPage14)
+        TabControl5.TabPages.Remove(TabPage20)
+        TabControl5.TabPages.Add(TabPage14)
+
+    End Sub
+
+    Private Sub Label376_Click(sender As Object, e As EventArgs) Handles Label376.Click
+
+    End Sub
+
+    Private Sub RadioButton18_Click(sender As Object, e As EventArgs) Handles RadioButton18.Click
+
+        Dim vrduplicata1 As Double = TextBox5.Text
+        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        '----------------------------------
+        date_duplicata2.Enabled = False
+        txt_vrduplicata2.Enabled = False
+        txt_vrduplicata2.Text = ""
+        '----------------------------------
+        date_duplicata3.Enabled = False
+        txt_vrduplicata3.Enabled = False
+        txt_vrduplicata3.Text = ""
+        '----------------------------------
+        date_duplicata4.Enabled = False
+        txt_vrduplicata4.Enabled = False
+        txt_vrduplicata4.Text = ""
+        '----------------------------------
+        date_duplicata5.Enabled = False
+        txt_vrduplicata5.Enabled = False
+        txt_vrduplicata5.Text = ""
+        ' acertando as datas
+        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+
+    End Sub
+
+    Private Sub RadioButton19_Click(sender As Object, e As EventArgs) Handles RadioButton19.Click
+        Dim vrduplicata1 As Double = (TextBox5.Text / 2)
+        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+
+        date_duplicata2.Enabled = True
+        txt_vrduplicata2.Enabled = True
+
+        Dim vrduplicata2 As Double = (TextBox5.Text / 2)
+        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        '-----------------------------
+        date_duplicata3.Enabled = False
+        txt_vrduplicata3.Enabled = False
+        txt_vrduplicata3.Text = ""
+
+        '--------------------------------
+        date_duplicata4.Enabled = False
+        txt_vrduplicata4.Enabled = False
+        txt_vrduplicata4.Text = ""
+
+        ' ------------------------------
+        date_duplicata5.Enabled = False
+        txt_vrduplicata5.Enabled = False
+        txt_vrduplicata5.Text = ""
+        ' acertando as datas
+        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+    End Sub
+
+    Private Sub RadioButton20_Click(sender As Object, e As EventArgs) Handles RadioButton20.Click
+
+        Dim vrduplicata1 As Double = (TextBox5.Text / 3)
+        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+
+        date_duplicata2.Enabled = True
+        txt_vrduplicata2.Enabled = True
+
+        Dim vrduplicata2 As Double = (TextBox5.Text / 3)
+        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+
+        '----------------------------------
+        date_duplicata3.Enabled = True
+        txt_vrduplicata3.Enabled = True
+
+        Dim vrduplicata3 As Double = (TextBox5.Text / 3)
+        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+
+        '----------------------------------
+        date_duplicata4.Enabled = False
+        txt_vrduplicata4.Enabled = False
+        txt_vrduplicata4.Text = ""
+
+        ' -----------------------------------
+        date_duplicata5.Enabled = False
+        txt_vrduplicata5.Enabled = False
+        txt_vrduplicata5.Text = ""
+        ' acertando as datas
+        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+    End Sub
+
+    Private Sub RadioButton21_Click(sender As Object, e As EventArgs) Handles RadioButton21.Click
+        Dim vrduplicata1 As Double = (TextBox5.Text / 4)
+        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+
+
+        date_duplicata2.Enabled = True
+        txt_vrduplicata2.Enabled = True
+
+        Dim vrduplicata2 As Double = (TextBox5.Text / 4)
+        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+
+        '----------------------------------
+        date_duplicata3.Enabled = True
+        txt_vrduplicata3.Enabled = True
+
+        Dim vrduplicata3 As Double = (TextBox5.Text / 4)
+        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+
+        '----------------------------------
+        date_duplicata4.Enabled = True
+        txt_vrduplicata4.Enabled = True
+
+        Dim vrduplicata4 As Double = (TextBox5.Text / 4)
+        txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+
+        '----------------------------------
+        date_duplicata5.Enabled = False
+        txt_vrduplicata5.Enabled = False
+        txt_vrduplicata5.Text = ""
+        ' acertando as datas
+        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+    End Sub
+
+    Private Sub RadioButton22_Click(sender As Object, e As EventArgs) Handles RadioButton22.Click
+        Dim vrduplicata1 As Double = (TextBox5.Text / 5)
+        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+
+        date_duplicata2.Enabled = True
+        txt_vrduplicata2.Enabled = True
+
+        Dim vrduplicata2 As Double = (TextBox5.Text / 5)
+        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+
+        '----------------------------------
+        date_duplicata3.Enabled = True
+        txt_vrduplicata3.Enabled = True
+
+        Dim vrduplicata3 As Double = (TextBox5.Text / 5)
+        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+
+        '----------------------------------
+        date_duplicata4.Enabled = True
+        txt_vrduplicata4.Enabled = True
+
+        Dim vrduplicata4 As Double = (TextBox5.Text / 5)
+        txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+
+        '----------------------------------
+        date_duplicata5.Enabled = True
+        txt_vrduplicata5.Enabled = True
+
+        Dim vrduplicata5 As Double = (TextBox5.Text / 5)
+        txt_vrduplicata5.Text = vrduplicata5.ToString("F2")
+
+        ' acertando as datas
+        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+    End Sub
+
+   
+    Private Sub Button106_Click(sender As Object, e As EventArgs) Handles Button106.Click
+        Dim result = MessageBox.Show("Confirmar a Deleção?", "Atenção!!!", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+
+        ElseIf result = DialogResult.Yes Then
+
+            Dim connection As SqlConnection
+            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            ' -------------------------------------
+ 
+            Dim v_SelectRow As Integer
+            Try
+                v_SelectRow = Me.ItemPedidosDataGridView1.CurrentRow.Index
+            Catch ex As Exception
+                Exit Sub
+            End Try
+
+            'rem GRAVAR DADOS
+            Dim command6 As SqlCommand
+            command6 = connection.CreateCommand()
+            command6.CommandText = "update ItemPedidos set  quantidadeparcialentregue_item = @quantidadeparcialentregue_item  where id_item = @id_cod"
+            command6.CommandType = CommandType.Text
+            command6.Parameters.Add("@id_cod", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView1.Item(13, v_SelectRow).Value
+            command6.Parameters.Add("@quantidadeparcialentregue_item", SqlDbType.Int).Value = ItemPedidosDataGridView1.Item(12, v_SelectRow).Value - ItemPedidosDataGridView1.Item(3, v_SelectRow).Value
+
+            Try
+                connection.Open()
+                command6.ExecuteNonQuery()
+                connection.Close()
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+
+            End Try
+
+            ' ------------------------------------------------------------
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.CommandText = "delete from ItemNfeEmitida where NomeProd_ItemNfeemitida = @nome and id_ItemNfeEmitida = @id_cod"
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@nome", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView1.Item(2, v_SelectRow).Value
+            command.Parameters.Add("@id_cod", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView1.Item(0, v_SelectRow).Value
+
+            Try
+
+
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+
+            Catch ex As Exception
+
+                MessageBox.Show("Impossível apagar campos nulo")
+
+            End Try
+
+
+            Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
+            Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
+
+
+        End If
 
 
     End Sub
