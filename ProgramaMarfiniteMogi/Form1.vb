@@ -16,6 +16,8 @@ Imports System.Net.Mail
 Imports System.Text.RegularExpressions
 Imports System
 Imports System.Math
+Imports Microsoft.Win32
+
 
 
 
@@ -197,13 +199,13 @@ Public Class Form1
 
         '------------------------------------------------------------------------------
         'esses próximos comandos são somente para qdo ligamos o programa na tela form produtos
-
+        ' TELA PRODUTOS INICIO
         limpar_inicioFormProd()
         flag = ""
         btn_calcPrecos.Enabled = False
         DesistirOperaçãoToolStripMenuItem2.Visible = False
         menu_confirmarprod.Visible = False
-      
+       
 
         'fim
         '------------------------------------------------------------------------------
@@ -492,13 +494,14 @@ Public Class Form1
 
         End If
 
-        If TabControl1.SelectedTab.ToString = "TabPage: {NFE}" Then
+        If TabControl1.SelectedTab.ToString = "TabPage: {NFE_2}" Then
 
-            MessageBox.Show("")
+            MessageBox.Show("123")
             TabControl5.TabPages.Remove(TabPage14)
             TabControl5.TabPages.Remove(TabPage20)
 
         End If
+
     End Sub
 
 
@@ -1190,6 +1193,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         DesistirOperaçãoToolStripMenuItem2.Visible = True
         FlagProdPesquisa = "1"
 
+
         Codbarras_prodTextBox.Clear()
 
         TabControl1.TabPages.Remove(tbpg_clientes)
@@ -1344,7 +1348,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Public Sub destravarCamposprod()
 
         Cod_prodTextBox.Enabled = True
-        Cod_prodforTextBox.Enabled = True
+        'Cod_prodforTextBox.Enabled = True
         TextBox251.Enabled = True
         Codbarras_prodTextBox.Enabled = True
         Nome_prodTextBox.Enabled = True
@@ -1381,6 +1385,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox266.Enabled = True
         TextBox267.Enabled = True
         ComboBox32.Enabled = True
+        ComboBox41.Enabled = True
 
         'combobox
         Nome_linhaComboBox.Enabled = True
@@ -1437,7 +1442,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox266.Enabled = False
         TextBox267.Enabled = False
         ComboBox32.Enabled = False
-
+        ComboBox41.Enabled = False
 
 
         'combobox
@@ -1516,9 +1521,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
 
             If flag = "incluir" Then
-                command.CommandText = "INSERT INTO produtos (Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+                command.CommandText = "INSERT INTO produtos (RaizSimNao_prod,Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@RaizSimNao_prod,@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
             Else
-                command.CommandText = "update produtos set Bugiganga_prod=@Bugiganga_prod,CodComp1_prod=@CodComp1_prod,QtdeComp1_prod=@QtdeComp1_prod,CodComp2_prod=@CodComp2_prod,QtdeComp2_prod=@QtdeComp2_prod,CodComp3_prod=@CodComp3_prod,QtdeComp3_prod=@QtdeComp3_prod,CodComp4_prod=@CodComp4_prod,QtdeComp4_prod=@QtdeComp4_prod,CodComp5_prod=@CodComp5_prod,QtdeComp5_prod=@QtdeComp5_prod,EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
+                command.CommandText = "update produtos set RaizSimNao_prod=@RaizSimNao_prod,Bugiganga_prod=@Bugiganga_prod,CodComp1_prod=@CodComp1_prod,QtdeComp1_prod=@QtdeComp1_prod,CodComp2_prod=@CodComp2_prod,QtdeComp2_prod=@QtdeComp2_prod,CodComp3_prod=@CodComp3_prod,QtdeComp3_prod=@QtdeComp3_prod,CodComp4_prod=@CodComp4_prod,QtdeComp4_prod=@QtdeComp4_prod,CodComp5_prod=@CodComp5_prod,QtdeComp5_prod=@QtdeComp5_prod,EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
             End If
 
             'REM calculando o preço varejo e atacado antes de salvar
@@ -1626,6 +1631,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             End If
             command.Parameters.Add("@QtdeComp5_prod", SqlDbType.Float).Value = TextBox266.Text
             command.Parameters.Add("@Bugiganga_prod", SqlDbType.VarChar, 50).Value = ComboBox32.Text
+            command.Parameters.Add("@RaizSimNao_prod", SqlDbType.VarChar, 50).Value = ComboBox41.Text
 
             ' a seguir comandos para gravar os ítens coletados do formulário ------------------
 
@@ -1762,35 +1768,36 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     'REm sub do botão altera do form produtos
     Private Sub menu_alterarprod_Click(sender As Object, e As EventArgs) Handles menu_alterarprod.Click
 
-        habilitarbotoesalterarprod()
-        destravarCamposprod()
-        menu_confirmarprod.Visible = True
-        flag = "alterar"
-        Cod_prodTextBox.Enabled = False
-        desabilitatextbox()
-        btn_calcPrecos.Enabled = True
-        Button74.Enabled = False
-        Button75.Enabled = False
-        FlagProdPesquisa = "1"
-        '--------------------------------
-        'remove o tab control
 
-        TabControl1.TabPages.Remove(tbpg_clientes)
-        TabControl1.TabPages.Remove(tbpg_pedFornecedor)
-        TabControl1.TabPages.Remove(tbpg_transportadoras)
-        TabControl1.TabPages.Remove(tbpg_capitalGiro)
-        TabControl1.TabPages.Remove(tab_nfe)
-        TabControl1.TabPages.Remove(pedidos)
-        TabControl1.TabPages.Remove(tabpage_NFE_e)
-        TabControl1.TabPages.Remove(Tabpg_cupomfiscal)
-        TabControl1.TabPages.Remove(tbpg_bkup)
-        TabControl1.TabPages.Remove(tbpg_orcamento)
-        TabControl1.TabPages.Remove(tbg_relatorios)
+            habilitarbotoesalterarprod()
+            destravarCamposprod()
+            menu_confirmarprod.Visible = True
+            flag = "alterar"
+            Cod_prodTextBox.Enabled = False
+            desabilitatextbox()
+            btn_calcPrecos.Enabled = True
+            Button74.Enabled = False
+            Button75.Enabled = False
+            FlagProdPesquisa = "1"
+            '--------------------------------
+            'remove o tab control
+
+            TabControl1.TabPages.Remove(tbpg_clientes)
+            TabControl1.TabPages.Remove(tbpg_pedFornecedor)
+            TabControl1.TabPages.Remove(tbpg_transportadoras)
+            TabControl1.TabPages.Remove(tbpg_capitalGiro)
+            TabControl1.TabPages.Remove(tab_nfe)
+            TabControl1.TabPages.Remove(pedidos)
+            TabControl1.TabPages.Remove(tabpage_NFE_e)
+            TabControl1.TabPages.Remove(Tabpg_cupomfiscal)
+            TabControl1.TabPages.Remove(tbpg_bkup)
+            TabControl1.TabPages.Remove(tbpg_orcamento)
+            TabControl1.TabPages.Remove(tbg_relatorios)
 
 
-        ' ----------------------------------------
-        tabpage_produtos.TabPages.Remove(TabPage_gridProd)
-        tabpage_produtos.TabPages.Remove(tbpg_listapreco)
+            ' ----------------------------------------
+            tabpage_produtos.TabPages.Remove(TabPage_gridProd)
+            tabpage_produtos.TabPages.Remove(tbpg_listapreco)
 
 
     End Sub
@@ -3163,15 +3170,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 Cod_prodTextBox.Focus()
                 con.Close()
                 Exit Sub
-
-            Else
-
-
-                destravarCamposprod()
-                menu_confirmarprod.Visible = True
-                Cod_prodTextBox.Enabled = False
-                desabilitatextbox()
-
             End If
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
@@ -3312,13 +3310,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TabControlPedMarf.SelectedIndex = 0
         MenuStrip4.Enabled = True
         ' PedidoMarfiniteBindingSource.Filter = String.Format("numero_pedmarf LIKE '{0}' ", txt_numeropedmarf.Text)
-
-    End Sub
-
-   
-
-
-    Private Sub TabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TabControl1.SelectedIndexChanged
 
     End Sub
 
@@ -4229,11 +4220,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Exit Sub
         End If
 
-        Directory.CreateDirectory("C:\Users\FERNANDO12\Desktop\Notas Fiscais\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\")
+        ' Directory.CreateDirectory("C:\Users\FERNANDO12\Desktop\Notas Fiscais\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\")
         'Directory.CreateDirectory("\\FERNANDO\Projeto Programa Marfinite Mogi\Xls Orcamento pedidos\pedidos enviados\" & Format(Date.Now, "yyyy-MM-dd") & "\" & Vendedor_pedComboBox.Text & "\")
 
 
-        Dim Arquivo As New System.IO.StreamWriter("C:\Users\FERNANDO12\Desktop\Notas Fiscais\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\" & D_Nome.Text & "_" & Format(Date.Now, "yyyy-MM-dd") & "_" & txt_nNfe.Text & "_" & txt_coPEdNFe.Text & ".txt")
+        'Dim Arquivo As New System.IO.StreamWriter("C:\Users\FERNANDO12\Desktop\Notas Fiscais\" & Format(Date.Now, "yyyy-MM-dd") & "\" & TextBox16.Text & "\" & D_Nome.Text & "_" & Format(Date.Now, "yyyy-MM-dd") & "_" & txt_nNfe.Text & "_" & txt_coPEdNFe.Text & ".txt")
         '
         'Variávei que acumulam os totais
         Dim TlVrNota As Double
@@ -4265,8 +4256,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         'cadastro do emissor
-        Arquivo.WriteLine("NOTA FISCAL|1|")
-        Arquivo.WriteLine("A|2.00|NFe|")
+        'Arquivo.WriteLine("NOTA FISCAL|1|")
+        'Arquivo.WriteLine("A|2.00|NFe|")
         ' VERIFICA SE ENTRADA E SAÍDA
         Dim ent_saida As String
         If TextBox31.Text = "entrada" Then
@@ -4275,216 +4266,216 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ent_saida = "1"
         End If
 
-        Arquivo.WriteLine("B|35||" & TextBox30.Text & "|1|55|1|" & txt_nNfe.Text & "|" & Format(Date.Now, "yyyy-MM-dd") & "|" & Format(Date.Now, "yyyy-MM-dd") & "|" & Format(DateTime.Now, "HH:mm:ss") & "|" & ent_saida & "|3530607|1|1||1|1|3|2.2.19|")
-        Arquivo.WriteLine("C|FERNANDO FRASCARI - EPP||454131384115||287474|4754701|3|")
-        Arquivo.WriteLine("C02|72844228000179|")
-        Arquivo.WriteLine("C05|AVENIDA HENRIQUE PERES|1880||VILA BERNADOTTI|3530607|MOGI DAS CRUZES|SP|08735400|1058|BRASIL|1147276401|")
+        'Arquivo.WriteLine("B|35||" & TextBox30.Text & "|1|55|1|" & txt_nNfe.Text & "|" & Format(Date.Now, "yyyy-MM-dd") & "|" & Format(Date.Now, "yyyy-MM-dd") & "|" & Format(DateTime.Now, "HH:mm:ss") & "|" & ent_saida & "|3530607|1|1||1|1|3|2.2.19|")
+        'Arquivo.WriteLine("C|FERNANDO FRASCARI - EPP||454131384115||287474|4754701|3|")
+        'Arquivo.WriteLine("C02|72844228000179|")
+        'Arquivo.WriteLine("C05|AVENIDA HENRIQUE PERES|1880||VILA BERNADOTTI|3530607|MOGI DAS CRUZES|SP|08735400|1058|BRASIL|1147276401|")
 
-        'cadastro do destinatário
-        Arquivo.WriteLine("E|" & D_Nome.Text & "|" & msk_ieNFE.Text & "||" & D_Email.Text & "|")
+        ''cadastro do destinatário
+        'Arquivo.WriteLine("E|" & D_Nome.Text & "|" & msk_ieNFE.Text & "||" & D_Email.Text & "|")
 
-        If Txt_fisicajuridicaNFE.Text = "Jurídica" Then
-            Arquivo.WriteLine("E02|" & D_Cnpj.Text & "|")
-        Else
-            Arquivo.WriteLine("E03|" & txt_cpfNFE.Text & "|")
-        End If
+        'If Txt_fisicajuridicaNFE.Text = "Jurídica" Then
+        '    Arquivo.WriteLine("E02|" & D_Cnpj.Text & "|")
+        'Else
+        '    Arquivo.WriteLine("E03|" & txt_cpfNFE.Text & "|")
+        'End If
 
-        Arquivo.WriteLine("E05|" & D_Endereco.Text & "|" & Numerodarua_pedTextBox.Text & "||" & D_Bairro.Text & "|" & Txt_CodIBGE.Text & "|" & D_Municipio.Text & "|" & D_Estado.Text & "|" & D_Cep.Text & "|1058|BRASIL|" & MaskedTextBox8.Text & "|")
+        'Arquivo.WriteLine("E05|" & D_Endereco.Text & "|" & Numerodarua_pedTextBox.Text & "||" & D_Bairro.Text & "|" & Txt_CodIBGE.Text & "|" & D_Municipio.Text & "|" & D_Estado.Text & "|" & D_Cep.Text & "|1058|BRASIL|" & MaskedTextBox8.Text & "|")
 
-        For x As Integer = 0 To ItemPedidosDataGridView1.Rows.Count() - 1
+        'For x As Integer = 0 To ItemPedidosDataGridView1.Rows.Count() - 1
 
-            Dim codigo_produto As String = ItemPedidosDataGridView1.Item(1, (x)).Value
-            Dim nome_produto As String = ItemPedidosDataGridView1.Item(2, (x)).Value
-            Dim NCM_prod As String = ItemPedidosDataGridView1.Item(9, (x)).Value
+        '    Dim codigo_produto As String = ItemPedidosDataGridView1.Item(1, (x)).Value
+        '    Dim nome_produto As String = ItemPedidosDataGridView1.Item(2, (x)).Value
+        '    Dim NCM_prod As String = ItemPedidosDataGridView1.Item(9, (x)).Value
 
-            'Pegando em double para depois formatar com duas casas depois da vírgula em string
-            Dim quantidade_prod1 As Double = ItemPedidosDataGridView1.Item(3, (x)).Value
-            Dim vrunitario_prod1 As Double = ItemPedidosDataGridView1.Item(4, (x)).Value
+        '    'Pegando em double para depois formatar com duas casas depois da vírgula em string
+        '    Dim quantidade_prod1 As Double = ItemPedidosDataGridView1.Item(3, (x)).Value
+        '    Dim vrunitario_prod1 As Double = ItemPedidosDataGridView1.Item(4, (x)).Value
 
-            'Jogando o double no string com 4 casas
-            Dim quantidade_prod As String = quantidade_prod1.ToString("F4").Replace(",", ".")
-            Dim vrunitario_prod As String = vrunitario_prod1.ToString("F4").Replace(",", ".")
-            'jogando o resultado da multiplicação double em string com duas casas
-            Dim vrtlitem_prod1 As Double = quantidade_prod1 * vrunitario_prod1
-            Dim vrtlitem_prod = vrtlitem_prod1.ToString("F2").Replace(",", ".")
-
-
-            Arquivo.WriteLine("H|" & (x + 1) & "|")
-            Arquivo.WriteLine("I|" & codigo_produto & "||" & nome_produto & "|" & NCM_prod & "||" & cbx_CFOP.Text & "|UN|" & quantidade_prod & "|" & vrunitario_prod & "|" & vrtlitem_prod & "||UN|" & quantidade_prod & "|" & vrunitario_prod & "|||||1||")
-            Arquivo.WriteLine("M|")
-            Arquivo.WriteLine("N|")
-
-            'Calcular o ICM
-            Dim aliquotaICM As Double = 0
-            If ItemPedidosDataGridView1.Item(10, (x)).Value = "1" Then
-                aliquotaICM = tabela1
-            Else
-                aliquotaICM = tabela2
-            End If
-
-            Dim ICM1 As Double = (vrtlitem_prod1 * (aliquotaICM)) / 100
-            Dim ICM = ICM1.ToString("F2").Replace(",", ".")
-            'somando o tl do vr de icm
-            TlVrICM1 += ICM1
-
-            'calcular o total da nota
-            TlVrNota += vrtlitem_prod1
-            'txt_vrduplicata1.Text = txt_vrduplicata1.Text.Trim()
-            'txt_vrduplicata1.Text = txt_vrduplicata1.Text.Replace(".", ",")
-
-            Arquivo.WriteLine("N02|0|00|3|" & vrtlitem_prod & "|" & aliquotaICM & "|" & ICM & "|")
-            Arquivo.WriteLine("O|||||999|")
-            Arquivo.WriteLine("O08|53|0.00|")
-
-            'calcular o pis
-            Dim pis1 As Double = ((0.65 * vrtlitem_prod) / 100)
-            Dim pis = pis1.ToString("F2").Replace(",", ".")
-            TlVrPis += pis
-            Arquivo.WriteLine("Q|")
-            Arquivo.WriteLine("Q02|01|" & vrtlitem_prod & "|1.00|" & pis & "|")
-
-            'calcular o cofins
-            Dim confins1 As Double = ((3.0 * vrtlitem_prod) / 100)
-            Dim cofins = confins1.ToString("F2").Replace(",", ".")
-            TlVrCofins += cofins
-            Arquivo.WriteLine("S|")
-            Arquivo.WriteLine("S02|01|" & vrtlitem_prod & "|1.00|" & cofins & "|")
-
-        Next
-        Dim TlVrNtoa2 As String = TlVrNota
-        TlVrNtoa2 = TlVrNtoa2.Trim()
-        TlVrNtoa2 = TlVrNtoa2.Replace(".", ",")
-        Dim TlVrNota3 = TlVrNtoa2.ToString.Replace(",", ".")
-
-        ' TlVrNota = TlVrNota.ToString.Replace(",", ".")
-        Dim TlVrICM = TlVrICM1.ToString("F2").Replace(",", ".")
-        Arquivo.WriteLine("W|")
-        Arquivo.WriteLine("W02|" & TlVrNota3 & "|" & TlVrICM & "|||" & TlVrNota3 & "||||||||||")
-        ' rem buscando dados das transportadoras
-        command = connection.CreateCommand()
-        command.CommandText = "select * from transportadoras where id_trans = '" & CodTrans_nfeemitidaTextBox.Text & "'"
-
-        connection.Open()
-        Dim lrd2 As SqlDataReader = command.ExecuteReader()
-        Dim insEst As String = "454131384115"
-        Dim enderecoTrans As String = "av.henrique peres, 1880"
-        Dim estadoTrans As String = "sp"
-        Dim cidadeTrans As String = "mogi das cruzes"
-        Dim CNPJTrans As String = "72844228000179"
-
-        While lrd2.Read
-
-            insEst = lrd2("INSEST_trans")
-            enderecoTrans = lrd2("endereco_trans")
-            estadoTrans = lrd2("estado_trans")
-            cidadeTrans = lrd2("cidade_trans")
-            CNPJTrans = lrd2("CNPJ_trans")
-
-        End While
-        connection.Close()
-        ' VERIFICA frete
-        Dim frete As String
-        If ComboBox12.Text = "emitente" Then
-            frete = "0"
-        Else
-            frete = "1"
-        End If
-
-        Arquivo.WriteLine("X|" & frete & "|")
-        Arquivo.WriteLine("X03|" & NomeTrans_nfeemitidaTextBox.Text & "|" & insEst & "|" & enderecoTrans & "|" & estadoTrans & "|" & cidadeTrans & "|")
-        Arquivo.WriteLine("X04|" & CNPJTrans & "|")
-        Arquivo.WriteLine("X18|||")
-        'formatano o valor peso
-        Dim peso As Double = Peso_nfeemitidaTextBox.Text
-        Dim peso2 = peso.ToString("F3").Replace(",", ".")
-        Arquivo.WriteLine("X26|" & cbx_VolNfeEmitidas.Text & "|VOLUMES|||" & peso2 & "|" & peso2 & "|")
-        ' acertando a posição das datas
-        Dim ci As CultureInfo = CultureInfo.CreateSpecificCulture("en-US")
-        Dim date1 As Date = date_duplicata1.Text
-        Dim date2 As Date = date_duplicata2.Text
-        Dim date3 As Date = date_duplicata3.Text
-        Dim date4 As Date = date_duplicata4.Text
-        Dim date5 As Date = date_duplicata5.Text
-        'formatano o valor duplicata
-        Dim Vrduplicata1_1 As String = txt_vrduplicata1.Text
-        Dim Vrduplicata1_2 = Vrduplicata1_1.Trim()
-        Vrduplicata1_2 = Vrduplicata1_1.Replace(".", ",")
-        Dim vrduplicata1 As String = Vrduplicata1_2.ToString.Replace(",", ".")
-
-        ' rotinas para declarar as duplicatas
-        If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text = "" And txt_vrduplicata3.Text = "" And txt_vrduplicata4.Text = "" And txt_vrduplicata5.Text = "" Then
-
-            Arquivo.WriteLine("Y|")
-            Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & TlVrNota3 & "||" & TlVrNota3 & "|")
-            Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & Format(Date.Now, "yyyy-MM-dd") & "|" & TlVrNota3 & "|")
-            Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.3234) / 100 & " (32,34%) Fonte : IBPT|")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & "| Vencto: " & Format(Date.Now, "yyyy-MM-dd") & " Valor R$ " & TlVrNota3 & "|")
-
-        End If
-        If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text = "" And txt_vrduplicata4.Text = "" And txt_vrduplicata5.Text = "" Then
-
-            Arquivo.WriteLine("Y|")
-            Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|")
-            Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|")
-            Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.333) / 100 & " (33,30%) Fonte : IBPT|")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
-
-        End If
-        If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text <> "" And txt_vrduplicata4.Text = "" And txt_vrduplicata5.Text = "" Then
-
-            Arquivo.WriteLine("Y|")
-            Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata3.Text & "||" & txt_vrduplicata3.Text & "|")
-            Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & date3.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata3.Text & "|")
-            Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.3236) / 100 & " (32,36%) Fonte : IBPT|")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /3 | Vencto: " & date_duplicata3.Text & " Valor R$ " & txt_vrduplicata3.Text & "|")
-
-        End If
-        If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text <> "" And txt_vrduplicata4.Text <> "" And txt_vrduplicata5.Text = "" Then
-
-            Arquivo.WriteLine("Y|")
-            Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata3.Text & "||" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata4.Text & "||" & txt_vrduplicata4.Text & "|")
-            Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & date3.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & date4.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata4.Text & "|")
-            Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.3199) / 100 & " (31,99%) Fonte : IBPT|")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /3 | Vencto: " & date_duplicata3.Text & " Valor R$ " & txt_vrduplicata3.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /4 | Vencto: " & date_duplicata4.Text & " Valor R$ " & txt_vrduplicata4.Text & "|")
-
-        End If
-        If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text <> "" And txt_vrduplicata4.Text <> "" And txt_vrduplicata5.Text <> "" Then
-
-            Arquivo.WriteLine("Y|")
-            Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata3.Text & "||" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata4.Text & "||" & txt_vrduplicata4.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata5.Text & "||" & txt_vrduplicata5.Text & "|")
-            Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & date3.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & date4.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata4.Text & "|" & txt_nNfe.Text & "|" & date5.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata5.Text & "|")
-            Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.34) / 100 & " (34%) Fonte : IBPT|")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
-            Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /3 | Vencto: " & date_duplicata3.Text & " Valor R$ " & txt_vrduplicata3.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /4 | Vencto: " & date_duplicata4.Text & " Valor R$ " & txt_vrduplicata4.Text & "|")
-            Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /5 | Vencto: " & date_duplicata5.Text & " Valor R$ " & txt_vrduplicata5.Text & "|")
-
-        End If
+        '    'Jogando o double no string com 4 casas
+        '    Dim quantidade_prod As String = quantidade_prod1.ToString("F4").Replace(",", ".")
+        '    Dim vrunitario_prod As String = vrunitario_prod1.ToString("F4").Replace(",", ".")
+        '    'jogando o resultado da multiplicação double em string com duas casas
+        '    Dim vrtlitem_prod1 As Double = quantidade_prod1 * vrunitario_prod1
+        '    Dim vrtlitem_prod = vrtlitem_prod1.ToString("F2").Replace(",", ".")
 
 
-        Arquivo.Close()
-        '------------------------------------------------------------------------
+        '    Arquivo.WriteLine("H|" & (x + 1) & "|")
+        '    Arquivo.WriteLine("I|" & codigo_produto & "||" & nome_produto & "|" & NCM_prod & "||" & cbx_CFOP.Text & "|UN|" & quantidade_prod & "|" & vrunitario_prod & "|" & vrtlitem_prod & "||UN|" & quantidade_prod & "|" & vrunitario_prod & "|||||1||")
+        '    Arquivo.WriteLine("M|")
+        '    Arquivo.WriteLine("N|")
 
-        NFE_EmitidasTableAdapter.Fill(DataSetFinal.NFE_Emitidas)
-        btn_buscarPedidoNFE.Enabled = True
-        Button4.Enabled = False
+        '    'Calcular o ICM
+        '    Dim aliquotaICM As Double = 0
+        '    If ItemPedidosDataGridView1.Item(10, (x)).Value = "1" Then
+        '        aliquotaICM = tabela1
+        '    Else
+        '        aliquotaICM = tabela2
+        '    End If
+
+        '    Dim ICM1 As Double = (vrtlitem_prod1 * (aliquotaICM)) / 100
+        '    Dim ICM = ICM1.ToString("F2").Replace(",", ".")
+        '    'somando o tl do vr de icm
+        '    TlVrICM1 += ICM1
+
+        '    'calcular o total da nota
+        '    TlVrNota += vrtlitem_prod1
+        '    'txt_vrduplicata1.Text = txt_vrduplicata1.Text.Trim()
+        '    'txt_vrduplicata1.Text = txt_vrduplicata1.Text.Replace(".", ",")
+
+        '    Arquivo.WriteLine("N02|0|00|3|" & vrtlitem_prod & "|" & aliquotaICM & "|" & ICM & "|")
+        '    Arquivo.WriteLine("O|||||999|")
+        '    Arquivo.WriteLine("O08|53|0.00|")
+
+        '    'calcular o pis
+        '    Dim pis1 As Double = ((0.65 * vrtlitem_prod) / 100)
+        '    Dim pis = pis1.ToString("F2").Replace(",", ".")
+        '    TlVrPis += pis
+        '    Arquivo.WriteLine("Q|")
+        '    Arquivo.WriteLine("Q02|01|" & vrtlitem_prod & "|1.00|" & pis & "|")
+
+        '    'calcular o cofins
+        '    Dim confins1 As Double = ((3.0 * vrtlitem_prod) / 100)
+        '    Dim cofins = confins1.ToString("F2").Replace(",", ".")
+        '    TlVrCofins += cofins
+        '    Arquivo.WriteLine("S|")
+        '    Arquivo.WriteLine("S02|01|" & vrtlitem_prod & "|1.00|" & cofins & "|")
+
+        'Next
+        'Dim TlVrNtoa2 As String = TlVrNota
+        'TlVrNtoa2 = TlVrNtoa2.Trim()
+        'TlVrNtoa2 = TlVrNtoa2.Replace(".", ",")
+        'Dim TlVrNota3 = TlVrNtoa2.ToString.Replace(",", ".")
+
+        '' TlVrNota = TlVrNota.ToString.Replace(",", ".")
+        'Dim TlVrICM = TlVrICM1.ToString("F2").Replace(",", ".")
+        'Arquivo.WriteLine("W|")
+        'Arquivo.WriteLine("W02|" & TlVrNota3 & "|" & TlVrICM & "|||" & TlVrNota3 & "||||||||||")
+        '' rem buscando dados das transportadoras
+        'command = connection.CreateCommand()
+        'command.CommandText = "select * from transportadoras where id_trans = '" & CodTrans_nfeemitidaTextBox.Text & "'"
+
+        'connection.Open()
+        'Dim lrd2 As SqlDataReader = command.ExecuteReader()
+        'Dim insEst As String = "454131384115"
+        'Dim enderecoTrans As String = "av.henrique peres, 1880"
+        'Dim estadoTrans As String = "sp"
+        'Dim cidadeTrans As String = "mogi das cruzes"
+        'Dim CNPJTrans As String = "72844228000179"
+
+        'While lrd2.Read
+
+        '    insEst = lrd2("INSEST_trans")
+        '    enderecoTrans = lrd2("endereco_trans")
+        '    estadoTrans = lrd2("estado_trans")
+        '    cidadeTrans = lrd2("cidade_trans")
+        '    CNPJTrans = lrd2("CNPJ_trans")
+
+        'End While
+        'connection.Close()
+        '' VERIFICA frete
+        'Dim frete As String
+        'If ComboBox12.Text = "emitente" Then
+        '    frete = "0"
+        'Else
+        '    frete = "1"
+        'End If
+
+        'Arquivo.WriteLine("X|" & frete & "|")
+        'Arquivo.WriteLine("X03|" & NomeTrans_nfeemitidaTextBox.Text & "|" & insEst & "|" & enderecoTrans & "|" & estadoTrans & "|" & cidadeTrans & "|")
+        'Arquivo.WriteLine("X04|" & CNPJTrans & "|")
+        'Arquivo.WriteLine("X18|||")
+        ''formatano o valor peso
+        'Dim peso As Double = Peso_nfeemitidaTextBox.Text
+        'Dim peso2 = peso.ToString("F3").Replace(",", ".")
+        'Arquivo.WriteLine("X26|" & cbx_VolNfeEmitidas.Text & "|VOLUMES|||" & peso2 & "|" & peso2 & "|")
+        '' acertando a posição das datas
+        'Dim ci As CultureInfo = CultureInfo.CreateSpecificCulture("en-US")
+        'Dim date1 As Date = date_duplicata1.Text
+        'Dim date2 As Date = date_duplicata2.Text
+        'Dim date3 As Date = date_duplicata3.Text
+        'Dim date4 As Date = date_duplicata4.Text
+        'Dim date5 As Date = date_duplicata5.Text
+        ''formatano o valor duplicata
+        'Dim Vrduplicata1_1 As String = txt_vrduplicata1.Text
+        'Dim Vrduplicata1_2 = Vrduplicata1_1.Trim()
+        'Vrduplicata1_2 = Vrduplicata1_1.Replace(".", ",")
+        'Dim vrduplicata1 As String = Vrduplicata1_2.ToString.Replace(",", ".")
+
+        '' rotinas para declarar as duplicatas
+        'If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text = "" And txt_vrduplicata3.Text = "" And txt_vrduplicata4.Text = "" And txt_vrduplicata5.Text = "" Then
+
+        '    Arquivo.WriteLine("Y|")
+        '    Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & TlVrNota3 & "||" & TlVrNota3 & "|")
+        '    Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & Format(Date.Now, "yyyy-MM-dd") & "|" & TlVrNota3 & "|")
+        '    Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.3234) / 100 & " (32,34%) Fonte : IBPT|")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & "| Vencto: " & Format(Date.Now, "yyyy-MM-dd") & " Valor R$ " & TlVrNota3 & "|")
+
+        'End If
+        'If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text = "" And txt_vrduplicata4.Text = "" And txt_vrduplicata5.Text = "" Then
+
+        '    Arquivo.WriteLine("Y|")
+        '    Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|")
+        '    Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|")
+        '    Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.333) / 100 & " (33,30%) Fonte : IBPT|")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
+
+        'End If
+        'If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text <> "" And txt_vrduplicata4.Text = "" And txt_vrduplicata5.Text = "" Then
+
+        '    Arquivo.WriteLine("Y|")
+        '    Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata3.Text & "||" & txt_vrduplicata3.Text & "|")
+        '    Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & date3.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata3.Text & "|")
+        '    Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.3236) / 100 & " (32,36%) Fonte : IBPT|")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /3 | Vencto: " & date_duplicata3.Text & " Valor R$ " & txt_vrduplicata3.Text & "|")
+
+        'End If
+        'If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text <> "" And txt_vrduplicata4.Text <> "" And txt_vrduplicata5.Text = "" Then
+
+        '    Arquivo.WriteLine("Y|")
+        '    Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata3.Text & "||" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata4.Text & "||" & txt_vrduplicata4.Text & "|")
+        '    Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & date3.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & date4.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata4.Text & "|")
+        '    Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.3199) / 100 & " (31,99%) Fonte : IBPT|")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /3 | Vencto: " & date_duplicata3.Text & " Valor R$ " & txt_vrduplicata3.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /4 | Vencto: " & date_duplicata4.Text & " Valor R$ " & txt_vrduplicata4.Text & "|")
+
+        'End If
+        'If txt_vrduplicata1.Text <> "" And txt_vrduplicata2.Text <> "" And txt_vrduplicata3.Text <> "" And txt_vrduplicata4.Text <> "" And txt_vrduplicata5.Text <> "" Then
+
+        '    Arquivo.WriteLine("Y|")
+        '    Arquivo.WriteLine("Y02|" & txt_nNfe.Text & "|" & vrduplicata1 & "||" & vrduplicata1 & "|" & txt_nNfe.Text & "|" & txt_vrduplicata2.Text & "||" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata3.Text & "||" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata4.Text & "||" & txt_vrduplicata4.Text & "|" & txt_nNfe.Text & "|" & txt_vrduplicata5.Text & "||" & txt_vrduplicata5.Text & "|")
+        '    Arquivo.WriteLine("Y07|" & txt_nNfe.Text & "|" & date1.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata1.Text & "|" & txt_nNfe.Text & "|" & date2.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata2.Text & "|" & txt_nNfe.Text & "|" & date3.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata3.Text & "|" & txt_nNfe.Text & "|" & date4.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata4.Text & "|" & txt_nNfe.Text & "|" & date5.ToString("yyyy-MM-dd", ci) & "|" & txt_vrduplicata5.Text & "|")
+        '    Arquivo.WriteLine("Z| Val aprox Tributos R$ " & (TlVrNota3 * 0.34) / 100 & " (34%) Fonte : IBPT|")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obsNFE.Text & "||")
+        '    Arquivo.WriteLine("Z04| Observação :" & txt_obs2.Text & "||")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /1 | Vencto: " & date_duplicata1.Text & " Valor R$ " & txt_vrduplicata1.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /2 | Vencto: " & date_duplicata2.Text & " Valor R$ " & txt_vrduplicata2.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /3 | Vencto: " & date_duplicata3.Text & " Valor R$ " & txt_vrduplicata3.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /4 | Vencto: " & date_duplicata4.Text & " Valor R$ " & txt_vrduplicata4.Text & "|")
+        '    Arquivo.WriteLine("Z04| Fatura " & txt_nNfe.Text & " /5 | Vencto: " & date_duplicata5.Text & " Valor R$ " & txt_vrduplicata5.Text & "|")
+
+        'End If
+
+
+        'Arquivo.Close()
+        ''------------------------------------------------------------------------
+
+        'NFE_EmitidasTableAdapter.Fill(DataSetFinal.NFE_Emitidas)
+        'btn_buscarPedidoNFE.Enabled = True
+        'Button4.Enabled = False
 
     End Sub
     'Busca o arquivo Txt para correção e futura emissão via programa NFE
@@ -5976,20 +5967,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub PedidoNFEDataGridView1_Click(sender As Object, e As EventArgs) Handles PedidoNFEDataGridView1.Click
 
-        Dim v_SelectRow As Integer
-        v_SelectRow = Me.PedidoNFEDataGridView1.CurrentRow.Index
-        If (PedidoNFEDataGridView1.Item(0, v_SelectRow).Value) IsNot DBNull.Value Then
-            ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", (PedidoNFEDataGridView1.Item(0, v_SelectRow).Value))
-
-            TextBox20.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
-            TextBox21.Text = PedidoNFEDataGridView1.Item(11, v_SelectRow).Value
-            Dim valor As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView2.Rows
-                valor += Linha.Cells(9).Value
-            Next
-
-            TextBox22.Text = valor
-        End If
+        
     End Sub
 
     Private Sub TextBox8_TextChanged(sender As Object, e As EventArgs) Handles TextBox8.TextChanged
@@ -6348,7 +6326,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Txt_fisicajuridicaNFE.Text = fj_cliente
             txt_codCli_pedNfe.Text = PedidoNFEDataGridView1.Item(6, v_SelectRow).Value
             txt_coPEdNFe.Text = PedidoNFEDataGridView1.Item(0, v_SelectRow).Value
-            HoraEmitida_nfeemitidaTextBox.Text = HorarioNotaEmitida4
+            ' HoraEmitida_nfeemitidaTextBox.Text = HorarioNotaEmitida4
             CodTrans_nfeemitidaTextBox.Text = PedidoNFEDataGridView1.Item(9, v_SelectRow).Value
             NomeTrans_nfeemitidaTextBox.Text = PedidoNFEDataGridView1.Item(10, v_SelectRow).Value
             Vendedor_nfeemitidasTextBox.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
@@ -6395,8 +6373,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Button4.Enabled = False
             Button10.Enabled = True
             Button17.Enabled = False
-            Button18.Enabled = True
-            Button19.Enabled = True
             Button20.Enabled = False
             Button21.Enabled = True
             Button38.Enabled = True
@@ -6424,7 +6400,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             txt_obsNFE.Enabled = True
             txt_obs2.Enabled = True
             ComboBox12.Enabled = True
-            DateTimePicker20.Text = Date.Now
+
 
             ' habilitar duplicatas
             rdb_vezesduplicata1.Enabled = True
@@ -6451,7 +6427,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Try
                 'rem salvar os dados e criar o corpo da NOTA
                 command = connection.CreateCommand()
-                command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
+                'command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
                 command.CommandType = CommandType.Text
                 command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = txt_nNfe.Text
                 command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = txt_codCli_pedNfe.Text
@@ -6473,7 +6449,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 command.Parameters.Add("@CFOP_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_CFOP.Text
                 command.Parameters.Add("@VOlumes_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_VolNfeEmitidas.Text
                 command.Parameters.Add("@Peso_nfeemitida", SqlDbType.Float).Value = Peso_nfeemitidaTextBox.Text
-                command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox16.Text
+                'command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox16.Text
                 command.Parameters.Add("@obsNota_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obsNFE.Text
                 command.Parameters.Add("@obxNCM_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obs2.Text
                 command.Parameters.Add("@ent_saida_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox31.Text
@@ -6542,51 +6518,51 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub ItemPedidosDataGridView2_DoubleClick(sender As Object, e As EventArgs) Handles ItemPedidosDataGridView2.DoubleClick
 
-        Dim v_SelectRow As Integer
-        v_SelectRow = Me.ItemPedidosDataGridView2.CurrentRow.Index
+        'Dim v_SelectRow As Integer
+        'v_SelectRow = Me.ItemPedidosDataGridView2.CurrentRow.Index
 
-        ' rem verifica se o campo capturado é nuko, se for atribui o valor 0
-        If ItemPedidosDataGridView2.Item(7, v_SelectRow).Value Is DBNull.Value Then
-            ItemPedidosDataGridView2.Item(7, v_SelectRow).Value = 0
-        End If
+        '' rem verifica se o campo capturado é nuko, se for atribui o valor 0
+        'If ItemPedidosDataGridView2.Item(7, v_SelectRow).Value Is DBNull.Value Then
+        '    ItemPedidosDataGridView2.Item(7, v_SelectRow).Value = 0
+        'End If
 
 
-        Dim quantidade As String = InputBox("Digite a quantidade ", "QUANTIDADE", ((ItemPedidosDataGridView2.Item(5, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(7, v_SelectRow).Value)))
-        'rem GRAVAR DADOS
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'Dim quantidade As String = InputBox("Digite a quantidade ", "QUANTIDADE", ((ItemPedidosDataGridView2.Item(5, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(7, v_SelectRow).Value)))
+        ''rem GRAVAR DADOS
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        Dim command As SqlCommand
-        command = connection.CreateCommand()
-        command.CommandText = "update ItemPedidos set entregue_item = @entregue, quantidadeparcialentregue_item = @quantidade, dataentrega_item = @data, qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView2.Item(20, v_SelectRow).Value & "'"
-        command.CommandType = CommandType.Text
+        'Dim command As SqlCommand
+        'command = connection.CreateCommand()
+        'command.CommandText = "update ItemPedidos set entregue_item = @entregue, quantidadeparcialentregue_item = @quantidade, dataentrega_item = @data, qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView2.Item(20, v_SelectRow).Value & "'"
+        'command.CommandType = CommandType.Text
 
-        Try
-            If ItemPedidosDataGridView2.Item(7, v_SelectRow).Value + quantidade >= ItemPedidosDataGridView2.Item(5, v_SelectRow).Value Then
-                command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Entregue"
-            Else
-                command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Parcialmente"
-            End If
-            command.Parameters.Add("@quantidade", SqlDbType.Float).Value = quantidade + (ItemPedidosDataGridView2.Item(7, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(6, v_SelectRow).Value)
-            command.Parameters.Add("@data", SqlDbType.Date).Value = Date.Now
-            command.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = quantidade
+        'Try
+        '    If ItemPedidosDataGridView2.Item(7, v_SelectRow).Value + quantidade >= ItemPedidosDataGridView2.Item(5, v_SelectRow).Value Then
+        '        command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Entregue"
+        '    Else
+        '        command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Parcialmente"
+        '    End If
+        '    command.Parameters.Add("@quantidade", SqlDbType.Float).Value = quantidade + (ItemPedidosDataGridView2.Item(7, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(6, v_SelectRow).Value)
+        '    command.Parameters.Add("@data", SqlDbType.Date).Value = Date.Now
+        '    command.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = quantidade
 
-        Catch ex As Exception
-            Exit Sub
-        End Try
+        'Catch ex As Exception
+        '    Exit Sub
+        'End Try
 
-        Try
-            connection.Open()
-            command.ExecuteNonQuery()
-            connection.Close()
+        'Try
+        '    connection.Open()
+        '    command.ExecuteNonQuery()
+        '    connection.Close()
 
-        Catch ex As Exception
+        'Catch ex As Exception
 
-            MessageBox.Show(ex.ToString())
+        '    MessageBox.Show(ex.ToString())
 
-        End Try
+        'End Try
 
-        Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
+        'Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
 
         'End If
 
@@ -6631,7 +6607,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Try
             'rem salvar os dados e criar o corpo da NOTA
             command = connection.CreateCommand()
-             command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
+            'command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
             command.CommandType = CommandType.Text
             command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = txt_nNfe.Text
             command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = txt_codCli_pedNfe.Text
@@ -6653,7 +6629,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@CFOP_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_CFOP.Text
             command.Parameters.Add("@VOlumes_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_VolNfeEmitidas.Text
             command.Parameters.Add("@Peso_nfeemitida", SqlDbType.Float).Value = Peso_nfeemitidaTextBox.Text
-            command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox16.Text
+            'command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox16.Text
             command.Parameters.Add("@obsNota_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obsNFE.Text
             command.Parameters.Add("@obxNCM_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obs2.Text
             command.Parameters.Add("@ent_saida_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox31.Text
@@ -6715,8 +6691,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' habilitar botões
         Button17.Enabled = True
-        Button18.Enabled = False
-        Button19.Enabled = False
+        
         Button21.Enabled = False
         Button10.Enabled = False
         btn_confimraNfeEmitida.Enabled = False
@@ -6739,7 +6714,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ComboBox12.Enabled = False
         txt_obs2.Enabled = False
         Button38.Enabled = False
-        Data_nfeemitidasDateTimePicker.Enabled = False
+        ' Data_nfeemitidasDateTimePicker.Enabled = False
 
 
         ' habilitar duplicatas
@@ -6813,13 +6788,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         ' habilitar gerar ou imprimir
-        If TextBox16.Text = "FERNANDO FRASCARI EPP" Then
-            Button4.Enabled = True
-            Button20.Enabled = False
-        Else
-            Button20.Enabled = True
-            Button4.Enabled = False
-        End If
+        'If TextBox16.Text = "FERNANDO FRASCARI EPP" Then
+        '    Button4.Enabled = True
+        '    Button20.Enabled = False
+        'Else
+        '    Button20.Enabled = True
+        '    Button4.Enabled = False
+        'End If
 
         cbx_VolNfeEmitidas.Enabled = False
 
@@ -6932,42 +6907,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
 
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+    
 
-        'TextBox16.Text = "FERNANDO FRASCARI EPP"
-        'TextBox14.Text = "MARFINITE MOGI"
-        'MaskedTextBox5.Text = "08735400"
-        'TextBox11.Text = "VILA BERNADOTTI"
-        'TextBox13.Text = "AV HENRIQUE PERES 1880"""
-        'MaskedTextBox8.Text = "1147226115"
-        'MaskedTextBox7.Text = "72844228000179"
-        'MaskedTextBox6.Text = "454131384115"
-        'ComboBox4.Text = "SP"
-        'ComboBox5.Text = "MOGI DAS CRUZES"
-        'Button4.Enabled = True
-        'Button20.Enabled = False
-        'Button20.BackColor = Color.Gray
-        'Button4.BackColor = Color.Red
-
-
-    End Sub
-
-    Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
-        'TextBox16.Text = "SILVIA PAULA DUARTE FRASCARI - ME"
-        'TextBox14.Text = ""
-        'MaskedTextBox5.Text = "08737165"
-        'TextBox11.Text = "ALTO IPIRANGA"
-        'TextBox13.Text = "AV HENRIQUE EROLES 1459"
-        'MaskedTextBox8.Text = "1147261880"
-        'MaskedTextBox7.Text = "18623408000185"
-        'MaskedTextBox6.Text = "454382243117"
-        'ComboBox4.Text = "SP"
-        'ComboBox5.Text = "MOGI DAS CRUZES"
-        'Button4.Enabled = False
-        'Button20.Enabled = True
-        'Button20.BackColor = Color.Red
-        'Button4.BackColor = Color.Gray
-    End Sub
+   
 
     Private Sub Button21_Click(sender As Object, e As EventArgs) Handles Button21.Click
         IsValidaCNPJ(msktxt_cnpjcliente.Text)
@@ -7131,10 +7073,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             TextBox31.Text = NFE_EmitidasDataGridView.Item(39, v_SelectRow2).Value
             TextBox30.Text = NFE_EmitidasDataGridView.Item(40, v_SelectRow2).Value
             ComboBox12.Text = NFE_EmitidasDataGridView.Item(41, v_SelectRow2).Value
-            HoraEmitida_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(30, v_SelectRow2).Value
+            'HoraEmitida_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(30, v_SelectRow2).Value
             CodTrans_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(32, v_SelectRow2).Value
             NomeTrans_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(33, v_SelectRow2).Value
-            Data_nfeemitidasDateTimePicker.Text = NFE_EmitidasDataGridView.Item(42, v_SelectRow2).Value
+            'Data_nfeemitidasDateTimePicker.Text = NFE_EmitidasDataGridView.Item(42, v_SelectRow2).Value
 
 
         Catch ex As Exception
@@ -7198,41 +7140,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 date_duplicata5.Text = ""
                 txt_vrduplicata5.Text = ""
             End If
-            'PASSANDO PARÂMETROS
-            If NFE_EmitidasDataGridView.Item(35, v_SelectRow2).Value = "FERNANDO FRASCARI EPP" Then
-                TextBox16.Text = "FERNANDO FRASCARI EPP"
-                TextBox14.Text = "MARFINITE MOGI"
-                MaskedTextBox5.Text = "08735400"
-                TextBox11.Text = "VILA BERNADOTTI"
-                TextBox13.Text = "AV HENRIQUE PERES 1880"""
-                MaskedTextBox8.Text = "1147226115"
-                MaskedTextBox7.Text = "72844228000179"
-                MaskedTextBox6.Text = "454131384115"
-                ComboBox4.Text = "SP"
-                ComboBox5.Text = "MOGI DAS CRUZES"
-                Button4.Enabled = True
-                Button20.Enabled = False
-                Button20.BackColor = Color.Gray
-                Button4.BackColor = Color.Red
-            Else
-                TextBox16.Text = "SILVIA PAULA DUARTE FRASCARI - ME"
-                TextBox14.Text = ""
-                MaskedTextBox5.Text = "08737165"
-                TextBox11.Text = "ALTO IPIRANGA"
-                TextBox13.Text = "AV HENRIQUE EROLES 1459"
-                MaskedTextBox8.Text = "1147261880"
-                MaskedTextBox7.Text = "18523408000185"
-                MaskedTextBox6.Text = "454382243117"
-                ComboBox4.Text = "SP"
-                ComboBox5.Text = "MOGI DAS CRUZES"
-                Button4.Enabled = False
-                Button20.Enabled = True
-                Button20.BackColor = Color.Red
-                Button4.BackColor = Color.Gray
-            End If
+           
 
             TabControl_NFE.SelectedIndex = 0
-        ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HoraEmitida_nfeemitidaTextBox.Text)
+        'ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HoraEmitida_nfeemitidaTextBox.Text)
 
     End Sub
 
@@ -7254,8 +7165,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TabControl1.TabPages.Remove(tbpg_orcamento)
         TabControl1.TabPages.Remove(tbg_relatorios)
         ' habilitar botões
-        Button18.Enabled = True
-        Button19.Enabled = True
         Button21.Enabled = True
         Button10.Enabled = True
         btn_confimraNfeEmitida.Enabled = True
@@ -7300,7 +7209,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         txt_vrduplicata5.Enabled = True
         Button17.Enabled = False
         ComboBox12.Enabled = True
-        Data_nfeemitidasDateTimePicker.Enabled = True
+        ' Data_nfeemitidasDateTimePicker.Enabled = True
 
         'acrescenta  e remove telas
         TabControl_NFE.TabPages.Remove(TbPg_consultaNFe)
@@ -7378,10 +7287,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Try
                 For x = 0 To 30
 
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(9, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(10, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 200, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(8, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(11, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
 
                 Next
             Catch ex As Exception
@@ -7439,10 +7348,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Try
                 For x = 0 To 30
 
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(6, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(4, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(7, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(9, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(10, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 200, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(8, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
+                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(11, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
 
                 Next
             Catch ex As Exception
@@ -7488,7 +7397,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             e.Graphics.DrawString(txt_cpfNFE.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 550, 175)
         End If
        'DATA EMISSÃO
-        e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 700, 175)
+        ' e.Graphics.DrawString(Data_nfeemitidasDateTimePicker.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 700, 175)
 
         'ENDEREÇO - LINHA 4
         e.Graphics.DrawString(D_Endereco.Text + " " + Numerodarua_pedTextBox.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 20, 205)
@@ -7497,7 +7406,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' CEP
         e.Graphics.DrawString(D_Cep.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 560, 205)
         ' DATA SAÍDA
-        e.Graphics.DrawString(DateTimePicker20.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 700, 205)
+        'e.Graphics.DrawString(DateTimePicker20.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 700, 205)
 
         'CIDADE - telefone - ESTADO - INSCRIÇÃO
         e.Graphics.DrawString(D_Municipio.Text, New Font("arial", 10, FontStyle.Bold), Brushes.Black, 20, 240)
@@ -14773,8 +14682,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim NomeProduto As String = ""
             Dim CustoProduto As Double = 0
             Dim IPIProduto As Double = 0
-
-
+            Dim Raiz As String = ""
 
             Dim command2 As SqlCommand
             command2 = connection.CreateCommand()
@@ -14796,16 +14704,19 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 CustoProduto = lrd2("custo_prod").ToString
                 IPIProduto = lrd2("ipi_prod").ToString
                 EstoqueAtual = lrd2("estoqueatual_prod").ToString
+                Raiz = lrd2("RaizSimNao_prod").ToString
+
 
             End While
             connection.Close()
+
             ' -----------------------------------------------------
             Dim CodComp(5) As String
             Dim QtdeComp(5) As Double
            
 
             connection.Open()
-            If LinhaProduto = "produto combo/kit" Then
+            If Raiz = "NÃO RAIZ" Then
 
                 Dim lrd3 As SqlDataReader = command2.ExecuteReader()
                 While lrd3.Read
@@ -14829,7 +14740,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' ******************************************************************************
             If NomeProduto <> "" Then
 
-                'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
+                'REM verifica se o produto já foi cadastrado no arquivo balcão
                 Dim cmd As New SqlCommand
                 cmd.Connection = connection
                 cmd.CommandText = "SELECT NumeroNotaMlb_balcao  from balcao where NumeroNotaMlb_balcao = '" & NumeroNota & "'"
@@ -14856,12 +14767,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim command47 As New SqlCommand
             command47.Connection = connection
             command47.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodigoMlb & "'or CodigoMlb_prod = '" & CodigoMlb & "'"
+
             connection.Open()
             Dim lrd17 As SqlDataReader = command47.ExecuteReader()
-
-
             If lrd17.Read() = False Then
-
+               
                 Dim command40 As SqlCommand
                 command40 = connection.CreateCommand()
                 command40.CommandText = "insert into ApelidoErrado (NumeroNota_ApelidoErrado,Nome_ApelidoErrado,CodigoMlb_ApelidoErrado) values (@NumeroNota_ApelidoErrado,@Nome_ApelidoErrado, @CodigoMlb_ApelidoErrado)"
@@ -14890,7 +14800,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
                 ' Faz o lançamento em vendas balcão para produtos que NÃO SÃO KIT
                 Dim command5 As SqlCommand
-                If LinhaProduto <> "produto combo/kit" Then
+                If Raiz = "RAIZ" Then
+
                     command5 = connection.CreateCommand()
                     command5.CommandText = "insert into balcao (CodigoMlb_balcao,Avista_APrazo_balcao,FormaPgto_balcao,totalpedido_prodbalcao,id2_balcao,nomevendedor_balcao,codprod_balcao,forprod_balcao,linhaprod_balcao,corprod_balcao,quantidadeprod_balcao,precoprod_balcao,totalprod_balcao,datavenda_prodbalcao,desconto_balcao,nomeProd_balcao,Custo_balcao,vendaOrcamento_balcao,NumeroNotaMlb_balcao) values (@CodigoMlb_balcao,@Avista_APrazo_balcao,@FormaPgto_balcao,@totalpedido_prodbalcao,@id2_balcao,@nomevendedor_balcao,@codprod_balcao,@forprod_balcao,@linhaprod_balcao,@corprod_balcao,@quantidadeprod_balcao,@precoprod_balcao,@totalprod_balcao,@datavenda_prodbalcao,@desconto_balcao,@nomeProd_balcao,@Custo_balcao,@vendaOrcamento_balcao, @NumeroNotaMlb_balcao)"
                     command5.CommandType = CommandType.Text
@@ -14947,20 +14858,20 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 Dim command50 As SqlCommand
                 Dim command28 As SqlCommand
 
-                Dim ValorProduto2 As Double
-                Dim CodigoProdutoFor2 As String
-                Dim FornecedorProduto2 As String
-                Dim LinhaProduto2 As String
-                Dim CorProduto2 As String
-                Dim PrecoAtacadoProduto2 As Double
-                Dim NomeProduto2 As String
-                Dim CustoProduto2 As Double
-                Dim IPIProduto2 As Double
-                Dim EstoqueAtual2 As Double
+                Dim ValorProduto2 As Double = 0
+                Dim CodigoProdutoFor2 As String = ""
+                Dim FornecedorProduto2 As String = ""
+                Dim LinhaProduto2 As String = ""
+                Dim CorProduto2 As String = ""
+                Dim PrecoAtacadoProduto2 As Double = 0
+                Dim NomeProduto2 As String = ""
+                Dim CustoProduto2 As Double = 0
+                Dim IPIProduto2 As Double = 0
+                Dim EstoqueAtual2 As Double = 0
 
 
-                If LinhaProduto = "produto combo/kit" Then
-
+                If Raiz = "NÃO RAIZ" Then
+                    
                     For az = 1 To 5
 
                         If CodComp(az) <> "0" Then
@@ -15039,7 +14950,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
                         End If
 
-                 next
+                    Next
                 End If
 
             End If
@@ -15049,77 +14960,79 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' *****************************************************************************
         ' dando baixa nos estoque com produtos composto por vários ítens
 
-        Dim EstoqueAtualItem As Double
-        Dim SubtraindoEstoqueItem As Integer
-        Dim nome As String
+            Dim EstoqueAtualItem As Double = 0
+            Dim SubtraindoEstoqueItem As Integer = 0
+            Dim nome As String = ""
 
         Dim command25 As SqlCommand
-        If LinhaProduto = "produto combo/kit" Then
+            If Raiz = "NÃO RAIZ" Then
 
-            For a = 1 To 5
+                For a = 1 To 5
 
-                If CodComp(a) <> "" Then
+                    If CodComp(a) <> "" Then
 
-                    command25 = connection.CreateCommand()
-                    command25.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
-                    command25.CommandType = CommandType.Text
+                        command25 = connection.CreateCommand()
+                        command25.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
+                        command25.CommandType = CommandType.Text
 
-                    connection.Open()
-                    Dim lrd15 As SqlDataReader = command25.ExecuteReader()
-                    While lrd15.Read
-                        EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
-                        'nome = lrd15("nome_prod").ToString
-                    End While
-                    connection.Close()
-
-                    SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
-                    Dim command20 As SqlCommand
-                    command20 = connection.CreateCommand()
-                    command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @cod_prodfor"
-                    command20.CommandType = CommandType.Text
-                    command20.Parameters.Add("@cod_prodfor", SqlDbType.VarChar, 50).Value = CodComp(a)
-                    command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
-
-                    Try
                         connection.Open()
-                        command20.ExecuteNonQuery()
+                        Dim lrd15 As SqlDataReader = command25.ExecuteReader()
+                        While lrd15.Read
+                            EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
+
+                        End While
                         connection.Close()
-                    Catch ex As Exception
-                        MessageBox.Show(ex.ToString())
-                    End Try
-                End If
-            Next
-        End If
+
+                        SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
+                        Dim command20 As SqlCommand
+                        command20 = connection.CreateCommand()
+                        command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @cod_prodfor"
+                        command20.CommandType = CommandType.Text
+                        command20.Parameters.Add("@cod_prodfor", SqlDbType.VarChar, 50).Value = CodComp(a)
+                        command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
+
+                        Try
+                            connection.Open()
+                            command20.ExecuteNonQuery()
+                            connection.Close()
+                        Catch ex As Exception
+                            MessageBox.Show(ex.ToString())
+                        End Try
+                    End If
+                Next
+            End If
 
         connection.Close()
         '********************************************************************************
         ' ******************************************************************************
         ' Dando baixa no estoque para produtos com um ítem 
         Dim SubtraindoEstoqueAtual As Integer = 0
-        If LinhaProduto <> "produto combo/kit" Then
+            If Raiz = "RAIZ" Then
 
-            SubtraindoEstoqueAtual = EstoqueAtual - QuantidadeVendidaMlb
-            Dim command10 As SqlCommand
-            command10 = connection.CreateCommand()
-            command10.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
-            command10.CommandType = CommandType.Text
-            command10.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
+                SubtraindoEstoqueAtual = EstoqueAtual - QuantidadeVendidaMlb
+                
+                Dim command10 As SqlCommand
+                command10 = connection.CreateCommand()
+                command10.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
+                command10.CommandType = CommandType.Text
+                command10.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
 
-            Try
-                connection.Open()
-                command10.ExecuteNonQuery()
-                connection.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString())
-                connection.Close()
-            End Try
-        End If
+                Try
+                    connection.Open()
+                    command10.ExecuteNonQuery()
+                    connection.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                    connection.Close()
+                End Try
+            End If
 Proxima:
         NomeContato2 = NomeContato
         CodigoAnterior = NumeroNota
         Next
 
-        ProdutosTableAdapter1.Fill(DataSetFinal.produtos)
+        Me.ProdutosTableAdapter1.Fill(Me.DataSetFinal.produtos)
+        Me.BalcaoTableAdapter.Fill(Me.DataSetFinal.balcao)
 
     End Sub
 
@@ -15486,31 +15399,31 @@ Proxima:
 
         ' só passará para os textbox se for para apagar
         If RadioButton11.Checked = True Then
-            TextBox246.Text = PedidoCompraDataGridView.Item(2, v_SelectRow).Value
-            TextBox247.Text = PedidoCompraDataGridView.Item(6, v_SelectRow).Value
-            TextBox248.Text = PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+            TextBox246.Text = PedidoCompraDataGridView.Item(0, v_SelectRow).Value
+            TextBox247.Text = PedidoCompraDataGridView.Item(10, v_SelectRow).Value
+            TextBox248.Text = PedidoCompraDataGridView.Item(11, v_SelectRow).Value
         End If
 
         ' muda de Não Entregue para entregue e vice-versa.
 
         If RadioButton12.Checked = True Then
         
-            Dim command As SqlCommand
-            command = connection.CreateCommand()
-            command.CommandText = "update PedidoCompra set EntregueSimNao_PedidoCompra =@EntregueSimNao_PedidoCompra  where id_PedidoCompra  = @id_PedidoCompra"
-            command.CommandType = CommandType.Text
+            Dim command2 As SqlCommand
+            command2 = connection.CreateCommand()
+            command2.CommandText = "update PedidoCompra set EntregueSimNao_PedidoCompra =@EntregueSimNao_PedidoCompra  where id_PedidoCompra  = @id_PedidoCompra"
+            command2.CommandType = CommandType.Text
 
-            command.Parameters.Add("@id_PedidoCompra", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(0, v_SelectRow).Value
+            command2.Parameters.Add("@id_PedidoCompra", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(4, v_SelectRow).Value
 
-            If PedidoCompraDataGridView.Item(9, v_SelectRow).Value = "Não Entregue" Then
-                command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Entregue"
+            If PedidoCompraDataGridView.Item(13, v_SelectRow).Value = "Não Entregue" Then
+                command2.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Entregue"
             Else
-                command.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
+                command2.Parameters.Add("@EntregueSimNao_PedidoCompra", SqlDbType.VarChar, 50).Value = "Não Entregue"
             End If
 
             Try
                 connection.Open()
-                command.ExecuteNonQuery()
+                command2.ExecuteNonQuery()
                 connection.Close()
             Catch ex As Exception
                 MessageBox.Show(ex.ToString())
@@ -15519,7 +15432,7 @@ Proxima:
             ' -----------------------------------------------------------------------------
             ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
             command = connection.CreateCommand()
-            command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(11, v_SelectRow).Value & "'"
+            command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(1, v_SelectRow).Value & "'"
             connection.Open()
             Dim lrd As SqlDataReader = command.ExecuteReader()
 
@@ -15533,8 +15446,6 @@ Proxima:
                 Else
                     SubstTributaria = lrd("Subtituicao_tributaria")
                 End If
-
-
                 MarkupNET = lrd("MarkupNET_prod")
             End While
             connection.Close()
@@ -15544,38 +15455,39 @@ Proxima:
             Dim SomandoEstoqueAtual As Integer = 0
             Dim SubtraindoEstoqueAtual As Integer = 0
             ' ATENÇÃO: COMO É ENTRADA DE MATEIRIAS VIA PEDIDO, O SINAL DE SOMA É O OPOSTO AO DOS PEDIDOS
-            SomandoEstoqueAtual = EstoqueAtual + PedidoCompraDataGridView.Item(7, v_SelectRow).Value
-            SubtraindoEstoqueAtual = EstoqueAtual - PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+            SomandoEstoqueAtual = EstoqueAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+            SubtraindoEstoqueAtual = EstoqueAtual - PedidoCompraDataGridView.Item(11, v_SelectRow).Value
             ' Calculando o estoque de pedidos encomendados
             Dim SomandoPedidosAtual As Integer = 0
             Dim SubtraindoPedidosAtual As Integer = 0
-            SomandoPedidosAtual = PedidosColocadosAtual + PedidoCompraDataGridView.Item(7, v_SelectRow).Value
-            SubtraindoPedidosAtual = PedidosColocadosAtual - PedidoCompraDataGridView.Item(7, v_SelectRow).Value
+            SomandoPedidosAtual = PedidosColocadosAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+            SubtraindoPedidosAtual = PedidosColocadosAtual - PedidoCompraDataGridView.Item(11, v_SelectRow).Value
 
-            command = connection.CreateCommand()
-            command.CommandText = "update produtos set  pedencomendados_prod=@pedencomendados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
-            command.CommandType = CommandType.Text
+            Dim command3 As SqlCommand
+            command3 = connection.CreateCommand()
+            command3.CommandText = "update produtos set  pedencomendados_prod=@pedencomendados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
+            command3.CommandType = CommandType.Text
 
-            command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+            command3.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(1, v_SelectRow).Value
 
-            If PedidoCompraDataGridView.Item(9, v_SelectRow).Value = "Não Entregue" Then
-                command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SomandoEstoqueAtual
-                command.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
+            If PedidoCompraDataGridView.Item(13, v_SelectRow).Value = "Não Entregue" Then
+                command3.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SomandoEstoqueAtual
+                command3.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
 
             Else
-                command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
-                command.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
+                command3.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
+                command3.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
 
             End If
 
             Try
                 connection.Open()
-                command.ExecuteNonQuery()
+                command3.ExecuteNonQuery()
                 connection.Close()
             Catch ex As Exception
                 MessageBox.Show(ex.ToString())
             End Try
-            
+
         End If
 
         ' ********************************************************************************************
@@ -15600,18 +15512,18 @@ Proxima:
                 Dim result = MessageBox.Show("Custo Atual : " & CustoAtual, "Custo Lançado(se quiser alterar clique em SIM) : " & PrecoEntradaNota, MessageBoxButtons.YesNo)
 
                 If result = DialogResult.Yes Then
-                    Dim command2 As SqlCommand
-                    command2 = connection.CreateCommand()
-                    command2.CommandText = "update produtos set custo_prod=@custo_prod,precovarejo_prod=@precovarejo_prod, precoatacado_prod = @precoatacado_prod where cod_prod = @cod_prod"
-                    command2.CommandType = CommandType.Text
-                    command2.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(11, v_SelectRow).Value
-                    command2.Parameters.Add("@custo_prod", SqlDbType.Float).Value = PrecoEntradaNota
-                    command2.Parameters.Add("@precovarejo_prod", SqlDbType.Float).Value = PrecoVendaVarejo
-                    command2.Parameters.Add("@precoatacado_prod", SqlDbType.Float).Value = PrecoVendaAtacado
+                    Dim command4 As SqlCommand
+                    command4 = connection.CreateCommand()
+                    command4.CommandText = "update produtos set custo_prod=@custo_prod,precovarejo_prod=@precovarejo_prod, precoatacado_prod = @precoatacado_prod where cod_prod = @cod_prod"
+                    command4.CommandType = CommandType.Text
+                    command4.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(1, v_SelectRow).Value
+                    command4.Parameters.Add("@custo_prod", SqlDbType.Float).Value = PrecoEntradaNota
+                    command4.Parameters.Add("@precovarejo_prod", SqlDbType.Float).Value = PrecoVendaVarejo
+                    command4.Parameters.Add("@precoatacado_prod", SqlDbType.Float).Value = PrecoVendaAtacado
 
                     Try
                         connection.Open()
-                        command2.ExecuteNonQuery()
+                        command4.ExecuteNonQuery()
                         connection.Close()
                     Catch ex As Exception
                         MessageBox.Show(ex.ToString())
@@ -15827,8 +15739,8 @@ proxima2:
             Exit Sub
         End If
 
-        ' remove a tab consulta e acrescenta a tab TabPage_PedidosNFE
-        'RETIRA A VISIBILIDADE DA PAGE DESEJADA
+
+        'RETIRA A VISIBILIDADE DA PAGE INDESEJADA
         TabControl1.TabPages.Remove(tbpg_produtos)
         TabControl1.TabPages.Remove(tbpg_clientes)
         TabControl1.TabPages.Remove(tbpg_pedFornecedor)
@@ -16102,6 +16014,7 @@ proxima2:
 
    
     Private Sub Button106_Click(sender As Object, e As EventArgs) Handles Button106.Click
+
         Dim result = MessageBox.Show("Confirmar a Deleção?", "Atenção!!!", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
 
@@ -16166,6 +16079,162 @@ proxima2:
         End If
 
 
+    End Sub
+
+    Private Sub Button108_Click(sender As Object, e As EventArgs) Handles Button108.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and RaizSimNao_prod LIKE '{2}'", ComboBox33.Text, ComboBox34.Text, "NÃO RAIZ")
+
+    End Sub
+
+    Private Sub Button109_Click(sender As Object, e As EventArgs) Handles Button109.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and RaizSimNao_prod LIKE '{2}'", ComboBox33.Text, ComboBox34.Text, "RAIZ")
+
+    End Sub
+
+    Private Sub Button110_Click(sender As Object, e As EventArgs) Handles Button110.Click
+
+
+        Dim ds As New DataSet()
+        Dim xml As String = "http://www.receita.fazenda.gov.br/PessoaJuridica/CNPJ/cnpjreva/Cnpjreva_Solicitacao2.asp".Replace("@cnpj_prod", msktxt_cnpjcliente.Text)
+        ds.ReadXml(xml)
+
+        Endereco_clienteTextBox.Text = ds.Tables(0).Rows(0)("logradouro").ToString()
+        Bairro_clienteTextBox.Text = ds.Tables(0).Rows(0)("bairro").ToString()
+        Cidade_clienteTextBox.Text = ds.Tables(0).Rows(0)("cidade").ToString()
+        Estado_clienteComboBox.Text = ds.Tables(0).Rows(0)("uf").ToString()
+
+
+    End Sub
+
+    Private Sub Button111_Click(sender As Object, e As EventArgs) Handles Button111.Click
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        Dim sql2 As String = "SELECT * FROM PedidoNFE WHERE dataemissao_ped BETWEEN  '" & DateTimePicker41.Text & "' and '" & DateTimePicker42.Text & "'"
+
+        Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        Dim ds As New DataSet()
+        Try
+            connection.Open()
+            dataadapter.Fill(ds, "PedidoNFE")
+            connection.Close()
+            PedidoNFEDataGridView1.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Button112_Click(sender As Object, e As EventArgs) Handles Button112.Click
+        'REM verifica se o produto já foi cadastrado mas só se for incluir
+        Dim con As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim CodFor = InputBox("DIgite o código do fornecedor", "Obrigatório")
+
+        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        cmd.Connection = con
+        cmd.CommandText = "SELECT cod_prod  from produtos where cod_prodfor = " & "'" & CodFor & "'"
+
+        con.Open()
+        'REM verifica se cdigo prod do fornecdor existe em  produto  para não gravar duas vezes
+        Dim lrd As SqlDataReader = cmd.ExecuteReader()
+
+        Try
+            If lrd.Read() = True Then
+
+                MessageBox.Show("O código do fornecedor " & CodFor & " já foi cadastrado!!!!")
+                Cod_prodforTextBox.Clear()
+                con.Close()
+                Exit Sub
+
+            Else
+
+
+                destravarCamposprod()
+                menu_confirmarprod.Visible = True
+                Cod_prodTextBox.Enabled = False
+                desabilitatextbox()
+
+            End If
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString)
+        End Try
+        con.Close()
+
+        
+    End Sub
+
+    Private Sub Button107_Click(sender As Object, e As EventArgs) Handles Button107.Click
+
+    End Sub
+
+  
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+        PedidoNFEBindingSource.Filter = String.Empty
+    End Sub
+
+    Private Sub PedidoNFEDataGridView4_DoubleClick(sender As Object, e As EventArgs) Handles PedidoNFEDataGridView4.DoubleClick
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.PedidoNFEDataGridView4.CurrentRow.Index
+        If (PedidoNFEDataGridView4.Item(0, v_SelectRow).Value) IsNot DBNull.Value Then
+            ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", (PedidoNFEDataGridView4.Item(0, v_SelectRow).Value))
+
+            TextBox320.Text = PedidoNFEDataGridView4.Item(1, v_SelectRow).Value
+            TextBox321.Text = PedidoNFEDataGridView4.Item(11, v_SelectRow).Value
+            Dim valor As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                valor += Linha.Cells(9).Value
+            Next
+
+            TextBox322.Text = valor
+        End If
+    End Sub
+
+    Private Sub ItemPedidosDataGridView10_DoubleClick(sender As Object, e As EventArgs) Handles ItemPedidosDataGridView10.DoubleClick
+
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.ItemPedidosDataGridView10.CurrentRow.Index
+
+        ' rem verifica se o campo capturado é nuko, se for atribui o valor 0
+        If ItemPedidosDataGridView10.Item(7, v_SelectRow).Value Is DBNull.Value Then
+            ItemPedidosDataGridView10.Item(7, v_SelectRow).Value = 0
+        End If
+
+
+        Dim quantidade As String = InputBox("Digite a quantidade ", "QUANTIDADE", ((ItemPedidosDataGridView10.Item(5, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(7, v_SelectRow).Value)))
+        'rem GRAVAR DADOS
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        Dim command As SqlCommand
+        command = connection.CreateCommand()
+        command.CommandText = "update ItemPedidos set entregue_item = @entregue, quantidadeparcialentregue_item = @quantidade, dataentrega_item = @data, qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, v_SelectRow).Value & "'"
+        command.CommandType = CommandType.Text
+
+        Try
+            If ItemPedidosDataGridView2.Item(7, v_SelectRow).Value + quantidade >= ItemPedidosDataGridView10.Item(5, v_SelectRow).Value Then
+                command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Entregue"
+            Else
+                command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Parcialmente"
+            End If
+            command.Parameters.Add("@quantidade", SqlDbType.Float).Value = quantidade + (ItemPedidosDataGridView10.Item(7, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(6, v_SelectRow).Value)
+            command.Parameters.Add("@data", SqlDbType.Date).Value = Date.Now
+            command.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = quantidade
+
+        Catch ex As Exception
+            Exit Sub
+        End Try
+
+        Try
+            connection.Open()
+            command.ExecuteNonQuery()
+            connection.Close()
+
+        Catch ex As Exception
+
+            MessageBox.Show(ex.ToString())
+
+        End Try
+
+        Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
     End Sub
 End Class
 
