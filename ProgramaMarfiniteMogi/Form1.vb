@@ -172,9 +172,7 @@ Public Class Form1
         Me.CadastrodoNCMTableAdapter.Fill(Me.DataSetFinal.cadastrodoNCM)
         'TODO: This line of code loads data into the 'DataSetFinal.pedidoMarfinite' table. You can move, or remove it, as needed.
         Me.PedidoMarfiniteTableAdapter.Fill(Me.DataSetFinal.pedidoMarfinite)
-
-
-       'TODO: This line of code loads data into the 'TesteDataSet1.produtos' table. You can move, or remove it, as needed.
+        'TODO: This line of code loads data into the 'TesteDataSet1.produtos' table. You can move, or remove it, as needed.
         Me.ProdutosTableAdapter1.Fill(Me.DataSetFinal.produtos)
         'TODO: This line of code loads data into the 'DataSetFinal.transportadoras' table. You can move, or remove it, as needed.
         Me.TransportadorasTableAdapter1.Fill(Me.DataSetFinal.transportadoras)
@@ -1300,7 +1298,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Cod_prodTextBox.Text = ""
         Button74.Enabled = True
         Button75.Enabled = True
-
+        Button112.Enabled = False
+        Button112.BackColor = Color.LightGray
         Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
 
 
@@ -1663,6 +1662,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         DesistirOperaçãoToolStripMenuItem2.Visible = False
         Button74.Enabled = True
         Button75.Enabled = True
+        Button112.Enabled = False
+        Button112.BackColor = Color.LightGray
         'restabelece o tabcontrol1
         TabControl1.TabPages.Add(tbpg_clientes)
         TabControl1.TabPages.Add(tbpg_pedFornecedor)
@@ -1702,7 +1703,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox233.Text = "0"
         TextBox245.Text = "0"
         TextBox234.Text = "0"
-        TextBox232.Text = "1"
+        TextBox232.Text = "0"
 
         ' quantidade composição produto
         TextBox238.Text = "0"
@@ -1778,11 +1779,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             btn_calcPrecos.Enabled = True
             Button74.Enabled = False
             Button75.Enabled = False
-            FlagProdPesquisa = "1"
+        FlagProdPesquisa = "1"
+        Button112.Enabled = True
+        Button112.BackColor = Color.Coral
             '--------------------------------
             'remove o tab control
-
-            TabControl1.TabPages.Remove(tbpg_clientes)
+        TabControl1.TabPages.Remove(tbpg_clientes)
             TabControl1.TabPages.Remove(tbpg_pedFornecedor)
             TabControl1.TabPages.Remove(tbpg_transportadoras)
             TabControl1.TabPages.Remove(tbpg_capitalGiro)
@@ -1793,9 +1795,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             TabControl1.TabPages.Remove(tbpg_bkup)
             TabControl1.TabPages.Remove(tbpg_orcamento)
             TabControl1.TabPages.Remove(tbg_relatorios)
+        ' ----------------------------------------
+        ' remove tabpage
 
-
-            ' ----------------------------------------
             tabpage_produtos.TabPages.Remove(TabPage_gridProd)
             tabpage_produtos.TabPages.Remove(tbpg_listapreco)
 
@@ -3152,7 +3154,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
-        cmd.CommandText = "SELECT cod_prod  from produtos where cod_prod = " & "'" & Cod_prodTextBox.Text & "'"
+        cmd.CommandText = "SELECT *  from produtos where cod_prod = '" & Cod_prodTextBox.Text & "'"
 
         con.Open()
 
@@ -3164,8 +3166,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Try
             If lrd.Read() = True Then
-
-                MessageBox.Show("O código do produto " & Nome_clienteTextBox.Text & " já foi cadastrado!!!!")
+                MessageBox.Show("O código do produto " & Cod_prodTextBox.Text & " já foi cadastrado!!!!")
                 Cod_prodTextBox.Clear()
                 Cod_prodTextBox.Focus()
                 con.Close()
@@ -3180,6 +3181,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             menu_confirmarprod.Visible = False
         End If
 
+        Cod_prodTextBox.Enabled = False
+        Button112.Enabled = True
+        Button112.BackColor = Color.Coral
 
     End Sub
 
@@ -4867,7 +4871,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If e.KeyChar = Convert.ToChar(Keys.Return) Then
             ' e.Handled = True
             verificaCodigoProdutos()
-            Cod_prodforTextBox.Focus()
         End If
 
     End Sub
@@ -7646,22 +7649,18 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
     Private Sub ComboBox7_TextChanged(sender As Object, e As EventArgs) Handles ComboBox7.TextChanged
-
-        Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox7.Text)
-
+        Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
     End Sub
 
     Private Sub ComboBox8_TextChanged(sender As Object, e As EventArgs) Handles ComboBox8.TextChanged
-
-        Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
         ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox8.Text, ComboBox7.Text)
-
+        Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
     End Sub
 
     Private Sub Button22_Click(sender As Object, e As EventArgs) Handles Button22.Click
-
         ProdutosBindingSource.Filter = String.Empty
+        Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
     End Sub
 
     Private Sub PrintDocument4_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument4.PrintPage
@@ -13293,11 +13292,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' calcula o estoque médio do balcão e grava na tabela de produtos
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' pega uma data de 90 dias atrás para dar um média de tres meses
+        Dim ano As Integer = Today.Year
+        Dim mes As Integer = Today.Month
+        Dim dia As Integer = Today.Day
+        Dim NoventaDiasAtras As DateTime = New DateTime(ano, mes, dia).AddDays(-30)
 
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
 
-            Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and codprod_balcao = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "'"
+            Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & NoventaDiasAtras & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and codprod_balcao = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "'"
             Dim dataadapter As New SqlDataAdapter(sql2, connection)
             Dim ds As New DataSet()
 
@@ -13319,7 +13323,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 quantidadeBalcao += Linha.Cells(4).Value
             Next
 
-            ArredondandoQtdeBalcao = (quantidadeBalcao / 3)
+            ArredondandoQtdeBalcao = (quantidadeBalcao)
             TextBox127.Text = (ArredondandoQtdeBalcao).ToString("F2")
 
             ' ----------------------------------------------------------------------------------
@@ -13331,10 +13335,24 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' gravando o consumo medio no arquivo de produtos
             Dim command As SqlCommand
             command = connection.CreateCommand()
-            command.CommandText = "update produtos set ConsumoMedio_prod=@ConsumoMedio_prod where cod_prod=@cod_prod "
+            command.CommandText = "update produtos set MaxConsumoEstoque_prod=@MaxConsumoEstoque_prod,ConsumoMedio_prod=@ConsumoMedio_prod where cod_prod=@cod_prod "
             command.CommandType = CommandType.Text
             command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
             command.Parameters.Add("@ConsumoMedio_prod", SqlDbType.Int).Value = QtdeConsumoMedio
+
+            Dim QuantmaxTemp As Integer = 0
+            If ProdutosDataGridView3.Item(7, v_SelectRow).Value Is DBNull.Value Then
+                QuantmaxTemp = 0
+            Else
+                QuantmaxTemp = ProdutosDataGridView3.Item(7, v_SelectRow).Value
+            End If
+
+            If QuantmaxTemp < ArredondandoQtdeBalcao Then
+                command.Parameters.Add("@MaxConsumoEstoque_prod", SqlDbType.Int).Value = ArredondandoQtdeBalcao
+            Else
+                command.Parameters.Add("@MaxConsumoEstoque_prod", SqlDbType.Int).Value = QuantmaxTemp
+
+            End If
 
             Try
                 connection.Open()
@@ -13432,6 +13450,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox224.Text = ProdutosDataGridView3.Item(3, v_SelectRow).Value.ToString()
         TextBox225.Text = ProdutosDataGridView3.Item(4, v_SelectRow).Value.ToString()
         TextBox228.Text = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
+        TextBox11.Text = ProdutosDataGridView3.Item(7, v_SelectRow).Value.ToString()
 
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
@@ -13483,8 +13502,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Label296.Text = DiferencaData
         TextBox226.Text = quantidadePedidos
         TextBox227.Text = ((quantidadePedidos / DiferencaData) * 30).ToString("F2")
-        ' ------------------------------------------------------------------------------------
-      
+        
 
     End Sub
 
@@ -14045,13 +14063,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ProdutosBindingSource.Filter = String.Format("Bugiganga_prod LIKE '{0}%'", "bugiganga")
 
     End Sub
-
-    Private Sub ComboBox7_TabStopChanged(sender As Object, e As EventArgs) Handles ComboBox7.TabStopChanged
-
-    End Sub
-
-   
-
     Private Sub Button89_Click_1(sender As Object, e As EventArgs) Handles Button89.Click
 
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox27.Text, ComboBox28.Text, "bugiganga")
@@ -14116,7 +14127,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button92_Click(sender As Object, e As EventArgs) Handles Button92.Click
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox29.Text, ComboBox30.Text, "bugiganga")
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}%' and RaizSimNao_prod LIKE '{2}%'", ComboBox29.Text, ComboBox30.Text, "RAIZ")
+        Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
 
     End Sub
 
@@ -14124,13 +14136,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' calcula os pedidos em aberto que falta entregar
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-
-
-        '   Dim command As SqlCommand
-        ' command = connection.CreateCommand()
-        '  command.CommandText = "SELECT * FROM produtos WHERE [estoquemin_prod] > [estoqueatual_prod]  "
-
-
         Dim sql40 As String = "SELECT * FROM produtos WHERE [estoquemin_prod] > [estoqueatual_prod] and fornecedor_prod = '" & ComboBox25.Text & "'"
         Dim dataadapter40 As New SqlDataAdapter(sql40, connection)
         Dim ds40 As New DataSet()
@@ -16124,6 +16129,7 @@ proxima2:
     End Sub
 
     Private Sub Button112_Click(sender As Object, e As EventArgs) Handles Button112.Click
+
         'REM verifica se o produto já foi cadastrado mas só se for incluir
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
@@ -16141,18 +16147,15 @@ proxima2:
             If lrd.Read() = True Then
 
                 MessageBox.Show("O código do fornecedor " & CodFor & " já foi cadastrado!!!!")
-                Cod_prodforTextBox.Clear()
                 con.Close()
                 Exit Sub
 
             Else
-
-
                 destravarCamposprod()
                 menu_confirmarprod.Visible = True
                 Cod_prodTextBox.Enabled = False
                 desabilitatextbox()
-
+                Cod_prodforTextBox.Text = CodFor
             End If
         Catch ex As Exception
             MessageBox.Show(ex.ToString)
