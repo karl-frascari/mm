@@ -1227,8 +1227,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Porcentagemfat_prodTextBox.Enabled = False
         Abc_prodComboBox.Enabled = False
         Situacao_prodComboBox.Enabled = False
-        '  TextBox234.Enabled = False
-
+       
 
     End Sub
 
@@ -1300,6 +1299,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Button74.Enabled = True
         Button75.Enabled = True
         Button112.Enabled = False
+        TextBox327.Enabled = False
+        TextBox329.Enabled = False
+        TextBox331.Enabled = False
         Button112.BackColor = Color.LightGray
         Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
 
@@ -1324,6 +1326,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Estaquemax_prodTextBox.Clear()
         Estoquemin_prodTextBox.Clear()
         TextBox253.Clear()
+        '------------------------------
+        TextBox327.Clear()
+        TextBox328.Clear()
+        TextBox329.Clear()
+        TextBox330.Clear()
+        TextBox331.Clear()
+        TextBox332.Clear()
+
+        '-----------------------------
         Pedcolocados_prodTextBox.Clear()
         Tempoentragafor_prodTextBox.Clear()
         Pedencomendados_prodTextBox.Clear()
@@ -1364,6 +1375,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Estaquemax_prodTextBox.Enabled = True
         Estoquemin_prodTextBox.Enabled = True
         TextBox253.Enabled = True
+        '------------------------------
+        TextBox327.Enabled = True
+        TextBox329.Enabled = True
+        TextBox331.Enabled = True
+        '-------------------------------
         Pedcolocados_prodTextBox.Enabled = True
         Tempoentragafor_prodTextBox.Enabled = True
         Pedencomendados_prodTextBox.Enabled = True
@@ -1413,11 +1429,14 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Custo_prodTextBox.Enabled = False
         Classificfiscal_prodTextBox.Enabled = False
         Tabelafiscal_prodTextBox.Enabled = False
-
         Peso_prodTextBox.Enabled = False
         Estaquemax_prodTextBox.Enabled = False
         Estoquemin_prodTextBox.Enabled = False
         TextBox253.Enabled = False
+        TextBox328.Enabled = False
+        TextBox330.Enabled = False
+        TextBox332.Enabled = False
+
         Pedcolocados_prodTextBox.Enabled = False
         Tempoentragafor_prodTextBox.Enabled = False
         Pedencomendados_prodTextBox.Enabled = False
@@ -1521,9 +1540,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
 
             If flag = "incluir" Then
-                command.CommandText = "INSERT INTO produtos (RaizSimNao_prod,Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@RaizSimNao_prod,@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+                command.CommandText = "INSERT INTO produtos (PrecoMarketPlace_prod,PrecoSite_prod,PrecoMercadoLivreFull_prod,MkMarketPlace_prod,MkMercadoLivreFull_prod,MkSite_prod,RaizSimNao_prod,Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@PrecoMarketPlace_prod,@PrecoSite_prod,@PrecoMercadoLivreFull_prod,@MkMarketPlace_prod,@MkMercadoLivreFull_prod,@MkSite_prod,@RaizSimNao_prod,@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
             Else
-                command.CommandText = "update produtos set RaizSimNao_prod=@RaizSimNao_prod,Bugiganga_prod=@Bugiganga_prod,CodComp1_prod=@CodComp1_prod,QtdeComp1_prod=@QtdeComp1_prod,CodComp2_prod=@CodComp2_prod,QtdeComp2_prod=@QtdeComp2_prod,CodComp3_prod=@CodComp3_prod,QtdeComp3_prod=@QtdeComp3_prod,CodComp4_prod=@CodComp4_prod,QtdeComp4_prod=@QtdeComp4_prod,CodComp5_prod=@CodComp5_prod,QtdeComp5_prod=@QtdeComp5_prod,EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
+                command.CommandText = "update produtos set PrecoMarketPlace_prod=@PrecoMarketPlace_prod,PrecoSite_prod=@PrecoSite_prod,PrecoMercadoLivreFull_prod=@PrecoMercadoLivreFull_prod,MkMarketPlace_prod=@MkMarketPlace_prod,MkSite_prod=@MkSite_prod,MkMercadoLivreFull_prod=@MkMercadoLivreFull_prod,RaizSimNao_prod=@RaizSimNao_prod,Bugiganga_prod=@Bugiganga_prod,CodComp1_prod=@CodComp1_prod,QtdeComp1_prod=@QtdeComp1_prod,CodComp2_prod=@CodComp2_prod,QtdeComp2_prod=@QtdeComp2_prod,CodComp3_prod=@CodComp3_prod,QtdeComp3_prod=@QtdeComp3_prod,CodComp4_prod=@CodComp4_prod,QtdeComp4_prod=@QtdeComp4_prod,CodComp5_prod=@CodComp5_prod,QtdeComp5_prod=@QtdeComp5_prod,EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
             End If
 
             'REM calculando o preço varejo e atacado antes de salvar
@@ -1536,8 +1555,22 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             If TextBox231.Text = "" Then
                 TextBox231.Text = 0
             End If
+            If TextBox327.Text = "" Then
+                TextBox327.Text = 0
+            End If
+            If TextBox329.Text = "" Then
+                TextBox329.Text = 0
+            End If
+            If TextBox331.Text = "" Then
+                TextBox331.Text = 0
+            End If
+
+
             Precoatacado_prodTextBox.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox253.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
             Precovarejo_prodTextBox.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (Markup_prodTextBox.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
+            TextBox328.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox327.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
+            TextBox330.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox329.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
+            TextBox332.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox331.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
 
             command.CommandType = CommandType.Text
             command.Parameters.Add("@codprod", SqlDbType.VarChar, 50).Value = Cod_prodTextBox.Text
@@ -1558,6 +1591,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Dim markup = Convert.ToDouble(Markup_prodTextBox.Text)
             command.Parameters.Add("@markupprod", SqlDbType.Float).Value = markup
             command.Parameters.Add("@MarkupNET_prod", SqlDbType.Float).Value = TextBox253.Text
+            '------------------------------------------------------------------------------------
+            command.Parameters.Add("@MkMercadoLivreFull_prod", SqlDbType.Float).Value = TextBox327.Text
+            command.Parameters.Add("@MkSite_prod", SqlDbType.Float).Value = TextBox329.Text
+            command.Parameters.Add("@MkMarketPlace_prod", SqlDbType.Float).Value = TextBox331.Text
+
+            command.Parameters.Add("@PrecoMercadoLivreFull_prod", SqlDbType.Float).Value = TextBox328.Text
+            command.Parameters.Add("@PrecoSite_prod", SqlDbType.Float).Value = TextBox330.Text
+            command.Parameters.Add("@PrecoMarketPlace_prod", SqlDbType.Float).Value = TextBox332.Text
+            '------------------------------------------------------------------------------------
             Dim estoquemin = Convert.ToDouble(Estoquemin_prodTextBox.Text)
             command.Parameters.Add("@estoqueminprod", SqlDbType.Float).Value = estoquemin
             Dim estoquemax = Convert.ToDouble(Estaquemax_prodTextBox.Text)
@@ -1585,8 +1627,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             If Porcentagemfat_prodTextBox.Text = "" Then
                 Porcentagemfat_prodTextBox.Text = 0
             End If
-
-
 
             Dim porcentagemfatprod = Convert.ToDouble(Porcentagemfat_prodTextBox.Text)
             command.Parameters.Add("@porcentagemfatprod", SqlDbType.Float).Value = porcentagemfatprod
@@ -1664,6 +1704,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Button74.Enabled = True
         Button75.Enabled = True
         Button112.Enabled = False
+
+        TextBox327.Enabled = False
+        TextBox329.Enabled = False
+        TextBox331.Enabled = False
+
         Button112.BackColor = Color.LightGray
         'restabelece o tabcontrol1
         TabControl1.TabPages.Add(tbpg_clientes)
@@ -1693,6 +1738,14 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Pedcolocados_prodTextBox.Text = "0"
         Pedencomendados_prodTextBox.Text = "0"
         TextBox253.Text = "0,00"
+        ' -------------------------------
+        TextBox327.Text = "0"
+        TextBox328.Text = "0,00"
+        TextBox329.Text = "0"
+        TextBox330.Text = "0,00"
+        TextBox331.Text = "0"
+        TextBox332.Text = "0,00"
+        ' -------------------------------
         Ipi_prodTextBox.Text = "0,00"
         Custo_prodTextBox.Text = "0,00"
         Peso_prodTextBox.Text = "0,00"
@@ -2333,12 +2386,28 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If TextBox231.Text = "" Then
             TextBox231.Text = 0
         End If
+        ' -----------------------------------
+        If TextBox327.Text = "" Then
+            TextBox327.Text = 0
+        End If
+        If TextBox329.Text = "" Then
+            TextBox329.Text = 0
+        End If
+        If TextBox331.Text = "" Then
+            TextBox331.Text = 0
+        End If
 
+
+
+        '-----------------------------------
 
         If Markup_prodTextBox.Text <> 0 And TextBox253.Text <> 0 And Custo_prodTextBox.Text <> 0 And Markup_prodTextBox.Text <> "0,00" And Custo_prodTextBox.Text <> "0,00" Then
 
             Precoatacado_prodTextBox.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox253.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
             Precovarejo_prodTextBox.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (Markup_prodTextBox.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
+            TextBox328.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox327.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
+            TextBox330.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox329.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
+            TextBox332.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox331.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
 
         Else
 
@@ -9154,6 +9223,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
    
 
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
+
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> "veinho" Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+
         If TextBox32.Text = "" Then
             MessageBox.Show("Clicar em um ítem para poder reabrir a venda")
             Exit Sub
@@ -13210,6 +13286,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button72_Click(sender As Object, e As EventArgs) Handles Button72.Click
 
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
         ' calcula o estoque médio do balcão e grava na tabela de produtos
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
@@ -13251,8 +13332,28 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' Passando Textbox para integer
             Dim QtdeConsumoMedio As Integer = 0
             QtdeConsumoMedio = TextBox127.Text
+            ' ----------------------------------------------------
+            ' ******************************************************
+            ' LER ARQUIVO PRODUTOS PARA SABER SE É UM PRODUTO RAIZ OU NÃO
+            Dim cmd As New SqlCommand
+            cmd.Connection = connection
+            cmd.CommandText = "SELECT * from PRODUTOS   where cod_prod = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "'"
+            connection.Open()
 
+            'REM verifica se cdigo de contas já existe banco do dados para não gravar duas vezes
+            Dim RaizouNao As String = ""
+            Dim lrd As SqlDataReader = cmd.ExecuteReader()
 
+            Try
+                While lrd.Read
+                    RaizouNao = lrd("RaizSimNao_prod").ToString
+                End While
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+            connection.Close()
+            '------------------------------------------------------
+            ' ***********************************************************
             ' gravando o consumo medio no arquivo de produtos
             Dim command As SqlCommand
             command = connection.CreateCommand()
@@ -13268,12 +13369,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 QuantmaxTemp = ProdutosDataGridView3.Item(7, v_SelectRow).Value
             End If
 
-            If QuantmaxTemp < ArredondandoQtdeBalcao Then
+            If QuantmaxTemp < ArredondandoQtdeBalcao And RaizouNao = "RAIZ" Then
                 command.Parameters.Add("@MaxConsumoEstoque_prod", SqlDbType.Int).Value = ArredondandoQtdeBalcao
             Else
                 command.Parameters.Add("@MaxConsumoEstoque_prod", SqlDbType.Int).Value = QuantmaxTemp
-
             End If
+
+         
 
             Try
                 connection.Open()
@@ -13438,6 +13540,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button80_Click(sender As Object, e As EventArgs) Handles Button80.Click
 
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
 
         ' calcula os pedidos em aberto que falta entregar
         Dim connection As SqlConnection
@@ -13796,6 +13903,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     
     Private Sub Button81_Click(sender As Object, e As EventArgs) Handles Button81.Click
 
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
@@ -13989,7 +14102,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
     Private Sub Button89_Click_1(sender As Object, e As EventArgs) Handles Button89.Click
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}' and Bugiganga_prod LIKE '{2}'", ComboBox27.Text, ComboBox28.Text, "bugiganga")
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}' and RaizSimNao_prod LIKE '{2}'", ComboBox27.Text, ComboBox28.Text, "RAIZ")
         Label94.Text = ProdutosDataGridView4.Rows.Count() - 1
 
     End Sub
@@ -15567,6 +15680,11 @@ proxima2:
 
     Private Sub Button96_Click(sender As Object, e As EventArgs) Handles Button96.Click
 
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
 
 
         ' calcula os pedidos em aberto que falta entregar
@@ -15576,7 +15694,7 @@ proxima2:
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
 
-            Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and CodigoProduto_PeidoCompra = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "' and EntregueSimNao_PedidoCompra = 'Não Entregue' "
+            Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE CodigoProduto_PeidoCompra = '" & ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() & "' and EntregueSimNao_PedidoCompra = 'Não Entregue' "
             Dim dataadapter As New SqlDataAdapter(sql2, connection)
             Dim ds As New DataSet()
 
@@ -16794,6 +16912,9 @@ proxima2:
         End If
 
     End Sub
+
+   
+    
 End Class
 
 
