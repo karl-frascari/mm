@@ -17170,6 +17170,40 @@ proxima2:
     Private Sub RadioButton25_Click(sender As Object, e As EventArgs) Handles RadioButton25.Click
         Button77.Enabled = False
     End Sub
+
+    Private Sub TextBox341_TextChanged(sender As Object, e As EventArgs) Handles TextBox341.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("nome_prod LIKE '{0}%'", TextBox341.Text)
+
+    End Sub
+
+    Private Sub TextBox342_TextChanged(sender As Object, e As EventArgs) Handles TextBox342.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("cod_prodfor LIKE '{0}%'", TextBox342.Text)
+
+    End Sub
+
+    Private Sub TextBox343_TextChanged(sender As Object, e As EventArgs) Handles TextBox343.TextChanged
+        ProdutosBindingSource.Filter = String.Format("codbarras_prod LIKE '{0}%'", TextBox343.Text)
+
+    End Sub
+
+    Private Sub TextBox344_TextChanged(sender As Object, e As EventArgs) Handles TextBox344.TextChanged
+        ProdutosBindingSource.Filter = String.Format("cod_prod LIKE '{0}%'", TextBox344.Text)
+
+    End Sub
+
+    Private Sub TextBox345_TextChanged(sender As Object, e As EventArgs) Handles TextBox345.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("CodigoMlb_prod LIKE '{0}%'", TextBox345.Text)
+
+    End Sub
+
+    Private Sub TextBox346_TextChanged(sender As Object, e As EventArgs) Handles TextBox346.TextChanged
+
+        ProdutosBindingSource.Filter = String.Format("Apelido_prod LIKE '{0}%'", TextBox346.Text)
+
+    End Sub
 End Class
 
 
