@@ -17204,6 +17204,32 @@ proxima2:
         ProdutosBindingSource.Filter = String.Format("Apelido_prod LIKE '{0}%'", TextBox346.Text)
 
     End Sub
+
+    Private Sub Label414_Click(sender As Object, e As EventArgs) Handles Label414.Click
+
+    End Sub
+
+    Private Sub Button116_Click(sender As Object, e As EventArgs) Handles Button116.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and RaizSimNao_prod LIKE '{2}'", ComboBox5.Text, ComboBox42.Text, "RAIZ")
+
+    End Sub
+
+    Private Sub Button117_Click(sender As Object, e As EventArgs) Handles Button117.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}%' and RaizSimNao_prod LIKE '{2}%' and Bugiganga_prod LIKE '{3}%'", ComboBox5.Text, ComboBox42.Text, "RAIZ", "bugiganga")
+    End Sub
+
+    Private Sub Button119_Click(sender As Object, e As EventArgs) Handles Button119.Click
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox42.Text, ComboBox5.Text)
+    End Sub
+
+    Private Sub Button118_Click(sender As Object, e As EventArgs) Handles Button118.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox5.Text)
+    End Sub
+
+    Private Sub ProdutosDataGridView7_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView7.DoubleClick
+        tabpage_produtos.SelectedIndex = 0
+        travarCamposprod()
+    End Sub
 End Class
 
 
