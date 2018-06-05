@@ -122,6 +122,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetFinal.EnderecoEletronico' table. You can move, or remove it, as needed.
+        Me.EnderecoEletronicoTableAdapter.Fill(Me.DataSetFinal.EnderecoEletronico)
         'TODO: This line of code loads data into the 'DataSetFinal.ApelidoErrado' table. You can move, or remove it, as needed.
         Me.ApelidoErradoTableAdapter.Fill(Me.DataSetFinal.ApelidoErrado)
         'TODO: This line of code loads data into the 'DataSetFinal.VendasMlb' table. You can move, or remove it, as needed.
@@ -207,7 +209,6 @@ Public Class Form1
         btn_calcPrecos.Enabled = False
         DesistirOperaçãoToolStripMenuItem2.Visible = False
         menu_confirmarprod.Visible = False
-       
 
         'fim
         '------------------------------------------------------------------------------
@@ -932,6 +933,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
         Dim ns As New XmlNamespaceManager(xmlDoc.NameTable)
+        Dim NumeroNotaFull As String = ""
+
         Try
             xmlDoc.Load(xml.FullName)
 
@@ -944,17 +947,34 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             cmd.Connection = con
             cmd.CommandText = "SELECT NUmeroPedido2_VendasMlb from VendasMlb"
             Dim lrd As SqlDataReader = cmd.ExecuteReader()
+            ' **********************************************************************************************
 
+
+            If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:emit/nfe:CNPJ", ns).InnerText = "18623408000266" Then
+                NumeroNotaFull = "F" + xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+            Else
+                NumeroNotaFull = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+            End If
+
+            ' ***********************************************************************************************
+            'While lrd.Read()
+
+            '    'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
+            '    If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
+            '        '  MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
+            '        Exit Sub
+            '    End If
+
+            'End While
+            ' ***********************************************************************************************
             While lrd.Read()
 
                 'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
-                If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
+                If NumeroNotaFull = lrd("NUmeroPedido2_VendasMlb").ToString Then
                     '  MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
                     Exit Sub
                 End If
-
             End While
-
         Catch ex As Exception
             MessageBox.Show("Error while retrieving records on table..." & ex.Message, "Load Records")
         Finally
@@ -962,7 +982,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End Try
 
         'faz o loop para pegar todas os produtos da nfe xml de entrada(fornecedor) e coloca em nosso banco de dados nfefornecedor
-
         Dim ctd_prod As Integer = 0
         Dim nodeList As XmlNodeList
         Dim node As XmlNode
@@ -1009,10 +1028,17 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
                 'REM gravar campos IDE
                 'verificar se existe o nó numero da noda cNf[acredito ser o numero da nf]
+                'If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns) Is Nothing Then
+                '    command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = " sem "
+                'Else
+                '    NumeroNota(a) = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                '*************************************************************************************
                 If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns) Is Nothing Then
                     command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = " sem "
                 Else
-                    NumeroNota(a) = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                    NumeroNota(a) = NumeroNotaFull
+
+                    ' ************************************************************************************
                     If CodigoAnterior = NumeroNota(a) Then
                         NumeroNota(a) = NumeroNota(a) + "A"
                     End If
@@ -1054,12 +1080,33 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     If CodigoAnterior = (NumeroNota(a) + "J") Then
                         NumeroNota(a) = NumeroNota(a) + "K"
                     End If
-
                     If CodigoAnterior = (NumeroNota(a) + "K") Then
                         NumeroNota(a) = NumeroNota(a) + "L"
                     End If
-
-                    'command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
+                    If CodigoAnterior = (NumeroNota(a) + "L") Then
+                        NumeroNota(a) = NumeroNota(a) + "M"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "M") Then
+                        NumeroNota(a) = NumeroNota(a) + "N"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "N") Then
+                        NumeroNota(a) = NumeroNota(a) + "O"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "O") Then
+                        NumeroNota(a) = NumeroNota(a) + "P"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "P") Then
+                        NumeroNota(a) = NumeroNota(a) + "Q"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "Q") Then
+                        NumeroNota(a) = NumeroNota(a) + "R"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "R") Then
+                        NumeroNota(a) = NumeroNota(a) + "S"
+                    End If
+                    If CodigoAnterior = (NumeroNota(a) + "S") Then
+                        NumeroNota(a) = NumeroNota(a) + "T"
+                    End If
                     command.Parameters.Add("@NUmeroPedido2_VendasMlb", SqlDbType.VarChar, 50).Value = NumeroNota(a)
 
                 End If
@@ -1332,12 +1379,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     ' colocar todas as funções aqui de todos as sub que vc quiser que sejam iniciada quando o formulário PRODUTOS for mostrado -quando clicamos o page formulário, ele trava os campos do formulário -ele desabilita o botão gravar -
 
     Private Sub tabpage_produtos_Click(sender As Object, e As EventArgs) Handles tabpage_produtos.Click
-
+        Label420.Text = EnderecoEletronicoDataGridView.Rows.Count()
         menu_confirmarprod.Visible = False
         travarCamposprod()
         btn_calcPrecos.Enabled = False
         Me.ProdutosBindingSource.MoveFirst()
-
     End Sub
 
     Public Sub limpar_inicioFormProd()
@@ -7774,6 +7820,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(2, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 170 + (x * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 120, 170 + (x * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 350, 170 + (x * 20))
+                e.Graphics.DrawString(ProdutosDataGridView4.Item(12, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 450, 170 + (x * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(10, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 550, 170 + (x * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(28, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 170 + (x * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (x * 20))
@@ -9091,7 +9138,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub TextBox3_TextChanged(sender As Object, e As EventArgs) Handles TextBox3.TextChanged
 
-        BalcaoDataGridView1.DataSource = BalcaoBindingSource
+        BalcaoDataGridView.DataSource = BalcaoBindingSource
         BalcaoBindingSource.Filter = String.Format("id2_balcao LIKE '{0}%'", TextBox3.Text)
 
     End Sub
@@ -14932,14 +14979,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     command5.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto
                     command5.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
                     command5.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
-
-                    If CNPJ = "18623408000266" Then
-                        NumeroNotaFull = "F" + VendasMlbDataGridView.Item(1, xx).Value
-                        command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNotaFull
-                    Else
-                        command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
-                    End If
-
+                    command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
                     command5.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = CodigoMlb
 
                     ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
@@ -14972,7 +15012,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                         MessageBox.Show(ex.ToString())
                         connection.Close()
                     End Try
-                End If
+            End If
                 connection.Close()
 
                 ' *****************************************************************************
@@ -15035,14 +15075,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                                 command50.Parameters.Add("@precoprod_balcao", SqlDbType.Float).Value = PrecoAtacadoProduto2
                                 command50.Parameters.Add("@Avista_APrazo_balcao", SqlDbType.VarChar, 50).Value = "A prazo"
                                 command50.Parameters.Add("@FormaPgto_balcao", SqlDbType.VarChar, 50).Value = "Outros"
-
-                                If CNPJ = "18623408000266" Then
-                                    NumeroNotaFull = "F" + VendasMlbDataGridView.Item(1, xx).Value
-                                    command50.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNotaFull
-                                Else
-                                    command50.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
-                                End If
-
+                                command50.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = VendasMlbDataGridView.Item(1, xx).Value
                                 command50.Parameters.Add("@CodigoMlb_balcao", SqlDbType.VarChar, 50).Value = CodigoMlb
 
                                 ' CALCULANDO O TOTAL DO BALCAO POR ÍTEM
@@ -16415,8 +16448,6 @@ proxima2:
 
     Private Sub BalcaoDataGridView1_DoubleClick(sender As Object, e As EventArgs) Handles BalcaoDataGridView1.DoubleClick
 
-     
-
         Dim v_SelectRow As Integer
         v_SelectRow = Me.BalcaoDataGridView1.CurrentRow.Index
 
@@ -16428,7 +16459,6 @@ proxima2:
             TextBox269.Clear()
             TextBox270.Clear()
             TextBox271.Clear()
-
         End If
 
         If RadioButton26.Checked = True Then
@@ -16437,10 +16467,18 @@ proxima2:
             TextBox34.Text = BalcaoDataGridView1.Item(12, v_SelectRow).Value
             TextBox269.Text = BalcaoDataGridView1.Item(0, v_SelectRow).Value
             TextBox270.Text = BalcaoDataGridView1.Item(4, v_SelectRow).Value
-            TextBox271.Text = BalcaoDataGridView1.Item(15, v_SelectRow).Value
-            'TextBox272.Text = BalcaoDataGridView1.Item(15, v_SelectRow).Value
+            If BalcaoDataGridView1.Item(15, v_SelectRow).Value Is DBNull.Value Then
+                TextBox269.Clear()
+                TextBox270.Clear()
+                TextBox271.Clear()
+                Exit Sub
+            Else
+                TextBox271.Text = BalcaoDataGridView1.Item(15, v_SelectRow).Value
+            End If
         End If
-        BalcaoBindingSource1.Filter = String.Format("nomeProd_balcao LIKE '{0}%' and corprod_balcao LIKE '{1}%' and NumeroNotaMlb_balcao LIKE '{2}%'", TextBox269.Text, TextBox270.Text, TextBox271.Text)
+
+        'BalcaoBindingSource.Filter = String.Format("nomeProd_balcao LIKE '{0}%' and corprod_balcao LIKE '{1}%' and NumeroNotaMlb_balcao LIKE '{2}%'", TextBox269.Text, TextBox270.Text, TextBox271.Text)
+        ' BalcaoBindingSource.Filter = String.Format("NumeroNotaMlb_balcao LIKE '{0}%'", TextBox271.Text)
 
     End Sub
 
@@ -17164,10 +17202,19 @@ proxima2:
     End Sub
 
     Private Sub RadioButton26_Click(sender As Object, e As EventArgs) Handles RadioButton26.Click
+
+        TextBox269.Clear()
+        TextBox270.Clear()
+        TextBox271.Clear()
+        'TextBox272.Clear()
         Button77.Enabled = True
     End Sub
 
     Private Sub RadioButton25_Click(sender As Object, e As EventArgs) Handles RadioButton25.Click
+        TextBox269.Clear()
+        TextBox270.Clear()
+        TextBox271.Clear()
+        TextBox272.Clear()
         Button77.Enabled = False
     End Sub
 
@@ -17229,6 +17276,317 @@ proxima2:
     Private Sub ProdutosDataGridView7_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView7.DoubleClick
         tabpage_produtos.SelectedIndex = 0
         travarCamposprod()
+    End Sub
+
+    Private Sub IncluirToolStripMenuItem2_Click(sender As Object, e As EventArgs) Handles IncluirToolStripMenuItem2.Click
+        ' enabled
+        TextBox347.Enabled = True
+        TextBox349.Enabled = True
+        RadioButton27.Enabled = True
+        RadioButton28.Enabled = True
+        RadioButton29.Enabled = True
+        RadioButton30.Enabled = True
+        RadioButton31.Enabled = True
+        RadioButton32.Enabled = True
+        Button120.Enabled = False
+        ' clear()
+        TextBox347.Clear()
+        TextBox349.Clear()
+
+    End Sub
+
+    Private Sub ConfirmarToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ConfirmarToolStripMenuItem1.Click
+
+        Dim reply As DialogResult = MessageBox.Show("Confirmar a alteração?", "Atenção!!!", _
+                   MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+        If reply = DialogResult.Yes Then
+            Dim connection As SqlConnection
+            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            ' *************************************************************************
+            'REM verifica se o endereço já foi cadastrado no arquivo balcão
+            Dim cmd As New SqlCommand
+            cmd.Connection = connection
+            cmd.CommandText = "SELECT EnderecoEletronico  from EnderecoEletronico where EnderecoEletronico = '" & TextBox347.Text & "'"
+            connection.Open()
+            'REM verifica se código prod existe no arquivo balcão, para não gravar duas vezes
+            Dim lrd5 As SqlDataReader = cmd.ExecuteReader()
+
+            Try
+                If lrd5.Read() = True Then
+                    MessageBox.Show("já cadastrou este endereço Eletrônico")
+                    connection.Close()
+                    GoTo FIM
+
+                End If
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString)
+            End Try
+            connection.Close()
+            ' **************************************************************************
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.CommandText = "INSERT INTO EnderecoEletronico (EmrpesaVendedora_EnderecoEletronico,MeioVendedor_EnderecoEletronico,NomeEnderecoEletronico,EnderecoEletronico) values (@EmrpesaVendedora_EnderecoEletronico,@MeioVendedor_EnderecoEletronico,@NomeEnderecoEletronico,@EnderecoEletronico)"
+            command.CommandType = CommandType.Text
+
+            If RadioButton27.Checked = True Then
+                command.Parameters.Add("@EmrpesaVendedora_EnderecoEletronico", SqlDbType.VarChar, 50).Value = "Fernando"
+            ElseIf RadioButton28.Checked = True Then
+                command.Parameters.Add("@EmrpesaVendedora_EnderecoEletronico", SqlDbType.VarChar, 50).Value = "Silvia"
+            Else
+                MessageBox.Show("Marcar uma empresa")
+                Exit Sub
+            End If
+
+            If RadioButton29.Checked = True Then
+                command.Parameters.Add("@MeioVendedor_EnderecoEletronico", SqlDbType.VarChar, 50).Value = "Mlb"
+            ElseIf RadioButton30.Checked = True Then
+                command.Parameters.Add("@MeioVendedor_EnderecoEletronico", SqlDbType.VarChar, 50).Value = "FULL"
+            ElseIf RadioButton31.Checked = True Then
+                command.Parameters.Add("@MeioVendedor_EnderecoEletronico", SqlDbType.VarChar, 50).Value = "ZOOM"
+            ElseIf RadioButton32.Checked = True Then
+                command.Parameters.Add("@MeioVendedor_EnderecoEletronico", SqlDbType.VarChar, 50).Value = "Site"
+            Else
+                MessageBox.Show("Marcar um meio vendedor")
+                Exit Sub
+            End If
+            command.Parameters.Add("@EnderecoEletronico", SqlDbType.VarChar, 150).Value = TextBox347.Text
+            command.Parameters.Add("@NomeEnderecoEletronico", SqlDbType.VarChar, 150).Value = TextBox349.Text
+
+            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+                MessageBox.Show("Sucesso!")
+
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            End Try
+
+        End If
+
+        Me.EnderecoEletronicoTableAdapter.Fill(Me.DataSetFinal.EnderecoEletronico)
+FIM:
+        ' arrumando os botões
+        TextBox347.Enabled = False
+        TextBox349.Enabled = False
+        TextBox347.Clear()
+        TextBox349.Clear()
+        Button120.Enabled = True
+        'enabled
+        RadioButton27.Enabled = False
+        RadioButton28.Enabled = False
+        RadioButton29.Enabled = False
+        RadioButton30.Enabled = False
+        RadioButton31.Enabled = False
+        RadioButton32.Enabled = False
+        ' desmarcando
+        RadioButton27.Checked = False
+        RadioButton28.Checked = False
+        RadioButton29.Checked = False
+        RadioButton30.Checked = False
+        RadioButton31.Checked = False
+        RadioButton32.Checked = False
+        ' contando numero de registros
+        Label420.Text = EnderecoEletronicoDataGridView.Rows.Count()
+    End Sub
+
+    Private Sub EnderecoEletronicoDataGridView_DoubleClick(sender As Object, e As EventArgs) Handles EnderecoEletronicoDataGridView.DoubleClick
+
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.EnderecoEletronicoDataGridView.CurrentRow.Index
+
+        tabpage_produtos.SelectedIndex = 1
+        TextBox252.Text = EnderecoEletronicoDataGridView.Item(4, v_SelectRow).Value
+
+    End Sub
+
+    Private Sub ApagarToolStripMenuItem3_Click(sender As Object, e As EventArgs) Handles ApagarToolStripMenuItem3.Click
+
+
+        ' verifica se o compo está preenchido
+
+        If TextBox347.Text = "" Then
+            MessageBox.Show("Campo a ser apagado em branco !!!")
+            Exit Sub
+        End If
+
+        ' apaga registro
+        Dim reply As DialogResult = MessageBox.Show("Confirmar a exclusão?", "Atenção!!!", _
+           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+        If reply = DialogResult.Yes Then
+            Dim connection As SqlConnection
+            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            Dim command As SqlCommand
+            ' apagar os dados da tabela
+            Dim v_SelectRow As Integer
+            v_SelectRow = Me.EnderecoEletronicoDataGridView.CurrentRow.Index
+
+            command = connection.CreateCommand()
+            command.CommandText = "delete from EnderecoEletronico where  Id_EnderecoEletronico = @Id_EnderecoEletronico"
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@Id_EnderecoEletronico", SqlDbType.VarChar, 50).Value = EnderecoEletronicoDataGridView.Item(0, v_SelectRow).Value
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+                MessageBox.Show("Apagado com sucesso!")
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            Finally
+                connection.Close()
+            End Try
+        End If
+
+        Me.EnderecoEletronicoTableAdapter.Fill(Me.DataSetFinal.EnderecoEletronico)
+        ' setar os campos
+        TextBox347.Clear()
+        TextBox349.Clear()
+        RadioButton27.Enabled = False
+        RadioButton28.Enabled = False
+        RadioButton29.Enabled = False
+        RadioButton30.Enabled = False
+        RadioButton31.Enabled = False
+        RadioButton32.Enabled = False
+        ' desmarcando
+        RadioButton27.Checked = False
+        RadioButton28.Checked = False
+        RadioButton29.Checked = False
+        RadioButton30.Checked = False
+        RadioButton31.Checked = False
+        RadioButton32.Checked = False
+
+    End Sub
+
+    Private Sub Button120_Click(sender As Object, e As EventArgs) Handles Button120.Click
+        If TextBox347.Text = "" Then
+            MessageBox.Show("escolher um produto para mostrar")
+            Exit Sub
+        End If
+        Process.Start(TextBox347.Text)
+
+    End Sub
+
+   
+
+    Private Sub EnderecoEletronicoDataGridView_Click(sender As Object, e As EventArgs) Handles EnderecoEletronicoDataGridView.Click
+
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.EnderecoEletronicoDataGridView.CurrentRow.Index
+        TextBox347.Text = EnderecoEletronicoDataGridView.Item(3, v_SelectRow).Value
+        TextBox349.Text = EnderecoEletronicoDataGridView.Item(4, v_SelectRow).Value
+        ' passando chek para os radiobox empresas
+        If EnderecoEletronicoDataGridView.Item(1, v_SelectRow).Value = "Fernando" Then
+            RadioButton27.Checked = True
+        ElseIf EnderecoEletronicoDataGridView.Item(1, v_SelectRow).Value = "Silvia" Then
+            RadioButton28.Checked = True
+        End If
+        ' passando chek para os radiobox meios vendedores
+        If EnderecoEletronicoDataGridView.Item(2, v_SelectRow).Value = "Mlb" Then
+            RadioButton29.Checked = True
+        ElseIf EnderecoEletronicoDataGridView.Item(2, v_SelectRow).Value = "FULL" Then
+            RadioButton30.Checked = True
+        ElseIf EnderecoEletronicoDataGridView.Item(2, v_SelectRow).Value = "ZOOM" Then
+            RadioButton31.Checked = True
+        ElseIf EnderecoEletronicoDataGridView.Item(2, v_SelectRow).Value = "Site" Then
+            RadioButton32.Checked = True
+        End If
+    End Sub
+
+    Private Sub Label423_Click(sender As Object, e As EventArgs) Handles Label423.Click
+
+    End Sub
+
+    Private Sub ComboBox43_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBox43.SelectedValueChanged
+        EnderecoEletronicoBindingSource.Filter = String.Format("EmrpesaVendedora_EnderecoEletronico LIKE '{0}%'", ComboBox43.Text)
+    End Sub
+
+    Private Sub ComboBox44_SelectedValueChanged(sender As Object, e As EventArgs) Handles ComboBox44.SelectedValueChanged
+        EnderecoEletronicoBindingSource.Filter = String.Format("MeioVendedor_EnderecoEletronico LIKE '{0}%'", ComboBox44.Text)
+    End Sub
+
+    Private Sub TextBox348_TextChanged(sender As Object, e As EventArgs) Handles TextBox348.TextChanged
+        EnderecoEletronicoBindingSource.Filter = String.Format("NomeEnderecoEletronico LIKE '{0}%'", TextBox348.Text)
+    End Sub
+
+    Private Sub Button121_Click(sender As Object, e As EventArgs) Handles Button121.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and RaizSimNao_prod LIKE '{1}%' and Bugiganga_prod LIKE '{2}%'", ComboBox29.Text, "RAIZ", "bugiganga")
+        Label94.Text = ProdutosDataGridView4.Rows.Count()
+
+    End Sub
+
+    Private Sub Button122_Click(sender As Object, e As EventArgs) Handles Button122.Click
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and RaizSimNao_prod LIKE '{1}%' and Bugiganga_prod LIKE '{2}%'", ComboBox30.Text, "RAIZ", "bugiganga")
+        Label94.Text = ProdutosDataGridView4.Rows.Count()
+    End Sub
+
+    Private Sub Button114_Click(sender As Object, e As EventArgs) Handles Button114.Click
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' CALCULANDO OS TOTAIS
+
+        Dim sql10 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103)  and  linhaprod_balcao = '" & ComboBox4.Text & "'"
+        Dim dataadapter10 As New SqlDataAdapter(sql10, connection)
+        Dim ds10 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter10.Fill(ds10, "balcao")
+            connection.Close()
+            BalcaoDataGridView9.DataSource = ds10.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' calcula faturamento
+        Dim valor10 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView9.Rows
+            valor10 += Linha.Cells(8).Value
+        Next
+        TextBox350.Text = valor10.ToString("f2")
+
+        ' calculando o custo
+        Dim valorCusto10 As Double
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView9.Rows
+            valorCusto10 += Linha.Cells(10).Value
+        Next
+        TextBox351.Text = valorCusto10.ToString("f2")
+        TextBox352.Text = TextBox350.Text - TextBox351.Text
+
+        'calculando a porcentagem de lucro 
+        Try
+            Dim VrPorcentagem10 As Double = (1 - (valorCusto10 / valor10)) * 100
+            TextBox353.Text = VrPorcentagem10.ToString("F2")
+        Catch ex As Exception
+        End Try
+        ' **************************************************************************
+        Dim sql11 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103) "
+        Dim dataadapter11 As New SqlDataAdapter(sql11, connection)
+        Dim ds11 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter11.Fill(ds11, "balcao")
+            connection.Close()
+            BalcaoDataGridView9.DataSource = ds11.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' calcula faturamento
+        Dim valor11 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView9.Rows
+            valor11 += Linha.Cells(8).Value
+        Next
+        TextBox354.Text = valor11.ToString("f2")
+        ' *******************************************************
+        Try
+            Dim VrPorcentagem11 As Double = ((valor10 / valor11) * 100)
+            TextBox355.Text = VrPorcentagem11.ToString("F2")
+        Catch ex As Exception
+        End Try
     End Sub
 End Class
 
