@@ -26,7 +26,7 @@ Imports System.Net
 Public Class Form1
 
     Dim variavelClique As String
-
+    Dim variavelImpressao As String
     Dim nomeArquivoXML As String
     Dim arquivo As New OpenFileDialog
     Dim FlagProdPesquisa As String = "0"
@@ -3947,6 +3947,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub TextBox1_TextChanged_2(sender As Object, e As EventArgs) Handles txt_buscaClienteNFE.TextChanged
 
+        VendasMlbDataGridView.DataSource = VendasMlbBindingSource
         VendasMlbBindingSource.Filter = String.Format("NUmeroPedido2_VendasMlb LIKE '{0}%'", txt_buscaClienteNFE.Text)
 
     End Sub
@@ -7795,11 +7796,19 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' cabeçalho
         e.Graphics.DrawString("CHEK LIST", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
         e.Graphics.DrawString("Pág.   1", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
+        ' escolhendo o cabeçalho de impressão
+       
+        Select Case variavelImpressao
+            Case 1
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 2
+                e.Graphics.DrawString(ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 3
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 4
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+        End Select
 
-        e.Graphics.DrawString("nome : ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 35)
-        e.Graphics.DrawString(ComboBox29.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 35)
-        e.Graphics.DrawString("LINHA :", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 60)
-        e.Graphics.DrawString(ComboBox30.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 60)
         ' dados da lista
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 85)
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 100)
@@ -7845,10 +7854,18 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' cabeçalho
         e.Graphics.DrawString("CHEK LIST", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
         e.Graphics.DrawString("Pág.   2", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
-        e.Graphics.DrawString("nome : ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 35)
-        e.Graphics.DrawString(ComboBox29.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 35)
-        e.Graphics.DrawString("LINHA :", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 60)
-        e.Graphics.DrawString(ComboBox30.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 60)
+
+        Select Case variavelImpressao
+            Case 1
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 2
+                e.Graphics.DrawString(ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 3
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 4
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+        End Select
+
         ' dados da lista
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 85)
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 100)
@@ -7871,6 +7888,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(2, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 120, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 350, 170 + (l * 20))
+                e.Graphics.DrawString(ProdutosDataGridView4.Item(12, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 450, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(10, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 550, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(28, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (l * 20))
@@ -7891,10 +7909,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         e.Graphics.DrawString("CHEK LIST", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
         e.Graphics.DrawString("Pág.   3", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
 
-        e.Graphics.DrawString("nome : ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 35)
-        e.Graphics.DrawString(ComboBox29.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 35)
-        e.Graphics.DrawString("LINHA :", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 60)
-        e.Graphics.DrawString(ComboBox30.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 60)
+        Select Case variavelImpressao
+            Case 1
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 2
+                e.Graphics.DrawString(ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 3
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 4
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+        End Select
         ' dados da lista
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 85)
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 100)
@@ -7916,6 +7940,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(2, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 120, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 350, 170 + (l * 20))
+                e.Graphics.DrawString(ProdutosDataGridView4.Item(12, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 450, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(10, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 550, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(28, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (l * 20))
@@ -7937,10 +7962,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         e.Graphics.DrawString("CHEK LIST", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
         e.Graphics.DrawString("Pág.   4", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
 
-        e.Graphics.DrawString("nome : ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 35)
-        e.Graphics.DrawString(ComboBox29.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 35)
-        e.Graphics.DrawString("LINHA :", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 60)
-        e.Graphics.DrawString(ComboBox30.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 60)
+        Select Case variavelImpressao
+            Case 1
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 2
+                e.Graphics.DrawString(ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 3
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 4
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+        End Select
         ' dados da lista
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 85)
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 100)
@@ -7962,6 +7993,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(2, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 120, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 350, 170 + (l * 20))
+                e.Graphics.DrawString(ProdutosDataGridView4.Item(12, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 450, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(10, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 550, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(28, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (l * 20))
@@ -7982,10 +8014,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         e.Graphics.DrawString("CHEK LIST", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
         e.Graphics.DrawString("Pág.   5", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
 
-        e.Graphics.DrawString("nome : ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 35)
-        e.Graphics.DrawString(ComboBox29.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 35)
-        e.Graphics.DrawString("LINHA :", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 60)
-        e.Graphics.DrawString(ComboBox30.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 60)
+        Select Case variavelImpressao
+            Case 1
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 2
+                e.Graphics.DrawString(ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 3
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 4
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+        End Select
         ' dados da lista
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 85)
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 100)
@@ -8007,11 +8045,11 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(2, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 120, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 350, 170 + (l * 20))
+                e.Graphics.DrawString(ProdutosDataGridView4.Item(12, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 450, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(10, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 550, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(28, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (l * 20))
                 e.Graphics.DrawString("--------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 170 + (l * 20))
-
 
                 If x = 225 Then
                     PrintDocument9.Print()
@@ -8028,10 +8066,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         e.Graphics.DrawString("CHEK LIST", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
         e.Graphics.DrawString("Pág.   6", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 600, 5)
 
-        e.Graphics.DrawString("nome : ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 35)
-        e.Graphics.DrawString(ComboBox29.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 35)
-        e.Graphics.DrawString("LINHA :", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 60)
-        e.Graphics.DrawString(ComboBox30.Text, New Font("arial", 13, FontStyle.Bold), Brushes.Black, 150, 60)
+        Select Case variavelImpressao
+            Case 1
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 2
+                e.Graphics.DrawString(ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 3
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & "Raiz", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+            Case 4
+                e.Graphics.DrawString(ComboBox29.Text & ",  " & ComboBox30.Text & ",  " & "Raiz, Bugiganga", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 100, 40)
+        End Select
         ' dados da lista
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 85)
         e.Graphics.DrawString("", New Font("arial", 13, FontStyle.Bold), Brushes.Black, 20, 100)
@@ -8053,6 +8097,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(2, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 20, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(5, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 120, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 350, 170 + (l * 20))
+                e.Graphics.DrawString(ProdutosDataGridView4.Item(12, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 450, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(10, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 550, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(28, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 600, 170 + (l * 20))
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (l * 20))
@@ -8320,24 +8365,24 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' ---------------------------------------------
         ' Calculando o estoque 
 
-        Dim SubtraindoEstoqueAtual As Integer = 0
-        SubtraindoEstoqueAtual = EstoqueAtual - qtdPedMarf
+        'Dim SubtraindoEstoqueAtual As Integer = 0
+        'SubtraindoEstoqueAtual = EstoqueAtual - qtdPedMarf
 
-        command = connection5.CreateCommand()
-        command.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
-        command.CommandType = CommandType.Text
+        'command = connection5.CreateCommand()
+        'command.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
+        'command.CommandType = CommandType.Text
 
-        command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(1, v_SelectRow).Value
-        command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
+        'command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(1, v_SelectRow).Value
+        'command.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
 
-        Try
-            connection5.Open()
-            command.ExecuteNonQuery()
-            connection5.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-        End Try
-        ProdutosTableAdapter1.Fill(DataSetFinal.produtos)
+        'Try
+        '    connection5.Open()
+        '    command.ExecuteNonQuery()
+        '    connection5.Close()
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.ToString())
+        'End Try
+        'ProdutosTableAdapter1.Fill(DataSetFinal.produtos)
         ' --------------------------------------------------------------------------------
         ' ---------------------------------------------------------------------------------
         'Volta para a tela de pedidos e atualiza a tabela ....
@@ -9181,42 +9226,42 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 ' -----------------------------------------
                 ' lendo a quantidade da tabela de produtos
 
-                command = connection.CreateCommand()
-                command.CommandText = "select * from produtos where nome_prod = '" & BalcaoDataGridView.Item(0, v_SelectRow).Value & "'"
-                connection.Open()
-                Dim lrd As SqlDataReader = command.ExecuteReader()
+                'command = connection.CreateCommand()
+                'command.CommandText = "select * from produtos where nome_prod = '" & BalcaoDataGridView.Item(0, v_SelectRow).Value & "'"
+                'connection.Open()
+                'Dim lrd As SqlDataReader = command.ExecuteReader()
 
-                Dim EstoqueAtual As Integer = 0
+                'Dim EstoqueAtual As Integer = 0
 
 
-                While lrd.Read()
-                    EstoqueAtual = lrd("estoqueatual_prod")
-                End While
-                connection.Close()
-                TextBox220.Text = EstoqueAtual
+                'While lrd.Read()
+                '    EstoqueAtual = lrd("estoqueatual_prod")
+                'End While
+                'connection.Close()
+                'TextBox220.Text = EstoqueAtual
 
-                ' calculando o estoque com o cancelamento da entrada
-                EstoqueAtual += BalcaoDataGridView.Item(4, v_SelectRow).Value
-                TextBox221.Text = BalcaoDataGridView.Item(4, v_SelectRow).Value
-                command = connection.CreateCommand()
-                command.CommandText = "update produtos set estoqueatual_prod=@estoqueatual_prod where nome_prod=@nome_prod "
-                command.CommandType = CommandType.Text
-                command.Parameters.Add("@nome_prod", SqlDbType.VarChar, 50).Value = BalcaoDataGridView.Item(0, v_SelectRow).Value
-                command.Parameters.Add("@estoqueatual_prod", SqlDbType.Float).Value = EstoqueAtual
+                '' calculando o estoque com o cancelamento da entrada
+                'EstoqueAtual += BalcaoDataGridView.Item(4, v_SelectRow).Value
+                'TextBox221.Text = BalcaoDataGridView.Item(4, v_SelectRow).Value
+                'command = connection.CreateCommand()
+                'command.CommandText = "update produtos set estoqueatual_prod=@estoqueatual_prod where nome_prod=@nome_prod "
+                'command.CommandType = CommandType.Text
+                'command.Parameters.Add("@nome_prod", SqlDbType.VarChar, 50).Value = BalcaoDataGridView.Item(0, v_SelectRow).Value
+                'command.Parameters.Add("@estoqueatual_prod", SqlDbType.Float).Value = EstoqueAtual
 
-                ' apagar dados de alteração da tabela produtos
+                '' apagar dados de alteração da tabela produtos
 
-                Try
-                    connection.Open()
-                    command.ExecuteNonQuery()
-                    connection.Close()
-                Catch ex As Exception
+                'Try
+                '    connection.Open()
+                '    command.ExecuteNonQuery()
+                '    connection.Close()
+                'Catch ex As Exception
 
-                    MessageBox.Show(ex.ToString())
+                '    MessageBox.Show(ex.ToString())
 
-                Finally
-                    connection.Close()
-                End Try
+                'Finally
+                '    connection.Close()
+                'End Try
 
 
                 ' --------------------------------------
@@ -14184,7 +14229,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             MsgBox(ex.ToString)
         End Try
 
-        
+        For x = 0 To ProdutosDataGridView5.Rows.Count() - 1
+            If ProdutosDataGridView5.Item(8, x).Value > ProdutosDataGridView5.Item(9, x).Value Then
+                ProdutosDataGridView5.Rows(x).Cells(6).Style.ForeColor = Color.Red
+                ProdutosDataGridView5.Rows(x).Cells(8).Style.ForeColor = Color.Red
+                ProdutosDataGridView5.Rows(x).Cells(9).Style.ForeColor = Color.Red
+            End If
+        Next
+
+
     End Sub
 
     Private Sub TextBox243_TextChanged(sender As Object, e As EventArgs) Handles TextBox243.TextChanged
@@ -14258,7 +14311,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button92_Click(sender As Object, e As EventArgs) Handles Button92.Click
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}%' and RaizSimNao_prod LIKE '{2}%'", ComboBox29.Text, ComboBox30.Text, "RAIZ")
+        variavelImpressao = "3"
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and RaizSimNao_prod LIKE '{1}%'", ComboBox29.Text, "RAIZ")
         Label94.Text = ProdutosDataGridView4.Rows.Count()
 
     End Sub
@@ -14278,6 +14332,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+        For x = 0 To ProdutosDataGridView5.Rows.Count() - 1
+            If ProdutosDataGridView5.Item(8, x).Value > ProdutosDataGridView5.Item(9, x).Value Then
+                ProdutosDataGridView5.Rows(x).Cells(6).Style.ForeColor = Color.Red
+                ProdutosDataGridView5.Rows(x).Cells(8).Style.ForeColor = Color.Red
+                ProdutosDataGridView5.Rows(x).Cells(9).Style.ForeColor = Color.Red
+            End If
+
+        Next
+
+
     End Sub
 
     Private Sub Label330_Click(sender As Object, e As EventArgs) Handles Label330.Click
@@ -14654,6 +14718,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub TextBox2_TextChanged(sender As Object, e As EventArgs) Handles TextBox2.TextChanged
 
+        VendasMlbDataGridView.DataSource = VendasMlbBindingSource
         VendasMlbBindingSource.Filter = String.Format("NomeContato_VendasMlb LIKE '{0}%'", TextBox2.Text)
 
     End Sub
@@ -15151,72 +15216,72 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' *****************************************************************************
             ' dando baixa nos estoque com produtos composto por vários ítens
 
-            Dim EstoqueAtualItem As Double = 0
-            Dim SubtraindoEstoqueItem As Integer = 0
-            Dim nome As String = ""
+            'Dim EstoqueAtualItem As Double = 0
+            'Dim SubtraindoEstoqueItem As Integer = 0
+            'Dim nome As String = ""
 
-            Dim command25 As SqlCommand
-            If Raiz = "NÃO RAIZ" Then
+            'Dim command25 As SqlCommand
+            'If Raiz = "NÃO RAIZ" Then
 
-                For a = 1 To 5
+            '    For a = 1 To 5
 
-                    If CodComp(a) <> "" Then
+            '        If CodComp(a) <> "" Then
 
-                        command25 = connection.CreateCommand()
-                        command25.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
-                        command25.CommandType = CommandType.Text
+            '            command25 = connection.CreateCommand()
+            '            command25.CommandText = "SELECT * from produtos WHERE  cod_prodfor = '" & CodComp(a) & "'"
+            '            command25.CommandType = CommandType.Text
 
-                        connection.Open()
-                        Dim lrd15 As SqlDataReader = command25.ExecuteReader()
-                        While lrd15.Read
-                            EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
+            '            connection.Open()
+            '            Dim lrd15 As SqlDataReader = command25.ExecuteReader()
+            '            While lrd15.Read
+            '                EstoqueAtualItem = lrd15("estoqueatual_prod").ToString
 
-                        End While
-                        connection.Close()
+            '            End While
+            '            connection.Close()
 
-                        SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
-                        Dim command20 As SqlCommand
-                        command20 = connection.CreateCommand()
-                        command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @cod_prodfor"
-                        command20.CommandType = CommandType.Text
-                        command20.Parameters.Add("@cod_prodfor", SqlDbType.VarChar, 50).Value = CodComp(a)
-                        command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
+            '            SubtraindoEstoqueItem = EstoqueAtualItem - (QtdeComp(a) * QuantidadeVendidaMlb)
+            '            Dim command20 As SqlCommand
+            '            command20 = connection.CreateCommand()
+            '            command20.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = @cod_prodfor"
+            '            command20.CommandType = CommandType.Text
+            '            command20.Parameters.Add("@cod_prodfor", SqlDbType.VarChar, 50).Value = CodComp(a)
+            '            command20.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueItem
 
-                        Try
-                            connection.Open()
-                            command20.ExecuteNonQuery()
-                            connection.Close()
-                        Catch ex As Exception
-                            MessageBox.Show(ex.ToString())
-                        End Try
-                    End If
-                Next
-            End If
+            '            Try
+            '                connection.Open()
+            '                command20.ExecuteNonQuery()
+            '                connection.Close()
+            '            Catch ex As Exception
+            '                MessageBox.Show(ex.ToString())
+            '            End Try
+            '        End If
+            '    Next
+            'End If
 
-            connection.Close()
-            '********************************************************************************
-            ' ******************************************************************************
-            ' Dando baixa no estoque para produtos com um ítem 
-            Dim SubtraindoEstoqueAtual As Integer = 0
-            If Raiz = "RAIZ" Then
+            'connection.Close()
+            ''********************************************************************************
+            '' ******************************************************************************
+            '' Dando baixa no estoque para produtos com um ítem 
+            'Dim SubtraindoEstoqueAtual As Integer = 0
+            'If Raiz = "RAIZ" Then
 
-                SubtraindoEstoqueAtual = EstoqueAtual - QuantidadeVendidaMlb
+            '    SubtraindoEstoqueAtual = EstoqueAtual - QuantidadeVendidaMlb
 
-                Dim command10 As SqlCommand
-                command10 = connection.CreateCommand()
-                command10.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
-                command10.CommandType = CommandType.Text
-                command10.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
+            '    Dim command10 As SqlCommand
+            '    command10 = connection.CreateCommand()
+            '    command10.CommandText = "update produtos set  estoqueatual_prod = @estoqueatual_prod  where cod_prodfor = '" & CodigoMlb & " 'or CodigoMlb_prod = '" & CodigoMlb & "'"
+            '    command10.CommandType = CommandType.Text
+            '    command10.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
 
-                Try
-                    connection.Open()
-                    command10.ExecuteNonQuery()
-                    connection.Close()
-                Catch ex As Exception
-                    MessageBox.Show(ex.ToString())
-                    connection.Close()
-                End Try
-            End If
+            '    Try
+            '        connection.Open()
+            '        command10.ExecuteNonQuery()
+            '        connection.Close()
+            '    Catch ex As Exception
+            '        MessageBox.Show(ex.ToString())
+            '        connection.Close()
+            '    End Try
+            'End If
 Proxima:
             NomeContato2 = NomeContato
             CodigoAnterior = NumeroNota
@@ -15619,66 +15684,67 @@ Proxima:
             Catch ex As Exception
                 MessageBox.Show(ex.ToString())
             End Try
-            ' -----------------------------------------------------------------------------
-            ' -----------------------------------------------------------------------------
-            ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
-            command = connection.CreateCommand()
-            command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(1, v_SelectRow).Value & "'"
-            connection.Open()
-            Dim lrd As SqlDataReader = command.ExecuteReader()
+           
+        ' -----------------------------------------------------------------------------
+        ' -----------------------------------------------------------------------------
+        ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
+        command = connection.CreateCommand()
+        command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(1, v_SelectRow).Value & "'"
+        connection.Open()
+        Dim lrd As SqlDataReader = command.ExecuteReader()
 
-            While lrd.Read()
-                EstoqueAtual = lrd("estoqueatual_prod")
-                PedidosColocadosAtual = lrd("pedencomendados_prod")
-                CustoAtual = lrd("custo_prod")
-                IpiProduto = lrd("ipi_prod")
-                MkProduto = lrd("markup_prod")
-                If lrd("Subtituicao_tributaria") Is DBNull.Value Then
-                    SubstTributaria = 1
-                Else
-                    SubstTributaria = lrd("Subtituicao_tributaria")
-                End If
-                MarkupNET = lrd("MarkupNET_prod")
-            End While
-            connection.Close()
-            TextBox246.Text = EstoqueAtual
-
-            ' Calculando o estoque de produtos
-            Dim SomandoEstoqueAtual As Integer = 0
-            Dim SubtraindoEstoqueAtual As Integer = 0
-            ' ATENÇÃO: COMO É ENTRADA DE MATEIRIAS VIA PEDIDO, O SINAL DE SOMA É O OPOSTO AO DOS PEDIDOS
-            SomandoEstoqueAtual = EstoqueAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
-            SubtraindoEstoqueAtual = EstoqueAtual - PedidoCompraDataGridView.Item(11, v_SelectRow).Value
-            ' Calculando o estoque de pedidos encomendados
-            Dim SomandoPedidosAtual As Integer = 0
-            Dim SubtraindoPedidosAtual As Integer = 0
-            SomandoPedidosAtual = PedidosColocadosAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
-            SubtraindoPedidosAtual = PedidosColocadosAtual - PedidoCompraDataGridView.Item(11, v_SelectRow).Value
-
-            Dim command3 As SqlCommand
-            command3 = connection.CreateCommand()
-            command3.CommandText = "update produtos set  pedencomendados_prod=@pedencomendados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
-            command3.CommandType = CommandType.Text
-
-            command3.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(1, v_SelectRow).Value
-
-            If PedidoCompraDataGridView.Item(13, v_SelectRow).Value = "Não Entregue" Then
-                command3.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SomandoEstoqueAtual
-                command3.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
-
+        While lrd.Read()
+            EstoqueAtual = lrd("estoqueatual_prod")
+            PedidosColocadosAtual = lrd("pedencomendados_prod")
+            CustoAtual = lrd("custo_prod")
+            IpiProduto = lrd("ipi_prod")
+            MkProduto = lrd("markup_prod")
+            If lrd("Subtituicao_tributaria") Is DBNull.Value Then
+                SubstTributaria = 1
             Else
-                command3.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
-                command3.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
-
+                SubstTributaria = lrd("Subtituicao_tributaria")
             End If
+            MarkupNET = lrd("MarkupNET_prod")
+        End While
+        connection.Close()
+        TextBox246.Text = EstoqueAtual
 
-            Try
-                connection.Open()
-                command3.ExecuteNonQuery()
-                connection.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString())
-            End Try
+        '' Calculando o estoque de produtos
+        'Dim SomandoEstoqueAtual As Integer = 0
+        'Dim SubtraindoEstoqueAtual As Integer = 0
+        '' ATENÇÃO: COMO É ENTRADA DE MATEIRIAS VIA PEDIDO, O SINAL DE SOMA É O OPOSTO AO DOS PEDIDOS
+        'SomandoEstoqueAtual = EstoqueAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+        'SubtraindoEstoqueAtual = EstoqueAtual - PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+        '' Calculando o estoque de pedidos encomendados
+        'Dim SomandoPedidosAtual As Integer = 0
+        'Dim SubtraindoPedidosAtual As Integer = 0
+        'SomandoPedidosAtual = PedidosColocadosAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+        'SubtraindoPedidosAtual = PedidosColocadosAtual - PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+
+        'Dim command3 As SqlCommand
+        'command3 = connection.CreateCommand()
+        'command3.CommandText = "update produtos set  pedencomendados_prod=@pedencomendados_prod, estoqueatual_prod = @estoqueatual_prod  where cod_prod = @cod_prod"
+        'command3.CommandType = CommandType.Text
+
+        'command3.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(1, v_SelectRow).Value
+
+        'If PedidoCompraDataGridView.Item(13, v_SelectRow).Value = "Não Entregue" Then
+        '    command3.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SomandoEstoqueAtual
+        '    command3.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SubtraindoPedidosAtual
+
+        'Else
+        '    command3.Parameters.Add("@estoqueatual_prod", SqlDbType.VarChar, 50).Value = SubtraindoEstoqueAtual
+        '    command3.Parameters.Add("@pedencomendados_prod", SqlDbType.VarChar, 50).Value = SomandoPedidosAtual
+
+        'End If
+
+        'Try
+        '    connection.Open()
+        '    command3.ExecuteNonQuery()
+        '    connection.Close()
+        'Catch ex As Exception
+        '    MessageBox.Show(ex.ToString())
+        'End Try
             Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
         End If
 
@@ -16325,12 +16391,13 @@ proxima2:
     End Sub
 
     Private Sub PedidoNFEDataGridView4_DoubleClick(sender As Object, e As EventArgs) Handles PedidoNFEDataGridView4.DoubleClick
+
         Dim v_SelectRow As Integer
         v_SelectRow = Me.PedidoNFEDataGridView4.CurrentRow.Index
         If (PedidoNFEDataGridView4.Item(0, v_SelectRow).Value) IsNot DBNull.Value Then
             ItemPedidosBindingSource.Filter = String.Format("codpedido_item LIKE '{0}%'", (PedidoNFEDataGridView4.Item(0, v_SelectRow).Value))
 
-
+            ' passando valores
             TextBox14.Text = PedidoNFEDataGridView4.Item(1, v_SelectRow).Value
             TextBox325.Text = PedidoNFEDataGridView4.Item(11, v_SelectRow).Value
             TextBox13.Text = PedidoNFEDataGridView4.Item(12, v_SelectRow).Value
@@ -16386,8 +16453,25 @@ proxima2:
             MessageBox.Show(ex.ToString())
 
         End Try
+        Dim valor2 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+            valor2 += Linha.Cells(8).Value
+        Next
+        TextBox249.Text = valor2
+
+        'soma do peso
+        Dim valor3 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+            valor3 += Linha.Cells(18).Value
+        Next
+        Peso_nfeemitidaTextBox.Text = valor3
+
 
         Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
+        For x = 0 To 25
+            ItemPedidosDataGridView10.Rows(v_SelectRow).Cells(x).Style.ForeColor = Color.Red
+        Next
+
     End Sub
 
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
@@ -16424,18 +16508,21 @@ proxima2:
         e.Graphics.DrawString("Sugestão", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 50)
 
 
+        Dim l As Integer = 0
 
         Try
             For x = 0 To 30
 
-                e.Graphics.DrawString(ProdutosDataGridView5.Item(2, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 100 + (x * 20))
-                e.Graphics.DrawString(ProdutosDataGridView5.Item(6, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 200, 100 + (x * 20))
-                e.Graphics.DrawString(ProdutosDataGridView5.Item(7, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 450, 100 + (x * 20))
-                e.Graphics.DrawString(ProdutosDataGridView5.Item(8, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 550, 100 + (x * 20))
-                e.Graphics.DrawString(ProdutosDataGridView5.Item(11, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 650, 100 + (x * 20))
-                Dim CalculoSugestao As Double = ProdutosDataGridView5.Item(10, x).Value - ProdutosDataGridView5.Item(14, x).Value
-                e.Graphics.DrawString(CalculoSugestao, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 100 + (x * 20))
-
+                If ProdutosDataGridView5.Item(9, x).Value < ProdutosDataGridView5.Item(8, x).Value Then
+                    l += 1
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(2, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(6, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 200, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(7, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 450, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(8, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 550, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(12, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 650, 100 + (l * 20))
+                    Dim CalculoSugestao As Double = ProdutosDataGridView5.Item(8, x).Value - ProdutosDataGridView5.Item(14, x).Value
+                    e.Graphics.DrawString(CalculoSugestao, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 100 + (l * 20))
+                End If
             Next
         Catch ex As Exception
             Exit Sub
@@ -16751,7 +16838,7 @@ proxima2:
                 MessageBox.Show(ex.ToString)
 
             End Try
-            TextBox290.Text = UltimoID
+            TextBox289.Text = UltimoID
 
 
             ' rem buscar os ítens do PEDIDO e transformá-los em ítens da nota
@@ -16763,25 +16850,25 @@ proxima2:
                 For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
                     'If ItemPedidosDataGridView2.Item(10, yy).Value <> "Entregue" Then
                     command1 = connection.CreateCommand()
-                    'command1.CommandText = "INSERT INTO ItemNfeEmitida (NumeroNFe_ItemNfeEmitida,codProd_ItemNfeEmitida,NomeProd_ItemNfeemitida,QtdeProd_ItemNfeEmitida,VrUnitarioProd_ItemNfeEmitida,VrTlProd_itemNfeEmitida,HoraNota_itemNfeEmitida,NumeroPed_itemNfeEmitida,NCM_itemNfeEmitida,tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida,IDcod_itemNfeEmitida) values (@NumeroNFe_ItemNfeEmitida,@codProd_ItemNfeEmitida,@NomeProd_ItemNfeemitida,@QtdeProd_ItemNfeEmitida,@VrUnitarioProd_ItemNfeEmitida,@VrTlProd_itemNfeEmitida,@HoraNota_itemNfeEmitida,@NumeroPed_itemNfeEmitida,@NCM_itemNfeEmitida,@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida,@IDcod_itemNfeEmitida)"
-                    command1.CommandText = "INSERT INTO ItemNfeEmitida (tabela_itemNfeEmitida) values (@tabela_itemNfeEmitida)"
+                    command1.CommandText = "INSERT INTO ItemNfeEmitida (IDcod_itemNfeEmitida,NumeroNFe_ItemNfeEmitida,codProd_ItemNfeEmitida,NomeProd_ItemNfeemitida,QtdeProd_ItemNfeEmitida,VrUnitarioProd_ItemNfeEmitida,VrTlProd_itemNfeEmitida,HoraNota_itemNfeEmitida,NumeroPed_itemNfeEmitida,NCM_itemNfeEmitida,tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida) values (@IDcod_itemNfeEmitida,@NumeroNFe_ItemNfeEmitida,@codProd_ItemNfeEmitida,@NomeProd_ItemNfeemitida,@QtdeProd_ItemNfeEmitida,@VrUnitarioProd_ItemNfeEmitida,@VrTlProd_itemNfeEmitida,@HoraNota_itemNfeEmitida,@NumeroPed_itemNfeEmitida,@NCM_itemNfeEmitida,@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida)"
+                    'command1.CommandText = "INSERT INTO ItemNfeEmitida (tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida) values (@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida)"
 
 
                     command1.CommandType = CommandType.Text
-                    'command1.Parameters.Add("@NumeroNFe_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = UltimoID
-                    ' command1.Parameters.Add("@codProd_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(13, yy).Value
-                    'command1.Parameters.Add("@NomeProd_ItemNfeemitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(1, yy).Value
-                    'command1.Parameters.Add("@QtdeProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(6, yy).Value
-                    'command1.Parameters.Add("@VrUnitarioProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(8, yy).Value
-                    'Dim arredonda As String = (ItemPedidosDataGridView10.Item(5, yy).Value).ToString() * (ItemPedidosDataGridView10.Item(8, yy).Value)
-                    'command1.Parameters.Add("@VrTlProd_itemNfeEmitida", SqlDbType.Float).Value = arredonda
-                    'command1.Parameters.Add("@HoraNota_itemNfeEmitida", SqlDbType.VarChar, 50).Value = HorarioNotaEmitida4
-                    'command1.Parameters.Add("@NumeroPed_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(11, yy).Value
-                    'command1.Parameters.Add("@NCM_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(19, yy).Value
+                    command1.Parameters.Add("@NumeroNFe_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = UltimoID
+                    command1.Parameters.Add("@codProd_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(13, yy).Value
+                    command1.Parameters.Add("@NomeProd_ItemNfeemitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(1, yy).Value
+                    command1.Parameters.Add("@QtdeProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(6, yy).Value
+                    command1.Parameters.Add("@VrUnitarioProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(8, yy).Value
+                    Dim arredonda As String = (ItemPedidosDataGridView10.Item(5, yy).Value) * (ItemPedidosDataGridView10.Item(8, yy).Value)
+                    command1.Parameters.Add("@VrTlProd_itemNfeEmitida", SqlDbType.Float).Value = arredonda
+                    command1.Parameters.Add("@HoraNota_itemNfeEmitida", SqlDbType.VarChar, 50).Value = HorarioNotaEmitida4
+                    command1.Parameters.Add("@NumeroPed_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(11, yy).Value
+                    command1.Parameters.Add("@NCM_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(19, yy).Value
                     command1.Parameters.Add("@tabela_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(17, yy).Value
-                    'command1.Parameters.Add("@Peso_itemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(18, yy).Value
-                    'command1.Parameters.Add("@QtdeENtregue_itemNfeEmitida", SqlDbType.Int).Value = ItemPedidosDataGridView10.Item(7, yy).Value
-                    'command1.Parameters.Add("@IDcod_itemNfeEmitida", SqlDbType.Int).Value = ItemPedidosDataGridView10.Item(0, yy).Value
+                    command1.Parameters.Add("@Peso_itemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(18, yy).Value
+                    command1.Parameters.Add("@QtdeENtregue_itemNfeEmitida", SqlDbType.Int).Value = ItemPedidosDataGridView10.Item(7, yy).Value
+                    command1.Parameters.Add("@IDcod_itemNfeEmitida", SqlDbType.VarChar, 50).Value = 0 'PedidoNFEDataGridView4.Item(0, yy).Value
 
                     If ItemPedidosDataGridView10.Item(6, yy).Value <> 0 Then
                         connection.Open()
@@ -16800,31 +16887,31 @@ proxima2:
             End Try
             Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
 
-            ' ***********************************************************************
-            ' rem zerar os campos do arquivo item pedidos
-            '    Dim command2 As SqlCommand
-            '    Try
-            '        For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
-            '            command2 = connection.CreateCommand()
-            '            command2.CommandText = "update ItemPedidos set qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, yy).Value & "'"
-            '            command2.CommandType = CommandType.Text
-            '            command2.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = 0
+            '***********************************************************************
+            REM zerar os campos do arquivo item pedidos
+            Dim command2 As SqlCommand
+            Try
+                For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
+                    command2 = connection.CreateCommand()
+                    command2.CommandText = "update ItemPedidos set qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, yy).Value & "'"
+                    command2.CommandType = CommandType.Text
+                    command2.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = 0
 
-            '            connection.Open()
-            '            command2.ExecuteNonQuery()
-            '            connection.Close()
+                    connection.Open()
+                    command2.ExecuteNonQuery()
+                    connection.Close()
 
 
-            '        Next
+                Next
 
-            '    Catch ex As Exception
+            Catch ex As Exception
 
-            '        MessageBox.Show("Algo ocorreu errado")
-            '        MessageBox.Show(ex.ToString())
+                MessageBox.Show("Algo ocorreu errado")
+                MessageBox.Show(ex.ToString())
 
-            '    End Try
+            End Try
 
-            ' Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
+            Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
 
 
             ' passar parâmetros para a tela de notas
@@ -16849,34 +16936,15 @@ proxima2:
             TextBox306.Text = PedidoNFEDataGridView1.Item(10, v_SelectRow).Value
             TextBox305.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
             TextBox291.Text = "5102"
-            ' TextBox30.Text = "Vendas"
-            ' TextBox31.Text = "saída"
+            'TextBox292.Text = "Vendas"
+            TextBox292.Text = "saída"
             ' ComboBox12.Text = "emitente"
 
-            '    TabControl_NFE.SelectedIndex = 0
-            '    ' filtra pelo horário em que foi cadastrado
-            '    ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HorarioNotaEmitida4)
-            '    ' soma  o valor d nota
-            '    Dim valor2 As Decimal = 0
-            '    For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
-            '        valor2 += Linha.Cells(5).Value
-            '    Next
-            '    TextBox5.Text = valor2
-            '    txt_vrduplicata1.Text = valor2
-
-            '    'soma do peso
-            '    Dim valor3 As Decimal = 0
-            '    For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
-            '        valor3 += Linha.Cells(11).Value
-            '    Next
-            '    Peso_nfeemitidaTextBox.Text = valor3
-
-            '    'soma do volumes
-            '    Dim valor4 As Decimal = 0
-            '    For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
-            '        valor4 += Linha.Cells(3).Value
-            '    Next
-            '    cbx_VolNfeEmitidas.Text = valor4
+            TabControl_NFE.SelectedIndex = 0
+            ' filtra pelo horário em que foi cadastrado
+            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HorarioNotaEmitida4)
+            ' soma  o valor d nota
+         
             '    ' -----------------------------------------------------------------------------
             '    ' trabalhando com as duplicatas
             '    rdb_vezesduplicata1.Enabled = True
@@ -16921,21 +16989,17 @@ proxima2:
 
 
             '    ' habilitar duplicatas
-            '    rdb_vezesduplicata1.Enabled = True
-            '    rdb_vezesduplicata2.Enabled = True
-            '    rdb_vezesduplicata3.Enabled = True
-            '    rdb_vezesduplicata4.Enabled = True
-            '    rdb_vezesduplicata5.Enabled = True
-            '    date_duplicata1.Enabled = True
-            '    txt_vrduplicata1.Enabled = True
-            '    date_duplicata2.Enabled = True
-            '    txt_vrduplicata2.Enabled = True
-            '    date_duplicata3.Enabled = True
-            '    txt_vrduplicata3.Enabled = True
-            '    date_duplicata4.Enabled = True
-            '    txt_vrduplicata4.Enabled = True
-            '    date_duplicata5.Enabled = True
-            '    txt_vrduplicata5.Enabled = True
+            txt_vrduplicata1.Enabled = True
+            txt_vrduplicata2.Enabled = True
+            txt_vrduplicata3.Enabled = True
+            txt_vrduplicata4.Enabled = True
+            txt_vrduplicata5.Enabled = True
+            date_duplicata1.Enabled = True
+            date_duplicata2.Enabled = True
+            date_duplicata3.Enabled = True
+            date_duplicata4.Enabled = True
+            date_duplicata5.Enabled = True
+
             '    Button20.Enabled = False
             '    '---------------------------------------------------------------------------
             '    '--------------------------------------------------------------------------
@@ -17039,11 +17103,11 @@ proxima2:
             Exit Sub
         End If
 
-        Dim reply As DialogResult = MessageBox.Show("Fornecedor : " & ComboBox29.Text & " Linha : " & ComboBox30.Text & "   Confirma a Impressão?", "Atenção!!!", _
+        Dim reply As DialogResult = MessageBox.Show("   Confirma a Impressão?", "Atenção!!!", _
           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 
         If reply = DialogResult.Yes Then
-            PrintDocument4.Print()
+            PrintPreviewDialog8.ShowDialog()
         Else
             Exit Sub
         End If
@@ -17093,6 +17157,7 @@ proxima2:
    
     Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
 
+        variavelImpressao = "4"
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}%' and RaizSimNao_prod LIKE '{2}%' and Bugiganga_prod LIKE '{3}%'", ComboBox29.Text, ComboBox30.Text, "RAIZ", "bugiganga")
         Label94.Text = ProdutosDataGridView4.Rows.Count()
 
@@ -17255,19 +17320,116 @@ proxima2:
 
     Private Sub Button116_Click(sender As Object, e As EventArgs) Handles Button116.Click
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}' and linha_prod LIKE '{1}' and RaizSimNao_prod LIKE '{2}'", ComboBox5.Text, ComboBox42.Text, "RAIZ")
-
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(12, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(12, x).Value < 40 And ProdutosDataGridView7.Item(12, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(11).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(12).Style.ForeColor = Color.Red
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(14, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(14, x).Value < 25 And ProdutosDataGridView7.Item(14, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(13).Style.ForeColor = Color.Green
+                ProdutosDataGridView7.Rows(x).Cells(14).Style.ForeColor = Color.Green
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(16, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(16, x).Value < 25 And ProdutosDataGridView7.Item(16, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(15).Style.ForeColor = Color.Yellow
+                ProdutosDataGridView7.Rows(x).Cells(16).Style.ForeColor = Color.Yellow
+            End If
+        Next
     End Sub
 
     Private Sub Button117_Click(sender As Object, e As EventArgs) Handles Button117.Click
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and linha_prod LIKE '{1}%' and RaizSimNao_prod LIKE '{2}%' and Bugiganga_prod LIKE '{3}%'", ComboBox5.Text, ComboBox42.Text, "RAIZ", "bugiganga")
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(12, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(12, x).Value < 40 And ProdutosDataGridView7.Item(12, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(11).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(12).Style.ForeColor = Color.Red
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(14, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(14, x).Value < 25 And ProdutosDataGridView7.Item(14, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(13).Style.ForeColor = Color.Green
+                ProdutosDataGridView7.Rows(x).Cells(14).Style.ForeColor = Color.Green
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(16, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(16, x).Value < 25 And ProdutosDataGridView7.Item(16, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(15).Style.ForeColor = Color.Yellow
+                ProdutosDataGridView7.Rows(x).Cells(16).Style.ForeColor = Color.Yellow
+            End If
+        Next
     End Sub
 
     Private Sub Button119_Click(sender As Object, e As EventArgs) Handles Button119.Click
         ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox42.Text, ComboBox5.Text)
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(12, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(12, x).Value < 40 And ProdutosDataGridView7.Item(12, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(11).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(12).Style.ForeColor = Color.Red
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(14, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(14, x).Value < 25 And ProdutosDataGridView7.Item(14, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(13).Style.ForeColor = Color.Green
+                ProdutosDataGridView7.Rows(x).Cells(14).Style.ForeColor = Color.Green
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(16, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(16, x).Value < 25 And ProdutosDataGridView7.Item(16, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(15).Style.ForeColor = Color.Yellow
+                ProdutosDataGridView7.Rows(x).Cells(16).Style.ForeColor = Color.Yellow
+            End If
+        Next
     End Sub
 
     Private Sub Button118_Click(sender As Object, e As EventArgs) Handles Button118.Click
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox5.Text)
+
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(12, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(12, x).Value < 40 And ProdutosDataGridView7.Item(12, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(11).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(12).Style.ForeColor = Color.Red
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(14, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(14, x).Value < 25 And ProdutosDataGridView7.Item(14, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(13).Style.ForeColor = Color.Green
+                ProdutosDataGridView7.Rows(x).Cells(14).Style.ForeColor = Color.Green
+            End If
+        Next
+        For x = 0 To ProdutosDataGridView7.Rows.Count() - 1
+            If ProdutosDataGridView7.Item(16, x).Value Is DBNull.Value Then
+            ElseIf ProdutosDataGridView7.Item(16, x).Value < 25 And ProdutosDataGridView7.Item(16, x).Value <> 0 Then
+                ProdutosDataGridView7.Rows(x).Cells(7).Style.ForeColor = Color.Red
+                ProdutosDataGridView7.Rows(x).Cells(15).Style.ForeColor = Color.Yellow
+                ProdutosDataGridView7.Rows(x).Cells(16).Style.ForeColor = Color.Yellow
+            End If
+        Next
+
     End Sub
 
     Private Sub ProdutosDataGridView7_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView7.DoubleClick
@@ -17510,12 +17672,15 @@ FIM:
     End Sub
 
     Private Sub Button121_Click(sender As Object, e As EventArgs) Handles Button121.Click
+
+        variavelImpressao = "1"
         ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and RaizSimNao_prod LIKE '{1}%' and Bugiganga_prod LIKE '{2}%'", ComboBox29.Text, "RAIZ", "bugiganga")
         Label94.Text = ProdutosDataGridView4.Rows.Count()
 
     End Sub
 
     Private Sub Button122_Click(sender As Object, e As EventArgs) Handles Button122.Click
+        variavelImpressao = "2"
         ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and RaizSimNao_prod LIKE '{1}%' and Bugiganga_prod LIKE '{2}%'", ComboBox30.Text, "RAIZ", "bugiganga")
         Label94.Text = ProdutosDataGridView4.Rows.Count()
     End Sub
@@ -17846,6 +18011,15 @@ FIM:
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+    End Sub
+
+  
+    Private Sub PrintPreviewDialog8_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog8.Load
+        PrintPreviewDialog8.Document = PrintDocument4
+        DirectCast(PrintPreviewDialog8, Form).WindowState = FormWindowState.Maximized
+        PrintDialog1.Document = PrintDocument4
+        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
+        CType(PrintPreviewDialog8.Controls(1), ToolStrip).Items.Add(PDB)
     End Sub
 End Class
 

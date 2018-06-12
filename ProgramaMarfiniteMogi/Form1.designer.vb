@@ -186,6 +186,9 @@ Partial Class Form1
         Me.tab_Kgiro = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.GroupBox114 = New System.Windows.Forms.GroupBox()
+        Me.Label443 = New System.Windows.Forms.Label()
+        Me.Label442 = New System.Windows.Forms.Label()
+        Me.ComboBox47 = New System.Windows.Forms.ComboBox()
         Me.ComboBox46 = New System.Windows.Forms.ComboBox()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.GroupBox115 = New System.Windows.Forms.GroupBox()
@@ -2848,6 +2851,13 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn884 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn885 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel55 = New System.Windows.Forms.Panel()
+        Me.GroupBox151 = New System.Windows.Forms.GroupBox()
+        Me.TextBox249 = New System.Windows.Forms.TextBox()
+        Me.Label446 = New System.Windows.Forms.Label()
+        Me.TextBox287 = New System.Windows.Forms.TextBox()
+        Me.Label445 = New System.Windows.Forms.Label()
+        Me.TextBox285 = New System.Windows.Forms.TextBox()
+        Me.Label444 = New System.Windows.Forms.Label()
         Me.GroupBox127 = New System.Windows.Forms.GroupBox()
         Me.TabPage13 = New System.Windows.Forms.TabPage()
         Me.Panel56 = New System.Windows.Forms.Panel()
@@ -3005,9 +3015,7 @@ Partial Class Form1
         Me.PrintPreviewDialog7 = New System.Windows.Forms.PrintPreviewDialog()
         Me.ApelidoErradoTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ApelidoErradoTableAdapter()
         Me.EnderecoEletronicoTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EnderecoEletronicoTableAdapter()
-        Me.ComboBox47 = New System.Windows.Forms.ComboBox()
-        Me.Label442 = New System.Windows.Forms.Label()
-        Me.Label443 = New System.Windows.Forms.Label()
+        Me.PrintPreviewDialog8 = New System.Windows.Forms.PrintPreviewDialog()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -3486,6 +3494,8 @@ Partial Class Form1
         Me.MenuStrip9.SuspendLayout
         Me.TabPage15.SuspendLayout
         CType(Me.ItemPedidosDataGridView10,System.ComponentModel.ISupportInitialize).BeginInit
+        Me.Panel55.SuspendLayout
+        Me.GroupBox151.SuspendLayout
         Me.TabPage13.SuspendLayout
         Me.Panel56.SuspendLayout
         Me.GroupBox132.SuspendLayout
@@ -4928,6 +4938,35 @@ Partial Class Form1
         Me.GroupBox114.TabIndex = 23
         Me.GroupBox114.TabStop = false
         Me.GroupBox114.Text = "Fornecedor"
+        '
+        'Label443
+        '
+        Me.Label443.AutoSize = true
+        Me.Label443.Location = New System.Drawing.Point(260, 30)
+        Me.Label443.Name = "Label443"
+        Me.Label443.Size = New System.Drawing.Size(42, 16)
+        Me.Label443.TabIndex = 6
+        Me.Label443.Text = "Email"
+        '
+        'Label442
+        '
+        Me.Label442.AutoSize = true
+        Me.Label442.Location = New System.Drawing.Point(10, 28)
+        Me.Label442.Name = "Label442"
+        Me.Label442.Size = New System.Drawing.Size(68, 16)
+        Me.Label442.TabIndex = 5
+        Me.Label442.Text = "Vendedor"
+        '
+        'ComboBox47
+        '
+        Me.ComboBox47.DataSource = Me.FornecedorBindingSource
+        Me.ComboBox47.DisplayMember = "Email_fonecedor"
+        Me.ComboBox47.Enabled = false
+        Me.ComboBox47.FormattingEnabled = true
+        Me.ComboBox47.Location = New System.Drawing.Point(308, 27)
+        Me.ComboBox47.Name = "ComboBox47"
+        Me.ComboBox47.Size = New System.Drawing.Size(194, 24)
+        Me.ComboBox47.TabIndex = 4
         '
         'ComboBox46
         '
@@ -12911,7 +12950,7 @@ Partial Class Form1
         Me.Button23.Name = "Button23"
         Me.Button23.Size = New System.Drawing.Size(148, 23)
         Me.Button23.TabIndex = 6
-        Me.Button23.Text = "Buscar raiz/bugiganga"
+        Me.Button23.Text = "For/linha/Raiz/bugiganga"
         Me.Button23.UseVisualStyleBackColor = true
         '
         'Button92
@@ -12920,7 +12959,7 @@ Partial Class Form1
         Me.Button92.Name = "Button92"
         Me.Button92.Size = New System.Drawing.Size(116, 23)
         Me.Button92.TabIndex = 4
-        Me.Button92.Text = "Buscar raiz"
+        Me.Button92.Text = "Buscar For\Raiz"
         Me.Button92.UseVisualStyleBackColor = true
         '
         'Label328
@@ -28482,10 +28521,10 @@ Partial Class Form1
         Me.ItemPedidosDataGridView10.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn880, Me.DataGridViewTextBoxColumn864, Me.DataGridViewTextBoxColumn861, Me.DataGridViewTextBoxColumn862, Me.DataGridViewTextBoxColumn865, Me.DataGridViewTextBoxColumn867, Me.DataGridViewTextBoxColumn882, Me.DataGridViewTextBoxColumn871, Me.DataGridViewTextBoxColumn868, Me.DataGridViewTextBoxColumn869, Me.DataGridViewTextBoxColumn870, Me.DataGridViewTextBoxColumn872, Me.DataGridViewTextBoxColumn873, Me.DataGridViewTextBoxColumn874, Me.DataGridViewTextBoxColumn863, Me.DataGridViewTextBoxColumn877, Me.DataGridViewTextBoxColumn878, Me.DataGridViewTextBoxColumn879, Me.DataGridViewTextBoxColumn881, Me.DataGridViewTextBoxColumn866, Me.DataGridViewTextBoxColumn859, Me.DataGridViewTextBoxColumn876, Me.DataGridViewTextBoxColumn875, Me.DataGridViewTextBoxColumn860, Me.DataGridViewTextBoxColumn883, Me.DataGridViewTextBoxColumn884, Me.DataGridViewTextBoxColumn885})
         Me.ItemPedidosDataGridView10.DataSource = Me.ItemPedidosBindingSource
         Me.ItemPedidosDataGridView10.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ItemPedidosDataGridView10.Location = New System.Drawing.Point(3, 103)
+        Me.ItemPedidosDataGridView10.Location = New System.Drawing.Point(3, 134)
         Me.ItemPedidosDataGridView10.Name = "ItemPedidosDataGridView10"
         Me.ItemPedidosDataGridView10.ReadOnly = true
-        Me.ItemPedidosDataGridView10.Size = New System.Drawing.Size(1091, 343)
+        Me.ItemPedidosDataGridView10.Size = New System.Drawing.Size(1091, 312)
         Me.ItemPedidosDataGridView10.TabIndex = 1
         '
         'DataGridViewTextBoxColumn880
@@ -28680,11 +28719,74 @@ Partial Class Form1
         'Panel55
         '
         Me.Panel55.BackColor = System.Drawing.Color.Pink
+        Me.Panel55.Controls.Add(Me.GroupBox151)
         Me.Panel55.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel55.Location = New System.Drawing.Point(3, 3)
         Me.Panel55.Name = "Panel55"
-        Me.Panel55.Size = New System.Drawing.Size(1091, 100)
+        Me.Panel55.Size = New System.Drawing.Size(1091, 131)
         Me.Panel55.TabIndex = 0
+        '
+        'GroupBox151
+        '
+        Me.GroupBox151.Controls.Add(Me.TextBox249)
+        Me.GroupBox151.Controls.Add(Me.Label446)
+        Me.GroupBox151.Controls.Add(Me.TextBox287)
+        Me.GroupBox151.Controls.Add(Me.Label445)
+        Me.GroupBox151.Controls.Add(Me.TextBox285)
+        Me.GroupBox151.Controls.Add(Me.Label444)
+        Me.GroupBox151.Location = New System.Drawing.Point(13, 8)
+        Me.GroupBox151.Name = "GroupBox151"
+        Me.GroupBox151.Size = New System.Drawing.Size(200, 105)
+        Me.GroupBox151.TabIndex = 6
+        Me.GroupBox151.TabStop = false
+        '
+        'TextBox249
+        '
+        Me.TextBox249.Location = New System.Drawing.Point(94, 21)
+        Me.TextBox249.Name = "TextBox249"
+        Me.TextBox249.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox249.TabIndex = 3
+        '
+        'Label446
+        '
+        Me.Label446.AutoSize = true
+        Me.Label446.Location = New System.Drawing.Point(6, 80)
+        Me.Label446.Name = "Label446"
+        Me.Label446.Size = New System.Drawing.Size(54, 16)
+        Me.Label446.TabIndex = 2
+        Me.Label446.Text = "Volume"
+        '
+        'TextBox287
+        '
+        Me.TextBox287.Location = New System.Drawing.Point(94, 77)
+        Me.TextBox287.Name = "TextBox287"
+        Me.TextBox287.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox287.TabIndex = 5
+        '
+        'Label445
+        '
+        Me.Label445.AutoSize = true
+        Me.Label445.Location = New System.Drawing.Point(20, 52)
+        Me.Label445.Name = "Label445"
+        Me.Label445.Size = New System.Drawing.Size(40, 16)
+        Me.Label445.TabIndex = 1
+        Me.Label445.Text = "Peso"
+        '
+        'TextBox285
+        '
+        Me.TextBox285.Location = New System.Drawing.Point(94, 49)
+        Me.TextBox285.Name = "TextBox285"
+        Me.TextBox285.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox285.TabIndex = 4
+        '
+        'Label444
+        '
+        Me.Label444.AutoSize = true
+        Me.Label444.Location = New System.Drawing.Point(20, 27)
+        Me.Label444.Name = "Label444"
+        Me.Label444.Size = New System.Drawing.Size(40, 16)
+        Me.Label444.TabIndex = 0
+        Me.Label444.Text = "Valor"
         '
         'GroupBox127
         '
@@ -29714,34 +29816,15 @@ Partial Class Form1
         '
         Me.EnderecoEletronicoTableAdapter.ClearBeforeFill = true
         '
-        'ComboBox47
+        'PrintPreviewDialog8
         '
-        Me.ComboBox47.DataSource = Me.FornecedorBindingSource
-        Me.ComboBox47.DisplayMember = "Email_fonecedor"
-        Me.ComboBox47.Enabled = false
-        Me.ComboBox47.FormattingEnabled = true
-        Me.ComboBox47.Location = New System.Drawing.Point(308, 27)
-        Me.ComboBox47.Name = "ComboBox47"
-        Me.ComboBox47.Size = New System.Drawing.Size(194, 24)
-        Me.ComboBox47.TabIndex = 4
-        '
-        'Label442
-        '
-        Me.Label442.AutoSize = true
-        Me.Label442.Location = New System.Drawing.Point(10, 28)
-        Me.Label442.Name = "Label442"
-        Me.Label442.Size = New System.Drawing.Size(68, 16)
-        Me.Label442.TabIndex = 5
-        Me.Label442.Text = "Vendedor"
-        '
-        'Label443
-        '
-        Me.Label443.AutoSize = true
-        Me.Label443.Location = New System.Drawing.Point(260, 30)
-        Me.Label443.Name = "Label443"
-        Me.Label443.Size = New System.Drawing.Size(42, 16)
-        Me.Label443.TabIndex = 6
-        Me.Label443.Text = "Email"
+        Me.PrintPreviewDialog8.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog8.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog8.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog8.Enabled = true
+        Me.PrintPreviewDialog8.Icon = CType(resources.GetObject("PrintPreviewDialog8.Icon"),System.Drawing.Icon)
+        Me.PrintPreviewDialog8.Name = "PrintPreviewDialog8"
+        Me.PrintPreviewDialog8.Visible = false
         '
         'Form1
         '
@@ -30320,6 +30403,9 @@ Partial Class Form1
         Me.MenuStrip9.PerformLayout
         Me.TabPage15.ResumeLayout(false)
         CType(Me.ItemPedidosDataGridView10,System.ComponentModel.ISupportInitialize).EndInit
+        Me.Panel55.ResumeLayout(false)
+        Me.GroupBox151.ResumeLayout(false)
+        Me.GroupBox151.PerformLayout
         Me.TabPage13.ResumeLayout(false)
         Me.Panel56.ResumeLayout(false)
         Me.GroupBox132.ResumeLayout(false)
@@ -33328,5 +33414,13 @@ End Sub
     Friend WithEvents ComboBox47 As System.Windows.Forms.ComboBox
     Friend WithEvents Label443 As System.Windows.Forms.Label
     Friend WithEvents Label442 As System.Windows.Forms.Label
+    Friend WithEvents GroupBox151 As System.Windows.Forms.GroupBox
+    Friend WithEvents TextBox249 As System.Windows.Forms.TextBox
+    Friend WithEvents Label446 As System.Windows.Forms.Label
+    Friend WithEvents TextBox287 As System.Windows.Forms.TextBox
+    Friend WithEvents Label445 As System.Windows.Forms.Label
+    Friend WithEvents TextBox285 As System.Windows.Forms.TextBox
+    Friend WithEvents Label444 As System.Windows.Forms.Label
+    Friend WithEvents PrintPreviewDialog8 As System.Windows.Forms.PrintPreviewDialog
 
 End Class
