@@ -40,7 +40,7 @@
     <Shape ID="DesignTable:PedidoCompra" ZOrder="11" X="9322" Y="70" Height="305" Width="231" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:pedidoMarfinite" ZOrder="10" X="9623" Y="70" Height="305" Width="239" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:PedidoNFE" ZOrder="9" X="9932" Y="70" Height="305" Width="208" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:produtos" ZOrder="8" X="10210" Y="70" Height="305" Width="197" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
+    <Shape ID="DesignTable:produtos" ZOrder="8" X="10210" Y="70" Height="305" Width="202" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:tab_municipios" ZOrder="7" X="10477" Y="70" Height="153" Width="232" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:TabelaCFOP" ZOrder="6" X="10779" Y="70" Height="153" Width="214" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="102" />
     <Shape ID="DesignTable:teste" ZOrder="5" X="11063" Y="70" Height="115" Width="173" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="64" />

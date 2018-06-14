@@ -488,6 +488,7 @@ Partial Class Form1
         Me.TextBox217 = New System.Windows.Forms.TextBox()
         Me.TabPage17 = New System.Windows.Forms.TabPage()
         Me.Panel39 = New System.Windows.Forms.Panel()
+        Me.Button125 = New System.Windows.Forms.Button()
         Me.Button96 = New System.Windows.Forms.Button()
         Me.Button81 = New System.Windows.Forms.Button()
         Me.Button80 = New System.Windows.Forms.Button()
@@ -548,16 +549,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn640 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemPedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProdutosDataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn367 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn385 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn386 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn387 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn388 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn394 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estoquemin_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estaquemax_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn946 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstoqueMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BalcaoDataGridView5 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn767 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn617 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -836,6 +827,15 @@ Partial Class Form1
         Me.TabPage4 = New System.Windows.Forms.TabPage()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.GroupBox126 = New System.Windows.Forms.GroupBox()
+        Me.Button126 = New System.Windows.Forms.Button()
+        Me.TextBox369 = New System.Windows.Forms.TextBox()
+        Me.TextBox368 = New System.Windows.Forms.TextBox()
+        Me.DateTimePicker46 = New System.Windows.Forms.DateTimePicker()
+        Me.DateTimePicker45 = New System.Windows.Forms.DateTimePicker()
+        Me.Label450 = New System.Windows.Forms.Label()
+        Me.Label449 = New System.Windows.Forms.Label()
+        Me.Label448 = New System.Windows.Forms.Label()
+        Me.Label447 = New System.Windows.Forms.Label()
         Me.ComboBox41 = New System.Windows.Forms.ComboBox()
         Me.cbx_forprod = New System.Windows.Forms.GroupBox()
         Me.GroupBox106 = New System.Windows.Forms.GroupBox()
@@ -3016,6 +3016,21 @@ Partial Class Form1
         Me.ApelidoErradoTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ApelidoErradoTableAdapter()
         Me.EnderecoEletronicoTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EnderecoEletronicoTableAdapter()
         Me.PrintPreviewDialog8 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.DataGridViewTextBoxColumn367 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn385 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn386 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn387 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn388 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn394 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estoquemin_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estaquemax_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn946 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstoqueMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstoqueInicial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataEstoqueInicial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConsumoDaDataIncial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataAtualizacaoEstoque_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1038 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -7612,6 +7627,7 @@ Partial Class Form1
         '
         Me.Panel39.AutoScroll = true
         Me.Panel39.BackColor = System.Drawing.Color.Gold
+        Me.Panel39.Controls.Add(Me.Button125)
         Me.Panel39.Controls.Add(Me.Button96)
         Me.Panel39.Controls.Add(Me.Button81)
         Me.Panel39.Controls.Add(Me.Button80)
@@ -7626,8 +7642,18 @@ Partial Class Form1
         Me.Panel39.Size = New System.Drawing.Size(1256, 650)
         Me.Panel39.TabIndex = 0
         '
+        'Button125
+        '
+        Me.Button125.Location = New System.Drawing.Point(907, 157)
+        Me.Button125.Name = "Button125"
+        Me.Button125.Size = New System.Drawing.Size(207, 23)
+        Me.Button125.TabIndex = 20
+        Me.Button125.Text = "Calculando Estoques"
+        Me.Button125.UseVisualStyleBackColor = true
+        '
         'Button96
         '
+        Me.Button96.Enabled = false
         Me.Button96.Location = New System.Drawing.Point(907, 93)
         Me.Button96.Name = "Button96"
         Me.Button96.Size = New System.Drawing.Size(207, 23)
@@ -7637,6 +7663,7 @@ Partial Class Form1
         '
         'Button81
         '
+        Me.Button81.Enabled = false
         Me.Button81.Location = New System.Drawing.Point(907, 122)
         Me.Button81.Name = "Button81"
         Me.Button81.Size = New System.Drawing.Size(207, 23)
@@ -7646,6 +7673,7 @@ Partial Class Form1
         '
         'Button80
         '
+        Me.Button80.Enabled = false
         Me.Button80.Location = New System.Drawing.Point(907, 54)
         Me.Button80.Name = "Button80"
         Me.Button80.Size = New System.Drawing.Size(207, 30)
@@ -8094,7 +8122,7 @@ Partial Class Form1
         Me.ProdutosDataGridView3.AllowUserToDeleteRows = false
         Me.ProdutosDataGridView3.AutoGenerateColumns = false
         Me.ProdutosDataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProdutosDataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn367, Me.DataGridViewTextBoxColumn385, Me.DataGridViewTextBoxColumn386, Me.DataGridViewTextBoxColumn387, Me.DataGridViewTextBoxColumn388, Me.DataGridViewTextBoxColumn394, Me.estoquemin_prod, Me.estaquemax_prod, Me.DataGridViewTextBoxColumn946, Me.EstoqueMedio_prod})
+        Me.ProdutosDataGridView3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn367, Me.DataGridViewTextBoxColumn385, Me.DataGridViewTextBoxColumn386, Me.DataGridViewTextBoxColumn387, Me.DataGridViewTextBoxColumn388, Me.DataGridViewTextBoxColumn394, Me.estoquemin_prod, Me.estaquemax_prod, Me.DataGridViewTextBoxColumn946, Me.EstoqueMedio_prod, Me.EstoqueInicial_prod, Me.DataEstoqueInicial_prod, Me.ConsumoDaDataIncial_prod, Me.DataAtualizacaoEstoque_prod, Me.DataGridViewTextBoxColumn1038})
         Me.ProdutosDataGridView3.DataSource = Me.ProdutosBindingSource
         Me.ProdutosDataGridView3.Dock = System.Windows.Forms.DockStyle.Left
         Me.ProdutosDataGridView3.Location = New System.Drawing.Point(0, 0)
@@ -8102,76 +8130,6 @@ Partial Class Form1
         Me.ProdutosDataGridView3.ReadOnly = true
         Me.ProdutosDataGridView3.Size = New System.Drawing.Size(603, 549)
         Me.ProdutosDataGridView3.TabIndex = 2
-        '
-        'DataGridViewTextBoxColumn367
-        '
-        Me.DataGridViewTextBoxColumn367.DataPropertyName = "cod_prod"
-        Me.DataGridViewTextBoxColumn367.HeaderText = "cod_prod"
-        Me.DataGridViewTextBoxColumn367.Name = "DataGridViewTextBoxColumn367"
-        Me.DataGridViewTextBoxColumn367.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn385
-        '
-        Me.DataGridViewTextBoxColumn385.DataPropertyName = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn385.HeaderText = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn385.Name = "DataGridViewTextBoxColumn385"
-        Me.DataGridViewTextBoxColumn385.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn386
-        '
-        Me.DataGridViewTextBoxColumn386.DataPropertyName = "linha_prod"
-        Me.DataGridViewTextBoxColumn386.HeaderText = "linha_prod"
-        Me.DataGridViewTextBoxColumn386.Name = "DataGridViewTextBoxColumn386"
-        Me.DataGridViewTextBoxColumn386.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn387
-        '
-        Me.DataGridViewTextBoxColumn387.DataPropertyName = "nome_prod"
-        Me.DataGridViewTextBoxColumn387.HeaderText = "nome_prod"
-        Me.DataGridViewTextBoxColumn387.Name = "DataGridViewTextBoxColumn387"
-        Me.DataGridViewTextBoxColumn387.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn388
-        '
-        Me.DataGridViewTextBoxColumn388.DataPropertyName = "cor_prod"
-        Me.DataGridViewTextBoxColumn388.HeaderText = "cor_prod"
-        Me.DataGridViewTextBoxColumn388.Name = "DataGridViewTextBoxColumn388"
-        Me.DataGridViewTextBoxColumn388.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn394
-        '
-        Me.DataGridViewTextBoxColumn394.DataPropertyName = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn394.HeaderText = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn394.Name = "DataGridViewTextBoxColumn394"
-        Me.DataGridViewTextBoxColumn394.ReadOnly = true
-        '
-        'estoquemin_prod
-        '
-        Me.estoquemin_prod.DataPropertyName = "estoquemin_prod"
-        Me.estoquemin_prod.HeaderText = "estoquemin_prod"
-        Me.estoquemin_prod.Name = "estoquemin_prod"
-        Me.estoquemin_prod.ReadOnly = true
-        '
-        'estaquemax_prod
-        '
-        Me.estaquemax_prod.DataPropertyName = "estaquemax_prod"
-        Me.estaquemax_prod.HeaderText = "estaquemax_prod"
-        Me.estaquemax_prod.Name = "estaquemax_prod"
-        Me.estaquemax_prod.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn946
-        '
-        Me.DataGridViewTextBoxColumn946.DataPropertyName = "MaxConsumoEstoque_prod"
-        Me.DataGridViewTextBoxColumn946.HeaderText = "MaxConsumoEstoque_prod"
-        Me.DataGridViewTextBoxColumn946.Name = "DataGridViewTextBoxColumn946"
-        Me.DataGridViewTextBoxColumn946.ReadOnly = true
-        '
-        'EstoqueMedio_prod
-        '
-        Me.EstoqueMedio_prod.DataPropertyName = "EstoqueMedio_prod"
-        Me.EstoqueMedio_prod.HeaderText = "EstoqueMedio_prod"
-        Me.EstoqueMedio_prod.Name = "EstoqueMedio_prod"
-        Me.EstoqueMedio_prod.ReadOnly = true
         '
         'BalcaoDataGridView5
         '
@@ -8301,6 +8259,7 @@ Partial Class Form1
         '
         'Button72
         '
+        Me.Button72.Enabled = false
         Me.Button72.Location = New System.Drawing.Point(907, 25)
         Me.Button72.Name = "Button72"
         Me.Button72.Size = New System.Drawing.Size(207, 23)
@@ -10739,13 +10698,104 @@ Partial Class Form1
         'GroupBox126
         '
         Me.GroupBox126.BackColor = System.Drawing.Color.Gold
+        Me.GroupBox126.Controls.Add(Me.Button126)
+        Me.GroupBox126.Controls.Add(Me.TextBox369)
+        Me.GroupBox126.Controls.Add(Me.TextBox368)
+        Me.GroupBox126.Controls.Add(Me.DateTimePicker46)
+        Me.GroupBox126.Controls.Add(Me.DateTimePicker45)
+        Me.GroupBox126.Controls.Add(Me.Label450)
+        Me.GroupBox126.Controls.Add(Me.Label449)
+        Me.GroupBox126.Controls.Add(Me.Label448)
+        Me.GroupBox126.Controls.Add(Me.Label447)
         Me.GroupBox126.Controls.Add(Me.ComboBox41)
-        Me.GroupBox126.Location = New System.Drawing.Point(877, 20)
+        Me.GroupBox126.Location = New System.Drawing.Point(877, 3)
         Me.GroupBox126.Name = "GroupBox126"
-        Me.GroupBox126.Size = New System.Drawing.Size(154, 100)
+        Me.GroupBox126.Size = New System.Drawing.Size(376, 117)
         Me.GroupBox126.TabIndex = 13
         Me.GroupBox126.TabStop = false
-        Me.GroupBox126.Text = "Tipo de produto"
+        '
+        'Button126
+        '
+        Me.Button126.Location = New System.Drawing.Point(6, 47)
+        Me.Button126.Name = "Button126"
+        Me.Button126.Size = New System.Drawing.Size(71, 58)
+        Me.Button126.TabIndex = 9
+        Me.Button126.Text = "Estoque"
+        Me.Button126.UseVisualStyleBackColor = true
+        '
+        'TextBox369
+        '
+        Me.TextBox369.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "ConsumoDaDataIncial_prod", true))
+        Me.TextBox369.Enabled = false
+        Me.TextBox369.Location = New System.Drawing.Point(199, 64)
+        Me.TextBox369.Name = "TextBox369"
+        Me.TextBox369.Size = New System.Drawing.Size(94, 21)
+        Me.TextBox369.TabIndex = 8
+        '
+        'TextBox368
+        '
+        Me.TextBox368.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "EstoqueInicial_prod", true))
+        Me.TextBox368.Enabled = false
+        Me.TextBox368.Location = New System.Drawing.Point(199, 13)
+        Me.TextBox368.Name = "TextBox368"
+        Me.TextBox368.Size = New System.Drawing.Size(96, 21)
+        Me.TextBox368.TabIndex = 7
+        '
+        'DateTimePicker46
+        '
+        Me.DateTimePicker46.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "DataAtualizacaoEstoque_prod", true))
+        Me.DateTimePicker46.Enabled = false
+        Me.DateTimePicker46.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker46.Location = New System.Drawing.Point(199, 90)
+        Me.DateTimePicker46.Name = "DateTimePicker46"
+        Me.DateTimePicker46.Size = New System.Drawing.Size(94, 21)
+        Me.DateTimePicker46.TabIndex = 6
+        '
+        'DateTimePicker45
+        '
+        Me.DateTimePicker45.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "DataEstoqueInicial_prod", true))
+        Me.DateTimePicker45.Enabled = false
+        Me.DateTimePicker45.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.DateTimePicker45.Location = New System.Drawing.Point(198, 40)
+        Me.DateTimePicker45.Name = "DateTimePicker45"
+        Me.DateTimePicker45.Size = New System.Drawing.Size(97, 21)
+        Me.DateTimePicker45.TabIndex = 5
+        '
+        'Label450
+        '
+        Me.Label450.AutoSize = true
+        Me.Label450.Location = New System.Drawing.Point(83, 92)
+        Me.Label450.Name = "Label450"
+        Me.Label450.Size = New System.Drawing.Size(102, 13)
+        Me.Label450.TabIndex = 4
+        Me.Label450.Text = "Data atualização"
+        '
+        'Label449
+        '
+        Me.Label449.AutoSize = true
+        Me.Label449.Location = New System.Drawing.Point(87, 70)
+        Me.Label449.Name = "Label449"
+        Me.Label449.Size = New System.Drawing.Size(92, 13)
+        Me.Label449.TabIndex = 3
+        Me.Label449.Text = "Consumo Data"
+        '
+        'Label448
+        '
+        Me.Label448.AutoSize = true
+        Me.Label448.Location = New System.Drawing.Point(92, 42)
+        Me.Label448.Name = "Label448"
+        Me.Label448.Size = New System.Drawing.Size(93, 13)
+        Me.Label448.TabIndex = 2
+        Me.Label448.Text = "Data Est Inicial"
+        '
+        'Label447
+        '
+        Me.Label447.AutoSize = true
+        Me.Label447.Location = New System.Drawing.Point(93, 22)
+        Me.Label447.Name = "Label447"
+        Me.Label447.Size = New System.Drawing.Size(86, 13)
+        Me.Label447.TabIndex = 1
+        Me.Label447.Text = "Esoque Inicial"
         '
         'ComboBox41
         '
@@ -10753,9 +10803,9 @@ Partial Class Form1
         Me.ComboBox41.Enabled = false
         Me.ComboBox41.FormattingEnabled = true
         Me.ComboBox41.Items.AddRange(New Object() {"NÃO RAIZ", "RAIZ"})
-        Me.ComboBox41.Location = New System.Drawing.Point(20, 36)
+        Me.ComboBox41.Location = New System.Drawing.Point(6, 20)
         Me.ComboBox41.Name = "ComboBox41"
-        Me.ComboBox41.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox41.Size = New System.Drawing.Size(71, 21)
         Me.ComboBox41.TabIndex = 0
         Me.ComboBox41.Text = "RAIZ"
         '
@@ -11596,6 +11646,7 @@ Partial Class Form1
         'TextBox234
         '
         Me.TextBox234.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProdutosBindingSource, "estoqueatual_prod", true))
+        Me.TextBox234.Enabled = false
         Me.TextBox234.Location = New System.Drawing.Point(165, 55)
         Me.TextBox234.Name = "TextBox234"
         Me.TextBox234.Size = New System.Drawing.Size(132, 22)
@@ -29826,6 +29877,111 @@ Partial Class Form1
         Me.PrintPreviewDialog8.Name = "PrintPreviewDialog8"
         Me.PrintPreviewDialog8.Visible = false
         '
+        'DataGridViewTextBoxColumn367
+        '
+        Me.DataGridViewTextBoxColumn367.DataPropertyName = "cod_prod"
+        Me.DataGridViewTextBoxColumn367.HeaderText = "cod_prod"
+        Me.DataGridViewTextBoxColumn367.Name = "DataGridViewTextBoxColumn367"
+        Me.DataGridViewTextBoxColumn367.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn385
+        '
+        Me.DataGridViewTextBoxColumn385.DataPropertyName = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn385.HeaderText = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn385.Name = "DataGridViewTextBoxColumn385"
+        Me.DataGridViewTextBoxColumn385.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn386
+        '
+        Me.DataGridViewTextBoxColumn386.DataPropertyName = "linha_prod"
+        Me.DataGridViewTextBoxColumn386.HeaderText = "linha_prod"
+        Me.DataGridViewTextBoxColumn386.Name = "DataGridViewTextBoxColumn386"
+        Me.DataGridViewTextBoxColumn386.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn387
+        '
+        Me.DataGridViewTextBoxColumn387.DataPropertyName = "nome_prod"
+        Me.DataGridViewTextBoxColumn387.HeaderText = "nome_prod"
+        Me.DataGridViewTextBoxColumn387.Name = "DataGridViewTextBoxColumn387"
+        Me.DataGridViewTextBoxColumn387.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn388
+        '
+        Me.DataGridViewTextBoxColumn388.DataPropertyName = "cor_prod"
+        Me.DataGridViewTextBoxColumn388.HeaderText = "cor_prod"
+        Me.DataGridViewTextBoxColumn388.Name = "DataGridViewTextBoxColumn388"
+        Me.DataGridViewTextBoxColumn388.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn394
+        '
+        Me.DataGridViewTextBoxColumn394.DataPropertyName = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn394.HeaderText = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn394.Name = "DataGridViewTextBoxColumn394"
+        Me.DataGridViewTextBoxColumn394.ReadOnly = true
+        '
+        'estoquemin_prod
+        '
+        Me.estoquemin_prod.DataPropertyName = "estoquemin_prod"
+        Me.estoquemin_prod.HeaderText = "estoquemin_prod"
+        Me.estoquemin_prod.Name = "estoquemin_prod"
+        Me.estoquemin_prod.ReadOnly = true
+        '
+        'estaquemax_prod
+        '
+        Me.estaquemax_prod.DataPropertyName = "estaquemax_prod"
+        Me.estaquemax_prod.HeaderText = "estaquemax_prod"
+        Me.estaquemax_prod.Name = "estaquemax_prod"
+        Me.estaquemax_prod.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn946
+        '
+        Me.DataGridViewTextBoxColumn946.DataPropertyName = "MaxConsumoEstoque_prod"
+        Me.DataGridViewTextBoxColumn946.HeaderText = "MaxConsumoEstoque_prod"
+        Me.DataGridViewTextBoxColumn946.Name = "DataGridViewTextBoxColumn946"
+        Me.DataGridViewTextBoxColumn946.ReadOnly = true
+        '
+        'EstoqueMedio_prod
+        '
+        Me.EstoqueMedio_prod.DataPropertyName = "EstoqueMedio_prod"
+        Me.EstoqueMedio_prod.HeaderText = "EstoqueMedio_prod"
+        Me.EstoqueMedio_prod.Name = "EstoqueMedio_prod"
+        Me.EstoqueMedio_prod.ReadOnly = true
+        '
+        'EstoqueInicial_prod
+        '
+        Me.EstoqueInicial_prod.DataPropertyName = "EstoqueInicial_prod"
+        Me.EstoqueInicial_prod.HeaderText = "EstoqueInicial_prod"
+        Me.EstoqueInicial_prod.Name = "EstoqueInicial_prod"
+        Me.EstoqueInicial_prod.ReadOnly = true
+        '
+        'DataEstoqueInicial_prod
+        '
+        Me.DataEstoqueInicial_prod.DataPropertyName = "DataEstoqueInicial_prod"
+        Me.DataEstoqueInicial_prod.HeaderText = "DataEstoqueInicial_prod"
+        Me.DataEstoqueInicial_prod.Name = "DataEstoqueInicial_prod"
+        Me.DataEstoqueInicial_prod.ReadOnly = true
+        '
+        'ConsumoDaDataIncial_prod
+        '
+        Me.ConsumoDaDataIncial_prod.DataPropertyName = "ConsumoDaDataIncial_prod"
+        Me.ConsumoDaDataIncial_prod.HeaderText = "ConsumoDaDataIncial_prod"
+        Me.ConsumoDaDataIncial_prod.Name = "ConsumoDaDataIncial_prod"
+        Me.ConsumoDaDataIncial_prod.ReadOnly = true
+        '
+        'DataAtualizacaoEstoque_prod
+        '
+        Me.DataAtualizacaoEstoque_prod.DataPropertyName = "DataAtualizacaoEstoque_prod"
+        Me.DataAtualizacaoEstoque_prod.HeaderText = "DataAtualizacaoEstoque_prod"
+        Me.DataAtualizacaoEstoque_prod.Name = "DataAtualizacaoEstoque_prod"
+        Me.DataAtualizacaoEstoque_prod.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn1038
+        '
+        Me.DataGridViewTextBoxColumn1038.DataPropertyName = "RaizSimNao_prod"
+        Me.DataGridViewTextBoxColumn1038.HeaderText = "RaizSimNao_prod"
+        Me.DataGridViewTextBoxColumn1038.Name = "DataGridViewTextBoxColumn1038"
+        Me.DataGridViewTextBoxColumn1038.ReadOnly = true
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
@@ -30013,6 +30169,7 @@ Partial Class Form1
         Me.Panel1.ResumeLayout(false)
         Me.Panel1.PerformLayout
         Me.GroupBox126.ResumeLayout(false)
+        Me.GroupBox126.PerformLayout
         Me.cbx_forprod.ResumeLayout(false)
         Me.cbx_forprod.PerformLayout
         Me.GroupBox106.ResumeLayout(false)
@@ -33133,16 +33290,6 @@ End Sub
     Friend WithEvents TextBox339 As System.Windows.Forms.TextBox
     Friend WithEvents Label405 As System.Windows.Forms.Label
     Friend WithEvents Button115 As System.Windows.Forms.Button
-    Friend WithEvents DataGridViewTextBoxColumn367 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn385 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn386 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn387 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn388 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn394 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents estoquemin_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents estaquemax_prod As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn946 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EstoqueMedio_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TextBox340 As System.Windows.Forms.TextBox
     Friend WithEvents Label406 As System.Windows.Forms.Label
     Friend WithEvents DataGridViewTextBoxColumn35 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -33422,5 +33569,30 @@ End Sub
     Friend WithEvents TextBox285 As System.Windows.Forms.TextBox
     Friend WithEvents Label444 As System.Windows.Forms.Label
     Friend WithEvents PrintPreviewDialog8 As System.Windows.Forms.PrintPreviewDialog
+    Friend WithEvents Button125 As System.Windows.Forms.Button
+    Friend WithEvents Label450 As System.Windows.Forms.Label
+    Friend WithEvents Label449 As System.Windows.Forms.Label
+    Friend WithEvents Label448 As System.Windows.Forms.Label
+    Friend WithEvents Label447 As System.Windows.Forms.Label
+    Friend WithEvents TextBox369 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox368 As System.Windows.Forms.TextBox
+    Friend WithEvents DateTimePicker46 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents DateTimePicker45 As System.Windows.Forms.DateTimePicker
+    Friend WithEvents Button126 As System.Windows.Forms.Button
+    Friend WithEvents DataGridViewTextBoxColumn367 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn385 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn386 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn387 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn388 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn394 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents estoquemin_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents estaquemax_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn946 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EstoqueMedio_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EstoqueInicial_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataEstoqueInicial_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents ConsumoDaDataIncial_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataAtualizacaoEstoque_prod As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1038 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
