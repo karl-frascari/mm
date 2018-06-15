@@ -1317,6 +1317,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         tabpage_produtos.TabPages.Remove(TabPage_gridProd)
         tabpage_produtos.TabPages.Remove(tbpg_listapreco)
 
+        Cod_prodTextBox.Focus()
 
 
     End Sub
@@ -1646,7 +1647,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command = connection.CreateCommand()
 
             If flag = "incluir" Then
-                command.CommandText = "INSERT INTO produtos (EstoqueInicial_prod,DataEstoqueInicial_prod,ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod,PrecoMarketPlace_prod,PrecoSite_prod,PrecoMercadoLivreFull_prod,MkMarketPlace_prod,MkMercadoLivreFull_prod,MkSite_prod,RaizSimNao_prod,Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@EstoqueInicial_prod,@DataEstoqueInicial_prod,@ConsumoDaDataIncial_prod,@DataAtualizacaoEstoque_prod,@PrecoMarketPlace_prod,@PrecoSite_prod,@PrecoMercadoLivreFull_prod,@MkMarketPlace_prod,@MkMercadoLivreFull_prod,@MkSite_prod,@RaizSimNao_prod,@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
+                command.CommandText = "INSERT INTO produtos (MaxConsumoEstoque_prod,EstoqueInicial_prod,DataEstoqueInicial_prod,ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod,PrecoMarketPlace_prod,PrecoSite_prod,PrecoMercadoLivreFull_prod,MkMarketPlace_prod,MkMercadoLivreFull_prod,MkSite_prod,RaizSimNao_prod,Bugiganga_prod,CodComp1_prod,QtdeComp1_prod,CodComp2_prod,QtdeComp2_prod,CodComp3_prod,QtdeComp3_prod,CodComp4_prod,QtdeComp4_prod,CodComp5_prod,QtdeComp5_prod,EstoquePrateleira_prod,EmbalagemFabrica_prod,CodigoMlb_prod,cod_prod,cod_prodfor,fornecedor_prod,linha_prod,nome_prod,cor_prod,precovarejo_prod,precoatacado_prod,markup_prod,estoquemin_prod,estaquemax_prod,estoqueatual_prod,icms_prod,ipi_prod,peso_prod,custo_prod,pedcolocados_prod,pedencomendados_prod,abc_prod,tempoentragafor_prod,porcentagemfat_prod,classificfiscal_prod,tabelafiscal_prod,situacao_prod,foto_prod,codbarras_prod,DescontoFabrica_prod, Subtituicao_tributaria, Apelido_prod,MarkupNET_prod) Values (@MaxConsumoEstoque_prod,@EstoqueInicial_prod,@DataEstoqueInicial_prod,@ConsumoDaDataIncial_prod,@DataAtualizacaoEstoque_prod,@PrecoMarketPlace_prod,@PrecoSite_prod,@PrecoMercadoLivreFull_prod,@MkMarketPlace_prod,@MkMercadoLivreFull_prod,@MkSite_prod,@RaizSimNao_prod,@Bugiganga_prod,@CodComp1_prod,@QtdeComp1_prod,@CodComp2_prod,@QtdeComp2_prod,@CodComp3_prod,@QtdeComp3_prod,@CodComp4_prod,@QtdeComp4_prod,@CodComp5_prod,@QtdeComp5_prod,@EstoquePrateleira_prod,@EmbalagemFabrica_prod,@CodigoMlb_prod,@codprod,@codprodfor,@fornecedorprod,@linhaprod,@nomeprod,@corprod,@precovarejoprod,@precoatacadoprod,@markupprod,@estoqueminprod,@estaquemaxprod,@estoqueatualprod,@icmsprod,@ipi_prod,@pesoprod,@custoprod,@pedcolocadosprod,@pedencomendadosprod,@abcprod,@tempoentrgaforprod,@porcentagemfatprod,@classiffiscalprod,@tabelafiscalprod,@situacaoprod,@foto_prod,@codbarras_prod,@DescontoFabrica_prod, @Subtituicao_tributaria, @Apelido_prod, @MarkupNET_prod)"
             Else
                 command.CommandText = "update produtos set PrecoMarketPlace_prod=@PrecoMarketPlace_prod,PrecoSite_prod=@PrecoSite_prod,PrecoMercadoLivreFull_prod=@PrecoMercadoLivreFull_prod,MkMarketPlace_prod=@MkMarketPlace_prod,MkSite_prod=@MkSite_prod,MkMercadoLivreFull_prod=@MkMercadoLivreFull_prod,RaizSimNao_prod=@RaizSimNao_prod,Bugiganga_prod=@Bugiganga_prod,CodComp1_prod=@CodComp1_prod,QtdeComp1_prod=@QtdeComp1_prod,CodComp2_prod=@CodComp2_prod,QtdeComp2_prod=@QtdeComp2_prod,CodComp3_prod=@CodComp3_prod,QtdeComp3_prod=@QtdeComp3_prod,CodComp4_prod=@CodComp4_prod,QtdeComp4_prod=@QtdeComp4_prod,CodComp5_prod=@CodComp5_prod,QtdeComp5_prod=@QtdeComp5_prod,EstoquePrateleira_prod=@EstoquePrateleira_prod,EmbalagemFabrica_prod=@EmbalagemFabrica_prod,CodigoMlb_prod=@CodigoMlb_prod, cod_prod=@codprod,cod_prodfor=@codprodfor,fornecedor_prod=@fornecedorprod,linha_prod=@linhaprod,nome_prod=@nomeprod,cor_prod=@corprod,precovarejo_prod=@precovarejoprod,precoatacado_prod=@precoatacadoprod,markup_prod=@markupprod,estoquemin_prod=@estoqueminprod,estaquemax_prod=@estaquemaxprod,estoqueatual_prod=@estoqueatualprod,icms_prod=@icmsprod,ipi_prod=@ipi_prod,peso_prod=@pesoprod,custo_prod=@custoprod,pedcolocados_prod=@pedcolocadosprod,pedencomendados_prod=@pedencomendadosprod,abc_prod=@abcprod,tempoentragafor_prod=@tempoentrgaforprod,porcentagemfat_prod=@porcentagemfatprod,classificfiscal_prod=@classiffiscalprod,tabelafiscal_prod=@tabelafiscalprod,situacao_prod=@situacaoprod,foto_prod=@foto_prod,codbarras_prod=@codbarras_prod,DescontoFabrica_prod=@DescontoFabrica_prod,Subtituicao_tributaria=@Subtituicao_tributaria,Apelido_prod=@Apelido_prod,MarkupNET_prod=@MarkupNET_prod  where cod_prod=@codprod "
             End If
@@ -1784,7 +1785,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.Parameters.Add("@DataEstoqueInicial_prod", SqlDbType.Date).Value = Date.Now
             command.Parameters.Add("@ConsumoDaDataIncial_prod", SqlDbType.Float).Value = 0
             command.Parameters.Add("@DataAtualizacaoEstoque_prod", SqlDbType.Date).Value = Date.Now
-          
+            command.Parameters.Add("@MaxConsumoEstoque_prod", SqlDbType.Float).Value = 0
+
 
             ' a seguir comandos para gravar os ítens coletados do formulário ------------------
 
@@ -2490,6 +2492,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub btn_calcPrecos_Click(sender As Object, e As EventArgs) Handles btn_calcPrecos.Click
 
+        ' zerando variáveis
         If Ipi_prodTextBox.Text = "" Then
             Ipi_prodTextBox.Text = 0
         End If
@@ -2499,7 +2502,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If TextBox231.Text = "" Then
             TextBox231.Text = 0
         End If
-        ' -----------------------------------
         If TextBox327.Text = "" Then
             TextBox327.Text = 0
         End If
@@ -2514,7 +2516,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         '-----------------------------------
 
-        If Markup_prodTextBox.Text <> 0 And TextBox253.Text <> 0 And Custo_prodTextBox.Text <> 0 And Markup_prodTextBox.Text <> "0,00" And Custo_prodTextBox.Text <> "0,00" Then
+        If Markup_prodTextBox.Text <> 0 And Custo_prodTextBox.Text <> 0 And Markup_prodTextBox.Text <> "0,00" And Custo_prodTextBox.Text <> "0,00" Then
 
             Precoatacado_prodTextBox.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (TextBox253.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
             Precovarejo_prodTextBox.Text = (((Custo_prodTextBox.Text * (1 + (Ipi_prodTextBox.Text / 100))) / (1 - (Markup_prodTextBox.Text / 100)) * (1 + (TextBox231.Text / 100)))).ToString("F2")
@@ -15456,12 +15458,17 @@ Proxima:
     End Sub
 
     Private Sub ProdutosDataGridView6_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView6.DoubleClick
-
+       
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' -------------------------------------------------------------------------------------------
         Dim v_SelectRow As Integer
         v_SelectRow = Me.ProdutosDataGridView6.CurrentRow.Index
+        ' só permite produtos que são RAIZ
+        If ProdutosDataGridView6.Item(7, v_SelectRow).Value <> "RAIZ" Then
+            MessageBox.Show("Este não é um produto RAIZ")
+            Exit Sub
+        End If
         ' ------------------------------------------------------------------------------------------------------------------
         Dim ano As Integer = Today.Year
         Dim mes As Integer = Today.Month
@@ -15515,7 +15522,7 @@ Proxima:
         ' Gravar od dados da tabela
         Dim command As SqlCommand
         command = connection.CreateCommand()
-        command.CommandText = "INSERT INTO PedidoCompra (PrecoUnitario_PedidoCompra,Totalitem_PedidoCompra,CodigoProduto_PeidoCompra,Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@PrecoUnitario_PedidoCompra,@Totalitem_PedidoCompra,@CodigoProduto_PeidoCompra,@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
+        command.CommandText = "INSERT INTO PedidoCompra (SomadoEstoque_PedidoCompra,PrecoUnitario_PedidoCompra,Totalitem_PedidoCompra,CodigoProduto_PeidoCompra,Codigo_PedidoCompraString,Fornecedor_PedidoCompra,Codigo_PedidoCompra,Linha_PedidoCompra,Cor_PedidoCompra,CodProdFor_PedidoCompra,NomeProd_PedidoCompra,Quantidade_PedidoCompra,Data_PedidoCompra,EntregueSimNao_PedidoCompra) values (@SomadoEstoque_PedidoCompra,@PrecoUnitario_PedidoCompra,@Totalitem_PedidoCompra,@CodigoProduto_PeidoCompra,@Codigo_PedidoCompraString,@Fornecedor_PedidoCompra,@Codigo_PedidoCompra,@Linha_PedidoCompra,@Cor_PedidoCompra,@CodProdFor_PedidoCompra,@NomeProd_PedidoCompra,@Quantidade_PedidoCompra,@Data_PedidoCompra,@EntregueSimNao_PedidoCompra)"
         command.CommandType = CommandType.Text
 
         command.Parameters.Add("@Fornecedor_PedidoCompra", SqlDbType.VarChar, 50).Value = ProdutosDataGridView6.Item(4, v_SelectRow).Value
@@ -15534,6 +15541,7 @@ Proxima:
         Dim TLItem As Double = 0
         TLItem = (Precounitario * QuantidadeEntradaPedido) * 1.1
         command.Parameters.Add("@Totalitem_PedidoCompra", SqlDbType.VarChar, 50).Value = TLItem.ToString("F2")
+        command.Parameters.Add("@SomadoEstoque_PedidoCompra", SqlDbType.Float).Value = 0
 
 
         ' a seguir comandos para gravar os ítens coletados do formulário ------------------
@@ -15553,7 +15561,7 @@ Proxima:
         End Try
 
         'TextBox287.Text = ProdutosDataGridView6.Item(4, v_SelectRow).Value
-        
+
     End Sub
 
 
@@ -15651,7 +15659,6 @@ Proxima:
         v_SelectRow = Me.PedidoCompraDataGridView.CurrentRow.Index
 
         Dim EstoqueAtual As Integer = 0
-        Dim PedidosColocadosAtual As Integer = 0
         Dim CustoAtual As Double = 0
         Dim IpiProduto As Double = 0
         Dim MkProduto As Double = 0
@@ -15668,9 +15675,8 @@ Proxima:
         End If
 
         ' muda de Não Entregue para entregue e vice-versa.
-
         If RadioButton12.Checked = True Then
-        
+
             Dim command2 As SqlCommand
             command2 = connection.CreateCommand()
             command2.CommandText = "update PedidoCompra set EntregueSimNao_PedidoCompra =@EntregueSimNao_PedidoCompra  where id_PedidoCompra  = @id_PedidoCompra"
@@ -15691,36 +15697,33 @@ Proxima:
             Catch ex As Exception
                 MessageBox.Show(ex.ToString())
             End Try
-           
-        ' -----------------------------------------------------------------------------
-        ' -----------------------------------------------------------------------------
-        ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
-        command = connection.CreateCommand()
-        command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(1, v_SelectRow).Value & "'"
-        connection.Open()
-        Dim lrd As SqlDataReader = command.ExecuteReader()
 
-        While lrd.Read()
-            EstoqueAtual = lrd("estoqueatual_prod")
-            PedidosColocadosAtual = lrd("pedencomendados_prod")
-            CustoAtual = lrd("custo_prod")
-            IpiProduto = lrd("ipi_prod")
-            MkProduto = lrd("markup_prod")
-            If lrd("Subtituicao_tributaria") Is DBNull.Value Then
-                SubstTributaria = 1
-            Else
-                SubstTributaria = lrd("Subtituicao_tributaria")
-            End If
-            MarkupNET = lrd("MarkupNET_prod")
-        End While
-        connection.Close()
-        TextBox246.Text = EstoqueAtual
+            ' -----------------------------------------------------------------------------
+            ' -----------------------------------------------------------------------------
+            ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
+            command = connection.CreateCommand()
+            command.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(1, v_SelectRow).Value & "'"
+            connection.Open()
+            Dim lrd As SqlDataReader = command.ExecuteReader()
+
+            While lrd.Read()
+                EstoqueAtual = lrd("estoqueatual_prod")
+                CustoAtual = lrd("custo_prod")
+                IpiProduto = lrd("ipi_prod")
+                MkProduto = lrd("markup_prod")
+                If lrd("Subtituicao_tributaria") Is DBNull.Value Then
+                    SubstTributaria = 1
+                Else
+                    SubstTributaria = lrd("Subtituicao_tributaria")
+                End If
+                MarkupNET = lrd("MarkupNET_prod")
+            End While
+            connection.Close()
+            TextBox246.Text = EstoqueAtual
 
             Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
         End If
 
-        ' ********************************************************************************************
-        '*********************************************************************************************
         ' Pegar o preço de entrada
         If RadioButton12.Checked = True Then
             Dim PrecoEntradaNota As Double = 0
@@ -15756,7 +15759,6 @@ Proxima:
                         connection.Close()
                     Catch ex As Exception
                         MessageBox.Show(ex.ToString())
-
                     Finally
                         connection.Close()
                     End Try
@@ -15897,13 +15899,12 @@ proxima2:
                 MsgBox(ex.ToString)
             End Try
 
-            ' -----------------------------------
-            'somar quantidade da coluna da tabela balcão
+            'somar quantidade da coluna da tabela pedido compra de quantidade
             Dim quantidadePedidos As Decimal = 0
             For Each Linha As DataGridViewRow In Me.PedidoCompraDataGridView1.Rows
                 quantidadePedidos += Linha.Cells(7).Value
             Next
-            TextBox127.Text = quantidadePedidos.ToString("F2")
+            TextBox127.Text = (quantidadePedidos).ToString("F2")
 
             ' ----------------------------------------------------------------------------------
             ' Passando Textbox para integer
@@ -18125,6 +18126,94 @@ FIM:
             End If
         End If
 
+    End Sub
+
+    Private Sub Button127_Click(sender As Object, e As EventArgs) Handles Button127.Click
+
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> "123" Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+
+
+        ' calcula os pedidos em aberto que falta entregar
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' ********************************************************************************
+        PedidoCompraBindingSource.Filter = String.Empty
+
+        '*********************************************************************************
+        ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
+        Dim v_SelectRow As Integer = 0
+   
+        For v_SelectRow = 0 To PedidoCompraDataGridView.RowCount() - 1
+
+            If PedidoCompraDataGridView.Item(13, v_SelectRow).Value = "Entregue" And PedidoCompraDataGridView.Item(18, v_SelectRow).Value = 0 Then
+
+                Dim command2 As SqlCommand
+                command2 = connection.CreateCommand()
+                command2.CommandText = "select * from produtos where cod_prod = '" & PedidoCompraDataGridView.Item(1, v_SelectRow).Value & "'"
+                command2.CommandType = CommandType.Text
+                Dim EstoqueAtual As Double = 0
+                Dim EstoqueAtual2 As Double = 0
+
+                connection.Open()
+                Dim lrd As SqlDataReader = command2.ExecuteReader()
+
+                While lrd.Read()
+                    EstoqueAtual = lrd("estoqueatual_prod")
+                End While
+                connection.Close()
+
+                ' *******************************************************************************
+                ' gravando o consumo medio no arquivo de produtos
+                Dim command As SqlCommand
+                command = connection.CreateCommand()
+                command.CommandText = "update produtos set estoqueatual_prod=@estoqueatual_prod,EstoqueInicial_prod=@EstoqueInicial_prod,DataEstoqueInicial_prod=@DataEstoqueInicial_prod,ConsumoDaDataIncial_prod=@ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod=@DataAtualizacaoEstoque_prod where cod_prod=@cod_prod "
+                command.CommandType = CommandType.Text
+                command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(1, v_SelectRow).Value
+                EstoqueAtual2 = EstoqueAtual + PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+                command.Parameters.Add("@estoqueatual_prod", SqlDbType.Int).Value = EstoqueAtual2
+                command.Parameters.Add("@EstoqueInicial_prod", SqlDbType.Int).Value = EstoqueAtual2
+                command.Parameters.Add("@DataEstoqueInicial_prod", SqlDbType.Date).Value = Date.Now
+                command.Parameters.Add("@ConsumoDaDataIncial_prod", SqlDbType.Int).Value = 0
+                command.Parameters.Add("@DataAtualizacaoEstoque_prod", SqlDbType.Date).Value = Date.Now
+
+                Try
+                    connection.Open()
+                    command.ExecuteNonQuery()
+                    connection.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                Finally
+                    connection.Close()
+                End Try
+                ' ************************************************************************************
+                ' gravando quantas unidades foram acrescentadas no estoque
+                Dim command3 As SqlCommand
+                command3 = connection.CreateCommand()
+                command3.CommandText = "update PedidoCompra set SomadoEstoque_PedidoCompra=@SomadoEstoque_PedidoCompra where Id_PedidoCompra=@Id_PedidoCompra "
+                command3.CommandType = CommandType.Text
+                command3.Parameters.Add("@Id_PedidoCompra", SqlDbType.VarChar, 50).Value = PedidoCompraDataGridView.Item(4, v_SelectRow).Value
+                command3.Parameters.Add("@SomadoEstoque_PedidoCompra", SqlDbType.Float).Value = PedidoCompraDataGridView.Item(11, v_SelectRow).Value
+
+                Try
+                    connection.Open()
+                    command3.ExecuteNonQuery()
+                    connection.Close()
+                Catch ex As Exception
+                    MessageBox.Show(ex.ToString())
+                Finally
+                    connection.Close()
+                End Try
+            Else
+
+            End If
+        Next
+
+        Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
+        Me.ProdutosTableAdapter.Fill(Me.DataSetFinal.produtos)
     End Sub
 End Class
 

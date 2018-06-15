@@ -185,6 +185,7 @@ Partial Class Form1
         Me.TabControl2 = New System.Windows.Forms.TabControl()
         Me.tab_Kgiro = New System.Windows.Forms.TabPage()
         Me.Panel6 = New System.Windows.Forms.Panel()
+        Me.Button127 = New System.Windows.Forms.Button()
         Me.GroupBox114 = New System.Windows.Forms.GroupBox()
         Me.Label443 = New System.Windows.Forms.Label()
         Me.Label442 = New System.Windows.Forms.Label()
@@ -219,6 +220,7 @@ Partial Class Form1
         Me.CodigoProdutoPeidoCompraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrecoUnitarioPedidoCompraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TotalitemPedidoCompraDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SomadoEstoque_PedidoCompra = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PedidoCompraBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Button86 = New System.Windows.Forms.Button()
         Me.GroupBox108 = New System.Windows.Forms.GroupBox()
@@ -267,53 +269,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn817 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BalcaoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProdutosDataGridView6 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn238 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn239 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn240 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn241 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn242 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn243 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn244 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn245 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn246 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn247 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn248 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn249 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn250 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn251 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn252 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn253 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn254 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn255 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn256 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn257 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn258 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn259 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn260 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn261 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn262 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn263 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn264 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn265 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn266 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn267 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn268 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn269 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn270 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn271 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn307 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn308 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn309 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn787 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn788 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn789 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn790 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn791 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn792 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn793 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn794 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn795 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn949 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.GroupBox112 = New System.Windows.Forms.GroupBox()
         Me.TextBox326 = New System.Windows.Forms.TextBox()
@@ -505,20 +460,6 @@ Partial Class Form1
         Me.Label86 = New System.Windows.Forms.Label()
         Me.Panel44 = New System.Windows.Forms.Panel()
         Me.PedidoCompraDataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.DataGridViewTextBoxColumn818 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn819 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn820 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn821 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn822 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn823 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn824 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn825 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn826 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn827 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn828 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn829 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn830 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn831 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemPedidosDataGridView9 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn368 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn384 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -549,6 +490,21 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn640 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ItemPedidosBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.ProdutosDataGridView3 = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn367 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn385 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn386 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn387 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn388 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn394 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estoquemin_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.estaquemax_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn946 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstoqueMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EstoqueInicial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataEstoqueInicial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ConsumoDaDataIncial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataAtualizacaoEstoque_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1038 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BalcaoDataGridView5 = New System.Windows.Forms.DataGridView()
         Me.DataGridViewTextBoxColumn767 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn617 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -3016,21 +2972,69 @@ Partial Class Form1
         Me.ApelidoErradoTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.ApelidoErradoTableAdapter()
         Me.EnderecoEletronicoTableAdapter = New ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EnderecoEletronicoTableAdapter()
         Me.PrintPreviewDialog8 = New System.Windows.Forms.PrintPreviewDialog()
-        Me.DataGridViewTextBoxColumn367 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn385 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn386 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn387 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn388 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn394 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estoquemin_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.estaquemax_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn946 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstoqueMedio_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EstoqueInicial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataEstoqueInicial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ConsumoDaDataIncial_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataAtualizacaoEstoque_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1038 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn818 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn819 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn820 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn821 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn822 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn823 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn824 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn825 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn826 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn827 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn828 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn829 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn830 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn831 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1039 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn238 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn239 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn240 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn241 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn242 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn243 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn244 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn245 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn246 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn247 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn248 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn249 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn250 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn251 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn252 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn253 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn254 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn255 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn256 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn257 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn258 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn259 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn260 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn261 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn262 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn263 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn264 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn265 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn266 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn267 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn268 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn269 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn270 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn271 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn307 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn308 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn309 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn787 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn788 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn789 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn790 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn791 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn792 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn793 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn794 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn795 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn949 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1040 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Razaosocial_transLabel = New System.Windows.Forms.Label()
         Endereco_transLabel = New System.Windows.Forms.Label()
         Numerorua_transLabel = New System.Windows.Forms.Label()
@@ -4923,6 +4927,7 @@ Partial Class Form1
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Gold
+        Me.Panel6.Controls.Add(Me.Button127)
         Me.Panel6.Controls.Add(Me.GroupBox114)
         Me.Panel6.Controls.Add(Me.Button15)
         Me.Panel6.Controls.Add(Me.GroupBox115)
@@ -4940,6 +4945,15 @@ Partial Class Form1
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(1256, 650)
         Me.Panel6.TabIndex = 0
+        '
+        'Button127
+        '
+        Me.Button127.Location = New System.Drawing.Point(1074, 145)
+        Me.Button127.Name = "Button127"
+        Me.Button127.Size = New System.Drawing.Size(152, 35)
+        Me.Button127.TabIndex = 24
+        Me.Button127.Text = "Soma no Estoque"
+        Me.Button127.UseVisualStyleBackColor = true
         '
         'GroupBox114
         '
@@ -5106,7 +5120,7 @@ Partial Class Form1
         Me.PedidoCompraDataGridView.AutoGenerateColumns = false
         Me.PedidoCompraDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.PedidoCompraDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PedidoCompraDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo_PedidoCompraString, Me.CodigoProduto_PeidoCompra, Me.PrecoUnitario_PedidoCompra, Me.Totalitem_PedidoCompra, Me.IdPedidoCompraDataGridViewTextBoxColumn, Me.FornecedorPedidoCompraDataGridViewTextBoxColumn, Me.CodigoPedidoCompraDataGridViewTextBoxColumn, Me.LinhaPedidoCompraDataGridViewTextBoxColumn, Me.CorPedidoCompraDataGridViewTextBoxColumn, Me.CodProdForPedidoCompraDataGridViewTextBoxColumn, Me.NomeProdPedidoCompraDataGridViewTextBoxColumn, Me.QuantidadePedidoCompraDataGridViewTextBoxColumn, Me.DataPedidoCompraDataGridViewTextBoxColumn, Me.EntregueSimNaoPedidoCompraDataGridViewTextBoxColumn, Me.CodigoPedidoCompraStringDataGridViewTextBoxColumn, Me.CodigoProdutoPeidoCompraDataGridViewTextBoxColumn, Me.PrecoUnitarioPedidoCompraDataGridViewTextBoxColumn, Me.TotalitemPedidoCompraDataGridViewTextBoxColumn})
+        Me.PedidoCompraDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Codigo_PedidoCompraString, Me.CodigoProduto_PeidoCompra, Me.PrecoUnitario_PedidoCompra, Me.Totalitem_PedidoCompra, Me.IdPedidoCompraDataGridViewTextBoxColumn, Me.FornecedorPedidoCompraDataGridViewTextBoxColumn, Me.CodigoPedidoCompraDataGridViewTextBoxColumn, Me.LinhaPedidoCompraDataGridViewTextBoxColumn, Me.CorPedidoCompraDataGridViewTextBoxColumn, Me.CodProdForPedidoCompraDataGridViewTextBoxColumn, Me.NomeProdPedidoCompraDataGridViewTextBoxColumn, Me.QuantidadePedidoCompraDataGridViewTextBoxColumn, Me.DataPedidoCompraDataGridViewTextBoxColumn, Me.EntregueSimNaoPedidoCompraDataGridViewTextBoxColumn, Me.CodigoPedidoCompraStringDataGridViewTextBoxColumn, Me.CodigoProdutoPeidoCompraDataGridViewTextBoxColumn, Me.PrecoUnitarioPedidoCompraDataGridViewTextBoxColumn, Me.TotalitemPedidoCompraDataGridViewTextBoxColumn, Me.SomadoEstoque_PedidoCompra})
         Me.PedidoCompraDataGridView.DataSource = Me.PedidoCompraBindingSource
         Me.PedidoCompraDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.PedidoCompraDataGridView.Location = New System.Drawing.Point(0, 284)
@@ -5259,6 +5273,14 @@ Partial Class Form1
         Me.TotalitemPedidoCompraDataGridViewTextBoxColumn.Name = "TotalitemPedidoCompraDataGridViewTextBoxColumn"
         Me.TotalitemPedidoCompraDataGridViewTextBoxColumn.ReadOnly = true
         Me.TotalitemPedidoCompraDataGridViewTextBoxColumn.Width = 188
+        '
+        'SomadoEstoque_PedidoCompra
+        '
+        Me.SomadoEstoque_PedidoCompra.DataPropertyName = "SomadoEstoque_PedidoCompra"
+        Me.SomadoEstoque_PedidoCompra.HeaderText = "SomadoEstoque_PedidoCompra"
+        Me.SomadoEstoque_PedidoCompra.Name = "SomadoEstoque_PedidoCompra"
+        Me.SomadoEstoque_PedidoCompra.ReadOnly = true
+        Me.SomadoEstoque_PedidoCompra.Width = 234
         '
         'PedidoCompraBindingSource
         '
@@ -5668,7 +5690,7 @@ Partial Class Form1
         Me.ProdutosDataGridView6.AllowUserToDeleteRows = false
         Me.ProdutosDataGridView6.AutoGenerateColumns = false
         Me.ProdutosDataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProdutosDataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn238, Me.DataGridViewTextBoxColumn239, Me.DataGridViewTextBoxColumn240, Me.DataGridViewTextBoxColumn241, Me.DataGridViewTextBoxColumn242, Me.DataGridViewTextBoxColumn243, Me.DataGridViewTextBoxColumn244, Me.DataGridViewTextBoxColumn245, Me.DataGridViewTextBoxColumn246, Me.DataGridViewTextBoxColumn247, Me.DataGridViewTextBoxColumn248, Me.DataGridViewTextBoxColumn249, Me.DataGridViewTextBoxColumn250, Me.DataGridViewTextBoxColumn251, Me.DataGridViewTextBoxColumn252, Me.DataGridViewTextBoxColumn253, Me.DataGridViewTextBoxColumn254, Me.DataGridViewTextBoxColumn255, Me.DataGridViewTextBoxColumn256, Me.DataGridViewTextBoxColumn257, Me.DataGridViewTextBoxColumn258, Me.DataGridViewTextBoxColumn259, Me.DataGridViewTextBoxColumn260, Me.DataGridViewTextBoxColumn261, Me.DataGridViewTextBoxColumn262, Me.DataGridViewTextBoxColumn263, Me.DataGridViewTextBoxColumn264, Me.DataGridViewTextBoxColumn265, Me.DataGridViewTextBoxColumn266, Me.DataGridViewTextBoxColumn267, Me.DataGridViewTextBoxColumn268, Me.DataGridViewTextBoxColumn269, Me.DataGridViewTextBoxColumn270, Me.DataGridViewTextBoxColumn271, Me.DataGridViewTextBoxColumn307, Me.DataGridViewTextBoxColumn308, Me.DataGridViewTextBoxColumn309, Me.DataGridViewTextBoxColumn787, Me.DataGridViewTextBoxColumn788, Me.DataGridViewTextBoxColumn789, Me.DataGridViewTextBoxColumn790, Me.DataGridViewTextBoxColumn791, Me.DataGridViewTextBoxColumn792, Me.DataGridViewTextBoxColumn793, Me.DataGridViewTextBoxColumn794, Me.DataGridViewTextBoxColumn795, Me.DataGridViewTextBoxColumn949})
+        Me.ProdutosDataGridView6.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn238, Me.DataGridViewTextBoxColumn239, Me.DataGridViewTextBoxColumn240, Me.DataGridViewTextBoxColumn241, Me.DataGridViewTextBoxColumn242, Me.DataGridViewTextBoxColumn243, Me.DataGridViewTextBoxColumn244, Me.DataGridViewTextBoxColumn245, Me.DataGridViewTextBoxColumn246, Me.DataGridViewTextBoxColumn247, Me.DataGridViewTextBoxColumn248, Me.DataGridViewTextBoxColumn249, Me.DataGridViewTextBoxColumn250, Me.DataGridViewTextBoxColumn251, Me.DataGridViewTextBoxColumn252, Me.DataGridViewTextBoxColumn253, Me.DataGridViewTextBoxColumn254, Me.DataGridViewTextBoxColumn255, Me.DataGridViewTextBoxColumn256, Me.DataGridViewTextBoxColumn257, Me.DataGridViewTextBoxColumn258, Me.DataGridViewTextBoxColumn259, Me.DataGridViewTextBoxColumn260, Me.DataGridViewTextBoxColumn261, Me.DataGridViewTextBoxColumn262, Me.DataGridViewTextBoxColumn263, Me.DataGridViewTextBoxColumn264, Me.DataGridViewTextBoxColumn265, Me.DataGridViewTextBoxColumn266, Me.DataGridViewTextBoxColumn267, Me.DataGridViewTextBoxColumn268, Me.DataGridViewTextBoxColumn269, Me.DataGridViewTextBoxColumn270, Me.DataGridViewTextBoxColumn271, Me.DataGridViewTextBoxColumn307, Me.DataGridViewTextBoxColumn308, Me.DataGridViewTextBoxColumn309, Me.DataGridViewTextBoxColumn787, Me.DataGridViewTextBoxColumn788, Me.DataGridViewTextBoxColumn789, Me.DataGridViewTextBoxColumn790, Me.DataGridViewTextBoxColumn791, Me.DataGridViewTextBoxColumn792, Me.DataGridViewTextBoxColumn793, Me.DataGridViewTextBoxColumn794, Me.DataGridViewTextBoxColumn795, Me.DataGridViewTextBoxColumn949, Me.DataGridViewTextBoxColumn1040})
         Me.ProdutosDataGridView6.DataSource = Me.ProdutosBindingSource
         Me.ProdutosDataGridView6.Dock = System.Windows.Forms.DockStyle.Left
         Me.ProdutosDataGridView6.Location = New System.Drawing.Point(3, 215)
@@ -5676,335 +5698,6 @@ Partial Class Form1
         Me.ProdutosDataGridView6.ReadOnly = true
         Me.ProdutosDataGridView6.Size = New System.Drawing.Size(944, 438)
         Me.ProdutosDataGridView6.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn238
-        '
-        Me.DataGridViewTextBoxColumn238.DataPropertyName = "id_codprod"
-        Me.DataGridViewTextBoxColumn238.HeaderText = "id_codprod"
-        Me.DataGridViewTextBoxColumn238.Name = "DataGridViewTextBoxColumn238"
-        Me.DataGridViewTextBoxColumn238.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn239
-        '
-        Me.DataGridViewTextBoxColumn239.DataPropertyName = "cod_prod"
-        Me.DataGridViewTextBoxColumn239.HeaderText = "cod_prod"
-        Me.DataGridViewTextBoxColumn239.Name = "DataGridViewTextBoxColumn239"
-        Me.DataGridViewTextBoxColumn239.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn240
-        '
-        Me.DataGridViewTextBoxColumn240.DataPropertyName = "cod_prodfor"
-        Me.DataGridViewTextBoxColumn240.HeaderText = "cod_prodfor"
-        Me.DataGridViewTextBoxColumn240.Name = "DataGridViewTextBoxColumn240"
-        Me.DataGridViewTextBoxColumn240.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn241
-        '
-        Me.DataGridViewTextBoxColumn241.DataPropertyName = "codbarras_prod"
-        Me.DataGridViewTextBoxColumn241.HeaderText = "codbarras_prod"
-        Me.DataGridViewTextBoxColumn241.Name = "DataGridViewTextBoxColumn241"
-        Me.DataGridViewTextBoxColumn241.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn242
-        '
-        Me.DataGridViewTextBoxColumn242.DataPropertyName = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn242.HeaderText = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn242.Name = "DataGridViewTextBoxColumn242"
-        Me.DataGridViewTextBoxColumn242.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn243
-        '
-        Me.DataGridViewTextBoxColumn243.DataPropertyName = "linha_prod"
-        Me.DataGridViewTextBoxColumn243.HeaderText = "linha_prod"
-        Me.DataGridViewTextBoxColumn243.Name = "DataGridViewTextBoxColumn243"
-        Me.DataGridViewTextBoxColumn243.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn244
-        '
-        Me.DataGridViewTextBoxColumn244.DataPropertyName = "nome_prod"
-        Me.DataGridViewTextBoxColumn244.HeaderText = "nome_prod"
-        Me.DataGridViewTextBoxColumn244.Name = "DataGridViewTextBoxColumn244"
-        Me.DataGridViewTextBoxColumn244.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn245
-        '
-        Me.DataGridViewTextBoxColumn245.DataPropertyName = "cor_prod"
-        Me.DataGridViewTextBoxColumn245.HeaderText = "cor_prod"
-        Me.DataGridViewTextBoxColumn245.Name = "DataGridViewTextBoxColumn245"
-        Me.DataGridViewTextBoxColumn245.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn246
-        '
-        Me.DataGridViewTextBoxColumn246.DataPropertyName = "precovarejo_prod"
-        Me.DataGridViewTextBoxColumn246.HeaderText = "precovarejo_prod"
-        Me.DataGridViewTextBoxColumn246.Name = "DataGridViewTextBoxColumn246"
-        Me.DataGridViewTextBoxColumn246.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn247
-        '
-        Me.DataGridViewTextBoxColumn247.DataPropertyName = "precoatacado_prod"
-        Me.DataGridViewTextBoxColumn247.HeaderText = "precoatacado_prod"
-        Me.DataGridViewTextBoxColumn247.Name = "DataGridViewTextBoxColumn247"
-        Me.DataGridViewTextBoxColumn247.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn248
-        '
-        Me.DataGridViewTextBoxColumn248.DataPropertyName = "markup_prod"
-        Me.DataGridViewTextBoxColumn248.HeaderText = "markup_prod"
-        Me.DataGridViewTextBoxColumn248.Name = "DataGridViewTextBoxColumn248"
-        Me.DataGridViewTextBoxColumn248.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn249
-        '
-        Me.DataGridViewTextBoxColumn249.DataPropertyName = "estoquemin_prod"
-        Me.DataGridViewTextBoxColumn249.HeaderText = "estoquemin_prod"
-        Me.DataGridViewTextBoxColumn249.Name = "DataGridViewTextBoxColumn249"
-        Me.DataGridViewTextBoxColumn249.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn250
-        '
-        Me.DataGridViewTextBoxColumn250.DataPropertyName = "estaquemax_prod"
-        Me.DataGridViewTextBoxColumn250.HeaderText = "estaquemax_prod"
-        Me.DataGridViewTextBoxColumn250.Name = "DataGridViewTextBoxColumn250"
-        Me.DataGridViewTextBoxColumn250.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn251
-        '
-        Me.DataGridViewTextBoxColumn251.DataPropertyName = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn251.HeaderText = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn251.Name = "DataGridViewTextBoxColumn251"
-        Me.DataGridViewTextBoxColumn251.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn252
-        '
-        Me.DataGridViewTextBoxColumn252.DataPropertyName = "icms_prod"
-        Me.DataGridViewTextBoxColumn252.HeaderText = "icms_prod"
-        Me.DataGridViewTextBoxColumn252.Name = "DataGridViewTextBoxColumn252"
-        Me.DataGridViewTextBoxColumn252.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn253
-        '
-        Me.DataGridViewTextBoxColumn253.DataPropertyName = "peso_prod"
-        Me.DataGridViewTextBoxColumn253.HeaderText = "peso_prod"
-        Me.DataGridViewTextBoxColumn253.Name = "DataGridViewTextBoxColumn253"
-        Me.DataGridViewTextBoxColumn253.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn254
-        '
-        Me.DataGridViewTextBoxColumn254.DataPropertyName = "custo_prod"
-        Me.DataGridViewTextBoxColumn254.HeaderText = "custo_prod"
-        Me.DataGridViewTextBoxColumn254.Name = "DataGridViewTextBoxColumn254"
-        Me.DataGridViewTextBoxColumn254.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn255
-        '
-        Me.DataGridViewTextBoxColumn255.DataPropertyName = "pedcolocados_prod"
-        Me.DataGridViewTextBoxColumn255.HeaderText = "pedcolocados_prod"
-        Me.DataGridViewTextBoxColumn255.Name = "DataGridViewTextBoxColumn255"
-        Me.DataGridViewTextBoxColumn255.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn256
-        '
-        Me.DataGridViewTextBoxColumn256.DataPropertyName = "pedencomendados_prod"
-        Me.DataGridViewTextBoxColumn256.HeaderText = "pedencomendados_prod"
-        Me.DataGridViewTextBoxColumn256.Name = "DataGridViewTextBoxColumn256"
-        Me.DataGridViewTextBoxColumn256.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn257
-        '
-        Me.DataGridViewTextBoxColumn257.DataPropertyName = "abc_prod"
-        Me.DataGridViewTextBoxColumn257.HeaderText = "abc_prod"
-        Me.DataGridViewTextBoxColumn257.Name = "DataGridViewTextBoxColumn257"
-        Me.DataGridViewTextBoxColumn257.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn258
-        '
-        Me.DataGridViewTextBoxColumn258.DataPropertyName = "tempoentragafor_prod"
-        Me.DataGridViewTextBoxColumn258.HeaderText = "tempoentragafor_prod"
-        Me.DataGridViewTextBoxColumn258.Name = "DataGridViewTextBoxColumn258"
-        Me.DataGridViewTextBoxColumn258.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn259
-        '
-        Me.DataGridViewTextBoxColumn259.DataPropertyName = "porcentagemfat_prod"
-        Me.DataGridViewTextBoxColumn259.HeaderText = "porcentagemfat_prod"
-        Me.DataGridViewTextBoxColumn259.Name = "DataGridViewTextBoxColumn259"
-        Me.DataGridViewTextBoxColumn259.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn260
-        '
-        Me.DataGridViewTextBoxColumn260.DataPropertyName = "classificfiscal_prod"
-        Me.DataGridViewTextBoxColumn260.HeaderText = "classificfiscal_prod"
-        Me.DataGridViewTextBoxColumn260.Name = "DataGridViewTextBoxColumn260"
-        Me.DataGridViewTextBoxColumn260.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn261
-        '
-        Me.DataGridViewTextBoxColumn261.DataPropertyName = "tabelafiscal_prod"
-        Me.DataGridViewTextBoxColumn261.HeaderText = "tabelafiscal_prod"
-        Me.DataGridViewTextBoxColumn261.Name = "DataGridViewTextBoxColumn261"
-        Me.DataGridViewTextBoxColumn261.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn262
-        '
-        Me.DataGridViewTextBoxColumn262.DataPropertyName = "situacao_prod"
-        Me.DataGridViewTextBoxColumn262.HeaderText = "situacao_prod"
-        Me.DataGridViewTextBoxColumn262.Name = "DataGridViewTextBoxColumn262"
-        Me.DataGridViewTextBoxColumn262.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn263
-        '
-        Me.DataGridViewTextBoxColumn263.DataPropertyName = "ipi_prod"
-        Me.DataGridViewTextBoxColumn263.HeaderText = "ipi_prod"
-        Me.DataGridViewTextBoxColumn263.Name = "DataGridViewTextBoxColumn263"
-        Me.DataGridViewTextBoxColumn263.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn264
-        '
-        Me.DataGridViewTextBoxColumn264.DataPropertyName = "DescontoFabrica_prod"
-        Me.DataGridViewTextBoxColumn264.HeaderText = "DescontoFabrica_prod"
-        Me.DataGridViewTextBoxColumn264.Name = "DataGridViewTextBoxColumn264"
-        Me.DataGridViewTextBoxColumn264.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn265
-        '
-        Me.DataGridViewTextBoxColumn265.DataPropertyName = "ConsumoMedio_prod"
-        Me.DataGridViewTextBoxColumn265.HeaderText = "ConsumoMedio_prod"
-        Me.DataGridViewTextBoxColumn265.Name = "DataGridViewTextBoxColumn265"
-        Me.DataGridViewTextBoxColumn265.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn266
-        '
-        Me.DataGridViewTextBoxColumn266.DataPropertyName = "Subtituicao_tributaria"
-        Me.DataGridViewTextBoxColumn266.HeaderText = "Subtituicao_tributaria"
-        Me.DataGridViewTextBoxColumn266.Name = "DataGridViewTextBoxColumn266"
-        Me.DataGridViewTextBoxColumn266.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn267
-        '
-        Me.DataGridViewTextBoxColumn267.DataPropertyName = "EstoquePrateleira_prod"
-        Me.DataGridViewTextBoxColumn267.HeaderText = "EstoquePrateleira_prod"
-        Me.DataGridViewTextBoxColumn267.Name = "DataGridViewTextBoxColumn267"
-        Me.DataGridViewTextBoxColumn267.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn268
-        '
-        Me.DataGridViewTextBoxColumn268.DataPropertyName = "CrescimentoVendas_prod"
-        Me.DataGridViewTextBoxColumn268.HeaderText = "CrescimentoVendas_prod"
-        Me.DataGridViewTextBoxColumn268.Name = "DataGridViewTextBoxColumn268"
-        Me.DataGridViewTextBoxColumn268.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn269
-        '
-        Me.DataGridViewTextBoxColumn269.DataPropertyName = "EmbalagemFabrica_prod"
-        Me.DataGridViewTextBoxColumn269.HeaderText = "EmbalagemFabrica_prod"
-        Me.DataGridViewTextBoxColumn269.Name = "DataGridViewTextBoxColumn269"
-        Me.DataGridViewTextBoxColumn269.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn270
-        '
-        Me.DataGridViewTextBoxColumn270.DataPropertyName = "Apelido_prod"
-        Me.DataGridViewTextBoxColumn270.HeaderText = "Apelido_prod"
-        Me.DataGridViewTextBoxColumn270.Name = "DataGridViewTextBoxColumn270"
-        Me.DataGridViewTextBoxColumn270.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn271
-        '
-        Me.DataGridViewTextBoxColumn271.DataPropertyName = "MarkupNET_prod"
-        Me.DataGridViewTextBoxColumn271.HeaderText = "MarkupNET_prod"
-        Me.DataGridViewTextBoxColumn271.Name = "DataGridViewTextBoxColumn271"
-        Me.DataGridViewTextBoxColumn271.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn307
-        '
-        Me.DataGridViewTextBoxColumn307.DataPropertyName = "Bugiganga_prod"
-        Me.DataGridViewTextBoxColumn307.HeaderText = "Bugiganga_prod"
-        Me.DataGridViewTextBoxColumn307.Name = "DataGridViewTextBoxColumn307"
-        Me.DataGridViewTextBoxColumn307.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn308
-        '
-        Me.DataGridViewTextBoxColumn308.DataPropertyName = "CodigoMlb_prod"
-        Me.DataGridViewTextBoxColumn308.HeaderText = "CodigoMlb_prod"
-        Me.DataGridViewTextBoxColumn308.Name = "DataGridViewTextBoxColumn308"
-        Me.DataGridViewTextBoxColumn308.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn309
-        '
-        Me.DataGridViewTextBoxColumn309.DataPropertyName = "CodComp1_prod"
-        Me.DataGridViewTextBoxColumn309.HeaderText = "CodComp1_prod"
-        Me.DataGridViewTextBoxColumn309.Name = "DataGridViewTextBoxColumn309"
-        Me.DataGridViewTextBoxColumn309.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn787
-        '
-        Me.DataGridViewTextBoxColumn787.DataPropertyName = "QtdeComp1_prod"
-        Me.DataGridViewTextBoxColumn787.HeaderText = "QtdeComp1_prod"
-        Me.DataGridViewTextBoxColumn787.Name = "DataGridViewTextBoxColumn787"
-        Me.DataGridViewTextBoxColumn787.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn788
-        '
-        Me.DataGridViewTextBoxColumn788.DataPropertyName = "CodComp2_prod"
-        Me.DataGridViewTextBoxColumn788.HeaderText = "CodComp2_prod"
-        Me.DataGridViewTextBoxColumn788.Name = "DataGridViewTextBoxColumn788"
-        Me.DataGridViewTextBoxColumn788.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn789
-        '
-        Me.DataGridViewTextBoxColumn789.DataPropertyName = "QtdeComp2_prod"
-        Me.DataGridViewTextBoxColumn789.HeaderText = "QtdeComp2_prod"
-        Me.DataGridViewTextBoxColumn789.Name = "DataGridViewTextBoxColumn789"
-        Me.DataGridViewTextBoxColumn789.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn790
-        '
-        Me.DataGridViewTextBoxColumn790.DataPropertyName = "CodComp3_prod"
-        Me.DataGridViewTextBoxColumn790.HeaderText = "CodComp3_prod"
-        Me.DataGridViewTextBoxColumn790.Name = "DataGridViewTextBoxColumn790"
-        Me.DataGridViewTextBoxColumn790.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn791
-        '
-        Me.DataGridViewTextBoxColumn791.DataPropertyName = "QtdeComp3_prod"
-        Me.DataGridViewTextBoxColumn791.HeaderText = "QtdeComp3_prod"
-        Me.DataGridViewTextBoxColumn791.Name = "DataGridViewTextBoxColumn791"
-        Me.DataGridViewTextBoxColumn791.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn792
-        '
-        Me.DataGridViewTextBoxColumn792.DataPropertyName = "CodComp4_prod"
-        Me.DataGridViewTextBoxColumn792.HeaderText = "CodComp4_prod"
-        Me.DataGridViewTextBoxColumn792.Name = "DataGridViewTextBoxColumn792"
-        Me.DataGridViewTextBoxColumn792.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn793
-        '
-        Me.DataGridViewTextBoxColumn793.DataPropertyName = "QtdeComp4_prod"
-        Me.DataGridViewTextBoxColumn793.HeaderText = "QtdeComp4_prod"
-        Me.DataGridViewTextBoxColumn793.Name = "DataGridViewTextBoxColumn793"
-        Me.DataGridViewTextBoxColumn793.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn794
-        '
-        Me.DataGridViewTextBoxColumn794.DataPropertyName = "CodComp5_prod"
-        Me.DataGridViewTextBoxColumn794.HeaderText = "CodComp5_prod"
-        Me.DataGridViewTextBoxColumn794.Name = "DataGridViewTextBoxColumn794"
-        Me.DataGridViewTextBoxColumn794.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn795
-        '
-        Me.DataGridViewTextBoxColumn795.DataPropertyName = "QtdeComp5_prod"
-        Me.DataGridViewTextBoxColumn795.HeaderText = "QtdeComp5_prod"
-        Me.DataGridViewTextBoxColumn795.Name = "DataGridViewTextBoxColumn795"
-        Me.DataGridViewTextBoxColumn795.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn949
-        '
-        Me.DataGridViewTextBoxColumn949.DataPropertyName = "MaxConsumoEstoque_prod"
-        Me.DataGridViewTextBoxColumn949.HeaderText = "MaxConsumoEstoque_prod"
-        Me.DataGridViewTextBoxColumn949.Name = "DataGridViewTextBoxColumn949"
-        Me.DataGridViewTextBoxColumn949.ReadOnly = true
         '
         'Panel9
         '
@@ -7802,111 +7495,13 @@ Partial Class Form1
         Me.PedidoCompraDataGridView1.AllowUserToDeleteRows = false
         Me.PedidoCompraDataGridView1.AutoGenerateColumns = false
         Me.PedidoCompraDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.PedidoCompraDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn818, Me.DataGridViewTextBoxColumn819, Me.DataGridViewTextBoxColumn820, Me.DataGridViewTextBoxColumn821, Me.DataGridViewTextBoxColumn822, Me.DataGridViewTextBoxColumn823, Me.DataGridViewTextBoxColumn824, Me.DataGridViewTextBoxColumn825, Me.DataGridViewTextBoxColumn826, Me.DataGridViewTextBoxColumn827, Me.DataGridViewTextBoxColumn828, Me.DataGridViewTextBoxColumn829, Me.DataGridViewTextBoxColumn830, Me.DataGridViewTextBoxColumn831})
+        Me.PedidoCompraDataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn818, Me.DataGridViewTextBoxColumn819, Me.DataGridViewTextBoxColumn820, Me.DataGridViewTextBoxColumn821, Me.DataGridViewTextBoxColumn822, Me.DataGridViewTextBoxColumn823, Me.DataGridViewTextBoxColumn824, Me.DataGridViewTextBoxColumn825, Me.DataGridViewTextBoxColumn826, Me.DataGridViewTextBoxColumn827, Me.DataGridViewTextBoxColumn828, Me.DataGridViewTextBoxColumn829, Me.DataGridViewTextBoxColumn830, Me.DataGridViewTextBoxColumn831, Me.DataGridViewTextBoxColumn1039})
         Me.PedidoCompraDataGridView1.DataSource = Me.PedidoCompraBindingSource
         Me.PedidoCompraDataGridView1.Location = New System.Drawing.Point(749, 13)
         Me.PedidoCompraDataGridView1.Name = "PedidoCompraDataGridView1"
         Me.PedidoCompraDataGridView1.ReadOnly = true
         Me.PedidoCompraDataGridView1.Size = New System.Drawing.Size(171, 244)
         Me.PedidoCompraDataGridView1.TabIndex = 4
-        '
-        'DataGridViewTextBoxColumn818
-        '
-        Me.DataGridViewTextBoxColumn818.DataPropertyName = "Id_PedidoCompra"
-        Me.DataGridViewTextBoxColumn818.HeaderText = "Id_PedidoCompra"
-        Me.DataGridViewTextBoxColumn818.Name = "DataGridViewTextBoxColumn818"
-        Me.DataGridViewTextBoxColumn818.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn819
-        '
-        Me.DataGridViewTextBoxColumn819.DataPropertyName = "Fornecedor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn819.HeaderText = "Fornecedor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn819.Name = "DataGridViewTextBoxColumn819"
-        Me.DataGridViewTextBoxColumn819.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn820
-        '
-        Me.DataGridViewTextBoxColumn820.DataPropertyName = "Codigo_PedidoCompra"
-        Me.DataGridViewTextBoxColumn820.HeaderText = "Codigo_PedidoCompra"
-        Me.DataGridViewTextBoxColumn820.Name = "DataGridViewTextBoxColumn820"
-        Me.DataGridViewTextBoxColumn820.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn821
-        '
-        Me.DataGridViewTextBoxColumn821.DataPropertyName = "Linha_PedidoCompra"
-        Me.DataGridViewTextBoxColumn821.HeaderText = "Linha_PedidoCompra"
-        Me.DataGridViewTextBoxColumn821.Name = "DataGridViewTextBoxColumn821"
-        Me.DataGridViewTextBoxColumn821.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn822
-        '
-        Me.DataGridViewTextBoxColumn822.DataPropertyName = "Cor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn822.HeaderText = "Cor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn822.Name = "DataGridViewTextBoxColumn822"
-        Me.DataGridViewTextBoxColumn822.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn823
-        '
-        Me.DataGridViewTextBoxColumn823.DataPropertyName = "CodProdFor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn823.HeaderText = "CodProdFor_PedidoCompra"
-        Me.DataGridViewTextBoxColumn823.Name = "DataGridViewTextBoxColumn823"
-        Me.DataGridViewTextBoxColumn823.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn824
-        '
-        Me.DataGridViewTextBoxColumn824.DataPropertyName = "NomeProd_PedidoCompra"
-        Me.DataGridViewTextBoxColumn824.HeaderText = "NomeProd_PedidoCompra"
-        Me.DataGridViewTextBoxColumn824.Name = "DataGridViewTextBoxColumn824"
-        Me.DataGridViewTextBoxColumn824.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn825
-        '
-        Me.DataGridViewTextBoxColumn825.DataPropertyName = "Quantidade_PedidoCompra"
-        Me.DataGridViewTextBoxColumn825.HeaderText = "Quantidade_PedidoCompra"
-        Me.DataGridViewTextBoxColumn825.Name = "DataGridViewTextBoxColumn825"
-        Me.DataGridViewTextBoxColumn825.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn826
-        '
-        Me.DataGridViewTextBoxColumn826.DataPropertyName = "Data_PedidoCompra"
-        Me.DataGridViewTextBoxColumn826.HeaderText = "Data_PedidoCompra"
-        Me.DataGridViewTextBoxColumn826.Name = "DataGridViewTextBoxColumn826"
-        Me.DataGridViewTextBoxColumn826.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn827
-        '
-        Me.DataGridViewTextBoxColumn827.DataPropertyName = "EntregueSimNao_PedidoCompra"
-        Me.DataGridViewTextBoxColumn827.HeaderText = "EntregueSimNao_PedidoCompra"
-        Me.DataGridViewTextBoxColumn827.Name = "DataGridViewTextBoxColumn827"
-        Me.DataGridViewTextBoxColumn827.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn828
-        '
-        Me.DataGridViewTextBoxColumn828.DataPropertyName = "Codigo_PedidoCompraString"
-        Me.DataGridViewTextBoxColumn828.HeaderText = "Codigo_PedidoCompraString"
-        Me.DataGridViewTextBoxColumn828.Name = "DataGridViewTextBoxColumn828"
-        Me.DataGridViewTextBoxColumn828.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn829
-        '
-        Me.DataGridViewTextBoxColumn829.DataPropertyName = "CodigoProduto_PeidoCompra"
-        Me.DataGridViewTextBoxColumn829.HeaderText = "CodigoProduto_PeidoCompra"
-        Me.DataGridViewTextBoxColumn829.Name = "DataGridViewTextBoxColumn829"
-        Me.DataGridViewTextBoxColumn829.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn830
-        '
-        Me.DataGridViewTextBoxColumn830.DataPropertyName = "PrecoUnitario_PedidoCompra"
-        Me.DataGridViewTextBoxColumn830.HeaderText = "PrecoUnitario_PedidoCompra"
-        Me.DataGridViewTextBoxColumn830.Name = "DataGridViewTextBoxColumn830"
-        Me.DataGridViewTextBoxColumn830.ReadOnly = true
-        '
-        'DataGridViewTextBoxColumn831
-        '
-        Me.DataGridViewTextBoxColumn831.DataPropertyName = "Totalitem_PedidoCompra"
-        Me.DataGridViewTextBoxColumn831.HeaderText = "Totalitem_PedidoCompra"
-        Me.DataGridViewTextBoxColumn831.Name = "DataGridViewTextBoxColumn831"
-        Me.DataGridViewTextBoxColumn831.ReadOnly = true
         '
         'ItemPedidosDataGridView9
         '
@@ -8130,6 +7725,111 @@ Partial Class Form1
         Me.ProdutosDataGridView3.ReadOnly = true
         Me.ProdutosDataGridView3.Size = New System.Drawing.Size(603, 549)
         Me.ProdutosDataGridView3.TabIndex = 2
+        '
+        'DataGridViewTextBoxColumn367
+        '
+        Me.DataGridViewTextBoxColumn367.DataPropertyName = "cod_prod"
+        Me.DataGridViewTextBoxColumn367.HeaderText = "cod_prod"
+        Me.DataGridViewTextBoxColumn367.Name = "DataGridViewTextBoxColumn367"
+        Me.DataGridViewTextBoxColumn367.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn385
+        '
+        Me.DataGridViewTextBoxColumn385.DataPropertyName = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn385.HeaderText = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn385.Name = "DataGridViewTextBoxColumn385"
+        Me.DataGridViewTextBoxColumn385.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn386
+        '
+        Me.DataGridViewTextBoxColumn386.DataPropertyName = "linha_prod"
+        Me.DataGridViewTextBoxColumn386.HeaderText = "linha_prod"
+        Me.DataGridViewTextBoxColumn386.Name = "DataGridViewTextBoxColumn386"
+        Me.DataGridViewTextBoxColumn386.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn387
+        '
+        Me.DataGridViewTextBoxColumn387.DataPropertyName = "nome_prod"
+        Me.DataGridViewTextBoxColumn387.HeaderText = "nome_prod"
+        Me.DataGridViewTextBoxColumn387.Name = "DataGridViewTextBoxColumn387"
+        Me.DataGridViewTextBoxColumn387.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn388
+        '
+        Me.DataGridViewTextBoxColumn388.DataPropertyName = "cor_prod"
+        Me.DataGridViewTextBoxColumn388.HeaderText = "cor_prod"
+        Me.DataGridViewTextBoxColumn388.Name = "DataGridViewTextBoxColumn388"
+        Me.DataGridViewTextBoxColumn388.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn394
+        '
+        Me.DataGridViewTextBoxColumn394.DataPropertyName = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn394.HeaderText = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn394.Name = "DataGridViewTextBoxColumn394"
+        Me.DataGridViewTextBoxColumn394.ReadOnly = true
+        '
+        'estoquemin_prod
+        '
+        Me.estoquemin_prod.DataPropertyName = "estoquemin_prod"
+        Me.estoquemin_prod.HeaderText = "estoquemin_prod"
+        Me.estoquemin_prod.Name = "estoquemin_prod"
+        Me.estoquemin_prod.ReadOnly = true
+        '
+        'estaquemax_prod
+        '
+        Me.estaquemax_prod.DataPropertyName = "estaquemax_prod"
+        Me.estaquemax_prod.HeaderText = "estaquemax_prod"
+        Me.estaquemax_prod.Name = "estaquemax_prod"
+        Me.estaquemax_prod.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn946
+        '
+        Me.DataGridViewTextBoxColumn946.DataPropertyName = "MaxConsumoEstoque_prod"
+        Me.DataGridViewTextBoxColumn946.HeaderText = "MaxConsumoEstoque_prod"
+        Me.DataGridViewTextBoxColumn946.Name = "DataGridViewTextBoxColumn946"
+        Me.DataGridViewTextBoxColumn946.ReadOnly = true
+        '
+        'EstoqueMedio_prod
+        '
+        Me.EstoqueMedio_prod.DataPropertyName = "EstoqueMedio_prod"
+        Me.EstoqueMedio_prod.HeaderText = "EstoqueMedio_prod"
+        Me.EstoqueMedio_prod.Name = "EstoqueMedio_prod"
+        Me.EstoqueMedio_prod.ReadOnly = true
+        '
+        'EstoqueInicial_prod
+        '
+        Me.EstoqueInicial_prod.DataPropertyName = "EstoqueInicial_prod"
+        Me.EstoqueInicial_prod.HeaderText = "EstoqueInicial_prod"
+        Me.EstoqueInicial_prod.Name = "EstoqueInicial_prod"
+        Me.EstoqueInicial_prod.ReadOnly = true
+        '
+        'DataEstoqueInicial_prod
+        '
+        Me.DataEstoqueInicial_prod.DataPropertyName = "DataEstoqueInicial_prod"
+        Me.DataEstoqueInicial_prod.HeaderText = "DataEstoqueInicial_prod"
+        Me.DataEstoqueInicial_prod.Name = "DataEstoqueInicial_prod"
+        Me.DataEstoqueInicial_prod.ReadOnly = true
+        '
+        'ConsumoDaDataIncial_prod
+        '
+        Me.ConsumoDaDataIncial_prod.DataPropertyName = "ConsumoDaDataIncial_prod"
+        Me.ConsumoDaDataIncial_prod.HeaderText = "ConsumoDaDataIncial_prod"
+        Me.ConsumoDaDataIncial_prod.Name = "ConsumoDaDataIncial_prod"
+        Me.ConsumoDaDataIncial_prod.ReadOnly = true
+        '
+        'DataAtualizacaoEstoque_prod
+        '
+        Me.DataAtualizacaoEstoque_prod.DataPropertyName = "DataAtualizacaoEstoque_prod"
+        Me.DataAtualizacaoEstoque_prod.HeaderText = "DataAtualizacaoEstoque_prod"
+        Me.DataAtualizacaoEstoque_prod.Name = "DataAtualizacaoEstoque_prod"
+        Me.DataAtualizacaoEstoque_prod.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn1038
+        '
+        Me.DataGridViewTextBoxColumn1038.DataPropertyName = "RaizSimNao_prod"
+        Me.DataGridViewTextBoxColumn1038.HeaderText = "RaizSimNao_prod"
+        Me.DataGridViewTextBoxColumn1038.Name = "DataGridViewTextBoxColumn1038"
+        Me.DataGridViewTextBoxColumn1038.ReadOnly = true
         '
         'BalcaoDataGridView5
         '
@@ -29877,110 +29577,446 @@ Partial Class Form1
         Me.PrintPreviewDialog8.Name = "PrintPreviewDialog8"
         Me.PrintPreviewDialog8.Visible = false
         '
-        'DataGridViewTextBoxColumn367
+        'DataGridViewTextBoxColumn818
         '
-        Me.DataGridViewTextBoxColumn367.DataPropertyName = "cod_prod"
-        Me.DataGridViewTextBoxColumn367.HeaderText = "cod_prod"
-        Me.DataGridViewTextBoxColumn367.Name = "DataGridViewTextBoxColumn367"
-        Me.DataGridViewTextBoxColumn367.ReadOnly = true
+        Me.DataGridViewTextBoxColumn818.DataPropertyName = "Id_PedidoCompra"
+        Me.DataGridViewTextBoxColumn818.HeaderText = "Id_PedidoCompra"
+        Me.DataGridViewTextBoxColumn818.Name = "DataGridViewTextBoxColumn818"
+        Me.DataGridViewTextBoxColumn818.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn385
+        'DataGridViewTextBoxColumn819
         '
-        Me.DataGridViewTextBoxColumn385.DataPropertyName = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn385.HeaderText = "fornecedor_prod"
-        Me.DataGridViewTextBoxColumn385.Name = "DataGridViewTextBoxColumn385"
-        Me.DataGridViewTextBoxColumn385.ReadOnly = true
+        Me.DataGridViewTextBoxColumn819.DataPropertyName = "Fornecedor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn819.HeaderText = "Fornecedor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn819.Name = "DataGridViewTextBoxColumn819"
+        Me.DataGridViewTextBoxColumn819.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn386
+        'DataGridViewTextBoxColumn820
         '
-        Me.DataGridViewTextBoxColumn386.DataPropertyName = "linha_prod"
-        Me.DataGridViewTextBoxColumn386.HeaderText = "linha_prod"
-        Me.DataGridViewTextBoxColumn386.Name = "DataGridViewTextBoxColumn386"
-        Me.DataGridViewTextBoxColumn386.ReadOnly = true
+        Me.DataGridViewTextBoxColumn820.DataPropertyName = "Codigo_PedidoCompra"
+        Me.DataGridViewTextBoxColumn820.HeaderText = "Codigo_PedidoCompra"
+        Me.DataGridViewTextBoxColumn820.Name = "DataGridViewTextBoxColumn820"
+        Me.DataGridViewTextBoxColumn820.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn387
+        'DataGridViewTextBoxColumn821
         '
-        Me.DataGridViewTextBoxColumn387.DataPropertyName = "nome_prod"
-        Me.DataGridViewTextBoxColumn387.HeaderText = "nome_prod"
-        Me.DataGridViewTextBoxColumn387.Name = "DataGridViewTextBoxColumn387"
-        Me.DataGridViewTextBoxColumn387.ReadOnly = true
+        Me.DataGridViewTextBoxColumn821.DataPropertyName = "Linha_PedidoCompra"
+        Me.DataGridViewTextBoxColumn821.HeaderText = "Linha_PedidoCompra"
+        Me.DataGridViewTextBoxColumn821.Name = "DataGridViewTextBoxColumn821"
+        Me.DataGridViewTextBoxColumn821.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn388
+        'DataGridViewTextBoxColumn822
         '
-        Me.DataGridViewTextBoxColumn388.DataPropertyName = "cor_prod"
-        Me.DataGridViewTextBoxColumn388.HeaderText = "cor_prod"
-        Me.DataGridViewTextBoxColumn388.Name = "DataGridViewTextBoxColumn388"
-        Me.DataGridViewTextBoxColumn388.ReadOnly = true
+        Me.DataGridViewTextBoxColumn822.DataPropertyName = "Cor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn822.HeaderText = "Cor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn822.Name = "DataGridViewTextBoxColumn822"
+        Me.DataGridViewTextBoxColumn822.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn394
+        'DataGridViewTextBoxColumn823
         '
-        Me.DataGridViewTextBoxColumn394.DataPropertyName = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn394.HeaderText = "estoqueatual_prod"
-        Me.DataGridViewTextBoxColumn394.Name = "DataGridViewTextBoxColumn394"
-        Me.DataGridViewTextBoxColumn394.ReadOnly = true
+        Me.DataGridViewTextBoxColumn823.DataPropertyName = "CodProdFor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn823.HeaderText = "CodProdFor_PedidoCompra"
+        Me.DataGridViewTextBoxColumn823.Name = "DataGridViewTextBoxColumn823"
+        Me.DataGridViewTextBoxColumn823.ReadOnly = true
         '
-        'estoquemin_prod
+        'DataGridViewTextBoxColumn824
         '
-        Me.estoquemin_prod.DataPropertyName = "estoquemin_prod"
-        Me.estoquemin_prod.HeaderText = "estoquemin_prod"
-        Me.estoquemin_prod.Name = "estoquemin_prod"
-        Me.estoquemin_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn824.DataPropertyName = "NomeProd_PedidoCompra"
+        Me.DataGridViewTextBoxColumn824.HeaderText = "NomeProd_PedidoCompra"
+        Me.DataGridViewTextBoxColumn824.Name = "DataGridViewTextBoxColumn824"
+        Me.DataGridViewTextBoxColumn824.ReadOnly = true
         '
-        'estaquemax_prod
+        'DataGridViewTextBoxColumn825
         '
-        Me.estaquemax_prod.DataPropertyName = "estaquemax_prod"
-        Me.estaquemax_prod.HeaderText = "estaquemax_prod"
-        Me.estaquemax_prod.Name = "estaquemax_prod"
-        Me.estaquemax_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn825.DataPropertyName = "Quantidade_PedidoCompra"
+        Me.DataGridViewTextBoxColumn825.HeaderText = "Quantidade_PedidoCompra"
+        Me.DataGridViewTextBoxColumn825.Name = "DataGridViewTextBoxColumn825"
+        Me.DataGridViewTextBoxColumn825.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn946
+        'DataGridViewTextBoxColumn826
         '
-        Me.DataGridViewTextBoxColumn946.DataPropertyName = "MaxConsumoEstoque_prod"
-        Me.DataGridViewTextBoxColumn946.HeaderText = "MaxConsumoEstoque_prod"
-        Me.DataGridViewTextBoxColumn946.Name = "DataGridViewTextBoxColumn946"
-        Me.DataGridViewTextBoxColumn946.ReadOnly = true
+        Me.DataGridViewTextBoxColumn826.DataPropertyName = "Data_PedidoCompra"
+        Me.DataGridViewTextBoxColumn826.HeaderText = "Data_PedidoCompra"
+        Me.DataGridViewTextBoxColumn826.Name = "DataGridViewTextBoxColumn826"
+        Me.DataGridViewTextBoxColumn826.ReadOnly = true
         '
-        'EstoqueMedio_prod
+        'DataGridViewTextBoxColumn827
         '
-        Me.EstoqueMedio_prod.DataPropertyName = "EstoqueMedio_prod"
-        Me.EstoqueMedio_prod.HeaderText = "EstoqueMedio_prod"
-        Me.EstoqueMedio_prod.Name = "EstoqueMedio_prod"
-        Me.EstoqueMedio_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn827.DataPropertyName = "EntregueSimNao_PedidoCompra"
+        Me.DataGridViewTextBoxColumn827.HeaderText = "EntregueSimNao_PedidoCompra"
+        Me.DataGridViewTextBoxColumn827.Name = "DataGridViewTextBoxColumn827"
+        Me.DataGridViewTextBoxColumn827.ReadOnly = true
         '
-        'EstoqueInicial_prod
+        'DataGridViewTextBoxColumn828
         '
-        Me.EstoqueInicial_prod.DataPropertyName = "EstoqueInicial_prod"
-        Me.EstoqueInicial_prod.HeaderText = "EstoqueInicial_prod"
-        Me.EstoqueInicial_prod.Name = "EstoqueInicial_prod"
-        Me.EstoqueInicial_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn828.DataPropertyName = "Codigo_PedidoCompraString"
+        Me.DataGridViewTextBoxColumn828.HeaderText = "Codigo_PedidoCompraString"
+        Me.DataGridViewTextBoxColumn828.Name = "DataGridViewTextBoxColumn828"
+        Me.DataGridViewTextBoxColumn828.ReadOnly = true
         '
-        'DataEstoqueInicial_prod
+        'DataGridViewTextBoxColumn829
         '
-        Me.DataEstoqueInicial_prod.DataPropertyName = "DataEstoqueInicial_prod"
-        Me.DataEstoqueInicial_prod.HeaderText = "DataEstoqueInicial_prod"
-        Me.DataEstoqueInicial_prod.Name = "DataEstoqueInicial_prod"
-        Me.DataEstoqueInicial_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn829.DataPropertyName = "CodigoProduto_PeidoCompra"
+        Me.DataGridViewTextBoxColumn829.HeaderText = "CodigoProduto_PeidoCompra"
+        Me.DataGridViewTextBoxColumn829.Name = "DataGridViewTextBoxColumn829"
+        Me.DataGridViewTextBoxColumn829.ReadOnly = true
         '
-        'ConsumoDaDataIncial_prod
+        'DataGridViewTextBoxColumn830
         '
-        Me.ConsumoDaDataIncial_prod.DataPropertyName = "ConsumoDaDataIncial_prod"
-        Me.ConsumoDaDataIncial_prod.HeaderText = "ConsumoDaDataIncial_prod"
-        Me.ConsumoDaDataIncial_prod.Name = "ConsumoDaDataIncial_prod"
-        Me.ConsumoDaDataIncial_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn830.DataPropertyName = "PrecoUnitario_PedidoCompra"
+        Me.DataGridViewTextBoxColumn830.HeaderText = "PrecoUnitario_PedidoCompra"
+        Me.DataGridViewTextBoxColumn830.Name = "DataGridViewTextBoxColumn830"
+        Me.DataGridViewTextBoxColumn830.ReadOnly = true
         '
-        'DataAtualizacaoEstoque_prod
+        'DataGridViewTextBoxColumn831
         '
-        Me.DataAtualizacaoEstoque_prod.DataPropertyName = "DataAtualizacaoEstoque_prod"
-        Me.DataAtualizacaoEstoque_prod.HeaderText = "DataAtualizacaoEstoque_prod"
-        Me.DataAtualizacaoEstoque_prod.Name = "DataAtualizacaoEstoque_prod"
-        Me.DataAtualizacaoEstoque_prod.ReadOnly = true
+        Me.DataGridViewTextBoxColumn831.DataPropertyName = "Totalitem_PedidoCompra"
+        Me.DataGridViewTextBoxColumn831.HeaderText = "Totalitem_PedidoCompra"
+        Me.DataGridViewTextBoxColumn831.Name = "DataGridViewTextBoxColumn831"
+        Me.DataGridViewTextBoxColumn831.ReadOnly = true
         '
-        'DataGridViewTextBoxColumn1038
+        'DataGridViewTextBoxColumn1039
         '
-        Me.DataGridViewTextBoxColumn1038.DataPropertyName = "RaizSimNao_prod"
-        Me.DataGridViewTextBoxColumn1038.HeaderText = "RaizSimNao_prod"
-        Me.DataGridViewTextBoxColumn1038.Name = "DataGridViewTextBoxColumn1038"
-        Me.DataGridViewTextBoxColumn1038.ReadOnly = true
+        Me.DataGridViewTextBoxColumn1039.DataPropertyName = "SomadoEstoque_PedidoCompra"
+        Me.DataGridViewTextBoxColumn1039.HeaderText = "SomadoEstoque_PedidoCompra"
+        Me.DataGridViewTextBoxColumn1039.Name = "DataGridViewTextBoxColumn1039"
+        Me.DataGridViewTextBoxColumn1039.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn238
+        '
+        Me.DataGridViewTextBoxColumn238.DataPropertyName = "id_codprod"
+        Me.DataGridViewTextBoxColumn238.HeaderText = "id_codprod"
+        Me.DataGridViewTextBoxColumn238.Name = "DataGridViewTextBoxColumn238"
+        Me.DataGridViewTextBoxColumn238.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn239
+        '
+        Me.DataGridViewTextBoxColumn239.DataPropertyName = "cod_prod"
+        Me.DataGridViewTextBoxColumn239.HeaderText = "cod_prod"
+        Me.DataGridViewTextBoxColumn239.Name = "DataGridViewTextBoxColumn239"
+        Me.DataGridViewTextBoxColumn239.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn240
+        '
+        Me.DataGridViewTextBoxColumn240.DataPropertyName = "cod_prodfor"
+        Me.DataGridViewTextBoxColumn240.HeaderText = "cod_prodfor"
+        Me.DataGridViewTextBoxColumn240.Name = "DataGridViewTextBoxColumn240"
+        Me.DataGridViewTextBoxColumn240.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn241
+        '
+        Me.DataGridViewTextBoxColumn241.DataPropertyName = "codbarras_prod"
+        Me.DataGridViewTextBoxColumn241.HeaderText = "codbarras_prod"
+        Me.DataGridViewTextBoxColumn241.Name = "DataGridViewTextBoxColumn241"
+        Me.DataGridViewTextBoxColumn241.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn242
+        '
+        Me.DataGridViewTextBoxColumn242.DataPropertyName = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn242.HeaderText = "fornecedor_prod"
+        Me.DataGridViewTextBoxColumn242.Name = "DataGridViewTextBoxColumn242"
+        Me.DataGridViewTextBoxColumn242.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn243
+        '
+        Me.DataGridViewTextBoxColumn243.DataPropertyName = "linha_prod"
+        Me.DataGridViewTextBoxColumn243.HeaderText = "linha_prod"
+        Me.DataGridViewTextBoxColumn243.Name = "DataGridViewTextBoxColumn243"
+        Me.DataGridViewTextBoxColumn243.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn244
+        '
+        Me.DataGridViewTextBoxColumn244.DataPropertyName = "nome_prod"
+        Me.DataGridViewTextBoxColumn244.HeaderText = "nome_prod"
+        Me.DataGridViewTextBoxColumn244.Name = "DataGridViewTextBoxColumn244"
+        Me.DataGridViewTextBoxColumn244.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn245
+        '
+        Me.DataGridViewTextBoxColumn245.DataPropertyName = "cor_prod"
+        Me.DataGridViewTextBoxColumn245.HeaderText = "cor_prod"
+        Me.DataGridViewTextBoxColumn245.Name = "DataGridViewTextBoxColumn245"
+        Me.DataGridViewTextBoxColumn245.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn246
+        '
+        Me.DataGridViewTextBoxColumn246.DataPropertyName = "precovarejo_prod"
+        Me.DataGridViewTextBoxColumn246.HeaderText = "precovarejo_prod"
+        Me.DataGridViewTextBoxColumn246.Name = "DataGridViewTextBoxColumn246"
+        Me.DataGridViewTextBoxColumn246.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn247
+        '
+        Me.DataGridViewTextBoxColumn247.DataPropertyName = "precoatacado_prod"
+        Me.DataGridViewTextBoxColumn247.HeaderText = "precoatacado_prod"
+        Me.DataGridViewTextBoxColumn247.Name = "DataGridViewTextBoxColumn247"
+        Me.DataGridViewTextBoxColumn247.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn248
+        '
+        Me.DataGridViewTextBoxColumn248.DataPropertyName = "markup_prod"
+        Me.DataGridViewTextBoxColumn248.HeaderText = "markup_prod"
+        Me.DataGridViewTextBoxColumn248.Name = "DataGridViewTextBoxColumn248"
+        Me.DataGridViewTextBoxColumn248.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn249
+        '
+        Me.DataGridViewTextBoxColumn249.DataPropertyName = "estoquemin_prod"
+        Me.DataGridViewTextBoxColumn249.HeaderText = "estoquemin_prod"
+        Me.DataGridViewTextBoxColumn249.Name = "DataGridViewTextBoxColumn249"
+        Me.DataGridViewTextBoxColumn249.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn250
+        '
+        Me.DataGridViewTextBoxColumn250.DataPropertyName = "estaquemax_prod"
+        Me.DataGridViewTextBoxColumn250.HeaderText = "estaquemax_prod"
+        Me.DataGridViewTextBoxColumn250.Name = "DataGridViewTextBoxColumn250"
+        Me.DataGridViewTextBoxColumn250.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn251
+        '
+        Me.DataGridViewTextBoxColumn251.DataPropertyName = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn251.HeaderText = "estoqueatual_prod"
+        Me.DataGridViewTextBoxColumn251.Name = "DataGridViewTextBoxColumn251"
+        Me.DataGridViewTextBoxColumn251.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn252
+        '
+        Me.DataGridViewTextBoxColumn252.DataPropertyName = "icms_prod"
+        Me.DataGridViewTextBoxColumn252.HeaderText = "icms_prod"
+        Me.DataGridViewTextBoxColumn252.Name = "DataGridViewTextBoxColumn252"
+        Me.DataGridViewTextBoxColumn252.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn253
+        '
+        Me.DataGridViewTextBoxColumn253.DataPropertyName = "peso_prod"
+        Me.DataGridViewTextBoxColumn253.HeaderText = "peso_prod"
+        Me.DataGridViewTextBoxColumn253.Name = "DataGridViewTextBoxColumn253"
+        Me.DataGridViewTextBoxColumn253.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn254
+        '
+        Me.DataGridViewTextBoxColumn254.DataPropertyName = "custo_prod"
+        Me.DataGridViewTextBoxColumn254.HeaderText = "custo_prod"
+        Me.DataGridViewTextBoxColumn254.Name = "DataGridViewTextBoxColumn254"
+        Me.DataGridViewTextBoxColumn254.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn255
+        '
+        Me.DataGridViewTextBoxColumn255.DataPropertyName = "pedcolocados_prod"
+        Me.DataGridViewTextBoxColumn255.HeaderText = "pedcolocados_prod"
+        Me.DataGridViewTextBoxColumn255.Name = "DataGridViewTextBoxColumn255"
+        Me.DataGridViewTextBoxColumn255.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn256
+        '
+        Me.DataGridViewTextBoxColumn256.DataPropertyName = "pedencomendados_prod"
+        Me.DataGridViewTextBoxColumn256.HeaderText = "pedencomendados_prod"
+        Me.DataGridViewTextBoxColumn256.Name = "DataGridViewTextBoxColumn256"
+        Me.DataGridViewTextBoxColumn256.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn257
+        '
+        Me.DataGridViewTextBoxColumn257.DataPropertyName = "abc_prod"
+        Me.DataGridViewTextBoxColumn257.HeaderText = "abc_prod"
+        Me.DataGridViewTextBoxColumn257.Name = "DataGridViewTextBoxColumn257"
+        Me.DataGridViewTextBoxColumn257.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn258
+        '
+        Me.DataGridViewTextBoxColumn258.DataPropertyName = "tempoentragafor_prod"
+        Me.DataGridViewTextBoxColumn258.HeaderText = "tempoentragafor_prod"
+        Me.DataGridViewTextBoxColumn258.Name = "DataGridViewTextBoxColumn258"
+        Me.DataGridViewTextBoxColumn258.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn259
+        '
+        Me.DataGridViewTextBoxColumn259.DataPropertyName = "porcentagemfat_prod"
+        Me.DataGridViewTextBoxColumn259.HeaderText = "porcentagemfat_prod"
+        Me.DataGridViewTextBoxColumn259.Name = "DataGridViewTextBoxColumn259"
+        Me.DataGridViewTextBoxColumn259.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn260
+        '
+        Me.DataGridViewTextBoxColumn260.DataPropertyName = "classificfiscal_prod"
+        Me.DataGridViewTextBoxColumn260.HeaderText = "classificfiscal_prod"
+        Me.DataGridViewTextBoxColumn260.Name = "DataGridViewTextBoxColumn260"
+        Me.DataGridViewTextBoxColumn260.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn261
+        '
+        Me.DataGridViewTextBoxColumn261.DataPropertyName = "tabelafiscal_prod"
+        Me.DataGridViewTextBoxColumn261.HeaderText = "tabelafiscal_prod"
+        Me.DataGridViewTextBoxColumn261.Name = "DataGridViewTextBoxColumn261"
+        Me.DataGridViewTextBoxColumn261.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn262
+        '
+        Me.DataGridViewTextBoxColumn262.DataPropertyName = "situacao_prod"
+        Me.DataGridViewTextBoxColumn262.HeaderText = "situacao_prod"
+        Me.DataGridViewTextBoxColumn262.Name = "DataGridViewTextBoxColumn262"
+        Me.DataGridViewTextBoxColumn262.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn263
+        '
+        Me.DataGridViewTextBoxColumn263.DataPropertyName = "ipi_prod"
+        Me.DataGridViewTextBoxColumn263.HeaderText = "ipi_prod"
+        Me.DataGridViewTextBoxColumn263.Name = "DataGridViewTextBoxColumn263"
+        Me.DataGridViewTextBoxColumn263.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn264
+        '
+        Me.DataGridViewTextBoxColumn264.DataPropertyName = "DescontoFabrica_prod"
+        Me.DataGridViewTextBoxColumn264.HeaderText = "DescontoFabrica_prod"
+        Me.DataGridViewTextBoxColumn264.Name = "DataGridViewTextBoxColumn264"
+        Me.DataGridViewTextBoxColumn264.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn265
+        '
+        Me.DataGridViewTextBoxColumn265.DataPropertyName = "ConsumoMedio_prod"
+        Me.DataGridViewTextBoxColumn265.HeaderText = "ConsumoMedio_prod"
+        Me.DataGridViewTextBoxColumn265.Name = "DataGridViewTextBoxColumn265"
+        Me.DataGridViewTextBoxColumn265.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn266
+        '
+        Me.DataGridViewTextBoxColumn266.DataPropertyName = "Subtituicao_tributaria"
+        Me.DataGridViewTextBoxColumn266.HeaderText = "Subtituicao_tributaria"
+        Me.DataGridViewTextBoxColumn266.Name = "DataGridViewTextBoxColumn266"
+        Me.DataGridViewTextBoxColumn266.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn267
+        '
+        Me.DataGridViewTextBoxColumn267.DataPropertyName = "EstoquePrateleira_prod"
+        Me.DataGridViewTextBoxColumn267.HeaderText = "EstoquePrateleira_prod"
+        Me.DataGridViewTextBoxColumn267.Name = "DataGridViewTextBoxColumn267"
+        Me.DataGridViewTextBoxColumn267.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn268
+        '
+        Me.DataGridViewTextBoxColumn268.DataPropertyName = "CrescimentoVendas_prod"
+        Me.DataGridViewTextBoxColumn268.HeaderText = "CrescimentoVendas_prod"
+        Me.DataGridViewTextBoxColumn268.Name = "DataGridViewTextBoxColumn268"
+        Me.DataGridViewTextBoxColumn268.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn269
+        '
+        Me.DataGridViewTextBoxColumn269.DataPropertyName = "EmbalagemFabrica_prod"
+        Me.DataGridViewTextBoxColumn269.HeaderText = "EmbalagemFabrica_prod"
+        Me.DataGridViewTextBoxColumn269.Name = "DataGridViewTextBoxColumn269"
+        Me.DataGridViewTextBoxColumn269.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn270
+        '
+        Me.DataGridViewTextBoxColumn270.DataPropertyName = "Apelido_prod"
+        Me.DataGridViewTextBoxColumn270.HeaderText = "Apelido_prod"
+        Me.DataGridViewTextBoxColumn270.Name = "DataGridViewTextBoxColumn270"
+        Me.DataGridViewTextBoxColumn270.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn271
+        '
+        Me.DataGridViewTextBoxColumn271.DataPropertyName = "MarkupNET_prod"
+        Me.DataGridViewTextBoxColumn271.HeaderText = "MarkupNET_prod"
+        Me.DataGridViewTextBoxColumn271.Name = "DataGridViewTextBoxColumn271"
+        Me.DataGridViewTextBoxColumn271.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn307
+        '
+        Me.DataGridViewTextBoxColumn307.DataPropertyName = "Bugiganga_prod"
+        Me.DataGridViewTextBoxColumn307.HeaderText = "Bugiganga_prod"
+        Me.DataGridViewTextBoxColumn307.Name = "DataGridViewTextBoxColumn307"
+        Me.DataGridViewTextBoxColumn307.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn308
+        '
+        Me.DataGridViewTextBoxColumn308.DataPropertyName = "CodigoMlb_prod"
+        Me.DataGridViewTextBoxColumn308.HeaderText = "CodigoMlb_prod"
+        Me.DataGridViewTextBoxColumn308.Name = "DataGridViewTextBoxColumn308"
+        Me.DataGridViewTextBoxColumn308.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn309
+        '
+        Me.DataGridViewTextBoxColumn309.DataPropertyName = "CodComp1_prod"
+        Me.DataGridViewTextBoxColumn309.HeaderText = "CodComp1_prod"
+        Me.DataGridViewTextBoxColumn309.Name = "DataGridViewTextBoxColumn309"
+        Me.DataGridViewTextBoxColumn309.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn787
+        '
+        Me.DataGridViewTextBoxColumn787.DataPropertyName = "QtdeComp1_prod"
+        Me.DataGridViewTextBoxColumn787.HeaderText = "QtdeComp1_prod"
+        Me.DataGridViewTextBoxColumn787.Name = "DataGridViewTextBoxColumn787"
+        Me.DataGridViewTextBoxColumn787.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn788
+        '
+        Me.DataGridViewTextBoxColumn788.DataPropertyName = "CodComp2_prod"
+        Me.DataGridViewTextBoxColumn788.HeaderText = "CodComp2_prod"
+        Me.DataGridViewTextBoxColumn788.Name = "DataGridViewTextBoxColumn788"
+        Me.DataGridViewTextBoxColumn788.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn789
+        '
+        Me.DataGridViewTextBoxColumn789.DataPropertyName = "QtdeComp2_prod"
+        Me.DataGridViewTextBoxColumn789.HeaderText = "QtdeComp2_prod"
+        Me.DataGridViewTextBoxColumn789.Name = "DataGridViewTextBoxColumn789"
+        Me.DataGridViewTextBoxColumn789.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn790
+        '
+        Me.DataGridViewTextBoxColumn790.DataPropertyName = "CodComp3_prod"
+        Me.DataGridViewTextBoxColumn790.HeaderText = "CodComp3_prod"
+        Me.DataGridViewTextBoxColumn790.Name = "DataGridViewTextBoxColumn790"
+        Me.DataGridViewTextBoxColumn790.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn791
+        '
+        Me.DataGridViewTextBoxColumn791.DataPropertyName = "QtdeComp3_prod"
+        Me.DataGridViewTextBoxColumn791.HeaderText = "QtdeComp3_prod"
+        Me.DataGridViewTextBoxColumn791.Name = "DataGridViewTextBoxColumn791"
+        Me.DataGridViewTextBoxColumn791.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn792
+        '
+        Me.DataGridViewTextBoxColumn792.DataPropertyName = "CodComp4_prod"
+        Me.DataGridViewTextBoxColumn792.HeaderText = "CodComp4_prod"
+        Me.DataGridViewTextBoxColumn792.Name = "DataGridViewTextBoxColumn792"
+        Me.DataGridViewTextBoxColumn792.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn793
+        '
+        Me.DataGridViewTextBoxColumn793.DataPropertyName = "QtdeComp4_prod"
+        Me.DataGridViewTextBoxColumn793.HeaderText = "QtdeComp4_prod"
+        Me.DataGridViewTextBoxColumn793.Name = "DataGridViewTextBoxColumn793"
+        Me.DataGridViewTextBoxColumn793.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn794
+        '
+        Me.DataGridViewTextBoxColumn794.DataPropertyName = "CodComp5_prod"
+        Me.DataGridViewTextBoxColumn794.HeaderText = "CodComp5_prod"
+        Me.DataGridViewTextBoxColumn794.Name = "DataGridViewTextBoxColumn794"
+        Me.DataGridViewTextBoxColumn794.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn795
+        '
+        Me.DataGridViewTextBoxColumn795.DataPropertyName = "QtdeComp5_prod"
+        Me.DataGridViewTextBoxColumn795.HeaderText = "QtdeComp5_prod"
+        Me.DataGridViewTextBoxColumn795.Name = "DataGridViewTextBoxColumn795"
+        Me.DataGridViewTextBoxColumn795.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn949
+        '
+        Me.DataGridViewTextBoxColumn949.DataPropertyName = "MaxConsumoEstoque_prod"
+        Me.DataGridViewTextBoxColumn949.HeaderText = "MaxConsumoEstoque_prod"
+        Me.DataGridViewTextBoxColumn949.Name = "DataGridViewTextBoxColumn949"
+        Me.DataGridViewTextBoxColumn949.ReadOnly = true
+        '
+        'DataGridViewTextBoxColumn1040
+        '
+        Me.DataGridViewTextBoxColumn1040.DataPropertyName = "RaizSimNao_prod"
+        Me.DataGridViewTextBoxColumn1040.HeaderText = "RaizSimNao_prod"
+        Me.DataGridViewTextBoxColumn1040.Name = "DataGridViewTextBoxColumn1040"
+        Me.DataGridViewTextBoxColumn1040.ReadOnly = true
         '
         'Form1
         '
@@ -32700,20 +32736,6 @@ End Sub
     Friend WithEvents Button15 As System.Windows.Forms.Button
     Friend WithEvents Button96 As System.Windows.Forms.Button
     Friend WithEvents PedidoCompraDataGridView1 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn818 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn819 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn820 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn821 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn822 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn823 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn824 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn825 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn826 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn827 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn828 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn829 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn830 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn831 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NotasEntradaDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn65 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn72 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -32873,24 +32895,6 @@ End Sub
     Friend WithEvents ComboBox41 As System.Windows.Forms.ComboBox
     Friend WithEvents Button108 As System.Windows.Forms.Button
     Friend WithEvents Button109 As System.Windows.Forms.Button
-    Friend WithEvents Codigo_PedidoCompraString As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoProduto_PeidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PrecoUnitario_PedidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Totalitem_PedidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents IdPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents FornecedorPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents LinhaPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CorPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodProdForPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NomeProdPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents QuantidadePedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents EntregueSimNaoPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoPedidoCompraStringDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents CodigoProdutoPeidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents PrecoUnitarioPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents TotalitemPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Panel53 As System.Windows.Forms.Panel
     Friend WithEvents GroupBox128 As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox127 As System.Windows.Forms.GroupBox
@@ -33010,53 +33014,6 @@ End Sub
     Friend WithEvents Label74 As System.Windows.Forms.Label
     Friend WithEvents TextBox325 As System.Windows.Forms.TextBox
     Friend WithEvents Button113 As System.Windows.Forms.Button
-    Friend WithEvents DataGridViewTextBoxColumn238 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn239 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn240 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn241 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn242 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn243 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn244 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn245 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn246 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn247 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn248 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn249 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn250 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn251 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn252 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn253 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn254 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn255 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn256 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn257 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn258 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn259 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn260 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn261 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn262 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn263 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn264 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn265 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn266 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn267 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn268 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn269 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn270 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn271 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn307 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn308 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn309 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn787 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn788 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn789 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn790 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn791 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn792 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn793 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn794 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn795 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn949 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TextBox326 As System.Windows.Forms.TextBox
     Friend WithEvents Label76 As System.Windows.Forms.Label
     Friend WithEvents GroupBox133 As System.Windows.Forms.GroupBox
@@ -33594,5 +33551,88 @@ End Sub
     Friend WithEvents ConsumoDaDataIncial_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataAtualizacaoEstoque_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1038 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Button127 As System.Windows.Forms.Button
+    Friend WithEvents Codigo_PedidoCompraString As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodigoProduto_PeidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PrecoUnitario_PedidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Totalitem_PedidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents IdPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents FornecedorPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodigoPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents LinhaPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CorPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodProdForPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents NomeProdPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents QuantidadePedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents EntregueSimNaoPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodigoPedidoCompraStringDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents CodigoProdutoPeidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PrecoUnitarioPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents TotalitemPedidoCompraDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents SomadoEstoque_PedidoCompra As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn818 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn819 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn820 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn821 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn822 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn823 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn824 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn825 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn826 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn827 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn828 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn829 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn830 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn831 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1039 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn238 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn239 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn240 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn241 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn242 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn243 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn244 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn245 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn246 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn247 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn248 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn249 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn250 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn251 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn252 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn253 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn254 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn255 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn256 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn257 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn258 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn259 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn260 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn261 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn262 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn263 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn264 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn265 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn266 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn267 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn268 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn269 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn270 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn271 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn307 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn308 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn309 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn787 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn788 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn789 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn790 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn791 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn792 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn793 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn794 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn795 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn949 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn1040 As System.Windows.Forms.DataGridViewTextBoxColumn
 
 End Class
