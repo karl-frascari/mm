@@ -53,6 +53,7 @@ Public Class Form1
     Dim AcertarPreco As Boolean
     Dim PrecoAtacado As Boolean
     Dim FlagNotaentrada As String
+    Dim ContLinhaRelEst As Integer
 
     ' dados sobre o combobox da tela de relatório de despesas
     Dim IdentificacaoCombobox As Integer
@@ -550,12 +551,7 @@ Public Class Form1
 
         End If
 
-        If TabControl1.SelectedTab.ToString = "TabPage: {NFE}" Then
-
-            TabControl5.TabPages.Remove(TabPage14)
-            TabControl5.TabPages.Remove(TabPage20)
-
-        End If
+       
 
     End Sub
 
@@ -958,17 +954,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 NumeroNotaFull = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText
             End If
 
-            ' ***********************************************************************************************
-            'While lrd.Read()
-
-            '    'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
-            '    If xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:ide/nfe:nNF", ns).InnerText = lrd("NUmeroPedido2_VendasMlb").ToString Then
-            '        '  MessageBox.Show("A Nota " & nomeXml & " já foi cadastrada!!!!")
-            '        Exit Sub
-            '    End If
-
-            'End While
-            ' ***********************************************************************************************
+          
             While lrd.Read()
 
                 'REM verifica se cdigo existe banco do produto na nota para não gravar duas vezes
@@ -1230,7 +1216,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                     command.Parameters.Add("@CodigoMlb_VendasMlb", SqlDbType.VarChar, 50).Value = xmlDoc.SelectSingleNode("//nfe:infNFe/nfe:det[@nItem=" & a & "]/nfe:prod/nfe:cProd", ns).InnerText
                 End If
                 'Rem ---------- fim da leitura da nota xml
-                TotalValor = Quantidade * (Preco / 10000)
+                TotalValor = Quantidade * (Preco / 100000000)
                 command.Parameters.Add("@VrTotal_vendasMlb", SqlDbType.Float).Value = TotalValor
 
 
@@ -5326,14 +5312,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub ComboBox1_TextChanged(sender As Object, e As EventArgs) Handles ComboBox1.TextChanged
 
-        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox1.Text)
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%' and RaizSimNao_prod LIKE '{1}'", ComboBox1.Text, "RAIZ")
 
     End Sub
 
     Private Sub cbx_buscalinhaPedNFE_TextChanged(sender As Object, e As EventArgs) Handles cbx_buscalinhaPedNFE.TextChanged
 
-        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", cbx_buscalinhaPedNFE.Text, ComboBox1.Text)
-
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'  and RaizSimNao_prod LIKE '{2}'", cbx_buscalinhaPedNFE.Text, ComboBox1.Text, "RAIZ")
 
     End Sub
 
@@ -6732,234 +6717,234 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub btn_confimraNfeEmitida_Click(sender As Object, e As EventArgs) Handles btn_confimraNfeEmitida.Click
 
-        If cbx_CFOP.Text = "" Or cbx_VolNfeEmitidas.Text = "" Or TextBox30.Text = "" Then
-            MessageBox.Show("preencher o campo do CFOP e o Volume e frete")
-            Exit Sub
-        End If
-
-        'gravar dados no arquivo nfe Emitidas
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        Dim valor3 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
-            valor3 += Linha.Cells(11).Value
-        Next
-        Peso_nfeemitidaTextBox.Text = valor3
-
-
-        Try
-            'rem salvar os dados e criar o corpo da NOTA
-            command = connection.CreateCommand()
-            'command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
-            command.CommandType = CommandType.Text
-            command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = txt_nNfe.Text
-            command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = txt_codCli_pedNfe.Text
-            command.Parameters.Add("@RazaoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Nome.Text
-            command.Parameters.Add("@ENderecoCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Endereco.Text
-            command.Parameters.Add("@NUmeroRuacliente_nfeemitida", SqlDbType.VarChar, 50).Value = Numerodarua_pedTextBox.Text
-            command.Parameters.Add("@BairroCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Bairro.Text
-            command.Parameters.Add("@municipioCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Municipio.Text
-            command.Parameters.Add("@telefoneCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Telefone.Text
-            command.Parameters.Add("@emailCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Email.Text
-            command.Parameters.Add("@estadoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Estado.Text
-            command.Parameters.Add("@IBGEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = Txt_CodIBGE.Text
-            command.Parameters.Add("@CEPcliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Cep.Text
-            command.Parameters.Add("@pessoaFouJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = Txt_fisicajuridicaNFE.Text
-            command.Parameters.Add("@CPFcliente_nfeemitida", SqlDbType.VarChar, 50).Value = txt_cpfNFE.Text
-            command.Parameters.Add("@CNPJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Cnpj.Text
-            command.Parameters.Add("@IEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = msk_ieNFE.Text
-            command.Parameters.Add("@CodigoPedido_nfeemitida", SqlDbType.VarChar, 50).Value = txt_coPEdNFe.Text
-            command.Parameters.Add("@CFOP_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_CFOP.Text
-            command.Parameters.Add("@VOlumes_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_VolNfeEmitidas.Text
-            command.Parameters.Add("@Peso_nfeemitida", SqlDbType.Float).Value = Peso_nfeemitidaTextBox.Text
-            'command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox16.Text
-            command.Parameters.Add("@obsNota_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obsNFE.Text
-            command.Parameters.Add("@obxNCM_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obs2.Text
-            command.Parameters.Add("@ent_saida_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox31.Text
-            command.Parameters.Add("@descOperacao_nfeemitida", SqlDbType.VarChar, 50).Value = TextBox30.Text
-            command.Parameters.Add("@frete_nfeemitida", SqlDbType.VarChar, 50).Value = ComboBox12.Text
-            command.Parameters.Add("@CodTrans_nfeemitida", SqlDbType.VarChar, 50).Value = CodTrans_nfeemitidaTextBox.Text
-            command.Parameters.Add("@NomeTrans_nfeemitida", SqlDbType.VarChar, 50).Value = NomeTrans_nfeemitidaTextBox.Text
-      
-            ' aqui grava os dados referentes a ao vr da fatura 
-            command.Parameters.Add("@VrFatura_nfeemitida", SqlDbType.Float).Value = TextBox5.Text
-            command.Parameters.Add("@dataduplicata1_nfeemitida", SqlDbType.Date).Value = date_duplicata1.Text
-            command.Parameters.Add("@Vrduplicata1_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata1.Text
-
-
-            If txt_vrduplicata2.Text = "" Then
-                command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-                command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = 0
-
-            Else
-                command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = date_duplicata2.Text
-                command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata2.Text
-            End If
-
-            If txt_vrduplicata3.Text = "" Then
-                command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-                command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = 0
-
-            Else
-                command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = date_duplicata3.Text
-                command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata3.Text
-            End If
-
-            If txt_vrduplicata4.Text = "" Then
-                command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-                command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = 0
-            Else
-                command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = date_duplicata4.Text
-                command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata4.Text
-            End If
-            If txt_vrduplicata5.Text = "" Then
-                command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-                command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = 0
-
-            Else
-                command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = date_duplicata5.Text
-                command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata5.Text
-            End If
-
-            connection.Open()
-            command.ExecuteNonQuery()
-            connection.Close()
-
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString)
-
-        End Try
-
-
-        ' habilitar botões
-        Button17.Enabled = True
-        
-        Button21.Enabled = False
-        Button10.Enabled = False
-        btn_confimraNfeEmitida.Enabled = False
-        ' habilitar outros
-        cbx_CFOP.Enabled = False
-        D_Nome.Enabled = False
-        Numerodarua_pedTextBox.Enabled = False
-        D_Email.Enabled = False
-        txt_cpfNFE.Enabled = False
-        D_Endereco.Enabled = False
-        Txt_fisicajuridicaNFE.Enabled = False
-        D_Cep.Enabled = False
-        msk_ieNFE.Enabled = False
-        D_Bairro.Enabled = False
-        D_Telefone.Enabled = False
-        D_Cnpj.Enabled = False
-        D_Estado.Enabled = False
-        D_Municipio.Enabled = False
-        txt_obsNFE.Enabled = False
-        ComboBox12.Enabled = False
-        txt_obs2.Enabled = False
-        Button38.Enabled = False
-        ' Data_nfeemitidasDateTimePicker.Enabled = False
-
-
-        ' habilitar duplicatas
-        rdb_vezesduplicata1.Enabled = False
-        rdb_vezesduplicata2.Enabled = False
-        rdb_vezesduplicata3.Enabled = False
-        rdb_vezesduplicata4.Enabled = False
-        rdb_vezesduplicata5.Enabled = False
-        date_duplicata1.Enabled = False
-        txt_vrduplicata1.Enabled = False
-        date_duplicata2.Enabled = False
-        txt_vrduplicata2.Enabled = False
-        date_duplicata3.Enabled = False
-        txt_vrduplicata3.Enabled = False
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        cbx_VolNfeEmitidas.Enabled = False
-        txt_obsNFE.Enabled = False
-        txt_obs2.Enabled = False
-     
-        ' rem acertar o valor das duplicatas
-        txt_vrduplicata1.Text = txt_vrduplicata1.Text.Trim()
-        txt_vrduplicata1.Text = txt_vrduplicata1.Text.Replace(".", ",")
-        Dim VrDup1 As Double = txt_vrduplicata1.Text
-        Dim VrDup11 As String = VrDup1.ToString("F2")
-        'VrDup11 = VrDup11.Trim()
-        'VrDup11 = VrDup11.Replace(",", ".")
-        txt_vrduplicata1.Text = VrDup11
-        ' valor duplicata 2
-        txt_vrduplicata2.Text = txt_vrduplicata2.Text.Trim()
-        txt_vrduplicata2.Text = txt_vrduplicata2.Text.Replace(".", ",")
-        If txt_vrduplicata2.Text <> "" Then
-            Dim VrDup2 As Double = txt_vrduplicata2.Text
-            Dim VrDup22 As String = VrDup2.ToString("F2")
-            'VrDup22 = VrDup22.Trim()
-            'VrDup22 = VrDup22.Replace(",", ".")
-            txt_vrduplicata2.Text = VrDup22
-        End If
-        ' valor duplicata 3
-        txt_vrduplicata3.Text = txt_vrduplicata3.Text.Trim()
-        txt_vrduplicata3.Text = txt_vrduplicata3.Text.Replace(".", ",")
-        If txt_vrduplicata3.Text <> "" Then
-            Dim VrDup3 As Double = txt_vrduplicata3.Text
-            Dim VrDup33 As String = VrDup3.ToString("F2")
-            'VrDup33 = VrDup33.Trim()
-            'VrDup33 = VrDup33.Replace(",", ".")
-            txt_vrduplicata3.Text = VrDup33
-        End If
-        ' valor duplicata 4
-        txt_vrduplicata4.Text = txt_vrduplicata4.Text.Trim()
-        txt_vrduplicata4.Text = txt_vrduplicata4.Text.Replace(".", ",")
-        If txt_vrduplicata4.Text <> "" Then
-            Dim VrDup4 As Double = txt_vrduplicata4.Text
-            Dim VrDup44 As String = VrDup4.ToString("F2")
-            'VrDup44 = VrDup44.Trim()
-            'VrDup44 = VrDup44.Replace(",", ".")
-            txt_vrduplicata4.Text = VrDup44
-        End If
-        ' valor duplicata 5
-        txt_vrduplicata5.Text = txt_vrduplicata5.Text.Trim()
-        txt_vrduplicata5.Text = txt_vrduplicata5.Text.Replace(".", ",")
-        If txt_vrduplicata5.Text <> "" Then
-            Dim VrDup5 As Double = txt_vrduplicata5.Text
-            Dim VrDup55 As String = VrDup5.ToString("F2")
-            'VrDup55 = VrDup55.Trim()
-            'VrDup55 = VrDup55.Replace(",", ".") 
-            txt_vrduplicata5.Text = VrDup55
-        End If
-
-
-        ' habilitar gerar ou imprimir
-        'If TextBox16.Text = "FERNANDO FRASCARI EPP" Then
-        '    Button4.Enabled = True
-        '    Button20.Enabled = False
-        'Else
-        '    Button20.Enabled = True
-        '    Button4.Enabled = False
+        'If cbx_CFOP.Text = "" Or cbx_VolNfeEmitidas.Text = "" Or TextBox30.Text = "" Then
+        '    MessageBox.Show("preencher o campo do CFOP e o Volume e frete")
+        '    Exit Sub
         'End If
 
-        cbx_VolNfeEmitidas.Enabled = False
+        ''gravar dados no arquivo nfe Emitidas
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'Dim valor3 As Decimal = 0
+        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
+        '    valor3 += Linha.Cells(11).Value
+        'Next
+        'Peso_nfeemitidaTextBox.Text = valor3
 
-        Me.NFE_EmitidasTableAdapter.Fill(Me.DataSetFinal.NFE_Emitidas)
-        btn_buscarPedidoNFE.Enabled = True
-        'coloca A VISIBILIDADE DA PAGE DESEJADA
-        TabControl1.TabPages.Insert(0, tbpg_produtos)
-        TabControl1.TabPages.Insert(1, tbpg_clientes)
-        TabControl1.TabPages.Insert(2, tbpg_pedFornecedor)
-        TabControl1.TabPages.Insert(3, tbpg_transportadoras)
-        TabControl1.TabPages.Insert(4, tbpg_capitalGiro)
-        TabControl1.TabPages.Insert(5, tab_nfe)
-        TabControl1.TabPages.Insert(6, pedidos)
-        'TabControl1.TabPages.Insert(7, tabpage_NFE_e)
-        TabControl1.TabPages.Insert(8, Tabpg_cupomfiscal)
-        TabControl1.TabPages.Insert(9, tbpg_bkup)
-        TabControl1.TabPages.Insert(10, tbpg_orcamento)
-        TabControl1.TabPages.Insert(11, tbg_relatorios)
-        ' colocar as tbpg
-        'TabControl_NFE.TabPages.Insert(0, TabPage_NFE)
-        TabControl_NFE.TabPages.Remove(tbpg_transNfe)
-        TabControl_NFE.TabPages.Insert(1, TbPg_consultaNFe)
+
+        'Try
+        '    'rem salvar os dados e criar o corpo da NOTA
+        '    command = connection.CreateCommand()
+        '    'command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
+        '    command.CommandType = CommandType.Text
+        '    command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = txt_nNfe.Text
+        '    command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = txt_codCli_pedNfe.Text
+        '    command.Parameters.Add("@RazaoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Nome.Text
+        '    command.Parameters.Add("@ENderecoCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Endereco.Text
+        '    command.Parameters.Add("@NUmeroRuacliente_nfeemitida", SqlDbType.VarChar, 50).Value = Numerodarua_pedTextBox.Text
+        '    command.Parameters.Add("@BairroCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Bairro.Text
+        '    command.Parameters.Add("@municipioCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Municipio.Text
+        '    command.Parameters.Add("@telefoneCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Telefone.Text
+        '    command.Parameters.Add("@emailCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Email.Text
+        '    command.Parameters.Add("@estadoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Estado.Text
+        '    command.Parameters.Add("@IBGEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = Txt_CodIBGE.Text
+        '    command.Parameters.Add("@CEPcliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Cep.Text
+        '    command.Parameters.Add("@pessoaFouJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = Txt_fisicajuridicaNFE.Text
+        '    command.Parameters.Add("@CPFcliente_nfeemitida", SqlDbType.VarChar, 50).Value = txt_cpfNFE.Text
+        '    command.Parameters.Add("@CNPJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = D_Cnpj.Text
+        '    command.Parameters.Add("@IEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = msk_ieNFE.Text
+        '    command.Parameters.Add("@CodigoPedido_nfeemitida", SqlDbType.VarChar, 50).Value = txt_coPEdNFe.Text
+        '    command.Parameters.Add("@CFOP_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_CFOP.Text
+        '    command.Parameters.Add("@VOlumes_nfeemitida", SqlDbType.VarChar, 50).Value = cbx_VolNfeEmitidas.Text
+        '    command.Parameters.Add("@Peso_nfeemitida", SqlDbType.Float).Value = Peso_nfeemitidaTextBox.Text
+        '    'command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox16.Text
+        '    command.Parameters.Add("@obsNota_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obsNFE.Text
+        '    command.Parameters.Add("@obxNCM_nfeemitida", SqlDbType.VarChar, 50).Value = txt_obs2.Text
+        '    command.Parameters.Add("@ent_saida_nfeemitidas", SqlDbType.VarChar, 50).Value = TextBox31.Text
+        '    command.Parameters.Add("@descOperacao_nfeemitida", SqlDbType.VarChar, 50).Value = TextBox30.Text
+        '    command.Parameters.Add("@frete_nfeemitida", SqlDbType.VarChar, 50).Value = ComboBox12.Text
+        '    command.Parameters.Add("@CodTrans_nfeemitida", SqlDbType.VarChar, 50).Value = CodTrans_nfeemitidaTextBox.Text
+        '    command.Parameters.Add("@NomeTrans_nfeemitida", SqlDbType.VarChar, 50).Value = NomeTrans_nfeemitidaTextBox.Text
+
+        '    ' aqui grava os dados referentes a ao vr da fatura 
+        '    command.Parameters.Add("@VrFatura_nfeemitida", SqlDbType.Float).Value = TextBox5.Text
+        '    command.Parameters.Add("@dataduplicata1_nfeemitida", SqlDbType.Date).Value = date_duplicata1.Text
+        '    command.Parameters.Add("@Vrduplicata1_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata1.Text
+
+
+        '    If txt_vrduplicata2.Text = "" Then
+        '        command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '        command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = 0
+
+        '    Else
+        '        command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = date_duplicata2.Text
+        '        command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata2.Text
+        '    End If
+
+        '    If txt_vrduplicata3.Text = "" Then
+        '        command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '        command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = 0
+
+        '    Else
+        '        command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = date_duplicata3.Text
+        '        command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata3.Text
+        '    End If
+
+        '    If txt_vrduplicata4.Text = "" Then
+        '        command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '        command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = 0
+        '    Else
+        '        command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = date_duplicata4.Text
+        '        command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata4.Text
+        '    End If
+        '    If txt_vrduplicata5.Text = "" Then
+        '        command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '        command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = 0
+
+        '    Else
+        '        command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = date_duplicata5.Text
+        '        command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata5.Text
+        '    End If
+
+        '    connection.Open()
+        '    command.ExecuteNonQuery()
+        '    connection.Close()
+
+        'Catch ex As Exception
+
+        '    MessageBox.Show(ex.ToString)
+
+        'End Try
+
+
+        '' habilitar botões
+        'Button17.Enabled = True
+
+        'Button21.Enabled = False
+        'Button10.Enabled = False
+        'btn_confimraNfeEmitida.Enabled = False
+        '' habilitar outros
+        'cbx_CFOP.Enabled = False
+        'D_Nome.Enabled = False
+        'Numerodarua_pedTextBox.Enabled = False
+        'D_Email.Enabled = False
+        'txt_cpfNFE.Enabled = False
+        'D_Endereco.Enabled = False
+        'Txt_fisicajuridicaNFE.Enabled = False
+        'D_Cep.Enabled = False
+        'msk_ieNFE.Enabled = False
+        'D_Bairro.Enabled = False
+        'D_Telefone.Enabled = False
+        'D_Cnpj.Enabled = False
+        'D_Estado.Enabled = False
+        'D_Municipio.Enabled = False
+        'txt_obsNFE.Enabled = False
+        'ComboBox12.Enabled = False
+        'txt_obs2.Enabled = False
+        'Button38.Enabled = False
+        '' Data_nfeemitidasDateTimePicker.Enabled = False
+
+
+        '' habilitar duplicatas
+        'rdb_vezesduplicata1.Enabled = False
+        'rdb_vezesduplicata2.Enabled = False
+        'rdb_vezesduplicata3.Enabled = False
+        'rdb_vezesduplicata4.Enabled = False
+        'rdb_vezesduplicata5.Enabled = False
+        'date_duplicata1.Enabled = False
+        'txt_vrduplicata1.Enabled = False
+        'date_duplicata2.Enabled = False
+        'txt_vrduplicata2.Enabled = False
+        'date_duplicata3.Enabled = False
+        'txt_vrduplicata3.Enabled = False
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'cbx_VolNfeEmitidas.Enabled = False
+        'txt_obsNFE.Enabled = False
+        'txt_obs2.Enabled = False
+
+        '' rem acertar o valor das duplicatas
+        'txt_vrduplicata1.Text = txt_vrduplicata1.Text.Trim()
+        'txt_vrduplicata1.Text = txt_vrduplicata1.Text.Replace(".", ",")
+        'Dim VrDup1 As Double = txt_vrduplicata1.Text
+        'Dim VrDup11 As String = VrDup1.ToString("F2")
+        ''VrDup11 = VrDup11.Trim()
+        ''VrDup11 = VrDup11.Replace(",", ".")
+        'txt_vrduplicata1.Text = VrDup11
+        '' valor duplicata 2
+        'txt_vrduplicata2.Text = txt_vrduplicata2.Text.Trim()
+        'txt_vrduplicata2.Text = txt_vrduplicata2.Text.Replace(".", ",")
+        'If txt_vrduplicata2.Text <> "" Then
+        '    Dim VrDup2 As Double = txt_vrduplicata2.Text
+        '    Dim VrDup22 As String = VrDup2.ToString("F2")
+        '    'VrDup22 = VrDup22.Trim()
+        '    'VrDup22 = VrDup22.Replace(",", ".")
+        '    txt_vrduplicata2.Text = VrDup22
+        'End If
+        '' valor duplicata 3
+        'txt_vrduplicata3.Text = txt_vrduplicata3.Text.Trim()
+        'txt_vrduplicata3.Text = txt_vrduplicata3.Text.Replace(".", ",")
+        'If txt_vrduplicata3.Text <> "" Then
+        '    Dim VrDup3 As Double = txt_vrduplicata3.Text
+        '    Dim VrDup33 As String = VrDup3.ToString("F2")
+        '    'VrDup33 = VrDup33.Trim()
+        '    'VrDup33 = VrDup33.Replace(",", ".")
+        '    txt_vrduplicata3.Text = VrDup33
+        'End If
+        '' valor duplicata 4
+        'txt_vrduplicata4.Text = txt_vrduplicata4.Text.Trim()
+        'txt_vrduplicata4.Text = txt_vrduplicata4.Text.Replace(".", ",")
+        'If txt_vrduplicata4.Text <> "" Then
+        '    Dim VrDup4 As Double = txt_vrduplicata4.Text
+        '    Dim VrDup44 As String = VrDup4.ToString("F2")
+        '    'VrDup44 = VrDup44.Trim()
+        '    'VrDup44 = VrDup44.Replace(",", ".")
+        '    txt_vrduplicata4.Text = VrDup44
+        'End If
+        '' valor duplicata 5
+        'txt_vrduplicata5.Text = txt_vrduplicata5.Text.Trim()
+        'txt_vrduplicata5.Text = txt_vrduplicata5.Text.Replace(".", ",")
+        'If txt_vrduplicata5.Text <> "" Then
+        '    Dim VrDup5 As Double = txt_vrduplicata5.Text
+        '    Dim VrDup55 As String = VrDup5.ToString("F2")
+        '    'VrDup55 = VrDup55.Trim()
+        '    'VrDup55 = VrDup55.Replace(",", ".") 
+        '    txt_vrduplicata5.Text = VrDup55
+        'End If
+
+
+        '' habilitar gerar ou imprimir
+        ''If TextBox16.Text = "FERNANDO FRASCARI EPP" Then
+        ''    Button4.Enabled = True
+        ''    Button20.Enabled = False
+        ''Else
+        ''    Button20.Enabled = True
+        ''    Button4.Enabled = False
+        ''End If
+
+        'cbx_VolNfeEmitidas.Enabled = False
+
+        'Me.NFE_EmitidasTableAdapter.Fill(Me.DataSetFinal.NFE_Emitidas)
+        'btn_buscarPedidoNFE.Enabled = True
+        ''coloca A VISIBILIDADE DA PAGE DESEJADA
+        'TabControl1.TabPages.Insert(0, tbpg_produtos)
+        'TabControl1.TabPages.Insert(1, tbpg_clientes)
+        'TabControl1.TabPages.Insert(2, tbpg_pedFornecedor)
+        'TabControl1.TabPages.Insert(3, tbpg_transportadoras)
+        'TabControl1.TabPages.Insert(4, tbpg_capitalGiro)
+        'TabControl1.TabPages.Insert(5, tab_nfe)
+        'TabControl1.TabPages.Insert(6, pedidos)
+        ''TabControl1.TabPages.Insert(7, tabpage_NFE_e)
+        'TabControl1.TabPages.Insert(8, Tabpg_cupomfiscal)
+        'TabControl1.TabPages.Insert(9, tbpg_bkup)
+        'TabControl1.TabPages.Insert(10, tbpg_orcamento)
+        'TabControl1.TabPages.Insert(11, tbg_relatorios)
+        '' colocar as tbpg
+        ''TabControl_NFE.TabPages.Insert(0, TabPage_NFE)
+        'TabControl_NFE.TabPages.Remove(tbpg_transNfe)
+        'TabControl_NFE.TabPages.Insert(1, TbPg_consultaNFe)
 
     End Sub
 
@@ -7072,221 +7057,221 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         
 
 
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'Dim connection As SqlConnection
+        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
-        'coloca o ponteiro onde ele está clicado
-        Dim v_SelectRow2 As Integer
-        v_SelectRow2 = Me.NFE_EmitidasDataGridView.CurrentRow.Index
-
-
-        'variáveis do arquivo de clientes
-        Dim endereco As String
-        Dim numerorua_cliente As String
-        Dim bairro_cliente As String
-        Dim cidade_cliente As String
-        Dim estado_cliente As String
-        Dim cep_cliente As String
-        Dim cnpj_cliente As String
-        Dim insestadual_cliente As String
-        Dim telefone_cliente As String
-        Dim email_cliente As String
-        Dim codIBGE_cliente As String
-        Dim fj_cliente As String
-        Dim cpf_cliente As String
+        ''coloca o ponteiro onde ele está clicado
+        'Dim v_SelectRow2 As Integer
+        'v_SelectRow2 = Me.NFE_EmitidasDataGridView.CurrentRow.Index
 
 
-        Dim command As SqlCommand
-        command = connection.CreateCommand()
-        command.CommandText = "select * from cliente where id_cliente = '" & NFE_EmitidasDataGridView.Item(17, v_SelectRow2).Value & "'"
-        Try
-
-            connection.Open()
-            Dim lrd As SqlDataReader = command.ExecuteReader()
-            While lrd.Read
-
-                If lrd("cnpj_cliente") Is DBNull.Value Then
-                    cnpj_cliente = "0"
-                Else
-                    cnpj_cliente = lrd("cnpj_cliente")
-                End If
-
-                If lrd("endereco_cliente") Is DBNull.Value Then
-                    endereco = "0"
-                Else
-                    endereco = lrd("endereco_cliente")
-                End If
-
-                If lrd("numerorua_cliente") Is DBNull.Value Then
-                    numerorua_cliente = "0"
-                Else
-                    numerorua_cliente = lrd("numerorua_cliente")
-                End If
-
-                If lrd("bairro_cliente") Is DBNull.Value Then
-                    bairro_cliente = "0"
-                Else
-                    bairro_cliente = lrd("bairro_cliente")
-                End If
-
-                If lrd("cidade_cliente") Is DBNull.Value Then
-                    cidade_cliente = "0"
-                Else
-                    cidade_cliente = lrd("cidade_cliente")
-                End If
-
-                If lrd("estado_cliente") Is DBNull.Value Then
-                    estado_cliente = "0"
-                Else
-                    estado_cliente = lrd("estado_cliente")
-                End If
-
-                If lrd("cep_cliente") Is DBNull.Value Then
-                    cep_cliente = "0"
-                Else
-                    cep_cliente = lrd("cep_cliente")
-                End If
-                If lrd("insestadual_cliente") Is DBNull.Value Then
-                    insestadual_cliente = "0"
-                Else
-                    insestadual_cliente = lrd("insestadual_cliente")
-                End If
-
-                If lrd("telefone_cliente") Is DBNull.Value Then
-                    telefone_cliente = "0"
-                Else
-                    telefone_cliente = lrd("telefone_cliente")
-                End If
-                If lrd("email_cliente") Is DBNull.Value Then
-                    email_cliente = "0"
-                Else
-                    email_cliente = lrd("email_cliente")
-                End If
-                If lrd("codIBGE_cliente") Is DBNull.Value Then
-                    codIBGE_cliente = "0"
-                Else
-                    codIBGE_cliente = lrd("codIBGE_cliente")
-                End If
-
-                If lrd("fj_cliente") Is DBNull.Value Then
-                    fj_cliente = "0"
-                Else
-                    fj_cliente = lrd("fj_cliente")
-                End If
-
-                If lrd("cpf_cliente") Is DBNull.Value Then
-                    cpf_cliente = "0"
-                Else
-                    cpf_cliente = lrd("cpf_cliente")
-                End If
-            End While
-
-            connection.Close()
-        Catch ex As Exception
-
-            MessageBox.Show(ex.ToString)
-
-        End Try
-
-        Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
-        Try
-            ' passar parâmetros para a tela de notas
-            D_Nome.Text = NFE_EmitidasDataGridView.Item(2, v_SelectRow2).Value
-            D_Endereco.Text = endereco
-            Numerodarua_pedTextBox.Text = numerorua_cliente
-            D_Email.Text = email_cliente
-            D_Cep.Text = cep_cliente
-            D_Bairro.Text = bairro_cliente
-            D_Municipio.Text = cidade_cliente
-            D_Estado.Text = estado_cliente
-            D_Telefone.Text = telefone_cliente
-            D_Cnpj.Text = cnpj_cliente
-            txt_cpfNFE.Text = cpf_cliente
-            msk_ieNFE.Text = insestadual_cliente
-            Txt_CodIBGE.Text = codIBGE_cliente
-            Txt_fisicajuridicaNFE.Text = fj_cliente
-            txt_codCli_pedNfe.Text = NFE_EmitidasDataGridView.Item(17, v_SelectRow2).Value
-            txt_coPEdNFe.Text = NFE_EmitidasDataGridView.Item(1, v_SelectRow2).Value
-            txt_nNfe.Text = NFE_EmitidasDataGridView.Item(0, v_SelectRow2).Value
-            cbx_CFOP.Text = NFE_EmitidasDataGridView.Item(31, v_SelectRow2).Value
-            cbx_VolNfeEmitidas.Text = NFE_EmitidasDataGridView.Item(34, v_SelectRow2).Value
-            Vendedor_nfeemitidasTextBox.Text = NFE_EmitidasDataGridView.Item(36, v_SelectRow2).Value
-            txt_obsNFE.Text = NFE_EmitidasDataGridView.Item(37, v_SelectRow2).Value
-            txt_obs2.Text = NFE_EmitidasDataGridView.Item(38, v_SelectRow2).Value
-            TextBox31.Text = NFE_EmitidasDataGridView.Item(39, v_SelectRow2).Value
-            TextBox30.Text = NFE_EmitidasDataGridView.Item(40, v_SelectRow2).Value
-            ComboBox12.Text = NFE_EmitidasDataGridView.Item(41, v_SelectRow2).Value
-            'HoraEmitida_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(30, v_SelectRow2).Value
-            CodTrans_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(32, v_SelectRow2).Value
-            NomeTrans_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(33, v_SelectRow2).Value
-            'Data_nfeemitidasDateTimePicker.Text = NFE_EmitidasDataGridView.Item(42, v_SelectRow2).Value
+        ''variáveis do arquivo de clientes
+        'Dim endereco As String
+        'Dim numerorua_cliente As String
+        'Dim bairro_cliente As String
+        'Dim cidade_cliente As String
+        'Dim estado_cliente As String
+        'Dim cep_cliente As String
+        'Dim cnpj_cliente As String
+        'Dim insestadual_cliente As String
+        'Dim telefone_cliente As String
+        'Dim email_cliente As String
+        'Dim codIBGE_cliente As String
+        'Dim fj_cliente As String
+        'Dim cpf_cliente As String
 
 
-        Catch ex As Exception
+        'Dim command As SqlCommand
+        'command = connection.CreateCommand()
+        'command.CommandText = "select * from cliente where id_cliente = '" & NFE_EmitidasDataGridView.Item(17, v_SelectRow2).Value & "'"
+        'Try
 
-            MessageBox.Show(ex.ToString)
+        '    connection.Open()
+        '    Dim lrd As SqlDataReader = command.ExecuteReader()
+        '    While lrd.Read
 
-        End Try
+        '        If lrd("cnpj_cliente") Is DBNull.Value Then
+        '            cnpj_cliente = "0"
+        '        Else
+        '            cnpj_cliente = lrd("cnpj_cliente")
+        '        End If
 
-        ' calcula o vr da nota
-        Dim valor2 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
-            valor2 += Linha.Cells(5).Value
-        Next
-        TextBox5.Text = valor2
-        ' calcula o peso da nota
-        Dim valor3 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
-            valor3 += Linha.Cells(11).Value
-        Next
-        Peso_nfeemitidaTextBox.Text = valor3
+        '        If lrd("endereco_cliente") Is DBNull.Value Then
+        '            endereco = "0"
+        '        Else
+        '            endereco = lrd("endereco_cliente")
+        '        End If
+
+        '        If lrd("numerorua_cliente") Is DBNull.Value Then
+        '            numerorua_cliente = "0"
+        '        Else
+        '            numerorua_cliente = lrd("numerorua_cliente")
+        '        End If
+
+        '        If lrd("bairro_cliente") Is DBNull.Value Then
+        '            bairro_cliente = "0"
+        '        Else
+        '            bairro_cliente = lrd("bairro_cliente")
+        '        End If
+
+        '        If lrd("cidade_cliente") Is DBNull.Value Then
+        '            cidade_cliente = "0"
+        '        Else
+        '            cidade_cliente = lrd("cidade_cliente")
+        '        End If
+
+        '        If lrd("estado_cliente") Is DBNull.Value Then
+        '            estado_cliente = "0"
+        '        Else
+        '            estado_cliente = lrd("estado_cliente")
+        '        End If
+
+        '        If lrd("cep_cliente") Is DBNull.Value Then
+        '            cep_cliente = "0"
+        '        Else
+        '            cep_cliente = lrd("cep_cliente")
+        '        End If
+        '        If lrd("insestadual_cliente") Is DBNull.Value Then
+        '            insestadual_cliente = "0"
+        '        Else
+        '            insestadual_cliente = lrd("insestadual_cliente")
+        '        End If
+
+        '        If lrd("telefone_cliente") Is DBNull.Value Then
+        '            telefone_cliente = "0"
+        '        Else
+        '            telefone_cliente = lrd("telefone_cliente")
+        '        End If
+        '        If lrd("email_cliente") Is DBNull.Value Then
+        '            email_cliente = "0"
+        '        Else
+        '            email_cliente = lrd("email_cliente")
+        '        End If
+        '        If lrd("codIBGE_cliente") Is DBNull.Value Then
+        '            codIBGE_cliente = "0"
+        '        Else
+        '            codIBGE_cliente = lrd("codIBGE_cliente")
+        '        End If
+
+        '        If lrd("fj_cliente") Is DBNull.Value Then
+        '            fj_cliente = "0"
+        '        Else
+        '            fj_cliente = lrd("fj_cliente")
+        '        End If
+
+        '        If lrd("cpf_cliente") Is DBNull.Value Then
+        '            cpf_cliente = "0"
+        '        Else
+        '            cpf_cliente = lrd("cpf_cliente")
+        '        End If
+        '    End While
+
+        '    connection.Close()
+        'Catch ex As Exception
+
+        '    MessageBox.Show(ex.ToString)
+
+        'End Try
+
+        'Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
+        'Try
+        '    ' passar parâmetros para a tela de notas
+        '    D_Nome.Text = NFE_EmitidasDataGridView.Item(2, v_SelectRow2).Value
+        '    D_Endereco.Text = endereco
+        '    Numerodarua_pedTextBox.Text = numerorua_cliente
+        '    D_Email.Text = email_cliente
+        '    D_Cep.Text = cep_cliente
+        '    D_Bairro.Text = bairro_cliente
+        '    D_Municipio.Text = cidade_cliente
+        '    D_Estado.Text = estado_cliente
+        '    D_Telefone.Text = telefone_cliente
+        '    D_Cnpj.Text = cnpj_cliente
+        '    txt_cpfNFE.Text = cpf_cliente
+        '    msk_ieNFE.Text = insestadual_cliente
+        '    Txt_CodIBGE.Text = codIBGE_cliente
+        '    Txt_fisicajuridicaNFE.Text = fj_cliente
+        '    txt_codCli_pedNfe.Text = NFE_EmitidasDataGridView.Item(17, v_SelectRow2).Value
+        '    txt_coPEdNFe.Text = NFE_EmitidasDataGridView.Item(1, v_SelectRow2).Value
+        '    txt_nNfe.Text = NFE_EmitidasDataGridView.Item(0, v_SelectRow2).Value
+        '    cbx_CFOP.Text = NFE_EmitidasDataGridView.Item(31, v_SelectRow2).Value
+        '    cbx_VolNfeEmitidas.Text = NFE_EmitidasDataGridView.Item(34, v_SelectRow2).Value
+        '    Vendedor_nfeemitidasTextBox.Text = NFE_EmitidasDataGridView.Item(36, v_SelectRow2).Value
+        '    txt_obsNFE.Text = NFE_EmitidasDataGridView.Item(37, v_SelectRow2).Value
+        '    txt_obs2.Text = NFE_EmitidasDataGridView.Item(38, v_SelectRow2).Value
+        '    TextBox31.Text = NFE_EmitidasDataGridView.Item(39, v_SelectRow2).Value
+        '    TextBox30.Text = NFE_EmitidasDataGridView.Item(40, v_SelectRow2).Value
+        '    ComboBox12.Text = NFE_EmitidasDataGridView.Item(41, v_SelectRow2).Value
+        '    'HoraEmitida_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(30, v_SelectRow2).Value
+        '    CodTrans_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(32, v_SelectRow2).Value
+        '    NomeTrans_nfeemitidaTextBox.Text = NFE_EmitidasDataGridView.Item(33, v_SelectRow2).Value
+        '    'Data_nfeemitidasDateTimePicker.Text = NFE_EmitidasDataGridView.Item(42, v_SelectRow2).Value
 
 
-        '  passando os vr e as datas
-                    If NFE_EmitidasDataGridView.Item(19, v_SelectRow2).Value IsNot DBNull.Value Then
-                rdb_vezesduplicata1.Checked = True
-                date_duplicata1.Text = NFE_EmitidasDataGridView.Item(19, v_SelectRow2).Value
-                txt_vrduplicata1.Text = NFE_EmitidasDataGridView.Item(20, v_SelectRow2).Value
-            Else
-                date_duplicata1.Text = ""
-                txt_vrduplicata1.Text = ""
-            End If
-            If NFE_EmitidasDataGridView.Item(21, v_SelectRow2).Value IsNot DBNull.Value Then
-                rdb_vezesduplicata2.Checked = True
-                date_duplicata2.Text = NFE_EmitidasDataGridView.Item(21, v_SelectRow2).Value
-                txt_vrduplicata2.Text = NFE_EmitidasDataGridView.Item(22, v_SelectRow2).Value
-            Else
-                date_duplicata2.Text = ""
-                txt_vrduplicata2.Text = ""
-            End If
-            If NFE_EmitidasDataGridView.Item(23, v_SelectRow2).Value IsNot DBNull.Value Then
-                rdb_vezesduplicata3.Checked = True
-                date_duplicata3.Text = NFE_EmitidasDataGridView.Item(23, v_SelectRow2).Value
-                txt_vrduplicata3.Text = NFE_EmitidasDataGridView.Item(24, v_SelectRow2).Value
-            Else
-                date_duplicata3.Text = ""
-                txt_vrduplicata3.Text = ""
-            End If
-            If NFE_EmitidasDataGridView.Item(25, v_SelectRow2).Value IsNot DBNull.Value Then
-                rdb_vezesduplicata4.Checked = True
-                date_duplicata4.Text = NFE_EmitidasDataGridView.Item(25, v_SelectRow2).Value
-                txt_vrduplicata4.Text = NFE_EmitidasDataGridView.Item(26, v_SelectRow2).Value
-            Else
-                date_duplicata4.Text = ""
-                txt_vrduplicata4.Text = ""
-            End If
-            If NFE_EmitidasDataGridView.Item(27, v_SelectRow2).Value IsNot DBNull.Value Then
-                rdb_vezesduplicata5.Checked = True
-                date_duplicata5.Text = NFE_EmitidasDataGridView.Item(27, v_SelectRow2).Value
-                txt_vrduplicata5.Text = NFE_EmitidasDataGridView.Item(28, v_SelectRow2).Value
-            Else
-                date_duplicata5.Text = ""
-                txt_vrduplicata5.Text = ""
-            End If
-           
+        'Catch ex As Exception
 
-            TabControl_NFE.SelectedIndex = 0
-        'ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HoraEmitida_nfeemitidaTextBox.Text)
+        '    MessageBox.Show(ex.ToString)
+
+        'End Try
+
+        '' calcula o vr da nota
+        'Dim valor2 As Decimal = 0
+        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
+        '    valor2 += Linha.Cells(5).Value
+        'Next
+        'TextBox5.Text = valor2
+        '' calcula o peso da nota
+        'Dim valor3 As Decimal = 0
+        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
+        '    valor3 += Linha.Cells(11).Value
+        'Next
+        'Peso_nfeemitidaTextBox.Text = valor3
+
+
+        ''  passando os vr e as datas
+        '            If NFE_EmitidasDataGridView.Item(19, v_SelectRow2).Value IsNot DBNull.Value Then
+        '        rdb_vezesduplicata1.Checked = True
+        '        date_duplicata1.Text = NFE_EmitidasDataGridView.Item(19, v_SelectRow2).Value
+        '        txt_vrduplicata1.Text = NFE_EmitidasDataGridView.Item(20, v_SelectRow2).Value
+        '    Else
+        '        date_duplicata1.Text = ""
+        '        txt_vrduplicata1.Text = ""
+        '    End If
+        '    If NFE_EmitidasDataGridView.Item(21, v_SelectRow2).Value IsNot DBNull.Value Then
+        '        rdb_vezesduplicata2.Checked = True
+        '        date_duplicata2.Text = NFE_EmitidasDataGridView.Item(21, v_SelectRow2).Value
+        '        txt_vrduplicata2.Text = NFE_EmitidasDataGridView.Item(22, v_SelectRow2).Value
+        '    Else
+        '        date_duplicata2.Text = ""
+        '        txt_vrduplicata2.Text = ""
+        '    End If
+        '    If NFE_EmitidasDataGridView.Item(23, v_SelectRow2).Value IsNot DBNull.Value Then
+        '        rdb_vezesduplicata3.Checked = True
+        '        date_duplicata3.Text = NFE_EmitidasDataGridView.Item(23, v_SelectRow2).Value
+        '        txt_vrduplicata3.Text = NFE_EmitidasDataGridView.Item(24, v_SelectRow2).Value
+        '    Else
+        '        date_duplicata3.Text = ""
+        '        txt_vrduplicata3.Text = ""
+        '    End If
+        '    If NFE_EmitidasDataGridView.Item(25, v_SelectRow2).Value IsNot DBNull.Value Then
+        '        rdb_vezesduplicata4.Checked = True
+        '        date_duplicata4.Text = NFE_EmitidasDataGridView.Item(25, v_SelectRow2).Value
+        '        txt_vrduplicata4.Text = NFE_EmitidasDataGridView.Item(26, v_SelectRow2).Value
+        '    Else
+        '        date_duplicata4.Text = ""
+        '        txt_vrduplicata4.Text = ""
+        '    End If
+        '    If NFE_EmitidasDataGridView.Item(27, v_SelectRow2).Value IsNot DBNull.Value Then
+        '        rdb_vezesduplicata5.Checked = True
+        '        date_duplicata5.Text = NFE_EmitidasDataGridView.Item(27, v_SelectRow2).Value
+        '        txt_vrduplicata5.Text = NFE_EmitidasDataGridView.Item(28, v_SelectRow2).Value
+        '    Else
+        '        date_duplicata5.Text = ""
+        '        txt_vrduplicata5.Text = ""
+        '    End If
+
+
+        '    TabControl_NFE.SelectedIndex = 0
+        ''ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HoraEmitida_nfeemitidaTextBox.Text)
 
     End Sub
 
@@ -7294,69 +7279,57 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button17_Click(sender As Object, e As EventArgs) Handles Button17.Click
 
-        ' remove a tab consulta e acrescenta a tab TabPage_PedidosNFE
-        TabControl1.TabPages.Remove(tbpg_produtos)
-        TabControl1.TabPages.Remove(tbpg_clientes)
-        TabControl1.TabPages.Remove(tbpg_pedFornecedor)
-        TabControl1.TabPages.Remove(tbpg_transportadoras)
-        TabControl1.TabPages.Remove(tbpg_capitalGiro)
-        TabControl1.TabPages.Remove(tab_nfe)
-        'TabControl1.TabPages.Remove(tabpage_NFE_e)
-        TabControl1.TabPages.Remove(Tabpg_cupomfiscal)
-        TabControl1.TabPages.Remove(tbpg_bkup)
-        TabControl1.TabPages.Remove(pedidos)
-        TabControl1.TabPages.Remove(tbpg_orcamento)
-        TabControl1.TabPages.Remove(tbg_relatorios)
-        ' habilitar botões
-        Button21.Enabled = True
-        Button10.Enabled = True
-        btn_confimraNfeEmitida.Enabled = True
-        ' habilitar outros
-        cbx_CFOP.Enabled = True
-        D_Nome.Enabled = True
-        Numerodarua_pedTextBox.Enabled = True
-        D_Email.Enabled = True
-        txt_cpfNFE.Enabled = True
-        D_Endereco.Enabled = True
-        Txt_fisicajuridicaNFE.Enabled = True
-        D_Cep.Enabled = True
-        msk_ieNFE.Enabled = True
-        D_Bairro.Enabled = True
-        D_Telefone.Enabled = True
-        D_Cnpj.Enabled = True
-        D_Estado.Enabled = True
-        D_Municipio.Enabled = True
-        txt_obsNFE.Enabled = True
-        cbx_VolNfeEmitidas.Enabled = True
-        txt_obs2.Enabled = True
-        Button38.Enabled = True
+        '' remove a tab consulta e acrescenta a tab TabPage_PedidosNFE
+        'TabControl1.TabPages.Remove(tbpg_produtos)
+        'TabControl1.TabPages.Remove(tbpg_clientes)
+        'TabControl1.TabPages.Remove(tbpg_pedFornecedor)
+        'TabControl1.TabPages.Remove(tbpg_transportadoras)
+        'TabControl1.TabPages.Remove(tbpg_capitalGiro)
+        'TabControl1.TabPages.Remove(tab_nfe)
+        ''TabControl1.TabPages.Remove(tabpage_NFE_e)
+        'TabControl1.TabPages.Remove(Tabpg_cupomfiscal)
+        'TabControl1.TabPages.Remove(tbpg_bkup)
+        'TabControl1.TabPages.Remove(pedidos)
+        'TabControl1.TabPages.Remove(tbpg_orcamento)
+        'TabControl1.TabPages.Remove(tbg_relatorios)
+        '' habilitar botões
+        'Button21.Enabled = True
+        'Button10.Enabled = True
+        'btn_confimraNfeEmitida.Enabled = True
+        '' habilitar outros
+        'cbx_CFOP.Enabled = True
+        'D_Nome.Enabled = True
+        'Numerodarua_pedTextBox.Enabled = True
+        'D_Email.Enabled = True
+        'txt_cpfNFE.Enabled = True
+        'D_Endereco.Enabled = True
+        'Txt_fisicajuridicaNFE.Enabled = True
+        'D_Cep.Enabled = True
+        'msk_ieNFE.Enabled = True
+        'D_Bairro.Enabled = True
+        'D_Telefone.Enabled = True
+        'D_Cnpj.Enabled = True
+        'D_Estado.Enabled = True
+        'D_Municipio.Enabled = True
+        'txt_obsNFE.Enabled = True
+        'cbx_VolNfeEmitidas.Enabled = True
+        'txt_obs2.Enabled = True
+        'Button38.Enabled = True
 
-        ' habilitar duplicatas
-        rdb_vezesduplicata1.Enabled = True
-        rdb_vezesduplicata2.Enabled = True
-        rdb_vezesduplicata3.Enabled = True
-        rdb_vezesduplicata4.Enabled = True
-        rdb_vezesduplicata5.Enabled = True
-        date_duplicata1.Enabled = True
-        txt_vrduplicata1.Enabled = True
-        ' habilitando as duplicatas
-        date_duplicata1.Enabled = True
-        txt_vrduplicata1.Enabled = True
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
-        date_duplicata4.Enabled = True
-        txt_vrduplicata4.Enabled = True
-        date_duplicata5.Enabled = True
-        txt_vrduplicata5.Enabled = True
-        Button17.Enabled = False
-        ComboBox12.Enabled = True
-        ' Data_nfeemitidasDateTimePicker.Enabled = True
+        '' habilitar duplicatas
+        'rdb_vezesduplicata1.Enabled = True
+        'rdb_vezesduplicata2.Enabled = True
+        'rdb_vezesduplicata3.Enabled = True
+        'rdb_vezesduplicata4.Enabled = True
+        'rdb_vezesduplicata5.Enabled = True
 
-        'acrescenta  e remove telas
-        TabControl_NFE.TabPages.Remove(TbPg_consultaNFe)
-        TabControl_NFE.TabPages.Add(tbpg_transNfe)
+        '' habilitando as duplicatas
+
+        '' Data_nfeemitidasDateTimePicker.Enabled = True
+
+        ''acrescenta  e remove telas
+        'TabControl_NFE.TabPages.Remove(TbPg_consultaNFe)
+        'TabControl_NFE.TabPages.Add(tbpg_transNfe)
 
     End Sub
 
@@ -7566,40 +7539,40 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             ' PRIMEIRA DUPLICATA
             e.Graphics.DrawString(txt_nNfe.Text & ".1 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 275)
-            e.Graphics.DrawString(txt_vrduplicata1.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 100, 275)
-            e.Graphics.DrawString(date_duplicata1.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 275)
+            '    e.Graphics.DrawString(txt_vrduplicata1.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 100, 275)
+            '    e.Graphics.DrawString(date_duplicata1.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 275)
             'e.Graphics.DrawString("|||", New Font("arial", 8, FontStyle.Bold), Brushes.Black, 300, 275)
 
             ' SEGUNDA DUPLICATA
-            If txt_vrduplicata2.Text <> "" Then
-                e.Graphics.DrawString(txt_nNfe.Text & ".2 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 300, 275)
-                e.Graphics.DrawString(txt_vrduplicata2.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 400, 275)
-                e.Graphics.DrawString(date_duplicata2.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 500, 275)
-                'e.Graphics.DrawString("|||", New Font("arial", 8, FontStyle.Bold), Brushes.Black, 600, 275)
-            End If
-
-            ' TERCEIRA DUPLICATA
-            If txt_vrduplicata3.Text <> "" Then
-                e.Graphics.DrawString(txt_nNfe.Text & ".3 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 275)
-                e.Graphics.DrawString(txt_vrduplicata3.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 650, 275)
-                e.Graphics.DrawString(date_duplicata3.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 720, 275)
-            End If
-
-            ' QUARTA DUPLICATA
-            If txt_vrduplicata4.Text <> "" Then
-                e.Graphics.DrawString(txt_nNfe.Text & ".4 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 295)
-                e.Graphics.DrawString(txt_vrduplicata4.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 100, 295)
-                e.Graphics.DrawString(date_duplicata4.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 295)
-                ' e.Graphics.DrawString("|||", New Font("arial", 8, FontStyle.Bold), Brushes.Black, 300, 295)
-            End If
-
-            ' QUINTA DUPLICATA
-            If txt_vrduplicata5.Text <> "" Then
-                e.Graphics.DrawString(txt_nNfe.Text & ".5 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 300, 295)
-                e.Graphics.DrawString(txt_vrduplicata5.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 400, 295)
-                e.Graphics.DrawString(date_duplicata5.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 600, 295)
-            End If
+            '       If txt_vrduplicata2.Text <> "" Then
+            e.Graphics.DrawString(txt_nNfe.Text & ".2 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 300, 275)
+            '     e.Graphics.DrawString(txt_vrduplicata2.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 400, 275)
+            '     e.Graphics.DrawString(date_duplicata2.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 500, 275)
+            'e.Graphics.DrawString("|||", New Font("arial", 8, FontStyle.Bold), Brushes.Black, 600, 275)
         End If
+
+        ' TERCEIRA DUPLICATA
+        'If txt_vrduplicata3.Text <> "" Then
+        '    e.Graphics.DrawString(txt_nNfe.Text & ".3 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 600, 275)
+        '    e.Graphics.DrawString(txt_vrduplicata3.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 650, 275)
+        '    e.Graphics.DrawString(date_duplicata3.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 720, 275)
+        'End If
+
+        '' QUARTA DUPLICATA
+        'If txt_vrduplicata4.Text <> "" Then
+        '    e.Graphics.DrawString(txt_nNfe.Text & ".4 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 295)
+        '    e.Graphics.DrawString(txt_vrduplicata4.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 100, 295)
+        '    e.Graphics.DrawString(date_duplicata4.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 295)
+        '    ' e.Graphics.DrawString("|||", New Font("arial", 8, FontStyle.Bold), Brushes.Black, 300, 295)
+        'End If
+
+        '' QUINTA DUPLICATA
+        'If txt_vrduplicata5.Text <> "" Then
+        '    e.Graphics.DrawString(txt_nNfe.Text & ".5 :", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 300, 295)
+        '    e.Graphics.DrawString(txt_vrduplicata5.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 400, 295)
+        '    e.Graphics.DrawString(date_duplicata5.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 600, 295)
+        'End If
+        'End If
 
         Dim VrTotalNotaSilvia As Double = 0
         Dim vrtotal As Double
@@ -13764,8 +13737,10 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command.CommandText = "update produtos set pedcolocados_prod=@pedcolocados_prod where cod_prod=@cod_prod "
             command.CommandType = CommandType.Text
             command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
-            command.Parameters.Add("@pedcolocados_prod", SqlDbType.Int).Value = QtdePedidosColocados
-
+            command.Parameters.Add("@pedcolocados_prod", SqlDbType.Int).Value = quantidadePedidos
+            If ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString() = "363br raiz " Then
+                MessageBox.Show(quantidadePedidos)
+            End If
             Try
                 connection.Open()
                 command.ExecuteNonQuery()
@@ -14178,7 +14153,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             ' passando a vari´vel "MesPassado" como estoque mínimo mais 15 dias de consumo de margem de segurança - ela é calculada para 30 dias
             Dim EstoqueMin As Integer = 0
-            EstoqueMin = ((MesPassado / 30) * TempoEntrega) * 2
+            EstoqueMin = ((MesPassado / 30) * TempoEntrega) * 1
             command5.Parameters.Add("@estoquemin_prod", SqlDbType.Int).Value = EstoqueMin
             ' calculando estoque maximo
             Dim EstoqueMax As Integer = 0
@@ -15617,8 +15592,6 @@ Proxima:
         Next
         TextBox283.Text = valor.ToString("F2")
 
-
-
     End Sub
 
     Private Sub ComboBox13_TextChanged_1(sender As Object, e As EventArgs) Handles ComboBox13.TextChanged
@@ -16019,7 +15992,7 @@ proxima2:
         Dim CidadeEmitente As String = "MOGI DAS CRUZES"
         TextBox288.Text = RazãoSocialEmitente
        
-        TabControl5.TabPages.Add(TabPage20)
+        ' TabControl5.TabPages.Add(TabPage20)
 
     End Sub
 
@@ -16036,187 +16009,187 @@ proxima2:
         Dim EstadoEmitente As String = "SP"
         Dim CidadeEmitente As String = "MOGI DAS CRUZES"
         TextBox288.Text = RazãoSocialEmitente
-        TabControl5.TabPages.Add(TabPage14)
+        '  TabControl5.TabPages.Add(TabPage14)
 
     End Sub
 
-    Private Sub Label376_Click(sender As Object, e As EventArgs) Handles Label376.Click
+    Private Sub Label376_Click(sender As Object, e As EventArgs)
 
     End Sub
 
-    Private Sub RadioButton18_Click(sender As Object, e As EventArgs) Handles RadioButton18.Click
+    Private Sub RadioButton18_Click(sender As Object, e As EventArgs)
 
-        Dim vrduplicata1 As Double = TextBox5.Text
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
-        '----------------------------------
-        date_duplicata2.Enabled = False
-        txt_vrduplicata2.Enabled = False
-        txt_vrduplicata2.Text = ""
-        '----------------------------------
-        date_duplicata3.Enabled = False
-        txt_vrduplicata3.Enabled = False
-        txt_vrduplicata3.Text = ""
-        '----------------------------------
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        txt_vrduplicata4.Text = ""
-        '----------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
+        'Dim vrduplicata1 As Double = TextBox5.Text
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        ''----------------------------------
+        'date_duplicata2.Enabled = False
+        'txt_vrduplicata2.Enabled = False
+        'txt_vrduplicata2.Text = ""
+        ''----------------------------------
+        'date_duplicata3.Enabled = False
+        'txt_vrduplicata3.Enabled = False
+        'txt_vrduplicata3.Text = ""
+        ''----------------------------------
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'txt_vrduplicata4.Text = ""
+        ''----------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
         ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
 
     End Sub
 
-    Private Sub RadioButton19_Click(sender As Object, e As EventArgs) Handles RadioButton19.Click
-        Dim vrduplicata1 As Double = (TextBox5.Text / 2)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+    Private Sub RadioButton19_Click(sender As Object, e As EventArgs)
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 2)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 2)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
-        '-----------------------------
-        date_duplicata3.Enabled = False
-        txt_vrduplicata3.Enabled = False
-        txt_vrduplicata3.Text = ""
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 2)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        ''-----------------------------
+        'date_duplicata3.Enabled = False
+        'txt_vrduplicata3.Enabled = False
+        'txt_vrduplicata3.Text = ""
 
-        '--------------------------------
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        txt_vrduplicata4.Text = ""
+        ''--------------------------------
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'txt_vrduplicata4.Text = ""
 
-        ' ------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        '' ------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
     End Sub
 
-    Private Sub RadioButton20_Click(sender As Object, e As EventArgs) Handles RadioButton20.Click
+    Private Sub RadioButton20_Click(sender As Object, e As EventArgs)
 
-        Dim vrduplicata1 As Double = (TextBox5.Text / 3)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 3)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 3)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 3)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
 
-        '----------------------------------
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
+        ''----------------------------------
+        'date_duplicata3.Enabled = True
+        'txt_vrduplicata3.Enabled = True
 
-        Dim vrduplicata3 As Double = (TextBox5.Text / 3)
-        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+        'Dim vrduplicata3 As Double = (TextBox5.Text / 3)
+        'txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
 
-        '----------------------------------
-        date_duplicata4.Enabled = False
-        txt_vrduplicata4.Enabled = False
-        txt_vrduplicata4.Text = ""
+        ''----------------------------------
+        'date_duplicata4.Enabled = False
+        'txt_vrduplicata4.Enabled = False
+        'txt_vrduplicata4.Text = ""
 
-        ' -----------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        '' -----------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
     End Sub
 
-    Private Sub RadioButton21_Click(sender As Object, e As EventArgs) Handles RadioButton21.Click
-        Dim vrduplicata1 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+    Private Sub RadioButton21_Click(sender As Object, e As EventArgs)
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
 
-        '----------------------------------
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
+        ''----------------------------------
+        'date_duplicata3.Enabled = True
+        'txt_vrduplicata3.Enabled = True
 
-        Dim vrduplicata3 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+        'Dim vrduplicata3 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
 
-        '----------------------------------
-        date_duplicata4.Enabled = True
-        txt_vrduplicata4.Enabled = True
+        ''----------------------------------
+        'date_duplicata4.Enabled = True
+        'txt_vrduplicata4.Enabled = True
 
-        Dim vrduplicata4 As Double = (TextBox5.Text / 4)
-        txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+        'Dim vrduplicata4 As Double = (TextBox5.Text / 4)
+        'txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
 
-        '----------------------------------
-        date_duplicata5.Enabled = False
-        txt_vrduplicata5.Enabled = False
-        txt_vrduplicata5.Text = ""
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        ''----------------------------------
+        'date_duplicata5.Enabled = False
+        'txt_vrduplicata5.Enabled = False
+        'txt_vrduplicata5.Text = ""
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
     End Sub
 
-    Private Sub RadioButton22_Click(sender As Object, e As EventArgs) Handles RadioButton22.Click
-        Dim vrduplicata1 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
+    Private Sub RadioButton22_Click(sender As Object, e As EventArgs)
+        'Dim vrduplicata1 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata1.Text = vrduplicata1.ToString("F2")
 
-        date_duplicata2.Enabled = True
-        txt_vrduplicata2.Enabled = True
+        'date_duplicata2.Enabled = True
+        'txt_vrduplicata2.Enabled = True
 
-        Dim vrduplicata2 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
+        'Dim vrduplicata2 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata2.Text = vrduplicata2.ToString("F2")
 
-        '----------------------------------
-        date_duplicata3.Enabled = True
-        txt_vrduplicata3.Enabled = True
+        ''----------------------------------
+        'date_duplicata3.Enabled = True
+        'txt_vrduplicata3.Enabled = True
 
-        Dim vrduplicata3 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
+        'Dim vrduplicata3 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata3.Text = vrduplicata3.ToString("F2")
 
-        '----------------------------------
-        date_duplicata4.Enabled = True
-        txt_vrduplicata4.Enabled = True
+        ''----------------------------------
+        'date_duplicata4.Enabled = True
+        'txt_vrduplicata4.Enabled = True
 
-        Dim vrduplicata4 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
+        'Dim vrduplicata4 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata4.Text = vrduplicata4.ToString("F2")
 
-        '----------------------------------
-        date_duplicata5.Enabled = True
-        txt_vrduplicata5.Enabled = True
+        ''----------------------------------
+        'date_duplicata5.Enabled = True
+        'txt_vrduplicata5.Enabled = True
 
-        Dim vrduplicata5 As Double = (TextBox5.Text / 5)
-        txt_vrduplicata5.Text = vrduplicata5.ToString("F2")
+        'Dim vrduplicata5 As Double = (TextBox5.Text / 5)
+        'txt_vrduplicata5.Text = vrduplicata5.ToString("F2")
 
-        ' acertando as datas
-        date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
-        date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
-        date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
-        date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
-        date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
+        '' acertando as datas
+        'date_duplicata1.Text = DateAdd("d", 30, DateTime.Now)
+        'date_duplicata2.Text = DateAdd("d", 60, DateTime.Now)
+        'date_duplicata3.Text = DateAdd("d", 90, DateTime.Now)
+        'date_duplicata4.Text = DateAdd("d", 120, DateTime.Now)
+        'date_duplicata5.Text = DateAdd("d", 150, DateTime.Now)
     End Sub
 
    
-    Private Sub Button106_Click(sender As Object, e As EventArgs) Handles Button106.Click
+    Private Sub Button106_Click(sender As Object, e As EventArgs)
 
         Dim result = MessageBox.Show("Confirmar a Deleção?", "Atenção!!!", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
@@ -16226,7 +16199,7 @@ proxima2:
             Dim connection As SqlConnection
             connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             ' -------------------------------------
- 
+
             Dim v_SelectRow As Integer
             Try
                 v_SelectRow = Me.ItemPedidosDataGridView1.CurrentRow.Index
@@ -16349,7 +16322,7 @@ proxima2:
         
     End Sub
 
-    Private Sub Button107_Click(sender As Object, e As EventArgs) Handles Button107.Click
+    Private Sub Button107_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -16367,7 +16340,7 @@ proxima2:
 
             ' passando valores
             TextBox14.Text = PedidoNFEDataGridView4.Item(1, v_SelectRow).Value
-            TextBox325.Text = PedidoNFEDataGridView4.Item(11, v_SelectRow).Value
+            '   TextBox325.Text = PedidoNFEDataGridView4.Item(11, v_SelectRow).Value
             TextBox13.Text = PedidoNFEDataGridView4.Item(12, v_SelectRow).Value
             TextBox15.Text = PedidoNFEDataGridView4.Item(7, v_SelectRow).Value
             TextBox322.Text = PedidoNFEDataGridView4.Item(0, v_SelectRow).Value
@@ -16394,7 +16367,7 @@ proxima2:
 
         Dim command As SqlCommand
         command = connection.CreateCommand()
-        command.CommandText = "update ItemPedidos set entregue_item = @entregue, quantidadeparcialentregue_item = @quantidade, dataentrega_item = @data, qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, v_SelectRow).Value & "'"
+        command.CommandText = "update ItemPedidos set entregue_item = @entregue, quantidadeparcialentregue_item = @quantidade, qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, v_SelectRow).Value & "'"
         command.CommandType = CommandType.Text
 
         Try
@@ -16404,7 +16377,7 @@ proxima2:
                 command.Parameters.Add("@entregue", SqlDbType.VarChar, 50).Value = "Parcialmente"
             End If
             command.Parameters.Add("@quantidade", SqlDbType.Float).Value = quantidade + (ItemPedidosDataGridView10.Item(7, v_SelectRow).Value) - (ItemPedidosDataGridView2.Item(6, v_SelectRow).Value)
-            command.Parameters.Add("@data", SqlDbType.Date).Value = Date.Now
+            '  command.Parameters.Add("@data", SqlDbType.Date).Value = Date.Now
             command.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = quantidade
 
         Catch ex As Exception
@@ -16442,9 +16415,8 @@ proxima2:
     End Sub
 
     Private Sub Button19_Click(sender As Object, e As EventArgs) Handles Button19.Click
-
+        TextBox376.Text = ""
         PrintPreviewDialog7.ShowDialog()
-
     End Sub
 
     Private Sub PrintPreviewDialog7_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog7.Load
@@ -16459,28 +16431,34 @@ proxima2:
 
     Private Sub PrintDocument14_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument14.PrintPage
 
-        ' Pedido compra
         ' primeira linha
         e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
-        e.Graphics.DrawString("PEDIDO DE COMPRA   ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
-        ' e.Graphics.DrawString(ProdutosDataGridView5.Item(4, 0).Value, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 450, 5)
+        e.Graphics.DrawString("Sugestão de compra   ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
         e.Graphics.DrawString(ProdutosDataGridView5.Item(4, 0).Value, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 550, 5)
-
         ' cabecalho
-        e.Graphics.DrawString("Código Forncedor", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 50)
+        e.Graphics.DrawString("Código Fornecedor", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 50)
         e.Graphics.DrawString("Nome do Produto", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 200, 50)
         e.Graphics.DrawString("Cor  ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 450, 50)
         e.Graphics.DrawString("Estoque Méd", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 550, 50)
         e.Graphics.DrawString("Consumo Máx", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 650, 50)
         e.Graphics.DrawString("Sugestão", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 50)
 
-
+        Dim CalculoSugestao As Double = 0
         Dim l As Integer = 0
+        Dim ContadorX As Integer = 0
+        TextBox376.Text = 0
 
         Try
-            For x = 0 To 30
-                Dim CalculoSugestao As Double = ProdutosDataGridView5.Item(8, x).Value - ProdutosDataGridView5.Item(14, x).Value
-                If ProdutosDataGridView5.Item(9, x).Value < ProdutosDataGridView5.Item(8, x).Value And CalculoSugestao > 0 Then
+            For x = 0 To ProdutosDataGridView5.RowCount() - 1
+
+                If l <= 45 Then
+                    ContadorX += 1
+                Else
+                    GoTo Prosxima50
+                End If
+
+                CalculoSugestao = ProdutosDataGridView5.Item(8, x).Value - ProdutosDataGridView5.Item(14, x).Value + ProdutosDataGridView5.Item(15, x).Value
+                If ProdutosDataGridView5.Item(8, x).Value > (ProdutosDataGridView5.Item(9, x).Value + ProdutosDataGridView5.Item(14, x).Value - ProdutosDataGridView5.Item(15, x).Value) And CalculoSugestao > 0 Then
                     l += 1
                     e.Graphics.DrawString(ProdutosDataGridView5.Item(2, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 100 + (l * 20))
                     e.Graphics.DrawString(ProdutosDataGridView5.Item(6, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 200, 100 + (l * 20))
@@ -16489,7 +16467,12 @@ proxima2:
                     e.Graphics.DrawString(ProdutosDataGridView5.Item(12, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 650, 100 + (l * 20))
                     e.Graphics.DrawString(CalculoSugestao, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 100 + (l * 20))
                 End If
+Prosxima50:
             Next
+            If l > 45 Then
+                e.Graphics.DrawString("FAVOR IMPRIMIR SEGUNDA PÁGINA", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 100 + (48 * 20))
+            End If
+            TextBox376.Text = ContadorX
         Catch ex As Exception
             Exit Sub
         End Try
@@ -16526,9 +16509,6 @@ proxima2:
             End If
         End If
 
-        'BalcaoBindingSource.Filter = String.Format("nomeProd_balcao LIKE '{0}%' and corprod_balcao LIKE '{1}%' and NumeroNotaMlb_balcao LIKE '{2}%'", TextBox269.Text, TextBox270.Text, TextBox271.Text)
-        ' BalcaoBindingSource.Filter = String.Format("NumeroNotaMlb_balcao LIKE '{0}%'", TextBox271.Text)
-
     End Sub
 
     Private Sub TextBox320_TextChanged(sender As Object, e As EventArgs) Handles TextBox320.TextChanged
@@ -16560,472 +16540,472 @@ proxima2:
     Private Sub GerarNotaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles GerarNotaToolStripMenuItem1.Click
 
 
-        Dim reply As DialogResult = MessageBox.Show("Confirmar a geração da NOTA FISCAL?", "Atenção!!!", _
-         MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
-
-        If reply = DialogResult.Yes Then
-
-            Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-            Dim VrAserLancadoNfe As String
-            Dim variavel2 As Boolean = False
-
-            Try
-                'coloca o ponteiro onde ele está clicado
-                Dim v_SelectRow2 As Integer
-                v_SelectRow2 = Me.PedidoNFEDataGridView4.CurrentRow.Index
-
-                Dim command5 As SqlCommand
-                command5 = connection.CreateCommand()
-                command5.CommandText = "select * from ItemPedidos where codpedido_item = '" & PedidoNFEDataGridView4.Item(0, v_SelectRow2).Value & "'"
-
-                connection.Open()
-
-                Dim lrd2 As SqlDataReader = command5.ExecuteReader()
-                While lrd2.Read
-
-                    'verifica se tem algum campo de quantidade diferente de zero
-                    If lrd2("qtdeNfe_item") Is DBNull.Value Then
-                        VrAserLancadoNfe = "0"
-                    Else
-                        VrAserLancadoNfe = lrd2("qtdeNfe_item")
-                    End If
-                    'indica se achou algum vr diferente de zero
-                    If VrAserLancadoNfe = 0 Then
-                    Else
-                        variavel2 = True
-                    End If
-
-
-                End While
-
-                connection.Close()
-            Catch ex As Exception
-                MessageBox.Show("Não foi selecionado nenhum Ítem")
-                Exit Sub
-            End Try
-
-            ' verifica se achou algum vr diferente de zero nas quantidades lançadas
-            If variavel2 = False Then
-                MessageBox.Show("Não foi escolhido nenhum Ítem")
-                Exit Sub
-            End If
-
-            'coloca o ponteiro onde ele está clicado
-            Dim v_SelectRow As Integer
-            v_SelectRow = Me.PedidoNFEDataGridView4.CurrentRow.Index
-
-            'BUSCA DADOS NO CLIENTE NO ARQUIVO CLIENTE
-            'variáveis do arquivo de clientes
-            Dim endereco As String
-            Dim numerorua_cliente As String
-            Dim bairro_cliente As String
-            Dim cidade_cliente As String
-            Dim estado_cliente As String
-            Dim cep_cliente As String
-            Dim cnpj_cliente As String
-            Dim insestadual_cliente As String
-            Dim telefone_cliente As String
-            Dim email_cliente As String
-            Dim codIBGE_cliente As String
-            Dim fj_cliente As String
-            Dim cpf_cliente As String
-
-
-            Dim command As SqlCommand
-            command = connection.CreateCommand()
-            command.CommandText = "select * from cliente where id_cliente = '" & PedidoNFEDataGridView4.Item(6, v_SelectRow).Value & "'"
-            Try
-
-                connection.Open()
-
-                Dim lrd As SqlDataReader = command.ExecuteReader()
-                While lrd.Read
-
-
-                    If lrd("cnpj_cliente") Is DBNull.Value Then
-                        cnpj_cliente = "0"
-                    Else
-                        cnpj_cliente = lrd("cnpj_cliente")
-                    End If
-
-                    If lrd("endereco_cliente") Is DBNull.Value Then
-                        endereco = "0"
-                    Else
-                        endereco = lrd("endereco_cliente")
-                    End If
-
-                    If lrd("numerorua_cliente") Is DBNull.Value Then
-                        numerorua_cliente = "0"
-                    Else
-                        numerorua_cliente = lrd("numerorua_cliente")
-                    End If
-
-                    If lrd("bairro_cliente") Is DBNull.Value Then
-                        bairro_cliente = "0"
-                    Else
-                        bairro_cliente = lrd("bairro_cliente")
-                    End If
-
-                    If lrd("cidade_cliente") Is DBNull.Value Then
-                        cidade_cliente = "0"
-                    Else
-                        cidade_cliente = lrd("cidade_cliente")
-                    End If
-
-                    If lrd("estado_cliente") Is DBNull.Value Then
-                        estado_cliente = "0"
-                    Else
-                        estado_cliente = lrd("estado_cliente")
-                    End If
-
-                    If lrd("cep_cliente") Is DBNull.Value Then
-                        cep_cliente = "0"
-                    Else
-                        cep_cliente = lrd("cep_cliente")
-                    End If
-                    If lrd("insestadual_cliente") Is DBNull.Value Then
-                        insestadual_cliente = "0"
-                    Else
-                        insestadual_cliente = lrd("insestadual_cliente")
-                    End If
-
-                    If lrd("telefone_cliente") Is DBNull.Value Then
-                        telefone_cliente = "0"
-                    Else
-                        telefone_cliente = lrd("telefone_cliente")
-                    End If
-                    If lrd("email_cliente") Is DBNull.Value Then
-                        email_cliente = "0"
-                    Else
-                        email_cliente = lrd("email_cliente")
-                    End If
-                    If lrd("codIBGE_cliente") Is DBNull.Value Then
-                        codIBGE_cliente = "0"
-                    Else
-                        codIBGE_cliente = lrd("codIBGE_cliente")
-                    End If
-
-                    If lrd("fj_cliente") Is DBNull.Value Then
-                        fj_cliente = "0"
-                    Else
-                        fj_cliente = lrd("fj_cliente")
-                    End If
-
-                    If lrd("cpf_cliente") Is DBNull.Value Then
-                        cpf_cliente = "0"
-                    Else
-                        cpf_cliente = lrd("cpf_cliente")
-                    End If
-                End While
-
-                connection.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-            End Try
-
-            'estabelecer um horário que vai funcionar como índice
-            Dim HorarioNotaEmitida3 As String
-            Dim date3 As New Date()
-            date3 = Date.Now
-            Dim ci3 As CultureInfo = CultureInfo.InvariantCulture
-            HorarioNotaEmitida3 = date3.ToString("dd.yyyy.hh.mm.ss.FFFFF", ci3)
-            Dim HorarioNotaEmitida4 As String = Convert.ToString(HorarioNotaEmitida3)
-
-            Try
-                'rem salvar os dados e criar o corpo da NOTA
-                command = connection.CreateCommand()
-                command.CommandText = "INSERT INTO NFE_Emitidas (Codigo_nfeemitida,CodigoCliente_nfeemitida,RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida,municipioCliente_nfeemitida,telefoneCLiente_nfeemitida,emailCliente_nfeemitida,estadoCliente_nfeemitida,IBGEcliente_nfeemitida,CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida,CNPJcliente_nfeemitida,IEcliente_nfeemitida,CodigoPedido_nfeemitida,horaEmitida_nfeemitida,NomeTrans_nfeemitida,CodTrans_nfeemitida,Peso_nfeemitida,data_nfeemitidas,vendedor_nfeemitidas) values (@Codigo_nfeemitida,@CodigoCliente_nfeemitida,@RazaoCliente_nfeemitida,@ENderecoCLiente_nfeemitida,@NUmeroRuacliente_nfeemitida,@BairroCliente_nfeemitida,@municipioCliente_nfeemitida,@telefoneCLiente_nfeemitida,@emailCliente_nfeemitida,@estadoCliente_nfeemitida,@IBGEcliente_nfeemitida,@CEPcliente_nfeemitida,@pessoaFouJcliente_nfeemitida,@CPFcliente_nfeemitida,@CNPJcliente_nfeemitida,@IEcliente_nfeemitida,@CodigoPedido_nfeemitid,@horaEmitida_nfeemitida,@NomeTrans_nfeemitida,@CodTrans_nfeemitida,@Peso_nfeemitida,@data_nfeemitidas,@vendedor_nfeemitidas)"
-                command.CommandType = CommandType.Text
-
-                ' rem   SALVAR NA CONFIRMAÇÃO DOS DADOS
-                command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = ""
-                command.Parameters.Add("@horaEmitida_nfeemitida", SqlDbType.VarChar, 50).Value = HorarioNotaEmitida4
-                command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(6, v_SelectRow).Value
-                command.Parameters.Add("@RazaoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(7, v_SelectRow).Value
-                command.Parameters.Add("@ENderecoCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = endereco
-                command.Parameters.Add("@NUmeroRuacliente_nfeemitida", SqlDbType.VarChar, 50).Value = numerorua_cliente
-                command.Parameters.Add("@BairroCliente_nfeemitida", SqlDbType.VarChar, 50).Value = bairro_cliente
-                command.Parameters.Add("@municipioCliente_nfeemitida", SqlDbType.VarChar, 50).Value = cidade_cliente
-                command.Parameters.Add("@telefoneCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = telefone_cliente
-                command.Parameters.Add("@emailCliente_nfeemitida", SqlDbType.VarChar, 50).Value = email_cliente
-                command.Parameters.Add("@estadoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = estado_cliente
-                command.Parameters.Add("@IBGEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = codIBGE_cliente
-                command.Parameters.Add("@CEPcliente_nfeemitida", SqlDbType.VarChar, 50).Value = cep_cliente
-                command.Parameters.Add("@pessoaFouJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = fj_cliente
-                command.Parameters.Add("@CPFcliente_nfeemitida", SqlDbType.VarChar, 50).Value = cpf_cliente
-                command.Parameters.Add("@CNPJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = cnpj_cliente
-                command.Parameters.Add("@IEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = insestadual_cliente
-                command.Parameters.Add("@CodigoPedido_nfeemitid", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(0, v_SelectRow).Value
-                command.Parameters.Add("@CodTrans_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(9, v_SelectRow).Value
-                command.Parameters.Add("@NomeTrans_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(10, v_SelectRow).Value
-                command.Parameters.Add("@Peso_nfeemitida", SqlDbType.VarChar, 50).Value = "0"
-                command.Parameters.Add("@data_nfeemitidas", SqlDbType.Date).Value = Date.Now
-                command.Parameters.Add("@vendedor_nfeemitidas", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(1, v_SelectRow).Value
-
-                connection.Open()
-                command.ExecuteNonQuery()
-                connection.Close()
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-            End Try
-
-            ' pegar o último número gravado com datagrid
-            Me.NFE_EmitidasTableAdapter.Fill(Me.DataSetFinal.NFE_Emitidas)
-
-            Dim UltimoID As String
-            Dim command15 As SqlCommand
-            command15 = connection.CreateCommand()
-            command15.CommandText = "select id_nfeemitidas  from NFE_Emitidas  where id_nfeemitidas = (select max(id_nfeemitidas) from NFE_Emitidas) "
-            Try
-                connection.Open()
-
-                Dim lrd15 As SqlDataReader = command15.ExecuteReader()
-                While lrd15.Read
-
-                    If lrd15("id_nfeemitidas") Is DBNull.Value Then
-                        UltimoID = "0"
-                    Else
-                        UltimoID = lrd15("id_nfeemitidas")
-                    End If
-
-                End While
-
-                connection.Close()
-            Catch ex As Exception
-
-                MessageBox.Show(ex.ToString)
-
-            End Try
-            TextBox289.Text = UltimoID
-
-
-            ' rem buscar os ítens do PEDIDO e transformá-los em ítens da nota
-            Dim command1 As SqlCommand
-            command1 = connection.CreateCommand()
-            Dim yy As Integer
-            Try
-
-                For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
-                    'If ItemPedidosDataGridView2.Item(10, yy).Value <> "Entregue" Then
-                    command1 = connection.CreateCommand()
-                    command1.CommandText = "INSERT INTO ItemNfeEmitida (IDcod_itemNfeEmitida,NumeroNFe_ItemNfeEmitida,codProd_ItemNfeEmitida,NomeProd_ItemNfeemitida,QtdeProd_ItemNfeEmitida,VrUnitarioProd_ItemNfeEmitida,VrTlProd_itemNfeEmitida,HoraNota_itemNfeEmitida,NumeroPed_itemNfeEmitida,NCM_itemNfeEmitida,tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida) values (@IDcod_itemNfeEmitida,@NumeroNFe_ItemNfeEmitida,@codProd_ItemNfeEmitida,@NomeProd_ItemNfeemitida,@QtdeProd_ItemNfeEmitida,@VrUnitarioProd_ItemNfeEmitida,@VrTlProd_itemNfeEmitida,@HoraNota_itemNfeEmitida,@NumeroPed_itemNfeEmitida,@NCM_itemNfeEmitida,@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida)"
-                    'command1.CommandText = "INSERT INTO ItemNfeEmitida (tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida) values (@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida)"
-
-
-                    command1.CommandType = CommandType.Text
-                    command1.Parameters.Add("@NumeroNFe_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = UltimoID
-                    command1.Parameters.Add("@codProd_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(13, yy).Value
-                    command1.Parameters.Add("@NomeProd_ItemNfeemitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(1, yy).Value
-                    command1.Parameters.Add("@QtdeProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(6, yy).Value
-                    command1.Parameters.Add("@VrUnitarioProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(8, yy).Value
-                    Dim arredonda As String = (ItemPedidosDataGridView10.Item(5, yy).Value) * (ItemPedidosDataGridView10.Item(8, yy).Value)
-                    command1.Parameters.Add("@VrTlProd_itemNfeEmitida", SqlDbType.Float).Value = arredonda
-                    command1.Parameters.Add("@HoraNota_itemNfeEmitida", SqlDbType.VarChar, 50).Value = HorarioNotaEmitida4
-                    command1.Parameters.Add("@NumeroPed_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(11, yy).Value
-                    command1.Parameters.Add("@NCM_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(19, yy).Value
-                    command1.Parameters.Add("@tabela_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(17, yy).Value
-                    command1.Parameters.Add("@Peso_itemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(18, yy).Value
-                    command1.Parameters.Add("@QtdeENtregue_itemNfeEmitida", SqlDbType.Int).Value = ItemPedidosDataGridView10.Item(7, yy).Value
-                    command1.Parameters.Add("@IDcod_itemNfeEmitida", SqlDbType.VarChar, 50).Value = 0 'PedidoNFEDataGridView4.Item(0, yy).Value
-
-                    If ItemPedidosDataGridView10.Item(6, yy).Value <> 0 Then
-                        connection.Open()
-                        command1.ExecuteNonQuery()
-                        connection.Close()
-                    End If
-                Next
-
-                Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
-
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString)
-            End Try
-            Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
-
-            '***********************************************************************
-            REM zerar os campos do arquivo item pedidos
-            Dim command2 As SqlCommand
-            Try
-                For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
-                    command2 = connection.CreateCommand()
-                    command2.CommandText = "update ItemPedidos set qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, yy).Value & "'"
-                    command2.CommandType = CommandType.Text
-                    command2.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = 0
-
-                    connection.Open()
-                    command2.ExecuteNonQuery()
-                    connection.Close()
-                Next
-
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString())
-            End Try
-
-            Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
-
-
-            ' passar parâmetros para a tela de notas
-            TextBox294.Text = PedidoNFEDataGridView1.Item(7, v_SelectRow).Value
-            ' TextBox295.Text = endereco
-            TextBox295.Text = numerorua_cliente
-            TextBox300.Text = email_cliente
-            TextBox16.Text = cep_cliente
-            TextBox296.Text = bairro_cliente
-            TextBox323.Text = cidade_cliente
-            TextBox324.Text = estado_cliente
-            TextBox297.Text = telefone_cliente
-            TextBox303.Text = cnpj_cliente
-            TextBox301.Text = cpf_cliente
-            TextBox302.Text = insestadual_cliente
-            TextBox304.Text = codIBGE_cliente
-            ' Txt_fisicajuridicaNFE.Text = fj_cliente
-            TextBox293.Text = PedidoNFEDataGridView1.Item(6, v_SelectRow).Value
-            TextBox325.Text = PedidoNFEDataGridView1.Item(0, v_SelectRow).Value
-            TextBox316.Text = TextBox249.Text
-
-            ' HoraEmitida_nfeemitidaTextBox.Text = HorarioNotaEmitida4
-            TextBox307.Text = PedidoNFEDataGridView1.Item(9, v_SelectRow).Value
-            TextBox306.Text = PedidoNFEDataGridView1.Item(10, v_SelectRow).Value
-            TextBox305.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
-            TextBox291.Text = "5102"
-            'TextBox292.Text = "Vendas"
-            TextBox292.Text = "saída"
-            ' ComboBox12.Text = "emitente"
-
-            TabControl_NFE.SelectedIndex = 0
-            ' filtra pelo horário em que foi cadastrado
-            ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HorarioNotaEmitida4)
-            ' soma  o valor d nota
-         
-            '    ' -----------------------------------------------------------------------------
-            '    ' trabalhando com as duplicatas
-            rdb_vezesduplicata1.Enabled = True
-            txt_vrduplicata1.Text = TextBox249.Text
-            txt_vrduplicata1.Enabled = True
-            '    ' liberando campos
-
-            txt_obsNFE.Enabled = True
-            '    ' habilitar botões
-            Button4.Enabled = False
-            Button10.Enabled = True
-            Button17.Enabled = False
-            Button20.Enabled = False
-            Button21.Enabled = True
-            Button38.Enabled = True
-
-            '    ' habilitar duplicatas
-            txt_vrduplicata1.Enabled = True
-            txt_vrduplicata2.Enabled = True
-            txt_vrduplicata3.Enabled = True
-            txt_vrduplicata4.Enabled = True
-            txt_vrduplicata5.Enabled = True
-            date_duplicata1.Enabled = True
-            date_duplicata2.Enabled = True
-            date_duplicata3.Enabled = True
-            date_duplicata4.Enabled = True
-            date_duplicata5.Enabled = True
-            ' habilitar dariobutons duplicatas
-            RadioButton18.Enabled = True
-            RadioButton19.Enabled = True
-            RadioButton20.Enabled = True
-            RadioButton21.Enabled = True
-            RadioButton22.Enabled = True
-            ComboBox37.Enabled = True
-
-            '    '---------------------------------------------------------------------------
-            '    '--------------------------------------------------------------------------
-            '    ' ATUALIZA O ARQUIVO DE NOTAS, PARA RESOLVERCAMPOS EM BRANCO NO BD
-            '    'gravar dados no arquivo nfe Emitidas
-
-            '    Try
-            '        'rem salvar os dados e criar o corpo da NOTA
-            '        command = connection.CreateCommand()
-            '        'command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
-            '        command.CommandType = CommandType.Text
-            '        command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = txt_nNfe.Text
-            '        command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@RazaoCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@ENderecoCLiente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@NUmeroRuacliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@BairroCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@municipioCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@telefoneCLiente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@emailCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@estadoCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@IBGEcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@CEPcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@pessoaFouJcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@CPFcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@CNPJcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@IEcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@CodigoPedido_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@CFOP_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@VOlumes_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@Peso_nfeemitida", SqlDbType.Float).Value =
-            '       ' command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = 
-            '        command.Parameters.Add("@obsNota_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@obxNCM_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@ent_saida_nfeemitidas", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@descOperacao_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@frete_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@CodTrans_nfeemitida", SqlDbType.VarChar, 50).Value =
-            '        command.Parameters.Add("@NomeTrans_nfeemitida", SqlDbType.VarChar, 50).Value = 
-
-            '        ' aqui grava os dados referentes a ao vr da fatura 
-            '        command.Parameters.Add("@VrFatura_nfeemitida", SqlDbType.Float).Value = TextBox5.Text
-            '        command.Parameters.Add("@dataduplicata1_nfeemitida", SqlDbType.Date).Value = date_duplicata1.Text
-            '        command.Parameters.Add("@Vrduplicata1_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata1.Text
-
-
-            '        If txt_vrduplicata2.Text = "" Then
-            '            command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-            '            command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = 0
-
-            '        Else
-            '            command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = date_duplicata2.Text
-            '            command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata2.Text
-            '        End If
-
-            '        If txt_vrduplicata3.Text = "" Then
-            '            command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-            '            command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = 0
-
-            '        Else
-            '            command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = date_duplicata3.Text
-            '            command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata3.Text
-            '        End If
-
-            '        If txt_vrduplicata4.Text = "" Then
-            '            command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-            '            command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = 0
-            '        Else
-            '            command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = date_duplicata4.Text
-            '            command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata4.Text
-            '        End If
-            '        If txt_vrduplicata5.Text = "" Then
-            '            command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = DBNull.Value
-            '            command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = 0
-
-            '        Else
-            '            command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = date_duplicata5.Text
-            '            command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata5.Text
-            '        End If
-
-            '        connection.Open()
-            '        command.ExecuteNonQuery()
-            '        connection.Close()
-
-            '    Catch ex As Exception
-
-            '        MessageBox.Show(ex.ToString)
-
-            '    End Try
-
-            '    '-------------------------------------------------------------------------------
-            '    '-----------------------------------------------------------------------------
-
-        End If
+        'Dim reply As DialogResult = MessageBox.Show("Confirmar a geração da NOTA FISCAL?", "Atenção!!!", _
+        ' MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+        'If reply = DialogResult.Yes Then
+
+        '    Dim connection As SqlConnection
+        '    connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        '    Dim VrAserLancadoNfe As String
+        '    Dim variavel2 As Boolean = False
+
+        '    Try
+        '        'coloca o ponteiro onde ele está clicado
+        '        Dim v_SelectRow2 As Integer
+        '        v_SelectRow2 = Me.PedidoNFEDataGridView4.CurrentRow.Index
+
+        '        Dim command5 As SqlCommand
+        '        command5 = connection.CreateCommand()
+        '        command5.CommandText = "select * from ItemPedidos where codpedido_item = '" & PedidoNFEDataGridView4.Item(0, v_SelectRow2).Value & "'"
+
+        '        connection.Open()
+
+        '        Dim lrd2 As SqlDataReader = command5.ExecuteReader()
+        '        While lrd2.Read
+
+        '            'verifica se tem algum campo de quantidade diferente de zero
+        '            If lrd2("qtdeNfe_item") Is DBNull.Value Then
+        '                VrAserLancadoNfe = "0"
+        '            Else
+        '                VrAserLancadoNfe = lrd2("qtdeNfe_item")
+        '            End If
+        '            'indica se achou algum vr diferente de zero
+        '            If VrAserLancadoNfe = 0 Then
+        '            Else
+        '                variavel2 = True
+        '            End If
+
+
+        '        End While
+
+        '        connection.Close()
+        '    Catch ex As Exception
+        '        MessageBox.Show("Não foi selecionado nenhum Ítem")
+        '        Exit Sub
+        '    End Try
+
+        '    ' verifica se achou algum vr diferente de zero nas quantidades lançadas
+        '    If variavel2 = False Then
+        '        MessageBox.Show("Não foi escolhido nenhum Ítem")
+        '        Exit Sub
+        '    End If
+
+        '    'coloca o ponteiro onde ele está clicado
+        '    Dim v_SelectRow As Integer
+        '    v_SelectRow = Me.PedidoNFEDataGridView4.CurrentRow.Index
+
+        '    'BUSCA DADOS NO CLIENTE NO ARQUIVO CLIENTE
+        '    'variáveis do arquivo de clientes
+        '    Dim endereco As String
+        '    Dim numerorua_cliente As String
+        '    Dim bairro_cliente As String
+        '    Dim cidade_cliente As String
+        '    Dim estado_cliente As String
+        '    Dim cep_cliente As String
+        '    Dim cnpj_cliente As String
+        '    Dim insestadual_cliente As String
+        '    Dim telefone_cliente As String
+        '    Dim email_cliente As String
+        '    Dim codIBGE_cliente As String
+        '    Dim fj_cliente As String
+        '    Dim cpf_cliente As String
+
+
+        '    Dim command As SqlCommand
+        '    command = connection.CreateCommand()
+        '    command.CommandText = "select * from cliente where id_cliente = '" & PedidoNFEDataGridView4.Item(6, v_SelectRow).Value & "'"
+        '    Try
+
+        '        connection.Open()
+
+        '        Dim lrd As SqlDataReader = command.ExecuteReader()
+        '        While lrd.Read
+
+
+        '            If lrd("cnpj_cliente") Is DBNull.Value Then
+        '                cnpj_cliente = "0"
+        '            Else
+        '                cnpj_cliente = lrd("cnpj_cliente")
+        '            End If
+
+        '            If lrd("endereco_cliente") Is DBNull.Value Then
+        '                endereco = "0"
+        '            Else
+        '                endereco = lrd("endereco_cliente")
+        '            End If
+
+        '            If lrd("numerorua_cliente") Is DBNull.Value Then
+        '                numerorua_cliente = "0"
+        '            Else
+        '                numerorua_cliente = lrd("numerorua_cliente")
+        '            End If
+
+        '            If lrd("bairro_cliente") Is DBNull.Value Then
+        '                bairro_cliente = "0"
+        '            Else
+        '                bairro_cliente = lrd("bairro_cliente")
+        '            End If
+
+        '            If lrd("cidade_cliente") Is DBNull.Value Then
+        '                cidade_cliente = "0"
+        '            Else
+        '                cidade_cliente = lrd("cidade_cliente")
+        '            End If
+
+        '            If lrd("estado_cliente") Is DBNull.Value Then
+        '                estado_cliente = "0"
+        '            Else
+        '                estado_cliente = lrd("estado_cliente")
+        '            End If
+
+        '            If lrd("cep_cliente") Is DBNull.Value Then
+        '                cep_cliente = "0"
+        '            Else
+        '                cep_cliente = lrd("cep_cliente")
+        '            End If
+        '            If lrd("insestadual_cliente") Is DBNull.Value Then
+        '                insestadual_cliente = "0"
+        '            Else
+        '                insestadual_cliente = lrd("insestadual_cliente")
+        '            End If
+
+        '            If lrd("telefone_cliente") Is DBNull.Value Then
+        '                telefone_cliente = "0"
+        '            Else
+        '                telefone_cliente = lrd("telefone_cliente")
+        '            End If
+        '            If lrd("email_cliente") Is DBNull.Value Then
+        '                email_cliente = "0"
+        '            Else
+        '                email_cliente = lrd("email_cliente")
+        '            End If
+        '            If lrd("codIBGE_cliente") Is DBNull.Value Then
+        '                codIBGE_cliente = "0"
+        '            Else
+        '                codIBGE_cliente = lrd("codIBGE_cliente")
+        '            End If
+
+        '            If lrd("fj_cliente") Is DBNull.Value Then
+        '                fj_cliente = "0"
+        '            Else
+        '                fj_cliente = lrd("fj_cliente")
+        '            End If
+
+        '            If lrd("cpf_cliente") Is DBNull.Value Then
+        '                cpf_cliente = "0"
+        '            Else
+        '                cpf_cliente = lrd("cpf_cliente")
+        '            End If
+        '        End While
+
+        '        connection.Close()
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.ToString)
+        '    End Try
+
+        '    'estabelecer um horário que vai funcionar como índice
+        '    Dim HorarioNotaEmitida3 As String
+        '    Dim date3 As New Date()
+        '    date3 = Date.Now
+        '    Dim ci3 As CultureInfo = CultureInfo.InvariantCulture
+        '    HorarioNotaEmitida3 = date3.ToString("dd.yyyy.hh.mm.ss.FFFFF", ci3)
+        '    Dim HorarioNotaEmitida4 As String = Convert.ToString(HorarioNotaEmitida3)
+
+        '    Try
+        '        'rem salvar os dados e criar o corpo da NOTA
+        '        command = connection.CreateCommand()
+        '        command.CommandText = "INSERT INTO NFE_Emitidas (Codigo_nfeemitida,CodigoCliente_nfeemitida,RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida,municipioCliente_nfeemitida,telefoneCLiente_nfeemitida,emailCliente_nfeemitida,estadoCliente_nfeemitida,IBGEcliente_nfeemitida,CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida,CNPJcliente_nfeemitida,IEcliente_nfeemitida,CodigoPedido_nfeemitida,horaEmitida_nfeemitida,NomeTrans_nfeemitida,CodTrans_nfeemitida,Peso_nfeemitida,data_nfeemitidas,vendedor_nfeemitidas) values (@Codigo_nfeemitida,@CodigoCliente_nfeemitida,@RazaoCliente_nfeemitida,@ENderecoCLiente_nfeemitida,@NUmeroRuacliente_nfeemitida,@BairroCliente_nfeemitida,@municipioCliente_nfeemitida,@telefoneCLiente_nfeemitida,@emailCliente_nfeemitida,@estadoCliente_nfeemitida,@IBGEcliente_nfeemitida,@CEPcliente_nfeemitida,@pessoaFouJcliente_nfeemitida,@CPFcliente_nfeemitida,@CNPJcliente_nfeemitida,@IEcliente_nfeemitida,@CodigoPedido_nfeemitid,@horaEmitida_nfeemitida,@NomeTrans_nfeemitida,@CodTrans_nfeemitida,@Peso_nfeemitida,@data_nfeemitidas,@vendedor_nfeemitidas)"
+        '        command.CommandType = CommandType.Text
+
+        '        ' rem   SALVAR NA CONFIRMAÇÃO DOS DADOS
+        '        command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = ""
+        '        command.Parameters.Add("@horaEmitida_nfeemitida", SqlDbType.VarChar, 50).Value = HorarioNotaEmitida4
+        '        command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(6, v_SelectRow).Value
+        '        command.Parameters.Add("@RazaoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(7, v_SelectRow).Value
+        '        command.Parameters.Add("@ENderecoCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = endereco
+        '        command.Parameters.Add("@NUmeroRuacliente_nfeemitida", SqlDbType.VarChar, 50).Value = numerorua_cliente
+        '        command.Parameters.Add("@BairroCliente_nfeemitida", SqlDbType.VarChar, 50).Value = bairro_cliente
+        '        command.Parameters.Add("@municipioCliente_nfeemitida", SqlDbType.VarChar, 50).Value = cidade_cliente
+        '        command.Parameters.Add("@telefoneCLiente_nfeemitida", SqlDbType.VarChar, 50).Value = telefone_cliente
+        '        command.Parameters.Add("@emailCliente_nfeemitida", SqlDbType.VarChar, 50).Value = email_cliente
+        '        command.Parameters.Add("@estadoCliente_nfeemitida", SqlDbType.VarChar, 50).Value = estado_cliente
+        '        command.Parameters.Add("@IBGEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = codIBGE_cliente
+        '        command.Parameters.Add("@CEPcliente_nfeemitida", SqlDbType.VarChar, 50).Value = cep_cliente
+        '        command.Parameters.Add("@pessoaFouJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = fj_cliente
+        '        command.Parameters.Add("@CPFcliente_nfeemitida", SqlDbType.VarChar, 50).Value = cpf_cliente
+        '        command.Parameters.Add("@CNPJcliente_nfeemitida", SqlDbType.VarChar, 50).Value = cnpj_cliente
+        '        command.Parameters.Add("@IEcliente_nfeemitida", SqlDbType.VarChar, 50).Value = insestadual_cliente
+        '        command.Parameters.Add("@CodigoPedido_nfeemitid", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(0, v_SelectRow).Value
+        '        command.Parameters.Add("@CodTrans_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(9, v_SelectRow).Value
+        '        command.Parameters.Add("@NomeTrans_nfeemitida", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(10, v_SelectRow).Value
+        '        command.Parameters.Add("@Peso_nfeemitida", SqlDbType.VarChar, 50).Value = "0"
+        '        command.Parameters.Add("@data_nfeemitidas", SqlDbType.Date).Value = Date.Now
+        '        command.Parameters.Add("@vendedor_nfeemitidas", SqlDbType.VarChar, 50).Value = PedidoNFEDataGridView4.Item(1, v_SelectRow).Value
+
+        '        connection.Open()
+        '        command.ExecuteNonQuery()
+        '        connection.Close()
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.ToString)
+        '    End Try
+
+        '    ' pegar o último número gravado com datagrid
+        '    Me.NFE_EmitidasTableAdapter.Fill(Me.DataSetFinal.NFE_Emitidas)
+
+        '    Dim UltimoID As String
+        '    Dim command15 As SqlCommand
+        '    command15 = connection.CreateCommand()
+        '    command15.CommandText = "select id_nfeemitidas  from NFE_Emitidas  where id_nfeemitidas = (select max(id_nfeemitidas) from NFE_Emitidas) "
+        '    Try
+        '        connection.Open()
+
+        '        Dim lrd15 As SqlDataReader = command15.ExecuteReader()
+        '        While lrd15.Read
+
+        '            If lrd15("id_nfeemitidas") Is DBNull.Value Then
+        '                UltimoID = "0"
+        '            Else
+        '                UltimoID = lrd15("id_nfeemitidas")
+        '            End If
+
+        '        End While
+
+        '        connection.Close()
+        '    Catch ex As Exception
+
+        '        MessageBox.Show(ex.ToString)
+
+        '    End Try
+        '    TextBox289.Text = UltimoID
+
+
+        '    ' rem buscar os ítens do PEDIDO e transformá-los em ítens da nota
+        '    Dim command1 As SqlCommand
+        '    command1 = connection.CreateCommand()
+        '    Dim yy As Integer
+        '    Try
+
+        '        For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
+        '            'If ItemPedidosDataGridView2.Item(10, yy).Value <> "Entregue" Then
+        '            command1 = connection.CreateCommand()
+        '            command1.CommandText = "INSERT INTO ItemNfeEmitida (IDcod_itemNfeEmitida,NumeroNFe_ItemNfeEmitida,codProd_ItemNfeEmitida,NomeProd_ItemNfeemitida,QtdeProd_ItemNfeEmitida,VrUnitarioProd_ItemNfeEmitida,VrTlProd_itemNfeEmitida,HoraNota_itemNfeEmitida,NumeroPed_itemNfeEmitida,NCM_itemNfeEmitida,tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida) values (@IDcod_itemNfeEmitida,@NumeroNFe_ItemNfeEmitida,@codProd_ItemNfeEmitida,@NomeProd_ItemNfeemitida,@QtdeProd_ItemNfeEmitida,@VrUnitarioProd_ItemNfeEmitida,@VrTlProd_itemNfeEmitida,@HoraNota_itemNfeEmitida,@NumeroPed_itemNfeEmitida,@NCM_itemNfeEmitida,@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida)"
+        '            'command1.CommandText = "INSERT INTO ItemNfeEmitida (tabela_itemNfeEmitida,Peso_itemNfeEmitida,QtdeENtregue_itemNfeEmitida) values (@tabela_itemNfeEmitida,@Peso_itemNfeEmitida,@QtdeENtregue_itemNfeEmitida)"
+
+
+        '            command1.CommandType = CommandType.Text
+        '            command1.Parameters.Add("@NumeroNFe_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = UltimoID
+        '            command1.Parameters.Add("@codProd_ItemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(13, yy).Value
+        '            command1.Parameters.Add("@NomeProd_ItemNfeemitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(1, yy).Value
+        '            command1.Parameters.Add("@QtdeProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(6, yy).Value
+        '            command1.Parameters.Add("@VrUnitarioProd_ItemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(8, yy).Value
+        '            Dim arredonda As String = (ItemPedidosDataGridView10.Item(5, yy).Value) * (ItemPedidosDataGridView10.Item(8, yy).Value)
+        '            command1.Parameters.Add("@VrTlProd_itemNfeEmitida", SqlDbType.Float).Value = arredonda
+        '            command1.Parameters.Add("@HoraNota_itemNfeEmitida", SqlDbType.VarChar, 50).Value = HorarioNotaEmitida4
+        '            command1.Parameters.Add("@NumeroPed_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(11, yy).Value
+        '            command1.Parameters.Add("@NCM_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(19, yy).Value
+        '            command1.Parameters.Add("@tabela_itemNfeEmitida", SqlDbType.VarChar, 50).Value = ItemPedidosDataGridView10.Item(17, yy).Value
+        '            command1.Parameters.Add("@Peso_itemNfeEmitida", SqlDbType.Float).Value = ItemPedidosDataGridView10.Item(18, yy).Value
+        '            command1.Parameters.Add("@QtdeENtregue_itemNfeEmitida", SqlDbType.Int).Value = ItemPedidosDataGridView10.Item(7, yy).Value
+        '            command1.Parameters.Add("@IDcod_itemNfeEmitida", SqlDbType.VarChar, 50).Value = 0 'PedidoNFEDataGridView4.Item(0, yy).Value
+
+        '            If ItemPedidosDataGridView10.Item(6, yy).Value <> 0 Then
+        '                connection.Open()
+        '                command1.ExecuteNonQuery()
+        '                connection.Close()
+        '            End If
+        '        Next
+
+        '        Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
+
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.ToString)
+        '    End Try
+        '    Me.ItemNfeEmitidaTableAdapter.Fill(Me.DataSetFinal.ItemNfeEmitida)
+
+        '    '***********************************************************************
+        '    REM zerar os campos do arquivo item pedidos
+        '    Dim command2 As SqlCommand
+        '    Try
+        '        For yy = 0 To ItemPedidosDataGridView10.RowCount() - 1
+        '            command2 = connection.CreateCommand()
+        '            command2.CommandText = "update ItemPedidos set qtdeNfe_item= @qtdeNfe_item  where id_item = '" & ItemPedidosDataGridView10.Item(20, yy).Value & "'"
+        '            command2.CommandType = CommandType.Text
+        '            command2.Parameters.Add("@qtdeNfe_item", SqlDbType.Float).Value = 0
+
+        '            connection.Open()
+        '            command2.ExecuteNonQuery()
+        '            connection.Close()
+        '        Next
+
+        '    Catch ex As Exception
+        '        MessageBox.Show(ex.ToString())
+        '    End Try
+
+        '    Me.ItemPedidosTableAdapter.Fill(Me.DataSetFinal.ItemPedidos)
+
+
+        '    ' passar parâmetros para a tela de notas
+        '    TextBox294.Text = PedidoNFEDataGridView1.Item(7, v_SelectRow).Value
+        '    ' TextBox295.Text = endereco
+        '    TextBox295.Text = numerorua_cliente
+        '    TextBox300.Text = email_cliente
+        '    TextBox16.Text = cep_cliente
+        '    TextBox296.Text = bairro_cliente
+        '    TextBox323.Text = cidade_cliente
+        '    TextBox324.Text = estado_cliente
+        '    TextBox297.Text = telefone_cliente
+        '    TextBox303.Text = cnpj_cliente
+        '    TextBox301.Text = cpf_cliente
+        '    TextBox302.Text = insestadual_cliente
+        '    TextBox304.Text = codIBGE_cliente
+        '    ' Txt_fisicajuridicaNFE.Text = fj_cliente
+        '    TextBox293.Text = PedidoNFEDataGridView1.Item(6, v_SelectRow).Value
+        '    TextBox325.Text = PedidoNFEDataGridView1.Item(0, v_SelectRow).Value
+        '    TextBox316.Text = TextBox249.Text
+
+        '    ' HoraEmitida_nfeemitidaTextBox.Text = HorarioNotaEmitida4
+        '    TextBox307.Text = PedidoNFEDataGridView1.Item(9, v_SelectRow).Value
+        '    TextBox306.Text = PedidoNFEDataGridView1.Item(10, v_SelectRow).Value
+        '    TextBox305.Text = PedidoNFEDataGridView1.Item(1, v_SelectRow).Value
+        '    TextBox291.Text = "5102"
+        '    'TextBox292.Text = "Vendas"
+        '    TextBox292.Text = "saída"
+        '    ' ComboBox12.Text = "emitente"
+
+        '    TabControl_NFE.SelectedIndex = 0
+        '    ' filtra pelo horário em que foi cadastrado
+        '    ItemNfeEmitidaBindingSource.Filter = String.Format("HoraNota_itemNfeEmitida LIKE '{0}%'", HorarioNotaEmitida4)
+        '    ' soma  o valor d nota
+
+        '    '    ' -----------------------------------------------------------------------------
+        '    '    ' trabalhando com as duplicatas
+        '    rdb_vezesduplicata1.Enabled = True
+        '    txt_vrduplicata1.Text = TextBox249.Text
+        '    txt_vrduplicata1.Enabled = True
+        '    '    ' liberando campos
+
+        '    txt_obsNFE.Enabled = True
+        '    '    ' habilitar botões
+        '    Button4.Enabled = False
+        '    Button10.Enabled = True
+        '    Button17.Enabled = False
+        '    Button20.Enabled = False
+        '    Button21.Enabled = True
+        '    Button38.Enabled = True
+
+        '    '    ' habilitar duplicatas
+        '    txt_vrduplicata1.Enabled = True
+        '    txt_vrduplicata2.Enabled = True
+        '    txt_vrduplicata3.Enabled = True
+        '    txt_vrduplicata4.Enabled = True
+        '    txt_vrduplicata5.Enabled = True
+        '    date_duplicata1.Enabled = True
+        '    date_duplicata2.Enabled = True
+        '    date_duplicata3.Enabled = True
+        '    date_duplicata4.Enabled = True
+        '    date_duplicata5.Enabled = True
+        '    ' habilitar dariobutons duplicatas
+        '    RadioButton18.Enabled = True
+        '    RadioButton19.Enabled = True
+        '    RadioButton20.Enabled = True
+        '    RadioButton21.Enabled = True
+        '    RadioButton22.Enabled = True
+        '    ComboBox37.Enabled = True
+
+        '    '    '---------------------------------------------------------------------------
+        '    '    '--------------------------------------------------------------------------
+        '    '    ' ATUALIZA O ARQUIVO DE NOTAS, PARA RESOLVERCAMPOS EM BRANCO NO BD
+        '    '    'gravar dados no arquivo nfe Emitidas
+
+        '    '    Try
+        '    '        'rem salvar os dados e criar o corpo da NOTA
+        '    '        command = connection.CreateCommand()
+        '    '        'command.CommandText = "update  NFE_Emitidas set Codigo_nfeemitida=@Codigo_nfeemitida,CodigoCliente_nfeemitida=@CodigoCliente_nfeemitida,RazaoCliente_nfeemitida=@RazaoCliente_nfeemitida,ENderecoCLiente_nfeemitida=@ENderecoCLiente_nfeemitida,NUmeroRuacliente_nfeemitida=@NUmeroRuacliente_nfeemitida,BairroCliente_nfeemitida=@BairroCliente_nfeemitida,municipioCliente_nfeemitida=@municipioCliente_nfeemitida,telefoneCLiente_nfeemitida=@telefoneCLiente_nfeemitida,emailCliente_nfeemitida=@emailCliente_nfeemitida,estadoCliente_nfeemitida=@estadoCliente_nfeemitida,IBGEcliente_nfeemitida=@IBGEcliente_nfeemitida,CEPcliente_nfeemitida=@CEPcliente_nfeemitida,pessoaFouJcliente_nfeemitida=@pessoaFouJcliente_nfeemitida,CPFcliente_nfeemitida=@CPFcliente_nfeemitida,CNPJcliente_nfeemitida=@CNPJcliente_nfeemitida,IEcliente_nfeemitida=@IEcliente_nfeemitida,CodigoPedido_nfeemitida=@CodigoPedido_nfeemitida,VrFatura_nfeemitida=@VrFatura_nfeemitida,dataduplicata1_nfeemitida=@dataduplicata1_nfeemitida,Vrduplicata1_nfeemitida=@Vrduplicata1_nfeemitida,Vrduplicata2_nfeemitida=@Vrduplicata2_nfeemitida,dataduplicata2_nfeemitida=@dataduplicata2_nfeemitida,dataduplicata3_nfeemitida=@dataduplicata3_nfeemitida,Vrduplicata3_nfeemitida=@Vrduplicata3_nfeemitida,dataduplicata4_nfeemitida=@dataduplicata4_nfeemitida,Vrduplicata4_nfeemitida=@Vrduplicata4_nfeemitida,dataduplicata5_nfeemitida=@dataduplicata5_nfeemitida,Vrduplicata5_nfeemitida=@Vrduplicata5_nfeemitida,CFOP_nfeemitida=@CFOP_nfeemitida,VOlumes_nfeemitida=@VOlumes_nfeemitida,Peso_nfeemitida=@Peso_nfeemitida,emissorNota_nfeemitidas=@emissorNota_nfeemitidas,obsNota_nfeemitida=@obsNota_nfeemitida,obxNCM_nfeemitida=@obxNCM_nfeemitida,ent_saida_nfeemitidas=@ent_saida_nfeemitidas,descOperacao_nfeemitida=@descOperacao_nfeemitida,frete_nfeemitida=@frete_nfeemitida,CodTrans_nfeemitida=@CodTrans_nfeemitida,NomeTrans_nfeemitida=@NomeTrans_nfeemitida where horaEmitida_nfeemitida = '" & HoraEmitida_nfeemitidaTextBox.Text & "'"
+        '    '        command.CommandType = CommandType.Text
+        '    '        command.Parameters.Add("@Codigo_nfeemitida", SqlDbType.VarChar, 50).Value = txt_nNfe.Text
+        '    '        command.Parameters.Add("@CodigoCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@RazaoCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@ENderecoCLiente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@NUmeroRuacliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@BairroCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@municipioCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@telefoneCLiente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@emailCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@estadoCliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@IBGEcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@CEPcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@pessoaFouJcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@CPFcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@CNPJcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@IEcliente_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@CodigoPedido_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@CFOP_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@VOlumes_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@Peso_nfeemitida", SqlDbType.Float).Value =
+        '    '       ' command.Parameters.Add("@emissorNota_nfeemitidas", SqlDbType.VarChar, 50).Value = 
+        '    '        command.Parameters.Add("@obsNota_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@obxNCM_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@ent_saida_nfeemitidas", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@descOperacao_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@frete_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@CodTrans_nfeemitida", SqlDbType.VarChar, 50).Value =
+        '    '        command.Parameters.Add("@NomeTrans_nfeemitida", SqlDbType.VarChar, 50).Value = 
+
+        '    '        ' aqui grava os dados referentes a ao vr da fatura 
+        '    '        command.Parameters.Add("@VrFatura_nfeemitida", SqlDbType.Float).Value = TextBox5.Text
+        '    '        command.Parameters.Add("@dataduplicata1_nfeemitida", SqlDbType.Date).Value = date_duplicata1.Text
+        '    '        command.Parameters.Add("@Vrduplicata1_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata1.Text
+
+
+        '    '        If txt_vrduplicata2.Text = "" Then
+        '    '            command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '    '            command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = 0
+
+        '    '        Else
+        '    '            command.Parameters.Add("@dataduplicata2_nfeemitida", SqlDbType.Date).Value = date_duplicata2.Text
+        '    '            command.Parameters.Add("@Vrduplicata2_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata2.Text
+        '    '        End If
+
+        '    '        If txt_vrduplicata3.Text = "" Then
+        '    '            command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '    '            command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = 0
+
+        '    '        Else
+        '    '            command.Parameters.Add("@dataduplicata3_nfeemitida", SqlDbType.Date).Value = date_duplicata3.Text
+        '    '            command.Parameters.Add("@Vrduplicata3_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata3.Text
+        '    '        End If
+
+        '    '        If txt_vrduplicata4.Text = "" Then
+        '    '            command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '    '            command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = 0
+        '    '        Else
+        '    '            command.Parameters.Add("@dataduplicata4_nfeemitida", SqlDbType.Date).Value = date_duplicata4.Text
+        '    '            command.Parameters.Add("@Vrduplicata4_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata4.Text
+        '    '        End If
+        '    '        If txt_vrduplicata5.Text = "" Then
+        '    '            command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = DBNull.Value
+        '    '            command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = 0
+
+        '    '        Else
+        '    '            command.Parameters.Add("@dataduplicata5_nfeemitida", SqlDbType.Date).Value = date_duplicata5.Text
+        '    '            command.Parameters.Add("@Vrduplicata5_nfeemitida", SqlDbType.Float).Value = txt_vrduplicata5.Text
+        '    '        End If
+
+        '    '        connection.Open()
+        '    '        command.ExecuteNonQuery()
+        '    '        connection.Close()
+
+        '    '    Catch ex As Exception
+
+        '    '        MessageBox.Show(ex.ToString)
+
+        '    '    End Try
+
+        '    '    '-------------------------------------------------------------------------------
+        '    '    '-----------------------------------------------------------------------------
+
+        'End If
     End Sub
 
     Private Sub Button113_Click(sender As Object, e As EventArgs) Handles Button113.Click
@@ -17046,7 +17026,7 @@ proxima2:
 
     End Sub
 
-    
+
 
     Private Sub RadioButton10_CheckedChanged(sender As Object, e As EventArgs)
         RadioButton8.Enabled = False
@@ -17085,8 +17065,8 @@ proxima2:
 
     End Sub
 
-   
-   
+
+
     Private Sub Button23_Click(sender As Object, e As EventArgs) Handles Button23.Click
 
         variavelImpressao = "4"
@@ -17192,7 +17172,7 @@ proxima2:
 
     End Sub
 
-   
+
     Private Sub TextBox339_TextChanged(sender As Object, e As EventArgs) Handles TextBox339.TextChanged
 
         ApelidoErradoBindingSource.Filter = String.Format("NumeroNota_ApelidoErrado LIKE '{0}%'", TextBox339.Text)
@@ -17565,7 +17545,7 @@ FIM:
 
     End Sub
 
-   
+
 
     Private Sub EnderecoEletronicoDataGridView_Click(sender As Object, e As EventArgs) Handles EnderecoEletronicoDataGridView.Click
 
@@ -17686,7 +17666,7 @@ FIM:
         Catch ex As Exception
         End Try
         ' **************************************************************************************
-          ' CALCULANDO OS TOTAIS das linhas
+        ' CALCULANDO OS TOTAIS das linhas
 
         Dim sql20 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103)  and  linha_item = '" & ComboBox4.Text & "'"
         Dim dataadapter20 As New SqlDataAdapter(sql20, connection)
@@ -17949,7 +17929,7 @@ FIM:
         End Try
     End Sub
 
-  
+
     Private Sub PrintPreviewDialog8_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog8.Load
         PrintPreviewDialog8.Document = PrintDocument4
         DirectCast(PrintPreviewDialog8, Form).WindowState = FormWindowState.Maximized
@@ -17994,13 +17974,13 @@ FIM:
             For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
                 quantidadeBalcao += Linha.Cells(4).Value
             Next
-          
+
             ' ***********************************************************
             Dim command As SqlCommand
             command = connection.CreateCommand()
             ' gravando o consumo medio no arquivo de produtos
             If ProdutosDataGridView3.Item(14, v_SelectRow).Value = "NÃO RAIZ" Then
-                 command.CommandText = "update produtos set DataEstoqueInicial_prod=@DataEstoqueInicial_prod,ConsumoDaDataIncial_prod=@ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod=@DataAtualizacaoEstoque_prod,EstoqueInicial_prod=@EstoqueInicial_prod,estoqueatual_prod=@estoqueatual_prod where cod_prod=@cod_prod "
+                command.CommandText = "update produtos set DataEstoqueInicial_prod=@DataEstoqueInicial_prod,ConsumoDaDataIncial_prod=@ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod=@DataAtualizacaoEstoque_prod,EstoqueInicial_prod=@EstoqueInicial_prod,estoqueatual_prod=@estoqueatual_prod where cod_prod=@cod_prod "
                 command.CommandType = CommandType.Text
                 command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
                 command.Parameters.Add("@EstoqueInicial_prod", SqlDbType.Float).Value = 0
@@ -18008,9 +17988,8 @@ FIM:
                 command.Parameters.Add("@ConsumoDaDataIncial_prod", SqlDbType.Float).Value = 0
                 command.Parameters.Add("@DataAtualizacaoEstoque_prod", SqlDbType.Date).Value = Date.Now
                 command.Parameters.Add("@estoqueatual_prod", SqlDbType.Float).Value = 0
-     
             Else
-                 command.CommandText = "update produtos set estoqueatual_prod=@estoqueatual_prod,ConsumoDaDataIncial_prod=@ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod=@DataAtualizacaoEstoque_prod  where cod_prod=@cod_prod "
+                command.CommandText = "update produtos set estoqueatual_prod=@estoqueatual_prod,ConsumoDaDataIncial_prod=@ConsumoDaDataIncial_prod,DataAtualizacaoEstoque_prod=@DataAtualizacaoEstoque_prod  where cod_prod=@cod_prod "
                 command.CommandType = CommandType.Text
                 command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(0, v_SelectRow).Value.ToString()
                 command.Parameters.Add("@ConsumoDaDataIncial_prod", SqlDbType.Float).Value = quantidadeBalcao
@@ -18018,7 +17997,7 @@ FIM:
                 Dim CalculoEstoqueAtual As Integer = ProdutosDataGridView3.Item(10, v_SelectRow).Value - quantidadeBalcao
                 command.Parameters.Add("@estoqueatual_prod", SqlDbType.Float).Value = CalculoEstoqueAtual
 
-              
+
             End If
 
             Try
@@ -18109,7 +18088,7 @@ FIM:
         '*********************************************************************************
         ' lendo o valor da tabela de produtos e dando baixa/alta no estoque
         Dim v_SelectRow As Integer = 0
-   
+
         For v_SelectRow = 0 To PedidoCompraDataGridView.RowCount() - 1
 
             If PedidoCompraDataGridView.Item(13, v_SelectRow).Value = "Entregue" And PedidoCompraDataGridView.Item(18, v_SelectRow).Value = 0 Then
@@ -18286,7 +18265,7 @@ FIM:
             Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & Date.Now.AddDays(DataSelecionada2) & "' ,103)  and convert (datetime, '" & Date.Now & "' ,103) and nomeProd_balcao = '" & dataGridPediMarf.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & dataGridPediMarf.Item(7, v_SelectRow).Value & "'"
             Dim dataadapter As New SqlDataAdapter(sql2, connection)
             Dim ds As New DataSet()
-         
+
             Try
                 connection.Open()
                 dataadapter.Fill(ds, "balcao")
@@ -18326,6 +18305,122 @@ FIM:
                 dataGridPediMarf.Rows(v_SelectRow).Cells(6).Style.ForeColor = Color.Red
             End If
         Next
+    End Sub
+
+    Private Sub PrintDocument15_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument15.PrintPage
+        ' primeira linha
+        e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
+        e.Graphics.DrawString("Sugestão de compra   ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
+        e.Graphics.DrawString(ProdutosDataGridView5.Item(4, 0).Value, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 550, 5)
+
+        ' cabecalho
+        e.Graphics.DrawString("Código Fornecedor", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 50)
+        e.Graphics.DrawString("Nome do Produto", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 200, 50)
+        e.Graphics.DrawString("Cor  ", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 450, 50)
+        e.Graphics.DrawString("Estoque Méd", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 550, 50)
+        e.Graphics.DrawString("Consumo Máx", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 650, 50)
+        e.Graphics.DrawString("Sugestão", New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 50)
+
+        Dim CalculoSugestao As Double = 0
+        Dim l As Integer = 0
+        Dim ContadorX As Integer = 0
+        Integer.TryParse(TextBox376.Text, ContadorX)
+
+        Try
+            For x = ContadorX To ProdutosDataGridView5.RowCount() - 1
+                CalculoSugestao = ProdutosDataGridView5.Item(8, x).Value - ProdutosDataGridView5.Item(14, x).Value + ProdutosDataGridView5.Item(15, x).Value
+                If ProdutosDataGridView5.Item(8, x).Value > (ProdutosDataGridView5.Item(9, x).Value + ProdutosDataGridView5.Item(14, x).Value - ProdutosDataGridView5.Item(15, x).Value) And CalculoSugestao > 0 Then
+                    l += 1
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(2, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 20, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(6, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 200, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(7, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 450, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(8, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 550, 100 + (l * 20))
+                    e.Graphics.DrawString(ProdutosDataGridView5.Item(12, x).Value, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 650, 100 + (l * 20))
+                    e.Graphics.DrawString(CalculoSugestao, New Font("arial", 10, FontStyle.Regular), Brushes.Black, 740, 100 + (l * 20))
+                End If
+
+            Next
+
+        Catch ex As Exception
+            Exit Sub
+        End Try
+      
+    End Sub
+
+  
+
+    Private Sub ProdutosDataGridView5_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView5.DoubleClick
+        Dim v_SelectRow As Integer
+        v_SelectRow = Me.ProdutosDataGridView5.CurrentRow.Index
+        TextBox374.Text = ProdutosDataGridView5.Item(6, v_SelectRow).Value
+        'calculo do mínimo de compra
+        If ProdutosDataGridView5.Item(8, v_SelectRow).Value > (ProdutosDataGridView5.Item(9, v_SelectRow).Value + ProdutosDataGridView5.Item(14, v_SelectRow).Value - ProdutosDataGridView5.Item(15, v_SelectRow).Value) Then
+            TextBox375.Text = ProdutosDataGridView5.Item(11, v_SelectRow).Value - ProdutosDataGridView5.Item(14, v_SelectRow).Value + ProdutosDataGridView5.Item(15, v_SelectRow).Value
+        Else
+            TextBox375.Text = 0
+        End If
+
+    End Sub
+
+    Private Sub PrintPreviewDialog9_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog9.Load
+        PrintPreviewDialog9.Document = PrintDocument15
+        DirectCast(PrintPreviewDialog9, Form).WindowState = FormWindowState.Maximized
+        PrintDialog1.Document = PrintDocument15
+        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
+        CType(PrintPreviewDialog9.Controls(1), ToolStrip).Items.Add(PDB)
+    End Sub
+
+    Private Sub Button131_Click(sender As Object, e As EventArgs) Handles Button131.Click
+        PrintPreviewDialog9.ShowDialog()
+    End Sub
+
+    Private Sub Button132_Click(sender As Object, e As EventArgs) Handles Button132.Click
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' ------------------------------------------------------------------------------------------------------------------
+        Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra > convert (datetime, '" & DateTimePicker38.Text & "' ,103) and Fornecedor_PedidoCompra ='" & ComboBox26.Text & "'"
+        Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        Dim ds As New DataSet()
+        Try
+            connection.Open()
+            dataadapter.Fill(ds, "PedidoCompra")
+            connection.Close()
+            PedidoCompraDataGridView.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+
+    Private Sub Button133_Click(sender As Object, e As EventArgs) Handles Button133.Click
+
+
+        ' posiciona as tabelas entre as datas escolhidas na tela
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        Dim sql2 As String = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker39.Text & "' ,103)  and convert (datetime, '" & DateTimePicker40.Text & "' ,103)"
+        Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        Dim ds As New DataSet()
+        Try
+            connection.Open()
+            dataadapter.Fill(ds, "VendasMlb")
+            connection.Close()
+            VendasMlbDataGridView.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' soma o valor da tabela se tiver um F no código
+        Dim SomaTotal As Double = 0
+        For x = 0 To VendasMlbDataGridView.RowCount() - 1
+            Dim SearchWithinThis As String = VendasMlbDataGridView.Item(1, x).Value
+            Dim SearchForThis As String = "F"
+            Dim FirstCharacter As Integer = SearchWithinThis.IndexOf(SearchForThis)
+            If FirstCharacter = "0" Then
+                SomaTotal += VendasMlbDataGridView.Item(16, x).Value
+            End If
+        Next
+        TextBox283.Text = SomaTotal
+
     End Sub
 End Class
 
