@@ -863,7 +863,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim senha As String
         senha = InputBox("Coloque a senha")
-        If senha <> "123" Then
+        If senha <> fernando Then
             Exit Sub
         End If
      
@@ -9077,7 +9077,6 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         'PrintPreviewDialog3.ShowDialog()
         PrintDialog1.Document = PrintDocument10
-        ' PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON9FB5D0 (L355 Series)"
         PrintDialog1.PrinterSettings.PrinterName = "\\SERVIDOR\MP-4200 TH"
         PrintDocument10.Print()
         PrintDocument10.Print()
@@ -9391,7 +9390,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button33_Click(sender As Object, e As EventArgs) Handles Button33.Click
 
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> "veinho" Then
+        If codigoEntrada <> fernando Then
             MessageBox.Show("Código inválido")
             Exit Sub
         End If
@@ -13418,7 +13417,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button72_Click(sender As Object, e As EventArgs) Handles Button72.Click
 
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> "123456" Then
+        If codigoEntrada <> fernando Then
             MessageBox.Show("Código inválido")
             Exit Sub
         End If
@@ -13689,7 +13688,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button80_Click(sender As Object, e As EventArgs) Handles Button80.Click
 
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> "123456" Then
+        If codigoEntrada <> fernando Then
             MessageBox.Show("Código inválido")
             Exit Sub
         End If
@@ -14049,7 +14048,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button81_Click(sender As Object, e As EventArgs) Handles Button81.Click
 
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> "123456" Then
+        If codigoEntrada <> fernando Then
             MessageBox.Show("Código inválido")
             Exit Sub
         End If
@@ -14800,7 +14799,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim senha As String
         senha = InputBox("Coloque a senha")
-        If senha <> "123" Then
+        If senha <> fernando Then
             Exit Sub
         End If
         ' variáveis externas
@@ -15842,7 +15841,7 @@ proxima2:
     Private Sub Button96_Click(sender As Object, e As EventArgs) Handles Button96.Click
 
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> "123456" Then
+        If codigoEntrada <> fernando Then
             MessageBox.Show("Código inválido")
             Exit Sub
         End If
@@ -16634,7 +16633,7 @@ Prosxima50:
           MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
 
         If reply = DialogResult.Yes Then
-            PrintPreviewDialog8.ShowDialog()
+            PrintDocument4.Print()
         Else
             Exit Sub
         End If
@@ -17546,17 +17545,13 @@ FIM:
 
 
     Private Sub PrintPreviewDialog8_Load(sender As Object, e As EventArgs) Handles PrintPreviewDialog8.Load
-        PrintPreviewDialog8.Document = PrintDocument4
-        DirectCast(PrintPreviewDialog8, Form).WindowState = FormWindowState.Maximized
-        PrintDialog1.Document = PrintDocument4
-        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
-        CType(PrintPreviewDialog8.Controls(1), ToolStrip).Items.Add(PDB)
+       
     End Sub
 
     Private Sub Button125_Click(sender As Object, e As EventArgs) Handles Button125.Click
 
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
-        If codigoEntrada <> "123456" Then
+        If codigoEntrada <> fernando Then
             MessageBox.Show("Código inválido")
             Exit Sub
         End If
@@ -18115,9 +18110,7 @@ FIM:
 
     End Sub
 
-    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
-       
-    End Sub
+   
 
     Private Sub Button101_Click(sender As Object, e As EventArgs) Handles Button101.Click
         Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
@@ -18137,27 +18130,27 @@ FIM:
         xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
 
         'Dim xx As Integer
-        For xx = 0 To ClienteDataGridView.RowCount() - 1
+        For xx = 0 To FornecedorDataGridView.RowCount() - 1
             xlWorkSheet1.Cells(2 + xx, 1) = xx + 1
             ' xlWorkSheet1.Cells(2 + xx, 2) = ClienteDataGridView.Item(1, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 3) = ClienteDataGridView.Item(0, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 3) = FornecedorDataGridView.Item(0, xx).Value
             'xlWorkSheet1.Cells(2 + xx, 4) = ClienteDataGridView.Item(0, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 5) = ClienteDataGridView.Item(1, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 6) = ClienteDataGridView.Item(2, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 5) = FornecedorDataGridView.Item(1, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 6) = FornecedorDataGridView.Item(2, xx).Value
             xlWorkSheet1.Cells(2 + xx, 7) = ""
-            xlWorkSheet1.Cells(2 + xx, 8) = ClienteDataGridView.Item(3, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 9) = ClienteDataGridView.Item(4, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 10) = ClienteDataGridView.Item(5, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 11) = ClienteDataGridView.Item(6, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 12) = ClienteDataGridView.Item(7, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 13) = ClienteDataGridView.Item(8, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 8) = FornecedorDataGridView.Item(3, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 9) = FornecedorDataGridView.Item(4, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 10) = FornecedorDataGridView.Item(5, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 11) = FornecedorDataGridView.Item(6, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 12) = FornecedorDataGridView.Item(7, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 13) = FornecedorDataGridView.Item(8, xx).Value
             'xlWorkSheet1.Cells(2 + xx, 14) = ClienteDataGridView.Item(6, xx).Value
             xlWorkSheet1.Cells(2 + xx, 15) = ""
-            xlWorkSheet1.Cells(2 + xx, 16) = ClienteDataGridView.Item(9, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 16) = FornecedorDataGridView.Item(9, xx).Value
             xlWorkSheet1.Cells(2 + xx, 17) = ""
-            xlWorkSheet1.Cells(2 + xx, 18) = ClienteDataGridView.Item(10, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 19) = ClienteDataGridView.Item(11, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 20) = ClienteDataGridView.Item(12, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 18) = FornecedorDataGridView.Item(10, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 19) = FornecedorDataGridView.Item(11, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 20) = FornecedorDataGridView.Item(12, xx).Value
             xlWorkSheet1.Cells(2 + xx, 21) = ""
             xlWorkSheet1.Cells(2 + xx, 22) = "Ativo"
             xlWorkSheet1.Cells(2 + xx, 23) = ""
@@ -18173,7 +18166,7 @@ FIM:
             xlWorkSheet1.Cells(2 + xx, 33) = ""
             xlWorkSheet1.Cells(2 + xx, 34) = ""
             xlWorkSheet1.Cells(2 + xx, 35) = ""
-            xlWorkSheet1.Cells(2 + xx, 36) = "Cliente"
+            xlWorkSheet1.Cells(2 + xx, 36) = "Transportadora"
         Next
 
         Try

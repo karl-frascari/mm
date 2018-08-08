@@ -2660,9 +2660,29 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn369 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.data_lancamento = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.codigo_identificação = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PorcentagemFerFras_conta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomeContasBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Panel22 = New System.Windows.Forms.Panel()
         Me.Panel23 = New System.Windows.Forms.Panel()
+        Me.Label70 = New System.Windows.Forms.Label()
+        Me.TextBox296 = New System.Windows.Forms.TextBox()
+        Me.TextBox295 = New System.Windows.Forms.TextBox()
+        Me.TextBox294 = New System.Windows.Forms.TextBox()
+        Me.TextBox293 = New System.Windows.Forms.TextBox()
+        Me.TextBox292 = New System.Windows.Forms.TextBox()
+        Me.TextBox291 = New System.Windows.Forms.TextBox()
+        Me.TextBox290 = New System.Windows.Forms.TextBox()
+        Me.TextBox289 = New System.Windows.Forms.TextBox()
+        Me.Label69 = New System.Windows.Forms.Label()
+        Me.TextBox288 = New System.Windows.Forms.TextBox()
+        Me.TextBox287 = New System.Windows.Forms.TextBox()
+        Me.TextBox285 = New System.Windows.Forms.TextBox()
+        Me.TextBox249 = New System.Windows.Forms.TextBox()
+        Me.TextBox16 = New System.Windows.Forms.TextBox()
+        Me.TextBox15 = New System.Windows.Forms.TextBox()
+        Me.TextBox14 = New System.Windows.Forms.TextBox()
+        Me.TextBox13 = New System.Windows.Forms.TextBox()
+        Me.Label68 = New System.Windows.Forms.Label()
         Me.TextBox214 = New System.Windows.Forms.TextBox()
         Me.TextBox184 = New System.Windows.Forms.TextBox()
         Me.Label284 = New System.Windows.Forms.Label()
@@ -2743,7 +2763,6 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn838 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn774 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GroupBox116 = New System.Windows.Forms.GroupBox()
-        Me.Button18 = New System.Windows.Forms.Button()
         Me.Button100 = New System.Windows.Forms.Button()
         Me.TabPage7 = New System.Windows.Forms.TabPage()
         Me.Panel50 = New System.Windows.Forms.Panel()
@@ -4829,8 +4848,8 @@ Partial Class Form1
         '
         Me.ComboBox46.DataSource = Me.FornecedorBindingSource
         Me.ComboBox46.DisplayMember = "NomeVendedor_fornecedor"
-        Me.ComboBox46.Enabled = False
-        Me.ComboBox46.FormattingEnabled = True
+        Me.ComboBox46.Enabled = false
+        Me.ComboBox46.FormattingEnabled = true
         Me.ComboBox46.Location = New System.Drawing.Point(84, 20)
         Me.ComboBox46.Name = "ComboBox46"
         Me.ComboBox46.Size = New System.Drawing.Size(418, 24)
@@ -26651,13 +26670,13 @@ Partial Class Form1
         Me.NomeContasDataGridView.AutoGenerateColumns = false
         Me.NomeContasDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader
         Me.NomeContasDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.NomeContasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn349, Me.DataGridViewTextBoxColumn382, Me.DataGridViewTextBoxColumn350, Me.DataGridViewTextBoxColumn365, Me.DataGridViewTextBoxColumn366, Me.DataGridViewTextBoxColumn369, Me.data_lancamento, Me.codigo_identificação})
+        Me.NomeContasDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn349, Me.DataGridViewTextBoxColumn382, Me.DataGridViewTextBoxColumn350, Me.DataGridViewTextBoxColumn365, Me.DataGridViewTextBoxColumn366, Me.DataGridViewTextBoxColumn369, Me.data_lancamento, Me.codigo_identificação, Me.PorcentagemFerFras_conta})
         Me.NomeContasDataGridView.DataSource = Me.NomeContasBindingSource
         Me.NomeContasDataGridView.Dock = System.Windows.Forms.DockStyle.Left
         Me.NomeContasDataGridView.Location = New System.Drawing.Point(0, 0)
         Me.NomeContasDataGridView.Name = "NomeContasDataGridView"
         Me.NomeContasDataGridView.ReadOnly = true
-        Me.NomeContasDataGridView.Size = New System.Drawing.Size(808, 183)
+        Me.NomeContasDataGridView.Size = New System.Drawing.Size(1203, 183)
         Me.NomeContasDataGridView.TabIndex = 0
         '
         'DataGridViewTextBoxColumn349
@@ -26723,6 +26742,14 @@ Partial Class Form1
         Me.codigo_identificação.ReadOnly = true
         Me.codigo_identificação.Width = 158
         '
+        'PorcentagemFerFras_conta
+        '
+        Me.PorcentagemFerFras_conta.DataPropertyName = "PorcentagemFerFras_conta"
+        Me.PorcentagemFerFras_conta.HeaderText = "PorcentagemFerFras_conta"
+        Me.PorcentagemFerFras_conta.Name = "PorcentagemFerFras_conta"
+        Me.PorcentagemFerFras_conta.ReadOnly = true
+        Me.PorcentagemFerFras_conta.Width = 201
+        '
         'NomeContasBindingSource
         '
         Me.NomeContasBindingSource.DataMember = "NomeContas"
@@ -26742,6 +26769,25 @@ Partial Class Form1
         'Panel23
         '
         Me.Panel23.BackColor = System.Drawing.Color.Yellow
+        Me.Panel23.Controls.Add(Me.Label70)
+        Me.Panel23.Controls.Add(Me.TextBox296)
+        Me.Panel23.Controls.Add(Me.TextBox295)
+        Me.Panel23.Controls.Add(Me.TextBox294)
+        Me.Panel23.Controls.Add(Me.TextBox293)
+        Me.Panel23.Controls.Add(Me.TextBox292)
+        Me.Panel23.Controls.Add(Me.TextBox291)
+        Me.Panel23.Controls.Add(Me.TextBox290)
+        Me.Panel23.Controls.Add(Me.TextBox289)
+        Me.Panel23.Controls.Add(Me.Label69)
+        Me.Panel23.Controls.Add(Me.TextBox288)
+        Me.Panel23.Controls.Add(Me.TextBox287)
+        Me.Panel23.Controls.Add(Me.TextBox285)
+        Me.Panel23.Controls.Add(Me.TextBox249)
+        Me.Panel23.Controls.Add(Me.TextBox16)
+        Me.Panel23.Controls.Add(Me.TextBox15)
+        Me.Panel23.Controls.Add(Me.TextBox14)
+        Me.Panel23.Controls.Add(Me.TextBox13)
+        Me.Panel23.Controls.Add(Me.Label68)
         Me.Panel23.Controls.Add(Me.TextBox214)
         Me.Panel23.Controls.Add(Me.TextBox184)
         Me.Panel23.Controls.Add(Me.Label284)
@@ -26765,18 +26811,157 @@ Partial Class Form1
         Me.Panel23.Size = New System.Drawing.Size(1293, 315)
         Me.Panel23.TabIndex = 2
         '
+        'Label70
+        '
+        Me.Label70.AutoSize = true
+        Me.Label70.Location = New System.Drawing.Point(1031, 45)
+        Me.Label70.Name = "Label70"
+        Me.Label70.Size = New System.Drawing.Size(66, 16)
+        Me.Label70.TabIndex = 53
+        Me.Label70.Text = "Fernando"
+        '
+        'TextBox296
+        '
+        Me.TextBox296.Location = New System.Drawing.Point(1025, 272)
+        Me.TextBox296.Name = "TextBox296"
+        Me.TextBox296.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox296.TabIndex = 52
+        '
+        'TextBox295
+        '
+        Me.TextBox295.Location = New System.Drawing.Point(1025, 244)
+        Me.TextBox295.Name = "TextBox295"
+        Me.TextBox295.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox295.TabIndex = 51
+        '
+        'TextBox294
+        '
+        Me.TextBox294.Location = New System.Drawing.Point(1025, 216)
+        Me.TextBox294.Name = "TextBox294"
+        Me.TextBox294.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox294.TabIndex = 50
+        '
+        'TextBox293
+        '
+        Me.TextBox293.Location = New System.Drawing.Point(1025, 188)
+        Me.TextBox293.Name = "TextBox293"
+        Me.TextBox293.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox293.TabIndex = 49
+        '
+        'TextBox292
+        '
+        Me.TextBox292.Location = New System.Drawing.Point(1025, 160)
+        Me.TextBox292.Name = "TextBox292"
+        Me.TextBox292.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox292.TabIndex = 48
+        '
+        'TextBox291
+        '
+        Me.TextBox291.Location = New System.Drawing.Point(1025, 132)
+        Me.TextBox291.Name = "TextBox291"
+        Me.TextBox291.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox291.TabIndex = 47
+        '
+        'TextBox290
+        '
+        Me.TextBox290.Location = New System.Drawing.Point(1025, 104)
+        Me.TextBox290.Name = "TextBox290"
+        Me.TextBox290.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox290.TabIndex = 46
+        '
+        'TextBox289
+        '
+        Me.TextBox289.Location = New System.Drawing.Point(1025, 76)
+        Me.TextBox289.Name = "TextBox289"
+        Me.TextBox289.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox289.TabIndex = 45
+        '
+        'Label69
+        '
+        Me.Label69.AutoSize = true
+        Me.Label69.Location = New System.Drawing.Point(1126, 44)
+        Me.Label69.Name = "Label69"
+        Me.Label69.Size = New System.Drawing.Size(41, 16)
+        Me.Label69.TabIndex = 44
+        Me.Label69.Text = "Silvia"
+        '
+        'TextBox288
+        '
+        Me.TextBox288.Location = New System.Drawing.Point(1129, 272)
+        Me.TextBox288.Name = "TextBox288"
+        Me.TextBox288.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox288.TabIndex = 43
+        '
+        'TextBox287
+        '
+        Me.TextBox287.Location = New System.Drawing.Point(1129, 244)
+        Me.TextBox287.Name = "TextBox287"
+        Me.TextBox287.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox287.TabIndex = 42
+        '
+        'TextBox285
+        '
+        Me.TextBox285.Location = New System.Drawing.Point(1129, 216)
+        Me.TextBox285.Name = "TextBox285"
+        Me.TextBox285.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox285.TabIndex = 41
+        '
+        'TextBox249
+        '
+        Me.TextBox249.Location = New System.Drawing.Point(1129, 188)
+        Me.TextBox249.Name = "TextBox249"
+        Me.TextBox249.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox249.TabIndex = 40
+        '
+        'TextBox16
+        '
+        Me.TextBox16.Location = New System.Drawing.Point(1129, 160)
+        Me.TextBox16.Name = "TextBox16"
+        Me.TextBox16.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox16.TabIndex = 39
+        '
+        'TextBox15
+        '
+        Me.TextBox15.Location = New System.Drawing.Point(1129, 132)
+        Me.TextBox15.Name = "TextBox15"
+        Me.TextBox15.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox15.TabIndex = 38
+        '
+        'TextBox14
+        '
+        Me.TextBox14.Location = New System.Drawing.Point(1129, 104)
+        Me.TextBox14.Name = "TextBox14"
+        Me.TextBox14.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox14.TabIndex = 37
+        '
+        'TextBox13
+        '
+        Me.TextBox13.Location = New System.Drawing.Point(1129, 76)
+        Me.TextBox13.Name = "TextBox13"
+        Me.TextBox13.Size = New System.Drawing.Size(87, 22)
+        Me.TextBox13.TabIndex = 36
+        '
+        'Label68
+        '
+        Me.Label68.AutoSize = true
+        Me.Label68.Location = New System.Drawing.Point(955, 44)
+        Me.Label68.Name = "Label68"
+        Me.Label68.Size = New System.Drawing.Size(39, 16)
+        Me.Label68.TabIndex = 35
+        Me.Label68.Text = "Total"
+        '
         'TextBox214
         '
-        Me.TextBox214.Location = New System.Drawing.Point(966, 279)
+        Me.TextBox214.Location = New System.Drawing.Point(958, 272)
         Me.TextBox214.Name = "TextBox214"
-        Me.TextBox214.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox214.Size = New System.Drawing.Size(61, 22)
         Me.TextBox214.TabIndex = 34
         '
         'TextBox184
         '
-        Me.TextBox184.Location = New System.Drawing.Point(966, 241)
+        Me.TextBox184.Location = New System.Drawing.Point(958, 244)
         Me.TextBox184.Name = "TextBox184"
-        Me.TextBox184.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox184.Size = New System.Drawing.Size(61, 22)
         Me.TextBox184.TabIndex = 33
         '
         'Label284
@@ -26791,7 +26976,7 @@ Partial Class Form1
         'Label283
         '
         Me.Label283.AutoSize = true
-        Me.Label283.Location = New System.Drawing.Point(852, 286)
+        Me.Label283.Location = New System.Drawing.Point(846, 275)
         Me.Label283.Name = "Label283"
         Me.Label283.Size = New System.Drawing.Size(88, 16)
         Me.Label283.TabIndex = 27
@@ -26799,50 +26984,50 @@ Partial Class Form1
         '
         'TextBox211
         '
-        Me.TextBox211.Location = New System.Drawing.Point(966, 203)
+        Me.TextBox211.Location = New System.Drawing.Point(958, 216)
         Me.TextBox211.Name = "TextBox211"
-        Me.TextBox211.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox211.Size = New System.Drawing.Size(61, 22)
         Me.TextBox211.TabIndex = 22
         '
         'TextBox209
         '
-        Me.TextBox209.Location = New System.Drawing.Point(966, 165)
+        Me.TextBox209.Location = New System.Drawing.Point(958, 188)
         Me.TextBox209.Name = "TextBox209"
-        Me.TextBox209.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox209.Size = New System.Drawing.Size(61, 22)
         Me.TextBox209.TabIndex = 20
         '
         'TextBox208
         '
-        Me.TextBox208.Location = New System.Drawing.Point(966, 127)
+        Me.TextBox208.Location = New System.Drawing.Point(958, 160)
         Me.TextBox208.Name = "TextBox208"
-        Me.TextBox208.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox208.Size = New System.Drawing.Size(61, 22)
         Me.TextBox208.TabIndex = 19
         '
         'TextBox207
         '
-        Me.TextBox207.Location = New System.Drawing.Point(966, 89)
+        Me.TextBox207.Location = New System.Drawing.Point(958, 132)
         Me.TextBox207.Name = "TextBox207"
-        Me.TextBox207.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox207.Size = New System.Drawing.Size(61, 22)
         Me.TextBox207.TabIndex = 18
         '
         'TextBox206
         '
-        Me.TextBox206.Location = New System.Drawing.Point(966, 51)
+        Me.TextBox206.Location = New System.Drawing.Point(958, 104)
         Me.TextBox206.Name = "TextBox206"
-        Me.TextBox206.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox206.Size = New System.Drawing.Size(61, 22)
         Me.TextBox206.TabIndex = 17
         '
         'TextBox205
         '
-        Me.TextBox205.Location = New System.Drawing.Point(966, 13)
+        Me.TextBox205.Location = New System.Drawing.Point(958, 76)
         Me.TextBox205.Name = "TextBox205"
-        Me.TextBox205.Size = New System.Drawing.Size(100, 22)
+        Me.TextBox205.Size = New System.Drawing.Size(61, 22)
         Me.TextBox205.TabIndex = 16
         '
         'Label281
         '
         Me.Label281.AutoSize = true
-        Me.Label281.Location = New System.Drawing.Point(901, 208)
+        Me.Label281.Location = New System.Drawing.Point(895, 219)
         Me.Label281.Name = "Label281"
         Me.Label281.Size = New System.Drawing.Size(39, 16)
         Me.Label281.TabIndex = 15
@@ -26851,7 +27036,7 @@ Partial Class Form1
         'Label280
         '
         Me.Label280.AutoSize = true
-        Me.Label280.Location = New System.Drawing.Point(877, 169)
+        Me.Label280.Location = New System.Drawing.Point(877, 191)
         Me.Label280.Name = "Label280"
         Me.Label280.Size = New System.Drawing.Size(63, 16)
         Me.Label280.TabIndex = 14
@@ -26860,7 +27045,7 @@ Partial Class Form1
         'Label278
         '
         Me.Label278.AutoSize = true
-        Me.Label278.Location = New System.Drawing.Point(895, 130)
+        Me.Label278.Location = New System.Drawing.Point(889, 163)
         Me.Label278.Name = "Label278"
         Me.Label278.Size = New System.Drawing.Size(45, 16)
         Me.Label278.TabIndex = 12
@@ -26869,7 +27054,7 @@ Partial Class Form1
         'Label277
         '
         Me.Label277.AutoSize = true
-        Me.Label277.Location = New System.Drawing.Point(887, 91)
+        Me.Label277.Location = New System.Drawing.Point(881, 135)
         Me.Label277.Name = "Label277"
         Me.Label277.Size = New System.Drawing.Size(53, 16)
         Me.Label277.TabIndex = 11
@@ -26878,7 +27063,7 @@ Partial Class Form1
         'Label276
         '
         Me.Label276.AutoSize = true
-        Me.Label276.Location = New System.Drawing.Point(866, 52)
+        Me.Label276.Location = New System.Drawing.Point(866, 107)
         Me.Label276.Name = "Label276"
         Me.Label276.Size = New System.Drawing.Size(74, 16)
         Me.Label276.TabIndex = 10
@@ -26887,7 +27072,7 @@ Partial Class Form1
         'Label275
         '
         Me.Label275.AutoSize = true
-        Me.Label275.Location = New System.Drawing.Point(855, 13)
+        Me.Label275.Location = New System.Drawing.Point(855, 79)
         Me.Label275.Name = "Label275"
         Me.Label275.Size = New System.Drawing.Size(85, 16)
         Me.Label275.TabIndex = 9
@@ -27340,7 +27525,7 @@ Partial Class Form1
         Me.TabPage8.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage8.Size = New System.Drawing.Size(1262, 504)
         Me.TabPage8.TabIndex = 0
-        Me.TabPage8.Text = "Planilhas Tiny"
+        Me.TabPage8.Text = "Planilhas Produtos"
         Me.TabPage8.UseVisualStyleBackColor = true
         '
         'Panel49
@@ -27468,7 +27653,6 @@ Partial Class Form1
         '
         'GroupBox116
         '
-        Me.GroupBox116.Controls.Add(Me.Button18)
         Me.GroupBox116.Controls.Add(Me.Button100)
         Me.GroupBox116.Location = New System.Drawing.Point(26, 51)
         Me.GroupBox116.Name = "GroupBox116"
@@ -27476,15 +27660,6 @@ Partial Class Form1
         Me.GroupBox116.TabIndex = 0
         Me.GroupBox116.TabStop = false
         Me.GroupBox116.Text = "Dados da Nota Fiscal"
-        '
-        'Button18
-        '
-        Me.Button18.Location = New System.Drawing.Point(117, 21)
-        Me.Button18.Name = "Button18"
-        Me.Button18.Size = New System.Drawing.Size(109, 108)
-        Me.Button18.TabIndex = 7
-        Me.Button18.Text = "Montar Planilha de fornecedores, clientes e tranportadoras"
-        Me.Button18.UseVisualStyleBackColor = true
         '
         'Button100
         '
@@ -27503,7 +27678,7 @@ Partial Class Form1
         Me.TabPage7.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage7.Size = New System.Drawing.Size(1262, 504)
         Me.TabPage7.TabIndex = 1
-        Me.TabPage7.Text = "TabPage7"
+        Me.TabPage7.Text = "Planilhas Cadastro"
         Me.TabPage7.UseVisualStyleBackColor = true
         '
         'Panel50
@@ -30579,14 +30754,6 @@ End Sub
     Friend WithEvents TextBox205 As System.Windows.Forms.TextBox
     Friend WithEvents Panel43 As System.Windows.Forms.Panel
     Friend WithEvents NomeContasDataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridViewTextBoxColumn349 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn382 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn350 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn365 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn366 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents DataGridViewTextBoxColumn369 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents data_lancamento As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents codigo_identificação As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TextBox212 As System.Windows.Forms.TextBox
     Friend WithEvents Label282 As System.Windows.Forms.Label
     Friend WithEvents ListaContasArquivoBindingSource1 As System.Windows.Forms.BindingSource
@@ -31702,7 +31869,6 @@ End Sub
     Friend WithEvents DataGridViewTextBoxColumn837 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn838 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn774 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button18 As System.Windows.Forms.Button
     Friend WithEvents TabPage7 As System.Windows.Forms.TabPage
     Friend WithEvents Panel50 As System.Windows.Forms.Panel
     Friend WithEvents Panel52 As System.Windows.Forms.Panel
@@ -31757,5 +31923,33 @@ End Sub
     Friend WithEvents insestadual_cliente As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn845 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn848 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label69 As System.Windows.Forms.Label
+    Friend WithEvents TextBox288 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox287 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox285 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox249 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox16 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox15 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox14 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox13 As System.Windows.Forms.TextBox
+    Friend WithEvents Label68 As System.Windows.Forms.Label
+    Friend WithEvents DataGridViewTextBoxColumn349 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn382 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn350 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn365 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn366 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents DataGridViewTextBoxColumn369 As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents data_lancamento As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents codigo_identificação As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents PorcentagemFerFras_conta As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label70 As System.Windows.Forms.Label
+    Friend WithEvents TextBox296 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox295 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox294 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox293 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox292 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox291 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox290 As System.Windows.Forms.TextBox
+    Friend WithEvents TextBox289 As System.Windows.Forms.TextBox
 
 End Class
