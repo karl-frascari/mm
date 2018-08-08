@@ -7819,7 +7819,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 e.Graphics.DrawString(ProdutosDataGridView4.Item(17, x).Value, New Font("arial", 8, FontStyle.Regular), Brushes.Black, 670, 170 + (x * 20))
                 e.Graphics.DrawString("--------------------------------------------------------------------------------------------------------", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 170 + (x * 20))
 
-                If x = 45 Then
+                If x >= 45 Then
                     PrintDocument5.Print()
                 End If
 
@@ -18035,6 +18035,158 @@ FIM:
             End If
         Next
         TextBox283.Text = SomaTotal
+
+    End Sub
+
+    Private Sub Button100_Click(sender As Object, e As EventArgs) Handles Button100.Click
+
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> "123456" Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+
+        'rem passa dados para a planilha excell de pedidos   -------
+        Dim xlApp1 As Excel.Application
+        Dim xlWorkBook1 As Excel.Workbook
+        Dim xlWorkSheet1 As Excel.Worksheet
+
+
+        xlApp1 = New Excel.Application
+        xlWorkBook1 = xlApp1.Workbooks.Open("\\C:\Users\Usuario\Desktop\Planilha Produtos Tiny.xls")
+        xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
+
+        'Dim xx As Integer
+        For xx = 0 To ProdutosDataGridView8.RowCount() - 1
+            xlWorkSheet1.Cells(3 + xx, 1) = xx + 1
+            xlWorkSheet1.Cells(3 + xx, 2) = ProdutosDataGridView8.Item(1, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 3) = ProdutosDataGridView8.Item(2, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 4) = "1"
+            xlWorkSheet1.Cells(3 + xx, 5) = ProdutosDataGridView8.Item(3, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 6) = "0 - Nacional"
+            xlWorkSheet1.Cells(3 + xx, 7) = ProdutosDataGridView8.Item(4, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 8) = 0
+            xlWorkSheet1.Cells(3 + xx, 9) = ""
+            xlWorkSheet1.Cells(3 + xx, 10) = "Ativo"
+            xlWorkSheet1.Cells(3 + xx, 11) = 0
+            xlWorkSheet1.Cells(3 + xx, 12) = 0
+            xlWorkSheet1.Cells(3 + xx, 13) = ProdutosDataGridView8.Item(5, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 14) = ProdutosDataGridView8.Item(6, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 15) = ""
+            xlWorkSheet1.Cells(3 + xx, 16) = 0
+            xlWorkSheet1.Cells(3 + xx, 17) = 0
+            xlWorkSheet1.Cells(3 + xx, 18) = ProdutosDataGridView8.Item(7, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 19) = ProdutosDataGridView8.Item(7, xx).Value
+            xlWorkSheet1.Cells(3 + xx, 20) = ""
+            xlWorkSheet1.Cells(3 + xx, 21) = ""
+            xlWorkSheet1.Cells(3 + xx, 22) = ""
+            xlWorkSheet1.Cells(3 + xx, 23) = ""
+            xlWorkSheet1.Cells(3 + xx, 24) = ""
+            xlWorkSheet1.Cells(3 + xx, 25) = ""
+            xlWorkSheet1.Cells(3 + xx, 26) = 0
+            xlWorkSheet1.Cells(3 + xx, 27) = 0
+            xlWorkSheet1.Cells(3 + xx, 28) = 0
+            xlWorkSheet1.Cells(3 + xx, 29) = 0
+            xlWorkSheet1.Cells(3 + xx, 30) = ""
+            xlWorkSheet1.Cells(3 + xx, 31) = ""
+            xlWorkSheet1.Cells(3 + xx, 32) = ""
+            xlWorkSheet1.Cells(3 + xx, 33) = ""
+            xlWorkSheet1.Cells(3 + xx, 34) = ""
+            xlWorkSheet1.Cells(3 + xx, 35) = ""
+            xlWorkSheet1.Cells(3 + xx, 36) = ""
+            xlWorkSheet1.Cells(3 + xx, 37) = ""
+            xlWorkSheet1.Cells(3 + xx, 38) = ""
+            xlWorkSheet1.Cells(3 + xx, 39) = ""
+            xlWorkSheet1.Cells(3 + xx, 40) = ""
+            xlWorkSheet1.Cells(3 + xx, 41) = ""
+            xlWorkSheet1.Cells(3 + xx, 42) = "Não"
+            xlWorkSheet1.Cells(3 + xx, 43) = 0
+
+        Next
+
+        Try
+            xlWorkBook1.SaveAs(Filename:="\\C:\Users\Usuario\Desktop\Planilha Produtos Tiny2.xls")
+            xlWorkBook1.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
+            xlWorkBook1.Close()
+        End Try
+
+
+    End Sub
+
+    Private Sub Button18_Click(sender As Object, e As EventArgs) Handles Button18.Click
+       
+    End Sub
+
+    Private Sub Button101_Click(sender As Object, e As EventArgs) Handles Button101.Click
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> "123456" Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+
+        'rem passa dados para a planilha excell de pedidos   -------
+        Dim xlApp1 As Excel.Application
+        Dim xlWorkBook1 As Excel.Workbook
+        Dim xlWorkSheet1 As Excel.Worksheet
+
+
+        xlApp1 = New Excel.Application
+        xlWorkBook1 = xlApp1.Workbooks.Open("\\C:\Users\Usuario\Desktop\Planilha Tiny Cadastro.xls")
+        xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
+
+        'Dim xx As Integer
+        For xx = 0 To ClienteDataGridView.RowCount() - 1
+            xlWorkSheet1.Cells(2 + xx, 1) = xx + 1
+            ' xlWorkSheet1.Cells(2 + xx, 2) = ClienteDataGridView.Item(1, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 3) = ClienteDataGridView.Item(0, xx).Value
+            'xlWorkSheet1.Cells(2 + xx, 4) = ClienteDataGridView.Item(0, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 5) = ClienteDataGridView.Item(1, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 6) = ClienteDataGridView.Item(2, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 7) = ""
+            xlWorkSheet1.Cells(2 + xx, 8) = ClienteDataGridView.Item(3, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 9) = ClienteDataGridView.Item(4, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 10) = ClienteDataGridView.Item(5, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 11) = ClienteDataGridView.Item(6, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 12) = ClienteDataGridView.Item(7, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 13) = ClienteDataGridView.Item(8, xx).Value
+            'xlWorkSheet1.Cells(2 + xx, 14) = ClienteDataGridView.Item(6, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 15) = ""
+            xlWorkSheet1.Cells(2 + xx, 16) = ClienteDataGridView.Item(9, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 17) = ""
+            xlWorkSheet1.Cells(2 + xx, 18) = ClienteDataGridView.Item(10, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 19) = ClienteDataGridView.Item(11, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 20) = ClienteDataGridView.Item(12, xx).Value
+            xlWorkSheet1.Cells(2 + xx, 21) = ""
+            xlWorkSheet1.Cells(2 + xx, 22) = "Ativo"
+            xlWorkSheet1.Cells(2 + xx, 23) = ""
+            xlWorkSheet1.Cells(2 + xx, 24) = ""
+            xlWorkSheet1.Cells(2 + xx, 25) = ""
+            xlWorkSheet1.Cells(2 + xx, 26) = ""
+            xlWorkSheet1.Cells(2 + xx, 27) = ""
+            xlWorkSheet1.Cells(2 + xx, 28) = ""
+            xlWorkSheet1.Cells(2 + xx, 29) = ""
+            xlWorkSheet1.Cells(2 + xx, 30) = ""
+            xlWorkSheet1.Cells(2 + xx, 31) = ""
+            xlWorkSheet1.Cells(2 + xx, 32) = ""
+            xlWorkSheet1.Cells(2 + xx, 33) = ""
+            xlWorkSheet1.Cells(2 + xx, 34) = ""
+            xlWorkSheet1.Cells(2 + xx, 35) = ""
+            xlWorkSheet1.Cells(2 + xx, 36) = "Cliente"
+        Next
+
+        Try
+            xlWorkBook1.SaveAs(Filename:="\\C:\Users\Usuario\Desktop\Planilha Tiny Cadastro2.xls")
+            xlWorkBook1.Close()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString())
+            xlWorkBook1.Close()
+        End Try
+
+    End Sub
+
+    Private Sub ComboBox47_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox47.SelectedIndexChanged
 
     End Sub
 End Class
