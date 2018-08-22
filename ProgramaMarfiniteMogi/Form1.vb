@@ -72,6 +72,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetFinal.VendasBalcaoResultado' table. You can move, or remove it, as needed.
+        Me.VendasBalcaoResultadoTableAdapter.Fill(Me.DataSetFinal.VendasBalcaoResultado)
         'TODO: This line of code loads data into the 'DataSetFinal.RamoCliente' table. You can move, or remove it, as needed.
         Me.RamoClienteTableAdapter.Fill(Me.DataSetFinal.RamoCliente)
         'TODO: This line of code loads data into the 'DataSetFinal.EnderecoEletronico' table. You can move, or remove it, as needed.
@@ -13530,6 +13532,22 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Label295.Text = DiferencaData
         TextBox163.Text = quantidadeBalcao
         TextBox127.Text = ((quantidadeBalcao / DiferencaData) * 30).ToString("F2")
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim FaturamentoBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
+            FaturamentoBalcao += Linha.Cells(7).Value
+        Next
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim CustoBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView5.Rows
+            CustoBalcao += Linha.Cells(8).Value
+        Next
+        TextBox298.Text = FaturamentoBalcao - CustoBalcao
+        ' -----------------------------------
+       
+
         ' ----------------------------------------------------------------------------------
         ' Pesquisando dados na tabela de pedidos
 
@@ -14055,7 +14073,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             connection.Open()
 
             'REM verifica se cdigo de contas já existe banco do dados para não gravar duas vezes
-            Dim TempoEntrega As Double = 0
+            Dim TempoEntrega As String = 0
             Dim lrd As SqlDataReader = cmd.ExecuteReader()
 
             Try
@@ -14079,12 +14097,15 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             command5.Parameters.Add("@cor_prod", SqlDbType.VarChar, 50).Value = ProdutosDataGridView3.Item(4, v_SelectRow).Value.ToString()
 
             ' passando a vari´vel "MesPassado" como estoque mínimo mais 15 dias de consumo de margem de segurança - ela é calculada para 30 dias
+            Dim TempoEntregaInt As Integer = 0
+            Integer.TryParse(TempoEntrega, TempoEntregaInt)
+
             Dim EstoqueMin As Integer = 0
-            EstoqueMin = ((MesPassado / 30) * TempoEntrega) * 1
+            EstoqueMin = ((MesPassado / 30) * TempoEntregaInt) * 1
             command5.Parameters.Add("@estoquemin_prod", SqlDbType.Int).Value = EstoqueMin
             ' calculando estoque maximo
             Dim EstoqueMax As Integer = 0
-            EstoqueMax = ((MesPassado / 30) * TempoEntrega) * 3
+            EstoqueMax = ((MesPassado / 30) * TempoEntregaInt) * 3
             command5.Parameters.Add("@estaquemax_prod", SqlDbType.Int).Value = EstoqueMax
 
             If MesRetrasado > MesPassado Then
@@ -18293,20 +18314,13 @@ FIM:
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' **********************************************************************************************
         Dim v_SelectRow As Integer = 0
-        Dim VendaPeriodo As Double
-        Dim CustoPeriodo As Integer
-        Dim TotalLucro As Double
+        Dim VendaPeriodo As Double = 0
+        Dim CustoPeriodo As Integer = 0
+        Dim TotalLucro As Double = 0
 
-        For v_SelectRow = 0 To ProdutosDataGridView9.RowCount() - 1
+        For v_SelectRow = 0 To BalcaoDataGridView11.RowCount() - 1
 
-            Dim ano As Integer = Today.Year
-            Dim mes As Integer = Today.Month
-            Dim dia As Integer = Today.Day
-            Dim primeiroDia As DateTime = New DateTime(ano, mes, dia).AddDays(-180)
-            Dim ultimoDia As DateTime = New DateTime(ano, mes, dia).AddDays(-1)
-
-
-            Dim sql As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & primeiroDia & "' ,103)  and convert (datetime, '" & ultimoDia & "' ,103)and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "'"
+            Dim sql As String = "SELECT * FROM balcao WHERE  (nomevendedor_balcao ='celso' or  nomevendedor_balcao ='verônica')"
             Dim dataadapter As New SqlDataAdapter(sql, connection)
             Dim ds As New DataSet()
             Try
@@ -18318,54 +18332,56 @@ FIM:
                 MsgBox(ex.ToString)
             End Try
 
-            'somar vendas da coluna da tabela balcão
-            Dim ValorBalcao As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
-                ValorBalcao += Linha.Cells(12).Value
-            Next
-            VendaPeriodo = ValorBalcao
-            'somar custo da coluna da tabela balcão
-            Dim ValorCusto As Decimal = 0
-            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
-                ValorCusto += Linha.Cells(17).Value
-            Next
-            CustoPeriodo = ValorCusto
-            ' calculando o lucro
+         
+            VendaPeriodo = BalcaoDataGridView11.Item(12, v_SelectRow).Value
+            CustoPeriodo = BalcaoDataGridView11.Item(17, v_SelectRow).Value
             TotalLucro = VendaPeriodo - CustoPeriodo
+
+            ' ***********************************************************
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.Parameters.Clear()
+            command.CommandText = "INSERT INTO VendasBalcaoResultado (data_VendasBalcaoResultado,Vendedor_VendasBalcaoResultado,Lucro_VendasBalcaoResultado,Custo_VendasBalcaoResultado,Faturamento_VendasBalcaoResultado,Produto_VendasBalcaoResultado,Cor_VendasBalcaoResultado,Linha_VendasBalcaoResultado,Fornecedor_VendasBalcaoResultado,codprod_VendasBalcaoResultado) Values (@data_VendasBalcaoResultado,@Vendedor_VendasBalcaoResultado,@Lucro_VendasBalcaoResultado,@Custo_VendasBalcaoResultado,@Faturamento_VendasBalcaoResultado,@Produto_VendasBalcaoResultado,@Cor_VendasBalcaoResultado,@Linha_VendasBalcaoResultado,@Fornecedor_VendasBalcaoResultado,@codprod_VendasBalcaoResultado)"
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@codprod_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(3, v_SelectRow).Value
+            command.Parameters.Add("@Fornecedor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(4, v_SelectRow).Value
+            command.Parameters.Add("@Linha_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(5, v_SelectRow).Value
+            command.Parameters.Add("@Cor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(6, v_SelectRow).Value
+            command.Parameters.Add("@Produto_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(14, v_SelectRow).Value
+            command.Parameters.Add("@Faturamento_VendasBalcaoResultado", SqlDbType.Float).Value = VendaPeriodo
+            command.Parameters.Add("@Custo_VendasBalcaoResultado", SqlDbType.Float).Value = CustoPeriodo
+            command.Parameters.Add("@Lucro_VendasBalcaoResultado", SqlDbType.Float).Value = TotalLucro
+            command.Parameters.Add("@Vendedor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(2, v_SelectRow).Value
+            command.Parameters.Add("@data_VendasBalcaoResultado", SqlDbType.Date).Value = BalcaoDataGridView11.Item(10, v_SelectRow).Value
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            Finally
+                connection.Close()
+            End Try
+
         Next
+
+        Me.VendasBalcaoResultadoTableAdapter.Fill(Me.DataSetFinal.VendasBalcaoResultado)
+
+    End Sub
+    Private Sub Button107_Click_1(sender As Object, e As EventArgs) Handles Button107.Click
+        ProdutosBindingSource.Filter = String.Format("fornecedor_prod LIKE '{0}%'", ComboBox17.Text)
+    End Sub
+
+    Private Sub Button111_Click(sender As Object, e As EventArgs) Handles Button111.Click
+        PedidoCompraDataGridView.DataSource = PedidoCompraBindingSource
+        PedidoCompraBindingSource.Filter = String.Format("EntregueSimNao_PedidoCompra LIKE '{0}%'", "não entregue")
 
     End Sub
 
-    Private Sub Button107_Click_1(sender As Object, e As EventArgs) Handles Button107.Click
-        ' ----------------------------------------------------------
-        'rem passa dados para a planilha excell de pedidos  
-        Dim xlApp1 As Excel.Application
-        Dim xlWorkBook1 As Excel.Workbook
-        Dim xlWorkSheet1 As Excel.Worksheet
-
-        xlApp1 = New Excel.Application
-        xlWorkBook1 = xlApp1.Workbooks.Open("\\C:\Users\Usuario\Desktop\Planilha Vendas Balcão.xls")
-        xlWorkSheet1 = CType(xlWorkBook1.Sheets(1), Excel.Worksheet)
-
-        'Dim xx As Integer
-        For xx = 0 To BalcaoDataGridView11.RowCount() - 1
-            xlWorkSheet1.Cells(2 + xx, 1) = BalcaoDataGridView11.Item(3, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 2) = BalcaoDataGridView11.Item(4, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 3) = BalcaoDataGridView11.Item(5, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 4) = BalcaoDataGridView11.Item(6, xx).Value
-            xlWorkSheet1.Cells(2 + xx, 5) = BalcaoDataGridView11.Item(13, xx).Value
-            '    xlWorkSheet1.Cells(2 + xx, 6) = VendaPeriodo(xx)
-            '   xlWorkSheet1.Cells(2 + xx, 7) = CustoPeriodo(xx)
-            '    xlWorkSheet1.Cells(2 + xx, 8) = TotalLucro(xx)
-        Next
-
-        Try
-            xlWorkBook1.SaveAs(Filename:="\\C:\Users\Usuario\Desktop\Planilha Vendas Balcão2.xls")
-            xlWorkBook1.Close()
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString())
-            xlWorkBook1.Close()
-        End Try
+    Private Sub Button135_Click(sender As Object, e As EventArgs) Handles Button135.Click
+        ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox39.Text, ComboBox38.Text)
 
     End Sub
 End Class

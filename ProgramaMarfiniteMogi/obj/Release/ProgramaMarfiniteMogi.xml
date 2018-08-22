@@ -178,6 +178,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ApelidoErradoRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -350,6 +354,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.ApelidoErradoRowChangeEvent">
 	<summary>
 Row event argument class
@@ -519,6 +527,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -695,6 +707,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.RamoClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasBalcaoResultadoTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
