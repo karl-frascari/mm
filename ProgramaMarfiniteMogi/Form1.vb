@@ -13312,12 +13312,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim ano As Integer = Today.Year
         Dim mes As Integer = Today.Month
         Dim dia As Integer = Today.Day
-        Dim NoventaDiasAtras As DateTime = New DateTime(ano, mes, dia).AddDays(-31)
+        Dim TrintaDiasAtras As DateTime = New DateTime(ano, mes, dia).AddDays(-31)
 
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
 
-            Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & NoventaDiasAtras & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView3.Item(3, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView3.Item(4, v_SelectRow).Value & "'"
+            Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & TrintaDiasAtras & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView3.Item(3, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView3.Item(4, v_SelectRow).Value & "'"
             Dim dataadapter As New SqlDataAdapter(sql2, connection)
             Dim ds As New DataSet()
 
@@ -15414,6 +15414,9 @@ Proxima:
         TextBox274.Text = ProdutosDataGridView6.Item(11, v_SelectRow).Value
         TextBox275.Text = ProdutosDataGridView6.Item(13, v_SelectRow).Value
         TextBox276.Text = ProdutosDataGridView6.Item(18, v_SelectRow).Value
+        TextBox301.Text = ProdutosDataGridView6.Item(31, v_SelectRow).Value
+
+
         If ProdutosDataGridView6.Item(31, v_SelectRow).Value Is DBNull.Value Then
             TextBox286.Text = 0
         Else
@@ -17484,7 +17487,7 @@ FIM:
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ------------------------------------------------------------------------------------------------------------------
-        Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra > convert (datetime, '" & DateTimePicker38.Text & "' ,103)"
+        Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra >= convert (datetime, '" & DateTimePicker38.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
         Dim ds As New DataSet()
         Try
@@ -18383,6 +18386,91 @@ FIM:
     Private Sub Button135_Click(sender As Object, e As EventArgs) Handles Button135.Click
         ProdutosBindingSource.Filter = String.Format("linha_prod LIKE '{0}%' and fornecedor_prod LIKE '{1}'", ComboBox39.Text, ComboBox38.Text)
 
+    End Sub
+
+    Private Sub ProdutosDataGridView9_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView9.DoubleClick
+
+        Dim v_SelectRow As Integer = 0
+        v_SelectRow = Me.ProdutosDataGridView9.CurrentRow.Index
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' ------------------------------------------------------------------------------------------------------------------
+        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "' and (nomevendedor_balcao = 'verônica' or  nomevendedor_balcao = 'celso')"
+        Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        Dim ds As New DataSet()
+        Try
+            connection.Open()
+            dataadapter.Fill(ds, "balcao")
+            connection.Close()
+            BalcaoDataGridView11.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' --------------------------------------------------------
+        Dim DiferencaData As Single = DateDiff("d", DateTimePicker41.Text, DateTimePicker42.Text)
+        Label74.Text = DiferencaData
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim FaturamentoBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+            FaturamentoBalcao += Linha.Cells(12).Value
+        Next
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim CustoBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+            CustoBalcao += Linha.Cells(17).Value
+        Next
+        ' ***************************************************************************
+        ' ***************************************************************************
+        Dim sql5 As String = "SELECT * FROM itemPedidos WHERE dataentrega_item BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and  codprod_item = '" & ProdutosDataGridView9.Item(1, v_SelectRow).Value & "' and (vendedor_item = 'verônica' or  vendedor_item = 'celso')"
+        Dim dataadapter5 As New SqlDataAdapter(sql5, connection)
+        Dim ds5 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter5.Fill(ds5, "itemPedidos")
+            connection.Close()
+            ItemPedidosDataGridView10.DataSource = ds5.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+         ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim FaturamentoPedidos As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+            FaturamentoPedidos += Linha.Cells(10).Value
+        Next
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim CustoPedidos As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+            CustoPedidos += Linha.Cells(16).Value
+        Next
+        TextBox297.Text = FaturamentoBalcao - CustoBalcao
+        TextBox299.Text = FaturamentoPedidos - CustoPedidos
+        TextBox300.Text = (FaturamentoPedidos + FaturamentoBalcao) - (CustoPedidos + CustoBalcao)
+    End Sub
+
+    Private Sub TabControlPedMarf_MouseClick(sender As Object, e As MouseEventArgs) Handles TabControlPedMarf.MouseClick
+
+        If TabControlPedMarf.SelectedTab.ToString = "TabPage: {Planilha loja}" Then
+            DateTimePicker41.Text = "25/10/2017"
+
+        End If
+    End Sub
+
+    Private Sub ItemPedidosDataGridView10_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ItemPedidosDataGridView10.CellContentClick
+
+    End Sub
+
+    Private Sub Button136_Click(sender As Object, e As EventArgs) Handles Button136.Click
+        Fotografias.ShowDialog()
+        Fotografias.PictureBox1.Image = Image.FromFile("C:\Users\Usuario\Desktop\" & TextBox302.Text & ".jpg")
+        Fotografias.Show()
+ 
     End Sub
 End Class
 
