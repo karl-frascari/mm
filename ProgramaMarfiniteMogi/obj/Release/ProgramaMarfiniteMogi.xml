@@ -42,6 +42,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EnderecoEletronicoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.estadosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -146,6 +150,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosDataTable">
 	<summary>
 Represents the strongly named DataTable class.
@@ -162,23 +170,19 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoPedidosDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EnderecoEletronicoDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteDataTable">
-	<summary>
-Represents the strongly named DataTable class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoDataTable">
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
@@ -215,6 +219,10 @@ Represents strongly named DataRow class.
 Represents strongly named DataRow class.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EmailErroClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EnderecoEletronicoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
@@ -322,6 +330,10 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -338,23 +350,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoPedidosRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EnderecoEletronicoRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteRow">
-	<summary>
-Represents strongly named DataRow class.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoRow">
 	<summary>
 Represents strongly named DataRow class.
 </summary>
@@ -391,6 +399,10 @@ Row event argument class
 Row event argument class
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EmailErroClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EnderecoEletronicoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -498,6 +510,10 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.tab_municipiosRowChangeEvent">
 	<summary>
 Row event argument class
@@ -514,23 +530,19 @@ Row event argument class
 	<summary>
 Row event argument class
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoPedidosRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasMlbRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.vendedorRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.EnderecoEletronicoRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.RamoClienteRowChangeEvent">
-	<summary>
-Row event argument class
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinal.VendasBalcaoResultadoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
@@ -571,6 +583,10 @@ Represents the connection and commands used to retrieve and save data.
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EmailErroClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EnderecoEletronicoTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
@@ -678,6 +694,10 @@ Represents the connection and commands used to retrieve and save data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.RamoClienteTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.tab_municipiosTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
@@ -694,23 +714,19 @@ Represents the connection and commands used to retrieve and save data.
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasBalcaoPedidosTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
+</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasBalcaoResultadoTableAdapter">
+	<summary>
+Represents the connection and commands used to retrieve and save data.
+</summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasMlbTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>
 </member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.vendedorTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.EnderecoEletronicoTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.RamoClienteTableAdapter">
-	<summary>
-Represents the connection and commands used to retrieve and save data.
-</summary>
-</member><member name="T:ProgramaMarfiniteMogi.DataSetFinalTableAdapters.VendasBalcaoResultadoTableAdapter">
 	<summary>
 Represents the connection and commands used to retrieve and save data.
 </summary>

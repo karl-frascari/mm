@@ -72,6 +72,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetFinal.VendasBalcaoPedidos' table. You can move, or remove it, as needed.
+        Me.VendasBalcaoPedidosTableAdapter.Fill(Me.DataSetFinal.VendasBalcaoPedidos)
         'TODO: This line of code loads data into the 'DataSetFinal.VendasBalcaoResultado' table. You can move, or remove it, as needed.
         Me.VendasBalcaoResultadoTableAdapter.Fill(Me.DataSetFinal.VendasBalcaoResultado)
         'TODO: This line of code loads data into the 'DataSetFinal.RamoCliente' table. You can move, or remove it, as needed.
@@ -1227,7 +1229,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'MyFolderBrowser.RootFolder = Environment.SpecialFolder.MyDocuments
 
         ' Do not show the button for new folder
-        ' MyFolderBrowser.ShowNewFolderButton = False
+        MyFolderBrowser.ShowNewFolderButton = False
 
         Dim dlgResult As DialogResult = MyFolderBrowser.ShowDialog()
 
@@ -8110,7 +8112,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(5, v_SelectRow).Value
         command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(7, v_SelectRow).Value
         command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Int).Value = qtdPedMarf
-        If RadioButton8.Checked = True Or RadioButton23.Checked = True Or RadioButton24.Checked = True Then
+        If RadioButton8.Checked = True Or RadioButton23.Checked = True Or RadioButton24.Checked = True Or RadioButton16.Checked = True Then
             command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota2
         End If
         If RadioButton10.Checked = True Then
@@ -18321,9 +18323,10 @@ FIM:
         Dim CustoPeriodo As Integer = 0
         Dim TotalLucro As Double = 0
 
-        For v_SelectRow = 0 To BalcaoDataGridView11.RowCount() - 1
+        For v_SelectRow = 0 To ProdutosDataGridView9.RowCount() - 1
 
-            Dim sql As String = "SELECT * FROM balcao WHERE  (nomevendedor_balcao ='celso' or  nomevendedor_balcao ='verônica')"
+            '    Dim sql As String = "SELECT * FROM balcao WHERE  (nomevendedor_balcao ='celso' or  nomevendedor_balcao ='verônica')"
+            Dim sql As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "' and (nomevendedor_balcao = 'verônica' or  nomevendedor_balcao = 'celso')"
             Dim dataadapter As New SqlDataAdapter(sql, connection)
             Dim ds As New DataSet()
             Try
@@ -18334,10 +18337,27 @@ FIM:
             Catch ex As Exception
                 MsgBox(ex.ToString)
             End Try
-
-         
-            VendaPeriodo = BalcaoDataGridView11.Item(12, v_SelectRow).Value
-            CustoPeriodo = BalcaoDataGridView11.Item(17, v_SelectRow).Value
+            ' ****************************************************
+            ' calculando soma
+            'somar Faturamento da coluna da tabela balcão
+            Dim FaturamentoBalcao As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+                FaturamentoBalcao += Linha.Cells(12).Value
+            Next
+            ' -----------------------------------
+            'somar Faturamento da coluna da tabela balcão
+            Dim CustoBalcao As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+                CustoBalcao += Linha.Cells(17).Value
+            Next
+            ' -----------------------------------
+            'somar quantidade da coluna da tabela balcão
+            Dim QuantidadeBalcao As Double = 0
+            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+                QuantidadeBalcao += Linha.Cells(7).Value
+            Next
+            VendaPeriodo = FaturamentoBalcao
+            CustoPeriodo = CustoBalcao
             TotalLucro = VendaPeriodo - CustoPeriodo
 
             ' ***********************************************************
@@ -18345,19 +18365,18 @@ FIM:
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.Parameters.Clear()
-            command.CommandText = "INSERT INTO VendasBalcaoResultado (data_VendasBalcaoResultado,Vendedor_VendasBalcaoResultado,Lucro_VendasBalcaoResultado,Custo_VendasBalcaoResultado,Faturamento_VendasBalcaoResultado,Produto_VendasBalcaoResultado,Cor_VendasBalcaoResultado,Linha_VendasBalcaoResultado,Fornecedor_VendasBalcaoResultado,codprod_VendasBalcaoResultado) Values (@data_VendasBalcaoResultado,@Vendedor_VendasBalcaoResultado,@Lucro_VendasBalcaoResultado,@Custo_VendasBalcaoResultado,@Faturamento_VendasBalcaoResultado,@Produto_VendasBalcaoResultado,@Cor_VendasBalcaoResultado,@Linha_VendasBalcaoResultado,@Fornecedor_VendasBalcaoResultado,@codprod_VendasBalcaoResultado)"
+            command.CommandText = "INSERT INTO VendasBalcaoResultado (Quantidade_VendasBalcaoResultado,Lucro_VendasBalcaoResultado,Custo_VendasBalcaoResultado,Faturamento_VendasBalcaoResultado,Produto_VendasBalcaoResultado,Cor_VendasBalcaoResultado,Linha_VendasBalcaoResultado,Fornecedor_VendasBalcaoResultado,codprod_VendasBalcaoResultado) Values (@Quantidade_VendasBalcaoResultado,@Lucro_VendasBalcaoResultado,@Custo_VendasBalcaoResultado,@Faturamento_VendasBalcaoResultado,@Produto_VendasBalcaoResultado,@Cor_VendasBalcaoResultado,@Linha_VendasBalcaoResultado,@Fornecedor_VendasBalcaoResultado,@codprod_VendasBalcaoResultado)"
             command.CommandType = CommandType.Text
-            command.Parameters.Add("@codprod_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(3, v_SelectRow).Value
-            command.Parameters.Add("@Fornecedor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(4, v_SelectRow).Value
-            command.Parameters.Add("@Linha_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(5, v_SelectRow).Value
-            command.Parameters.Add("@Cor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(6, v_SelectRow).Value
-            command.Parameters.Add("@Produto_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(14, v_SelectRow).Value
+            command.Parameters.Add("@codprod_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(2, v_SelectRow).Value
+            command.Parameters.Add("@Fornecedor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(4, v_SelectRow).Value
+            command.Parameters.Add("@Linha_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(5, v_SelectRow).Value
+            command.Parameters.Add("@Cor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(7, v_SelectRow).Value
+            command.Parameters.Add("@Produto_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(6, v_SelectRow).Value
             command.Parameters.Add("@Faturamento_VendasBalcaoResultado", SqlDbType.Float).Value = VendaPeriodo
             command.Parameters.Add("@Custo_VendasBalcaoResultado", SqlDbType.Float).Value = CustoPeriodo
             command.Parameters.Add("@Lucro_VendasBalcaoResultado", SqlDbType.Float).Value = TotalLucro
-            command.Parameters.Add("@Vendedor_VendasBalcaoResultado", SqlDbType.VarChar, 50).Value = BalcaoDataGridView11.Item(2, v_SelectRow).Value
-            command.Parameters.Add("@data_VendasBalcaoResultado", SqlDbType.Date).Value = BalcaoDataGridView11.Item(10, v_SelectRow).Value
-
+            command.Parameters.Add("@Quantidade_VendasBalcaoResultado", SqlDbType.Float).Value = QuantidadeBalcao
+     
             Try
                 connection.Open()
                 command.ExecuteNonQuery()
@@ -18456,21 +18475,256 @@ FIM:
 
     Private Sub TabControlPedMarf_MouseClick(sender As Object, e As MouseEventArgs) Handles TabControlPedMarf.MouseClick
 
-        If TabControlPedMarf.SelectedTab.ToString = "TabPage: {Planilha loja}" Then
+        If TabControlPedMarf.SelectedTab.ToString = "TabPage: {Resultado balcão indiv}" Then
             DateTimePicker41.Text = "25/10/2017"
-
         End If
-    End Sub
-
-    Private Sub ItemPedidosDataGridView10_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles ItemPedidosDataGridView10.CellContentClick
 
     End Sub
 
     Private Sub Button136_Click(sender As Object, e As EventArgs) Handles Button136.Click
-        Fotografias.ShowDialog()
-        Fotografias.PictureBox1.Image = Image.FromFile("C:\Users\Usuario\Desktop\" & TextBox302.Text & ".jpg")
+
+        'Fotografias.StartPosition = FormStartPosition.CenterScreen
+        ' abre a pasta onde está as fotos
+        OpenFileDialog1.Title = "Localizar Fotos"
+        Me.StartPosition = FormStartPosition.CenterScreen
+        OpenFileDialog1.InitialDirectory = "C:\Users\Usuario\Desktop\Produto\*.*"
+        OpenFileDialog1.ShowDialog()
+        TextBox302.Text = OpenFileDialog1.FileName
+        '*****************************************************
+        MessageBox.Show(TextBox302.Text)
+        If TextBox302.Text = "OpenFileDialog1" Then
+            TextBox302.Text = ""
+        End If
+
+    End Sub
+
+    Private Sub Button137_Click(sender As Object, e As EventArgs) Handles Button137.Click
+        ' Verifica se textbox302 está vazia
+        If TextBox302.Text = "" Then
+            MessageBox.Show("Escolher uma foto para poder abrir")
+            Exit Sub
+        End If
+        '*****************************************************
+        Fotografias.StartPosition = FormStartPosition.CenterScreen
+        Fotografias.PictureBox1.Image = Image.FromFile(TextBox302.Text)
         Fotografias.Show()
- 
+
+    End Sub
+
+   
+    Private Sub Button138_Click(sender As Object, e As EventArgs) Handles Button138.Click
+
+        ' Verifica se textbox302 está vazia
+        If TextBox302.Text = "" Then
+            MessageBox.Show("Escolher uma foto para poder salvar")
+            Exit Sub
+        End If
+       
+
+        ' *******************************************
+        ' faz a conexão com o banco de dados sql
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        Dim reply As DialogResult = MessageBox.Show("Confirmar a inclusão/alteração?", "Atenção!!!", _
+         MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+
+        'REM se confirmar a alteração ele grava
+        If reply = DialogResult.Yes Then
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.CommandText = "update produtos set EnderecoFoto2_prod=@EnderecoFoto2_prod  where cod_prod=@cod_prod "
+            command.CommandType = CommandType.Text
+
+            command.Parameters.Add("@cod_prod", SqlDbType.VarChar, 50).Value = Cod_prodTextBox.Text
+            command.Parameters.Add("@EnderecoFoto2_prod", SqlDbType.VarChar, 100).Value = TextBox302.Text
+
+            ' a seguir comandos para gravar os ítens coletados do formulário ------------------
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            Finally
+                connection.Close()
+            End Try
+
+            Me.ProdutosTableAdapter1.Fill(Me.DataSetFinal.produtos)
+
+        End If
+
+    End Sub
+
+    Private Sub Button134_Click(sender As Object, e As EventArgs) Handles Button134.Click
+
+        Dim v_SelectRow As Integer = 0
+        v_SelectRow = Me.ProdutosDataGridView9.CurrentRow.Index
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' ------------------------------------------------------------------------------------------------------------------
+        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "' and (nomevendedor_balcao = 'verônica' or  nomevendedor_balcao = 'celso')"
+        Dim dataadapter As New SqlDataAdapter(sql2, connection)
+        Dim ds As New DataSet()
+        Try
+            connection.Open()
+            dataadapter.Fill(ds, "balcao")
+            connection.Close()
+            BalcaoDataGridView11.DataSource = ds.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' --------------------------------------------------------
+        Dim DiferencaData As Single = DateDiff("d", DateTimePicker41.Text, DateTimePicker42.Text)
+        Label74.Text = DiferencaData
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim FaturamentoBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+            FaturamentoBalcao += Linha.Cells(12).Value
+        Next
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim CustoBalcao As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+            CustoBalcao += Linha.Cells(17).Value
+        Next
+        ' ***************************************************************************
+        Dim sql5 As String = "SELECT * FROM itemPedidos WHERE dataentrega_item BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and  codprod_item = '" & ProdutosDataGridView9.Item(1, v_SelectRow).Value & "' and (vendedor_item = 'verônica' or  vendedor_item = 'celso')"
+        Dim dataadapter5 As New SqlDataAdapter(sql5, connection)
+        Dim ds5 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter5.Fill(ds5, "itemPedidos")
+            connection.Close()
+            ItemPedidosDataGridView10.DataSource = ds5.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim FaturamentoPedidos As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+            FaturamentoPedidos += Linha.Cells(10).Value
+        Next
+        ' -----------------------------------
+        'somar Faturamento da coluna da tabela balcão
+        Dim CustoPedidos As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+            CustoPedidos += Linha.Cells(16).Value
+        Next
+
+    End Sub
+
+    Private Sub TextBox303_TextChanged(sender As Object, e As EventArgs) Handles TextBox303.TextChanged
+        VendasBalcaoResultadoBindingSource.Filter = String.Format("Produto_VendasBalcaoResultado LIKE '{0}%'", TextBox303.Text)
+    End Sub
+
+    Private Sub Button139_Click(sender As Object, e As EventArgs) Handles Button139.Click
+        Dim valor As Decimal
+
+        For Each col As DataGridViewRow In VendasBalcaoResultadoDataGridView.Rows
+            valor = valor + col.Cells("Quantidade_VendasBalcaoResultado").Value
+        Next
+        TextBox304.Text = valor
+    End Sub
+
+    Private Sub Button140_Click(sender As Object, e As EventArgs) Handles Button140.Click
+
+        ' Pega autorização para correr o botão
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+        ' ----------------------------------------------------------------------------------
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' **********************************************************************************************
+        Dim v_SelectRow As Integer = 0
+        Dim VendaPeriodo As Double = 0
+        Dim CustoPeriodo As Double = 0
+        Dim TotalLucro As Double = 0
+
+        For v_SelectRow = 0 To ProdutosDataGridView9.RowCount() - 1
+
+            '    Dim sql As String = "SELECT * FROM balcao WHERE  (nomevendedor_balcao ='celso' or  nomevendedor_balcao ='verônica')"
+            Dim sql As String = "SELECT * FROM itemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and  codprod_item = '" & ProdutosDataGridView9.Item(1, v_SelectRow).Value & "' and (vendedor_item = 'verônica' or  vendedor_item = 'celso')"
+            Dim dataadapter As New SqlDataAdapter(sql, connection)
+            Dim ds As New DataSet()
+            Try
+                connection.Open()
+                dataadapter.Fill(ds, "itemPedidos")
+                connection.Close()
+                ItemPedidosDataGridView10.DataSource = ds.Tables(0)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+            ' ****************************************************
+            ' calculando soma
+            'somar Faturamento da coluna da tabela balcão
+            Dim FaturamentoPedido As Double = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                FaturamentoPedido += Linha.Cells(10).Value
+            Next
+
+            ' -----------------------------------
+            'somar Faturamento da coluna da tabela balcão
+            Dim CustoPedido As Double = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                CustoPedido += Linha.Cells(16).Value
+            Next
+            ' -----------------------------------
+            'somar quantidade da coluna da tabela balcão
+            Dim QuantidadePedido As Double = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                QuantidadePedido += Linha.Cells(8).Value
+            Next
+
+            VendaPeriodo = FaturamentoPedido
+            CustoPeriodo = CustoPedido
+            TotalLucro = FaturamentoPedido - CustoPedido
+
+            ' ***********************************************************
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.Parameters.Clear()
+            command.CommandText = "INSERT INTO VendasBalcaoPedidos (codprod2_VendasBalcaoPedidos,Quantidade_VendasBalcaoPedidos,Lucro_VendasBalcaoPedidos,Custo_VendasBalcaoPedidos,Faturamento_VendasBalcaoPedidos,Produto_VendasBalcaoPedidos,Cor_VendasBalcaoPedidos,Linha_VendasBalcaoPedidos,Fornecedor_VendasBalcaoPedidos) Values (@codprod2_VendasBalcaoPedidos,@Quantidade_VendasBalcaoPedidos,@Lucro_VendasBalcaoPedidos,@Custo_VendasBalcaoPedidos,@Faturamento_VendasBalcaoPedidos,@Produto_VendasBalcaoPedidos,@Cor_VendasBalcaoPedidos,@Linha_VendasBalcaoPedidos,@Fornecedor_VendasBalcaoPedidos)"
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@codprod2_VendasBalcaoPedidos", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(2, v_SelectRow).Value
+            command.Parameters.Add("@Fornecedor_VendasBalcaoPedidos", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(4, v_SelectRow).Value
+            command.Parameters.Add("@Linha_VendasBalcaoPedidos", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(5, v_SelectRow).Value
+            command.Parameters.Add("@Cor_VendasBalcaoPedidos", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(7, v_SelectRow).Value
+            command.Parameters.Add("@Produto_VendasBalcaoPedidos", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(6, v_SelectRow).Value
+            command.Parameters.Add("@Faturamento_VendasBalcaoPedidos", SqlDbType.Float).Value = VendaPeriodo
+            command.Parameters.Add("@Custo_VendasBalcaoPedidos", SqlDbType.Float).Value = CustoPeriodo
+            command.Parameters.Add("@Lucro_VendasBalcaoPedidos", SqlDbType.Float).Value = TotalLucro
+            command.Parameters.Add("@Quantidade_VendasBalcaoPedidos", SqlDbType.Float).Value = QuantidadePedido
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            Finally
+                connection.Close()
+            End Try
+
+        Next
+
+        '  Me.Fill(Me.DataSetFinal.VendasBalcaoPedidos)
+
+    End Sub
+
+    Private Sub TextBox305_TextChanged(sender As Object, e As EventArgs) Handles TextBox305.TextChanged
+        VendasBalcaoPedidosBindingSource.Filter = String.Format("Produto_VendasBalcaoPedidos LIKE '{0}%'", TextBox305.Text)
     End Sub
 End Class
 

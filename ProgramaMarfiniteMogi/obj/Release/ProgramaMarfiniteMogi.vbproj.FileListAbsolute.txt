@@ -120,5 +120,5 @@ C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMog
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.exe
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.xml
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.pdb
-C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbprojResolveAssemblyReference.cache
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Fotografias.resources
+C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbprojResolveAssemblyReference.cache
