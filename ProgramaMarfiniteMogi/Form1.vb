@@ -72,6 +72,8 @@ Public Class Form1
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'DataSetFinal.VendasBalcaoTotal' table. You can move, or remove it, as needed.
+        Me.VendasBalcaoTotalTableAdapter.Fill(Me.DataSetFinal.VendasBalcaoTotal)
         'TODO: This line of code loads data into the 'DataSetFinal.VendasBalcaoPedidos' table. You can move, or remove it, as needed.
         Me.VendasBalcaoPedidosTableAdapter.Fill(Me.DataSetFinal.VendasBalcaoPedidos)
         'TODO: This line of code loads data into the 'DataSetFinal.VendasBalcaoResultado' table. You can move, or remove it, as needed.
@@ -431,7 +433,6 @@ Public Class Form1
             TabControl2.TabPages.Remove(Tab_fornecedor)
             RadioButton13.Checked = True
             Button86.Enabled = False
-            RadioButton14.Checked = True
             ComboBox26.Enabled = True
 
         End If
@@ -7188,127 +7189,65 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument2.PrintPage
 
-        If RadioButton14.Checked = True Then
-            ' Pedido compra
-            ' primeira linha
-            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
-            e.Graphics.DrawString("PEDIDO DE COMPRA        N.  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
-            ' pega o numero do pedido e imprime
-            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 12, FontStyle.Bold), Brushes.Black, 450, 5)
-            ' pega o nome do fornecedor e imprime
-            e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, 0).Value, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 20, 30)
+        
+        ' Pedido compra
+        ' primeira linha
+        e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
+        e.Graphics.DrawString("PEDIDO DE COMPRA        N.  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
+        e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 450, 5)
+        e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, 0).Value, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 20, 30)
 
-            'segunda linha
-            e.Graphics.DrawString("Silvia Paula Duarte Frascari ME", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
-            ' terceira linha
-            e.Graphics.DrawString("Av Henrique Eroles, 1459, Box 04 Ipiranga, Mogi das Cruzes - SP -  Cep: 08730-590", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
-            ' quarta linha
-            e.Graphics.DrawString("CNPJ - 18.623.408/0001-85                                       IE - 454.382.243.117 ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
-            ' quinta linha
-            e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
-            'sexta linha
-            e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                     Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 175)
+        'segunda linha
+        e.Graphics.DrawString("Fernando Frascari EPP", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
+        ' terceira linha
+        e.Graphics.DrawString("Av Henrique Peres, 1880 - Mogi das Cruzes - SP -  Cep: 08735-400", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
+        ' quarta linha
+        e.Graphics.DrawString("CNPJ - 72.844.228/0001-79                                    IE -454.131.384.115  ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
+        ' quinta linha
+        e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Fernando", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
+        'sexta linha
+        e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 175)
 
-
-            ' sétima linha
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
-            e.Graphics.DrawString(ComboBox46.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
-            e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
-            e.Graphics.DrawString(ComboBox47.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
-            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
+        ' sétima linha
+        e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
+        e.Graphics.DrawString(ComboBox46.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
+        e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
+        e.Graphics.DrawString(ComboBox47.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
+        e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
 
 
-            e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
-            '  linhazz:00
-            e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
-            '  linha
-            e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
-            ' linha
-            e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
-            ' linha
-            e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
-            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
+        e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
+        '  linhazz:00
+        e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
+        '  linha
+        e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
+        ' linha
+        e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
+        ' linha
+        e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
+        e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
 
 
-            ' cabecalho
-            e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
-            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 400)
-            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 400)
-            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 700, 400)
+        ' cabecalho
+        e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
+        e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 400)
+        e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 400)
+        e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 700, 400)
 
 
-            Try
-                For x = 0 To 30
+        Try
+            For x = 0 To 30
 
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(9, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(10, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 200, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(8, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(11, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(9, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(10, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 200, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(8, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
+                e.Graphics.DrawString(PedidoCompraDataGridView.Item(11, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
 
-                Next
-            Catch ex As Exception
-                Exit Sub
-            End Try
-            ' ********************************************************************************************************
-        Else
-            ' Pedido compra
-            ' primeira linha
-            e.Graphics.DrawString(DateTimePicker37.Text, New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 5)
-            e.Graphics.DrawString("PEDIDO DE COMPRA        N.  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 200, 5)
-            e.Graphics.DrawString(TextBox284.Text, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 450, 5)
-            e.Graphics.DrawString(PedidoCompraDataGridView.Item(5, 0).Value, New Font("arial", 15, FontStyle.Bold), Brushes.Black, 20, 30)
+            Next
+        Catch ex As Exception
+            Exit Sub
+        End Try
 
-            'segunda linha
-            e.Graphics.DrawString("Fernando Frascari EPP", New Font("arial", 15, FontStyle.Bold), Brushes.Black, 250, 50)
-            ' terceira linha
-            e.Graphics.DrawString("Av Henrique Peres, 1880 - Mogi das Cruzes - SP -  Cep: 08735-400", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 100)
-            ' quarta linha
-            e.Graphics.DrawString("CNPJ - 72.844.228/0001-79                                    IE -454.131.384.115  ", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 125)
-            ' quinta linha
-            e.Graphics.DrawString("TEL : (11) 2988-9475                                              Contato - Silvia ou Claudio", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 150)
-            'sexta linha
-            e.Graphics.DrawString("Email : vendas@marfinitemogi.com.br                         Home - www.marfinitemogi.com.br", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 175)
-
-            ' sétima linha
-            e.Graphics.DrawString("Vendedor :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 20, 200)
-            e.Graphics.DrawString(ComboBox46.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 150, 200)
-            e.Graphics.DrawString("Email -  :", New Font("arial", 13, FontStyle.Regular), Brushes.Black, 350, 200)
-            e.Graphics.DrawString(ComboBox47.Text, New Font("arial", 13, FontStyle.Regular), Brushes.Black, 450, 200)
-            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 225)
-
-
-            e.Graphics.DrawString("Condições de pagamento : BOLETO", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 250)
-            '  linhazz:00
-            e.Graphics.DrawString("Entrega de segunda a sexta das 9:00 às 18:00 horas  ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 275)
-            '  linha
-            e.Graphics.DrawString("Endereço de entrega e cobrança: Av. Henrique Peres, n 1880, Vila Bernadotti ", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 300)
-            ' linha
-            e.Graphics.DrawString("MOGI DAS CRUZES - SP CEP: 08735-400", New Font("arial", 12, FontStyle.Bold), Brushes.Black, 20, 325)
-            ' linha
-            e.Graphics.DrawString("Enviar arquivo XML para: nfe2@marfinitemogi.com.br", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 350)
-            e.Graphics.DrawString("__________________________________________________________________________________________________________________  :", New Font("arial", 15, FontStyle.Regular), Brushes.Black, 20, 375)
-
-
-            ' cabecalho
-            e.Graphics.DrawString("Código Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 400)
-            e.Graphics.DrawString("Nome do Produto", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 250, 400)
-            e.Graphics.DrawString("Cor  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 400)
-            e.Graphics.DrawString("Quantidade  ", New Font("arial", 12, FontStyle.Regular), Brushes.Black, 700, 400)
-
-
-            Try
-                For x = 0 To 30
-
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(9, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 20, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(10, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 200, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(8, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 550, 425 + (x * 20))
-                    e.Graphics.DrawString(PedidoCompraDataGridView.Item(11, x).Value, New Font("arial", 12, FontStyle.Regular), Brushes.Black, 720, 425 + (x * 20))
-
-                Next
-            Catch ex As Exception
-                Exit Sub
-            End Try
-        End If
 
     End Sub
 
@@ -7930,6 +7869,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
     Private Sub btn_iniciarVenda_Click_1(sender As Object, e As EventArgs) Handles btn_iniciarVenda.Click
+
         If ComboBox2.Text = "" Then
             MessageBox.Show("Por favor, escolha um vendedor para iniciar a venda.")
             Exit Sub
@@ -7961,6 +7901,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         btn_iniciarVenda.Enabled = False
         Button32.Enabled = True
 
+
         'RETIRA A VISIBILIDADE DA PAGE DESEJADA
         TabControl1.TabPages.Remove(tbpg_produtos)
         TabControl1.TabPages.Remove(tbpg_clientes)
@@ -7974,7 +7915,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TabControl1.TabPages.Remove(pedidos)
         TabControl1.TabPages.Remove(tbpg_orcamento)
         TabControl1.TabPages.Remove(tbg_relatorios)
-        '    outro tabcontrol
+        ' outro tabcontrol
         tbcotrl_pdv.TabPages.Insert(1, tbpg_produtosPDV)
         tbcotrl_pdv.TabPages.Remove(tbpg_VendasBalcao)
         tbcotrl_pdv.TabPages.Remove(TabPage6)
@@ -8051,7 +7992,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim NumeroNota As String = ""
         Dim NumeroNota2 As String = ""
 
-        If RadioButton8.Checked = True Or RadioButton23.Checked = True Or RadioButton24.Checked = True Or RadioButton16.Checked = True Then
+        If RadioButton8.Checked = True Or RadioButton23.Checked = True Or RadioButton24.Checked = True Or RadioButton16.Checked = True Or RadioButton17.Checked = True Then
             Try
                 NumeroNota = InputBox("Digite o Número da Nota")
                 ' acrescenta S ou f no numero da nota
@@ -8066,6 +8007,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 End If
                 If RadioButton16.Checked = True Then
                     NumeroNota2 = "W" + NumeroNota
+                End If
+                If RadioButton17.Checked = True Then
+                    NumeroNota2 = "FR" + NumeroNota
                 End If
                 'REM verifica se o produto já foi cadastrado no arquivo balcão(tem defeito-se a nota tiver vários itens)
                 Dim cmd As New SqlCommand
@@ -8112,7 +8056,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         command5.Parameters.Add("@linhaprod_balcao", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(5, v_SelectRow).Value
         command5.Parameters.Add("@corprod_balcao", SqlDbType.VarChar, 50).Value = ProdutosDataGridView2.Item(7, v_SelectRow).Value
         command5.Parameters.Add("@quantidadeprod_balcao", SqlDbType.Int).Value = qtdPedMarf
-        If RadioButton8.Checked = True Or RadioButton23.Checked = True Or RadioButton24.Checked = True Or RadioButton16.Checked = True Then
+        If RadioButton8.Checked = True Or RadioButton23.Checked = True Or RadioButton24.Checked = True Or RadioButton16.Checked = True Or RadioButton17.Checked = True Then
             command5.Parameters.Add("@NumeroNotaMlb_balcao", SqlDbType.VarChar, 50).Value = NumeroNota2
         End If
         If RadioButton10.Checked = True Then
@@ -8127,7 +8071,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If RadioButton10.Checked = True Then
             PrecoValor = ProdutosDataGridView2.Item(8, v_SelectRow).Value
         End If
-        If RadioButton8.Checked = True Then
+        If RadioButton8.Checked = True Or RadioButton17.Checked = True Then
             PrecoValor = ProdutosDataGridView2.Item(9, v_SelectRow).Value
         End If
         If RadioButton23.Checked = True Then
@@ -8725,7 +8669,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             PrintPreviewDialog2.Document = PrintDocument1
             DirectCast(PrintPreviewDialog2, Form).WindowState = FormWindowState.Maximized
             PrintDialog2.Document = PrintDocument1
-            PrintDialog2.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
+            PrintDialog2.PrinterSettings.PrinterName = "\\SERVIDOR\EPSON L355 Series (Caixa)"
 
 
             CType(PrintPreviewDialog2.Controls(1), ToolStrip).Items.Add(PDB)
@@ -8909,18 +8853,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         End Try
 
-     
-
         Me.BalcaoTableAdapter.Fill(Me.DataSetFinal.balcao)
-     
-
-        'PrintPreviewDialog3.ShowDialog()
-        PrintDialog1.Document = PrintDocument10
-        PrintDialog1.PrinterSettings.PrinterName = "\\SERVIDOR\MP-4200 TH"
-        PrintDocument10.Print()
-        PrintDocument10.Print()
-
-
+        ' manda imprimir o boleto
+        PrintPreviewDialog3.ShowDialog()
         ComboBox2.Text = ""
         btn_iniciarVenda.Enabled = True
 
@@ -8958,7 +8893,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         RadioButton4.Enabled = False
         RadioButton5.Enabled = False
         RadioButton6.Enabled = False
-        
+
+
         ' limpando os campos
         TextBox32.Text = ""
         TextBox33.Text = ""
@@ -8967,12 +8903,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Label105.Text = ""
         Button32.Enabled = False
         ReabrirVendaBalcao = ""
-
         btn_addProd.Enabled = False
-
-
-
         BalcaoBindingSource.Filter = String.Format("id2_balcao LIKE '{0}'", "kouighiugiug")
+
 
 
 
@@ -8983,7 +8916,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         PrintPreviewDialog3.Document = PrintDocument10
         DirectCast(PrintPreviewDialog3, Form).WindowState = FormWindowState.Maximized
         PrintDialog1.Document = PrintDocument10
-        PrintDialog1.PrinterSettings.PrinterName = "\\SERVIDOR\MP-4200 TH"
+        PrintDialog1.PrinterSettings.PrinterName = "\\silvia\MP-4200 TH"
         CType(PrintPreviewDialog3.Controls(1), ToolStrip).Items.Add(PDB)
 
     End Sub
@@ -8994,7 +8927,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         PrintPreviewDialog4.Document = PrintDocument2
         DirectCast(PrintPreviewDialog4, Form).WindowState = FormWindowState.Maximized
         PrintDialog1.Document = PrintDocument2
-        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
+        PrintDialog1.PrinterSettings.PrinterName = "\\SERVIDOR\EPSON L355 Series (Caixa)"
         CType(PrintPreviewDialog4.Controls(1), ToolStrip).Items.Add(PDB)
 
     End Sub
@@ -9370,18 +9303,16 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             valorCusto += Linha.Cells(16).Value
         Next
         TextBox45.Text = valorCusto.ToString("F2")
+
         'calculando a porcentagem de lucro
-        If valorCusto = 0 Or valor5 = 0 Then
-
+        If valorCusto = 0 And valor5 = 0 Then
         Else
-
             Dim VrPorcentagem As Double = (1 - ((valorCusto + valor5) / valor)) * 100
             TextBox46.Text = VrPorcentagem.ToString("F2")
         End If
         ' -----------------------------------------------------------------
-        ' CALCULANDO AS VENDAS Do DIA
+        ' CALCULANDO AS VENDAS do DIA
         Dim sql5 As String = "SELECT * FROM ItemPedidos WHERE data_item =  convert (datetime, '" & DateTimePicker7.Text & "' ,103)"
-
         Dim dataadapter5 As New SqlDataAdapter(sql5, connection)
         Dim ds5 As New DataSet()
         Try
@@ -9392,219 +9323,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Catch ex As Exception
             MsgBox(ex.ToString)
         End Try
+        '------------------------------------------------------------------
         ' soma a coluna dos valores e o põe no campo certo
-
         Dim valor15 As Decimal = 0
         For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
             valor15 += Linha.Cells(10).Value
         Next
-
         TextBox79.Text = valor15.ToString("F2")
-
-     
-        '' ----------------------------------------------
-        '' CALCULANDO AS VENDAS DA ribeiro
-        'Dim sql6 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item ='ribeiro'"
-
-        'Dim dataadapter6 As New SqlDataAdapter(sql6, connection)
-        'Dim ds6 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter6.Fill(ds6, "ItemPedidos")
-        '    connection.Close()
-        '    ItemPedidosDataGridView3.DataSource = ds6.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-        '' soma a coluna dos valores e o põe no campo certo
-
-        'Dim valor16 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor16 += Linha.Cells(10).Value
-        'Next
-
-        'TextBox146.Text = valor16.ToString("F2")
-
-        '' comissão
-        'Dim valor160 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor160 += Linha.Cells(23).Value
-        'Next
-
-        '' custos ribeiro
-
-        'Dim valor1600 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor1600 += Linha.Cells(16).Value
-        'Next
-        'TextBox165.Text = (valor160 + valor1600).ToString("F2")
-
-        'Dim porc16
-        'If valor1600 <> 0 Then
-        '    porc16 = (1 - ((valor160 + valor1600) / valor16)) * 100
-        '    TextBox173.Text = porc16
-        'End If
-
-        '' ----------------------------------------------
-        '' CALCULANDO AS VENDAS DA Colect Vitória
-        'Dim sql7 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item ='Colect Vitória'"
-
-        'Dim dataadapter7 As New SqlDataAdapter(sql7, connection)
-        'Dim ds7 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter7.Fill(ds7, "ItemPedidos")
-        '    connection.Close()
-        '    ItemPedidosDataGridView3.DataSource = ds7.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-        '' soma a coluna dos valores e o põe no campo certo
-
-        'Dim valor17 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor17 += Linha.Cells(10).Value
-        'Next
-
-        'TextBox147.Text = valor17.ToString("F2")
-
-        '' comissão
-        'Dim valor170 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor170 += Linha.Cells(23).Value
-        'Next
-
-        '' custos collect
-
-        'Dim valor1700 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor1700 += Linha.Cells(16).Value
-        'Next
-        'TextBox166.Text = (valor170 + valor1700).ToString("F2")
-
-        'Dim porc17
-
-        'If valor17 <> 0 Then
-
-
-
-
-
-        '    porc17 = (1 - ((valor170 + valor1700) / valor17)) * 100
-        '    TextBox174.Text = porc17
-        'End If
-
-
-        '' ----------------------------------------------
-
-        '' CALCULANDO AS VENDAS DA sistec sist tec mat p/escrit ltda me
-        'Dim sql8 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item ='sistec sist tec mat p/escrit ltda me'"
-
-        'Dim dataadapter8 As New SqlDataAdapter(sql8, connection)
-        'Dim ds8 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter8.Fill(ds8, "ItemPedidos")
-        '    connection.Close()
-        '    ItemPedidosDataGridView3.DataSource = ds8.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-        '' soma a coluna dos valores e o põe no campo certo
-
-        'Dim valor18 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor18 += Linha.Cells(10).Value
-        'Next
-
-        'TextBox159.Text = valor18.ToString("F2")
-
-        '' ----------------------------------------------
-
-        '' CALCULANDO AS VENDAS DA rp plass comercial ltda
-        'Dim sql9 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item ='rp plass comercial ltda'"
-
-        'Dim dataadapter9 As New SqlDataAdapter(sql9, connection)
-        'Dim ds9 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter9.Fill(ds9, "ItemPedidos")
-        '    connection.Close()
-        '    ItemPedidosDataGridView3.DataSource = ds9.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-        '' soma a coluna dos valores e o põe no campo certo
-
-        'Dim valor19 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor19 += Linha.Cells(10).Value
-        'Next
-
-        'TextBox163.Text = valor19.ToString("F2")
-
-        '' ----------------------------------------------
-        '' CALCULANDO AS VENDAS DA Atlanta
-        'Dim sql10 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item ='Atlanta'"
-
-        'Dim dataadapter10 As New SqlDataAdapter(sql10, connection)
-        'Dim ds10 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter10.Fill(ds10, "ItemPedidos")
-        '    connection.Close()
-        '    ItemPedidosDataGridView3.DataSource = ds10.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-        '' soma a coluna dos valores e o põe no campo certo
-
-        'Dim valor20 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor20 += Linha.Cells(10).Value
-        'Next
-
-        'TextBox162.Text = valor20.ToString("F2")
-
-        '' ----------------------------------------------
-        '' CALCULANDO AS VENDAS DA ricardo
-        'Dim sql11 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item ='ricardo'"
-
-        'Dim dataadapter11 As New SqlDataAdapter(sql11, connection)
-        'Dim ds11 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter11.Fill(ds11, "ItemPedidos")
-        '    connection.Close()
-        '    ItemPedidosDataGridView3.DataSource = ds11.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-        '' soma a coluna dos valores e o põe no campo certo
-
-        'Dim valor21 As Decimal = 0
-        'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-        '    valor21 += Linha.Cells(10).Value
-        'Next
-
-        'TextBox160.Text = valor21.ToString("F2")
-        'TextBox161.Text = valor15 + valor16 + valor17 + valor18 + valor19 + valor20 + valor21
-        '' ----------------------------------------------
-        '' CALCULANDO AS VENDAS abaixo de r$ 3.000,00
-        'Dim sql17 As String = "SELECT * FROM PedidoNFE WHERE dataemissao_ped BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) "
-
-        'Dim dataadapter17 As New SqlDataAdapter(sql17, connection)
-        'Dim ds17 As New DataSet()
-        'Try
-        '    connection.Open()
-        '    dataadapter17.Fill(ds17, "ItemPedidos")
-        '    connection.Close()
-        '    PedidoNFEDataGridView3.DataSource = ds17.Tables(0)
-        'Catch ex As Exception
-        '    MsgBox(ex.ToString)
-        'End Try
-
-
 
     End Sub
 
@@ -9640,7 +9365,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
+        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)and nomevendedor_balcao <> 'Bee'"
         '  "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
         Dim ds As New DataSet()
@@ -9684,7 +9409,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End If
         ' -----------------------------------
         ' ticket médio
-        Dim sql25 As String = "SELECT DISTINCT id2_balcao FROM [dbo].[balcao] WHERE [datavenda_prodbalcao] BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
+        Dim sql25 As String = "SELECT DISTINCT id2_balcao FROM [dbo].[balcao] WHERE [datavenda_prodbalcao] BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103) and nomevendedor_balcao <> 'Bee'"
         Dim dataadapter25 As New SqlDataAdapter(sql25, connection)
         Dim ds25 As New DataSet()
         Try
@@ -9704,7 +9429,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' --------------------------------------------------------------------
         ' Calculando os tichets emitidos no dia
         ' ticket médio
-        Dim sql30 As String = "SELECT DISTINCT id2_balcao FROM [dbo].[balcao] WHERE  datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
+        Dim sql30 As String = "SELECT DISTINCT id2_balcao FROM [dbo].[balcao] WHERE  datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker9.Text & "' ,103) and nomevendedor_balcao <> 'Bee'"
         Dim dataadapter30 As New SqlDataAdapter(sql30, connection)
         Dim ds30 As New DataSet()
         Try
@@ -9720,8 +9445,8 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         ' ----------------------------------------------------------------
-        ' CALCULANDO AS VENDAS Do DIA
-        Dim sql20 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao = convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
+        '' CALCULANDO AS VENDAS Do DIA
+        Dim sql20 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao = convert (datetime, '" & DateTimePicker9.Text & "' ,103) and nomevendedor_balcao <> 'Bee'"
         '  "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
         Dim dataadapter20 As New SqlDataAdapter(sql20, connection)
         Dim ds20 As New DataSet()
@@ -10200,7 +9925,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         ' CALCULANDO AS VENDAS DA roberto
-        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker12.Text & "' ,103)  and convert (datetime, '" & DateTimePicker13.Text & "' ,103) and  nomevendedor_balcao = 'roberto'"
+        Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker12.Text & "' ,103)  and convert (datetime, '" & DateTimePicker13.Text & "' ,103) and  nomevendedor_balcao = 'alessandro'"
 
         Dim dataadapter2 As New SqlDataAdapter(sql2, connection)
         Dim ds2 As New DataSet()
@@ -10315,8 +10040,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' -----------------------------------------------------------------------------------------
 
 
-        ' CALCULANDO AS VENDAS DA roberto
-        Dim sql2 As String = "SELECT * FROM PedidoNFE WHERE dataemissao_ped BETWEEN   convert (datetime, '" & DateTimePicker14.Text & "' ,103)  and convert (datetime, '" & DateTimePicker15.Text & "' ,103) and  vendedor_ped = 'roberto'"
+        ' CALCULANDO AS VENDAS DA alessandro
+
+        Dim sql2 As String = "SELECT * FROM PedidoNFE WHERE dataemissao_ped BETWEEN   convert (datetime, '" & DateTimePicker14.Text & "' ,103)  and convert (datetime, '" & DateTimePicker15.Text & "' ,103) and  vendedor_ped = 'alessandro'"
 
         Dim dataadapter2 As New SqlDataAdapter(sql2, connection)
         Dim ds2 As New DataSet()
@@ -10335,8 +10061,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Next
         TextBox83.Text = valor2.ToString("F2")
 
-        ' calculando o custo roberto
-        Dim sql20 As String = "SELECT * FROM itemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker14.Text & "' ,103)  and convert (datetime, '" & DateTimePicker15.Text & "' ,103) and  vendedor_item = 'roberto'"
+        ' calculando o custo alessandro
+
+        Dim sql20 As String = "SELECT * FROM itemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker14.Text & "' ,103)  and convert (datetime, '" & DateTimePicker15.Text & "' ,103) and  vendedor_item = 'alessandro'"
 
         Dim dataadapter20 As New SqlDataAdapter(sql20, connection)
         Dim ds20 As New DataSet()
@@ -10502,66 +10229,13 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             TextBox172.Text = 0
         End If
 
-
-
         ' -------------------------------------------------------------
-
         ' calculando o total
         TextBox165.Text = (valor + valor2 + valor3 + valor4 + valor5).ToString("F2")
         TextBox18.Text = (valor10 + valor20 + valor30 + valor40 + valorCris).ToString("F2")
         TextBox164.Text = ((1 - (valor10 + valor20 + valor30 + valor40 + valorCris) / (valor + valor2 + valor3 + valor4 + valor5)) * 100).ToString("F2")
 
-        ' --------------------------------------------
-        ' CALCULANDO AS VENDAS DA Balcão
-        Dim sqlbalcao As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker14.Text & "' ,103)  and convert (datetime, '" & DateTimePicker15.Text & "' ,103)"
-
-        Dim dataadapterbalcao As New SqlDataAdapter(sqlbalcao, connection)
-        Dim dsbalcao As New DataSet()
-        Try
-            connection.Open()
-            dataadapterbalcao.Fill(dsbalcao, "balcao")
-            connection.Close()
-            BalcaoDataGridView7.DataSource = dsbalcao.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-        ' soma a coluna dos valores e o põe no campo certo
-        Dim valor50 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView7.Rows
-            valor50 += Linha.Cells(9).Value
-        Next
-        TextBox166.Text = valor50.ToString("F2")
-        ' calcular venda celso + veronica + mario
-        TextBox167.Text = (valor + valor3 + valor4 + valor5).ToString("F2")
-
-        ' calcular total vendas
-        TextBox168.Text = (valor + valor3 + valor4 + valor5 + valor50).ToString("F2")
-        ' CALCULANDO os custos Balcão
-        Dim sqlbalcaoCusto As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker14.Text & "' ,103)  and convert (datetime, '" & DateTimePicker15.Text & "' ,103)"
-
-        Dim dataadapterbalcaoCusto As New SqlDataAdapter(sqlbalcaoCusto, connection)
-        Dim dsbalcaoCusto As New DataSet()
-        Try
-            connection.Open()
-            dataadapterbalcaoCusto.Fill(dsbalcaoCusto, "balcao")
-            connection.Close()
-            BalcaoDataGridView7.DataSource = dsbalcaoCusto.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-        ' soma a coluna dos valores e o põe no campo certo
-        Dim valor50Custo As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView7.Rows
-            valor50Custo += Linha.Cells(17).Value
-        Next
-        ' calcular custo celso + veronica + gabi
-        TextBox169.Text = (valor10 + valor40 + valor50Custo + valorCris).ToString("F2")
-        ' calculando a porcentagem
-        TextBox170.Text = ((1 - (valor10 + valor20 + valor40 + valor50Custo + valorCris) / (valor + valor2 + valor4 + valor50 + valor5)) * 100).ToString("F2")
-
-
-
-
+       
 
 
     End Sub
@@ -11444,11 +11118,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Next
         TextBox85.Text = valor20
         ' -------------------------------
-        'resultado
-        'Dim diferenca As Integer
-        'diferenca = DateDiff("d", DateTimePicker23.Text, DateTimePicker24.Text)
-        'TextBox127.Text = (((valor + valor3) / diferenca) * 30).ToString("F2")
-        'faturamento
+          'faturamento
         Dim faturamentolinha As Double = TextBox133.Text
         Dim faturamentobalcao As Double = valor10
         TextBox134.Text = (faturamentolinha + faturamentobalcao).ToString("F2")
@@ -11480,10 +11150,12 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' calculando a projeção
         TextBox141.Text = (((faturamentolinha + faturamentobalcao) / dia) * quant).ToString("F2")
-      
+        TextBox314.Text = (((custoslinha + custosbalcao) / dia) * quant).ToString("F2")
+        TextBox315.Text = (((lucroLinha + lucroBalcao) / dia) * quant).ToString("F2")
+
         ' ------------------------------------------------------------------------------
 
-        Dim sql25 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker25.Text & "' ,103)  and convert (datetime, '" & DateTimePicker26.Text & "' ,103)   and nomevendedor_balcao = 'Bee'"
+        Dim sql25 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker25.Text & "' ,103)  and convert (datetime, '" & DateTimePicker26.Text & "' ,103)   and nomevendedor_balcao = 'fernando'"
 
         Dim dataadapter25 As New SqlDataAdapter(sql25, connection)
         Dim ds25 As New DataSet()
@@ -11595,17 +11267,18 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Diferenca = DateDiff("d", DataLancamento, DataDaEntraga)
             TlDiferenca = TlDiferenca + Diferenca
             contador = contador + 1
-            'TextBox192.Text = Diferenca
-            ' MessageBox.Show("")
+           
         End While
 
         connection.Close()
         MEdiaEntrega = TlDiferenca / contador
         TextBox132.Text = MEdiaEntrega.ToString("F2")
+        TextBox310.Text = (((faturamentolinha + (faturamentobalcao - VendasBugigangas)) / dia) * quant).ToString("F2")
+        TextBox311.Text = (((valor2 + (valor20 - valorBugigangas)) / dia) * quant).ToString("F2")
+        TextBox312.Text = TextBox310.Text - TextBox311.Text
+        TextBox313.Text = ((1 - (TextBox311.Text / TextBox310.Text)) * 100).ToString("f2")
 
-     
 
-        ' --------------------------------------------
 
     End Sub
 
@@ -11887,64 +11560,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     End Sub
 
 
-    Private Sub Button44_Click_2(sender As Object, e As EventArgs) Handles Button44.Click
-        ' trocando o binding source(fonte de dados do datagridview) pelo original
-
-        'ItemPedidosDataGridView3.DataSource = ItemPedidosBindingSource
-        'ItemPedidosBindingSource.Filter = String.Format("for_item LIKE '{0}%'", ComboBox19.Text)
-
-        ' CALCULANDO AS VENDAS por cliente
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-
-        Dim sql5 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103) and  vendedor_item = '" & ComboBox19.Text & "'"
-
-        Dim dataadapter5 As New SqlDataAdapter(sql5, connection)
-        Dim ds5 As New DataSet()
-        Try
-            connection.Open()
-            dataadapter5.Fill(ds5, "ItemPedidos")
-            connection.Close()
-            ItemPedidosDataGridView3.DataSource = ds5.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-        ' soma a coluna dos valores e o põe no campo certo
-
-        Dim valor15 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-            valor15 += Linha.Cells(10).Value
-        Next
-
-        TextBox151.Text = valor15.ToString("F2")
-
-        ' --------------------------------------------------
-
-        '' comissão
-        Dim valor150 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-            valor150 += Linha.Cells(23).Value
-        Next
-        TextBox146.Text = (valor150).ToString("F2")
-
-        '' custos proplast
-
-        Dim valor1500 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView3.Rows
-            valor1500 += Linha.Cells(16).Value
-        Next
-        TextBox145.Text = (valor1500).ToString("F2")
-
-        Dim porc As String
-        porc = (1 - ((valor150 + valor1500) / valor15)) * 100
-        TextBox147.Text = porc
-
-
-
-
-
-
-    End Sub
+   
 
    
     Private Sub Button54_Click_1(sender As Object, e As EventArgs) Handles Button54.Click
@@ -12005,56 +11621,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         End Try
 
-        ' ---------------------------------------------------------
-        ' Pegar as vendas marfinite
-        Dim sql3 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker29.Text & "' ,103)  and convert (datetime, '" & DateTimePicker30.Text & "' ,103) and for_item = 'AVANT IND. E COM. DE PROD. SINT. EIRELI' "
-
-        Dim dataadapter3 As New SqlDataAdapter(sql3, connection)
-        Dim ds3 As New DataSet()
-
-        Try
-            connection.Open()
-            dataadapter3.Fill(ds3, "ItemPedidos")
-            connection.Close()
-            ItemPedidosDataGridView8.DataSource = ds3.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        'soma a coluna dos valores e o põe no campo certo
-        Dim valor3 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView8.Rows
-            valor3 += Linha.Cells(10).Value
-        Next
-        TextBox186.Text = valor3.ToString("F2")
-
-        ' descobrir o valor dos outros fornecedores
-        Dim valor5 = TextBox152.Text
-        Dim valor4 = valor5 - valor3
-        TextBox187.Text = valor4.ToString("F2")
-
-        ' porcentagens dos fornecedores
-        Dim PorcentagemForMarfinite = (((valor3 / valor5) * 100))
-        TextBox188.Text = PorcentagemForMarfinite.ToString("F2")
-
-        Dim PorcentagemForOutros = (((valor4 / valor5) * 100))
-        TextBox189.Text = PorcentagemForOutros.ToString("F2")
-
-        ' -----------------------------------------------------------------
-        ' Pegar as vendas marfinite
-        Dim sql4 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker29.Text & "' ,103)  and convert (datetime, '" & DateTimePicker30.Text & "' ,103) "
-
-        Dim dataadapter4 As New SqlDataAdapter(sql4, connection)
-        Dim ds4 As New DataSet()
-
-        Try
-            connection.Open()
-            dataadapter4.Fill(ds4, "ItemPedidos")
-            connection.Close()
-            ItemPedidosDataGridView8.DataSource = ds4.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
+       
 
     End Sub
 
@@ -12362,121 +11929,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     End Sub
 
-    Private Sub DateTimePicker34_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker34.ValueChanged
-
-    End Sub
-
-    Private Sub Button62_Click(sender As Object, e As EventArgs) Handles Button62.Click
-
-        Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
-
-        ' descobrir as vendas marfinite pedidos
-        Dim sql3 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker25.Text & "' ,103)  and convert (datetime, '" & DateTimePicker26.Text & "' ,103) and for_item = 'AVANT IND. E COM. DE PROD. SINT. EIRELI' "
-
-        Dim dataadapter3 As New SqlDataAdapter(sql3, connection)
-        Dim ds3 As New DataSet()
-
-        Try
-            connection.Open()
-            dataadapter3.Fill(ds3, "ItemPedidos")
-            connection.Close()
-            ItemPedidosDataGridView6.DataSource = ds3.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        'soma a coluna dos valores e o põe no campo certo
-        Dim valor3 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView6.Rows
-            valor3 += Linha.Cells(9).Value
-        Next
-        TextBox192.Text = valor3.ToString("F2")
-
-        ' descobrir o valor das vendas marfinite balcão
-        Dim sql4 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker25.Text & "' ,103)  and convert (datetime, '" & DateTimePicker26.Text & "' ,103) and forprod_balcao = 'AVANT IND. E COM. DE PROD. SINT. EIRELI' "
-
-        Dim dataadapter4 As New SqlDataAdapter(sql4, connection)
-        Dim ds4 As New DataSet()
-
-        Try
-            connection.Open()
-            dataadapter4.Fill(ds4, "balcao")
-            connection.Close()
-            BalcaoDataGridView6.DataSource = ds4.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        'soma a coluna dos valores e o põe no campo certo
-        Dim valor4 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView6.Rows
-            valor4 += Linha.Cells(9).Value
-        Next
-        TextBox193.Text = valor4.ToString("F2")
-
-        ' descobrir as vendas <> marfinite pedidos
-        Dim sql5 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker25.Text & "' ,103)  and convert (datetime, '" & DateTimePicker26.Text & "' ,103) and for_item <> 'AVANT IND. E COM. DE PROD. SINT. EIRELI' "
-
-        Dim dataadapter5 As New SqlDataAdapter(sql5, connection)
-        Dim ds5 As New DataSet()
-
-        Try
-            connection.Open()
-            dataadapter5.Fill(ds5, "ItemPedidos")
-            connection.Close()
-            ItemPedidosDataGridView6.DataSource = ds5.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        'soma a coluna dos valores e o põe no campo certo
-        Dim valor5 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView6.Rows
-            valor5 += Linha.Cells(9).Value
-        Next
-        TextBox191.Text = valor5.ToString("F2")
-
-        ' descobrir o valor das vendas <> marfinite balcão
-        Dim sql6 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker25.Text & "' ,103)  and convert (datetime, '" & DateTimePicker26.Text & "' ,103) and forprod_balcao <> 'AVANT IND. E COM. DE PROD. SINT. EIRELI' "
-
-        Dim dataadapter6 As New SqlDataAdapter(sql6, connection)
-        Dim ds6 As New DataSet()
-
-        Try
-            connection.Open()
-            dataadapter6.Fill(ds6, "balcao")
-            connection.Close()
-            BalcaoDataGridView6.DataSource = ds6.Tables(0)
-        Catch ex As Exception
-            MsgBox(ex.ToString)
-        End Try
-
-        'soma a coluna dos valores e o põe no campo certo
-        Dim valor6 As Decimal = 0
-        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView6.Rows
-            valor6 += Linha.Cells(9).Value
-        Next
-        TextBox194.Text = valor6.ToString("F2")
-
-        ' porcentagens dos fornecedores
-        Dim valor7 = valor3 + valor4 + valor5 + valor6
-        Dim valor8 = valor3 + valor4
-        Dim valor9 = valor5 + valor6
-
-
-        Dim PorcentagemForMarfinite = (((valor8 / valor7) * 100))
-        TextBox195.Text = PorcentagemForMarfinite.ToString("F2")
-
-        Dim PorcentagemForOutros = (((valor9 / valor7) * 100))
-        TextBox196.Text = PorcentagemForOutros.ToString("F2")
-
-    End Sub
-
    
-    Private Sub Label267_Click(sender As Object, e As EventArgs) Handles Label267.Click
-
-    End Sub
 
     Private Sub Button63_Click(sender As Object, e As EventArgs) Handles Button63.Click
 
@@ -13184,7 +12637,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
                 ValorEstoqueAtual2 += ValorEstoqueAtual1
               End If
         Next
-       
+        TextBox309.Text = (ValorEstoqueAtual2 / 0.65).ToString("F2")
         TextBox217.Text = ValorEstoqueAtual2
 
 
@@ -14211,6 +13664,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         RadioButton23.Enabled = True
         RadioButton24.Enabled = True
         RadioButton16.Enabled = True
+        RadioButton17.Enabled = True
 
     End Sub
 
@@ -16018,7 +15472,7 @@ proxima2:
         PrintPreviewDialog7.Document = PrintDocument14
         DirectCast(PrintPreviewDialog7, Form).WindowState = FormWindowState.Maximized
         PrintDialog1.Document = PrintDocument14
-        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
+        PrintDialog1.PrinterSettings.PrinterName = "\\SERVIDOR\EPSON L355 Series (Caixa)"
         CType(PrintPreviewDialog7.Controls(1), ToolStrip).Items.Add(PDB)
 
     End Sub
@@ -16594,22 +16048,14 @@ Prosxima50:
 
     End Sub
 
-
-
-    'Private Sub RadioButton10_CheckedChanged(sender As Object, e As EventArgs)
-    '    RadioButton8.Enabled = False
-    '    RadioButton10.Enabled = False
-    '    RadioButton23.Enabled = False
-    '    RadioButton24.Enabled = False
-    '    RadioButton16.Enabled = False
-    'End Sub
-
     Private Sub RadioButton23_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton23.CheckedChanged
         RadioButton8.Enabled = False
         RadioButton10.Enabled = False
         RadioButton23.Enabled = False
         RadioButton24.Enabled = False
         RadioButton16.Enabled = False
+        RadioButton17.Enabled = False
+
     End Sub
 
     Private Sub RadioButton24_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton24.CheckedChanged
@@ -16626,6 +16072,7 @@ Prosxima50:
         RadioButton23.Enabled = False
         RadioButton24.Enabled = False
         RadioButton16.Enabled = False
+        RadioButton17.Enabled = False
 
     End Sub
 
@@ -16670,6 +16117,7 @@ Prosxima50:
             End If
         Next
 
+        TextBox309.Text = (ValorEstoqueAtual2 / 0.65).ToString("F2")
         TextBox217.Text = ValorEstoqueAtual2
     End Sub
 
@@ -17331,6 +16779,7 @@ FIM:
     End Sub
 
     Private Sub Button123_Click(sender As Object, e As EventArgs) Handles Button123.Click
+
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' CALCULANDO OS TOTAIS
@@ -17767,6 +17216,7 @@ FIM:
                 ValorEstoqueAtual2 += ValorEstoqueAtual1
             End If
         Next
+        TextBox309.Text = (ValorEstoqueAtual2 / 0.65).ToString("F2")
         TextBox217.Text = ValorEstoqueAtual2
     End Sub
 
@@ -17790,6 +17240,7 @@ FIM:
                 ValorEstoqueAtual2 += ValorEstoqueAtual1
             End If
         Next
+        TextBox309.Text = (ValorEstoqueAtual2 / 0.65).ToString("F2")
         TextBox217.Text = ValorEstoqueAtual2
     End Sub
 
@@ -17935,7 +17386,7 @@ FIM:
         PrintPreviewDialog9.Document = PrintDocument15
         DirectCast(PrintPreviewDialog9, Form).WindowState = FormWindowState.Maximized
         PrintDialog1.Document = PrintDocument15
-        PrintDialog1.PrinterSettings.PrinterName = "\\servidor\EPSON L355 Series (Caixa)"
+        PrintDialog1.PrinterSettings.PrinterName = "\\\\SERVIDOR\EPSON L355 Series (Caixa)"
         CType(PrintPreviewDialog9.Controls(1), ToolStrip).Items.Add(PDB)
     End Sub
 
@@ -18194,6 +17645,8 @@ FIM:
         RadioButton23.Enabled = False
         RadioButton24.Enabled = False
         RadioButton16.Enabled = False
+        RadioButton17.Enabled = False
+
     End Sub
 
     Private Sub RadioButton16_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton16.CheckedChanged
@@ -18202,6 +17655,8 @@ FIM:
         RadioButton23.Enabled = False
         RadioButton24.Enabled = False
         RadioButton16.Enabled = False
+        RadioButton17.Enabled = False
+
     End Sub
 
     Private Sub Button102_Click(sender As Object, e As EventArgs) Handles Button102.Click
@@ -18231,6 +17686,7 @@ FIM:
     End Sub
 
     Private Sub Button103_Click(sender As Object, e As EventArgs) Handles Button103.Click
+
         Dim connection As SqlConnection
         connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
@@ -18725,6 +18181,314 @@ FIM:
 
     Private Sub TextBox305_TextChanged(sender As Object, e As EventArgs) Handles TextBox305.TextChanged
         VendasBalcaoPedidosBindingSource.Filter = String.Format("Produto_VendasBalcaoPedidos LIKE '{0}%'", TextBox305.Text)
+    End Sub
+
+    Private Sub Button141_Click(sender As Object, e As EventArgs) Handles Button141.Click
+        Dim valor As Decimal
+        For Each col As DataGridViewRow In VendasBalcaoPedidosDataGridView.Rows
+            valor = valor + col.Cells("Quantidade_VendasBalcaoPedidos").Value
+        Next
+        TextBox306.Text = valor
+    End Sub
+
+    Private Sub RadioButton17_CheckedChanged(sender As Object, e As EventArgs) Handles RadioButton17.CheckedChanged
+        RadioButton8.Enabled = False
+        RadioButton10.Enabled = False
+        RadioButton23.Enabled = False
+        RadioButton24.Enabled = False
+        RadioButton16.Enabled = False
+        RadioButton17.Enabled = False
+    End Sub
+
+   
+
+    Private Sub Button143_Click(sender As Object, e As EventArgs) Handles Button143.Click
+        ' Pega autorização para correr o botão
+        Dim codigoEntrada = InputBox("Área restrita, por favor digite a senha para acessar:", "Código")
+        If codigoEntrada <> fernando Then
+            MessageBox.Show("Código inválido")
+            Exit Sub
+        End If
+        ' ----------------------------------------------------------------------------------
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        ' **********************************************************************************************
+        Dim v_SelectRow As Integer = 0
+        Dim VendaPeriodo As Double = 0
+        Dim CustoPeriodo As Integer = 0
+        Dim TotalLucro As Double = 0
+        Dim QuantidadePeriodo As Double = 0
+
+        For v_SelectRow = 0 To ProdutosDataGridView9.RowCount() - 1
+
+            '    Dim sql As String = "SELECT * FROM balcao WHERE  (nomevendedor_balcao ='celso' or  nomevendedor_balcao ='verônica')"
+            Dim sql As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "' and (nomevendedor_balcao = 'verônica' or  nomevendedor_balcao = 'celso')"
+            Dim dataadapter As New SqlDataAdapter(sql, connection)
+            Dim ds As New DataSet()
+            Try
+                connection.Open()
+                dataadapter.Fill(ds, "balcao")
+                connection.Close()
+                BalcaoDataGridView11.DataSource = ds.Tables(0)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+            ' ****************************************************
+            ' calculando soma
+            'somar Faturamento da coluna da tabela balcão
+            Dim FaturamentoBalcao As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+                FaturamentoBalcao += Linha.Cells(12).Value
+            Next
+            ' -----------------------------------
+            'somar custo da coluna da tabela balcão
+            Dim CustoBalcao As Decimal = 0
+            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+                CustoBalcao += Linha.Cells(17).Value
+            Next
+            ' -----------------------------------
+            'somar quantidade da coluna da tabela balcão
+            Dim QuantidadeBalcao As Double = 0
+            For Each Linha As DataGridViewRow In Me.BalcaoDataGridView11.Rows
+                QuantidadeBalcao += Linha.Cells(7).Value
+            Next
+            ' ***********************************************************
+
+            Dim sql2 As String = "SELECT * FROM itemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and  codprod_item = '" & ProdutosDataGridView9.Item(1, v_SelectRow).Value & "' and (vendedor_item = 'verônica' or  vendedor_item = 'celso')"
+            Dim dataadapter2 As New SqlDataAdapter(sql2, connection)
+            Dim ds2 As New DataSet()
+            Try
+                connection.Open()
+                dataadapter2.Fill(ds2, "itemPedidos")
+                connection.Close()
+                ItemPedidosDataGridView10.DataSource = ds2.Tables(0)
+            Catch ex As Exception
+                MsgBox(ex.ToString)
+            End Try
+            ' ****************************************************
+            ' calculando soma
+            'somar Faturamento da coluna da tabela balcão
+            Dim FaturamentoPedido As Double = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                FaturamentoPedido += Linha.Cells(10).Value
+            Next
+
+            'somar custo da coluna da tabela balcão
+            Dim CustoPedido As Double = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                CustoPedido += Linha.Cells(16).Value
+            Next
+            ' -----------------------------------
+            'somar quantidade da coluna da tabela balcão
+            Dim QuantidadePedido As Double = 0
+            For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView10.Rows
+                QuantidadePedido += Linha.Cells(8).Value
+            Next
+
+            VendaPeriodo = (FaturamentoPedido + FaturamentoBalcao).ToString("F2")
+            CustoPeriodo = (CustoPedido + CustoBalcao).ToString("F2")
+            TotalLucro = ((FaturamentoPedido + FaturamentoBalcao) - (CustoPedido + CustoBalcao)).ToString("F2")
+            QuantidadePeriodo = QuantidadeBalcao + QuantidadePedido
+            ' ***********************************************************
+
+            Dim command As SqlCommand
+            command = connection.CreateCommand()
+            command.Parameters.Clear()
+            command.CommandText = "INSERT INTO VendasBalcaoTotal (codprod_VendasBalcaoTotal,Quantidade_VendasBalcaoTotal,Lucro_VendasBalcaoTotal,Custo_VendasBalcaoTotal,Faturamento_VendasBalcaoTotal,Produto_VendasBalcaoTotal,Cor_VendasBalcaoTotal,Linha_VendasBalcaoTotal,Fornecedor_VendasBalcaoTotal) Values (@codprod_VendasBalcaoTotal,@Quantidade_VendasBalcaoTotal,@Lucro_VendasBalcaoTotal,@Custo_VendasBalcaoTotal,@Faturamento_VendasBalcaoTotal,@Produto_VendasBalcaoTotal,@Cor_VendasBalcaoTotal,@Linha_VendasBalcaoTotal,@Fornecedor_VendasBalcaoTotal)"
+            command.CommandType = CommandType.Text
+            command.Parameters.Add("@codprod_VendasBalcaoTotal", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(2, v_SelectRow).Value
+            command.Parameters.Add("@Fornecedor_VendasBalcaoTotal", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(4, v_SelectRow).Value
+            command.Parameters.Add("@Linha_VendasBalcaoTotal", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(5, v_SelectRow).Value
+            command.Parameters.Add("@Cor_VendasBalcaoTotal", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(7, v_SelectRow).Value
+            command.Parameters.Add("@Produto_VendasBalcaoTotal", SqlDbType.VarChar, 50).Value = ProdutosDataGridView9.Item(6, v_SelectRow).Value
+            command.Parameters.Add("@Faturamento_VendasBalcaoTotal", SqlDbType.Float).Value = VendaPeriodo
+            command.Parameters.Add("@Custo_VendasBalcaoTotal", SqlDbType.Float).Value = CustoPeriodo
+            command.Parameters.Add("@Lucro_VendasBalcaoTotal", SqlDbType.Float).Value = TotalLucro
+            command.Parameters.Add("@Quantidade_VendasBalcaoTotal", SqlDbType.Float).Value = QuantidadePeriodo
+
+            Try
+                connection.Open()
+                command.ExecuteNonQuery()
+                connection.Close()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString())
+            Finally
+                connection.Close()
+            End Try
+
+        Next
+    End Sub
+
+    Private Sub TextBox307_TextChanged(sender As Object, e As EventArgs) Handles TextBox307.TextChanged
+        VendasBalcaoTotalBindingSource.Filter = String.Format("Produto_VendasBalcaoTotal LIKE '{0}%'", TextBox307.Text)
+    End Sub
+
+    Private Sub Button144_Click(sender As Object, e As EventArgs) Handles Button144.Click
+        Dim valor As Decimal
+        For Each col As DataGridViewRow In VendasBalcaoTotalDataGridView.Rows
+            valor = valor + col.Cells("DataGridViewTextBoxColumn1146").Value
+        Next
+        TextBox308.Text = valor
+    End Sub
+
+    
+    Private Sub Button142_Click(sender As Object, e As EventArgs) Handles Button142.Click
+
+        Dim connection As SqlConnection
+        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+
+        ' **************************************************************************
+        Dim sql11 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103) "
+        Dim dataadapter11 As New SqlDataAdapter(sql11, connection)
+        Dim ds11 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter11.Fill(ds11, "balcao")
+            connection.Close()
+            BalcaoDataGridView9.DataSource = ds11.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' calcula faturamento
+        Dim valor11 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView9.Rows
+            valor11 += Linha.Cells(9).Value
+        Next
+        TextBox354.Text = valor11.ToString("f2")
+        ' ***************************************************
+        ' CALCULANDO OS TOTAIS
+        Dim sql10 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103)  and  forprod_balcao = '" & ComboBox45.Text & "'and  linhaprod_balcao = '" & ComboBox4.Text & "'"
+        Dim dataadapter10 As New SqlDataAdapter(sql10, connection)
+        Dim ds10 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter10.Fill(ds10, "balcao")
+            connection.Close()
+            BalcaoDataGridView9.DataSource = ds10.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' calcula faturamento
+        Dim valor10 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView9.Rows
+            valor10 += Linha.Cells(9).Value
+        Next
+        TextBox350.Text = valor10.ToString("f2")
+
+        ' calculando o custo
+        Dim valorCusto10 As Double
+        For Each Linha As DataGridViewRow In Me.BalcaoDataGridView9.Rows
+            valorCusto10 += Linha.Cells(11).Value
+        Next
+        TextBox351.Text = valorCusto10.ToString("f2")
+        TextBox352.Text = TextBox350.Text - TextBox351.Text
+
+        'calculando a porcentagem de lucro 
+        Try
+            Dim VrPorcentagem10 As Double = (1 - (valorCusto10 / valor10)) * 100
+            TextBox353.Text = VrPorcentagem10.ToString("F2")
+        Catch ex As Exception
+        End Try
+       
+        ' *******************************************************
+        Try
+            Dim VrPorcentagem11 As Double = ((valor10 / valor11) * 100)
+            TextBox355.Text = VrPorcentagem11.ToString("F2")
+        Catch ex As Exception
+        End Try
+        ' **************************************************************************
+        Dim sql21 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103) "
+        Dim dataadapter21 As New SqlDataAdapter(sql21, connection)
+        Dim ds21 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter21.Fill(ds21, "ItemPedidos")
+            connection.Close()
+            ItemPedidosDataGridView11.DataSource = ds21.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' calcula faturamento
+        Dim valor21 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView11.Rows
+            valor21 += Linha.Cells(10).Value
+        Next
+        TextBox359.Text = valor21.ToString("f2")
+       
+        ' **************************************************************************************
+        ' CALCULANDO OS TOTAIS das linhas
+
+        Dim sql20 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103)  and  for_item = '" & ComboBox45.Text & "'and linha_item = '" & ComboBox4.Text & "'"
+        Dim dataadapter20 As New SqlDataAdapter(sql20, connection)
+        Dim ds20 As New DataSet()
+        Try
+            connection.Open()
+            dataadapter20.Fill(ds20, "ItemPedidos")
+            connection.Close()
+            ItemPedidosDataGridView11.DataSource = ds20.Tables(0)
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+        ' calcula faturamento
+        Dim valor20 As Decimal = 0
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView11.Rows
+            valor20 += Linha.Cells(10).Value
+        Next
+        TextBox356.Text = valor20.ToString("f2")
+
+        ' calculando o custo
+        Dim valorCusto20 As Double
+        For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView11.Rows
+            valorCusto20 += Linha.Cells(16).Value
+        Next
+        TextBox357.Text = valorCusto20.ToString("f2")
+        TextBox358.Text = TextBox356.Text - TextBox357.Text
+
+        'calculando a porcentagem de lucro 
+        Try
+            Dim VrPorcentagem20 As Double = (1 - (valorCusto20 / valor20)) * 100
+            TextBox361.Text = VrPorcentagem20.ToString("F2")
+        Catch ex As Exception
+        End Try
+        ' *****************************************************************
+        Try
+            Dim VrPorcentagem21 As Double = ((valor20 / valor21) * 100)
+            TextBox360.Text = VrPorcentagem21.ToString("F2")
+        Catch ex As Exception
+        End Try
+        ' **************************************************************************************
+       
+        ' *************************************************************************************
+        ' **************************************************************************************
+        ' calculando os totais
+        TextBox362.Text = (valor10 + valor20).ToString("F2")
+        TextBox363.Text = (valorCusto10 + valorCusto20).ToString("F2")
+        TextBox364.Text = ((valor10 + valor20) - (valorCusto10 + valorCusto20)).ToString("F2")
+        ' passando valor do taturamento total
+        Dim FatTotal As Double = 0
+        FatTotal = (valor11 + valor21).ToString("F2")
+        TextBox365.Text = FatTotal
+        ' calculando a porcentagem da linha ou fornecedor
+        Try
+            '  Dim VrPorcentagem30 As Double = ((1 - ((valor10 + valor20) / (valorCusto10 + valorCusto20))) * 100)
+            Dim VrPorcentagem30 As Double = ((1 - ((valorCusto10 + valorCusto20) / (valor10 + valor20))) * 100)
+
+            TextBox367.Text = VrPorcentagem30.ToString("F2")
+        Catch ex As Exception
+        End Try
+        ' calculando a porcentagem total
+        Try
+            '  Dim VrPorcentagem30 As Double = ((1 - ((valor10 + valor20) / (valorCusto10 + valorCusto20))) * 100)
+            Dim VrPorcentagem40 As Double = (((valor10 + valor20) / (valor11 + valor21)) * 100)
+
+            TextBox366.Text = VrPorcentagem40.ToString("F2")
+        Catch ex As Exception
+        End Try
+
     End Sub
 End Class
 
