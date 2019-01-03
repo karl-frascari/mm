@@ -187,7 +187,6 @@ Partial Class Form1
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.ComboBox37 = New System.Windows.Forms.ComboBox()
         Me.Label72 = New System.Windows.Forms.Label()
-        Me.Button127 = New System.Windows.Forms.Button()
         Me.GroupBox114 = New System.Windows.Forms.GroupBox()
         Me.Label443 = New System.Windows.Forms.Label()
         Me.Label442 = New System.Windows.Forms.Label()
@@ -2186,13 +2185,10 @@ Partial Class Form1
         Me.PrecoMarketPlace_prod = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel24 = New System.Windows.Forms.Panel()
         Me.GroupBox135 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton17 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton16 = New System.Windows.Forms.RadioButton()
         Me.Button88 = New System.Windows.Forms.Button()
         Me.RadioButton10 = New System.Windows.Forms.RadioButton()
         Me.RadioButton8 = New System.Windows.Forms.RadioButton()
         Me.RadioButton23 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton24 = New System.Windows.Forms.RadioButton()
         Me.GroupBox103 = New System.Windows.Forms.GroupBox()
         Me.Button89 = New System.Windows.Forms.Button()
         Me.ComboBox28 = New System.Windows.Forms.ComboBox()
@@ -3181,448 +3177,448 @@ Partial Class Form1
         Vendedor_nfeemitidasLabel = New System.Windows.Forms.Label()
         DescontoFabrica_prodLabel = New System.Windows.Forms.Label()
         CodOrcamento_orcLabel = New System.Windows.Forms.Label()
-        CType(Me.ProdutosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.DataSetFinal,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.CorProdBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.LinhasprodBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ClienteBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.EstadosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TransportadorasBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TransportadorasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.CapitalgirofornecedorBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NfefornecedorBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.VendedorBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.DataSetFinalBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ProdutosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tab_nfe.SuspendLayout
-        CType(Me.VendasMlbDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.VendasMlbBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Busca.SuspendLayout
-        Me.GroupBox96.SuspendLayout
-        Me.Panel4.SuspendLayout
-        Me.GroupBox134.SuspendLayout
-        Me.GroupBox109.SuspendLayout
-        CType(Me.CadastrodoNCMBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tbpg_capitalGiro.SuspendLayout
-        Me.TabControl2.SuspendLayout
-        Me.tab_Kgiro.SuspendLayout
-        Me.Panel6.SuspendLayout
-        Me.GroupBox114.SuspendLayout
-        Me.GroupBox113.SuspendLayout
-        CType(Me.PedidoCompraDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PedidoCompraBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox108.SuspendLayout
-        Me.GroupBox10.SuspendLayout
-        Me.Tab_fornecedor.SuspendLayout
-        CType(Me.BalcaoDataGridView8,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ProdutosDataGridView6,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel9.SuspendLayout
-        Me.GroupBox112.SuspendLayout
-        Me.GroupBox111.SuspendLayout
-        Me.GroupBox110.SuspendLayout
-        CType(Me.PedidoMarfiniteBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tbpg_transportadoras.SuspendLayout
-        Me.tabpage_trans.SuspendLayout
-        Me.tab_fortrans.SuspendLayout
-        Me.Panel7.SuspendLayout
-        Me.GroupBox15.SuspendLayout
-        Me.GroupBox14.SuspendLayout
-        Me.MenuStrip2.SuspendLayout
-        Me.tab_tabelatrans.SuspendLayout
-        CType(Me.DataGridTransportadoras,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel8.SuspendLayout
-        Me.tbpg_pedFornecedor.SuspendLayout
-        Me.TabControlPedMarf.SuspendLayout
-        Me.TabPage5.SuspendLayout
-        CType(Me.NotasEntradaDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NotasEntradaBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox86.SuspendLayout
-        Me.Panel11.SuspendLayout
-        Me.GroupBox16.SuspendLayout
-        Me.MenuStrip4.SuspendLayout
-        Me.TabPage10.SuspendLayout
-        CType(Me.dataGridPediMarf,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel12.SuspendLayout
-        Me.GroupBox75.SuspendLayout
-        Me.GroupBox155.SuspendLayout
-        CType(Me.BalcaoDataGridView10,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox154.SuspendLayout
-        Me.GroupBox156.SuspendLayout
-        CType(Me.ItemPedidosDataGridView12,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ItemPedidosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox43.SuspendLayout
-        Me.GroupBox45.SuspendLayout
-        Me.TabPage17.SuspendLayout
-        Me.Panel39.SuspendLayout
-        Me.GroupBox94.SuspendLayout
-        Me.Panel44.SuspendLayout
-        CType(Me.PedidoCompraDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ItemPedidosDataGridView9,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ProdutosDataGridView3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoDataGridView5,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ItemPedidosDataGridView5,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox93.SuspendLayout
-        Me.GroupBox81.SuspendLayout
-        Me.TabPage3.SuspendLayout
-        Me.Panel45.SuspendLayout
-        CType(Me.ProdutosDataGridView5,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel46.SuspendLayout
-        Me.GroupBox26.SuspendLayout
-        Me.GroupBox105.SuspendLayout
-        Me.GroupBox95.SuspendLayout
-        Me.TabPage27.SuspendLayout
-        Me.Panel61.SuspendLayout
-        CType(Me.ApelidoErradoDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ApelidoErradoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox102.SuspendLayout
-        Me.GroupBox137.SuspendLayout
-        Me.GroupBox136.SuspendLayout
-        Me.TabPage28.SuspendLayout
-        Me.Panel62.SuspendLayout
-        Me.GroupBox140.SuspendLayout
-        CType(Me.ItemPedidosDataGridView11,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoDataGridView9,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox139.SuspendLayout
-        Me.GroupBox150.SuspendLayout
-        Me.GroupBox149.SuspendLayout
-        Me.GroupBox148.SuspendLayout
-        Me.GroupBox141.SuspendLayout
-        Me.TabPage12.SuspendLayout
-        Me.Panel56.SuspendLayout
-        Me.GroupBox117.SuspendLayout
-        CType(Me.ItemPedidosDataGridView10,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ProdutosDataGridView9,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoDataGridView11,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox118.SuspendLayout
-        Me.GroupBox120.SuspendLayout
-        Me.GroupBox119.SuspendLayout
-        Me.TabPage13.SuspendLayout
-        Me.Panel57.SuspendLayout
-        CType(Me.VendasBalcaoResultadoDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.VendasBalcaoResultadoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel58.SuspendLayout
-        Me.GroupBox121.SuspendLayout
-        Me.TabPage14.SuspendLayout
-        Me.Panel59.SuspendLayout
-        CType(Me.VendasBalcaoPedidosDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.VendasBalcaoPedidosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel60.SuspendLayout
-        Me.GroupBox123.SuspendLayout
-        Me.TabPage15.SuspendLayout
-        Me.Panel68.SuspendLayout
-        Me.Panel70.SuspendLayout
-        CType(Me.VendasBalcaoTotalDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.VendasBalcaoTotalBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel69.SuspendLayout
-        CType(Me.PedidoMarfiniteBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.LinhasprodBindingSource9,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tbpg_clientes.SuspendLayout
-        Me.tab_form_clientes.SuspendLayout
-        Me.frmpage_clientes.SuspendLayout
-        Me.Panel2.SuspendLayout
-        Me.MenuStrip3.SuspendLayout
-        Me.GroupBox46.SuspendLayout
-        Me.GroupBox152.SuspendLayout
-        Me.GroupBox1.SuspendLayout
-        Me.GroupBox3.SuspendLayout
-        CType(Me.RamoClienteBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox6.SuspendLayout
-        Me.GroupBox4.SuspendLayout
-        Me.GroupBox7.SuspendLayout
-        Me.GroupBox2.SuspendLayout
-        Me.tipo_pessoa.SuspendLayout
-        Me.tab_grid_clientes.SuspendLayout
-        CType(Me.ClienteDataGridView5,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel10.SuspendLayout
-        Me.GroupBox153.SuspendLayout
-        Me.tbpg_produtos.SuspendLayout
-        Me.tabpage_produtos.SuspendLayout
-        Me.TabPage4.SuspendLayout
-        Me.Panel1.SuspendLayout
-        Me.GroupBox126.SuspendLayout
-        Me.cbx_forprod.SuspendLayout
-        Me.GroupBox106.SuspendLayout
-        Me.GroupBox92.SuspendLayout
-        Me.GroupBox90.SuspendLayout
-        Me.GroupBox91.SuspendLayout
-        Me.GroupBox13.SuspendLayout
-        Me.GroupBox133.SuspendLayout
-        Me.TabControl8.SuspendLayout
-        Me.TabPage25.SuspendLayout
-        Me.TabPage26.SuspendLayout
-        Me.GroupBox97.SuspendLayout
-        Me.GroupBox89.SuspendLayout
-        Me.GroupBox88.SuspendLayout
-        CType(Me.LinhasprodBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.CorProdBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.MenuStrip1.SuspendLayout
-        Me.TabPage_gridProd.SuspendLayout
-        CType(Me.ProdutosDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel5.SuspendLayout
-        Me.GroupBox107.SuspendLayout
-        Me.GroupBox5.SuspendLayout
-        Me.GroupBox12.SuspendLayout
-        Me.GroupBox9.SuspendLayout
-        CType(Me.LinhasprodBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tbpg_listapreco.SuspendLayout
-        CType(Me.ProdutosDataGridView4,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel28.SuspendLayout
-        Me.GroupBox104.SuspendLayout
-        Me.GroupBox51.SuspendLayout
-        CType(Me.LinhasprodBindingSource5,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource5,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPage29.SuspendLayout
-        Me.Panel63.SuspendLayout
-        Me.Panel65.SuspendLayout
-        CType(Me.ProdutosDataGridView7,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel64.SuspendLayout
-        Me.GroupBox143.SuspendLayout
-        Me.GroupBox142.SuspendLayout
-        Me.TabPage30.SuspendLayout
-        Me.Panel67.SuspendLayout
-        CType(Me.EnderecoEletronicoDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.EnderecoEletronicoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel66.SuspendLayout
-        Me.GroupBox147.SuspendLayout
-        Me.GroupBox144.SuspendLayout
-        Me.GroupBox146.SuspendLayout
-        Me.GroupBox145.SuspendLayout
-        Me.MenuStrip10.SuspendLayout
-        CType(Me.ProdutosBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabControl1.SuspendLayout
-        Me.pedidos.SuspendLayout
-        Me.TabControlpedidos_nfe.SuspendLayout
-        Me.tabpagePedidos_nfe.SuspendLayout
-        Me.Panel19.SuspendLayout
-        Me.GroupBox83.SuspendLayout
-        Me.GroupBox54.SuspendLayout
-        CType(Me.ItemPedidosDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox23.SuspendLayout
-        Me.GroupBox40.SuspendLayout
-        CType(Me.PedidoNFEBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox21.SuspendLayout
-        Me.GroupBox20.SuspendLayout
-        Me.GroupBox19.SuspendLayout
-        Me.MenuStrip5.SuspendLayout
-        Me.TabPageConsultaPedidos.SuspendLayout
-        CType(Me.ItemPedidosDataGridView8,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PedidoNFEDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel15.SuspendLayout
-        Me.GroupBox99.SuspendLayout
-        Me.GroupBox17.SuspendLayout
-        Me.tabpageProdutos_nfe.SuspendLayout
-        CType(Me.ProdutosDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel16.SuspendLayout
-        Me.GroupBox34.SuspendLayout
-        Me.GroupBox18.SuspendLayout
-        CType(Me.LinhasprodBindingSource3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource3,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.TabPageClientes_nfe.SuspendLayout
-        CType(Me.ClienteDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel17.SuspendLayout
-        Me.GroupBox35.SuspendLayout
-        Me.TabPageTransportadora_nfe.SuspendLayout
-        CType(Me.TransportadorasDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel18.SuspendLayout
-        Me.GroupBox36.SuspendLayout
-        Me.TabPage9.SuspendLayout
-        CType(Me.ItemPedidosDataGridView7,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.PedidoNFEDataGridView2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel35.SuspendLayout
-        Me.GroupBox39.SuspendLayout
-        CType(Me.BalcaoDataGridView7,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox69.SuspendLayout
-        Me.tabpage_NFE_e.SuspendLayout
-        Me.TabControl_NFE.SuspendLayout
-        Me.TabPage_NFE.SuspendLayout
-        CType(Me.ItemPedidosDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ItemNfeEmitidaBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox31.SuspendLayout
-        Me.GroupBox33.SuspendLayout
-        Me.GroupBox32.SuspendLayout
-        Me.GroupBox30.SuspendLayout
-        CType(Me.TabelaCFOPBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox25.SuspendLayout
-        Me.TabPage_PedidosNFE.SuspendLayout
-        CType(Me.ItemPedidosDataGridView2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel26.SuspendLayout
-        CType(Me.PedidoNFEDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel20.SuspendLayout
-        Me.GroupBox49.SuspendLayout
-        Me.GroupBox47.SuspendLayout
-        Me.GroupBox42.SuspendLayout
-        Me.TbPg_consultaNFe.SuspendLayout
-        CType(Me.ItemNfeEmitidaDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NFE_EmitidasDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NFE_EmitidasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel21.SuspendLayout
-        Me.GroupBox76.SuspendLayout
-        Me.GroupBox48.SuspendLayout
-        Me.tbpg_transNfe.SuspendLayout
-        CType(Me.TransportadorasDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel3.SuspendLayout
-        Me.GroupBox50.SuspendLayout
-        Me.TabPage_NFE2.SuspendLayout
-        Me.Tabpg_cupomfiscal.SuspendLayout
-        Me.tbcotrl_pdv.SuspendLayout
-        Me.tbpg_vendabalcao.SuspendLayout
-        CType(Me.BalcaoDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel41.SuspendLayout
-        Me.GroupBox53.SuspendLayout
-        Me.GroupBox22.SuspendLayout
-        Me.GroupBox24.SuspendLayout
-        Me.GroupBox28.SuspendLayout
-        Me.GroupBox27.SuspendLayout
-        Me.GroupBox87.SuspendLayout
-        Me.tbpg_produtosPDV.SuspendLayout
-        CType(Me.ProdutosDataGridView2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel24.SuspendLayout
-        Me.GroupBox135.SuspendLayout
-        Me.GroupBox103.SuspendLayout
-        Me.GroupBox52.SuspendLayout
-        Me.GroupBox29.SuspendLayout
-        CType(Me.LinhasprodBindingSource6,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource6,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tbpg_VendasBalcao.SuspendLayout
-        CType(Me.BalcaoDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel30.SuspendLayout
-        Me.GroupBox11.SuspendLayout
-        Me.GroupBox85.SuspendLayout
-        Me.GroupBox56.SuspendLayout
-        Me.GroupBox138.SuspendLayout
-        Me.TabPage6.SuspendLayout
-        CType(Me.BalcaoDataGridView3,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel34.SuspendLayout
-        Me.GroupBox100.SuspendLayout
-        Me.GroupBox101.SuspendLayout
-        Me.GroupBox38.SuspendLayout
-        Me.GroupBox68.SuspendLayout
-        Me.tbpg_bkup.SuspendLayout
-        Me.Panel25.SuspendLayout
-        Me.tbpg_orcamento.SuspendLayout
-        Me.EmailErroCliente.SuspendLayout
-        Me.tbpg_FazerOrcamento.SuspendLayout
-        Me.GroupBox44.SuspendLayout
-        CType(Me.Orcamento2BindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.MenuStrip7.SuspendLayout
-        Me.tbpg_orcConsulta.SuspendLayout
-        CType(Me.VendasMlbDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel13.SuspendLayout
-        Me.GroupBox8.SuspendLayout
-        Me.TabPage1.SuspendLayout
-        CType(Me.EmailErroClienteDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.EmailErroClienteBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.tbg_relatorios.SuspendLayout
-        Me.TabControl4.SuspendLayout
-        Me.tbpg_OrcRel.SuspendLayout
-        CType(Me.ItemOrcamentoDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ItemOrcamentoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel29.SuspendLayout
-        Me.GroupBox55.SuspendLayout
-        Me.tbpg_pedRel.SuspendLayout
-        CType(Me.PedidoNFEDataGridView3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ItemPedidosDataGridView3,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel31.SuspendLayout
-        Me.GroupBox62.SuspendLayout
-        Me.GroupBox58.SuspendLayout
-        Me.GroupBox57.SuspendLayout
-        Me.Tbpg_balcaoRel.SuspendLayout
-        CType(Me.BalcaoDataGridView2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel32.SuspendLayout
-        Me.GroupBox61.SuspendLayout
-        Me.GroupBox60.SuspendLayout
-        Me.GroupBox59.SuspendLayout
-        Me.tbpg_vendasLinhas.SuspendLayout
-        CType(Me.ItemPedidosDataGridView4,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel33.SuspendLayout
-        Me.GroupBox63.SuspendLayout
-        Me.GroupBox67.SuspendLayout
-        Me.GroupBox66.SuspendLayout
-        Me.GroupBox65.SuspendLayout
-        Me.GroupBox64.SuspendLayout
-        Me.TabPage11.SuspendLayout
-        CType(Me.PedidoMarfiniteDataGridView1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel36.SuspendLayout
-        Me.GroupBox70.SuspendLayout
-        Me.GroupBox73.SuspendLayout
-        Me.GroupBox74.SuspendLayout
-        Me.tbpg_VendaBalcaoRelatorio.SuspendLayout
-        CType(Me.BalcaoDataGridView4,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel38.SuspendLayout
-        Me.GroupBox72.SuspendLayout
-        Me.GroupBox77.SuspendLayout
-        Me.GroupBox78.SuspendLayout
-        Me.GroupBox79.SuspendLayout
-        Me.GroupBox80.SuspendLayout
-        Me.TabPage18.SuspendLayout
-        CType(Me.ItemPedidosDataGridView6,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoDataGridView6,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel40.SuspendLayout
-        Me.GroupBox84.SuspendLayout
-        Me.TabPage2.SuspendLayout
-        Me.Panel43.SuspendLayout
-        CType(Me.NomeContasDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NomeContasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel22.SuspendLayout
-        Me.Panel23.SuspendLayout
-        Me.Panel37.SuspendLayout
-        Me.GroupBox37.SuspendLayout
-        CType(Me.NomeContasFuncionariosBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NomeContaImpostoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NomeContaOutraBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ContasTransportesBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NOmeContaExtrasBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NomeContaaluguelBancoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel42.SuspendLayout
-        Me.NFE_2.SuspendLayout
-        Me.TabControl3.SuspendLayout
-        Me.TabPage8.SuspendLayout
-        Me.Panel49.SuspendLayout
-        Me.Panel48.SuspendLayout
-        Me.GroupBox82.SuspendLayout
-        CType(Me.ProdutosDataGridView8,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.GroupBox116.SuspendLayout
-        Me.TabPage7.SuspendLayout
-        Me.Panel50.SuspendLayout
-        Me.Panel52.SuspendLayout
-        Me.Panel55.SuspendLayout
-        CType(Me.TransportadorasDataGridView2,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel54.SuspendLayout
-        CType(Me.FornecedorDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel53.SuspendLayout
-        CType(Me.ClienteDataGridView,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.Panel51.SuspendLayout
-        CType(Me.TesteBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NomeContasFuncionariosBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ListaContasArquivoBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ListaContasArquivoBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.LinguasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.LinhasprodBindingSource4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ProdutosBindingSource4,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Orcamento2BindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Orcamento2BindingSource3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.TabelaCFOPBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.FornecedorBindingSource7,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.LinhasprodBindingSource7,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.LinhasprodBindingSource8,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.VendedorBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.Orcamento2BindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ProdutosBindingSource3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoBindingSource2,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.BalcaoBindingSource3,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.NOmeContaExtrasBindingSource,System.ComponentModel.ISupportInitialize).BeginInit
-        CType(Me.ListaContasArquivoBindingSource1,System.ComponentModel.ISupportInitialize).BeginInit
-        Me.SuspendLayout
+        CType(Me.ProdutosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetFinal, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CorProdBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LinhasprodBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EstadosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TransportadorasBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TransportadorasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CapitalgirofornecedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NfefornecedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendedorBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DataSetFinalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tab_nfe.SuspendLayout()
+        CType(Me.VendasMlbDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendasMlbBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Busca.SuspendLayout()
+        Me.GroupBox96.SuspendLayout()
+        Me.Panel4.SuspendLayout()
+        Me.GroupBox134.SuspendLayout()
+        Me.GroupBox109.SuspendLayout()
+        CType(Me.CadastrodoNCMBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbpg_capitalGiro.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.tab_Kgiro.SuspendLayout()
+        Me.Panel6.SuspendLayout()
+        Me.GroupBox114.SuspendLayout()
+        Me.GroupBox113.SuspendLayout()
+        CType(Me.PedidoCompraDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedidoCompraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox108.SuspendLayout()
+        Me.GroupBox10.SuspendLayout()
+        Me.Tab_fornecedor.SuspendLayout()
+        CType(Me.BalcaoDataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosDataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel9.SuspendLayout()
+        Me.GroupBox112.SuspendLayout()
+        Me.GroupBox111.SuspendLayout()
+        Me.GroupBox110.SuspendLayout()
+        CType(Me.PedidoMarfiniteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbpg_transportadoras.SuspendLayout()
+        Me.tabpage_trans.SuspendLayout()
+        Me.tab_fortrans.SuspendLayout()
+        Me.Panel7.SuspendLayout()
+        Me.GroupBox15.SuspendLayout()
+        Me.GroupBox14.SuspendLayout()
+        Me.MenuStrip2.SuspendLayout()
+        Me.tab_tabelatrans.SuspendLayout()
+        CType(Me.DataGridTransportadoras, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
+        Me.tbpg_pedFornecedor.SuspendLayout()
+        Me.TabControlPedMarf.SuspendLayout()
+        Me.TabPage5.SuspendLayout()
+        CType(Me.NotasEntradaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NotasEntradaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox86.SuspendLayout()
+        Me.Panel11.SuspendLayout()
+        Me.GroupBox16.SuspendLayout()
+        Me.MenuStrip4.SuspendLayout()
+        Me.TabPage10.SuspendLayout()
+        CType(Me.dataGridPediMarf, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel12.SuspendLayout()
+        Me.GroupBox75.SuspendLayout()
+        Me.GroupBox155.SuspendLayout()
+        CType(Me.BalcaoDataGridView10, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox154.SuspendLayout()
+        Me.GroupBox156.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemPedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox43.SuspendLayout()
+        Me.GroupBox45.SuspendLayout()
+        Me.TabPage17.SuspendLayout()
+        Me.Panel39.SuspendLayout()
+        Me.GroupBox94.SuspendLayout()
+        Me.Panel44.SuspendLayout()
+        CType(Me.PedidoCompraDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemPedidosDataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoDataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemPedidosDataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox93.SuspendLayout()
+        Me.GroupBox81.SuspendLayout()
+        Me.TabPage3.SuspendLayout()
+        Me.Panel45.SuspendLayout()
+        CType(Me.ProdutosDataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel46.SuspendLayout()
+        Me.GroupBox26.SuspendLayout()
+        Me.GroupBox105.SuspendLayout()
+        Me.GroupBox95.SuspendLayout()
+        Me.TabPage27.SuspendLayout()
+        Me.Panel61.SuspendLayout()
+        CType(Me.ApelidoErradoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ApelidoErradoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox102.SuspendLayout()
+        Me.GroupBox137.SuspendLayout()
+        Me.GroupBox136.SuspendLayout()
+        Me.TabPage28.SuspendLayout()
+        Me.Panel62.SuspendLayout()
+        Me.GroupBox140.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoDataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox139.SuspendLayout()
+        Me.GroupBox150.SuspendLayout()
+        Me.GroupBox149.SuspendLayout()
+        Me.GroupBox148.SuspendLayout()
+        Me.GroupBox141.SuspendLayout()
+        Me.TabPage12.SuspendLayout()
+        Me.Panel56.SuspendLayout()
+        Me.GroupBox117.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosDataGridView9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoDataGridView11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox118.SuspendLayout()
+        Me.GroupBox120.SuspendLayout()
+        Me.GroupBox119.SuspendLayout()
+        Me.TabPage13.SuspendLayout()
+        Me.Panel57.SuspendLayout()
+        CType(Me.VendasBalcaoResultadoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendasBalcaoResultadoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel58.SuspendLayout()
+        Me.GroupBox121.SuspendLayout()
+        Me.TabPage14.SuspendLayout()
+        Me.Panel59.SuspendLayout()
+        CType(Me.VendasBalcaoPedidosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendasBalcaoPedidosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel60.SuspendLayout()
+        Me.GroupBox123.SuspendLayout()
+        Me.TabPage15.SuspendLayout()
+        Me.Panel68.SuspendLayout()
+        Me.Panel70.SuspendLayout()
+        CType(Me.VendasBalcaoTotalDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendasBalcaoTotalBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel69.SuspendLayout()
+        CType(Me.PedidoMarfiniteBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LinhasprodBindingSource9, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbpg_clientes.SuspendLayout()
+        Me.tab_form_clientes.SuspendLayout()
+        Me.frmpage_clientes.SuspendLayout()
+        Me.Panel2.SuspendLayout()
+        Me.MenuStrip3.SuspendLayout()
+        Me.GroupBox46.SuspendLayout()
+        Me.GroupBox152.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
+        CType(Me.RamoClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox6.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox7.SuspendLayout()
+        Me.GroupBox2.SuspendLayout()
+        Me.tipo_pessoa.SuspendLayout()
+        Me.tab_grid_clientes.SuspendLayout()
+        CType(Me.ClienteDataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel10.SuspendLayout()
+        Me.GroupBox153.SuspendLayout()
+        Me.tbpg_produtos.SuspendLayout()
+        Me.tabpage_produtos.SuspendLayout()
+        Me.TabPage4.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.GroupBox126.SuspendLayout()
+        Me.cbx_forprod.SuspendLayout()
+        Me.GroupBox106.SuspendLayout()
+        Me.GroupBox92.SuspendLayout()
+        Me.GroupBox90.SuspendLayout()
+        Me.GroupBox91.SuspendLayout()
+        Me.GroupBox13.SuspendLayout()
+        Me.GroupBox133.SuspendLayout()
+        Me.TabControl8.SuspendLayout()
+        Me.TabPage25.SuspendLayout()
+        Me.TabPage26.SuspendLayout()
+        Me.GroupBox97.SuspendLayout()
+        Me.GroupBox89.SuspendLayout()
+        Me.GroupBox88.SuspendLayout()
+        CType(Me.LinhasprodBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CorProdBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip1.SuspendLayout()
+        Me.TabPage_gridProd.SuspendLayout()
+        CType(Me.ProdutosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel5.SuspendLayout()
+        Me.GroupBox107.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox12.SuspendLayout()
+        Me.GroupBox9.SuspendLayout()
+        CType(Me.LinhasprodBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbpg_listapreco.SuspendLayout()
+        CType(Me.ProdutosDataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel28.SuspendLayout()
+        Me.GroupBox104.SuspendLayout()
+        Me.GroupBox51.SuspendLayout()
+        CType(Me.LinhasprodBindingSource5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource5, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPage29.SuspendLayout()
+        Me.Panel63.SuspendLayout()
+        Me.Panel65.SuspendLayout()
+        CType(Me.ProdutosDataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel64.SuspendLayout()
+        Me.GroupBox143.SuspendLayout()
+        Me.GroupBox142.SuspendLayout()
+        Me.TabPage30.SuspendLayout()
+        Me.Panel67.SuspendLayout()
+        CType(Me.EnderecoEletronicoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EnderecoEletronicoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel66.SuspendLayout()
+        Me.GroupBox147.SuspendLayout()
+        Me.GroupBox144.SuspendLayout()
+        Me.GroupBox146.SuspendLayout()
+        Me.GroupBox145.SuspendLayout()
+        Me.MenuStrip10.SuspendLayout()
+        CType(Me.ProdutosBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabControl1.SuspendLayout()
+        Me.pedidos.SuspendLayout()
+        Me.TabControlpedidos_nfe.SuspendLayout()
+        Me.tabpagePedidos_nfe.SuspendLayout()
+        Me.Panel19.SuspendLayout()
+        Me.GroupBox83.SuspendLayout()
+        Me.GroupBox54.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox23.SuspendLayout()
+        Me.GroupBox40.SuspendLayout()
+        CType(Me.PedidoNFEBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox21.SuspendLayout()
+        Me.GroupBox20.SuspendLayout()
+        Me.GroupBox19.SuspendLayout()
+        Me.MenuStrip5.SuspendLayout()
+        Me.TabPageConsultaPedidos.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedidoNFEDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel15.SuspendLayout()
+        Me.GroupBox99.SuspendLayout()
+        Me.GroupBox17.SuspendLayout()
+        Me.tabpageProdutos_nfe.SuspendLayout()
+        CType(Me.ProdutosDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel16.SuspendLayout()
+        Me.GroupBox34.SuspendLayout()
+        Me.GroupBox18.SuspendLayout()
+        CType(Me.LinhasprodBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.TabPageClientes_nfe.SuspendLayout()
+        CType(Me.ClienteDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel17.SuspendLayout()
+        Me.GroupBox35.SuspendLayout()
+        Me.TabPageTransportadora_nfe.SuspendLayout()
+        CType(Me.TransportadorasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel18.SuspendLayout()
+        Me.GroupBox36.SuspendLayout()
+        Me.TabPage9.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PedidoNFEDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel35.SuspendLayout()
+        Me.GroupBox39.SuspendLayout()
+        CType(Me.BalcaoDataGridView7, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox69.SuspendLayout()
+        Me.tabpage_NFE_e.SuspendLayout()
+        Me.TabControl_NFE.SuspendLayout()
+        Me.TabPage_NFE.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemNfeEmitidaBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox31.SuspendLayout()
+        Me.GroupBox33.SuspendLayout()
+        Me.GroupBox32.SuspendLayout()
+        Me.GroupBox30.SuspendLayout()
+        CType(Me.TabelaCFOPBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox25.SuspendLayout()
+        Me.TabPage_PedidosNFE.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel26.SuspendLayout()
+        CType(Me.PedidoNFEDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel20.SuspendLayout()
+        Me.GroupBox49.SuspendLayout()
+        Me.GroupBox47.SuspendLayout()
+        Me.GroupBox42.SuspendLayout()
+        Me.TbPg_consultaNFe.SuspendLayout()
+        CType(Me.ItemNfeEmitidaDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NFE_EmitidasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NFE_EmitidasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel21.SuspendLayout()
+        Me.GroupBox76.SuspendLayout()
+        Me.GroupBox48.SuspendLayout()
+        Me.tbpg_transNfe.SuspendLayout()
+        CType(Me.TransportadorasDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel3.SuspendLayout()
+        Me.GroupBox50.SuspendLayout()
+        Me.TabPage_NFE2.SuspendLayout()
+        Me.Tabpg_cupomfiscal.SuspendLayout()
+        Me.tbcotrl_pdv.SuspendLayout()
+        Me.tbpg_vendabalcao.SuspendLayout()
+        CType(Me.BalcaoDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel41.SuspendLayout()
+        Me.GroupBox53.SuspendLayout()
+        Me.GroupBox22.SuspendLayout()
+        Me.GroupBox24.SuspendLayout()
+        Me.GroupBox28.SuspendLayout()
+        Me.GroupBox27.SuspendLayout()
+        Me.GroupBox87.SuspendLayout()
+        Me.tbpg_produtosPDV.SuspendLayout()
+        CType(Me.ProdutosDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel24.SuspendLayout()
+        Me.GroupBox135.SuspendLayout()
+        Me.GroupBox103.SuspendLayout()
+        Me.GroupBox52.SuspendLayout()
+        Me.GroupBox29.SuspendLayout()
+        CType(Me.LinhasprodBindingSource6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbpg_VendasBalcao.SuspendLayout()
+        CType(Me.BalcaoDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel30.SuspendLayout()
+        Me.GroupBox11.SuspendLayout()
+        Me.GroupBox85.SuspendLayout()
+        Me.GroupBox56.SuspendLayout()
+        Me.GroupBox138.SuspendLayout()
+        Me.TabPage6.SuspendLayout()
+        CType(Me.BalcaoDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel34.SuspendLayout()
+        Me.GroupBox100.SuspendLayout()
+        Me.GroupBox101.SuspendLayout()
+        Me.GroupBox38.SuspendLayout()
+        Me.GroupBox68.SuspendLayout()
+        Me.tbpg_bkup.SuspendLayout()
+        Me.Panel25.SuspendLayout()
+        Me.tbpg_orcamento.SuspendLayout()
+        Me.EmailErroCliente.SuspendLayout()
+        Me.tbpg_FazerOrcamento.SuspendLayout()
+        Me.GroupBox44.SuspendLayout()
+        CType(Me.Orcamento2BindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MenuStrip7.SuspendLayout()
+        Me.tbpg_orcConsulta.SuspendLayout()
+        CType(Me.VendasMlbDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel13.SuspendLayout()
+        Me.GroupBox8.SuspendLayout()
+        Me.TabPage1.SuspendLayout()
+        CType(Me.EmailErroClienteDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmailErroClienteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tbg_relatorios.SuspendLayout()
+        Me.TabControl4.SuspendLayout()
+        Me.tbpg_OrcRel.SuspendLayout()
+        CType(Me.ItemOrcamentoDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemOrcamentoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel29.SuspendLayout()
+        Me.GroupBox55.SuspendLayout()
+        Me.tbpg_pedRel.SuspendLayout()
+        CType(Me.PedidoNFEDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ItemPedidosDataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel31.SuspendLayout()
+        Me.GroupBox62.SuspendLayout()
+        Me.GroupBox58.SuspendLayout()
+        Me.GroupBox57.SuspendLayout()
+        Me.Tbpg_balcaoRel.SuspendLayout()
+        CType(Me.BalcaoDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel32.SuspendLayout()
+        Me.GroupBox61.SuspendLayout()
+        Me.GroupBox60.SuspendLayout()
+        Me.GroupBox59.SuspendLayout()
+        Me.tbpg_vendasLinhas.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel33.SuspendLayout()
+        Me.GroupBox63.SuspendLayout()
+        Me.GroupBox67.SuspendLayout()
+        Me.GroupBox66.SuspendLayout()
+        Me.GroupBox65.SuspendLayout()
+        Me.GroupBox64.SuspendLayout()
+        Me.TabPage11.SuspendLayout()
+        CType(Me.PedidoMarfiniteDataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel36.SuspendLayout()
+        Me.GroupBox70.SuspendLayout()
+        Me.GroupBox73.SuspendLayout()
+        Me.GroupBox74.SuspendLayout()
+        Me.tbpg_VendaBalcaoRelatorio.SuspendLayout()
+        CType(Me.BalcaoDataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel38.SuspendLayout()
+        Me.GroupBox72.SuspendLayout()
+        Me.GroupBox77.SuspendLayout()
+        Me.GroupBox78.SuspendLayout()
+        Me.GroupBox79.SuspendLayout()
+        Me.GroupBox80.SuspendLayout()
+        Me.TabPage18.SuspendLayout()
+        CType(Me.ItemPedidosDataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoDataGridView6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel40.SuspendLayout()
+        Me.GroupBox84.SuspendLayout()
+        Me.TabPage2.SuspendLayout()
+        Me.Panel43.SuspendLayout()
+        CType(Me.NomeContasDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomeContasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel22.SuspendLayout()
+        Me.Panel23.SuspendLayout()
+        Me.Panel37.SuspendLayout()
+        Me.GroupBox37.SuspendLayout()
+        CType(Me.NomeContasFuncionariosBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomeContaImpostoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomeContaOutraBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ContasTransportesBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NOmeContaExtrasBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomeContaaluguelBancoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel42.SuspendLayout()
+        Me.NFE_2.SuspendLayout()
+        Me.TabControl3.SuspendLayout()
+        Me.TabPage8.SuspendLayout()
+        Me.Panel49.SuspendLayout()
+        Me.Panel48.SuspendLayout()
+        Me.GroupBox82.SuspendLayout()
+        CType(Me.ProdutosDataGridView8, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox116.SuspendLayout()
+        Me.TabPage7.SuspendLayout()
+        Me.Panel50.SuspendLayout()
+        Me.Panel52.SuspendLayout()
+        Me.Panel55.SuspendLayout()
+        CType(Me.TransportadorasDataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel54.SuspendLayout()
+        CType(Me.FornecedorDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel53.SuspendLayout()
+        CType(Me.ClienteDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel51.SuspendLayout()
+        CType(Me.TesteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NomeContasFuncionariosBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ListaContasArquivoBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ListaContasArquivoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LinguasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LinhasprodBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosBindingSource4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Orcamento2BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Orcamento2BindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TabelaCFOPBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.FornecedorBindingSource7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LinhasprodBindingSource7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.LinhasprodBindingSource8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VendedorBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Orcamento2BindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProdutosBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoBindingSource2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BalcaoBindingSource3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.NOmeContaExtrasBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ListaContasArquivoBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SuspendLayout()
         '
         'Razaosocial_transLabel
         '
-        Razaosocial_transLabel.AutoSize = true
+        Razaosocial_transLabel.AutoSize = True
         Razaosocial_transLabel.Location = New System.Drawing.Point(37, 185)
         Razaosocial_transLabel.Name = "Razaosocial_transLabel"
         Razaosocial_transLabel.Size = New System.Drawing.Size(92, 16)
@@ -3631,7 +3627,7 @@ Partial Class Form1
         '
         'Endereco_transLabel
         '
-        Endereco_transLabel.AutoSize = true
+        Endereco_transLabel.AutoSize = True
         Endereco_transLabel.Location = New System.Drawing.Point(52, 315)
         Endereco_transLabel.Name = "Endereco_transLabel"
         Endereco_transLabel.Size = New System.Drawing.Size(70, 16)
@@ -3640,7 +3636,7 @@ Partial Class Form1
         '
         'Numerorua_transLabel
         '
-        Numerorua_transLabel.AutoSize = true
+        Numerorua_transLabel.AutoSize = True
         Numerorua_transLabel.Location = New System.Drawing.Point(62, 355)
         Numerorua_transLabel.Name = "Numerorua_transLabel"
         Numerorua_transLabel.Size = New System.Drawing.Size(59, 16)
@@ -3649,7 +3645,7 @@ Partial Class Form1
         '
         'Bairro_transLabel
         '
-        Bairro_transLabel.AutoSize = true
+        Bairro_transLabel.AutoSize = True
         Bairro_transLabel.Location = New System.Drawing.Point(73, 394)
         Bairro_transLabel.Name = "Bairro_transLabel"
         Bairro_transLabel.Size = New System.Drawing.Size(47, 16)
@@ -3658,7 +3654,7 @@ Partial Class Form1
         '
         'Cidade_transLabel
         '
-        Cidade_transLabel.AutoSize = true
+        Cidade_transLabel.AutoSize = True
         Cidade_transLabel.Location = New System.Drawing.Point(65, 432)
         Cidade_transLabel.Name = "Cidade_transLabel"
         Cidade_transLabel.Size = New System.Drawing.Size(55, 16)
@@ -3667,7 +3663,7 @@ Partial Class Form1
         '
         'Estado_transLabel
         '
-        Estado_transLabel.AutoSize = true
+        Estado_transLabel.AutoSize = True
         Estado_transLabel.Location = New System.Drawing.Point(66, 476)
         Estado_transLabel.Name = "Estado_transLabel"
         Estado_transLabel.Size = New System.Drawing.Size(54, 16)
@@ -3676,7 +3672,7 @@ Partial Class Form1
         '
         'Telefone_transLabel
         '
-        Telefone_transLabel.AutoSize = true
+        Telefone_transLabel.AutoSize = True
         Telefone_transLabel.Location = New System.Drawing.Point(58, 517)
         Telefone_transLabel.Name = "Telefone_transLabel"
         Telefone_transLabel.Size = New System.Drawing.Size(65, 16)
@@ -3685,7 +3681,7 @@ Partial Class Form1
         '
         'EMAIL_transLabel
         '
-        EMAIL_transLabel.AutoSize = true
+        EMAIL_transLabel.AutoSize = True
         EMAIL_transLabel.Location = New System.Drawing.Point(28, 60)
         EMAIL_transLabel.Name = "EMAIL_transLabel"
         EMAIL_transLabel.Size = New System.Drawing.Size(50, 16)
@@ -3694,7 +3690,7 @@ Partial Class Form1
         '
         'OBS_transLabel
         '
-        OBS_transLabel.AutoSize = true
+        OBS_transLabel.AutoSize = True
         OBS_transLabel.Location = New System.Drawing.Point(30, 100)
         OBS_transLabel.Name = "OBS_transLabel"
         OBS_transLabel.Size = New System.Drawing.Size(39, 16)
@@ -3703,7 +3699,7 @@ Partial Class Form1
         '
         'INSEST_transLabel
         '
-        INSEST_transLabel.AutoSize = true
+        INSEST_transLabel.AutoSize = True
         INSEST_transLabel.Location = New System.Drawing.Point(28, 29)
         INSEST_transLabel.Name = "INSEST_transLabel"
         INSEST_transLabel.Size = New System.Drawing.Size(60, 16)
@@ -3712,7 +3708,7 @@ Partial Class Form1
         '
         'CNPJ_transLabel
         '
-        CNPJ_transLabel.AutoSize = true
+        CNPJ_transLabel.AutoSize = True
         CNPJ_transLabel.Location = New System.Drawing.Point(7, 151)
         CNPJ_transLabel.Name = "CNPJ_transLabel"
         CNPJ_transLabel.Size = New System.Drawing.Size(381, 16)
@@ -3721,7 +3717,7 @@ Partial Class Form1
         '
         'CEP_transLabel
         '
-        CEP_transLabel.AutoSize = true
+        CEP_transLabel.AutoSize = True
         CEP_transLabel.Location = New System.Drawing.Point(6, 29)
         CEP_transLabel.Name = "CEP_transLabel"
         CEP_transLabel.Size = New System.Drawing.Size(135, 16)
@@ -3730,7 +3726,7 @@ Partial Class Form1
         '
         'Bairro_clienteLabel
         '
-        Bairro_clienteLabel.AutoSize = true
+        Bairro_clienteLabel.AutoSize = True
         Bairro_clienteLabel.Location = New System.Drawing.Point(15, 110)
         Bairro_clienteLabel.Name = "Bairro_clienteLabel"
         Bairro_clienteLabel.Size = New System.Drawing.Size(44, 16)
@@ -3739,7 +3735,7 @@ Partial Class Form1
         '
         'Numerorua_clienteLabel
         '
-        Numerorua_clienteLabel.AutoSize = true
+        Numerorua_clienteLabel.AutoSize = True
         Numerorua_clienteLabel.Location = New System.Drawing.Point(15, 83)
         Numerorua_clienteLabel.Name = "Numerorua_clienteLabel"
         Numerorua_clienteLabel.Size = New System.Drawing.Size(97, 16)
@@ -3748,7 +3744,7 @@ Partial Class Form1
         '
         'Cidade_clienteLabel
         '
-        Cidade_clienteLabel.AutoSize = true
+        Cidade_clienteLabel.AutoSize = True
         Cidade_clienteLabel.Location = New System.Drawing.Point(15, 140)
         Cidade_clienteLabel.Name = "Cidade_clienteLabel"
         Cidade_clienteLabel.Size = New System.Drawing.Size(52, 16)
@@ -3757,7 +3753,7 @@ Partial Class Form1
         '
         'Endereco_clienteLabel
         '
-        Endereco_clienteLabel.AutoSize = true
+        Endereco_clienteLabel.AutoSize = True
         Endereco_clienteLabel.Location = New System.Drawing.Point(6, 56)
         Endereco_clienteLabel.Name = "Endereco_clienteLabel"
         Endereco_clienteLabel.Size = New System.Drawing.Size(128, 16)
@@ -3766,7 +3762,7 @@ Partial Class Form1
         '
         'Telefone_clienteLabel
         '
-        Telefone_clienteLabel.AutoSize = true
+        Telefone_clienteLabel.AutoSize = True
         Telefone_clienteLabel.Location = New System.Drawing.Point(8, 210)
         Telefone_clienteLabel.Name = "Telefone_clienteLabel"
         Telefone_clienteLabel.Size = New System.Drawing.Size(69, 16)
@@ -3776,7 +3772,7 @@ Partial Class Form1
         '
         'Obs_clienteLabel
         '
-        Obs_clienteLabel.AutoSize = true
+        Obs_clienteLabel.AutoSize = True
         Obs_clienteLabel.Location = New System.Drawing.Point(6, 260)
         Obs_clienteLabel.Name = "Obs_clienteLabel"
         Obs_clienteLabel.Size = New System.Drawing.Size(83, 16)
@@ -3785,7 +3781,7 @@ Partial Class Form1
         '
         'Nome_clienteLabel
         '
-        Nome_clienteLabel.AutoSize = true
+        Nome_clienteLabel.AutoSize = True
         Nome_clienteLabel.Location = New System.Drawing.Point(18, 49)
         Nome_clienteLabel.Name = "Nome_clienteLabel"
         Nome_clienteLabel.Size = New System.Drawing.Size(90, 16)
@@ -3794,7 +3790,7 @@ Partial Class Form1
         '
         'Nfantasia_clienteLabel
         '
-        Nfantasia_clienteLabel.AutoSize = true
+        Nfantasia_clienteLabel.AutoSize = True
         Nfantasia_clienteLabel.Location = New System.Drawing.Point(16, 123)
         Nfantasia_clienteLabel.Name = "Nfantasia_clienteLabel"
         Nfantasia_clienteLabel.Size = New System.Drawing.Size(98, 16)
@@ -3803,7 +3799,7 @@ Partial Class Form1
         '
         'Id_clienteLabel
         '
-        Id_clienteLabel.AutoSize = true
+        Id_clienteLabel.AutoSize = True
         Id_clienteLabel.Location = New System.Drawing.Point(17, 22)
         Id_clienteLabel.Name = "Id_clienteLabel"
         Id_clienteLabel.Size = New System.Drawing.Size(116, 16)
@@ -3812,7 +3808,7 @@ Partial Class Form1
         '
         'Rg_clienteLabel
         '
-        Rg_clienteLabel.AutoSize = true
+        Rg_clienteLabel.AutoSize = True
         Rg_clienteLabel.Location = New System.Drawing.Point(26, 25)
         Rg_clienteLabel.Name = "Rg_clienteLabel"
         Rg_clienteLabel.Size = New System.Drawing.Size(28, 16)
@@ -3821,7 +3817,7 @@ Partial Class Form1
         '
         'Cnpj_clienteLabel
         '
-        Cnpj_clienteLabel.AutoSize = true
+        Cnpj_clienteLabel.AutoSize = True
         Cnpj_clienteLabel.Location = New System.Drawing.Point(-44, 26)
         Cnpj_clienteLabel.Name = "Cnpj_clienteLabel"
         Cnpj_clienteLabel.Size = New System.Drawing.Size(43, 16)
@@ -3830,7 +3826,7 @@ Partial Class Form1
         '
         'Email_clienteLabel
         '
-        Email_clienteLabel.AutoSize = true
+        Email_clienteLabel.AutoSize = True
         Email_clienteLabel.Location = New System.Drawing.Point(201, 20)
         Email_clienteLabel.Name = "Email_clienteLabel"
         Email_clienteLabel.Size = New System.Drawing.Size(42, 16)
@@ -3839,7 +3835,7 @@ Partial Class Form1
         '
         'Cpf_clienteLabel
         '
-        Cpf_clienteLabel.AutoSize = true
+        Cpf_clienteLabel.AutoSize = True
         Cpf_clienteLabel.Location = New System.Drawing.Point(21, 56)
         Cpf_clienteLabel.Name = "Cpf_clienteLabel"
         Cpf_clienteLabel.Size = New System.Drawing.Size(34, 16)
@@ -3848,7 +3844,7 @@ Partial Class Form1
         '
         'Insestadual_clienteLabel
         '
-        Insestadual_clienteLabel.AutoSize = true
+        Insestadual_clienteLabel.AutoSize = True
         Insestadual_clienteLabel.Location = New System.Drawing.Point(6, 128)
         Insestadual_clienteLabel.Name = "Insestadual_clienteLabel"
         Insestadual_clienteLabel.Size = New System.Drawing.Size(47, 16)
@@ -3857,7 +3853,7 @@ Partial Class Form1
         '
         'Credito_clienteLabel
         '
-        Credito_clienteLabel.AutoSize = true
+        Credito_clienteLabel.AutoSize = True
         Credito_clienteLabel.Location = New System.Drawing.Point(50, 93)
         Credito_clienteLabel.Name = "Credito_clienteLabel"
         Credito_clienteLabel.Size = New System.Drawing.Size(117, 16)
@@ -3866,7 +3862,7 @@ Partial Class Form1
         '
         'Totalcompra_clienteLabel
         '
-        Totalcompra_clienteLabel.AutoSize = true
+        Totalcompra_clienteLabel.AutoSize = True
         Totalcompra_clienteLabel.Location = New System.Drawing.Point(34, 134)
         Totalcompra_clienteLabel.Name = "Totalcompra_clienteLabel"
         Totalcompra_clienteLabel.Size = New System.Drawing.Size(133, 16)
@@ -3875,7 +3871,7 @@ Partial Class Form1
         '
         'Saldo_clienteLabel
         '
-        Saldo_clienteLabel.AutoSize = true
+        Saldo_clienteLabel.AutoSize = True
         Saldo_clienteLabel.Location = New System.Drawing.Point(59, 176)
         Saldo_clienteLabel.Name = "Saldo_clienteLabel"
         Saldo_clienteLabel.Size = New System.Drawing.Size(108, 16)
@@ -3884,8 +3880,8 @@ Partial Class Form1
         '
         'Nome_prodLabel
         '
-        Nome_prodLabel.AutoSize = true
-        Nome_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Nome_prodLabel.AutoSize = True
+        Nome_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Nome_prodLabel.Location = New System.Drawing.Point(12, 110)
         Nome_prodLabel.Name = "Nome_prodLabel"
         Nome_prodLabel.Size = New System.Drawing.Size(122, 14)
@@ -3894,8 +3890,8 @@ Partial Class Form1
         '
         'Pedcolocados_prodLabel
         '
-        Pedcolocados_prodLabel.AutoSize = true
-        Pedcolocados_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Pedcolocados_prodLabel.AutoSize = True
+        Pedcolocados_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Pedcolocados_prodLabel.Location = New System.Drawing.Point(10, 37)
         Pedcolocados_prodLabel.Name = "Pedcolocados_prodLabel"
         Pedcolocados_prodLabel.Size = New System.Drawing.Size(131, 14)
@@ -3904,8 +3900,8 @@ Partial Class Form1
         '
         'Pedencomendados_prodLabel
         '
-        Pedencomendados_prodLabel.AutoSize = true
-        Pedencomendados_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Pedencomendados_prodLabel.AutoSize = True
+        Pedencomendados_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Pedencomendados_prodLabel.Location = New System.Drawing.Point(364, 40)
         Pedencomendados_prodLabel.Name = "Pedencomendados_prodLabel"
         Pedencomendados_prodLabel.Size = New System.Drawing.Size(165, 14)
@@ -3914,8 +3910,8 @@ Partial Class Form1
         '
         'Tempoentragafor_prodLabel
         '
-        Tempoentragafor_prodLabel.AutoSize = true
-        Tempoentragafor_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Tempoentragafor_prodLabel.AutoSize = True
+        Tempoentragafor_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Tempoentragafor_prodLabel.Location = New System.Drawing.Point(10, 82)
         Tempoentragafor_prodLabel.Name = "Tempoentragafor_prodLabel"
         Tempoentragafor_prodLabel.Size = New System.Drawing.Size(182, 14)
@@ -3924,8 +3920,8 @@ Partial Class Form1
         '
         'Porcentagemfat_prodLabel
         '
-        Porcentagemfat_prodLabel.AutoSize = true
-        Porcentagemfat_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Porcentagemfat_prodLabel.AutoSize = True
+        Porcentagemfat_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Porcentagemfat_prodLabel.Location = New System.Drawing.Point(365, 82)
         Porcentagemfat_prodLabel.Name = "Porcentagemfat_prodLabel"
         Porcentagemfat_prodLabel.Size = New System.Drawing.Size(145, 14)
@@ -3934,7 +3930,7 @@ Partial Class Form1
         '
         'Peso_prodLabel
         '
-        Peso_prodLabel.AutoSize = true
+        Peso_prodLabel.AutoSize = True
         Peso_prodLabel.Location = New System.Drawing.Point(6, 75)
         Peso_prodLabel.Name = "Peso_prodLabel"
         Peso_prodLabel.Size = New System.Drawing.Size(117, 14)
@@ -3943,7 +3939,7 @@ Partial Class Form1
         '
         'Tabelafiscal_prodLabel
         '
-        Tabelafiscal_prodLabel.AutoSize = true
+        Tabelafiscal_prodLabel.AutoSize = True
         Tabelafiscal_prodLabel.Location = New System.Drawing.Point(5, 48)
         Tabelafiscal_prodLabel.Name = "Tabelafiscal_prodLabel"
         Tabelafiscal_prodLabel.Size = New System.Drawing.Size(91, 14)
@@ -3952,7 +3948,7 @@ Partial Class Form1
         '
         'Classificfiscal_prodLabel
         '
-        Classificfiscal_prodLabel.AutoSize = true
+        Classificfiscal_prodLabel.AutoSize = True
         Classificfiscal_prodLabel.Location = New System.Drawing.Point(5, 22)
         Classificfiscal_prodLabel.Name = "Classificfiscal_prodLabel"
         Classificfiscal_prodLabel.Size = New System.Drawing.Size(176, 14)
@@ -3961,7 +3957,7 @@ Partial Class Form1
         '
         'Custo_prodLabel
         '
-        Custo_prodLabel.AutoSize = true
+        Custo_prodLabel.AutoSize = True
         Custo_prodLabel.Location = New System.Drawing.Point(15, 18)
         Custo_prodLabel.Name = "Custo_prodLabel"
         Custo_prodLabel.Size = New System.Drawing.Size(49, 14)
@@ -3970,7 +3966,7 @@ Partial Class Form1
         '
         'Ipi_prodLabel
         '
-        Ipi_prodLabel.AutoSize = true
+        Ipi_prodLabel.AutoSize = True
         Ipi_prodLabel.Location = New System.Drawing.Point(364, 16)
         Ipi_prodLabel.Name = "Ipi_prodLabel"
         Ipi_prodLabel.Size = New System.Drawing.Size(30, 14)
@@ -3979,7 +3975,7 @@ Partial Class Form1
         '
         'Markup_prodLabel
         '
-        Markup_prodLabel.AutoSize = true
+        Markup_prodLabel.AutoSize = True
         Markup_prodLabel.Location = New System.Drawing.Point(7, 10)
         Markup_prodLabel.Name = "Markup_prodLabel"
         Markup_prodLabel.Size = New System.Drawing.Size(51, 14)
@@ -3988,7 +3984,7 @@ Partial Class Form1
         '
         'Precovarejo_prodLabel
         '
-        Precovarejo_prodLabel.AutoSize = true
+        Precovarejo_prodLabel.AutoSize = True
         Precovarejo_prodLabel.Location = New System.Drawing.Point(7, 43)
         Precovarejo_prodLabel.Name = "Precovarejo_prodLabel"
         Precovarejo_prodLabel.Size = New System.Drawing.Size(55, 14)
@@ -3997,8 +3993,8 @@ Partial Class Form1
         '
         'Precoatacado_prodLabel
         '
-        Precoatacado_prodLabel.AutoSize = true
-        Precoatacado_prodLabel.Font = New System.Drawing.Font("Verdana", 7!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Precoatacado_prodLabel.AutoSize = True
+        Precoatacado_prodLabel.Font = New System.Drawing.Font("Verdana", 7.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Precoatacado_prodLabel.Location = New System.Drawing.Point(120, 45)
         Precoatacado_prodLabel.Name = "Precoatacado_prodLabel"
         Precoatacado_prodLabel.Size = New System.Drawing.Size(77, 12)
@@ -4007,8 +4003,8 @@ Partial Class Form1
         '
         'Estoqueatual_prodLabel
         '
-        Estoqueatual_prodLabel.AutoSize = true
-        Estoqueatual_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Estoqueatual_prodLabel.AutoSize = True
+        Estoqueatual_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Estoqueatual_prodLabel.Location = New System.Drawing.Point(48, 57)
         Estoqueatual_prodLabel.Name = "Estoqueatual_prodLabel"
         Estoqueatual_prodLabel.Size = New System.Drawing.Size(95, 14)
@@ -4017,8 +4013,8 @@ Partial Class Form1
         '
         'Nome_linhaLabel
         '
-        Nome_linhaLabel.AutoSize = true
-        Nome_linhaLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Nome_linhaLabel.AutoSize = True
+        Nome_linhaLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Nome_linhaLabel.Location = New System.Drawing.Point(12, 136)
         Nome_linhaLabel.Name = "Nome_linhaLabel"
         Nome_linhaLabel.Size = New System.Drawing.Size(86, 14)
@@ -4027,8 +4023,8 @@ Partial Class Form1
         '
         'Nome_fornecedorLabel
         '
-        Nome_fornecedorLabel.AutoSize = true
-        Nome_fornecedorLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Nome_fornecedorLabel.AutoSize = True
+        Nome_fornecedorLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Nome_fornecedorLabel.Location = New System.Drawing.Point(12, 163)
         Nome_fornecedorLabel.Name = "Nome_fornecedorLabel"
         Nome_fornecedorLabel.Size = New System.Drawing.Size(123, 14)
@@ -4037,8 +4033,8 @@ Partial Class Form1
         '
         'Estaquemax_prodLabel
         '
-        Estaquemax_prodLabel.AutoSize = true
-        Estaquemax_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Estaquemax_prodLabel.AutoSize = True
+        Estaquemax_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Estaquemax_prodLabel.Location = New System.Drawing.Point(43, 88)
         Estaquemax_prodLabel.Name = "Estaquemax_prodLabel"
         Estaquemax_prodLabel.Size = New System.Drawing.Size(100, 14)
@@ -4047,8 +4043,8 @@ Partial Class Form1
         '
         'Nome_corLabel
         '
-        Nome_corLabel.AutoSize = true
-        Nome_corLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Nome_corLabel.AutoSize = True
+        Nome_corLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Nome_corLabel.Location = New System.Drawing.Point(12, 191)
         Nome_corLabel.Name = "Nome_corLabel"
         Nome_corLabel.Size = New System.Drawing.Size(34, 14)
@@ -4057,8 +4053,8 @@ Partial Class Form1
         '
         'Abc_prodLabel
         '
-        Abc_prodLabel.AutoSize = true
-        Abc_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Abc_prodLabel.AutoSize = True
+        Abc_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Abc_prodLabel.Location = New System.Drawing.Point(760, 37)
         Abc_prodLabel.Name = "Abc_prodLabel"
         Abc_prodLabel.Size = New System.Drawing.Size(45, 14)
@@ -4067,8 +4063,8 @@ Partial Class Form1
         '
         'Situacao_prodLabel1
         '
-        Situacao_prodLabel1.AutoSize = true
-        Situacao_prodLabel1.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Situacao_prodLabel1.AutoSize = True
+        Situacao_prodLabel1.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Situacao_prodLabel1.Location = New System.Drawing.Point(757, 87)
         Situacao_prodLabel1.Name = "Situacao_prodLabel1"
         Situacao_prodLabel1.Size = New System.Drawing.Size(66, 14)
@@ -4077,8 +4073,8 @@ Partial Class Form1
         '
         'Estoquemin_prodLabel
         '
-        Estoquemin_prodLabel.AutoSize = true
-        Estoquemin_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Estoquemin_prodLabel.AutoSize = True
+        Estoquemin_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Estoquemin_prodLabel.Location = New System.Drawing.Point(37, 26)
         Estoquemin_prodLabel.Name = "Estoquemin_prodLabel"
         Estoquemin_prodLabel.Size = New System.Drawing.Size(106, 14)
@@ -4087,8 +4083,8 @@ Partial Class Form1
         '
         'Cod_prodforLabel
         '
-        Cod_prodforLabel.AutoSize = true
-        Cod_prodforLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Cod_prodforLabel.AutoSize = True
+        Cod_prodforLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Cod_prodforLabel.Location = New System.Drawing.Point(12, 57)
         Cod_prodforLabel.Name = "Cod_prodforLabel"
         Cod_prodforLabel.Size = New System.Drawing.Size(154, 14)
@@ -4097,7 +4093,7 @@ Partial Class Form1
         '
         'Total_pedmarfgeralLabel
         '
-        Total_pedmarfgeralLabel.AutoSize = true
+        Total_pedmarfgeralLabel.AutoSize = True
         Total_pedmarfgeralLabel.Location = New System.Drawing.Point(607, 101)
         Total_pedmarfgeralLabel.Name = "Total_pedmarfgeralLabel"
         Total_pedmarfgeralLabel.Size = New System.Drawing.Size(78, 16)
@@ -4106,7 +4102,7 @@ Partial Class Form1
         '
         'Id_pedidosLabel
         '
-        Id_pedidosLabel.AutoSize = true
+        Id_pedidosLabel.AutoSize = True
         Id_pedidosLabel.Location = New System.Drawing.Point(7, 26)
         Id_pedidosLabel.Name = "Id_pedidosLabel"
         Id_pedidosLabel.Size = New System.Drawing.Size(65, 13)
@@ -4115,7 +4111,7 @@ Partial Class Form1
         '
         'Codcli_pedLabel
         '
-        Codcli_pedLabel.AutoSize = true
+        Codcli_pedLabel.AutoSize = True
         Codcli_pedLabel.Location = New System.Drawing.Point(459, 50)
         Codcli_pedLabel.Name = "Codcli_pedLabel"
         Codcli_pedLabel.Size = New System.Drawing.Size(69, 13)
@@ -4124,7 +4120,7 @@ Partial Class Form1
         '
         'Dataemissao_pedLabel
         '
-        Dataemissao_pedLabel.AutoSize = true
+        Dataemissao_pedLabel.AutoSize = True
         Dataemissao_pedLabel.Location = New System.Drawing.Point(265, 27)
         Dataemissao_pedLabel.Name = "Dataemissao_pedLabel"
         Dataemissao_pedLabel.Size = New System.Drawing.Size(43, 13)
@@ -4133,7 +4129,7 @@ Partial Class Form1
         '
         'Razaosocialcliente_pedLabel
         '
-        Razaosocialcliente_pedLabel.AutoSize = true
+        Razaosocialcliente_pedLabel.AutoSize = True
         Razaosocialcliente_pedLabel.Location = New System.Drawing.Point(9, 30)
         Razaosocialcliente_pedLabel.Name = "Razaosocialcliente_pedLabel"
         Razaosocialcliente_pedLabel.Size = New System.Drawing.Size(80, 13)
@@ -4142,7 +4138,7 @@ Partial Class Form1
         '
         'Nomefantasiacliente_pedLabel
         '
-        Nomefantasiacliente_pedLabel.AutoSize = true
+        Nomefantasiacliente_pedLabel.AutoSize = True
         Nomefantasiacliente_pedLabel.Location = New System.Drawing.Point(9, 61)
         Nomefantasiacliente_pedLabel.Name = "Nomefantasiacliente_pedLabel"
         Nomefantasiacliente_pedLabel.Size = New System.Drawing.Size(90, 13)
@@ -4151,7 +4147,7 @@ Partial Class Form1
         '
         'Nometransportadora_pedLabel
         '
-        Nometransportadora_pedLabel.AutoSize = true
+        Nometransportadora_pedLabel.AutoSize = True
         Nometransportadora_pedLabel.Location = New System.Drawing.Point(8, 67)
         Nometransportadora_pedLabel.Name = "Nometransportadora_pedLabel"
         Nometransportadora_pedLabel.Size = New System.Drawing.Size(149, 13)
@@ -4160,7 +4156,7 @@ Partial Class Form1
         '
         'Valortotal_pedLabel
         '
-        Valortotal_pedLabel.AutoSize = true
+        Valortotal_pedLabel.AutoSize = True
         Valortotal_pedLabel.Location = New System.Drawing.Point(36, 96)
         Valortotal_pedLabel.Name = "Valortotal_pedLabel"
         Valortotal_pedLabel.Size = New System.Drawing.Size(36, 13)
@@ -4169,7 +4165,7 @@ Partial Class Form1
         '
         'Obsvendedor_pedLabel
         '
-        Obsvendedor_pedLabel.AutoSize = true
+        Obsvendedor_pedLabel.AutoSize = True
         Obsvendedor_pedLabel.Location = New System.Drawing.Point(4, 29)
         Obsvendedor_pedLabel.Name = "Obsvendedor_pedLabel"
         Obsvendedor_pedLabel.Size = New System.Drawing.Size(147, 13)
@@ -4178,7 +4174,7 @@ Partial Class Form1
         '
         'Obsgerente_pedLabel
         '
-        Obsgerente_pedLabel.AutoSize = true
+        Obsgerente_pedLabel.AutoSize = True
         Obsgerente_pedLabel.Location = New System.Drawing.Point(41, 80)
         Obsgerente_pedLabel.Name = "Obsgerente_pedLabel"
         Obsgerente_pedLabel.Size = New System.Drawing.Size(107, 13)
@@ -4187,7 +4183,7 @@ Partial Class Form1
         '
         'Formadepagamento_pedLabel
         '
-        Formadepagamento_pedLabel.AutoSize = true
+        Formadepagamento_pedLabel.AutoSize = True
         Formadepagamento_pedLabel.Location = New System.Drawing.Point(19, 139)
         Formadepagamento_pedLabel.Name = "Formadepagamento_pedLabel"
         Formadepagamento_pedLabel.Size = New System.Drawing.Size(129, 13)
@@ -4196,7 +4192,7 @@ Partial Class Form1
         '
         'Endercoentrega_pedLabel
         '
-        Endercoentrega_pedLabel.AutoSize = true
+        Endercoentrega_pedLabel.AutoSize = True
         Endercoentrega_pedLabel.Location = New System.Drawing.Point(22, 211)
         Endercoentrega_pedLabel.Name = "Endercoentrega_pedLabel"
         Endercoentrega_pedLabel.Size = New System.Drawing.Size(126, 13)
@@ -4205,7 +4201,7 @@ Partial Class Form1
         '
         'Codtransportadora_pedLabel
         '
-        Codtransportadora_pedLabel.AutoSize = true
+        Codtransportadora_pedLabel.AutoSize = True
         Codtransportadora_pedLabel.Location = New System.Drawing.Point(8, 37)
         Codtransportadora_pedLabel.Name = "Codtransportadora_pedLabel"
         Codtransportadora_pedLabel.Size = New System.Drawing.Size(133, 13)
@@ -4214,7 +4210,7 @@ Partial Class Form1
         '
         'Vendedor_pedLabel
         '
-        Vendedor_pedLabel.AutoSize = true
+        Vendedor_pedLabel.AutoSize = True
         Vendedor_pedLabel.Location = New System.Drawing.Point(11, 58)
         Vendedor_pedLabel.Name = "Vendedor_pedLabel"
         Vendedor_pedLabel.Size = New System.Drawing.Size(61, 13)
@@ -4223,7 +4219,7 @@ Partial Class Form1
         '
         'CodIBGE_clienteLabel
         '
-        CodIBGE_clienteLabel.AutoSize = true
+        CodIBGE_clienteLabel.AutoSize = True
         CodIBGE_clienteLabel.Location = New System.Drawing.Point(9, 174)
         CodIBGE_clienteLabel.Name = "CodIBGE_clienteLabel"
         CodIBGE_clienteLabel.Size = New System.Drawing.Size(105, 16)
@@ -4232,7 +4228,7 @@ Partial Class Form1
         '
         'Numerodarua_pedLabel
         '
-        Numerodarua_pedLabel.AutoSize = true
+        Numerodarua_pedLabel.AutoSize = True
         Numerodarua_pedLabel.Location = New System.Drawing.Point(344, 25)
         Numerodarua_pedLabel.Name = "Numerodarua_pedLabel"
         Numerodarua_pedLabel.Size = New System.Drawing.Size(52, 13)
@@ -4241,8 +4237,8 @@ Partial Class Form1
         '
         'Codbarras_prodLabel
         '
-        Codbarras_prodLabel.AutoSize = true
-        Codbarras_prodLabel.Font = New System.Drawing.Font("Verdana", 9!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Codbarras_prodLabel.AutoSize = True
+        Codbarras_prodLabel.Font = New System.Drawing.Font("Verdana", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Codbarras_prodLabel.Location = New System.Drawing.Point(12, 83)
         Codbarras_prodLabel.Name = "Codbarras_prodLabel"
         Codbarras_prodLabel.Size = New System.Drawing.Size(121, 14)
@@ -4251,7 +4247,7 @@ Partial Class Form1
         '
         'Email_pedLabel
         '
-        Email_pedLabel.AutoSize = true
+        Email_pedLabel.AutoSize = True
         Email_pedLabel.Location = New System.Drawing.Point(9, 92)
         Email_pedLabel.Name = "Email_pedLabel"
         Email_pedLabel.Size = New System.Drawing.Size(38, 13)
@@ -4260,7 +4256,7 @@ Partial Class Form1
         '
         'CodTrans_nfeemitidaLabel
         '
-        CodTrans_nfeemitidaLabel.AutoSize = true
+        CodTrans_nfeemitidaLabel.AutoSize = True
         CodTrans_nfeemitidaLabel.Location = New System.Drawing.Point(466, 230)
         CodTrans_nfeemitidaLabel.Name = "CodTrans_nfeemitidaLabel"
         CodTrans_nfeemitidaLabel.Size = New System.Drawing.Size(127, 13)
@@ -4269,7 +4265,7 @@ Partial Class Form1
         '
         'NomeTrans_nfeemitidaLabel
         '
-        NomeTrans_nfeemitidaLabel.AutoSize = true
+        NomeTrans_nfeemitidaLabel.AutoSize = True
         NomeTrans_nfeemitidaLabel.Location = New System.Drawing.Point(310, 261)
         NomeTrans_nfeemitidaLabel.Name = "NomeTrans_nfeemitidaLabel"
         NomeTrans_nfeemitidaLabel.Size = New System.Drawing.Size(147, 13)
@@ -4278,7 +4274,7 @@ Partial Class Form1
         '
         'Peso_nfeemitidaLabel
         '
-        Peso_nfeemitidaLabel.AutoSize = true
+        Peso_nfeemitidaLabel.AutoSize = True
         Peso_nfeemitidaLabel.Location = New System.Drawing.Point(23, 261)
         Peso_nfeemitidaLabel.Name = "Peso_nfeemitidaLabel"
         Peso_nfeemitidaLabel.Size = New System.Drawing.Size(103, 13)
@@ -4287,7 +4283,7 @@ Partial Class Form1
         '
         'Vendedor_nfeemitidasLabel
         '
-        Vendedor_nfeemitidasLabel.AutoSize = true
+        Vendedor_nfeemitidasLabel.AutoSize = True
         Vendedor_nfeemitidasLabel.Location = New System.Drawing.Point(463, 192)
         Vendedor_nfeemitidasLabel.Name = "Vendedor_nfeemitidasLabel"
         Vendedor_nfeemitidasLabel.Size = New System.Drawing.Size(136, 13)
@@ -4296,7 +4292,7 @@ Partial Class Form1
         '
         'DescontoFabrica_prodLabel
         '
-        DescontoFabrica_prodLabel.AutoSize = true
+        DescontoFabrica_prodLabel.AutoSize = True
         DescontoFabrica_prodLabel.Location = New System.Drawing.Point(9, 102)
         DescontoFabrica_prodLabel.Name = "DescontoFabrica_prodLabel"
         DescontoFabrica_prodLabel.Size = New System.Drawing.Size(119, 14)
@@ -4305,7 +4301,7 @@ Partial Class Form1
         '
         'CodOrcamento_orcLabel
         '
-        CodOrcamento_orcLabel.AutoSize = true
+        CodOrcamento_orcLabel.AutoSize = True
         CodOrcamento_orcLabel.Location = New System.Drawing.Point(23, 65)
         CodOrcamento_orcLabel.Name = "CodOrcamento_orcLabel"
         CodOrcamento_orcLabel.Size = New System.Drawing.Size(113, 16)
@@ -4346,7 +4342,7 @@ Partial Class Form1
         '
         'ContentPanel
         '
-        Me.ContentPanel.AutoScroll = true
+        Me.ContentPanel.AutoScroll = True
         Me.ContentPanel.Size = New System.Drawing.Size(619, 383)
         '
         'ProdutosBindingSource
@@ -4414,13 +4410,13 @@ Partial Class Form1
         '
         'ClienteTableAdapter
         '
-        Me.ClienteTableAdapter.ClearBeforeFill = true
+        Me.ClienteTableAdapter.ClearBeforeFill = True
         '
         'TableAdapterManager
         '
         Me.TableAdapterManager.ApelidoErradoTableAdapter = Nothing
         Me.TableAdapterManager.autorizacaoTableAdapter = Nothing
-        Me.TableAdapterManager.BackupDataSetBeforeUpdate = false
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.balcaoTableAdapter = Nothing
         Me.TableAdapterManager.cadastrodoNCMTableAdapter = Nothing
         Me.TableAdapterManager.capitalgirofornecedorTableAdapter = Nothing
@@ -4469,24 +4465,24 @@ Partial Class Form1
         '
         'VendedorTableAdapter
         '
-        Me.VendedorTableAdapter.ClearBeforeFill = true
+        Me.VendedorTableAdapter.ClearBeforeFill = True
         '
         'EstadosTableAdapter
         '
-        Me.EstadosTableAdapter.ClearBeforeFill = true
+        Me.EstadosTableAdapter.ClearBeforeFill = True
         '
         'NfefornecedorTableAdapter
         '
-        Me.NfefornecedorTableAdapter.ClearBeforeFill = true
+        Me.NfefornecedorTableAdapter.ClearBeforeFill = True
         '
         'OpenFileDialog1
         '
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        Me.OpenFileDialog1.ValidateNames = false
+        Me.OpenFileDialog1.ValidateNames = False
         '
         'ProdutosTableAdapter
         '
-        Me.ProdutosTableAdapter.ClearBeforeFill = true
+        Me.ProdutosTableAdapter.ClearBeforeFill = True
         '
         'DataSetFinalBindingSource
         '
@@ -4495,19 +4491,19 @@ Partial Class Form1
         '
         'LinhasprodTableAdapter
         '
-        Me.LinhasprodTableAdapter.ClearBeforeFill = true
+        Me.LinhasprodTableAdapter.ClearBeforeFill = True
         '
         'FornecedorTableAdapter
         '
-        Me.FornecedorTableAdapter.ClearBeforeFill = true
+        Me.FornecedorTableAdapter.ClearBeforeFill = True
         '
         'CorProdTableAdapter
         '
-        Me.CorProdTableAdapter.ClearBeforeFill = true
+        Me.CorProdTableAdapter.ClearBeforeFill = True
         '
         'CapitalgirofornecedorTableAdapter
         '
-        Me.CapitalgirofornecedorTableAdapter.ClearBeforeFill = true
+        Me.CapitalgirofornecedorTableAdapter.ClearBeforeFill = True
         '
         'ProdutosBindingSource1
         '
@@ -4516,15 +4512,15 @@ Partial Class Form1
         '
         'TransportadorasTableAdapter
         '
-        Me.TransportadorasTableAdapter.ClearBeforeFill = true
+        Me.TransportadorasTableAdapter.ClearBeforeFill = True
         '
         'TransportadorasTableAdapter1
         '
-        Me.TransportadorasTableAdapter1.ClearBeforeFill = true
+        Me.TransportadorasTableAdapter1.ClearBeforeFill = True
         '
         'tab_nfe
         '
-        Me.tab_nfe.AutoScroll = true
+        Me.tab_nfe.AutoScroll = True
         Me.tab_nfe.BackColor = System.Drawing.Color.Gold
         Me.tab_nfe.Controls.Add(Me.VendasMlbDataGridView)
         Me.tab_nfe.Controls.Add(Me.Busca)
@@ -4542,16 +4538,16 @@ Partial Class Form1
         '
         'VendasMlbDataGridView
         '
-        Me.VendasMlbDataGridView.AllowUserToAddRows = false
-        Me.VendasMlbDataGridView.AllowUserToDeleteRows = false
-        Me.VendasMlbDataGridView.AutoGenerateColumns = false
+        Me.VendasMlbDataGridView.AllowUserToAddRows = False
+        Me.VendasMlbDataGridView.AllowUserToDeleteRows = False
+        Me.VendasMlbDataGridView.AutoGenerateColumns = False
         Me.VendasMlbDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.VendasMlbDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn220, Me.DataGridViewTextBoxColumn223, Me.DataGridViewTextBoxColumn224, Me.DataGridViewTextBoxColumn225, Me.DataGridViewTextBoxColumn226, Me.DataGridViewTextBoxColumn227, Me.DataGridViewTextBoxColumn228, Me.DataGridViewTextBoxColumn229, Me.DataGridViewTextBoxColumn230, Me.DataGridViewTextBoxColumn231, Me.DataGridViewTextBoxColumn232, Me.DataGridViewTextBoxColumn233, Me.DataGridViewTextBoxColumn234, Me.DataGridViewTextBoxColumn235, Me.DataGridViewTextBoxColumn796, Me.DataGridViewTextBoxColumn797, Me.VrTotal_vendasMlb, Me.CNPJEmitente_VendasMlb, Me.SerieNF_VendasMlb})
         Me.VendasMlbDataGridView.DataSource = Me.VendasMlbBindingSource
         Me.VendasMlbDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.VendasMlbDataGridView.Location = New System.Drawing.Point(3, 269)
         Me.VendasMlbDataGridView.Name = "VendasMlbDataGridView"
-        Me.VendasMlbDataGridView.ReadOnly = true
+        Me.VendasMlbDataGridView.ReadOnly = True
         Me.VendasMlbDataGridView.Size = New System.Drawing.Size(1270, 267)
         Me.VendasMlbDataGridView.TabIndex = 485
         '
@@ -4560,133 +4556,133 @@ Partial Class Form1
         Me.DataGridViewTextBoxColumn220.DataPropertyName = "Id_VendasMlb"
         Me.DataGridViewTextBoxColumn220.HeaderText = "Id_VendasMlb"
         Me.DataGridViewTextBoxColumn220.Name = "DataGridViewTextBoxColumn220"
-        Me.DataGridViewTextBoxColumn220.ReadOnly = true
+        Me.DataGridViewTextBoxColumn220.ReadOnly = True
         '
         'DataGridViewTextBoxColumn223
         '
         Me.DataGridViewTextBoxColumn223.DataPropertyName = "NUmeroPedido2_VendasMlb"
         Me.DataGridViewTextBoxColumn223.HeaderText = "NUmeroPedido2_VendasMlb"
         Me.DataGridViewTextBoxColumn223.Name = "DataGridViewTextBoxColumn223"
-        Me.DataGridViewTextBoxColumn223.ReadOnly = true
+        Me.DataGridViewTextBoxColumn223.ReadOnly = True
         '
         'DataGridViewTextBoxColumn224
         '
         Me.DataGridViewTextBoxColumn224.DataPropertyName = "DataPedido_VendasMlb"
         Me.DataGridViewTextBoxColumn224.HeaderText = "DataPedido_VendasMlb"
         Me.DataGridViewTextBoxColumn224.Name = "DataGridViewTextBoxColumn224"
-        Me.DataGridViewTextBoxColumn224.ReadOnly = true
+        Me.DataGridViewTextBoxColumn224.ReadOnly = True
         '
         'DataGridViewTextBoxColumn225
         '
         Me.DataGridViewTextBoxColumn225.DataPropertyName = "NomeContato_VendasMlb"
         Me.DataGridViewTextBoxColumn225.HeaderText = "NomeContato_VendasMlb"
         Me.DataGridViewTextBoxColumn225.Name = "DataGridViewTextBoxColumn225"
-        Me.DataGridViewTextBoxColumn225.ReadOnly = true
+        Me.DataGridViewTextBoxColumn225.ReadOnly = True
         '
         'DataGridViewTextBoxColumn226
         '
         Me.DataGridViewTextBoxColumn226.DataPropertyName = "CEP_VendasMlb"
         Me.DataGridViewTextBoxColumn226.HeaderText = "CEP_VendasMlb"
         Me.DataGridViewTextBoxColumn226.Name = "DataGridViewTextBoxColumn226"
-        Me.DataGridViewTextBoxColumn226.ReadOnly = true
+        Me.DataGridViewTextBoxColumn226.ReadOnly = True
         '
         'DataGridViewTextBoxColumn227
         '
         Me.DataGridViewTextBoxColumn227.DataPropertyName = "Municipio_VendasMlb"
         Me.DataGridViewTextBoxColumn227.HeaderText = "Municipio_VendasMlb"
         Me.DataGridViewTextBoxColumn227.Name = "DataGridViewTextBoxColumn227"
-        Me.DataGridViewTextBoxColumn227.ReadOnly = true
+        Me.DataGridViewTextBoxColumn227.ReadOnly = True
         '
         'DataGridViewTextBoxColumn228
         '
         Me.DataGridViewTextBoxColumn228.DataPropertyName = "Estado_VendasMlb"
         Me.DataGridViewTextBoxColumn228.HeaderText = "Estado_VendasMlb"
         Me.DataGridViewTextBoxColumn228.Name = "DataGridViewTextBoxColumn228"
-        Me.DataGridViewTextBoxColumn228.ReadOnly = true
+        Me.DataGridViewTextBoxColumn228.ReadOnly = True
         '
         'DataGridViewTextBoxColumn229
         '
         Me.DataGridViewTextBoxColumn229.DataPropertyName = "Endereco_VendasMLb"
         Me.DataGridViewTextBoxColumn229.HeaderText = "Endereco_VendasMLb"
         Me.DataGridViewTextBoxColumn229.Name = "DataGridViewTextBoxColumn229"
-        Me.DataGridViewTextBoxColumn229.ReadOnly = true
+        Me.DataGridViewTextBoxColumn229.ReadOnly = True
         '
         'DataGridViewTextBoxColumn230
         '
         Me.DataGridViewTextBoxColumn230.DataPropertyName = "NumeroRua_VendasMlb"
         Me.DataGridViewTextBoxColumn230.HeaderText = "NumeroRua_VendasMlb"
         Me.DataGridViewTextBoxColumn230.Name = "DataGridViewTextBoxColumn230"
-        Me.DataGridViewTextBoxColumn230.ReadOnly = true
+        Me.DataGridViewTextBoxColumn230.ReadOnly = True
         '
         'DataGridViewTextBoxColumn231
         '
         Me.DataGridViewTextBoxColumn231.DataPropertyName = "Complemento_VendasMlb"
         Me.DataGridViewTextBoxColumn231.HeaderText = "Complemento_VendasMlb"
         Me.DataGridViewTextBoxColumn231.Name = "DataGridViewTextBoxColumn231"
-        Me.DataGridViewTextBoxColumn231.ReadOnly = true
+        Me.DataGridViewTextBoxColumn231.ReadOnly = True
         '
         'DataGridViewTextBoxColumn232
         '
         Me.DataGridViewTextBoxColumn232.DataPropertyName = "Bairro_VendasMlb"
         Me.DataGridViewTextBoxColumn232.HeaderText = "Bairro_VendasMlb"
         Me.DataGridViewTextBoxColumn232.Name = "DataGridViewTextBoxColumn232"
-        Me.DataGridViewTextBoxColumn232.ReadOnly = true
+        Me.DataGridViewTextBoxColumn232.ReadOnly = True
         '
         'DataGridViewTextBoxColumn233
         '
         Me.DataGridViewTextBoxColumn233.DataPropertyName = "Fone_VendasMlb"
         Me.DataGridViewTextBoxColumn233.HeaderText = "Fone_VendasMlb"
         Me.DataGridViewTextBoxColumn233.Name = "DataGridViewTextBoxColumn233"
-        Me.DataGridViewTextBoxColumn233.ReadOnly = true
+        Me.DataGridViewTextBoxColumn233.ReadOnly = True
         '
         'DataGridViewTextBoxColumn234
         '
         Me.DataGridViewTextBoxColumn234.DataPropertyName = "NomeProduto_VendasMlb"
         Me.DataGridViewTextBoxColumn234.HeaderText = "NomeProduto_VendasMlb"
         Me.DataGridViewTextBoxColumn234.Name = "DataGridViewTextBoxColumn234"
-        Me.DataGridViewTextBoxColumn234.ReadOnly = true
+        Me.DataGridViewTextBoxColumn234.ReadOnly = True
         '
         'DataGridViewTextBoxColumn235
         '
         Me.DataGridViewTextBoxColumn235.DataPropertyName = "QuantidadeVendida_VendasMlb"
         Me.DataGridViewTextBoxColumn235.HeaderText = "QuantidadeVendida_VendasMlb"
         Me.DataGridViewTextBoxColumn235.Name = "DataGridViewTextBoxColumn235"
-        Me.DataGridViewTextBoxColumn235.ReadOnly = true
+        Me.DataGridViewTextBoxColumn235.ReadOnly = True
         '
         'DataGridViewTextBoxColumn796
         '
         Me.DataGridViewTextBoxColumn796.DataPropertyName = "VrUnitario_VendasMlb"
         Me.DataGridViewTextBoxColumn796.HeaderText = "VrUnitario_VendasMlb"
         Me.DataGridViewTextBoxColumn796.Name = "DataGridViewTextBoxColumn796"
-        Me.DataGridViewTextBoxColumn796.ReadOnly = true
+        Me.DataGridViewTextBoxColumn796.ReadOnly = True
         '
         'DataGridViewTextBoxColumn797
         '
         Me.DataGridViewTextBoxColumn797.DataPropertyName = "CodigoMlb_VendasMlb"
         Me.DataGridViewTextBoxColumn797.HeaderText = "CodigoMlb_VendasMlb"
         Me.DataGridViewTextBoxColumn797.Name = "DataGridViewTextBoxColumn797"
-        Me.DataGridViewTextBoxColumn797.ReadOnly = true
+        Me.DataGridViewTextBoxColumn797.ReadOnly = True
         '
         'VrTotal_vendasMlb
         '
         Me.VrTotal_vendasMlb.DataPropertyName = "VrTotal_vendasMlb"
         Me.VrTotal_vendasMlb.HeaderText = "VrTotal_vendasMlb"
         Me.VrTotal_vendasMlb.Name = "VrTotal_vendasMlb"
-        Me.VrTotal_vendasMlb.ReadOnly = true
+        Me.VrTotal_vendasMlb.ReadOnly = True
         '
         'CNPJEmitente_VendasMlb
         '
         Me.CNPJEmitente_VendasMlb.DataPropertyName = "CNPJEmitente_VendasMlb"
         Me.CNPJEmitente_VendasMlb.HeaderText = "CNPJEmitente_VendasMlb"
         Me.CNPJEmitente_VendasMlb.Name = "CNPJEmitente_VendasMlb"
-        Me.CNPJEmitente_VendasMlb.ReadOnly = true
+        Me.CNPJEmitente_VendasMlb.ReadOnly = True
         '
         'SerieNF_VendasMlb
         '
         Me.SerieNF_VendasMlb.DataPropertyName = "SerieNF_VendasMlb"
         Me.SerieNF_VendasMlb.HeaderText = "SerieNF_VendasMlb"
         Me.SerieNF_VendasMlb.Name = "SerieNF_VendasMlb"
-        Me.SerieNF_VendasMlb.ReadOnly = true
+        Me.SerieNF_VendasMlb.ReadOnly = True
         '
         'VendasMlbBindingSource
         '
@@ -4703,12 +4699,12 @@ Partial Class Form1
         Me.Busca.Name = "Busca"
         Me.Busca.Size = New System.Drawing.Size(197, 152)
         Me.Busca.TabIndex = 484
-        Me.Busca.TabStop = false
+        Me.Busca.TabStop = False
         Me.Busca.Text = "Busca"
         '
         'Label7
         '
-        Me.Label7.AutoSize = true
+        Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(6, 40)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(150, 16)
@@ -4717,7 +4713,7 @@ Partial Class Form1
         '
         'Label22
         '
-        Me.Label22.AutoSize = true
+        Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(6, 96)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(152, 16)
@@ -4741,7 +4737,7 @@ Partial Class Form1
         'btn_seleciona_pasta_nota
         '
         Me.btn_seleciona_pasta_nota.BackColor = System.Drawing.Color.Transparent
-        Me.btn_seleciona_pasta_nota.BackgroundImage = CType(resources.GetObject("btn_seleciona_pasta_nota.BackgroundImage"),System.Drawing.Image)
+        Me.btn_seleciona_pasta_nota.BackgroundImage = CType(resources.GetObject("btn_seleciona_pasta_nota.BackgroundImage"), System.Drawing.Image)
         Me.btn_seleciona_pasta_nota.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_seleciona_pasta_nota.FlatAppearance.BorderColor = System.Drawing.Color.DarkOliveGreen
         Me.btn_seleciona_pasta_nota.FlatAppearance.BorderSize = 0
@@ -4752,7 +4748,7 @@ Partial Class Form1
         Me.btn_seleciona_pasta_nota.Size = New System.Drawing.Size(78, 23)
         Me.btn_seleciona_pasta_nota.TabIndex = 471
         Me.btn_seleciona_pasta_nota.Text = "Buscar"
-        Me.btn_seleciona_pasta_nota.UseVisualStyleBackColor = false
+        Me.btn_seleciona_pasta_nota.UseVisualStyleBackColor = False
         '
         'GroupBox96
         '
@@ -4764,31 +4760,31 @@ Partial Class Form1
         Me.GroupBox96.Name = "GroupBox96"
         Me.GroupBox96.Size = New System.Drawing.Size(473, 110)
         Me.GroupBox96.TabIndex = 483
-        Me.GroupBox96.TabStop = false
+        Me.GroupBox96.TabStop = False
         Me.GroupBox96.Text = "Opções"
         '
         'xml_procuraNfe
         '
         Me.xml_procuraNfe.BackColor = System.Drawing.Color.Transparent
-        Me.xml_procuraNfe.BackgroundImage = CType(resources.GetObject("xml_procuraNfe.BackgroundImage"),System.Drawing.Image)
+        Me.xml_procuraNfe.BackgroundImage = CType(resources.GetObject("xml_procuraNfe.BackgroundImage"), System.Drawing.Image)
         Me.xml_procuraNfe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.xml_procuraNfe.FlatAppearance.BorderSize = 0
         Me.xml_procuraNfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.xml_procuraNfe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.xml_procuraNfe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.xml_procuraNfe.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.xml_procuraNfe.Location = New System.Drawing.Point(9, 27)
         Me.xml_procuraNfe.Name = "xml_procuraNfe"
         Me.xml_procuraNfe.Size = New System.Drawing.Size(223, 32)
         Me.xml_procuraNfe.TabIndex = 453
         Me.xml_procuraNfe.Text = "Cadastrar nfe do XML"
-        Me.xml_procuraNfe.UseVisualStyleBackColor = false
+        Me.xml_procuraNfe.UseVisualStyleBackColor = False
         '
         'btn_data
         '
         Me.btn_data.BackColor = System.Drawing.Color.Transparent
-        Me.btn_data.BackgroundImage = CType(resources.GetObject("btn_data.BackgroundImage"),System.Drawing.Image)
+        Me.btn_data.BackgroundImage = CType(resources.GetObject("btn_data.BackgroundImage"), System.Drawing.Image)
         Me.btn_data.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.btn_data.Enabled = false
+        Me.btn_data.Enabled = False
         Me.btn_data.FlatAppearance.BorderSize = 0
         Me.btn_data.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_data.ForeColor = System.Drawing.SystemColors.ButtonHighlight
@@ -4797,29 +4793,29 @@ Partial Class Form1
         Me.btn_data.Size = New System.Drawing.Size(223, 32)
         Me.btn_data.TabIndex = 474
         Me.btn_data.Text = "K giro"
-        Me.btn_data.UseVisualStyleBackColor = false
+        Me.btn_data.UseVisualStyleBackColor = False
         '
         'bnt_cadProdnfe
         '
         Me.bnt_cadProdnfe.BackColor = System.Drawing.Color.Transparent
-        Me.bnt_cadProdnfe.BackgroundImage = CType(resources.GetObject("bnt_cadProdnfe.BackgroundImage"),System.Drawing.Image)
+        Me.bnt_cadProdnfe.BackgroundImage = CType(resources.GetObject("bnt_cadProdnfe.BackgroundImage"), System.Drawing.Image)
         Me.bnt_cadProdnfe.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.bnt_cadProdnfe.Enabled = false
+        Me.bnt_cadProdnfe.Enabled = False
         Me.bnt_cadProdnfe.FlatAppearance.BorderSize = 0
         Me.bnt_cadProdnfe.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.bnt_cadProdnfe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.bnt_cadProdnfe.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.bnt_cadProdnfe.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.bnt_cadProdnfe.Location = New System.Drawing.Point(9, 65)
         Me.bnt_cadProdnfe.Name = "bnt_cadProdnfe"
         Me.bnt_cadProdnfe.Size = New System.Drawing.Size(223, 32)
         Me.bnt_cadProdnfe.TabIndex = 472
         Me.bnt_cadProdnfe.Text = "Marca Abc VendasMlb"
-        Me.bnt_cadProdnfe.UseVisualStyleBackColor = false
+        Me.bnt_cadProdnfe.UseVisualStyleBackColor = False
         '
         'btn_trans
         '
         Me.btn_trans.BackColor = System.Drawing.Color.Transparent
-        Me.btn_trans.BackgroundImage = CType(resources.GetObject("btn_trans.BackgroundImage"),System.Drawing.Image)
+        Me.btn_trans.BackgroundImage = CType(resources.GetObject("btn_trans.BackgroundImage"), System.Drawing.Image)
         Me.btn_trans.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.btn_trans.FlatAppearance.BorderSize = 0
         Me.btn_trans.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -4829,7 +4825,7 @@ Partial Class Form1
         Me.btn_trans.Size = New System.Drawing.Size(223, 32)
         Me.btn_trans.TabIndex = 477
         Me.btn_trans.Text = "Lançar Notas Arquivo Balcão"
-        Me.btn_trans.UseVisualStyleBackColor = false
+        Me.btn_trans.UseVisualStyleBackColor = False
         '
         'txtXml
         '
@@ -4840,9 +4836,9 @@ Partial Class Form1
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
+        Me.Label8.AutoSize = True
         Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.ForeColor = System.Drawing.Color.Black
         Me.Label8.Location = New System.Drawing.Point(20, 24)
         Me.Label8.Name = "Label8"
@@ -4852,7 +4848,7 @@ Partial Class Form1
         '
         'Panel4
         '
-        Me.Panel4.AutoScroll = true
+        Me.Panel4.AutoScroll = True
         Me.Panel4.Controls.Add(Me.GroupBox134)
         Me.Panel4.Controls.Add(Me.GroupBox109)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
@@ -4871,7 +4867,7 @@ Partial Class Form1
         Me.GroupBox134.Name = "GroupBox134"
         Me.GroupBox134.Size = New System.Drawing.Size(200, 100)
         Me.GroupBox134.TabIndex = 1
-        Me.GroupBox134.TabStop = false
+        Me.GroupBox134.TabStop = False
         '
         'Button115
         '
@@ -4880,11 +4876,11 @@ Partial Class Form1
         Me.Button115.Size = New System.Drawing.Size(75, 23)
         Me.Button115.TabIndex = 3
         Me.Button115.Text = "Buscar"
-        Me.Button115.UseVisualStyleBackColor = true
+        Me.Button115.UseVisualStyleBackColor = True
         '
         'Label404
         '
-        Me.Label404.AutoSize = true
+        Me.Label404.AutoSize = True
         Me.Label404.Location = New System.Drawing.Point(8, 26)
         Me.Label404.Name = "Label404"
         Me.Label404.Size = New System.Drawing.Size(69, 16)
@@ -4893,7 +4889,7 @@ Partial Class Form1
         '
         'Label403
         '
-        Me.Label403.AutoSize = true
+        Me.Label403.AutoSize = True
         Me.Label403.Location = New System.Drawing.Point(8, 60)
         Me.Label403.Name = "Label403"
         Me.Label403.Size = New System.Drawing.Size(93, 16)
@@ -4919,7 +4915,7 @@ Partial Class Form1
         Me.GroupBox109.Name = "GroupBox109"
         Me.GroupBox109.Size = New System.Drawing.Size(304, 143)
         Me.GroupBox109.TabIndex = 0
-        Me.GroupBox109.TabStop = false
+        Me.GroupBox109.TabStop = False
         Me.GroupBox109.Text = "Somando os valores do dia"
         '
         'Button133
@@ -4929,7 +4925,7 @@ Partial Class Form1
         Me.Button133.Size = New System.Drawing.Size(97, 48)
         Me.Button133.TabIndex = 4
         Me.Button133.Text = "Valor Venda FULL"
-        Me.Button133.UseVisualStyleBackColor = true
+        Me.Button133.UseVisualStyleBackColor = True
         '
         'Button97
         '
@@ -4938,7 +4934,7 @@ Partial Class Form1
         Me.Button97.Size = New System.Drawing.Size(103, 48)
         Me.Button97.TabIndex = 3
         Me.Button97.Text = "Calcular Valor Total"
-        Me.Button97.UseVisualStyleBackColor = true
+        Me.Button97.UseVisualStyleBackColor = True
         '
         'TextBox283
         '
@@ -4999,14 +4995,13 @@ Partial Class Form1
         Me.tab_Kgiro.Size = New System.Drawing.Size(1262, 504)
         Me.tab_Kgiro.TabIndex = 0
         Me.tab_Kgiro.Text = "Entrada Pedidos"
-        Me.tab_Kgiro.UseVisualStyleBackColor = true
+        Me.tab_Kgiro.UseVisualStyleBackColor = True
         '
         'Panel6
         '
         Me.Panel6.BackColor = System.Drawing.Color.Gold
         Me.Panel6.Controls.Add(Me.ComboBox37)
         Me.Panel6.Controls.Add(Me.Label72)
-        Me.Panel6.Controls.Add(Me.Button127)
         Me.Panel6.Controls.Add(Me.GroupBox114)
         Me.Panel6.Controls.Add(Me.Button15)
         Me.Panel6.Controls.Add(Me.Button98)
@@ -5028,8 +5023,8 @@ Partial Class Form1
         '
         Me.ComboBox37.DataSource = Me.FornecedorBindingSource
         Me.ComboBox37.DisplayMember = "PedidoMinimo_fornecedor"
-        Me.ComboBox37.Enabled = false
-        Me.ComboBox37.FormattingEnabled = true
+        Me.ComboBox37.Enabled = False
+        Me.ComboBox37.FormattingEnabled = True
         Me.ComboBox37.Location = New System.Drawing.Point(1001, 208)
         Me.ComboBox37.Name = "ComboBox37"
         Me.ComboBox37.Size = New System.Drawing.Size(121, 24)
@@ -5037,21 +5032,12 @@ Partial Class Form1
         '
         'Label72
         '
-        Me.Label72.AutoSize = true
+        Me.Label72.AutoSize = True
         Me.Label72.Location = New System.Drawing.Point(879, 212)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(98, 16)
         Me.Label72.TabIndex = 25
         Me.Label72.Text = "Pedido Mínimo"
-        '
-        'Button127
-        '
-        Me.Button127.Location = New System.Drawing.Point(1074, 145)
-        Me.Button127.Name = "Button127"
-        Me.Button127.Size = New System.Drawing.Size(152, 35)
-        Me.Button127.TabIndex = 24
-        Me.Button127.Text = "Soma no Estoque"
-        Me.Button127.UseVisualStyleBackColor = true
         '
         'GroupBox114
         '
@@ -15962,13 +15948,13 @@ Partial Class Form1
         Me.GroupBox143.Controls.Add(Me.Label413)
         Me.GroupBox143.Location = New System.Drawing.Point(600, 15)
         Me.GroupBox143.Name = "GroupBox143"
-        Me.GroupBox143.Size = New System.Drawing.Size(302, 115)
+        Me.GroupBox143.Size = New System.Drawing.Size(536, 115)
         Me.GroupBox143.TabIndex = 1
         Me.GroupBox143.TabStop = false
         '
         'Button119
         '
-        Me.Button119.Location = New System.Drawing.Point(222, 47)
+        Me.Button119.Location = New System.Drawing.Point(348, 49)
         Me.Button119.Name = "Button119"
         Me.Button119.Size = New System.Drawing.Size(75, 23)
         Me.Button119.TabIndex = 7
@@ -15977,7 +15963,7 @@ Partial Class Form1
         '
         'Button118
         '
-        Me.Button118.Location = New System.Drawing.Point(222, 12)
+        Me.Button118.Location = New System.Drawing.Point(444, 12)
         Me.Button118.Name = "Button118"
         Me.Button118.Size = New System.Drawing.Size(75, 23)
         Me.Button118.TabIndex = 6
@@ -15986,7 +15972,7 @@ Partial Class Form1
         '
         'Button117
         '
-        Me.Button117.Location = New System.Drawing.Point(108, 82)
+        Me.Button117.Location = New System.Drawing.Point(213, 77)
         Me.Button117.Name = "Button117"
         Me.Button117.Size = New System.Drawing.Size(108, 23)
         Me.Button117.TabIndex = 5
@@ -15995,7 +15981,7 @@ Partial Class Form1
         '
         'Button116
         '
-        Me.Button116.Location = New System.Drawing.Point(6, 82)
+        Me.Button116.Location = New System.Drawing.Point(95, 77)
         Me.Button116.Name = "Button116"
         Me.Button116.Size = New System.Drawing.Size(96, 23)
         Me.Button116.TabIndex = 4
@@ -16009,7 +15995,7 @@ Partial Class Form1
         Me.ComboBox42.FormattingEnabled = true
         Me.ComboBox42.Location = New System.Drawing.Point(95, 49)
         Me.ComboBox42.Name = "ComboBox42"
-        Me.ComboBox42.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox42.Size = New System.Drawing.Size(226, 21)
         Me.ComboBox42.TabIndex = 3
         '
         'ComboBox5
@@ -16019,7 +16005,7 @@ Partial Class Form1
         Me.ComboBox5.FormattingEnabled = true
         Me.ComboBox5.Location = New System.Drawing.Point(95, 11)
         Me.ComboBox5.Name = "ComboBox5"
-        Me.ComboBox5.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox5.Size = New System.Drawing.Size(328, 21)
         Me.ComboBox5.TabIndex = 2
         '
         'Label414
@@ -22703,41 +22689,15 @@ Partial Class Form1
         '
         'GroupBox135
         '
-        Me.GroupBox135.Controls.Add(Me.RadioButton17)
-        Me.GroupBox135.Controls.Add(Me.RadioButton16)
         Me.GroupBox135.Controls.Add(Me.Button88)
         Me.GroupBox135.Controls.Add(Me.RadioButton10)
         Me.GroupBox135.Controls.Add(Me.RadioButton8)
         Me.GroupBox135.Controls.Add(Me.RadioButton23)
-        Me.GroupBox135.Controls.Add(Me.RadioButton24)
         Me.GroupBox135.Location = New System.Drawing.Point(814, 12)
         Me.GroupBox135.Name = "GroupBox135"
         Me.GroupBox135.Size = New System.Drawing.Size(200, 211)
         Me.GroupBox135.TabIndex = 2
         Me.GroupBox135.TabStop = false
-        '
-        'RadioButton17
-        '
-        Me.RadioButton17.AutoSize = true
-        Me.RadioButton17.Location = New System.Drawing.Point(41, 151)
-        Me.RadioButton17.Name = "RadioButton17"
-        Me.RadioButton17.Size = New System.Drawing.Size(109, 20)
-        Me.RadioButton17.TabIndex = 12
-        Me.RadioButton17.TabStop = true
-        Me.RadioButton17.Text = "Fernando -FR"
-        Me.RadioButton17.UseVisualStyleBackColor = true
-        '
-        'RadioButton16
-        '
-        Me.RadioButton16.AutoSize = true
-        Me.RadioButton16.Enabled = false
-        Me.RadioButton16.Location = New System.Drawing.Point(41, 125)
-        Me.RadioButton16.Name = "RadioButton16"
-        Me.RadioButton16.Size = New System.Drawing.Size(119, 20)
-        Me.RadioButton16.TabIndex = 11
-        Me.RadioButton16.TabStop = true
-        Me.RadioButton16.Text = "MarketPlace-W"
-        Me.RadioButton16.UseVisualStyleBackColor = true
         '
         'Button88
         '
@@ -22752,7 +22712,7 @@ Partial Class Form1
         '
         Me.RadioButton10.AutoSize = true
         Me.RadioButton10.Enabled = false
-        Me.RadioButton10.Location = New System.Drawing.Point(39, 46)
+        Me.RadioButton10.Location = New System.Drawing.Point(39, 98)
         Me.RadioButton10.Name = "RadioButton10"
         Me.RadioButton10.Size = New System.Drawing.Size(133, 20)
         Me.RadioButton10.TabIndex = 10
@@ -22764,7 +22724,7 @@ Partial Class Form1
         '
         Me.RadioButton8.AutoSize = true
         Me.RadioButton8.Enabled = false
-        Me.RadioButton8.Location = New System.Drawing.Point(39, 20)
+        Me.RadioButton8.Location = New System.Drawing.Point(39, 42)
         Me.RadioButton8.Name = "RadioButton8"
         Me.RadioButton8.Size = New System.Drawing.Size(116, 20)
         Me.RadioButton8.TabIndex = 9
@@ -22775,25 +22735,13 @@ Partial Class Form1
         'RadioButton23
         '
         Me.RadioButton23.AutoSize = true
-        Me.RadioButton23.Location = New System.Drawing.Point(39, 72)
+        Me.RadioButton23.Location = New System.Drawing.Point(39, 146)
         Me.RadioButton23.Name = "RadioButton23"
         Me.RadioButton23.Size = New System.Drawing.Size(101, 20)
         Me.RadioButton23.TabIndex = 7
         Me.RadioButton23.TabStop = true
         Me.RadioButton23.Text = "Preço Site-S"
         Me.RadioButton23.UseVisualStyleBackColor = true
-        '
-        'RadioButton24
-        '
-        Me.RadioButton24.AutoSize = true
-        Me.RadioButton24.Enabled = false
-        Me.RadioButton24.Location = New System.Drawing.Point(39, 98)
-        Me.RadioButton24.Name = "RadioButton24"
-        Me.RadioButton24.Size = New System.Drawing.Size(123, 20)
-        Me.RadioButton24.TabIndex = 8
-        Me.RadioButton24.TabStop = true
-        Me.RadioButton24.Text = "Preço Mlb Full-F"
-        Me.RadioButton24.UseVisualStyleBackColor = true
         '
         'GroupBox103
         '
@@ -23007,7 +22955,7 @@ Partial Class Form1
         '
         'Button25
         '
-        Me.Button25.Location = New System.Drawing.Point(9, 88)
+        Me.Button25.Location = New System.Drawing.Point(15, 117)
         Me.Button25.Name = "Button25"
         Me.Button25.Size = New System.Drawing.Size(282, 33)
         Me.Button25.TabIndex = 2
@@ -33056,7 +33004,6 @@ End Sub
     Friend WithEvents Label404 As System.Windows.Forms.Label
     Friend WithEvents Label403 As System.Windows.Forms.Label
     Friend WithEvents DateTimePicker20 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents RadioButton24 As System.Windows.Forms.RadioButton
     Friend WithEvents GroupBox135 As System.Windows.Forms.GroupBox
     Friend WithEvents RadioButton10 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton8 As System.Windows.Forms.RadioButton
@@ -33359,7 +33306,6 @@ End Sub
     Friend WithEvents ConsumoDaDataIncial_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataAtualizacaoEstoque_prod As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1038 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button127 As System.Windows.Forms.Button
     Friend WithEvents DataGridViewTextBoxColumn818 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn819 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn820 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -33694,7 +33640,6 @@ End Sub
     Friend WithEvents codigo_identificação As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PorcentagemFerFras_conta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PorcentagemSilvia_conta As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents RadioButton16 As System.Windows.Forms.RadioButton
     Friend WithEvents Button105 As System.Windows.Forms.Button
     Friend WithEvents Button104 As System.Windows.Forms.Button
     Friend WithEvents Button103 As System.Windows.Forms.Button
@@ -33896,7 +33841,6 @@ End Sub
     Friend WithEvents Label368 As System.Windows.Forms.Label
     Friend WithEvents TextBox306 As System.Windows.Forms.TextBox
     Friend WithEvents TextBox305 As System.Windows.Forms.TextBox
-    Friend WithEvents RadioButton17 As System.Windows.Forms.RadioButton
     Friend WithEvents TabPage15 As System.Windows.Forms.TabPage
     Friend WithEvents Panel68 As System.Windows.Forms.Panel
     Friend WithEvents Panel70 As System.Windows.Forms.Panel
