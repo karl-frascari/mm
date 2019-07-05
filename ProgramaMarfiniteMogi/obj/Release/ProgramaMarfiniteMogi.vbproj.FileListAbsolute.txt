@@ -122,3 +122,18 @@ C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMog
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.pdb
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Fotografias.resources
 C:\Release Marfinite Mogi\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbprojResolveAssemblyReference.cache
+D:\Github\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.exe.config
+D:\Github\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.exe
+D:\Github\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.pdb
+D:\Github\Projeto Programa Marfinite Mogi\release\ProgramaMarfiniteMogi.xml
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbprojResolveAssemblyReference.cache
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbproj.ResolveComReference.cache
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Form1.resources
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.FormularioItemNfeEmitida.resources
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Fotografias.resources
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.Resources.resources
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.nivelAcessoTela.resources
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.vbproj.GenerateResource.Cache
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.exe
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.xml
+D:\Github\mm\ProgramaMarfiniteMogi\obj\Release\ProgramaMarfiniteMogi.pdb

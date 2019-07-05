@@ -116,6 +116,17 @@ Namespace My
                 Return CType(Me("testeConnectionString3"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;"& _ 
+            "User ID=user;Password=123456789")>  _
+        Public ReadOnly Property ConnectionStringTcpDVS6OS() As String
+            Get
+                Return CType(Me("ConnectionStringTcpDVS6OS"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 

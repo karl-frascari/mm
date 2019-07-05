@@ -190,7 +190,7 @@ Public Class Form1
     Public Sub verificarNivelAcesso()
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
         command = connection.CreateCommand()
@@ -389,7 +389,7 @@ Public Class Form1
             ' buscar tabela do mês
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim sql2 As String = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb >= convert (datetime, '" & DateTimePicker20.Text & "' ,103)"
             Dim dataadapter As New SqlDataAdapter(sql2, connection)
             Dim ds As New DataSet()
@@ -796,7 +796,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             'rotina para ler o código do IBGE no arquivo copiado da receita
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
             command = connection.CreateCommand()
@@ -912,7 +912,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
 
-            con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+            con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
             con.Open()
             cmd.Connection = con
             cmd.CommandText = "SELECT NUmeroPedido2_VendasMlb from VendasMlb"
@@ -972,7 +972,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             'criar comando inserção na tabela nfeforncedor
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.Parameters.Clear()
@@ -1567,7 +1567,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End If
         '---------------------------------------------------------
         Dim connection5 As SqlConnection
-        connection5 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection5 = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command5 As SqlCommand
         command5 = connection5.CreateCommand()
@@ -1601,7 +1601,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
             Dim command As SqlCommand
             command = connection.CreateCommand()
@@ -1864,7 +1864,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.CommandText = "delete from produtos where cod_prod = @cod_prod"
@@ -2014,7 +2014,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         
         ' marca as notas repetidas com a letra a b c para não cadastrar duas vezes
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim command As SqlCommand
 
         Dim xx As Integer
@@ -2122,14 +2122,14 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub btn_data_Click(sender As Object, e As EventArgs) Handles btn_data.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim command As SqlCommand
         command = connection.CreateCommand()
         command.CommandText = "select * from nfefornecedor as d left outer join capitalgirofornecedor as i  on d.numeronota_nfe = i.numeronfe_klgiro where i.numeronfe_klgiro is null"
         connection.Open()
 
         Dim connection2 As SqlConnection
-        connection2 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection2 = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
         Dim lrd As SqlDataReader = command.ExecuteReader()
@@ -2245,7 +2245,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' pegar o último número gravado com datagrid
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Me.PedidoCompraTableAdapter.Fill(Me.DataSetFinal.PedidoCompra)
 
@@ -2368,7 +2368,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
         command = connection.CreateCommand()
@@ -2541,7 +2541,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If reply = DialogResult.Yes Then
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
 
@@ -2747,7 +2747,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.CommandText = "delete from cliente where id_cliente = @id_cliente"
@@ -2806,7 +2806,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         If reply = DialogResult.Yes Then
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
 
@@ -3086,7 +3086,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim cmd As New SqlCommand
 
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         con.Open()
         cmd.Connection = con
         cmd.CommandText = "SELECT CNPJ_trans  from transportadoras where CNPJ_trans = '" & msk_CNPJTrans.Text & "'"
@@ -3161,7 +3161,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT *  from produtos where cod_prod = '" & Cod_prodTextBox.Text & "'"
 
@@ -3226,7 +3226,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub corrigirCusto(custofinal As String, codigo As String)
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim custo2 As Double
 
         custo2 = (Convert.ToDouble(custofinal))
@@ -3268,7 +3268,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub ProdutosDataGridView1_DoubleClick(sender As Object, e As EventArgs)
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim v_SelectRow As Integer
         v_SelectRow = Me.dataGridPediMarf.CurrentRow.Index
@@ -3344,7 +3344,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             ' -----------------------------------------
             ' -----------------------------------------
@@ -3442,7 +3442,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button1_Click_1(sender As Object, e As EventArgs) Handles btn_deletaritempedidosnfe.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         'Dim totalvalordoitem As Double
       
         Try
@@ -3497,7 +3497,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim contador As Integer = 0
 
         Dim connection5 As SqlConnection
-        connection5 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection5 = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         'REM coloca ponteiro junto com row escolhida
         Dim v_SelectRow As Integer
@@ -3821,7 +3821,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ConfirmarPedidoToolStripMenuItem.Enabled = True
        
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command As SqlCommand
         command = connection.CreateCommand()
@@ -3952,7 +3952,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         DesistirOperaçãoToolStripMenuItem3.Enabled = False
         '     GRAVAR O VALR TOTAL DO PEDIDO
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' soma a coluna dos valores e o põe textbox e grava
         Dim valor As String = 0
         ' Dim valor10 As Double = 0
@@ -4135,7 +4135,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command2 As SqlCommand
         command2 = connection.CreateCommand
@@ -4250,7 +4250,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim TlVrICM1 As Double
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
         command = connection.CreateCommand()
@@ -4981,7 +4981,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.CommandText = "delete from transportadoras where CNPJ_trans = @CNPJ_trans"
@@ -5052,7 +5052,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
 
@@ -5220,7 +5220,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         'rem lê os dados do arquivo de clientes
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
         command = connection.CreateCommand()
@@ -5469,7 +5469,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT *  from orcamento2  where EmailEnvio_orc = " & "'" & Email & "'"
 
@@ -5567,7 +5567,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' grava as informações
         ' Dim contador As Integer = 0
         Dim connection5 As SqlConnection
-        connection5 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection5 = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command5 As SqlCommand
         command5 = connection5.CreateCommand()
@@ -5631,7 +5631,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim rg_cliente As String
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
         command = connection.CreateCommand()
@@ -6011,7 +6011,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'If reply = DialogResult.Yes Then
 
         '    Dim connection As SqlConnection
-        '    connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        '    connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         '    Dim VrAserLancadoNfe As String
         '    Dim variavel2 As Boolean = False
 
@@ -6564,7 +6564,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ''gravar dados no arquivo nfe Emitidas
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         'Dim valor3 As Decimal = 0
         'For Each Linha As DataGridViewRow In Me.ItemPedidosDataGridView1.Rows
         '    valor3 += Linha.Cells(11).Value
@@ -6829,7 +6829,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         'rotina para ler o código do IBGE no arquivo copiado da receita
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
         command = connection.CreateCommand()
@@ -6898,7 +6898,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ''coloca o ponteiro onde ele está clicado
         'Dim v_SelectRow2 As Integer
@@ -7415,7 +7415,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim telefoneTrans As String
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         command1 = connection.CreateCommand()
         command1.CommandText = "select * from transportadoras where CNPJ_trans = '" & CodTrans_nfeemitidaTextBox.Text & "'"
@@ -7522,7 +7522,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM PedidoNFE WHERE dataemissao_ped BETWEEN  '" & DateTimePicker2.Text & "' and '" & DateTimePicker3.Text & "'"
 
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -7985,7 +7985,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' Dim contador As Integer = 0
         Dim connection5 As SqlConnection
-        connection5 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection5 = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         'REM coloca ponteiro junto com row escolhida
         Dim v_SelectRow As Integer
@@ -8150,7 +8150,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT * from NotasEntrada    where NumeroNotaEntrada = " & "'" & NumeroNotaENtrada & "'"
         con.Open()
@@ -8215,7 +8215,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'End If
 
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         'Dim command As SqlCommand
 
 
@@ -8395,7 +8395,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub localizandoCFOP()
 
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
         'command = connection.CreateCommand()
@@ -8444,9 +8444,9 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim connection As SqlConnection
         '  Try
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' Catch ex As Exception
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=sa;Password=12345678")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=sa;Password=12345678")
         ' End Try
 
 
@@ -8512,7 +8512,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     Private Sub Button32_Click(sender As Object, e As EventArgs) Handles btn_CalcOrcRel.Click
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM itemOrcamento WHERE data_ItemOrc BETWEEN   convert (datetime, '" & DateTimePicker4.Text & "' ,103)  and convert (datetime, '" & DateTimePicker5.Text & "' ,103)"
 
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -8545,7 +8545,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
             Dim command As SqlCommand
             command = connection.CreateCommand()
@@ -8768,7 +8768,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             Exit Sub
         End If
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command As SqlCommand
         command = connection.CreateCommand()
@@ -8912,7 +8912,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim NumeroDelecao As String = ""
 
         Try
@@ -9017,7 +9017,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' calcular o valor de desconto a vista e gravar no banco de dados
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
          Dim valorCalculadoAvista As String
         Dim command7 As SqlCommand
@@ -9077,7 +9077,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' calcular o valor de desconto a vista e gravar no banco de dados
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim valorCalculadoAvista As String
         Dim command7 As SqlCommand
@@ -9217,7 +9217,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button35_Click(sender As Object, e As EventArgs) Handles Button35.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103)"
         '  convert (datetime, '" & DateTimePicker6.Text & "' ,103)  and convert (datetime, '" & DateTimePicker7.Text & "' ,103)
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -9323,7 +9323,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button36_Click(sender As Object, e As EventArgs) Handles Button36.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)and nomevendedor_balcao <> 'fernando'"
         '  "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker8.Text & "' ,103)  and convert (datetime, '" & DateTimePicker9.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -9471,7 +9471,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button37_Click(sender As Object, e As EventArgs) Handles Button37.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' CALCULANDO OS TOTAIS
 
         Dim sql10 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker10.Text & "' ,103)  and convert (datetime, '" & DateTimePicker11.Text & "' ,103)"
@@ -9880,7 +9880,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button39_Click(sender As Object, e As EventArgs) Handles Button39.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' CALCULANDO AS VENDAS DA VERÔNICA
         Dim sql As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker12.Text & "' ,103)  and convert (datetime, '" & DateTimePicker13.Text & "' ,103) and  nomevendedor_balcao = 'verônica'"
@@ -9972,7 +9972,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' pegando os dados das datas
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
         '' calculando o custo veronica
@@ -10155,7 +10155,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button41_Click(sender As Object, e As EventArgs) Handles Button41.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' CALCULANDO OS TOTAIS
 
         Dim sql10 As String = "SELECT * FROM pedidoMarfinite WHERE dataemissao_pedmarf BETWEEN   convert (datetime, '" & DateTimePicker16.Text & "' ,103)  and convert (datetime, '" & DateTimePicker17.Text & "' ,103) "
@@ -10357,7 +10357,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button43_Click(sender As Object, e As EventArgs) Handles Button43.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM NFE_Emitidas WHERE data_nfeemitidas BETWEEN  convert (datetime, '" & DateTimePicker18.Text & "' ,103)  and convert (datetime, '" & DateTimePicker19.Text & "' ,103)"
      
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -10400,7 +10400,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button45_Click(sender As Object, e As EventArgs) Handles Button45.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' CALCULANDO OS TOTAIS
 
         Dim sql10 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker21.Text & "' ,103)  and convert (datetime, '" & DateTimePicker22.Text & "' ,103) "
@@ -10819,7 +10819,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'v_SelectRow = Me.ItemPedidosDataGridView5.CurrentRow.Index
 
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         'Dim sql2 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103) and  convert (datetime, '" & DateTimePicker24.Text & "' ,103) and codprod_item = '" & ItemPedidosDataGridView5.Item(6, v_SelectRow).Value & "'"
 
         'TextBox128.Text = ItemPedidosDataGridView5.Item(2, v_SelectRow).Value
@@ -10878,7 +10878,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'v_SelectRow = Me.ItemPedidosDataGridView5.CurrentRow.Index
 
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         'Dim sql2 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103) and  convert (datetime, '" & DateTimePicker24.Text & "' ,103) and codprod_item = '" & ItemPedidosDataGridView5.Item(6, v_SelectRow).Value & "'"
 
 
@@ -10935,7 +10935,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button46_Click(sender As Object, e As EventArgs) Handles Button46.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command As SqlCommand
         command = connection.CreateCommand()
@@ -10971,7 +10971,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button48_Click(sender As Object, e As EventArgs) Handles Button48.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
 
@@ -11200,7 +11200,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
             ' calcular o valor de desconto a vista e gravar no banco de dados
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
             Dim VrMultiplicador As Double
 
@@ -11261,7 +11261,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             ' calcular o valor de desconto a vista e gravar no banco de dados
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             ' User ID=yourUserName;Password=yourPwd;Trusted_Connection=False
             Dim valorCalculadoAvista As String
             Dim command7 As SqlCommand
@@ -11394,7 +11394,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox271.Clear()
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker27.Text & "' ,103)  and convert (datetime, '" & DateTimePicker28.Text & "' ,103)"
 
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -11485,7 +11485,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button55_Click_1(sender As Object, e As EventArgs) Handles Button55.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM ItemPedidos WHERE data_item BETWEEN  convert (datetime, '" & DateTimePicker29.Text & "' ,103)  and convert (datetime, '" & DateTimePicker30.Text & "' ,103)"
 
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -11542,7 +11542,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button56_Click_1(sender As Object, e As EventArgs) Handles Button56.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' CALCULANDO AS VENDAS DA dinheiro
         Dim sql As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker31.Text & "' ,103) and  FormaPgto_balcao = 'Dinheiro'"
@@ -11665,7 +11665,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' ----------------------------------------------------------------------------
         'rem lê os dados do arquivo de clientes
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim connectionString As String = "Data Source=.;Initial Catalog=pubs;Integrated Security=True"
 
         command = connection.CreateCommand()
@@ -11805,7 +11805,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button58_Click(sender As Object, e As EventArgs) Handles Button58.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim command As SqlCommand
         command = connection.CreateCommand()
@@ -11849,7 +11849,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End If
         '----------------------------------------------------------------------------
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ----------------------------------------------------------------------------
         Dim command10 As SqlCommand
         command10 = connection.CreateCommand()
@@ -12022,7 +12022,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "select *  from NomeContas ORDER BY id_conta"
         con.Open()
@@ -12131,7 +12131,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.CommandText = "delete from NomeContas where codigo_identificacao2 = @codigo_identificacao2"
@@ -12184,7 +12184,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         '' Buscando o histórico de arquivos
         Dim sql1 As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103)"
@@ -12216,7 +12216,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         Dim connection As SqlConnection
 
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         command = connection.CreateCommand()
         Dim TipoVenda As String = ""
 
@@ -12326,7 +12326,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT * from NomeContas where codigo_identificacao2 = " & "'" & TextBox185.Text & "'"
 
@@ -12407,7 +12407,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub PrintDocument12_PrintPage(sender As Object, e As PrintPageEventArgs) Handles PrintDocument12.PrintPage
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
         'Dim reply As DialogResult = MessageBox.Show("Confirmar a impressão?", "Atenção. Verificar a data da impressão!!!", _
@@ -12632,7 +12632,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT * from NotasEntrada    where NumeroNotaEntrada = " & "'" & TextBox218.Text & "'"
         con.Open()
@@ -12671,7 +12671,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End If
         ' calcula o estoque médio do balcão e grava na tabela de produtos
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' pega uma data de 90 dias atrás para dar um média de tres meses
         Dim ano As Integer = Today.Year
         Dim mes As Integer = Today.Month
@@ -12805,7 +12805,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         'TextBox223.Text = BalcaoDataGridView5.Item(6, v_SelectRow).Value.ToString()
 
         'Dim connection As SqlConnection
-        'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         'Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & BalcaoDataGridView5.Item(14, v_SelectRow).Value.ToString() & "' and corprod_balcao = '" & BalcaoDataGridView5.Item(6, v_SelectRow).Value.ToString() & "'"
         'Dim dataadapter As New SqlDataAdapter(sql2, connection)
         'Dim ds As New DataSet()
@@ -12871,7 +12871,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         TextBox340.Text = ProdutosDataGridView3.Item(9, v_SelectRow).Value.ToString()
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
            ' ------------------------------------------------------------------------------------------------------------------
         Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker23.Text & "' ,103)  and convert (datetime, '" & DateTimePicker24.Text & "' ,103) and nomeProd_balcao = '" & TextBox128.Text & "' and corprod_balcao = '" & TextBox223.Text & "'"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -12959,7 +12959,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' calcula os pedidos em aberto que falta entregar
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
@@ -13027,7 +13027,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         PegarHistoricoArquivoNomeContas()
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         command = connection.CreateCommand()
 
 
@@ -13176,7 +13176,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         '' Buscando o histórico de arquivos
         Dim sql1 As String = "SELECT * FROM NomeContas WHERE data_conta BETWEEN   convert (datetime, '" & DateTimePicker32.Text & "' ,103)  and convert (datetime, '" & DateTimePicker33.Text & "' ,103)"
@@ -13203,7 +13203,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
             ' Dim contador As Integer = 0
             Dim connection5 As SqlConnection
-            connection5 = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection5 = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
             Dim v_SelectRow As Integer
             v_SelectRow = Me.BalcaoDataGridView.CurrentRow.Index
@@ -13364,7 +13364,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         End If
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
@@ -13502,7 +13502,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
         ' calcula os pedidos em aberto que falta entregar
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim sql40 As String = "SELECT * FROM produtos WHERE fornecedor_prod = '" & ComboBox25.Text & "' and linha_prod = '" & ComboBox31.Text & "'and RaizSimNao_prod = 'RAIZ' ORDER BY nome_prod"
         Dim dataadapter40 As New SqlDataAdapter(sql40, connection)
@@ -13606,7 +13606,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     Private Sub Button90_Click(sender As Object, e As EventArgs) Handles Button90.Click
         ' calcula os pedidos em aberto que falta entregar
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql40 As String = "SELECT * FROM produtos WHERE  fornecedor_prod = '" & ComboBox25.Text & "'and RaizSimNao_prod = 'RAIZ'  ORDER BY nome_prod"
         Dim dataadapter40 As New SqlDataAdapter(sql40, connection)
         Dim ds40 As New DataSet()
@@ -13678,7 +13678,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
 
     '' --------------------------------------------------------------
     'Dim connection As SqlConnection
-    'connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+    'connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
     '' ---------------------------------------------------------------------------------------
@@ -13786,7 +13786,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
     'Private Sub Button94_Click(sender As Object, e As EventArgs) Handles Button94.Click
 
     '        Dim connection As SqlConnection
-    '        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+    '        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
     '        Dim command As SqlCommand
     '        Dim xx As Integer
@@ -14124,7 +14124,7 @@ ClienteDataGridView5.Item(16, v_SelectRow).Value.ToString() = "" Then
         ' -------------------------------------------
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim command As SqlCommand
        
 
@@ -14605,7 +14605,7 @@ Proxima:
         End If
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Try
             Dim v_SelectRow As Integer
@@ -14687,7 +14687,7 @@ Proxima:
         End If
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' apaga registro
         Dim reply As DialogResult = MessageBox.Show("Confirmar a exclusão?", "Atenção!!!", _
@@ -14737,7 +14737,7 @@ Proxima:
     Private Sub ProdutosDataGridView6_DoubleClick(sender As Object, e As EventArgs) Handles ProdutosDataGridView6.DoubleClick
        
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' -------------------------------------------------------------------------------------------
         Dim v_SelectRow As Integer
         v_SelectRow = Me.ProdutosDataGridView6.CurrentRow.Index
@@ -14887,7 +14887,7 @@ Proxima:
     Private Sub Button97_Click(sender As Object, e As EventArgs) Handles Button97.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker39.Text & "' ,103)  and convert (datetime, '" & DateTimePicker40.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
         Dim ds As New DataSet()
@@ -14930,7 +14930,7 @@ Proxima:
     Private Sub PedidoCompraDataGridView_DoubleClick_1(sender As Object, e As EventArgs) Handles PedidoCompraDataGridView.DoubleClick
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
 
         Dim v_SelectRow As Integer
@@ -15109,7 +15109,7 @@ proxima2:
         Dim con As New SqlConnection
         Dim cmd As New SqlCommand
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT *  from PedidoCompra where Codigo_PedidoCompra = '" & PegaNumeroPedido & "'"
 
@@ -15164,7 +15164,7 @@ proxima2:
 
         ' calcula os pedidos em aberto que falta entregar
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
@@ -15256,7 +15256,7 @@ proxima2:
         ElseIf result = DialogResult.Yes Then
 
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             ' -------------------------------------
 
             Dim v_SelectRow As Integer
@@ -15336,7 +15336,7 @@ proxima2:
         Dim cmd As New SqlCommand
         Dim CodFor = InputBox("DIgite o código do fornecedor", "Obrigatório")
 
-        con.ConnectionString = "Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
+        con.ConnectionString = "Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789"
         cmd.Connection = con
         cmd.CommandText = "SELECT cod_prod  from produtos where cod_prodfor = " & "'" & CodFor & "'"
 
@@ -15475,7 +15475,7 @@ Prosxima50:
         'If reply = DialogResult.Yes Then
 
         '    Dim connection As SqlConnection
-        '    connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        '    connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         '    Dim VrAserLancadoNfe As String
         '    Dim variavel2 As Boolean = False
 
@@ -16030,7 +16030,7 @@ Prosxima50:
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             command = connection.CreateCommand()
             command.CommandText = "delete from ApelidoErrado where NumeroNota_ApelidoErrado = @NumeroNota_ApelidoErrado"
@@ -16075,7 +16075,7 @@ Prosxima50:
 
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb >=   convert (datetime, '" & DateTimePicker20.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
         Dim ds As New DataSet()
@@ -16295,7 +16295,7 @@ Prosxima50:
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             ' *************************************************************************
             'REM verifica se o endereço já foi cadastrado no arquivo balcão
             Dim cmd As New SqlCommand
@@ -16411,7 +16411,7 @@ FIM:
 
         If reply = DialogResult.Yes Then
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
             Dim command As SqlCommand
             ' apagar os dados da tabela
             Dim v_SelectRow As Integer
@@ -16522,7 +16522,7 @@ FIM:
     Private Sub Button114_Click(sender As Object, e As EventArgs) Handles Button114.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ***********************************************************************
         Dim sql11 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103) "
         Dim dataadapter11 As New SqlDataAdapter(sql11, connection)
@@ -16679,7 +16679,7 @@ FIM:
     Private Sub Button123_Click(sender As Object, e As EventArgs) Handles Button123.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ************************************************************************
         Dim sql11 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103) "
         Dim dataadapter11 As New SqlDataAdapter(sql11, connection)
@@ -16835,7 +16835,7 @@ FIM:
     Private Sub Button124_Click(sender As Object, e As EventArgs) Handles Button124.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ------------------------------------------------------------------------------------------------------------------
         Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra >= convert (datetime, '" & DateTimePicker38.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -16866,7 +16866,7 @@ FIM:
         ' copia da media balcão - arrumar
         ' calcula o estoque médio do balcão e grava na tabela de produtos
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' pega uma data de acordo com a última atualização
         Dim v_SelectRow As Integer = 0
         For v_SelectRow = 0 To ProdutosDataGridView3.RowCount() - 1
@@ -16951,7 +16951,7 @@ FIM:
         If e.KeyChar = Convert.ToChar(Keys.Return) Then
             ' e.Handled = True
             Dim connection As SqlConnection
-            connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+            connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
             Dim reply As DialogResult = MessageBox.Show("Confirmar a inclusão/alteração?", "Atenção!!!", _
              MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
@@ -17090,7 +17090,7 @@ FIM:
             Exit Sub
         End If
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ------------------------------------------------------------------------------------------------------------------
         Dim DataSelecionada As Integer = ComboBox52.Text
         Dim DataSelecionada2 As Integer = DataSelecionada * -1
@@ -17209,7 +17209,7 @@ FIM:
 
     Private Sub Button132_Click(sender As Object, e As EventArgs) Handles Button132.Click
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ------------------------------------------------------------------------------------------------------------------
         Dim sql2 As String = "SELECT * FROM PedidoCompra WHERE Data_PedidoCompra > convert (datetime, '" & DateTimePicker38.Text & "' ,103) and Fornecedor_PedidoCompra ='" & ComboBox26.Text & "'"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -17229,7 +17229,7 @@ FIM:
 
         ' posiciona as tabelas entre as datas escolhidas na tela
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         Dim sql2 As String = "SELECT * FROM VendasMlb WHERE DataPedido_VendasMlb BETWEEN   convert (datetime, '" & DateTimePicker39.Text & "' ,103)  and convert (datetime, '" & DateTimePicker40.Text & "' ,103)"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
         Dim ds As New DataSet()
@@ -17465,7 +17465,7 @@ FIM:
     Private Sub Button102_Click(sender As Object, e As EventArgs) Handles Button102.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' CALCULANDO AS VENDAS DA dinheiro
         Dim sql As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker31.Text & "' ,103) and  FormaPgto_balcao = 'Dinheiro'"
@@ -17491,7 +17491,7 @@ FIM:
     Private Sub Button103_Click(sender As Object, e As EventArgs) Handles Button103.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' CALCULANDO AS VENDAS DA cartão
         Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker31.Text & "' ,103) and  FormaPgto_balcao = 'Cartão'"
@@ -17516,7 +17516,7 @@ FIM:
 
     Private Sub Button104_Click(sender As Object, e As EventArgs) Handles Button104.Click
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' CALCULANDO AS VENDAS DA boleto
         Dim sql3 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker31.Text & "' ,103) and  FormaPgto_balcao = 'Boleto'"
@@ -17541,7 +17541,7 @@ FIM:
 
     Private Sub Button105_Click(sender As Object, e As EventArgs) Handles Button105.Click
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' CALCULANDO AS VENDAS DA outros
         Dim sql4 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao =  convert (datetime, '" & DateTimePicker31.Text & "' ,103) and  FormaPgto_balcao = 'Outros'"
@@ -17575,7 +17575,7 @@ FIM:
         End If
         ' ----------------------------------------------------------------------------------
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' **********************************************************************************************
         Dim v_SelectRow As Integer = 0
         Dim VendaPeriodo As Double = 0
@@ -17672,7 +17672,7 @@ FIM:
         v_SelectRow = Me.ProdutosDataGridView9.CurrentRow.Index
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ------------------------------------------------------------------------------------------------------------------
         Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "' and (nomevendedor_balcao = 'verônica' or  nomevendedor_balcao = 'celso')"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -17784,7 +17784,7 @@ FIM:
         ' faz a conexão com o banco de dados sql
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         Dim reply As DialogResult = MessageBox.Show("Confirmar a inclusão/alteração?", "Atenção!!!", _
          MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
@@ -17823,7 +17823,7 @@ FIM:
         v_SelectRow = Me.ProdutosDataGridView9.CurrentRow.Index
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' ------------------------------------------------------------------------------------------------------------------
         Dim sql2 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN   convert (datetime, '" & DateTimePicker41.Text & "' ,103)  and convert (datetime, '" & DateTimePicker42.Text & "' ,103) and nomeProd_balcao = '" & ProdutosDataGridView9.Item(6, v_SelectRow).Value & "' and corprod_balcao = '" & ProdutosDataGridView9.Item(7, v_SelectRow).Value & "' and (nomevendedor_balcao = 'verônica' or  nomevendedor_balcao = 'celso')"
         Dim dataadapter As New SqlDataAdapter(sql2, connection)
@@ -17903,7 +17903,7 @@ FIM:
         End If
         ' ----------------------------------------------------------------------------------
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' **********************************************************************************************
         Dim v_SelectRow As Integer = 0
         Dim VendaPeriodo As Double = 0
@@ -18007,7 +18007,7 @@ FIM:
         End If
         ' ----------------------------------------------------------------------------------
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
         ' **********************************************************************************************
         Dim v_SelectRow As Integer = 0
         Dim VendaPeriodo As Double = 0
@@ -18131,7 +18131,7 @@ FIM:
     Private Sub Button142_Click(sender As Object, e As EventArgs) Handles Button142.Click
 
         Dim connection As SqlConnection
-        connection = New SqlConnection("Data Source=tcp:fernando;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
+        connection = New SqlConnection("Data Source=tcp:DESKTOP-TDVS6OS;Initial Catalog=teste;Persist Security Info=True;User ID=user;Password=123456789")
 
         ' **************************************************************************
         Dim sql11 As String = "SELECT * FROM balcao WHERE datavenda_prodbalcao BETWEEN  convert (datetime, '" & DateTimePicker43.Text & "' ,103)  and convert (datetime, '" & DateTimePicker44.Text & "' ,103) "
